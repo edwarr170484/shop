@@ -1,0 +1,34 @@
+.product-list {
+    & .product-thumb {
+        & .caption {
+            margin-left: 230px;
+
+            @include respond-to(md) {
+                min-height: 0;
+                margin-left: 0;
+                padding: 0 10px;
+            }
+        }
+
+        & .image {
+            @include respond-to(md) {
+                float: left;
+                padding: 0 15px;
+            }
+        }
+    }
+
+}
+
+.product-list {
+    & .product-thumb {
+        & .button-group {
+            border-left: 1px solid #ddd;
+
+            @include respond-to(md) {
+                border-left: none;
+            }
+        }
+    }
+
+}

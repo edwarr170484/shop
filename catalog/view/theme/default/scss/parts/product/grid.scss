@@ -1,0 +1,19 @@
+.product-grid {
+    & .product-thumb {
+        & .image {
+            float: none;
+        }
+
+        & .caption {
+            @include respond-to(xl) {
+                min-height: 210px;
+                padding: 0 10px;
+            }
+
+            @include respond-to(md) {
+                min-height: 0;
+            }
+        }
+    }
+
+}

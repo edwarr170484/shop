@@ -1,0 +1,82 @@
+@import './parts/variables.scss';
+@import './parts/header/header.scss';
+@import './parts/breadscrumb.scss';
+@import './parts/footer.scss';
+@import './parts/controls/button.scss';
+@import './parts/controls/input.scss';
+@import './parts/controls/list.scss';
+@import './parts/product/product.scss';
+@import './parts/plugins/carousel.scss';
+@import './parts/pagination.scss';
+@import './parts/alert.scss';
+@import './parts/fonts.scss';
+
+body {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400;
+    color: #666;
+    font-size: 12px;
+    line-height: 20px;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #444;
+}
+
+.fa {
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 33px;
+}
+
+h2 {
+    font-size: 27px;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 10.2px;
+}
+
+a {
+    color: #23a1d1;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+legend {
+    font-size: 18px;
+    padding: 7px 0px
+}
+
+span.hidden-xs,
+span.hidden-sm,
+span.hidden-md,
+span.hidden-lg {
+    display: inline;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}

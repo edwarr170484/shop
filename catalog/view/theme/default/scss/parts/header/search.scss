@@ -1,0 +1,16 @@
+#search {
+    margin-bottom: 10px;
+
+    & .input-lg {
+        height: 40px;
+        line-height: 20px;
+        padding: 0 10px;
+    }
+
+    & .btn-lg {
+        font-size: 15px;
+        line-height: 18px;
+        padding: 10px 35px;
+        text-shadow: 0 1px 0 #FFF;
+    }
+}
