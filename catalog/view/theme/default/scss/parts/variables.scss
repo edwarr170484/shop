@@ -1,20 +1,30 @@
 $container-max-width: 1280px;
 
 $grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1130px,
-    xxl: 1400px
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1130px,
+  xxl: 1400px,
 );
 
 $grid-gutter-width: 30px;
 
 @mixin respond-to($breakpoint) {
-    @if map-has-key($grid-breakpoints, $breakpoint) {
-        @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
-            @content;
-        }
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
+      @content;
     }
+  }
 }
+
+/* colors */
+$main: #507998;
+$blue: #00a8de;
+$light-blue: #f7fdff;
+$gray: #eaeaea;
+$light-gray: #e4e4e4;
+$black: #444444;
+$success: #00a8de;
+$error: red;

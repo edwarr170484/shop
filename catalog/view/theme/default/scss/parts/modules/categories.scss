@@ -1,0 +1,26 @@
+@import 'header.scss';
+
+.categories-module {
+    padding-right: 32px;
+    border-right: 1px solid $light-gray;
+    padding-bottom: 55px;
+}
+
+.categories-menu {
+    padding-left: 13px;
+
+    & .list-group {
+        border-radius: 0;
+
+        & a {
+            border: none;
+            padding: 0;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 38px;
+            color: $main;
+            background: url('../image/modules/chevron-right.png') 0 50% no-repeat;
+            padding-left: 26px;
+        }
+    }
+}

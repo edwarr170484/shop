@@ -4,88 +4,53 @@
 @import './logo.scss';
 
 #top {
-    background-color: #EEEEEE;
-    border-bottom: 1px solid #e2e2e2;
-    padding: 4px 0px 3px 0;
-    margin: 0 0 20px 0;
-    min-height: 40px;
+    background-color: $light-blue;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 20px 0 22px;
 
-    & .container {
-        padding: 0 20px;
-    }
-
-    & .btn-link {
-        color: #888;
-        text-shadow: 0 1px 0 #FFF;
-        text-decoration: none;
-
-        & strong {
-            font-size: 14px;
-            line-height: 14px;
-        }
-
-        &:hover {
-            color: #444;
-        }
-    }
-
-    & #form-currency {
-        & .currency-select {
-            text-align: left;
-
-            &:hover {
-                text-shadow: none;
-                color: #ffffff;
-                background-color: #229ac8;
-                background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
-                background-repeat: repeat-x;
-            }
-        }
-    }
-
-    & #form-language {
-        & .language-select {
-            text-align: left;
-
-            &:hover {
-                text-shadow: none;
-                color: #ffffff;
-                background-color: #229ac8;
-                background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
-                background-repeat: repeat-x;
-            }
-        }
+    @include respond-to(md) {
+        display: none;
     }
 }
 
-#top-links {
-    padding-top: 6px;
+header {
+    font-weight: 500;
+    box-shadow: 0px 9px 15px rgba(0, 168, 222, 0.05);
+}
 
-    & li {
-        color: #888;
-        text-shadow: 0 1px 0 #FFF;
-        text-decoration: none;
-    }
+.header-contact-icon {
+    margin-right: 13px;
+}
 
+.header-request {
     & a {
-        color: #888;
-        text-shadow: 0 1px 0 #FFF;
+        text-transform: uppercase;
         text-decoration: none;
-
-        &+a {
-            margin-left: 15px;
-        }
-
-        &:hover {
-            color: #444;
-        }
+        border-bottom: 1px dashed $blue;
+        font-size: 16px;
+        line-height: 19px;
+        color: $main;
     }
 
-    & .dropdown-menu a {
-        text-shadow: none;
+    & img {
+        margin-right: 21px;
+    }
+}
 
-        &:hover {
-            color: #FFF;
-        }
+.header-logo {
+    padding-top: 31px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid $gray;
+}
+
+.header-tool {
+    margin-left: 26px;
+    height: 100%;
+    padding-top: 28px;
+
+    &.header-cart {
+        padding-top: 24px;
     }
 }

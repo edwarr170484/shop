@@ -1,52 +1,116 @@
 <footer>
-  <div class="container">
-    <div class="row">
-      {% if informations %}
-      <div class="col-sm-3">
-        <h5>{{ text_information }}</h5>
-        <ul class="list-unstyled">
-         {% for information in informations %}
-          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
-      <div class="col-sm-3">
-        <h5>{{ text_service }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
-          <li><a href="{{ return }}">{{ text_return }}</a></li>
-          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5>{{ text_extra }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
-          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
-          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
-          <li><a href="{{ special }}">{{ text_special }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5>{{ text_account }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ account }}">{{ text_account }}</a></li>
-          <li><a href="{{ order }}">{{ text_order }}</a></li>
-          <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
-          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
-        </ul>
+  <div class="footer-social">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h3 class="social-header text-center">Подписывайтесь</h3>
+          <div class="subscribe-form">
+            <form method="POST" action="" onsubmit="return subscribe()">
+              <input name="email" type="text" placeholder="Ваш e-mail" class="form-control" id="subscribe-email" required />
+              <button type="submit"><img src="catalog/view/theme/default/image/icons/footer-envelope.svg" /></button>
+              <div class="control-message"></div>
+            </form>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center">
+          <h3 class="social-header text-center">Следите за нами</h3>
+          <ul class="nav footer-socials-nav">
+            <li class="nav-item">
+              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/telegram.svg" /></a>
+            </li>
+            <li class="nav-item">
+              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/fb.svg" /></a>
+            </li>
+            <li class="nav-item">
+              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/insta.svg" /></a>
+            </li>
+            <li class="nav-item">
+              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/youtube.svg" /></a>
+            </li>
+            <li class="nav-item">
+              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/vk.svg" /></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <hr>
-    <p>{{ powered }}</p>
+  </div>
+  <div class="footer-contacts">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-5 col-lg-3">
+          <h3 class="footer-header">Наши контакты</h3>
+          <div class="footer-info">
+            <div class="footer-phones">
+              <div>{{ phone }}</div>
+              <div>{{ fax }}</div>
+            </div>
+            <div class="footer-email">{{ email }}</div>
+            <div class="footer-open">{{ open }}</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7 col-lg-4">
+          <h3 class="footer-header">Наш адрес</h3>
+          <div class="footer-info">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2277.1145350332336!2d30.182657099999993!3d55.1987568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c573f2976c622f%3A0x3b077ad480b2662a!2z0YPQuy4g0KLQuNGC0L7QstCwIDEzLCDQktC40YLQtdCx0YHQug!5e0!3m2!1sru!2sby!4v1672175972681!5m2!1sru!2sby" width="100%" height="253" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="col-12 col-md-7 col-lg-4 offset-lg-1">
+          <h3 class="footer-header">Способы оплаты</h3>
+          <div class="footer-info footer-payments">
+            <div class="footer-payment">
+              <img src="catalog/view/theme/default/image/payments/visa-card-png-4.png" />
+            </div>
+            <div class="footer-payment">
+              <img src="catalog/view/theme/default/image/payments/1627468728.png" />
+            </div>
+            <div class="footer-payment">
+              <img src="catalog/view/theme/default/image/payments/mastercard_PNG16.png" />
+            </div>
+            <div class="footer-payment">
+              <img src="catalog/view/theme/default/image/payments/mir-logo.png" />
+            </div>
+            <div class="footer-payment">
+              <img src="catalog/view/theme/default/image/payments/9efe30cc652a3100e34bd5b9f42caeaf.png" />
+            </div>
+            <div class="footer-payment">
+              <img src="catalog/view/theme/default/image/payments/32020-09-23-sber-logotype.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
+<div class="modal fade" id="kp-request" tabindex="-1" aria-labelledby="kp-request" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form type="POST" action="" onsubmit="return kpRequest()" id="kp-request-form">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Запросить КП</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+              <input name="name" type="text" placeholder="Ваше имя" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <input name="phone" type="text" placeholder="Ваш номер телефона" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <input name="email" type="text" placeholder="Ваш e-mail" class="form-control" required />
+              <div class="control-message"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% for script in scripts %}
 <script src="{{ script }}" type="text/javascript"></script>
 {% endfor %}
-<!--
-OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
-Please donate via PayPal to donate@opencart.com
-//-->
 </body></html>

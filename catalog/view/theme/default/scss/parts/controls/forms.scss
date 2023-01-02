@@ -1,0 +1,19 @@
+.subscribe-form {
+  & .control-message {
+    position: absolute;
+    bottom: 5px;
+    left: 9px;
+  }
+}
+.control-message {
+  font-size: 14px;
+  font-weight: 400;
+
+  &.success {
+    color: $success;
+  }
+
+  &.error {
+    color: $error;
+  }
+}

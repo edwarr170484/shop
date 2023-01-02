@@ -73,6 +73,8 @@ class ControllerMarketingContact extends Controller {
 
 				$this->load->model('customer/customer');
 
+				$this->load->model('tool/subscribe');
+
 				$this->load->model('customer/customer_group');
 
 				$this->load->model('sale/order');
@@ -89,19 +91,13 @@ class ControllerMarketingContact extends Controller {
 
 				switch ($this->request->post['to']) {
 					case 'newsletter':
-						$customer_data = array(
-							'filter_newsletter' => 1,
-							'start'             => ($page - 1) * 10,
-							'limit'             => 10
-						);
-
-						$email_total = $this->model_customer_customer->getTotalCustomers($customer_data);
-
-						$results = $this->model_customer_customer->getCustomers($customer_data);
+						$results = $this->model_tool_subscribe->getSubscribers();
 
 						foreach ($results as $result) {
 							$emails[] = $result['email'];
 						}
+
+						$email_total = count($emails);
 						break;
 					case 'customer_all':
 						$customer_data = array(

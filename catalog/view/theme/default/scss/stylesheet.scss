@@ -1,23 +1,31 @@
-@import './parts/variables.scss';
-@import './parts/header/header.scss';
-@import './parts/breadscrumb.scss';
-@import './parts/footer.scss';
-@import './parts/controls/button.scss';
-@import './parts/controls/input.scss';
-@import './parts/controls/list.scss';
-@import './parts/product/product.scss';
-@import './parts/plugins/carousel.scss';
-@import './parts/pagination.scss';
-@import './parts/alert.scss';
-@import './parts/fonts.scss';
+@import "./parts/variables.scss";
+@import "./parts/header/header.scss";
+@import "./parts/breadscrumb.scss";
+@import "./parts/footer.scss";
+@import "./parts/controls/button.scss";
+@import "./parts/controls/input.scss";
+@import "./parts/controls/list.scss";
+@import "./parts/controls/forms.scss";
+@import "./parts/product/product.scss";
+@import "./parts/plugins/carousel.scss";
+@import "./parts/pagination.scss";
+@import "./parts/alert.scss";
+@import "./parts/fonts.scss";
+
+@import "./parts/modules/categories.scss";
+@import "./parts/modules/banner.scss";
+@import "./parts/modules/featured.scss";
+@import "./parts/modules/html.scss";
+
+@import "./parts/homepage.scss";
 
 body {
-    font-family: 'Gilroy', sans-serif;
-    font-weight: 400;
-    color: #666;
-    font-size: 12px;
-    line-height: 20px;
-    width: 100%;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 400;
+  color: $main;
+  font-size: 12px;
+  line-height: 20px;
+  width: 100%;
 }
 
 h1,
@@ -26,57 +34,65 @@ h3,
 h4,
 h5,
 h6 {
-    color: #444;
+  color: #444;
 }
 
 .fa {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 h1 {
-    font-size: 33px;
+  font-size: 33px;
 }
 
 h2 {
-    font-size: 27px;
+  font-size: 27px;
 }
 
 h3 {
-    font-size: 21px;
+  font-size: 21px;
 }
 
 h4 {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 h5 {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 h6 {
-    font-size: 10.2px;
+  font-size: 10.2px;
 }
 
 a {
-    color: #23a1d1;
+  color: #23a1d1;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 legend {
-    font-size: 18px;
-    padding: 7px 0px
+  font-size: 18px;
+  padding: 7px 0px;
 }
 
 span.hidden-xs,
 span.hidden-sm,
 span.hidden-md,
 span.hidden-lg {
-    display: inline;
+  display: inline;
 }
 
 .nav-tabs {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+#common-home {
+  padding-top: 55px;
+}
+
+.no-border {
+  border: none;
 }

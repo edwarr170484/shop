@@ -1,72 +1,46 @@
 <?php
 class ControllerCheckoutCheckout extends Controller {
 	public function index() {
-		// Validate cart has products and has stock.
-		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
-			$this->response->redirect($this->url->link('checkout/cart'));
-		}
+		//left column shipping methods
+		$data['shipping_methods'] = $this->load->controller('checkout/shipping_method');
 
-		// Validate minimum quantity requirements.
-		$products = $this->cart->getProducts();
+		// left column payment methods
+		$data['payment_methods'] = $this->load->controller('checkout/payment_method');
 
-		foreach ($products as $product) {
-			$product_total = 0;
+		// left column customer groups
+		if (is_array($this->config->get('config_customer_group_display'))) {
+			$this->load->model('account/customer_group');
 
-			foreach ($products as $product_2) {
-				if ($product_2['product_id'] == $product['product_id']) {
-					$product_total += $product_2['quantity'];
+			$customer_groups = $this->model_account_customer_group->getCustomerGroups();
+
+			foreach ($customer_groups as $customer_group) {
+				if (in_array($customer_group['customer_group_id'], $this->config->get('config_customer_group_display'))) {
+					$data['customer_groups'][] = $customer_group;
 				}
 			}
-
-			if ($product['minimum'] > $product_total) {
-				$this->response->redirect($this->url->link('checkout/cart'));
-			}
 		}
 
-		$this->load->language('checkout/checkout');
-
-		$this->document->setTitle($this->language->get('heading_title'));
-
-		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment/moment.min.js');
-		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment/moment-with-locales.min.js');
-		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
-		$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
-
-		// Required by klarna
-		if ($this->config->get('payment_klarna_account') || $this->config->get('payment_klarna_invoice')) {
-			$this->document->addScript('http://cdn.klarna.com/public/kitt/toc/v1.0/js/klarna.terms.min.js');
-		}
-
-		$data['breadcrumbs'] = array();
-
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);
-
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_cart'),
-			'href' => $this->url->link('checkout/cart')
-		);
-
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('checkout/checkout', '', true)
-		);
-
-		$data['text_checkout_option'] = sprintf($this->language->get('text_checkout_option'), 1);
-		$data['text_checkout_account'] = sprintf($this->language->get('text_checkout_account'), 2);
-		$data['text_checkout_payment_address'] = sprintf($this->language->get('text_checkout_payment_address'), 2);
-		$data['text_checkout_shipping_address'] = sprintf($this->language->get('text_checkout_shipping_address'), 3);
-		$data['text_checkout_shipping_method'] = sprintf($this->language->get('text_checkout_shipping_method'), 4);
-		
-		if ($this->cart->hasShipping()) {
-			$data['text_checkout_payment_method'] = sprintf($this->language->get('text_checkout_payment_method'), 5);
-			$data['text_checkout_confirm'] = sprintf($this->language->get('text_checkout_confirm'), 6);
+		// get right column site config 
+		if ($this->request->server['HTTPS']) {
+			$server = $this->config->get('config_ssl');
 		} else {
-			$data['text_checkout_payment_method'] = sprintf($this->language->get('text_checkout_payment_method'), 3);
-			$data['text_checkout_confirm'] = sprintf($this->language->get('text_checkout_confirm'), 4);	
+			$server = $this->config->get('config_url');
 		}
+		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
+			$data['logo'] = $server . 'image/' . $this->config->get('config_logo');
+		} else {
+			$data['logo'] = '';
+		}
+		$data['telephone'] = $this->config->get('config_telephone');
+		$data['hostname'] = $this->request->server['SERVER_NAME'];
+		$data['home'] = $this->url->link('common/home');
+		$data['name'] = $this->config->get('config_name');
+
+
+		// get right column cart data
+		$data['checkout_products'] = $this->load->controller('checkout/confirm');
+		
+		$this->load->language('checkout/checkout');
 
 		if (isset($this->session->data['error'])) {
 			$data['error_warning'] = $this->session->data['error'];
@@ -75,20 +49,8 @@ class ControllerCheckoutCheckout extends Controller {
 			$data['error_warning'] = '';
 		}
 
-		$data['logged'] = $this->customer->isLogged();
-
-		if (isset($this->session->data['account'])) {
-			$data['account'] = $this->session->data['account'];
-		} else {
-			$data['account'] = '';
-		}
-
 		$data['shipping_required'] = $this->cart->hasShipping();
 
-		$data['column_left'] = $this->load->controller('common/column_left');
-		$data['column_right'] = $this->load->controller('common/column_right');
-		$data['content_top'] = $this->load->controller('common/content_top');
-		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
