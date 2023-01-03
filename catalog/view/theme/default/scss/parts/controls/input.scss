@@ -1,4 +1,5 @@
 .form-control {
+
   &.success,
   &.success:focus {
     border-color: $success;
@@ -7,5 +8,82 @@
   &.error,
   &.error:focus {
     border-color: $error;
+  }
+}
+
+.radio-group {
+  &.color {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    & .radio {
+      position: relative;
+      padding: 2px;
+      border-radius: 50%;
+
+      & input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+
+    & .radio-color {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.input-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+
+  & input {
+    height: 100%;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-color: #C9C9C9;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  & button {
+    background: $blue;
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 11px;
+    font-size: 16px;
+    line-height: 11px;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &.input-down {
+      border-radius: 3px 0px 0px 3px;
+    }
+
+    &.input-up {
+      border-radius: 0px 3px 3px 0px;
+    }
   }
 }

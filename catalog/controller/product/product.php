@@ -242,12 +242,16 @@ class ControllerProductProduct extends Controller {
 			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 
+			$more = preg_match('/###more_start###(.*?)###more_end###/s', $data['description'], $match);
+			$data['description'] = preg_replace('/###more_start###.*?###more_end###/s', '', $data['description']);
+			$data['description'] .= '<div class="more-description">' . $match[1] . '</div>' . '<button type="button" class="read-more">Подробнее</button>';
+
 			if ($product_info['quantity'] <= 0) {
-				$data['stock'] = $product_info['stock_status'];
+				$data['stock'] = '<div class="stock-nothing">' . $product_info['stock_status'] . '</div>';
 			} elseif ($this->config->get('config_stock_display')) {
 				$data['stock'] = $product_info['quantity'];
 			} else {
-				$data['stock'] = $this->language->get('text_instock');
+				$data['stock'] = '<div class="stock-available">' . $this->language->get('text_instock') . '</div>';
 			}
 
 			$this->load->model('tool/image');

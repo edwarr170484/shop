@@ -13,3 +13,23 @@
     box-shadow: none;
   }
 }
+
+.read-more {
+  background: none;
+  border: none;
+  border-bottom: 1px solid $blue;
+  font-size: 16px;
+  line-height: 19px;
+  color: $main;
+  padding: 14px 35px;
+  background: url('../image/icons/arrow-down.svg') 8px 50% no-repeat;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+#button-cart {
+  padding: 18px 106px 19px;
+}

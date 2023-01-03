@@ -5,4 +5,116 @@
 
 #product-product {
   padding-top: 55px;
+  padding-bottom: 315px;
+}
+
+.product-options {
+  color: $main;
+  padding-left: 46px;
+}
+
+.product-title {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: $main;
+}
+
+.product-subtitle {
+  & h4 {
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: $main;
+    margin-bottom: 20px;
+  }
+}
+
+.product-info {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.product-price {
+  display: flex;
+  font-size: 20px;
+  line-height: 24px;
+  align-items: center;
+
+  & div:first-child {
+    margin-right: 17px;
+  }
+
+  & .new-price {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  & .old-price {
+    font-size: 24px;
+    line-height: 28px;
+    text-decoration-line: line-through;
+    color: $red;
+    margin-right: 47px;
+  }
+}
+
+.product-description {
+  margin-top: 31px;
+}
+
+.product-text {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.more-description {
+  display: none;
+}
+
+.product-option-list {
+  padding-top: 35px;
+
+  & .control-label {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.product-option {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 27px;
+  margin-bottom: 22px;
+}
+
+.stock-available {
+  font-size: 16px;
+  line-height: 19px;
+  color: $blue;
+  background: url('../image/icons/stock-is.svg') 0 50% no-repeat;
+  padding-left: 29px;
+}
+
+.stock-nothing {
+  font-size: 16px;
+  line-height: 19px;
+  color: $red;
+}
+
+.product-buttons {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+#product-product {
+  & .featured-module {
+    margin-top: 198px;
+  }
 }
