@@ -1,4 +1,8 @@
-@import './layout.scss';
-@import './rating.scss';
-@import './price.scss';
-@import './images.scss';
+@import "./layout.scss";
+@import "./category.scss";
+@import "./price.scss";
+@import "./images.scss";
+
+#product-product {
+  padding-top: 55px;
+}
