@@ -74,12 +74,18 @@
   <div class="container">
     <div class="header-logo">
       <div class="row align-items-center">
-        <div class="col-sm-4">
+        <div class="col">
           <div id="logo">{% if logo %}<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>{% else %}
             <h1><a href="{{ home }}">{{ name }}</a></h1>
             {% endif %}</div>
         </div>
-        <div class="col-sm-5">{{ search }}</div>
+        <div class="col col-md-5 d-flex align-items-center search-block">
+          {{ search }}
+          <button type="button" class="d-flex d-md-none menu-toggler">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
         <div class="col-sm-3 d-md-flex justify-content-end d-none">
           <div class="header-request d-flex align-items-center">
             <img src="catalog/view/theme/default/image/icons/header-page.svg" alt="" />
@@ -89,7 +95,15 @@
       </div>
     </div>
     <div class="header-menu d-flex align-items-stretch justify-content-between">
-      {{menu}}
+      {% if menu | length > 0 %}
+        <nav class="main-menu">
+          <ul class="nav">
+            {% for item in menu %}
+              <li class="nav-item"><a href="{{ item.href }}">{{ item.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
       <div class="header-tools d-flex ms-auto align-items-center">
         <div class="header-tool header-like"><a href="{{wishlist}}"><img src="catalog/view/theme/default/image/icons/header-like.svg" alt="" /></a></div>
         {{ cart }}

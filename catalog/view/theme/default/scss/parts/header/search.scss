@@ -1,31 +1,55 @@
 #search {
-    & input {
-        height: 60px;
-        border: 1px solid $gray;
-        font-size: 16px;
-        line-height: 19px;
-        color: $main;
-        padding-left: 29px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+  position: relative;
+  & input {
+    height: 60px;
+    border: 1px solid $gray;
+    font-size: 16px;
+    line-height: 19px;
+    color: $main;
+    padding-left: 29px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 
-        &:focus {
-            outline: none;
-            box-shadow: none;
-        }
+    @include respond-to(md) {
+      opacity: 0;
     }
 
-    & button {
-        height: 60px;
-        background: $blue;
-        border: none;
-        width: 60px;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-
-        &:focus {
-            outline: none;
-            box-shadow: none;
-        }
+    &:focus {
+      outline: none;
+      box-shadow: none;
     }
+  }
+
+  & button {
+    height: 60px;
+    background: $blue;
+    border: none;
+    width: 60px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    @include respond-to(md) {
+      background: none;
+
+      & svg {
+        & path {
+          fill: $blue;
+        }
+      }
+    }
+  }
+}
+
+.search-block {
+  @include respond-to(md) {
+    margin-left: auto;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
 }

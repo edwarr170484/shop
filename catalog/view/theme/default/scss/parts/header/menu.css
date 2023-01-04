@@ -1,25 +1,19 @@
 /*
 Error: Undefined mixin 'respond-to'.
-        on line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss, in `respond-to'
-        from line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss
-        from line 1 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\product\product.scss
+        on line 2 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\header\menu.scss, in `respond-to'
+        from line 2 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\header\menu.scss
 
-4: @import "./images.scss";
-5: 
-6: #product-product {
-7:   padding-top: 55px;
-8:   padding-bottom: 315px;
-9: }
-10: 
-11: .product-options {
-12:   color: $main;
-13:   padding-left: 46px;
-14: }
+1: .header-menu {
+2:   @include respond-to(md) {
+3:     position: fixed;
+4:     top: 0;
+5:     right: -320px;
+6:     width: 100%;
+7:     max-width: 320px;
 
 Backtrace:
-C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss:9:in `respond-to'
-C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss:9
-C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\product\product.scss:1
+C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\header\menu.scss:2:in `respond-to'
+C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\header\menu.scss:2
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -36,19 +30,6 @@ C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/per
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:88:in `block in with_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:88:in `with_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
@@ -80,4 +61,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'respond-to'.\A         on line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss, in `respond-to'\A         from line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss\A         from line 1 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\product\product.scss\A \A 4: @import \"./images.scss\";\A 5: \A 6: #product-product {\A 7:   padding-top: 55px;\A 8:   padding-bottom: 315px;\A 9: }\A 10: \A 11: .product-options {\A 12:   color: $main;\A 13:   padding-left: 46px;\A 14: }"; }
+  content: "Error: Undefined mixin 'respond-to'.\A         on line 2 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\header\menu.scss, in `respond-to'\A         from line 2 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\header\menu.scss\A \A 1: .header-menu {\A 2:   @include respond-to(md) {\A 3:     position: fixed;\A 4:     top: 0;\A 5:     right: -320px;\A 6:     width: 100%;\A 7:     max-width: 320px;"; }

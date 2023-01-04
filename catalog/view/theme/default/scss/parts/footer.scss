@@ -1,122 +1,126 @@
 footer {
+  font-weight: 500;
+
+  & .footer-social {
+    background: $black;
+    padding: 49px 0 60px;
+    color: #fff;
     font-weight: 500;
+  }
 
-    & .footer-social {
-        background: $black;
-        padding: 49px 0 60px;
-        color: #fff;
-        font-weight: 500;
-    }
-
-    & .social-header {
-        font-size: 30px;
-        line-height: 36px;
-        text-transform: uppercase;
-        color: #fff;
-        margin-bottom: 36px;
-    }
+  & .social-header {
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 36px;
+  }
 }
 
 .subscribe-form {
-    position: relative;
+  position: relative;
 
-    & input {
-        width: 100%;
-        height: 79px;
-        border: 2px solid #fff;
-        padding-left: 35px;
-        padding-right: 90px;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 28px;
-        background: none;
-        color: #fff;
+  & input {
+    width: 100%;
+    height: 79px;
+    border: 2px solid #fff;
+    padding-left: 35px;
+    padding-right: 90px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    background: none;
+    color: #fff;
 
-        &:focus {
-            outline: none;
-            box-shadow: none;
-            border: 1px solid #fff;
-            background: none;
-            color: #fff;
-        }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border: 1px solid #fff;
+      background: none;
+      color: #fff;
     }
+  }
 
-    & button {
-        background: none !important;
-        border: none;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 22px;
+  & button {
+    background: none !important;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 22px;
 
-        &:focus {
-            background: none;
-            border: none;
-            box-shadow: none;
-        }
+    &:focus {
+      background: none;
+      border: none;
+      box-shadow: none;
     }
+  }
 
-    @include respond-to(md) {
-        padding-bottom: 39px;
-    }
+  @include respond-to(md) {
+    padding-bottom: 39px;
+  }
 }
 
 .footer-socials-nav {
-    gap: 36px;
-    align-items: center !important;
+  gap: 36px;
+  align-items: center !important;
 }
 
 .footer-contacts {
-    padding-top: 60px;
-    padding-bottom: 154px;
+  padding-top: 60px;
+  padding-bottom: 154px;
 }
 
 .footer-header {
-    font-size: 24px;
-    line-height: 28px;
-    text-transform: uppercase;
-    color: $main;
-    border-bottom: 1px solid $blue;
-    padding-bottom: 15px;
-    margin-bottom: 54px;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: $main;
+  border-bottom: 1px solid $blue;
+  padding-bottom: 15px;
+  margin-bottom: 54px;
 }
 
 .footer-info {
-    color: $main;
+  color: $main;
 }
 
 .footer-phones {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 40px;
-    margin-bottom: 19px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px;
+  margin-bottom: 19px;
 }
 
 .footer-email,
 .footer-open {
-    font-size: 20px;
-    line-height: 24px;
-    margin-bottom: 19px;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 19px;
 }
 
 .footer-open {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .footer-payments {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
-    gap: 35px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 35px;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .footer-payment {
-    background: #FFFFFF;
-    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
-    border-radius: 5px;
-    width: 115px;
-    height: 73px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  width: 115px;
+  height: 73px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

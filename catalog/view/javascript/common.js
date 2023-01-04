@@ -89,14 +89,21 @@ function inputDown(button) {
 
 function inputUp(button) {
   let currentValue = parseInt(button.parent().find("input").val());
-  button.parent().find("input").val(currentValue + 1);
+  button
+    .parent()
+    .find("input")
+    .val(currentValue + 1);
 }
 
 $(document).ready(function () {
-  $(".read-more").on('click', function () {
+  $(".read-more").on("click", function () {
     $(".more-description").slideToggle();
   });
 
+  $(".menu-toggler").on("click", function () {
+    $(".header-menu").toggleClass("opened");
+    $(this).toggleClass("opened");
+  });
   // Highlight any found errors
   $(".text-danger").each(function () {
     var element = $(this).parent().parent();
@@ -256,8 +263,8 @@ var cart = {
             .parent()
             .before(
               '<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' +
-              json["success"] +
-              ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>'
+                json["success"] +
+                ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>'
             );
 
           // Need to set timeout otherwise it wont update the total
@@ -364,7 +371,7 @@ var cart = {
 };
 
 var voucher = {
-  add: function () { },
+  add: function () {},
   remove: function (key) {
     $.ajax({
       url: "index.php?route=checkout/cart/remove",
@@ -382,8 +389,8 @@ var voucher = {
         setTimeout(function () {
           $("#cart > button").html(
             '<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' +
-            json["total"] +
-            "</span>"
+              json["total"] +
+              "</span>"
           );
         }, 100);
 
@@ -424,8 +431,8 @@ var wishlist = {
             .parent()
             .before(
               '<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' +
-              json["success"] +
-              ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>'
+                json["success"] +
+                ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>'
             );
         }
 
@@ -441,7 +448,7 @@ var wishlist = {
       },
     });
   },
-  remove: function () { },
+  remove: function () {},
 };
 
 var compare = {
@@ -459,8 +466,8 @@ var compare = {
             .parent()
             .before(
               '<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' +
-              json["success"] +
-              ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>'
+                json["success"] +
+                ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>'
             );
 
           $("#compare-total").html(json["total"]);
@@ -475,7 +482,7 @@ var compare = {
       },
     });
   },
-  remove: function () { },
+  remove: function () {},
 };
 
 /* Agree to Terms */

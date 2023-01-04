@@ -243,8 +243,12 @@ class ControllerProductProduct extends Controller {
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 
 			$more = preg_match('/###more_start###(.*?)###more_end###/s', $data['description'], $match);
-			$data['description'] = preg_replace('/###more_start###.*?###more_end###/s', '', $data['description']);
-			$data['description'] .= '<div class="more-description">' . $match[1] . '</div>' . '<button type="button" class="read-more">Подробнее</button>';
+			
+			if(isset($match[1])){
+				$data['description'] = preg_replace('/###more_start###.*?###more_end###/s', '', $data['description']);
+				$data['description'] .= '<div class="more-description">' . $match[1] . '</div>' . '<button type="button" class="read-more">Подробнее</button>';
+			}
+			
 
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = '<div class="stock-nothing">' . $product_info['stock_status'] . '</div>';

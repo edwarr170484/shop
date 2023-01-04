@@ -79,7 +79,37 @@ class ControllerCommonHeader extends Controller {
 		$data['currency'] = $this->load->controller('common/currency');
 		$data['search'] = $this->load->controller('common/search');
 		$data['cart'] = $this->load->controller('common/cart');
-		$data['menu'] = $this->load->controller('common/menu');
+
+		//main menu
+		$data['menu'] = [];
+
+		array_push($data['menu'], [
+			'name'     => 'Главная',
+			'href'     => $this->url->link('common/home')
+		]);
+
+		array_push($data['menu'], [
+			'name'     => 'Каталог',
+			'href'     => $this->url->link('product/category')
+		]);
+
+		array_push($data['menu'], [
+			'name'     => 'Блог',
+			'href'     => $this->url->link('extension/d_blog_module/category', 'category_id=1', 'SSL')
+		]);
+
+		$this->load->model('catalog/information');
+
+		$data['informations'] = array();
+
+		foreach ($this->model_catalog_information->getInformations() as $result) {
+			if ($result['bottom']) {
+				$data['menu'][] = array(
+					'name' => $result['title'],
+					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+				);
+			}
+		}
 
 		return $this->load->view('common/header', $data);
 	}

@@ -3,7 +3,7 @@
     <div class="h2"><span>{{text_reviews}}</span></div>
     <div id="reviews">
         {% for review in reviews %}
-            {% include template('extension/d_blog_module/review_thumb') with review %}
+            {% include '/default/template/extension/d_blog_module/review_thumb.twig' with review %}
         {% endfor %}
         <div class="row bm-pagination">
             <div class="col-sm-6 text-left">{{pagination}}</div>
@@ -33,7 +33,7 @@
             {% if setting.post.rating_display %}
             <div class="col-sm-4 required input-rating" id="input_rating">
                 <label class="control-label">{{entry_rating}}</label>
-                {% include template('partial/d_rating') with ({rating:review.rating,static_rating:false})%}
+                {% include '/default/template/partial/d_rating' with {rating:review.rating,static_rating:false}%}
             </div>
             {% endif %}
             <div class="col-sm-4 required hidden" id="input_cancel_reply">

@@ -3,9 +3,9 @@
     {{custom_style}}
 </style>
 
-{% include template('partial/d_breadcrumb') %}
+{% include '/default/template/partial/d_breadcrumb.twig' %}
 
-    {% include template('partial/d_layout_open') %}
+    {% include '/default/template/partial/d_layout_open.twig' %}
 
         <article class="bm">
             <div class="heading bm-post-info clearfix">
@@ -21,7 +21,7 @@
                 <span class="title-divider"></span>
                 <div class="title-information">
                     {% if setting.post.rating_display %}
-                         {% include template('partial/d_rating') with ({rating:rating,static_rating:true})%}
+                         {% include '/default/template/partial/d_rating' with {rating:rating,static_rating:true}%}
                     {% endif %}
                     <div class="details">
                         {% if setting.post.author_display %}
@@ -113,8 +113,6 @@
                     </div>
                 </div>
                 {% endif %}
-
-
                 {% if setting.post.author_display %}
                 <div class="bm-author">
                     <div class="author-image">
@@ -143,5 +141,5 @@
             });
         })
         </script>
-    {% include template('partial/d_layout_close') %}
+    {% include '/default/template/partial/d_layout_close.twig' %}
 {{footer}}

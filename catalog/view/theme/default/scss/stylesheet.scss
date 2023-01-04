@@ -16,6 +16,7 @@
 @import "./parts/modules/banner.scss";
 @import "./parts/modules/featured.scss";
 @import "./parts/modules/html.scss";
+@import "./parts/modules/swiper.scss";
 
 @import "./parts/homepage.scss";
 
@@ -95,4 +96,16 @@ span.hidden-lg {
 
 .no-border {
   border: none;
+}
+
+@media (max-width: 1399.98px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 100%;
+    width: 100%;
+  }
 }

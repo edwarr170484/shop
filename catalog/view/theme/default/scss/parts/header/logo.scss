@@ -1,3 +1,17 @@
 #logo {
-    margin: 0 0 10px 0;
+  margin: 0 0 10px 0;
+
+  @include respond-to(md) {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 380px) {
+  #logo {
+    margin-right: 0;
+
+    & img {
+      max-width: 203px;
+    }
+  }
 }

@@ -1,56 +1,56 @@
-@import './cart.scss';
-@import './search.scss';
-@import './menu.scss';
-@import './logo.scss';
+@import "./cart.scss";
+@import "./search.scss";
+@import "./menu.scss";
+@import "./logo.scss";
 
 #top {
-    background-color: $light-blue;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 20px 0 22px;
+  background-color: $light-blue;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 20px 0 22px;
 
-    @include respond-to(md) {
-        display: none;
-    }
+  @include respond-to(md) {
+    display: none;
+  }
 }
 
 header {
-    font-weight: 500;
-    box-shadow: 0px 9px 15px rgba(0, 168, 222, 0.05);
+  font-weight: 500;
+  box-shadow: 0px 9px 15px rgba(0, 168, 222, 0.05);
 }
 
 .header-contact-icon {
-    margin-right: 13px;
+  margin-right: 13px;
 }
 
 .header-request {
-    & a {
-        text-transform: uppercase;
-        text-decoration: none;
-        border-bottom: 1px dashed $blue;
-        font-size: 16px;
-        line-height: 19px;
-        color: $main;
-    }
+  & a {
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px dashed $blue;
+    font-size: 16px;
+    line-height: 19px;
+    color: $main;
+  }
 
-    & img {
-        margin-right: 21px;
-    }
+  & img {
+    margin-right: 21px;
+  }
 }
 
 .header-logo {
-    padding-top: 31px;
-    padding-bottom: 35px;
-    border-bottom: 1px solid $gray;
+  padding-top: 31px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid $gray;
 }
 
 .header-tool {
-    margin-left: 26px;
-    height: 100%;
-    padding-top: 28px;
+  margin-left: 26px;
+  height: 100%;
+  padding-top: 28px;
 
-    &.header-cart {
-        padding-top: 24px;
-    }
+  &.header-cart {
+    padding-top: 24px;
+  }
 }

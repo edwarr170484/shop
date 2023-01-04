@@ -1,23 +1,105 @@
+.header-menu {
+  @include respond-to(md) {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 100%;
+    max-width: 320px;
+    height: 100%;
+    background: $blue;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.2s linear;
+
+    &.opened {
+      right: 0;
+    }
+
+    & .main-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      & .nav {
+        flex-direction: column;
+        justify-content: center;
+      }
+      & .nav-item {
+        margin-right: 0;
+        & a {
+          color: #fff;
+          padding: 0;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
 .main-menu {
+  flex-grow: 1;
+  display: flex;
+
+  & .nav {
     flex-grow: 1;
     display: flex;
+    justify-content: flex-start;
+  }
 
+  & .nav-item {
+    margin-right: 61px;
+    & a {
+      font-size: 16px;
+      line-height: 19px;
+      color: $main;
+      text-decoration: none;
+      padding-top: 31px;
+      padding-bottom: 22px;
+      display: block;
+    }
+  }
+}
 
-    & .nav {
-        flex-grow: 1;
-        display: flex;
-        justify-content: space-between;
+.menu-toggler {
+  background: $blue;
+  border: none;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 13px;
+  z-index: 9999;
+  transition: all 0.2s linear;
+
+  & span {
+    display: block;
+    background: #fff;
+    width: 35px;
+    height: 4px;
+    transition: all 0.2s linear;
+  }
+
+  & span:last-child {
+    width: 25px;
+    margin-top: 10px;
+  }
+
+  &.opened {
+    & span:last-child {
+      width: 35px;
+      margin-top: -2px;
+      transform: rotate(-45deg);
+      transform-origin: 50% 50%;
     }
 
-    & .nav-item {
-        & a {
-            font-size: 16px;
-            line-height: 19px;
-            color: $main;
-            text-decoration: none;
-            padding-top: 31px;
-            padding-bottom: 22px;
-            display: block;
-        }
+    & span {
+      height: 2px;
+      transform: rotate(45deg);
+      transform-origin: 50% 50%;
     }
+  }
 }
