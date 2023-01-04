@@ -19,6 +19,7 @@
 @import "./parts/modules/swiper.scss";
 
 @import "./parts/homepage.scss";
+@import "./parts/information.scss";
 
 body {
   font-family: "Gilroy", sans-serif;
@@ -99,6 +100,7 @@ span.hidden-lg {
 }
 
 @media (max-width: 1399.98px) {
+
   .container,
   .container-lg,
   .container-md,

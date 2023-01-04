@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Янв 02 2023 г., 22:28
+-- Время создания: Янв 04 2023 г., 23:03
 -- Версия сервера: 10.4.24-MariaDB
 -- Версия PHP: 7.4.28
 
@@ -1504,7 +1504,7 @@ INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbo
 (1, 'Pound Sterling', 'GBP', '£', '', '2', 0.61250001, 1, '2014-09-25 14:40:00'),
 (2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2017-11-11 12:34:47'),
 (3, 'Euro', 'EUR', '', '€', '2', 0.78460002, 1, '2014-09-25 14:40:00'),
-(4, 'Рубль', 'RUB', '', 'руб.', '2', 1.00000000, 1, '2022-12-30 06:39:45');
+(4, 'Рубль', 'RUB', '', 'руб.', '2', 1.00000000, 1, '2023-01-03 19:48:09');
 
 -- --------------------------------------------------------
 
@@ -3961,7 +3961,7 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (28, 'Home Page', 'featured', '{\"name\":\"Home Page\",\"product_name\":\"\",\"product\":[\"43\",\"40\",\"42\",\"30\",\"49\",\"29\",\"46\",\"44\"],\"limit\":\"8\",\"width\":\"177\",\"height\":\"189\",\"status\":\"1\"}'),
 (27, 'Home Page', 'slideshow', '{\"name\":\"Home Page\",\"banner_id\":\"7\",\"width\":\"1140\",\"height\":\"380\",\"status\":\"1\"}'),
 (31, 'Main page banner', 'banner', '{\"name\":\"Main page banner\",\"banner_id\":\"6\",\"width\":\"996\",\"height\":\"400\",\"status\":\"1\"}'),
-(32, 'Homepage text', 'html', '{\"name\":\"Homepage text\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;p&gt;\\u041e\\u041e\\u041e \\u00ab\\u0417\\u0438\\u043f\\u0442\\u0440\\u0435\\u0439\\u0434\\u00bb - \\u043f\\u0435\\u0440\\u0432\\u044b\\u0439 \\u043f\\u043e\\u0441\\u0442\\u0430\\u0432\\u0449\\u0438\\u043a \\u0438 \\u0438\\u043c\\u043f\\u043e\\u0440\\u0442\\u0435\\u0440 \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u044b \\u043d\\u0430 \\u0442\\u0435\\u0440\\u0440\\u0438\\u0442\\u043e\\u0440\\u0438\\u0438 \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438 \\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u044c. \\u041d\\u0430 \\u043d\\u0430\\u0448\\u0435\\u043c \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u043c \\u0441\\u0430\\u0439\\u0442\\u0435 \\u043f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d \\u043a\\u0430\\u0442\\u0430\\u043b\\u043e\\u0433 \\u0441\\u043e \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u043e\\u0439, \\u0442\\u043a\\u0430\\u043d\\u044f\\u043c\\u0438 \\u0438 \\u0442\\u0440\\u0438\\u043a\\u043e\\u0442\\u0430\\u0436\\u0435\\u043c. \\u041d\\u0430\\u0448\\u0430 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u044f \\u0437\\u0430\\u0431\\u043e\\u0442\\u0438\\u0442\\u0441\\u044f \\u043e \\u0440\\u0435\\u043f\\u0443\\u0442\\u0430\\u0446\\u0438\\u0438 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432, \\u043f\\u043e\\u044d\\u0442\\u043e\\u043c\\u0443 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044f \\u0438\\u043c\\u0435\\u0435\\u0442 \\u0441\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430, \\u0432\\u044b\\u0434\\u0435\\u0440\\u0436\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a \\u044d\\u043a\\u0441\\u043f\\u043b\\u0443\\u0430\\u0442\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0437\\u0434\\u0435\\u043b\\u0438\\u044f, \\u043d\\u0435 \\u043b\\u043e\\u043c\\u0430\\u0435\\u0442\\u0441\\u044f \\u0438 \\u043d\\u0435 \\u00ab\\u043f\\u043e\\u0434\\u0432\\u043e\\u0434\\u0438\\u0442\\u00bb \\u0431\\u0440\\u0435\\u043d\\u0434.&lt;\\/p&gt;\"}},\"status\":\"1\"}'),
+(32, 'Homepage text', 'html', '{\"name\":\"Homepage text\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;homepage-about&quot;&gt;\\r\\n&lt;p&gt;\\u041e\\u041e\\u041e \\u00ab\\u0417\\u0438\\u043f\\u0442\\u0440\\u0435\\u0439\\u0434\\u00bb - \\u043f\\u0435\\u0440\\u0432\\u044b\\u0439 \\u043f\\u043e\\u0441\\u0442\\u0430\\u0432\\u0449\\u0438\\u043a \\u0438 \\u0438\\u043c\\u043f\\u043e\\u0440\\u0442\\u0435\\u0440 \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u044b \\u043d\\u0430 \\u0442\\u0435\\u0440\\u0440\\u0438\\u0442\\u043e\\u0440\\u0438\\u0438 \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438 \\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u044c. \\u041d\\u0430 \\u043d\\u0430\\u0448\\u0435\\u043c \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u043c \\u0441\\u0430\\u0439\\u0442\\u0435 \\u043f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d \\u043a\\u0430\\u0442\\u0430\\u043b\\u043e\\u0433 \\u0441\\u043e \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u043e\\u0439, \\u0442\\u043a\\u0430\\u043d\\u044f\\u043c\\u0438 \\u0438 \\u0442\\u0440\\u0438\\u043a\\u043e\\u0442\\u0430\\u0436\\u0435\\u043c. \\u041d\\u0430\\u0448\\u0430 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u044f \\u0437\\u0430\\u0431\\u043e\\u0442\\u0438\\u0442\\u0441\\u044f \\u043e \\u0440\\u0435\\u043f\\u0443\\u0442\\u0430\\u0446\\u0438\\u0438 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432, \\u043f\\u043e\\u044d\\u0442\\u043e\\u043c\\u0443 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044f \\u0438\\u043c\\u0435\\u0435\\u0442 \\u0441\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430, \\u0432\\u044b\\u0434\\u0435\\u0440\\u0436\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a \\u044d\\u043a\\u0441\\u043f\\u043b\\u0443\\u0430\\u0442\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0437\\u0434\\u0435\\u043b\\u0438\\u044f, \\u043d\\u0435 \\u043b\\u043e\\u043c\\u0430\\u0435\\u0442\\u0441\\u044f \\u0438 \\u043d\\u0435 \\u00ab\\u043f\\u043e\\u0434\\u0432\\u043e\\u0434\\u0438\\u0442\\u00bb \\u0431\\u0440\\u0435\\u043d\\u0434.&lt;\\/p&gt;&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
 (33, 'Homepage why', 'html', '{\"name\":\"Homepage why\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;col-12&quot;&gt;\\r\\n        &lt;div class=&quot;homepage-why d-flex align-items-center justify-content-between&quot;&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/call.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u041f\\u0420\\u0418\\u0415\\u041c \\u0417\\u0412\\u041e\\u041d\\u041a\\u041e\\u0412&lt;br&gt;8.30 : 17.00&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/delivery.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0411\\u0415\\u0421\\u041f\\u041b\\u0410\\u0422\\u041d\\u0410\\u042f \\u0414\\u041e\\u0421\\u0422\\u0410\\u0412\\u041a\\u0410&lt;br&gt;\\u041f\\u041e \\u0420\\u0411 - \\u041e\\u0422 300 BYN,&lt;br&gt;\\u041f\\u041e \\u0412\\u0418\\u0422\\u0415\\u0411\\u0421\\u041a\\u0423 - \\u041e\\u0422 150 BYN&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/guarantee.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0413\\u0410\\u0420\\u0410\\u041d\\u0422\\u0418\\u042f \\u041a\\u0410\\u0427\\u0415\\u0421\\u0422\\u0412\\u0410&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/return.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0412\\u041e\\u0417\\u0412\\u0420\\u0410\\u0422 \\u041f\\u0420\\u0418&lt;br&gt;\\u041d\\u0415\\u0421\\u041e\\u041e\\u0422\\u0412\\u0415\\u0422\\u0421\\u0422\\u0412\\u0418\\u0418&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n        &lt;\\/div&gt;\\r\\n      &lt;\\/div&gt;\"}},\"status\":\"1\"}');
 
 -- --------------------------------------------------------
@@ -3981,7 +3981,7 @@ CREATE TABLE `oc_option` (
 --
 
 INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
-(1, 'radio', 1),
+(1, 'radio', 5),
 (2, 'checkbox', 2),
 (4, 'text', 3),
 (5, 'select', 4),
@@ -4010,24 +4010,22 @@ CREATE TABLE `oc_option_description` (
 --
 
 INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
-(1, 1, 'Radio'),
 (2, 1, 'Checkbox'),
 (4, 1, 'Text'),
 (6, 1, 'Textarea'),
 (8, 1, 'Date'),
 (7, 1, 'File'),
-(5, 1, 'Select'),
 (9, 1, 'Time'),
 (10, 1, 'Date &amp; Time'),
 (12, 1, 'Delivery Date'),
 (11, 1, 'Size'),
-(1, 2, 'Radio'),
+(1, 2, 'Цвет'),
 (2, 2, 'Checkbox'),
 (4, 2, 'Text'),
 (6, 2, 'Textarea'),
 (8, 2, 'Date'),
 (7, 2, 'File'),
-(5, 2, 'Select'),
+(5, 2, 'Размер'),
 (9, 2, 'Time'),
 (10, 2, 'Date &amp; Time'),
 (12, 2, 'Delivery Date'),
@@ -4052,14 +4050,14 @@ CREATE TABLE `oc_option_value` (
 
 INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
 (43, 1, '', 3),
-(32, 1, '', 1),
+(31, 1, '', 2),
 (45, 2, '', 4),
 (44, 2, '', 3),
 (42, 5, '', 4),
 (41, 5, '', 3),
-(39, 5, '', 1),
 (40, 5, '', 2),
-(31, 1, '', 2),
+(39, 5, '', 1),
+(32, 1, '', 1),
 (23, 2, '', 1),
 (24, 2, '', 2),
 (46, 11, '', 1),
@@ -4084,34 +4082,27 @@ CREATE TABLE `oc_option_value_description` (
 --
 
 INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
-(43, 1, 1, 'Large'),
-(32, 1, 1, 'Small'),
 (45, 1, 2, 'Checkbox 4'),
 (44, 1, 2, 'Checkbox 3'),
-(31, 1, 1, 'Medium'),
-(42, 1, 5, 'Yellow'),
-(41, 1, 5, 'Green'),
-(39, 1, 5, 'Red'),
-(40, 1, 5, 'Blue'),
+(43, 2, 1, 'Черный:#121212'),
+(42, 2, 5, '7мм'),
 (23, 1, 2, 'Checkbox 1'),
 (24, 1, 2, 'Checkbox 2'),
 (48, 1, 11, 'Large'),
 (47, 1, 11, 'Medium'),
 (46, 1, 11, 'Small'),
-(43, 2, 1, 'Large'),
-(32, 2, 1, 'Small'),
 (45, 2, 2, 'Checkbox 4'),
 (44, 2, 2, 'Checkbox 3'),
-(31, 2, 1, 'Medium'),
-(42, 2, 5, 'Yellow'),
-(41, 2, 5, 'Green'),
-(39, 2, 5, 'Red'),
-(40, 2, 5, 'Blue'),
+(32, 2, 1, 'Серый:#EFEFEF'),
+(41, 2, 5, '8мм'),
+(40, 2, 5, '9мм'),
+(39, 2, 5, '10мм'),
 (23, 2, 2, 'Checkbox 1'),
 (24, 2, 2, 'Checkbox 2'),
 (48, 2, 11, 'Large'),
 (47, 2, 11, 'Medium'),
-(46, 2, 11, 'Small');
+(46, 2, 11, 'Small'),
+(31, 2, 1, 'Коричневый:#BA9988');
 
 -- --------------------------------------------------------
 
@@ -4216,7 +4207,8 @@ INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, 
 (26, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:03:11', '2022-12-30 10:03:11'),
 (27, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:03:53', '2022-12-30 10:03:53'),
 (28, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:15:00', '2022-12-30 10:15:00'),
-(29, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:17:53', '2022-12-30 10:17:53');
+(29, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:17:53', '2022-12-30 10:17:53'),
+(30, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '810.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-04 02:09:42', '2023-01-04 02:09:42');
 
 -- --------------------------------------------------------
 
@@ -4249,6 +4241,14 @@ CREATE TABLE `oc_order_option` (
   `value` text NOT NULL,
   `type` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `oc_order_option`
+--
+
+INSERT INTO `oc_order_option` (`order_option_id`, `order_id`, `order_product_id`, `product_option_id`, `product_option_value_id`, `name`, `value`, `type`) VALUES
+(1, 30, 30, 217, 4, 'Размер', '10мм', 'select'),
+(2, 30, 30, 227, 17, 'Цвет', 'Коричневый:#BA9988', 'radio');
 
 -- --------------------------------------------------------
 
@@ -4302,7 +4302,8 @@ INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `n
 (26, 26, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600),
 (27, 27, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600),
 (28, 28, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600),
-(29, 29, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600);
+(29, 29, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600),
+(30, 30, 42, 'Apple Cinema 30&quot;', 'Product 15', 9, '90.0000', '810.0000', '20.0000', 900);
 
 -- --------------------------------------------------------
 
@@ -4543,7 +4544,9 @@ INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `va
 (113, 29, 'sub_total', 'Сумма', '500.0000', 1),
 (114, 29, 'tax', 'Eco Tax (-2.00)', '2.0000', 5),
 (115, 29, 'tax', 'VAT (20%)', '100.0000', 5),
-(116, 29, 'total', 'Итого', '602.0000', 9);
+(116, 29, 'total', 'Итого', '602.0000', 9),
+(117, 30, 'sub_total', 'Сумма', '810.0000', 1),
+(118, 30, 'total', 'Итого', '810.0000', 9);
 
 -- --------------------------------------------------------
 
@@ -4613,7 +4616,7 @@ CREATE TABLE `oc_product` (
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
 (28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
 (29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/palm_treo_pro_1.jpg', 6, 1, '279.9900', 0, 9, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2011-09-30 01:06:08'),
-(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 3, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
+(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 5, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
 (31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2011-09-30 01:06:00'),
 (32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2011-09-30 01:07:22'),
 (33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2011-09-30 01:06:29'),
@@ -4621,8 +4624,8 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2011-09-30 01:06:17'),
 (36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
 (40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 5, '2009-02-03 21:07:37', '2011-09-30 00:46:19'),
+(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 2, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
+(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 152, '2009-02-03 21:07:37', '2023-01-04 00:21:33'),
 (43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 1, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 1, '2009-02-03 21:07:49', '2022-12-30 10:14:53'),
 (44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
 (45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/macbook_pro_1.jpg', 8, 1, '2000.0000', 0, 100, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2011-09-15 22:22:01'),
@@ -4651,7 +4654,6 @@ CREATE TABLE `oc_product_attribute` (
 INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
 (47, 4, 1, '16GB'),
 (43, 4, 2, '8gb'),
-(42, 3, 1, '100mhz'),
 (47, 2, 1, '4'),
 (47, 4, 2, '16GB'),
 (43, 2, 2, '1'),
@@ -4696,7 +4698,6 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (34, 1, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Shuffle', '', ''),
 (31, 1, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
 (49, 1, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
-(42, 1, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br&gt;\r\n	&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n&lt;h3&gt;\r\n	Features:&lt;/h3&gt;\r\n&lt;p&gt;\r\n	Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;\r\n	Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Display Power,&lt;/li&gt;\r\n	&lt;li&gt;\r\n		System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Brightness&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br&gt;\r\n	Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;\r\n		USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;\r\n		DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br&gt;\r\n	Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55024&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MPR II&lt;/li&gt;\r\n	&lt;li&gt;\r\n		IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		UL 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;\r\n		TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Size and weight&lt;/b&gt;&lt;br&gt;\r\n	30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Apple Cinema 30', '', ''),
 (30, 1, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', ''),
 (35, 2, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'Product 8', '', ''),
 (48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'iPod Classic', '', ''),
@@ -4714,9 +4715,8 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (34, 2, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Shuffle', '', ''),
 (43, 2, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'MacBook', '', ''),
 (31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
-(49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', '');
-INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br&gt;\r\n	&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n&lt;h3&gt;\r\n	Features:&lt;/h3&gt;\r\n&lt;p&gt;\r\n	Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;\r\n	Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Display Power,&lt;/li&gt;\r\n	&lt;li&gt;\r\n		System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Brightness&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br&gt;\r\n	Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;\r\n		USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;\r\n		DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br&gt;\r\n	Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55024&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MPR II&lt;/li&gt;\r\n	&lt;li&gt;\r\n		IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		UL 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;\r\n		TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Size and weight&lt;/b&gt;&lt;br&gt;\r\n	30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Apple Cinema 30', '', ''),
+(49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
+(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve.&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;###more_start###&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;###more_end###&lt;/span&gt;&lt;/p&gt;', '', 'Apple Cinema 30', '', ''),
 (30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', '');
 
 -- --------------------------------------------------------
@@ -4741,9 +4741,9 @@ CREATE TABLE `oc_product_discount` (
 --
 
 INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(440, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
-(439, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
-(438, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
+(479, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
+(478, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
+(477, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -4830,11 +4830,11 @@ INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort
 (2324, 49, 'catalog/demo/samsung_tab_4.jpg', 0),
 (2323, 49, 'catalog/demo/samsung_tab_3.jpg', 0),
 (2322, 49, 'catalog/demo/samsung_tab_2.jpg', 0),
-(2317, 42, 'catalog/demo/canon_logo.jpg', 0),
-(2316, 42, 'catalog/demo/hp_1.jpg', 0),
-(2315, 42, 'catalog/demo/compaq_presario.jpg', 0),
-(2314, 42, 'catalog/demo/canon_eos_5d_1.jpg', 0),
-(2313, 42, 'catalog/demo/canon_eos_5d_2.jpg', 0);
+(2420, 42, 'catalog/demo/canon_eos_5d_1.jpg', 0),
+(2419, 42, 'catalog/demo/compaq_presario.jpg', 0),
+(2418, 42, 'catalog/demo/hp_1.jpg', 0),
+(2417, 42, 'catalog/demo/canon_logo.jpg', 0),
+(2416, 42, 'catalog/demo/canon_eos_5d_2.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -4857,15 +4857,8 @@ CREATE TABLE `oc_product_option` (
 INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
 (224, 35, 11, '', 1),
 (225, 47, 12, '2011-04-22', 1),
-(223, 42, 2, '', 1),
 (217, 42, 5, '', 1),
-(209, 42, 6, '', 1),
-(218, 42, 1, '', 1),
-(208, 42, 4, 'test', 1),
-(219, 42, 8, '2011-02-20', 1),
-(222, 42, 7, '', 1),
-(221, 42, 9, '22:25', 1),
-(220, 42, 10, '2011-02-20 22:25', 1),
+(227, 42, 1, '', 1),
 (226, 30, 5, '', 1);
 
 -- --------------------------------------------------------
@@ -4895,17 +4888,12 @@ CREATE TABLE `oc_product_option_value` (
 --
 
 INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(1, 217, 42, 5, 41, 100, 0, '1.0000', '+', 0, '+', '1.00000000', '+'),
-(6, 218, 42, 1, 31, 146, 1, '20.0000', '+', 2, '-', '20.00000000', '+'),
-(7, 218, 42, 1, 43, 300, 1, '30.0000', '+', 3, '+', '30.00000000', '+'),
-(5, 218, 42, 1, 32, 96, 1, '10.0000', '+', 1, '+', '10.00000000', '+'),
-(4, 217, 42, 5, 39, 92, 1, '4.0000', '+', 0, '+', '4.00000000', '+'),
-(2, 217, 42, 5, 42, 200, 1, '2.0000', '+', 0, '+', '2.00000000', '+'),
-(3, 217, 42, 5, 40, 300, 0, '3.0000', '+', 0, '+', '3.00000000', '+'),
-(8, 223, 42, 2, 23, 48, 1, '10.0000', '+', 0, '+', '10.00000000', '+'),
-(10, 223, 42, 2, 44, 2696, 1, '30.0000', '+', 0, '+', '30.00000000', '+'),
-(9, 223, 42, 2, 24, 194, 1, '20.0000', '+', 0, '+', '20.00000000', '+'),
-(11, 223, 42, 2, 45, 3998, 1, '40.0000', '+', 0, '+', '40.00000000', '+'),
+(1, 217, 42, 5, 41, 100, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(3, 217, 42, 5, 40, 300, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(4, 217, 42, 5, 39, 92, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(19, 227, 42, 1, 43, 30, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(17, 227, 42, 1, 31, 10, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(18, 227, 42, 1, 32, 10, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
 (12, 224, 35, 11, 46, 0, 1, '5.0000', '+', 0, '+', '0.00000000', '+'),
 (13, 224, 35, 11, 47, 10, 1, '10.0000', '+', 0, '+', '0.00000000', '+'),
 (14, 224, 35, 11, 48, 15, 1, '15.0000', '+', 0, '+', '0.00000000', '+'),
@@ -4963,7 +4951,7 @@ CREATE TABLE `oc_product_reward` (
 --
 
 INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-(515, 42, 1, 100),
+(559, 42, 1, 100),
 (519, 47, 1, 300),
 (379, 28, 1, 400),
 (546, 43, 1, 600),
@@ -5004,7 +4992,7 @@ CREATE TABLE `oc_product_special` (
 --
 
 INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(419, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
+(452, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
 (439, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00'),
 (438, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00');
 
@@ -5083,7 +5071,8 @@ CREATE TABLE `oc_product_to_layout` (
 --
 
 INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
-(43, 0, 0);
+(43, 0, 0),
+(42, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5316,7 +5305,6 @@ INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `key
 (835, 0, 1, 'category_id=27', 'mac'),
 (730, 0, 1, 'manufacturer_id=8', 'apple'),
 (772, 0, 1, 'information_id=4', 'about_us'),
-(768, 0, 1, 'product_id=42', 'test'),
 (789, 0, 1, 'category_id=34', 'mp3-players'),
 (781, 0, 1, 'category_id=36', 'test2'),
 (774, 0, 1, 'category_id=18', 'laptop-notebook'),
@@ -5395,10 +5383,12 @@ CREATE TABLE `oc_session` (
 
 INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
 ('124bbaf4308340eae056d7c98d', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"hn8jEpIfYm7X1KQamSDceRsBNimFbZ4M\",\"order_id\":29,\"install\":\"7Q9EKCLvqx\"}', '2022-12-30 12:13:31'),
+('15c3041a22b5239254f1e4fb71', 'false', '2023-01-03 19:29:28'),
 ('385ecb06cdec9a1d2236ecdce7', '{\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2022-12-31 07:10:09'),
 ('69943b7094cfa6d4f4ee35614c', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_token\":\"4pBR2ySOlkrpOjhoVdjkDp7zqBHRueHF\"}', '2017-11-11 13:05:28'),
-('6d3c2edeb8a118a573c78e92cc', '{\"user_id\":\"1\",\"user_token\":\"6S2kOv7lkaMB58iBTBFgN8ZOj1768IUD\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-02 21:43:18'),
+('6d3c2edeb8a118a573c78e92cc', '{\"user_id\":\"1\",\"user_token\":\"6S2kOv7lkaMB58iBTBFgN8ZOj1768IUD\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-02 22:14:03'),
 ('957809fc785582986f796c2a83', '{\"language\":\"en-gb\",\"currency\":\"RUB\"}', '2017-11-11 13:05:32'),
+('a1957d8182091811895c0c779e', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"Zc6ufX4E4phbFOfgzZ1nBovP8vzVEBgr\",\"order_id\":30,\"wishlist\":[\"42\"],\"d_blog_module_debug\":0}', '2023-01-04 22:25:58'),
 ('b4b660c755cbb2ba12d82d10cb', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"DyQSrax7NBtZ8clkMxnLGj8Jprb8DucW\",\"install\":\"ozo9DxDMRk\",\"d_blog_module_debug\":0}', '2022-12-28 22:38:34'),
 ('ee08efaca42eca15fca1967709', '{\"user_id\":\"1\",\"user_token\":\"IW21IJLOGVjI7pVmbmBNtAgiHmZxy6BL\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2022-12-19 21:31:25'),
 ('fb6c3ed0d9d63f6a2bb94038c3', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"b9PrSa64HNYo7yYq2zTheZ7O469xM1Jv\"}', '2017-11-11 12:59:21');
@@ -5425,11 +5415,11 @@ CREATE TABLE `oc_setting` (
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
 (4, 0, 'voucher', 'total_voucher_sort_order', '8', 0),
 (5, 0, 'voucher', 'total_voucher_status', '1', 0),
-(1620, 0, 'config', 'config_compression', '0', 0),
-(1621, 0, 'config', 'config_secure', '0', 0),
-(1622, 0, 'config', 'config_password', '1', 0),
-(1623, 0, 'config', 'config_shared', '0', 0),
-(1624, 0, 'config', 'config_encryption', 'hEiLgPirTWBJuHnkPL3oCVaJ8nfA5TwV8dL6c1smbJXQpFZbvyCRbgkskSe7S4Ks6Skwu8xYZMJHiGBcsihkm730JXHn8pfaqBOTHAqUrR65k1DqMxhIj4a51SA2KM3mVEuX74RbkSvYSA40HHeS42oO753iF4L3kf1BFif5IFU7jg1cmNOS37QCJSq7u0eByOpC3bwMGlQeq2ef8RLDcnlY1R2eHeOfutDDn7KdM1llwfMbckbg6vc8U33H6obiD7lgIjbMDqYD0iJOLzhqrQZqqQeRdaGbg7lAf3HJGSvNKduCNW5o3DXKDNfn9t87jEgmBkQTvyLxwbxcDPVo6bRJcyxIoBkzmPozKVR3ForzpwEmW0AjAYvw0vKb89hEkNQtBpObcqM4KaHRe2O9U0BAWXRxX9DgUpwUpjA2n3c0YnDy2fWyNo8ek49fgix5sza2bpQxbT6YazpJ3KuEytf2TOXn37vBRUWesKGrV71oW2nfeHZSjwwxuDW77IuaV2c2ivkqFFRchx5xyGFJOePDMlDUEo1hWxx6vjojhMoPWaYMU4Knd1LB1y5f96vt4WbWsIfO04J2BZeG2AYqmd5czHyp2VLyIsWXe17ohwamkTGG8L03Tabg9YFZr40X56uw4oJDw5lJ0HErznoyctps5jxREjPbV9fG52BLcPdp7yljByp3wzHoy8hPq0EXpN8ckBP6ncuJP9dXAViEfCJjjPjnfffIdQfKgyMJTSFGz9DBSTqRTlmhYw07p3LZ8iHhIjdqHtGCMu9PeqgpjjageuM5h4jHOdV5i8gKvrEfRO1r87JRK7Y8mNYmRrpAHhfgF525D5MafWZ0gDjHMNQBlrvCDGOSaN4qnlQBxq1uDwOEWzDRexVVnWVklRpxeDhP6Qq8zhTVsNYdD8Dw3snql1tntJ6WcmxkJivpHHP8HJGtqHSvIlSC0hWd2zymV7aAUlT0vMYoCek2rIeRU2TOq4i9zgjrhfwE58C7Ds8EgOcVpBm2hzsBjN8td4sQ', 0),
+(1714, 0, 'config', 'config_compression', '0', 0),
+(1715, 0, 'config', 'config_secure', '0', 0),
+(1716, 0, 'config', 'config_password', '1', 0),
+(1717, 0, 'config', 'config_shared', '0', 0),
+(1718, 0, 'config', 'config_encryption', 'hEiLgPirTWBJuHnkPL3oCVaJ8nfA5TwV8dL6c1smbJXQpFZbvyCRbgkskSe7S4Ks6Skwu8xYZMJHiGBcsihkm730JXHn8pfaqBOTHAqUrR65k1DqMxhIj4a51SA2KM3mVEuX74RbkSvYSA40HHeS42oO753iF4L3kf1BFif5IFU7jg1cmNOS37QCJSq7u0eByOpC3bwMGlQeq2ef8RLDcnlY1R2eHeOfutDDn7KdM1llwfMbckbg6vc8U33H6obiD7lgIjbMDqYD0iJOLzhqrQZqqQeRdaGbg7lAf3HJGSvNKduCNW5o3DXKDNfn9t87jEgmBkQTvyLxwbxcDPVo6bRJcyxIoBkzmPozKVR3ForzpwEmW0AjAYvw0vKb89hEkNQtBpObcqM4KaHRe2O9U0BAWXRxX9DgUpwUpjA2n3c0YnDy2fWyNo8ek49fgix5sza2bpQxbT6YazpJ3KuEytf2TOXn37vBRUWesKGrV71oW2nfeHZSjwwxuDW77IuaV2c2ivkqFFRchx5xyGFJOePDMlDUEo1hWxx6vjojhMoPWaYMU4Knd1LB1y5f96vt4WbWsIfO04J2BZeG2AYqmd5czHyp2VLyIsWXe17ohwamkTGG8L03Tabg9YFZr40X56uw4oJDw5lJ0HErznoyctps5jxREjPbV9fG52BLcPdp7yljByp3wzHoy8hPq0EXpN8ckBP6ncuJP9dXAViEfCJjjPjnfffIdQfKgyMJTSFGz9DBSTqRTlmhYw07p3LZ8iHhIjdqHtGCMu9PeqgpjjageuM5h4jHOdV5i8gKvrEfRO1r87JRK7Y8mNYmRrpAHhfgF525D5MafWZ0gDjHMNQBlrvCDGOSaN4qnlQBxq1uDwOEWzDRexVVnWVklRpxeDhP6Qq8zhTVsNYdD8Dw3snql1tntJ6WcmxkJivpHHP8HJGtqHSvIlSC0hWd2zymV7aAUlT0vMYoCek2rIeRU2TOq4i9zgjrhfwE58C7Ds8EgOcVpBm2hzsBjN8td4sQ', 0),
 (1638, 0, 'shipping_pickup', 'shipping_pickup_sort_order', '2', 0),
 (1637, 0, 'shipping_pickup', 'shipping_pickup_status', '1', 0),
 (1636, 0, 'shipping_pickup', 'shipping_pickup_geo_zone_id', '0', 0),
@@ -5529,94 +5519,94 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (197, 0, 'report_marketing', 'report_marketing_status', '1', 0),
 (198, 0, 'report_marketing', 'report_marketing_sort_order', '12', 0),
 (383, 0, 'developer', 'developer_theme', '0', 0),
-(1610, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(1611, 0, 'config', 'config_mail_smtp_username', '', 0),
-(1612, 0, 'config', 'config_mail_smtp_password', '', 0),
-(1613, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(1614, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(1615, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
-(1616, 0, 'config', 'config_mail_alert_email', '', 0),
-(1617, 0, 'config', 'config_maintenance', '0', 0),
-(1618, 0, 'config', 'config_seo_url', '0', 0),
-(1619, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(1609, 0, 'config', 'config_mail_parameter', '', 0),
-(1608, 0, 'config', 'config_mail_engine', 'mail', 0),
-(1591, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
-(1592, 0, 'config', 'config_fraud_status_id', '7', 0),
-(1593, 0, 'config', 'config_api_id', '2', 0),
-(1594, 0, 'config', 'config_stock_display', '0', 0),
-(1595, 0, 'config', 'config_stock_warning', '0', 0),
-(1596, 0, 'config', 'config_stock_checkout', '0', 0),
-(1597, 0, 'config', 'config_affiliate_group_id', '1', 0),
-(1598, 0, 'config', 'config_affiliate_approval', '0', 0),
-(1599, 0, 'config', 'config_affiliate_auto', '0', 0),
-(1600, 0, 'config', 'config_affiliate_commission', '5', 0),
-(1601, 0, 'config', 'config_affiliate_id', '4', 0),
-(1602, 0, 'config', 'config_return_id', '0', 0),
-(1603, 0, 'config', 'config_return_status_id', '2', 0),
-(1604, 0, 'config', 'config_captcha', '', 0),
-(1605, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
-(1606, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(1607, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(1590, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
-(1589, 0, 'config', 'config_order_status_id', '1', 0),
-(1588, 0, 'config', 'config_checkout_id', '5', 0),
-(1587, 0, 'config', 'config_checkout_guest', '1', 0),
-(1586, 0, 'config', 'config_cart_weight', '1', 0),
-(1585, 0, 'config', 'config_invoice_prefix', 'INV-2022-00', 0),
-(1584, 0, 'config', 'config_account_id', '3', 0),
-(1583, 0, 'config', 'config_login_attempts', '5', 0),
-(1582, 0, 'config', 'config_customer_price', '0', 0),
-(1581, 0, 'config', 'config_customer_group_display', '[\"1\",\"2\"]', 1),
-(1580, 0, 'config', 'config_customer_group_id', '1', 0),
-(1579, 0, 'config', 'config_customer_search', '0', 0),
-(1578, 0, 'config', 'config_customer_activity', '0', 0),
-(1577, 0, 'config', 'config_customer_online', '0', 0),
-(1576, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(1575, 0, 'config', 'config_tax_default', 'shipping', 0),
+(1700, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(1701, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(1702, 0, 'config', 'config_mail_engine', 'mail', 0),
+(1703, 0, 'config', 'config_mail_parameter', '', 0),
+(1704, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(1705, 0, 'config', 'config_mail_smtp_username', '', 0),
+(1706, 0, 'config', 'config_mail_smtp_password', '', 0),
+(1707, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(1708, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(1709, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
+(1710, 0, 'config', 'config_mail_alert_email', '', 0),
+(1711, 0, 'config', 'config_maintenance', '0', 0),
+(1712, 0, 'config', 'config_seo_url', '0', 0),
+(1713, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(1699, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
+(1698, 0, 'config', 'config_captcha', '', 0),
+(1697, 0, 'config', 'config_return_status_id', '2', 0),
+(1696, 0, 'config', 'config_return_id', '0', 0),
+(1695, 0, 'config', 'config_affiliate_id', '4', 0),
+(1694, 0, 'config', 'config_affiliate_commission', '5', 0),
+(1693, 0, 'config', 'config_affiliate_auto', '0', 0),
+(1692, 0, 'config', 'config_affiliate_approval', '0', 0),
+(1691, 0, 'config', 'config_affiliate_group_id', '1', 0),
+(1690, 0, 'config', 'config_stock_checkout', '0', 0),
+(1689, 0, 'config', 'config_stock_warning', '0', 0),
+(1688, 0, 'config', 'config_stock_display', '0', 0),
+(1687, 0, 'config', 'config_api_id', '2', 0),
+(1686, 0, 'config', 'config_fraud_status_id', '7', 0),
+(1685, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
+(1684, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
+(1683, 0, 'config', 'config_order_status_id', '1', 0),
+(1682, 0, 'config', 'config_checkout_id', '5', 0),
+(1681, 0, 'config', 'config_checkout_guest', '1', 0),
+(1680, 0, 'config', 'config_cart_weight', '0', 0),
+(1679, 0, 'config', 'config_invoice_prefix', 'INV-2022-00', 0),
+(1678, 0, 'config', 'config_account_id', '3', 0),
+(1677, 0, 'config', 'config_login_attempts', '5', 0),
+(1676, 0, 'config', 'config_customer_price', '0', 0),
+(1675, 0, 'config', 'config_customer_group_display', '[\"1\",\"2\"]', 1),
+(1674, 0, 'config', 'config_customer_group_id', '1', 0),
 (384, 0, 'developer', 'developer_sass', '1', 0),
-(1574, 0, 'config', 'config_tax', '1', 0),
-(1573, 0, 'config', 'config_voucher_max', '1000', 0),
-(1572, 0, 'config', 'config_voucher_min', '1', 0),
-(1571, 0, 'config', 'config_review_guest', '1', 0),
-(1570, 0, 'config', 'config_review_status', '1', 0),
-(1569, 0, 'config', 'config_limit_admin', '20', 0),
-(1568, 0, 'config', 'config_product_count', '1', 0),
-(1567, 0, 'config', 'config_weight_class_id', '1', 0),
-(1566, 0, 'config', 'config_length_class_id', '1', 0),
-(1565, 0, 'config', 'config_currency_auto', '1', 0),
-(1564, 0, 'config', 'config_currency', 'RUB', 0),
-(1563, 0, 'config', 'config_admin_language', 'ru-ru', 0),
-(1562, 0, 'config', 'config_language', 'ru-ru', 0),
-(1561, 0, 'config', 'config_zone_id', '3563', 0),
-(1560, 0, 'config', 'config_country_id', '222', 0),
-(1559, 0, 'config', 'config_comment', '', 0),
-(1558, 0, 'config', 'config_open', 'пн-пт с 8.30 до 17.00', 0),
-(1557, 0, 'config', 'config_image', 'catalog/logo.png', 0),
-(1556, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
-(1555, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
-(1554, 0, 'config', 'config_email', 'admin@shop.local', 0),
-(1553, 0, 'config', 'config_geocode', '', 0),
-(1552, 0, 'config', 'config_address', ' г. Витебск, ул. Титова, д. 13', 0),
+(1673, 0, 'config', 'config_customer_search', '0', 0),
+(1672, 0, 'config', 'config_customer_activity', '0', 0),
+(1671, 0, 'config', 'config_customer_online', '0', 0),
+(1670, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(1669, 0, 'config', 'config_tax_default', 'shipping', 0),
+(1668, 0, 'config', 'config_tax', '0', 0),
+(1667, 0, 'config', 'config_voucher_max', '1000', 0),
+(1666, 0, 'config', 'config_voucher_min', '1', 0),
+(1665, 0, 'config', 'config_review_guest', '0', 0),
+(1664, 0, 'config', 'config_review_status', '0', 0),
+(1663, 0, 'config', 'config_limit_admin', '20', 0),
+(1662, 0, 'config', 'config_product_count', '1', 0),
+(1661, 0, 'config', 'config_weight_class_id', '1', 0),
+(1660, 0, 'config', 'config_length_class_id', '1', 0),
+(1659, 0, 'config', 'config_currency_auto', '1', 0),
 (677, 0, 'module_d_blog_module', 'module_d_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"1\",\"sub_category_col\":\"6\",\"sub_category_image\":\"1\",\"sub_category_post_count\":\"1\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"1\",\"main_post_display\":\"1\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y   \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y     \"},\"rating_display\":\"0\",\"description_display\":\"0\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"0\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
-(1551, 0, 'config', 'config_owner', 'Your Name', 0),
+(1658, 0, 'config', 'config_currency', 'RUB', 0),
 (676, 0, 'module_d_blog_module', 'module_d_blog_module_status', '1', 0),
 (679, 0, 'd_blog_module', 'd_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"1\",\"sub_category_col\":\"6\",\"sub_category_image\":\"1\",\"sub_category_post_count\":\"1\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"1\",\"main_post_display\":\"1\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y   \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y     \"},\"rating_display\":\"0\",\"description_display\":\"0\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"0\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
-(1550, 0, 'config', 'config_name', 'Your Store', 0),
 (678, 0, 'd_blog_module', 'd_blog_module_status', '1', 0),
-(1549, 0, 'config', 'config_layout_id', '4', 0),
-(1548, 0, 'config', 'config_theme', 'default', 0),
-(1547, 0, 'config', 'config_meta_keyword', '', 0),
-(1546, 0, 'config', 'config_meta_description', 'My Store', 0),
-(1545, 0, 'config', 'config_meta_title', 'Your Store', 0),
-(1625, 0, 'config', 'config_file_max_size', '300000', 0),
-(1626, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(1627, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(1628, 0, 'config', 'config_error_display', '1', 0),
-(1629, 0, 'config', 'config_error_log', '1', 0),
-(1630, 0, 'config', 'config_error_filename', 'error.log', 0),
+(1657, 0, 'config', 'config_admin_language', 'ru-ru', 0),
+(1656, 0, 'config', 'config_language', 'ru-ru', 0),
+(1655, 0, 'config', 'config_zone_id', '3563', 0),
+(1654, 0, 'config', 'config_country_id', '222', 0),
+(1653, 0, 'config', 'config_comment', '', 0),
+(1651, 0, 'config', 'config_image', 'catalog/logo.png', 0),
+(1652, 0, 'config', 'config_open', 'пн-пт с 8.30 до 17.00', 0),
+(1641, 0, 'config', 'config_meta_keyword', '', 0),
+(1642, 0, 'config', 'config_theme', 'default', 0),
+(1643, 0, 'config', 'config_layout_id', '4', 0),
+(1644, 0, 'config', 'config_name', 'Your Store', 0),
+(1645, 0, 'config', 'config_owner', 'Your Name', 0),
+(1646, 0, 'config', 'config_address', ' г. Витебск, ул. Титова, д. 13', 0),
+(1647, 0, 'config', 'config_geocode', '', 0),
+(1648, 0, 'config', 'config_email', 'admin@shop.local', 0),
+(1649, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
+(1650, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
+(1640, 0, 'config', 'config_meta_description', 'My Store', 0),
+(1639, 0, 'config', 'config_meta_title', 'Your Store', 0),
 (1634, 0, 'payment_cod', 'payment_cod_status', '1', 0),
-(1635, 0, 'payment_cod', 'payment_cod_sort_order', '5', 0);
+(1635, 0, 'payment_cod', 'payment_cod_sort_order', '5', 0),
+(1719, 0, 'config', 'config_file_max_size', '300000', 0),
+(1720, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(1721, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(1722, 0, 'config', 'config_error_display', '1', 0),
+(1723, 0, 'config', 'config_error_log', '1', 0),
+(1724, 0, 'config', 'config_error_filename', 'error.log', 0);
 
 -- --------------------------------------------------------
 
@@ -11312,7 +11302,7 @@ ALTER TABLE `oc_bm_review`
 -- AUTO_INCREMENT для таблицы `oc_cart`
 --
 ALTER TABLE `oc_cart`
-  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_category`
@@ -11558,7 +11548,7 @@ ALTER TABLE `oc_option_value`
 -- AUTO_INCREMENT для таблицы `oc_order`
 --
 ALTER TABLE `oc_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_order_history`
@@ -11570,13 +11560,13 @@ ALTER TABLE `oc_order_history`
 -- AUTO_INCREMENT для таблицы `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
-  MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_order_recurring`
@@ -11606,7 +11596,7 @@ ALTER TABLE `oc_order_status`
 -- AUTO_INCREMENT для таблицы `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
-  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_order_voucher`
@@ -11624,37 +11614,37 @@ ALTER TABLE `oc_product`
 -- AUTO_INCREMENT для таблицы `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
-  MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
+  MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=480;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
-  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2356;
+  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2421;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
-  MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
-  MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
-  MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=547;
+  MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=560;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
-  MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=440;
+  MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=453;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_recurring`
@@ -11708,7 +11698,7 @@ ALTER TABLE `oc_seo_url`
 -- AUTO_INCREMENT для таблицы `oc_setting`
 --
 ALTER TABLE `oc_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1639;
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1725;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_statistics`

@@ -57,7 +57,7 @@ footer {
   }
 
   @include respond-to(md) {
-    padding-bottom: 39px;
+    margin-bottom: 39px;
   }
 }
 
