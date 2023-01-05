@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Янв 04 2023 г., 23:03
--- Версия сервера: 10.4.24-MariaDB
--- Версия PHP: 7.4.28
+-- Host: 127.0.0.1
+-- Generation Time: Jan 05, 2023 at 03:31 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `shop`
+-- Database: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_address`
+-- Table structure for table `oc_address`
 --
 
 CREATE TABLE `oc_address` (
@@ -45,7 +45,7 @@ CREATE TABLE `oc_address` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api`
+-- Table structure for table `oc_api`
 --
 
 CREATE TABLE `oc_api` (
@@ -58,7 +58,7 @@ CREATE TABLE `oc_api` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_api`
+-- Dumping data for table `oc_api`
 --
 
 INSERT INTO `oc_api` (`api_id`, `username`, `key`, `status`, `date_added`, `date_modified`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `oc_api` (`api_id`, `username`, `key`, `status`, `date_added`, `date
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api_ip`
+-- Table structure for table `oc_api_ip`
 --
 
 CREATE TABLE `oc_api_ip` (
@@ -80,7 +80,7 @@ CREATE TABLE `oc_api_ip` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api_session`
+-- Table structure for table `oc_api_session`
 --
 
 CREATE TABLE `oc_api_session` (
@@ -95,7 +95,7 @@ CREATE TABLE `oc_api_session` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute`
+-- Table structure for table `oc_attribute`
 --
 
 CREATE TABLE `oc_attribute` (
@@ -105,7 +105,7 @@ CREATE TABLE `oc_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute`
+-- Dumping data for table `oc_attribute`
 --
 
 INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
@@ -124,7 +124,7 @@ INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_description`
+-- Table structure for table `oc_attribute_description`
 --
 
 CREATE TABLE `oc_attribute_description` (
@@ -134,7 +134,7 @@ CREATE TABLE `oc_attribute_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_description`
+-- Dumping data for table `oc_attribute_description`
 --
 
 INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
@@ -164,7 +164,7 @@ INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) V
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_group`
+-- Table structure for table `oc_attribute_group`
 --
 
 CREATE TABLE `oc_attribute_group` (
@@ -173,7 +173,7 @@ CREATE TABLE `oc_attribute_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_group`
+-- Dumping data for table `oc_attribute_group`
 --
 
 INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
@@ -185,7 +185,7 @@ INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_group_description`
+-- Table structure for table `oc_attribute_group_description`
 --
 
 CREATE TABLE `oc_attribute_group_description` (
@@ -195,7 +195,7 @@ CREATE TABLE `oc_attribute_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_group_description`
+-- Dumping data for table `oc_attribute_group_description`
 --
 
 INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
@@ -211,7 +211,7 @@ INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_banner`
+-- Table structure for table `oc_banner`
 --
 
 CREATE TABLE `oc_banner` (
@@ -221,17 +221,18 @@ CREATE TABLE `oc_banner` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_banner`
+-- Dumping data for table `oc_banner`
 --
 
 INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
 (6, 'Main page banner', 1),
-(9, 'Clients', 1);
+(9, 'Clients', 1),
+(10, 'Сертификаты', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_banner_image`
+-- Table structure for table `oc_banner_image`
 --
 
 CREATE TABLE `oc_banner_image` (
@@ -245,7 +246,7 @@ CREATE TABLE `oc_banner_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_banner_image`
+-- Dumping data for table `oc_banner_image`
 --
 
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `title`, `link`, `image`, `sort_order`) VALUES
@@ -255,12 +256,16 @@ INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `t
 (113, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '/', 'catalog/main-banner.png', 1),
 (115, 9, 2, 'Клиент 1', '', 'catalog/partner.png', 1),
 (116, 9, 2, 'Клиент 2', '', 'catalog/partner.png', 2),
-(117, 9, 2, 'Клиент 3', '', 'catalog/partner.png', 3);
+(117, 9, 2, 'Клиент 3', '', 'catalog/partner.png', 3),
+(121, 10, 2, 'Сертфикат1', '', 'catalog/site/Rectangle 310.png', 1),
+(122, 10, 2, 'Сертфикат2', '', 'catalog/site/Rectangle 310.png', 2),
+(123, 10, 2, 'Сертфикат3', '', 'catalog/site/Rectangle 310.png', 3),
+(124, 10, 2, 'Сертфикат4', '', 'catalog/site/Rectangle 310.png', 4);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author`
+-- Table structure for table `oc_bm_author`
 --
 
 CREATE TABLE `oc_bm_author` (
@@ -272,7 +277,7 @@ CREATE TABLE `oc_bm_author` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author`
+-- Dumping data for table `oc_bm_author`
 --
 
 INSERT INTO `oc_bm_author` (`author_id`, `user_id`, `author_group_id`, `custom`, `setting`) VALUES
@@ -281,7 +286,7 @@ INSERT INTO `oc_bm_author` (`author_id`, `user_id`, `author_group_id`, `custom`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author_description`
+-- Table structure for table `oc_bm_author_description`
 --
 
 CREATE TABLE `oc_bm_author_description` (
@@ -297,7 +302,7 @@ CREATE TABLE `oc_bm_author_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author_description`
+-- Dumping data for table `oc_bm_author_description`
 --
 
 INSERT INTO `oc_bm_author_description` (`author_id`, `language_id`, `name`, `description`, `short_description`, `meta_title`, `meta_description`, `meta_keyword`, `author_description_id`) VALUES
@@ -306,7 +311,7 @@ INSERT INTO `oc_bm_author_description` (`author_id`, `language_id`, `name`, `des
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author_group`
+-- Table structure for table `oc_bm_author_group`
 --
 
 CREATE TABLE `oc_bm_author_group` (
@@ -316,7 +321,7 @@ CREATE TABLE `oc_bm_author_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author_group`
+-- Dumping data for table `oc_bm_author_group`
 --
 
 INSERT INTO `oc_bm_author_group` (`author_group_id`, `name`, `permission`) VALUES
@@ -328,7 +333,7 @@ INSERT INTO `oc_bm_author_group` (`author_group_id`, `name`, `permission`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category`
+-- Table structure for table `oc_bm_category`
 --
 
 CREATE TABLE `oc_bm_category` (
@@ -348,22 +353,20 @@ CREATE TABLE `oc_bm_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category`
+-- Dumping data for table `oc_bm_category`
 --
 
 INSERT INTO `oc_bm_category` (`category_id`, `parent_id`, `sort_order`, `image`, `status`, `limit_access_user`, `limit_users`, `limit_access_user_group`, `limit_user_groups`, `custom`, `setting`, `date_added`, `date_modified`) VALUES
-(1, 0, 1, 'catalog/d_blog_module/category/Photo_blog_17.jpg', 1, 0, NULL, 0, NULL, 0, '', '2016-04-09 11:28:15', '2016-04-18 18:16:48'),
-(2, 1, 1, 'catalog/d_blog_module/category/Photo_blog_16.jpg', 1, 0, NULL, 0, NULL, 0, '', '2016-04-14 11:48:47', '2016-04-15 08:30:35'),
-(3, 1, 1, 'catalog/d_blog_module/category/Photo_blog_13.jpg', 1, 0, NULL, 0, NULL, 0, '', '2016-04-14 11:49:10', '2016-04-15 08:29:54'),
-(4, 1, 1, 'catalog/d_blog_module/category/Photo_blog_14.jpg', 1, 0, NULL, 0, NULL, 0, '', '2016-04-14 13:33:15', '2016-04-15 08:30:54'),
-(5, 1, 1, 'catalog/d_blog_module/category/Photo_blog_11.jpg', 1, 0, NULL, 0, NULL, 0, '', '2016-04-14 13:34:30', '2016-04-14 13:56:13'),
-(6, 1, 1, 'catalog/d_blog_module/category/Photo_blog_15.jpg', 1, 0, NULL, 0, NULL, 0, '', '2016-04-14 13:50:33', '2016-04-15 08:31:08'),
-(7, 1, 1, 'catalog/d_blog_module/category/Photo_blog_12.jpg', 1, 0, NULL, 0, NULL, 0, '', '2016-04-14 13:52:36', '2016-04-15 08:30:19');
+(1, 0, 1, 'catalog/blog/news-svgrepo-com 1.png', 1, 0, '', 0, '', 0, '\"\"', '2016-04-09 11:28:15', '2023-01-05 12:11:25'),
+(10, 0, 4, 'catalog/blog/refresh-svgrepo-com 1.png', 1, 0, '', 0, '', 0, '\"\"', '2023-01-05 12:11:54', '2023-01-05 12:11:54'),
+(11, 0, 5, 'catalog/blog/search-svgrepo-com (10) 1.png', 1, 0, '', 0, '', 0, '\"\"', '2023-01-05 12:12:22', '2023-01-05 12:12:22'),
+(8, 0, 2, 'catalog/blog/comment-svgrepo-com 1.png', 1, 0, '', 0, '', 0, '\"\"', '2023-01-05 12:10:33', '2023-01-05 12:10:33'),
+(9, 0, 3, 'catalog/blog/Group 2.png', 1, 0, '', 0, '', 0, '\"\"', '2023-01-05 12:11:07', '2023-01-05 12:11:16');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_description`
+-- Table structure for table `oc_bm_category_description`
 --
 
 CREATE TABLE `oc_bm_category_description` (
@@ -379,22 +382,20 @@ CREATE TABLE `oc_bm_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_description`
+-- Dumping data for table `oc_bm_category_description`
 --
 
 INSERT INTO `oc_bm_category_description` (`category_description_id`, `category_id`, `language_id`, `title`, `short_description`, `description`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
-(8, 1, 2, 'Blog', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, an eleifend intellegat cum, ei amet tota modus nec. Vix ut veniam placerat, an nam amet legere consequat, vix nulla labores ne. Eam invidunt imperdiet persecuti ne, et mel aperiri feugait, in alterum facilisi mel. Et ullum scripserit usu, has ullum offendit ut. An feugait expetendis has.&lt;br&gt;&lt;/p&gt;', 'Jeans', '', 'Lorem ipsum dolor sit amet, an eleifend intellegat cum, ei amet tota modus nec. Vix ut veniam placerat, an nam amet legere consequat, vix nulla labores ne. Eam invidunt imperdiet persecuti ne, et mel aperiri feugait, in alterum facilisi mel. Et ullum scripserit usu, has ullum offendit ut. An feugait expetendis has.'),
-(9, 2, 2, 'Jeans', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, an eleifend intellegat cum, ei amet tota modus nec. Vix ut veniam placerat, an nam amet legere consequat, vix nulla labores ne. Eam invidunt imperdiet persecuti ne, et mel aperiri feugait, in alterum facilisi mel. Et ullum scripserit usu, has ullum offendit ut. An feugait expetendis has.&lt;br&gt;&lt;/p&gt;', 'Jeans', '', 'Lorem ipsum dolor sit amet, an eleifend intellegat cum, ei amet tota modus nec. Vix ut veniam placerat, an nam amet legere consequat, vix nulla labores ne. Eam invidunt imperdiet persecuti ne, et mel aperiri feugait, in alterum facilisi mel. Et ullum scripserit usu, has ullum offendit ut. An feugait expetendis has.'),
-(10, 3, 2, 'Bags', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, an eleifend intellegat cum, ei amet tota modus nec. Vix ut veniam placerat, an nam amet legere consequat, vix nulla labores ne. Eam invidunt imperdiet persecuti ne, et mel aperiri feugait, in alterum facilisi mel. Et ullum scripserit usu, has ullum offendit ut. An feugait expetendis has.&lt;br&gt;&lt;/p&gt;', 'Bags', '', 'Lorem ipsum dolor sit amet, an eleifend intellegat cum, ei amet tota modus nec. Vix ut veniam placerat, an nam amet legere consequat, vix nulla labores ne. Eam invidunt imperdiet persecuti ne, et mel aperiri feugait, in alterum facilisi mel. Et ullum scripserit usu, has ullum offendit ut. An feugait expetendis has.'),
-(11, 4, 2, 'Shoes', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, an eleifend intellegat cum, ei amet tota modus nec. Vix ut veniam placerat, an nam amet legere consequat, vix nulla labores ne. Eam invidunt imperdiet persecuti ne, et mel aperiri feugait, in alterum facilisi mel. Et ullum scripserit usu, has ullum offendit ut. An feugait expetendis has.&lt;br&gt;&lt;/p&gt;', 'Shoes', '', 'Lorem ipsum dolor sit amet, an eleifend intellegat cum, ei amet tota modus nec. Vix ut veniam placerat, an nam amet legere consequat, vix nulla labores ne. Eam invidunt imperdiet persecuti ne, et mel aperiri feugait, in alterum facilisi mel. Et ullum scripserit usu, has ullum offendit ut. An feugait expetendis has.'),
-(12, 5, 2, 'Accessories', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Tincidunt dissentiet adversarium eu mei. Per assum soluta iudicabit no, ne mei congue alterum theophrastus, eam ei tale accusamus laboramus. Elit platonem vix ex. Nostrum instructior eam ea, ius posse deserunt sapientem ad, iriure gubergren eu mei. Modus meliore pertinacia usu te, eos viris cetero laoreet cu. Quo laudem apeirian euripidis cu.&lt;br&gt;&lt;/p&gt;', 'Accessories', '', 'Tincidunt dissentiet adversarium eu mei. Per assum soluta iudicabit no, ne mei congue alterum theophrastus, eam ei tale accusamus laboramus. Elit platonem vix ex. Nostrum instructior eam ea, ius posse deserunt sapientem ad, iriure gubergren eu mei. Modus meliore pertinacia usu te, eos viris cetero laoreet cu. Quo laudem apeirian euripidis cu.'),
-(13, 6, 2, 'Sport', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Exerci conceptam an pri. Mei id dicant commune legendos, ullum augue prodesset vim id. Nam sale euismod ut, eos ut agam meis comprehensam, an mel harum tamquam intellegam. In eius putent facilis nec, pro probo temporibus ei, falli fuisset sea ad. No his doming erroribus, ex alii atomorum neglegentur est, ea eam erat illum.&lt;br&gt;&lt;/p&gt;', 'Sport', '', 'Exerci conceptam an pri. Mei id dicant commune legendos, ullum augue prodesset vim id. Nam sale euismod ut, eos ut agam meis comprehensam, an mel harum tamquam intellegam. In eius putent facilis nec, pro probo temporibus ei, falli fuisset sea ad. No his doming erroribus, ex alii atomorum neglegentur est, ea eam erat illum.'),
-(14, 7, 2, 'Beauty', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Exerci conceptam an pri. Mei id dicant commune legendos, ullum augue prodesset vim id. Nam sale euismod ut, eos ut agam meis comprehensam, an mel harum tamquam intellegam. In eius putent facilis nec, pro probo temporibus ei, falli fuisset sea ad. No his doming erroribus, ex alii atomorum neglegentur est, ea eam erat illum.&lt;br&gt;&lt;/p&gt;', 'Beauty', '', 'Exerci conceptam an pri. Mei id dicant commune legendos, ullum augue prodesset vim id. Nam sale euismod ut, eos ut agam meis comprehensam, an mel harum tamquam intellegam. In eius putent facilis nec, pro probo temporibus ei, falli fuisset sea ad. No his doming erroribus, ex alii atomorum neglegentur est, ea eam erat illum.');
+(19, 1, 2, 'Новости', '', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Новости', '', ''),
+(16, 8, 2, 'Полезные советы', '', '', 'Полезные советы', '', ''),
+(18, 9, 2, 'Обзор новинок', '', '', 'Обзор новинок', '', ''),
+(20, 10, 2, 'Жизнь наизнанку', '', '', 'Жизнь наизнанку', '', ''),
+(21, 11, 2, 'Активные вакансии', '', '', 'Активные вакансии', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_path`
+-- Table structure for table `oc_bm_category_path`
 --
 
 CREATE TABLE `oc_bm_category_path` (
@@ -404,28 +405,20 @@ CREATE TABLE `oc_bm_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_path`
+-- Dumping data for table `oc_bm_category_path`
 --
 
 INSERT INTO `oc_bm_category_path` (`category_id`, `path_id`, `level`) VALUES
 (1, 1, 0),
-(2, 1, 0),
-(2, 2, 1),
-(3, 1, 0),
-(3, 3, 1),
-(4, 4, 1),
-(5, 5, 1),
-(4, 1, 0),
-(5, 1, 0),
-(6, 1, 0),
-(6, 6, 1),
-(7, 7, 1),
-(7, 1, 0);
+(10, 10, 0),
+(11, 11, 0),
+(9, 9, 0),
+(8, 8, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_to_layout`
+-- Table structure for table `oc_bm_category_to_layout`
 --
 
 CREATE TABLE `oc_bm_category_to_layout` (
@@ -435,22 +428,20 @@ CREATE TABLE `oc_bm_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_to_layout`
+-- Dumping data for table `oc_bm_category_to_layout`
 --
 
 INSERT INTO `oc_bm_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 (1, 0, 0),
-(3, 0, 0),
-(2, 0, 0),
-(4, 0, 0),
-(5, 0, 0),
-(7, 0, 0),
-(6, 0, 0);
+(10, 0, 0),
+(9, 0, 0),
+(11, 0, 0),
+(8, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_to_store`
+-- Table structure for table `oc_bm_category_to_store`
 --
 
 CREATE TABLE `oc_bm_category_to_store` (
@@ -459,22 +450,20 @@ CREATE TABLE `oc_bm_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_to_store`
+-- Dumping data for table `oc_bm_category_to_store`
 --
 
 INSERT INTO `oc_bm_category_to_store` (`category_id`, `store_id`) VALUES
 (1, 0),
-(2, 0),
-(3, 0),
-(4, 0),
-(5, 0),
-(6, 0),
-(7, 0);
+(8, 0),
+(9, 0),
+(10, 0),
+(11, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post`
+-- Table structure for table `oc_bm_post`
 --
 
 CREATE TABLE `oc_bm_post` (
@@ -499,25 +488,25 @@ CREATE TABLE `oc_bm_post` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post`
+-- Dumping data for table `oc_bm_post`
 --
 
 INSERT INTO `oc_bm_post` (`post_id`, `user_id`, `image`, `image_title`, `image_alt`, `review_display`, `images_review`, `viewed`, `status`, `limit_access_user`, `limit_users`, `limit_access_user_group`, `limit_user_groups`, `custom`, `setting`, `date_added`, `date_published`, `date_modified`) VALUES
-(1, 1, 'catalog/d_blog_module/post/Photo_blog_6.jpg', NULL, NULL, 0, 0, 183, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:00:05', '2016-04-24 00:00:00', '2016-04-27 19:09:25'),
+(1, 1, 'catalog/d_blog_module/post/Photo_blog_6.jpg', NULL, NULL, 0, 0, 186, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:00:05', '2016-04-24 00:00:00', '2016-04-27 19:09:25'),
 (2, 1, 'catalog/d_blog_module/post/Photo_blog_3.jpg', NULL, NULL, 0, 0, 22, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:15:37', '2016-04-23 00:00:00', '2016-04-27 19:08:17'),
 (3, 1, 'catalog/d_blog_module/post/Photo_blog_8.jpg', NULL, NULL, 0, 0, 15, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:24:30', '2016-04-23 00:00:00', '2016-04-27 19:10:06'),
 (4, 1, 'catalog/d_blog_module/post/Photo_blog_2.jpg', NULL, NULL, 0, 0, 13, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:27:08', '2016-04-23 00:00:00', '2016-04-27 19:08:54'),
-(5, 1, 'catalog/d_blog_module/post/Photo_blog_1.jpg', NULL, NULL, 0, 0, 44, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:32:03', '2016-04-26 00:00:00', '2016-04-27 19:08:33'),
-(6, 1, 'catalog/d_blog_module/post/Photo_blog_4.jpg', NULL, NULL, 0, 0, 10, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:35:22', '2016-04-24 00:00:00', '2016-04-27 19:10:21'),
-(7, 1, 'catalog/d_blog_module/post/Photo_blog_5.jpg', NULL, NULL, 0, 0, 10, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:37:01', '2016-04-12 00:00:00', '2016-04-27 19:09:17'),
+(5, 1, 'catalog/d_blog_module/post/Photo_blog_1.jpg', NULL, NULL, 0, 0, 57, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:32:03', '2016-04-26 00:00:00', '2016-04-27 19:08:33'),
+(6, 1, 'catalog/d_blog_module/post/Photo_blog_4.jpg', NULL, NULL, 0, 0, 12, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:35:22', '2016-04-24 00:00:00', '2016-04-27 19:10:21'),
+(7, 1, 'catalog/d_blog_module/post/Photo_blog_5.jpg', NULL, NULL, 0, 0, 15, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:37:01', '2016-04-12 00:00:00', '2016-04-27 19:09:17'),
 (8, 1, 'catalog/d_blog_module/post/Photo_blog_10.jpg', NULL, NULL, 0, 0, 14, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:38:46', '2016-04-23 00:00:00', '2016-04-27 18:29:00'),
-(9, 1, 'catalog/d_blog_module/post/Photo_blog_7.jpg', NULL, NULL, 0, 0, 122, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:40:51', '2016-04-22 00:00:00', '2016-04-27 19:09:53'),
-(10, 1, 'catalog/d_blog_module/post/Photo_blog_9.jpg', NULL, NULL, 1, 0, 148, 1, 0, NULL, 0, NULL, 0, '', '2016-04-17 11:42:08', '2016-03-16 00:00:00', '2016-04-27 19:08:06');
+(9, 1, 'catalog/d_blog_module/post/Photo_blog_7.jpg', NULL, NULL, 0, 0, 126, 1, 0, NULL, 0, NULL, 0, '', '2016-04-13 11:40:51', '2016-04-22 00:00:00', '2016-04-27 19:09:53'),
+(10, 1, 'catalog/d_blog_module/post/Photo_blog_9.jpg', NULL, NULL, 2, 2, 148, 1, 0, '', 0, '', 0, '', '2016-04-17 11:42:08', '2016-03-16 00:00:00', '2023-01-05 14:43:18');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_description`
+-- Table structure for table `oc_bm_post_description`
 --
 
 CREATE TABLE `oc_bm_post_description` (
@@ -534,12 +523,12 @@ CREATE TABLE `oc_bm_post_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_description`
+-- Dumping data for table `oc_bm_post_description`
 --
 
 INSERT INTO `oc_bm_post_description` (`post_description_id`, `post_id`, `language_id`, `title`, `short_description`, `description`, `meta_title`, `meta_description`, `meta_keyword`, `tag`) VALUES
 (130, 9, 2, 'Shopping day', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.&lt;/p&gt;&lt;p&gt;Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;&lt;p&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Shopping day', '', '', 'vocation,look,summer'),
-(131, 10, 2, 'Amazing day', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.&lt;/p&gt;&lt;p&gt;Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;&lt;p&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Amazing day', '', '', 'vocation,holiday,day off,look'),
+(140, 10, 2, 'Amazing day', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.&lt;/p&gt;&lt;p&gt;Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;&lt;p&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Amazing day', '', '', 'vocation,holiday,day off,look'),
 (132, 2, 2, 'Big sale this summer', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.&lt;/p&gt;&lt;p&gt;Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;&lt;p&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Big sale this summer', '', 'big-sale-this-summer', 'look'),
 (133, 1, 2, 'My latest adventure', 'Vivamus efficitur libero quis arcu gravida, porttitor fermentum sapien suscipit. Nullam mattis, felis ut vehicula malesuada, nulla velit maximus velit, imperdiet tempus felis urna consequat mauris. Fusce et sollicitudin felis. In pulvinar ante eu arcu placerat mattis. Nunc quis aliquet augue.', '		\r\n&lt;p&gt;The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.&lt;br&gt;&lt;/p&gt;\r\n&lt;hr&gt;\r\n&lt;h1&gt;Heading 1&lt;/h1&gt;\r\n&lt;h2&gt;Heading 2&lt;/h2&gt;\r\n&lt;h3&gt;Heading 3&lt;/h3&gt;\r\n&lt;h4&gt;Heading 4&lt;/h4&gt;\r\n&lt;h5&gt;Heading 5&lt;/h5&gt;\r\n&lt;h6&gt;Heading 6&lt;/h6&gt;\r\n&lt;p&gt;&lt;br&gt;&lt;/p&gt;\r\n&lt;hr&gt;\r\n&lt;h2 id=&quot;paragraph&quot;&gt;Paragraph&lt;/h2&gt;\r\n&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;#&quot; title=&quot;test link&quot;&gt;test link&lt;/a&gt; adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;\r\n&lt;p&gt;Lorem ipsum dolor sit amet, &lt;em&gt;emphasis&lt;/em&gt; consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;\r\n&lt;p&gt;&lt;br&gt;&lt;/p&gt;\r\n&lt;hr&gt;\r\n&lt;h2 id=&quot;list_types&quot;&gt;List Types&lt;/h2&gt;\r\n&lt;h3&gt;Definition List&lt;/h3&gt;\r\n&lt;dl&gt;\r\n&lt;dt&gt;Definition List Title&lt;/dt&gt;\r\n&lt;dd&gt;This is a definition list division.&lt;/dd&gt;\r\n&lt;/dl&gt;\r\n&lt;h3&gt;Ordered List&lt;/h3&gt;\r\n&lt;ol&gt;\r\n&lt;li&gt;List Item 1&lt;/li&gt;\r\n&lt;li&gt;List Item 2&lt;/li&gt;\r\n&lt;li&gt;List Item 3&lt;/li&gt;\r\n&lt;/ol&gt;\r\n&lt;h3&gt;Unordered List&lt;/h3&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;List Item 1&lt;/li&gt;\r\n&lt;li&gt;List Item 2&lt;/li&gt;\r\n&lt;li&gt;List Item 3&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;br&gt;&lt;/p&gt;\r\n&lt;hr&gt;\r\n&lt;h2 id=&quot;form_elements&quot;&gt;Forms&lt;/h2&gt;\r\n&lt;fieldset&gt;\r\n&lt;legend&gt;Legend&lt;/legend&gt;\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.&lt;/p&gt;\r\n\r\n&lt;h2&gt;&lt;br&gt;&lt;/h2&gt;&lt;h2&gt;Image&lt;/h2&gt;\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;https://opencart.dreamvention.com/220/d_blog_module/image/cache/catalog/d_blog_module/post/Photo_blog_3-1400x875.jpg&quot; class=&quot;img-responsive&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/fieldset&gt;\r\n&lt;hr&gt;\r\n&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;\r\n&lt;table class=&quot;table table-bordered&quot;&gt;\r\n&lt;tbody&gt;&lt;tr&gt;\r\n&lt;th&gt;Table Header 1&lt;/th&gt;\r\n&lt;th&gt;Table Header 2&lt;/th&gt;\r\n&lt;th&gt;Table Header 3&lt;/th&gt;\r\n&lt;/tr&gt;\r\n&lt;tr&gt;\r\n&lt;td&gt;Division 1&lt;/td&gt;\r\n&lt;td&gt;Division 2&lt;/td&gt;\r\n&lt;td&gt;Division 3&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr class=&quot;even&quot;&gt;\r\n&lt;td&gt;Division 1&lt;/td&gt;\r\n&lt;td&gt;Division 2&lt;/td&gt;\r\n&lt;td&gt;Division 3&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr&gt;\r\n&lt;td&gt;Division 1&lt;/td&gt;\r\n&lt;td&gt;Division 2&lt;/td&gt;\r\n&lt;td&gt;Division 3&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;&lt;/table&gt;\r\n&lt;p&gt;&lt;br&gt;&lt;/p&gt;\r\n&lt;hr&gt;\r\n&lt;h2 id=&quot;misc&quot;&gt;Misc Stuff – abbr, acronym, pre, code, sub, sup, etc.&lt;/h2&gt;\r\n&lt;p&gt;Lorem &lt;sup&gt;superscript&lt;/sup&gt; dolor &lt;sub&gt;subscript&lt;/sub&gt; amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. &lt;cite&gt;cite&lt;/cite&gt;. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. &lt;acronym title=&quot;National Basketball Association&quot;&gt;NBA&lt;/acronym&gt; Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  &lt;abbr title=&quot;Avenue&quot;&gt;AVE&lt;/abbr&gt;&lt;/p&gt;\r\n&lt;pre&gt;&lt;p&gt;\r\nLorem ipsum dolor sit amet,\r\n consectetuer adipiscing elit.\r\n Nullam dignissim convallis est.\r\n Quisque aliquam. Donec faucibus. \r\nNunc iaculis suscipit dui. \r\nNam sit amet sem. \r\nAliquam libero nisi, imperdiet at,\r\n tincidunt nec, gravida vehicula,\r\n nisl. \r\nPraesent mattis, massa quis \r\nluctus fermentum, turpis mi \r\nvolutpat justo, eu volutpat \r\nenim diam eget metus. \r\nMaecenas ornare tortor. \r\nDonec sed tellus eget sapien\r\n fringilla nonummy. \r\n&lt;acronym title=&quot;National Basketball Association&quot;&gt;NBA&lt;/acronym&gt; \r\nMauris a ante. Suspendisse\r\n quam sem, consequat at, \r\ncommodo vitae, feugiat in, \r\nnunc. Morbi imperdiet augue\r\n quis tellus.  \r\n&lt;abbr title=&quot;Avenue&quot;&gt;AVE&lt;/abbr&gt;&lt;/p&gt;&lt;/pre&gt;\r\n&lt;blockquote&gt;&lt;p&gt;\r\n	“This stylesheet is going to help so freaking much.” &lt;br&gt;-Blockquote\r\n&lt;/p&gt;&lt;/blockquote&gt;\r\n&lt;p&gt;&lt;br&gt;\r\n&lt;!-- End of Sample Content --&gt;&lt;/p&gt;\r\n', 'My latest adventure', '', '', 'summer,sale,day off'),
 (134, 5, 2, 'Fashion in city', 'Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.', '&lt;p&gt;Lorem ipsum dolor sit amet, justo aliquid reformidans ea vel, vim porro dictas et, ut elit partem invidunt vis. Saepe melius complectitur eum ea. Zril delenit vis ut. His suavitate rationibus in, tale discere ceteros eu nec. Vel ut utamur laoreet vituperata, in discere contentiones definitionem ius.&lt;/p&gt;&lt;p&gt;Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;&lt;p&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Fashion in city', '', '', '	vocation,summer,day off'),
@@ -552,7 +541,7 @@ INSERT INTO `oc_bm_post_description` (`post_description_id`, `post_id`, `languag
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_related`
+-- Table structure for table `oc_bm_post_related`
 --
 
 CREATE TABLE `oc_bm_post_related` (
@@ -561,7 +550,7 @@ CREATE TABLE `oc_bm_post_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_related`
+-- Dumping data for table `oc_bm_post_related`
 --
 
 INSERT INTO `oc_bm_post_related` (`post_id`, `post_related_id`) VALUES
@@ -586,14 +575,12 @@ INSERT INTO `oc_bm_post_related` (`post_id`, `post_related_id`) VALUES
 (8, 6),
 (9, 4),
 (9, 5),
-(9, 7),
-(10, 2),
-(10, 6);
+(9, 7);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_category`
+-- Table structure for table `oc_bm_post_to_category`
 --
 
 CREATE TABLE `oc_bm_post_to_category` (
@@ -602,7 +589,7 @@ CREATE TABLE `oc_bm_post_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_category`
+-- Dumping data for table `oc_bm_post_to_category`
 --
 
 INSERT INTO `oc_bm_post_to_category` (`post_id`, `category_id`) VALUES
@@ -615,25 +602,12 @@ INSERT INTO `oc_bm_post_to_category` (`post_id`, `category_id`) VALUES
 (7, 1),
 (8, 1),
 (9, 1),
-(10, 1),
-(5, 2),
-(6, 2),
-(1, 3),
-(2, 3),
-(3, 3),
-(3, 4),
-(6, 4),
-(8, 4),
-(9, 5),
-(10, 5),
-(7, 6),
-(3, 7),
-(4, 7);
+(10, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_layout`
+-- Table structure for table `oc_bm_post_to_layout`
 --
 
 CREATE TABLE `oc_bm_post_to_layout` (
@@ -643,7 +617,7 @@ CREATE TABLE `oc_bm_post_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_layout`
+-- Dumping data for table `oc_bm_post_to_layout`
 --
 
 INSERT INTO `oc_bm_post_to_layout` (`post_id`, `store_id`, `layout_id`) VALUES
@@ -662,7 +636,7 @@ INSERT INTO `oc_bm_post_to_layout` (`post_id`, `store_id`, `layout_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_product`
+-- Table structure for table `oc_bm_post_to_product`
 --
 
 CREATE TABLE `oc_bm_post_to_product` (
@@ -671,7 +645,7 @@ CREATE TABLE `oc_bm_post_to_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_product`
+-- Dumping data for table `oc_bm_post_to_product`
 --
 
 INSERT INTO `oc_bm_post_to_product` (`post_id`, `product_id`) VALUES
@@ -683,7 +657,6 @@ INSERT INTO `oc_bm_post_to_product` (`post_id`, `product_id`) VALUES
 (2, 30),
 (4, 30),
 (6, 30),
-(10, 30),
 (1, 41),
 (2, 41),
 (3, 41),
@@ -693,7 +666,6 @@ INSERT INTO `oc_bm_post_to_product` (`post_id`, `product_id`) VALUES
 (9, 41),
 (8, 42),
 (9, 42),
-(10, 42),
 (5, 47),
 (6, 47),
 (7, 47);
@@ -701,7 +673,7 @@ INSERT INTO `oc_bm_post_to_product` (`post_id`, `product_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_store`
+-- Table structure for table `oc_bm_post_to_store`
 --
 
 CREATE TABLE `oc_bm_post_to_store` (
@@ -710,7 +682,7 @@ CREATE TABLE `oc_bm_post_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_store`
+-- Dumping data for table `oc_bm_post_to_store`
 --
 
 INSERT INTO `oc_bm_post_to_store` (`post_id`, `store_id`) VALUES
@@ -729,7 +701,7 @@ INSERT INTO `oc_bm_post_to_store` (`post_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_video`
+-- Table structure for table `oc_bm_post_video`
 --
 
 CREATE TABLE `oc_bm_post_video` (
@@ -744,7 +716,7 @@ CREATE TABLE `oc_bm_post_video` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_review`
+-- Table structure for table `oc_bm_review`
 --
 
 CREATE TABLE `oc_bm_review` (
@@ -764,7 +736,7 @@ CREATE TABLE `oc_bm_review` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_review`
+-- Dumping data for table `oc_bm_review`
 --
 
 INSERT INTO `oc_bm_review` (`review_id`, `post_id`, `reply_to_review_id`, `language_id`, `customer_id`, `guest_email`, `image`, `author`, `description`, `rating`, `status`, `date_added`, `date_modified`) VALUES
@@ -780,7 +752,7 @@ INSERT INTO `oc_bm_review` (`review_id`, `post_id`, `reply_to_review_id`, `langu
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_review_to_image`
+-- Table structure for table `oc_bm_review_to_image`
 --
 
 CREATE TABLE `oc_bm_review_to_image` (
@@ -791,7 +763,7 @@ CREATE TABLE `oc_bm_review_to_image` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_cart`
+-- Table structure for table `oc_cart`
 --
 
 CREATE TABLE `oc_cart` (
@@ -809,7 +781,7 @@ CREATE TABLE `oc_cart` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category`
+-- Table structure for table `oc_category`
 --
 
 CREATE TABLE `oc_category` (
@@ -825,7 +797,7 @@ CREATE TABLE `oc_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category`
+-- Dumping data for table `oc_category`
 --
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
@@ -843,35 +815,21 @@ INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 (32, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:34', '2010-08-22 06:33:12'),
 (33, '', 0, 1, 1, 6, 1, '2009-02-03 14:17:55', '2011-05-30 12:15:25'),
 (34, 'catalog/demo/ipod_touch_4.jpg', 0, 1, 4, 7, 1, '2009-02-03 14:18:11', '2011-05-30 12:15:31'),
-(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2010-09-18 14:02:42'),
-(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2010-09-18 14:02:55'),
 (37, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:39', '2011-04-22 01:55:08'),
 (38, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:51', '2010-09-18 14:03:51'),
 (39, '', 34, 0, 0, 0, 1, '2010-09-18 14:04:17', '2011-04-22 01:55:20'),
 (40, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:36', '2010-09-18 14:05:36'),
 (41, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:49', '2011-04-22 01:55:30'),
 (42, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:34', '2010-11-07 20:31:04'),
-(43, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:49', '2011-04-22 01:55:40'),
-(44, '', 34, 0, 0, 0, 1, '2010-09-21 15:39:21', '2010-11-07 20:30:55'),
 (45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2011-04-26 08:52:11'),
 (46, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2011-04-26 08:52:23'),
-(47, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:16', '2010-11-07 11:13:16'),
-(48, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:33', '2010-11-07 11:13:33'),
-(49, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:04', '2010-11-07 11:14:04'),
-(50, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:23', '2011-04-22 01:16:01'),
-(51, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:38', '2011-04-22 01:16:13'),
-(52, '', 34, 0, 0, 0, 1, '2010-11-07 11:16:09', '2011-04-22 01:54:57'),
-(53, '', 34, 0, 0, 0, 1, '2010-11-07 11:28:53', '2011-04-22 01:14:36'),
-(54, '', 34, 0, 0, 0, 1, '2010-11-07 11:29:16', '2011-04-22 01:16:50'),
-(55, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:32', '2010-11-08 10:31:32'),
 (56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2011-04-22 01:16:37'),
-(57, '', 0, 1, 1, 3, 1, '2011-04-26 08:53:16', '2011-05-30 12:15:05'),
-(58, '', 52, 0, 0, 0, 1, '2011-05-08 13:44:16', '2011-05-08 13:44:16');
+(57, '', 0, 1, 1, 3, 1, '2011-04-26 08:53:16', '2011-05-30 12:15:05');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_description`
+-- Table structure for table `oc_category_description`
 --
 
 CREATE TABLE `oc_category_description` (
@@ -885,7 +843,7 @@ CREATE TABLE `oc_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_description`
+-- Dumping data for table `oc_category_description`
 --
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
@@ -901,32 +859,18 @@ INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `de
 (25, 1, 'Components', '', 'Components', '', ''),
 (24, 1, 'Phones &amp; PDAs', '', 'Phones &amp; PDAs', '', ''),
 (20, 1, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Desktops', 'Example of category description', ''),
-(35, 1, 'test 1', '', 'test 1', '', ''),
-(36, 1, 'test 2', '', 'test 2', '', ''),
 (37, 1, 'test 5', '', 'test 5', '', ''),
 (38, 1, 'test 4', '', 'test 4', '', ''),
 (39, 1, 'test 6', '', 'test 6', '', ''),
 (40, 1, 'test 7', '', 'test 7', '', ''),
 (41, 1, 'test 8', '', 'test 8', '', ''),
 (42, 1, 'test 9', '', 'test 9', '', ''),
-(43, 1, 'test 11', '', 'test 11', '', ''),
 (34, 1, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'MP3 Players', '', ''),
 (18, 1, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'Laptops &amp; Notebooks', '', ''),
-(44, 1, 'test 12', '', 'test 12', '', ''),
 (45, 1, 'Windows', '', 'Windows', '', ''),
 (46, 1, 'Macs', '', 'Macs', '', ''),
-(47, 1, 'test 15', '', 'test 15', '', ''),
-(48, 1, 'test 16', '', 'test 16', '', ''),
-(49, 1, 'test 17', '', 'test 17', '', ''),
-(50, 1, 'test 18', '', 'test 18', '', ''),
-(51, 1, 'test 19', '', 'test 19', '', ''),
-(52, 1, 'test 20', '', 'test 20', '', ''),
-(53, 1, 'test 21', '', 'test 21', '', ''),
-(54, 1, 'test 22', '', 'test 22', '', ''),
-(55, 1, 'test 23', '', 'test 23', '', ''),
 (56, 1, 'test 24', '', 'test 24', '', ''),
 (57, 1, 'Tablets', '', 'Tablets', '', ''),
-(58, 1, 'test 25', '', 'test 25', '', ''),
 (28, 2, 'Monitors', '', 'Monitors', '', ''),
 (33, 2, 'Cameras', '', 'Cameras', '', ''),
 (32, 2, 'Web Cameras', '', 'Web Cameras', '', ''),
@@ -939,37 +883,23 @@ INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `de
 (25, 2, 'Components', '', 'Components', '', ''),
 (24, 2, 'Phones &amp; PDAs', '', 'Phones &amp; PDAs', '', ''),
 (20, 2, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Desktops', 'Example of category description', ''),
-(35, 2, 'test 1', '', 'test 1', '', ''),
-(36, 2, 'test 2', '', 'test 2', '', ''),
 (37, 2, 'test 5', '', 'test 5', '', ''),
 (38, 2, 'test 4', '', 'test 4', '', ''),
 (39, 2, 'test 6', '', 'test 6', '', ''),
 (40, 2, 'test 7', '', 'test 7', '', ''),
 (41, 2, 'test 8', '', 'test 8', '', ''),
 (42, 2, 'test 9', '', 'test 9', '', ''),
-(43, 2, 'test 11', '', 'test 11', '', ''),
 (34, 2, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'MP3 Players', '', ''),
 (18, 2, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'Laptops &amp; Notebooks', '', ''),
-(44, 2, 'test 12', '', 'test 12', '', ''),
 (45, 2, 'Windows', '', 'Windows', '', ''),
 (46, 2, 'Macs', '', 'Macs', '', ''),
-(47, 2, 'test 15', '', 'test 15', '', ''),
-(48, 2, 'test 16', '', 'test 16', '', ''),
-(49, 2, 'test 17', '', 'test 17', '', ''),
-(50, 2, 'test 18', '', 'test 18', '', ''),
-(51, 2, 'test 19', '', 'test 19', '', ''),
-(52, 2, 'test 20', '', 'test 20', '', ''),
-(53, 2, 'test 21', '', 'test 21', '', ''),
-(54, 2, 'test 22', '', 'test 22', '', ''),
-(55, 2, 'test 23', '', 'test 23', '', ''),
 (56, 2, 'test 24', '', 'test 24', '', ''),
-(57, 2, 'Tablets', '', 'Tablets', '', ''),
-(58, 2, 'test 25', '', 'test 25', '', '');
+(57, 2, 'Tablets', '', 'Tablets', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_filter`
+-- Table structure for table `oc_category_filter`
 --
 
 CREATE TABLE `oc_category_filter` (
@@ -980,7 +910,7 @@ CREATE TABLE `oc_category_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_path`
+-- Table structure for table `oc_category_path`
 --
 
 CREATE TABLE `oc_category_path` (
@@ -990,19 +920,13 @@ CREATE TABLE `oc_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_path`
+-- Dumping data for table `oc_category_path`
 --
 
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (25, 25, 0),
 (28, 25, 0),
 (28, 28, 1),
-(35, 25, 0),
-(35, 28, 1),
-(35, 35, 2),
-(36, 25, 0),
-(36, 28, 1),
-(36, 36, 2),
 (29, 25, 0),
 (29, 29, 1),
 (30, 25, 0),
@@ -1037,31 +961,6 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (41, 41, 1),
 (42, 34, 0),
 (42, 42, 1),
-(43, 34, 0),
-(43, 43, 1),
-(44, 34, 0),
-(44, 44, 1),
-(47, 34, 0),
-(47, 47, 1),
-(48, 34, 0),
-(48, 48, 1),
-(49, 34, 0),
-(49, 49, 1),
-(50, 34, 0),
-(50, 50, 1),
-(51, 34, 0),
-(51, 51, 1),
-(52, 34, 0),
-(52, 52, 1),
-(58, 34, 0),
-(58, 52, 1),
-(58, 58, 2),
-(53, 34, 0),
-(53, 53, 1),
-(54, 34, 0),
-(54, 54, 1),
-(55, 34, 0),
-(55, 55, 1),
 (56, 34, 0),
 (56, 56, 1),
 (57, 57, 0);
@@ -1069,7 +968,7 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_to_layout`
+-- Table structure for table `oc_category_to_layout`
 --
 
 CREATE TABLE `oc_category_to_layout` (
@@ -1081,7 +980,7 @@ CREATE TABLE `oc_category_to_layout` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_to_store`
+-- Table structure for table `oc_category_to_store`
 --
 
 CREATE TABLE `oc_category_to_store` (
@@ -1090,7 +989,7 @@ CREATE TABLE `oc_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_to_store`
+-- Dumping data for table `oc_category_to_store`
 --
 
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
@@ -1108,35 +1007,21 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 (32, 0),
 (33, 0),
 (34, 0),
-(35, 0),
-(36, 0),
 (37, 0),
 (38, 0),
 (39, 0),
 (40, 0),
 (41, 0),
 (42, 0),
-(43, 0),
-(44, 0),
 (45, 0),
 (46, 0),
-(47, 0),
-(48, 0),
-(49, 0),
-(50, 0),
-(51, 0),
-(52, 0),
-(53, 0),
-(54, 0),
-(55, 0),
 (56, 0),
-(57, 0),
-(58, 0);
+(57, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_country`
+-- Table structure for table `oc_country`
 --
 
 CREATE TABLE `oc_country` (
@@ -1150,7 +1035,7 @@ CREATE TABLE `oc_country` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_country`
+-- Dumping data for table `oc_country`
 --
 
 INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
@@ -1411,7 +1296,7 @@ INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon`
+-- Table structure for table `oc_coupon`
 --
 
 CREATE TABLE `oc_coupon` (
@@ -1432,7 +1317,7 @@ CREATE TABLE `oc_coupon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_coupon`
+-- Dumping data for table `oc_coupon`
 --
 
 INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
@@ -1443,7 +1328,7 @@ INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logge
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_category`
+-- Table structure for table `oc_coupon_category`
 --
 
 CREATE TABLE `oc_coupon_category` (
@@ -1454,7 +1339,7 @@ CREATE TABLE `oc_coupon_category` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_history`
+-- Table structure for table `oc_coupon_history`
 --
 
 CREATE TABLE `oc_coupon_history` (
@@ -1469,7 +1354,7 @@ CREATE TABLE `oc_coupon_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_product`
+-- Table structure for table `oc_coupon_product`
 --
 
 CREATE TABLE `oc_coupon_product` (
@@ -1481,7 +1366,7 @@ CREATE TABLE `oc_coupon_product` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_currency`
+-- Table structure for table `oc_currency`
 --
 
 CREATE TABLE `oc_currency` (
@@ -1497,19 +1382,19 @@ CREATE TABLE `oc_currency` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_currency`
+-- Dumping data for table `oc_currency`
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 (1, 'Pound Sterling', 'GBP', '£', '', '2', 0.61250001, 1, '2014-09-25 14:40:00'),
 (2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2017-11-11 12:34:47'),
 (3, 'Euro', 'EUR', '', '€', '2', 0.78460002, 1, '2014-09-25 14:40:00'),
-(4, 'Рубль', 'RUB', '', 'руб.', '2', 1.00000000, 1, '2023-01-03 19:48:09');
+(4, 'Рубль', 'RUB', '', 'руб.', '2', 1.00000000, 1, '2023-01-05 14:21:33');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer`
+-- Table structure for table `oc_customer`
 --
 
 CREATE TABLE `oc_customer` (
@@ -1541,7 +1426,7 @@ CREATE TABLE `oc_customer` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_activity`
+-- Table structure for table `oc_customer_activity`
 --
 
 CREATE TABLE `oc_customer_activity` (
@@ -1556,7 +1441,7 @@ CREATE TABLE `oc_customer_activity` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_affiliate`
+-- Table structure for table `oc_customer_affiliate`
 --
 
 CREATE TABLE `oc_customer_affiliate` (
@@ -1582,7 +1467,7 @@ CREATE TABLE `oc_customer_affiliate` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_approval`
+-- Table structure for table `oc_customer_approval`
 --
 
 CREATE TABLE `oc_customer_approval` (
@@ -1595,7 +1480,7 @@ CREATE TABLE `oc_customer_approval` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_group`
+-- Table structure for table `oc_customer_group`
 --
 
 CREATE TABLE `oc_customer_group` (
@@ -1605,7 +1490,7 @@ CREATE TABLE `oc_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_customer_group`
+-- Dumping data for table `oc_customer_group`
 --
 
 INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) VALUES
@@ -1615,7 +1500,7 @@ INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_group_description`
+-- Table structure for table `oc_customer_group_description`
 --
 
 CREATE TABLE `oc_customer_group_description` (
@@ -1626,7 +1511,7 @@ CREATE TABLE `oc_customer_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_customer_group_description`
+-- Dumping data for table `oc_customer_group_description`
 --
 
 INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
@@ -1636,7 +1521,7 @@ INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_history`
+-- Table structure for table `oc_customer_history`
 --
 
 CREATE TABLE `oc_customer_history` (
@@ -1649,7 +1534,7 @@ CREATE TABLE `oc_customer_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_ip`
+-- Table structure for table `oc_customer_ip`
 --
 
 CREATE TABLE `oc_customer_ip` (
@@ -1662,7 +1547,7 @@ CREATE TABLE `oc_customer_ip` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_login`
+-- Table structure for table `oc_customer_login`
 --
 
 CREATE TABLE `oc_customer_login` (
@@ -1677,7 +1562,7 @@ CREATE TABLE `oc_customer_login` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_online`
+-- Table structure for table `oc_customer_online`
 --
 
 CREATE TABLE `oc_customer_online` (
@@ -1691,7 +1576,7 @@ CREATE TABLE `oc_customer_online` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_reward`
+-- Table structure for table `oc_customer_reward`
 --
 
 CREATE TABLE `oc_customer_reward` (
@@ -1706,7 +1591,7 @@ CREATE TABLE `oc_customer_reward` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_search`
+-- Table structure for table `oc_customer_search`
 --
 
 CREATE TABLE `oc_customer_search` (
@@ -1726,7 +1611,7 @@ CREATE TABLE `oc_customer_search` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_transaction`
+-- Table structure for table `oc_customer_transaction`
 --
 
 CREATE TABLE `oc_customer_transaction` (
@@ -1741,7 +1626,7 @@ CREATE TABLE `oc_customer_transaction` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_wishlist`
+-- Table structure for table `oc_customer_wishlist`
 --
 
 CREATE TABLE `oc_customer_wishlist` (
@@ -1753,7 +1638,7 @@ CREATE TABLE `oc_customer_wishlist` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field`
+-- Table structure for table `oc_custom_field`
 --
 
 CREATE TABLE `oc_custom_field` (
@@ -1769,7 +1654,7 @@ CREATE TABLE `oc_custom_field` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_customer_group`
+-- Table structure for table `oc_custom_field_customer_group`
 --
 
 CREATE TABLE `oc_custom_field_customer_group` (
@@ -1781,7 +1666,7 @@ CREATE TABLE `oc_custom_field_customer_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_description`
+-- Table structure for table `oc_custom_field_description`
 --
 
 CREATE TABLE `oc_custom_field_description` (
@@ -1793,7 +1678,7 @@ CREATE TABLE `oc_custom_field_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_value`
+-- Table structure for table `oc_custom_field_value`
 --
 
 CREATE TABLE `oc_custom_field_value` (
@@ -1805,7 +1690,7 @@ CREATE TABLE `oc_custom_field_value` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_value_description`
+-- Table structure for table `oc_custom_field_value_description`
 --
 
 CREATE TABLE `oc_custom_field_value_description` (
@@ -1818,7 +1703,7 @@ CREATE TABLE `oc_custom_field_value_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_download`
+-- Table structure for table `oc_download`
 --
 
 CREATE TABLE `oc_download` (
@@ -1831,7 +1716,7 @@ CREATE TABLE `oc_download` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_download_description`
+-- Table structure for table `oc_download_description`
 --
 
 CREATE TABLE `oc_download_description` (
@@ -1843,7 +1728,7 @@ CREATE TABLE `oc_download_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_d_validator`
+-- Table structure for table `oc_d_validator`
 --
 
 CREATE TABLE `oc_d_validator` (
@@ -1856,7 +1741,7 @@ CREATE TABLE `oc_d_validator` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_event`
+-- Table structure for table `oc_event`
 --
 
 CREATE TABLE `oc_event` (
@@ -1869,7 +1754,7 @@ CREATE TABLE `oc_event` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_event`
+-- Dumping data for table `oc_event`
 --
 
 INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
@@ -1941,19 +1826,19 @@ INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort
 (66, 'd_validator', 'admin/view/extension/shipping/d_free_shipping_advanced/after', 'extension/d_shopunity/d_validator/view', 1, 0),
 (67, 'd_validator', 'admin/view/extension/module/d_ajax_search/after', 'extension/d_shopunity/d_validator/view', 1, 0),
 (68, 'd_validator', 'admin/view/extension/module/d_spin_product/after', 'extension/d_shopunity/d_validator/view', 1, 0),
-(140, 'd_blog_module', 'catalog/model/design/layout/getLayout/after', 'extension/event/d_blog_module/model_design_layout_getLayout_after', 1, 0),
-(139, 'd_blog_module', 'admin/model/localisation/language/deleteLanguage/after', 'extension/event/d_blog_module/model_localisation_language_deleteLanguage_after', 1, 0),
-(138, 'd_blog_module', 'admin/model/localisation/language/addLanguage/after', 'extension/event/d_blog_module/model_localisation_language_addLanguage_after', 1, 0),
-(135, 'd_blog_module', 'catalog/view/common/header/before', 'extension/event/d_blog_module/view_common_header_before', 1, 0),
-(136, 'd_blog_module', 'catalog/view/common/menu/before', 'extension/event/d_blog_module/view_common_menu_before', 1, 0),
-(137, 'd_blog_module', 'catalog/model/extension/module/d_visual_designer/getOptions/after', 'extension/event/d_blog_module/controller_after_d_visual_designer_menu', 1, 0),
-(134, 'd_blog_module', 'admin/view/setting/setting/before', 'extension/event/d_blog_module/view_setting_setting_captcha_before', 1, 0),
-(133, 'd_blog_module', 'admin/view/common/column_left/before', 'extension/event/d_blog_module/view_common_column_left_before', 1, 0);
+(200, 'd_blog_module', 'catalog/view/common/menu/before', 'extension/event/d_blog_module/view_common_menu_before', 1, 0),
+(201, 'd_blog_module', 'catalog/model/extension/module/d_visual_designer/getOptions/after', 'extension/event/d_blog_module/controller_after_d_visual_designer_menu', 1, 0),
+(202, 'd_blog_module', 'admin/model/localisation/language/addLanguage/after', 'extension/event/d_blog_module/model_localisation_language_addLanguage_after', 1, 0),
+(203, 'd_blog_module', 'admin/model/localisation/language/deleteLanguage/after', 'extension/event/d_blog_module/model_localisation_language_deleteLanguage_after', 1, 0),
+(204, 'd_blog_module', 'catalog/model/design/layout/getLayout/after', 'extension/event/d_blog_module/model_design_layout_getLayout_after', 1, 0),
+(199, 'd_blog_module', 'catalog/view/common/header/before', 'extension/event/d_blog_module/view_common_header_before', 1, 0),
+(198, 'd_blog_module', 'admin/view/setting/setting/before', 'extension/event/d_blog_module/view_setting_setting_captcha_before', 1, 0),
+(197, 'd_blog_module', 'admin/view/common/column_left/before', 'extension/event/d_blog_module/view_common_column_left_before', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension`
+-- Table structure for table `oc_extension`
 --
 
 CREATE TABLE `oc_extension` (
@@ -1963,7 +1848,7 @@ CREATE TABLE `oc_extension` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension`
+-- Dumping data for table `oc_extension`
 --
 
 INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
@@ -2011,7 +1896,7 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension_install`
+-- Table structure for table `oc_extension_install`
 --
 
 CREATE TABLE `oc_extension_install` (
@@ -2022,7 +1907,7 @@ CREATE TABLE `oc_extension_install` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension_install`
+-- Dumping data for table `oc_extension_install`
 --
 
 INSERT INTO `oc_extension_install` (`extension_install_id`, `extension_download_id`, `filename`, `date_added`) VALUES
@@ -2033,7 +1918,7 @@ INSERT INTO `oc_extension_install` (`extension_install_id`, `extension_download_
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension_path`
+-- Table structure for table `oc_extension_path`
 --
 
 CREATE TABLE `oc_extension_path` (
@@ -2044,7 +1929,7 @@ CREATE TABLE `oc_extension_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension_path`
+-- Dumping data for table `oc_extension_path`
 --
 
 INSERT INTO `oc_extension_path` (`extension_path_id`, `extension_install_id`, `path`, `date_added`) VALUES
@@ -3504,7 +3389,7 @@ INSERT INTO `oc_extension_path` (`extension_path_id`, `extension_install_id`, `p
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter`
+-- Table structure for table `oc_filter`
 --
 
 CREATE TABLE `oc_filter` (
@@ -3516,7 +3401,7 @@ CREATE TABLE `oc_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_description`
+-- Table structure for table `oc_filter_description`
 --
 
 CREATE TABLE `oc_filter_description` (
@@ -3529,7 +3414,7 @@ CREATE TABLE `oc_filter_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_group`
+-- Table structure for table `oc_filter_group`
 --
 
 CREATE TABLE `oc_filter_group` (
@@ -3540,7 +3425,7 @@ CREATE TABLE `oc_filter_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_group_description`
+-- Table structure for table `oc_filter_group_description`
 --
 
 CREATE TABLE `oc_filter_group_description` (
@@ -3552,7 +3437,7 @@ CREATE TABLE `oc_filter_group_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_geo_zone`
+-- Table structure for table `oc_geo_zone`
 --
 
 CREATE TABLE `oc_geo_zone` (
@@ -3564,7 +3449,7 @@ CREATE TABLE `oc_geo_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_geo_zone`
+-- Dumping data for table `oc_geo_zone`
 --
 
 INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, `date_modified`) VALUES
@@ -3574,7 +3459,7 @@ INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information`
+-- Table structure for table `oc_information`
 --
 
 CREATE TABLE `oc_information` (
@@ -3585,19 +3470,20 @@ CREATE TABLE `oc_information` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information`
+-- Dumping data for table `oc_information`
 --
 
 INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
-(3, 1, 3, 1),
-(4, 1, 1, 1),
-(5, 1, 4, 1),
-(6, 1, 2, 1);
+(3, 0, 3, 1),
+(4, 1, 3, 1),
+(5, 0, 4, 1),
+(6, 1, 2, 1),
+(7, 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_description`
+-- Table structure for table `oc_information_description`
 --
 
 CREATE TABLE `oc_information_description` (
@@ -3611,23 +3497,21 @@ CREATE TABLE `oc_information_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information_description`
+-- Dumping data for table `oc_information_description`
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(4, 1, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', 'About Us', '', ''),
-(5, 1, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', 'Terms &amp; Conditions', '', ''),
-(3, 1, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', 'Privacy Policy', '', ''),
-(6, 1, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', 'Delivery Information', '', ''),
-(4, 2, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', 'About Us', '', ''),
-(5, 2, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', 'Terms &amp; Conditions', '', ''),
-(3, 2, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', 'Privacy Policy', '', ''),
-(6, 2, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', 'Delivery Information', '', '');
+(5, 2, 'Условия пользовательского соглашения', '&lt;p&gt;\r\n	Условия пользовательского соглашения&lt;/p&gt;\r\n', 'Условия пользовательского соглашения', '', ''),
+(6, 2, 'Доставка и оплата', '&lt;p&gt;\r\n	Доставка и оплата&lt;/p&gt;\r\n', 'Доставка и оплата', '', ''),
+(4, 2, 'Контакты', '&lt;p&gt;\r\n	Контакты&lt;/p&gt;\r\n', 'Контакты', '', ''),
+(3, 2, 'Политика конфиденциальности', '&lt;p&gt;\r\n	Политика конфиденциальности&lt;/p&gt;\r\n', 'Политика конфиденциальности', '', '');
+INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
+(7, 2, 'О компании', '&lt;p&gt;ООО «Зиптрейд» - первый поставщик и импортер швейной фурнитуры на территории Республики Беларусь. На нашем официальном сайте представлен каталог со швейной фурнитурой, тканями и трикотажем.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;За 2020 год 310 клиентов обратились к нам повторно и стали постоянными клиентами.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;«Свитанак», «Купалинка», «Полесье», «Белль Бимбо», «Калинка», «Формэль», «Стецкевич-спецодежда», «8 марта», «Славянка» и другие предприятия покупают швейную фурнитуру оптом в нашей компании.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Мы начинали только с молний. 1 января 2021г. на складе было в наличии 3840 наименований товаров, а пока вы читали этот текст, товаров стало больше.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Наша компания заботится о репутации клиентов, поэтому продукция имеет сертификат качества, выдерживает срок эксплуатации изделия, не ломается и не «подводит» бренд.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Доставляем заказы по всей Беларуси: Брест, Витебск, Гомель, Гродно, Минск, Могилёв и другие.&lt;/p&gt;&lt;div&gt;&lt;span data-metadata=&quot;&lt;!--(figmeta)eyJmaWxlS2V5IjoiRkRUOXowQU9VS1RDVVM3dDFJbER0dCIsInBhc3RlSUQiOjk4NjU4NTUyMCwiZGF0YVR5cGUiOiJzY2VuZSJ9Cg==(/figmeta)--&gt;&quot;&gt;&lt;/span&gt;&lt;span data-buffer=&quot;&lt;!--(figma)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(/figma)--&gt;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span data-metadata=&quot;&lt;!--(figmeta)eyJmaWxlS2V5IjoiRkRUOXowQU9VS1RDVVM3dDFJbER0dCIsInBhc3RlSUQiOjk4NjU4NTUyMCwiZGF0YVR5cGUiOiJzY2VuZSJ9Cg==(/figmeta)--&gt;&quot;&gt;&lt;/span&gt;&lt;span data-buffer=&quot;&lt;!--(figma)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(/figma)--&gt;&quot;&gt;&lt;/span&gt;&lt;/div&gt;', 'О компании', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_to_layout`
+-- Table structure for table `oc_information_to_layout`
 --
 
 CREATE TABLE `oc_information_to_layout` (
@@ -3636,10 +3520,21 @@ CREATE TABLE `oc_information_to_layout` (
   `layout_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `oc_information_to_layout`
+--
+
+INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
+(4, 0, 0),
+(6, 0, 0),
+(5, 0, 0),
+(3, 0, 0),
+(7, 0, 104);
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_to_store`
+-- Table structure for table `oc_information_to_store`
 --
 
 CREATE TABLE `oc_information_to_store` (
@@ -3648,19 +3543,20 @@ CREATE TABLE `oc_information_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information_to_store`
+-- Dumping data for table `oc_information_to_store`
 --
 
 INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 (3, 0),
 (4, 0),
 (5, 0),
-(6, 0);
+(6, 0),
+(7, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_language`
+-- Table structure for table `oc_language`
 --
 
 CREATE TABLE `oc_language` (
@@ -3675,7 +3571,7 @@ CREATE TABLE `oc_language` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_language`
+-- Dumping data for table `oc_language`
 --
 
 INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `sort_order`, `status`) VALUES
@@ -3684,7 +3580,7 @@ INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `di
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout`
+-- Table structure for table `oc_layout`
 --
 
 CREATE TABLE `oc_layout` (
@@ -3693,7 +3589,7 @@ CREATE TABLE `oc_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout`
+-- Dumping data for table `oc_layout`
 --
 
 INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
@@ -3713,12 +3609,13 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 (100, 'Blog post'),
 (101, 'Blog category'),
 (102, 'Blog search'),
-(103, 'Blog author');
+(103, 'Blog author'),
+(104, 'Информация о компании');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout_module`
+-- Table structure for table `oc_layout_module`
 --
 
 CREATE TABLE `oc_layout_module` (
@@ -3730,7 +3627,7 @@ CREATE TABLE `oc_layout_module` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout_module`
+-- Dumping data for table `oc_layout_module`
 --
 
 INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `position`, `sort_order`) VALUES
@@ -3746,12 +3643,13 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (78, 3, 'category', 'column_left', 1),
 (109, 1, 'html.32', 'content_bottom', 0),
 (108, 1, 'featured.28', 'content_top', 2),
-(106, 1, 'category', 'column_left', 0);
+(106, 1, 'category', 'column_left', 0),
+(114, 104, 'carousel.34', 'content_bottom', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout_route`
+-- Table structure for table `oc_layout_route`
 --
 
 CREATE TABLE `oc_layout_route` (
@@ -3762,7 +3660,7 @@ CREATE TABLE `oc_layout_route` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout_route`
+-- Dumping data for table `oc_layout_route`
 --
 
 INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
@@ -3787,7 +3685,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_length_class`
+-- Table structure for table `oc_length_class`
 --
 
 CREATE TABLE `oc_length_class` (
@@ -3796,7 +3694,7 @@ CREATE TABLE `oc_length_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_length_class`
+-- Dumping data for table `oc_length_class`
 --
 
 INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
@@ -3807,7 +3705,7 @@ INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_length_class_description`
+-- Table structure for table `oc_length_class_description`
 --
 
 CREATE TABLE `oc_length_class_description` (
@@ -3818,7 +3716,7 @@ CREATE TABLE `oc_length_class_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_length_class_description`
+-- Dumping data for table `oc_length_class_description`
 --
 
 INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -3832,7 +3730,7 @@ INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_location`
+-- Table structure for table `oc_location`
 --
 
 CREATE TABLE `oc_location` (
@@ -3850,7 +3748,7 @@ CREATE TABLE `oc_location` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_manufacturer`
+-- Table structure for table `oc_manufacturer`
 --
 
 CREATE TABLE `oc_manufacturer` (
@@ -3861,7 +3759,7 @@ CREATE TABLE `oc_manufacturer` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_manufacturer`
+-- Dumping data for table `oc_manufacturer`
 --
 
 INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
@@ -3875,7 +3773,7 @@ INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`)
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_manufacturer_to_store`
+-- Table structure for table `oc_manufacturer_to_store`
 --
 
 CREATE TABLE `oc_manufacturer_to_store` (
@@ -3884,7 +3782,7 @@ CREATE TABLE `oc_manufacturer_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_manufacturer_to_store`
+-- Dumping data for table `oc_manufacturer_to_store`
 --
 
 INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
@@ -3898,7 +3796,7 @@ INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_marketing`
+-- Table structure for table `oc_marketing`
 --
 
 CREATE TABLE `oc_marketing` (
@@ -3913,7 +3811,7 @@ CREATE TABLE `oc_marketing` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_modification`
+-- Table structure for table `oc_modification`
 --
 
 CREATE TABLE `oc_modification` (
@@ -3930,7 +3828,7 @@ CREATE TABLE `oc_modification` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_modification`
+-- Dumping data for table `oc_modification`
 --
 
 INSERT INTO `oc_modification` (`modification_id`, `extension_install_id`, `name`, `code`, `author`, `version`, `link`, `xml`, `status`, `date_added`) VALUES
@@ -3941,7 +3839,7 @@ INSERT INTO `oc_modification` (`modification_id`, `extension_install_id`, `name`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_module`
+-- Table structure for table `oc_module`
 --
 
 CREATE TABLE `oc_module` (
@@ -3952,7 +3850,7 @@ CREATE TABLE `oc_module` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_module`
+-- Dumping data for table `oc_module`
 --
 
 INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
@@ -3961,13 +3859,14 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (28, 'Home Page', 'featured', '{\"name\":\"Home Page\",\"product_name\":\"\",\"product\":[\"43\",\"40\",\"42\",\"30\",\"49\",\"29\",\"46\",\"44\"],\"limit\":\"8\",\"width\":\"177\",\"height\":\"189\",\"status\":\"1\"}'),
 (27, 'Home Page', 'slideshow', '{\"name\":\"Home Page\",\"banner_id\":\"7\",\"width\":\"1140\",\"height\":\"380\",\"status\":\"1\"}'),
 (31, 'Main page banner', 'banner', '{\"name\":\"Main page banner\",\"banner_id\":\"6\",\"width\":\"996\",\"height\":\"400\",\"status\":\"1\"}'),
-(32, 'Homepage text', 'html', '{\"name\":\"Homepage text\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;homepage-about&quot;&gt;\\r\\n&lt;p&gt;\\u041e\\u041e\\u041e \\u00ab\\u0417\\u0438\\u043f\\u0442\\u0440\\u0435\\u0439\\u0434\\u00bb - \\u043f\\u0435\\u0440\\u0432\\u044b\\u0439 \\u043f\\u043e\\u0441\\u0442\\u0430\\u0432\\u0449\\u0438\\u043a \\u0438 \\u0438\\u043c\\u043f\\u043e\\u0440\\u0442\\u0435\\u0440 \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u044b \\u043d\\u0430 \\u0442\\u0435\\u0440\\u0440\\u0438\\u0442\\u043e\\u0440\\u0438\\u0438 \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438 \\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u044c. \\u041d\\u0430 \\u043d\\u0430\\u0448\\u0435\\u043c \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u043c \\u0441\\u0430\\u0439\\u0442\\u0435 \\u043f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d \\u043a\\u0430\\u0442\\u0430\\u043b\\u043e\\u0433 \\u0441\\u043e \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u043e\\u0439, \\u0442\\u043a\\u0430\\u043d\\u044f\\u043c\\u0438 \\u0438 \\u0442\\u0440\\u0438\\u043a\\u043e\\u0442\\u0430\\u0436\\u0435\\u043c. \\u041d\\u0430\\u0448\\u0430 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u044f \\u0437\\u0430\\u0431\\u043e\\u0442\\u0438\\u0442\\u0441\\u044f \\u043e \\u0440\\u0435\\u043f\\u0443\\u0442\\u0430\\u0446\\u0438\\u0438 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432, \\u043f\\u043e\\u044d\\u0442\\u043e\\u043c\\u0443 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044f \\u0438\\u043c\\u0435\\u0435\\u0442 \\u0441\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430, \\u0432\\u044b\\u0434\\u0435\\u0440\\u0436\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a \\u044d\\u043a\\u0441\\u043f\\u043b\\u0443\\u0430\\u0442\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0437\\u0434\\u0435\\u043b\\u0438\\u044f, \\u043d\\u0435 \\u043b\\u043e\\u043c\\u0430\\u0435\\u0442\\u0441\\u044f \\u0438 \\u043d\\u0435 \\u00ab\\u043f\\u043e\\u0434\\u0432\\u043e\\u0434\\u0438\\u0442\\u00bb \\u0431\\u0440\\u0435\\u043d\\u0434.&lt;\\/p&gt;&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
-(33, 'Homepage why', 'html', '{\"name\":\"Homepage why\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;col-12&quot;&gt;\\r\\n        &lt;div class=&quot;homepage-why d-flex align-items-center justify-content-between&quot;&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/call.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u041f\\u0420\\u0418\\u0415\\u041c \\u0417\\u0412\\u041e\\u041d\\u041a\\u041e\\u0412&lt;br&gt;8.30 : 17.00&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/delivery.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0411\\u0415\\u0421\\u041f\\u041b\\u0410\\u0422\\u041d\\u0410\\u042f \\u0414\\u041e\\u0421\\u0422\\u0410\\u0412\\u041a\\u0410&lt;br&gt;\\u041f\\u041e \\u0420\\u0411 - \\u041e\\u0422 300 BYN,&lt;br&gt;\\u041f\\u041e \\u0412\\u0418\\u0422\\u0415\\u0411\\u0421\\u041a\\u0423 - \\u041e\\u0422 150 BYN&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/guarantee.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0413\\u0410\\u0420\\u0410\\u041d\\u0422\\u0418\\u042f \\u041a\\u0410\\u0427\\u0415\\u0421\\u0422\\u0412\\u0410&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/return.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0412\\u041e\\u0417\\u0412\\u0420\\u0410\\u0422 \\u041f\\u0420\\u0418&lt;br&gt;\\u041d\\u0415\\u0421\\u041e\\u041e\\u0422\\u0412\\u0415\\u0422\\u0421\\u0422\\u0412\\u0418\\u0418&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n        &lt;\\/div&gt;\\r\\n      &lt;\\/div&gt;\"}},\"status\":\"1\"}');
+(32, 'Homepage text', 'html', '{\"name\":\"Homepage text\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;p&gt;\\u041e\\u041e\\u041e \\u00ab\\u0417\\u0438\\u043f\\u0442\\u0440\\u0435\\u0439\\u0434\\u00bb - \\u043f\\u0435\\u0440\\u0432\\u044b\\u0439 \\u043f\\u043e\\u0441\\u0442\\u0430\\u0432\\u0449\\u0438\\u043a \\u0438 \\u0438\\u043c\\u043f\\u043e\\u0440\\u0442\\u0435\\u0440 \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u044b \\u043d\\u0430 \\u0442\\u0435\\u0440\\u0440\\u0438\\u0442\\u043e\\u0440\\u0438\\u0438 \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438 \\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u044c. \\u041d\\u0430 \\u043d\\u0430\\u0448\\u0435\\u043c \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u043c \\u0441\\u0430\\u0439\\u0442\\u0435 \\u043f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d \\u043a\\u0430\\u0442\\u0430\\u043b\\u043e\\u0433 \\u0441\\u043e \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u043e\\u0439, \\u0442\\u043a\\u0430\\u043d\\u044f\\u043c\\u0438 \\u0438 \\u0442\\u0440\\u0438\\u043a\\u043e\\u0442\\u0430\\u0436\\u0435\\u043c. \\u041d\\u0430\\u0448\\u0430 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u044f \\u0437\\u0430\\u0431\\u043e\\u0442\\u0438\\u0442\\u0441\\u044f \\u043e \\u0440\\u0435\\u043f\\u0443\\u0442\\u0430\\u0446\\u0438\\u0438 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432, \\u043f\\u043e\\u044d\\u0442\\u043e\\u043c\\u0443 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044f \\u0438\\u043c\\u0435\\u0435\\u0442 \\u0441\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430, \\u0432\\u044b\\u0434\\u0435\\u0440\\u0436\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a \\u044d\\u043a\\u0441\\u043f\\u043b\\u0443\\u0430\\u0442\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0437\\u0434\\u0435\\u043b\\u0438\\u044f, \\u043d\\u0435 \\u043b\\u043e\\u043c\\u0430\\u0435\\u0442\\u0441\\u044f \\u0438 \\u043d\\u0435 \\u00ab\\u043f\\u043e\\u0434\\u0432\\u043e\\u0434\\u0438\\u0442\\u00bb \\u0431\\u0440\\u0435\\u043d\\u0434.&lt;\\/p&gt;\"}},\"status\":\"1\"}'),
+(33, 'Homepage why', 'html', '{\"name\":\"Homepage why\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;col-12&quot;&gt;\\r\\n        &lt;div class=&quot;homepage-why d-flex align-items-center justify-content-between&quot;&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/call.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u041f\\u0420\\u0418\\u0415\\u041c \\u0417\\u0412\\u041e\\u041d\\u041a\\u041e\\u0412&lt;br&gt;8.30 : 17.00&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/delivery.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0411\\u0415\\u0421\\u041f\\u041b\\u0410\\u0422\\u041d\\u0410\\u042f \\u0414\\u041e\\u0421\\u0422\\u0410\\u0412\\u041a\\u0410&lt;br&gt;\\u041f\\u041e \\u0420\\u0411 - \\u041e\\u0422 300 BYN,&lt;br&gt;\\u041f\\u041e \\u0412\\u0418\\u0422\\u0415\\u0411\\u0421\\u041a\\u0423 - \\u041e\\u0422 150 BYN&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/guarantee.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0413\\u0410\\u0420\\u0410\\u041d\\u0422\\u0418\\u042f \\u041a\\u0410\\u0427\\u0415\\u0421\\u0422\\u0412\\u0410&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/return.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0412\\u041e\\u0417\\u0412\\u0420\\u0410\\u0422 \\u041f\\u0420\\u0418&lt;br&gt;\\u041d\\u0415\\u0421\\u041e\\u041e\\u0422\\u0412\\u0415\\u0422\\u0421\\u0422\\u0412\\u0418\\u0418&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n        &lt;\\/div&gt;\\r\\n      &lt;\\/div&gt;\"}},\"status\":\"1\"}'),
+(34, 'Сертификаты', 'carousel', '{\"name\":\"\\u0421\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u044b\",\"banner_id\":\"10\",\"width\":\"180\",\"height\":\"234\",\"status\":\"1\"}');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option`
+-- Table structure for table `oc_option`
 --
 
 CREATE TABLE `oc_option` (
@@ -3977,11 +3876,11 @@ CREATE TABLE `oc_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option`
+-- Dumping data for table `oc_option`
 --
 
 INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
-(1, 'radio', 5),
+(1, 'radio', 1),
 (2, 'checkbox', 2),
 (4, 'text', 3),
 (5, 'select', 4),
@@ -3996,7 +3895,7 @@ INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_description`
+-- Table structure for table `oc_option_description`
 --
 
 CREATE TABLE `oc_option_description` (
@@ -4006,26 +3905,28 @@ CREATE TABLE `oc_option_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_description`
+-- Dumping data for table `oc_option_description`
 --
 
 INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
+(1, 1, 'Radio'),
 (2, 1, 'Checkbox'),
 (4, 1, 'Text'),
 (6, 1, 'Textarea'),
 (8, 1, 'Date'),
 (7, 1, 'File'),
+(5, 1, 'Select'),
 (9, 1, 'Time'),
 (10, 1, 'Date &amp; Time'),
 (12, 1, 'Delivery Date'),
 (11, 1, 'Size'),
-(1, 2, 'Цвет'),
+(1, 2, 'Radio'),
 (2, 2, 'Checkbox'),
 (4, 2, 'Text'),
 (6, 2, 'Textarea'),
 (8, 2, 'Date'),
 (7, 2, 'File'),
-(5, 2, 'Размер'),
+(5, 2, 'Select'),
 (9, 2, 'Time'),
 (10, 2, 'Date &amp; Time'),
 (12, 2, 'Delivery Date'),
@@ -4034,7 +3935,7 @@ INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_value`
+-- Table structure for table `oc_option_value`
 --
 
 CREATE TABLE `oc_option_value` (
@@ -4045,19 +3946,19 @@ CREATE TABLE `oc_option_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_value`
+-- Dumping data for table `oc_option_value`
 --
 
 INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
 (43, 1, '', 3),
-(31, 1, '', 2),
+(32, 1, '', 1),
 (45, 2, '', 4),
 (44, 2, '', 3),
 (42, 5, '', 4),
 (41, 5, '', 3),
-(40, 5, '', 2),
 (39, 5, '', 1),
-(32, 1, '', 1),
+(40, 5, '', 2),
+(31, 1, '', 2),
 (23, 2, '', 1),
 (24, 2, '', 2),
 (46, 11, '', 1),
@@ -4067,7 +3968,7 @@ INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_or
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_value_description`
+-- Table structure for table `oc_option_value_description`
 --
 
 CREATE TABLE `oc_option_value_description` (
@@ -4078,36 +3979,43 @@ CREATE TABLE `oc_option_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_value_description`
+-- Dumping data for table `oc_option_value_description`
 --
 
 INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
+(43, 1, 1, 'Large'),
+(32, 1, 1, 'Small'),
 (45, 1, 2, 'Checkbox 4'),
 (44, 1, 2, 'Checkbox 3'),
-(43, 2, 1, 'Черный:#121212'),
-(42, 2, 5, '7мм'),
+(31, 1, 1, 'Medium'),
+(42, 1, 5, 'Yellow'),
+(41, 1, 5, 'Green'),
+(39, 1, 5, 'Red'),
+(40, 1, 5, 'Blue'),
 (23, 1, 2, 'Checkbox 1'),
 (24, 1, 2, 'Checkbox 2'),
 (48, 1, 11, 'Large'),
 (47, 1, 11, 'Medium'),
 (46, 1, 11, 'Small'),
+(43, 2, 1, 'Large'),
+(32, 2, 1, 'Small'),
 (45, 2, 2, 'Checkbox 4'),
 (44, 2, 2, 'Checkbox 3'),
-(32, 2, 1, 'Серый:#EFEFEF'),
-(41, 2, 5, '8мм'),
-(40, 2, 5, '9мм'),
-(39, 2, 5, '10мм'),
+(31, 2, 1, 'Medium'),
+(42, 2, 5, 'Yellow'),
+(41, 2, 5, 'Green'),
+(39, 2, 5, 'Red'),
+(40, 2, 5, 'Blue'),
 (23, 2, 2, 'Checkbox 1'),
 (24, 2, 2, 'Checkbox 2'),
 (48, 2, 11, 'Large'),
 (47, 2, 11, 'Medium'),
-(46, 2, 11, 'Small'),
-(31, 2, 1, 'Коричневый:#BA9988');
+(46, 2, 11, 'Small');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order`
+-- Table structure for table `oc_order`
 --
 
 CREATE TABLE `oc_order` (
@@ -4175,7 +4083,7 @@ CREATE TABLE `oc_order` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order`
+-- Dumping data for table `oc_order`
 --
 
 INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
@@ -4207,13 +4115,12 @@ INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, 
 (26, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:03:11', '2022-12-30 10:03:11'),
 (27, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:03:53', '2022-12-30 10:03:53'),
 (28, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:15:00', '2022-12-30 10:15:00'),
-(29, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:17:53', '2022-12-30 10:17:53'),
-(30, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '810.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-04 02:09:42', '2023-01-04 02:09:42');
+(29, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '602.0000', 0, 0, '0.0000', 0, '', 2, 4, 'RUB', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2022-12-30 10:17:53', '2022-12-30 10:17:53');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_history`
+-- Table structure for table `oc_order_history`
 --
 
 CREATE TABLE `oc_order_history` (
@@ -4228,7 +4135,7 @@ CREATE TABLE `oc_order_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_option`
+-- Table structure for table `oc_order_option`
 --
 
 CREATE TABLE `oc_order_option` (
@@ -4242,18 +4149,10 @@ CREATE TABLE `oc_order_option` (
   `type` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_order_option`
---
-
-INSERT INTO `oc_order_option` (`order_option_id`, `order_id`, `order_product_id`, `product_option_id`, `product_option_value_id`, `name`, `value`, `type`) VALUES
-(1, 30, 30, 217, 4, 'Размер', '10мм', 'select'),
-(2, 30, 30, 227, 17, 'Цвет', 'Коричневый:#BA9988', 'radio');
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_product`
+-- Table structure for table `oc_order_product`
 --
 
 CREATE TABLE `oc_order_product` (
@@ -4270,7 +4169,7 @@ CREATE TABLE `oc_order_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_product`
+-- Dumping data for table `oc_order_product`
 --
 
 INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
@@ -4302,13 +4201,12 @@ INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `n
 (26, 26, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600),
 (27, 27, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600),
 (28, 28, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600),
-(29, 29, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600),
-(30, 30, 42, 'Apple Cinema 30&quot;', 'Product 15', 9, '90.0000', '810.0000', '20.0000', 900);
+(29, 29, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '102.0000', 600);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_recurring`
+-- Table structure for table `oc_order_recurring`
 --
 
 CREATE TABLE `oc_order_recurring` (
@@ -4337,7 +4235,7 @@ CREATE TABLE `oc_order_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_recurring_transaction`
+-- Table structure for table `oc_order_recurring_transaction`
 --
 
 CREATE TABLE `oc_order_recurring_transaction` (
@@ -4352,7 +4250,7 @@ CREATE TABLE `oc_order_recurring_transaction` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_shipment`
+-- Table structure for table `oc_order_shipment`
 --
 
 CREATE TABLE `oc_order_shipment` (
@@ -4366,7 +4264,7 @@ CREATE TABLE `oc_order_shipment` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_status`
+-- Table structure for table `oc_order_status`
 --
 
 CREATE TABLE `oc_order_status` (
@@ -4376,7 +4274,7 @@ CREATE TABLE `oc_order_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_status`
+-- Dumping data for table `oc_order_status`
 --
 
 INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
@@ -4412,7 +4310,7 @@ INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_total`
+-- Table structure for table `oc_order_total`
 --
 
 CREATE TABLE `oc_order_total` (
@@ -4425,7 +4323,7 @@ CREATE TABLE `oc_order_total` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_total`
+-- Dumping data for table `oc_order_total`
 --
 
 INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `value`, `sort_order`) VALUES
@@ -4544,14 +4442,12 @@ INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `va
 (113, 29, 'sub_total', 'Сумма', '500.0000', 1),
 (114, 29, 'tax', 'Eco Tax (-2.00)', '2.0000', 5),
 (115, 29, 'tax', 'VAT (20%)', '100.0000', 5),
-(116, 29, 'total', 'Итого', '602.0000', 9),
-(117, 30, 'sub_total', 'Сумма', '810.0000', 1),
-(118, 30, 'total', 'Итого', '810.0000', 9);
+(116, 29, 'total', 'Итого', '602.0000', 9);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_voucher`
+-- Table structure for table `oc_order_voucher`
 --
 
 CREATE TABLE `oc_order_voucher` (
@@ -4572,7 +4468,7 @@ CREATE TABLE `oc_order_voucher` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product`
+-- Table structure for table `oc_product`
 --
 
 CREATE TABLE `oc_product` (
@@ -4610,13 +4506,13 @@ CREATE TABLE `oc_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product`
+-- Dumping data for table `oc_product`
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
 (28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
 (29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/palm_treo_pro_1.jpg', 6, 1, '279.9900', 0, 9, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2011-09-30 01:06:08'),
-(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 5, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
+(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 3, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
 (31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2011-09-30 01:06:00'),
 (32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2011-09-30 01:07:22'),
 (33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2011-09-30 01:06:29'),
@@ -4624,8 +4520,8 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2011-09-30 01:06:17'),
 (36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
 (40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 2, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 152, '2009-02-03 21:07:37', '2023-01-04 00:21:33'),
+(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
+(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 16, '2009-02-03 21:07:37', '2023-01-04 14:37:39'),
 (43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 1, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 1, '2009-02-03 21:07:49', '2022-12-30 10:14:53'),
 (44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
 (45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/macbook_pro_1.jpg', 8, 1, '2000.0000', 0, 100, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2011-09-15 22:22:01'),
@@ -4637,7 +4533,7 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_attribute`
+-- Table structure for table `oc_product_attribute`
 --
 
 CREATE TABLE `oc_product_attribute` (
@@ -4648,7 +4544,7 @@ CREATE TABLE `oc_product_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_attribute`
+-- Dumping data for table `oc_product_attribute`
 --
 
 INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
@@ -4663,7 +4559,7 @@ INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_description`
+-- Table structure for table `oc_product_description`
 --
 
 CREATE TABLE `oc_product_description` (
@@ -4678,7 +4574,7 @@ CREATE TABLE `oc_product_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_description`
+-- Dumping data for table `oc_product_description`
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
@@ -4716,13 +4612,13 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (43, 2, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'MacBook', '', ''),
 (31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
 (49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
-(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve.&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;###more_start###&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;###more_end###&lt;/span&gt;&lt;/p&gt;', '', 'Apple Cinema 30', '', ''),
+(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br&gt;\r\n	&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n&lt;h3&gt;\r\n	Features:&lt;/h3&gt;\r\n&lt;p&gt;\r\n	Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;\r\n	Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Display Power,&lt;/li&gt;\r\n	&lt;li&gt;\r\n		System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Brightness&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br&gt;\r\n	Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;\r\n		USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;\r\n		DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br&gt;\r\n	Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55024&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MPR II&lt;/li&gt;\r\n	&lt;li&gt;\r\n		IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		UL 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;\r\n		TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Size and weight&lt;/b&gt;&lt;br&gt;\r\n	30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Apple Cinema 30', '', ''),
 (30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_discount`
+-- Table structure for table `oc_product_discount`
 --
 
 CREATE TABLE `oc_product_discount` (
@@ -4737,18 +4633,18 @@ CREATE TABLE `oc_product_discount` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_discount`
+-- Dumping data for table `oc_product_discount`
 --
 
 INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(479, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
-(478, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
-(477, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
+(443, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
+(442, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
+(441, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_filter`
+-- Table structure for table `oc_product_filter`
 --
 
 CREATE TABLE `oc_product_filter` (
@@ -4759,7 +4655,7 @@ CREATE TABLE `oc_product_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_image`
+-- Table structure for table `oc_product_image`
 --
 
 CREATE TABLE `oc_product_image` (
@@ -4770,7 +4666,7 @@ CREATE TABLE `oc_product_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_image`
+-- Dumping data for table `oc_product_image`
 --
 
 INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
@@ -4830,16 +4726,16 @@ INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort
 (2324, 49, 'catalog/demo/samsung_tab_4.jpg', 0),
 (2323, 49, 'catalog/demo/samsung_tab_3.jpg', 0),
 (2322, 49, 'catalog/demo/samsung_tab_2.jpg', 0),
-(2420, 42, 'catalog/demo/canon_eos_5d_1.jpg', 0),
-(2419, 42, 'catalog/demo/compaq_presario.jpg', 0),
-(2418, 42, 'catalog/demo/hp_1.jpg', 0),
-(2417, 42, 'catalog/demo/canon_logo.jpg', 0),
-(2416, 42, 'catalog/demo/canon_eos_5d_2.jpg', 0);
+(2359, 42, 'catalog/demo/canon_eos_5d_1.jpg', 0),
+(2358, 42, 'catalog/demo/compaq_presario.jpg', 0),
+(2357, 42, 'catalog/demo/hp_1.jpg', 0),
+(2356, 42, 'catalog/demo/canon_logo.jpg', 0),
+(2360, 42, 'catalog/demo/canon_eos_5d_2.jpg', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_option`
+-- Table structure for table `oc_product_option`
 --
 
 CREATE TABLE `oc_product_option` (
@@ -4851,20 +4747,21 @@ CREATE TABLE `oc_product_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_option`
+-- Dumping data for table `oc_product_option`
 --
 
 INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
 (224, 35, 11, '', 1),
 (225, 47, 12, '2011-04-22', 1),
+(218, 42, 1, '', 1),
 (217, 42, 5, '', 1),
-(227, 42, 1, '', 1),
+(223, 42, 2, '', 1),
 (226, 30, 5, '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_option_value`
+-- Table structure for table `oc_product_option_value`
 --
 
 CREATE TABLE `oc_product_option_value` (
@@ -4884,16 +4781,21 @@ CREATE TABLE `oc_product_option_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_option_value`
+-- Dumping data for table `oc_product_option_value`
 --
 
 INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(1, 217, 42, 5, 41, 100, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(3, 217, 42, 5, 40, 300, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(4, 217, 42, 5, 39, 92, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(19, 227, 42, 1, 43, 30, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(17, 227, 42, 1, 31, 10, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(18, 227, 42, 1, 32, 10, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(7, 218, 42, 1, 43, 300, 1, '30.0000', '+', 3, '+', '30.00000000', '+'),
+(6, 218, 42, 1, 31, 146, 1, '20.0000', '+', 2, '-', '20.00000000', '+'),
+(5, 218, 42, 1, 32, 96, 1, '10.0000', '+', 1, '+', '10.00000000', '+'),
+(2, 217, 42, 5, 42, 200, 1, '2.0000', '+', 0, '+', '2.00000000', '+'),
+(1, 217, 42, 5, 41, 100, 0, '1.0000', '+', 0, '+', '1.00000000', '+'),
+(3, 217, 42, 5, 40, 300, 0, '3.0000', '+', 0, '+', '3.00000000', '+'),
+(4, 217, 42, 5, 39, 92, 1, '4.0000', '+', 0, '+', '4.00000000', '+'),
+(11, 223, 42, 2, 45, 3998, 1, '40.0000', '+', 0, '+', '40.00000000', '+'),
+(10, 223, 42, 2, 44, 2696, 1, '30.0000', '+', 0, '+', '30.00000000', '+'),
+(9, 223, 42, 2, 24, 194, 1, '20.0000', '+', 0, '+', '20.00000000', '+'),
+(8, 223, 42, 2, 23, 48, 1, '10.0000', '+', 0, '+', '10.00000000', '+'),
 (12, 224, 35, 11, 46, 0, 1, '5.0000', '+', 0, '+', '0.00000000', '+'),
 (13, 224, 35, 11, 47, 10, 1, '10.0000', '+', 0, '+', '0.00000000', '+'),
 (14, 224, 35, 11, 48, 15, 1, '15.0000', '+', 0, '+', '0.00000000', '+'),
@@ -4903,7 +4805,7 @@ INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_optio
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_recurring`
+-- Table structure for table `oc_product_recurring`
 --
 
 CREATE TABLE `oc_product_recurring` (
@@ -4915,7 +4817,7 @@ CREATE TABLE `oc_product_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_related`
+-- Table structure for table `oc_product_related`
 --
 
 CREATE TABLE `oc_product_related` (
@@ -4924,7 +4826,7 @@ CREATE TABLE `oc_product_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_related`
+-- Dumping data for table `oc_product_related`
 --
 
 INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
@@ -4936,7 +4838,7 @@ INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_reward`
+-- Table structure for table `oc_product_reward`
 --
 
 CREATE TABLE `oc_product_reward` (
@@ -4947,11 +4849,11 @@ CREATE TABLE `oc_product_reward` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_reward`
+-- Dumping data for table `oc_product_reward`
 --
 
 INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-(559, 42, 1, 100),
+(547, 42, 1, 100),
 (519, 47, 1, 300),
 (379, 28, 1, 400),
 (546, 43, 1, 600),
@@ -4974,7 +4876,7 @@ INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_gr
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_special`
+-- Table structure for table `oc_product_special`
 --
 
 CREATE TABLE `oc_product_special` (
@@ -4988,18 +4890,18 @@ CREATE TABLE `oc_product_special` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_special`
+-- Dumping data for table `oc_product_special`
 --
 
 INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(452, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
+(440, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
 (439, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00'),
 (438, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_category`
+-- Table structure for table `oc_product_to_category`
 --
 
 CREATE TABLE `oc_product_to_category` (
@@ -5008,7 +4910,7 @@ CREATE TABLE `oc_product_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_to_category`
+-- Dumping data for table `oc_product_to_category`
 --
 
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
@@ -5046,7 +4948,7 @@ INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_download`
+-- Table structure for table `oc_product_to_download`
 --
 
 CREATE TABLE `oc_product_to_download` (
@@ -5057,7 +4959,7 @@ CREATE TABLE `oc_product_to_download` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_layout`
+-- Table structure for table `oc_product_to_layout`
 --
 
 CREATE TABLE `oc_product_to_layout` (
@@ -5067,7 +4969,7 @@ CREATE TABLE `oc_product_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_to_layout`
+-- Dumping data for table `oc_product_to_layout`
 --
 
 INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
@@ -5077,7 +4979,7 @@ INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_store`
+-- Table structure for table `oc_product_to_store`
 --
 
 CREATE TABLE `oc_product_to_store` (
@@ -5086,7 +4988,7 @@ CREATE TABLE `oc_product_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_to_store`
+-- Dumping data for table `oc_product_to_store`
 --
 
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
@@ -5113,7 +5015,7 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_recurring`
+-- Table structure for table `oc_recurring`
 --
 
 CREATE TABLE `oc_recurring` (
@@ -5134,7 +5036,7 @@ CREATE TABLE `oc_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_recurring_description`
+-- Table structure for table `oc_recurring_description`
 --
 
 CREATE TABLE `oc_recurring_description` (
@@ -5146,7 +5048,7 @@ CREATE TABLE `oc_recurring_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return`
+-- Table structure for table `oc_return`
 --
 
 CREATE TABLE `oc_return` (
@@ -5174,7 +5076,7 @@ CREATE TABLE `oc_return` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_action`
+-- Table structure for table `oc_return_action`
 --
 
 CREATE TABLE `oc_return_action` (
@@ -5184,7 +5086,7 @@ CREATE TABLE `oc_return_action` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_action`
+-- Dumping data for table `oc_return_action`
 --
 
 INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUES
@@ -5198,7 +5100,7 @@ INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_history`
+-- Table structure for table `oc_return_history`
 --
 
 CREATE TABLE `oc_return_history` (
@@ -5213,7 +5115,7 @@ CREATE TABLE `oc_return_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_reason`
+-- Table structure for table `oc_return_reason`
 --
 
 CREATE TABLE `oc_return_reason` (
@@ -5223,7 +5125,7 @@ CREATE TABLE `oc_return_reason` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_reason`
+-- Dumping data for table `oc_return_reason`
 --
 
 INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
@@ -5241,7 +5143,7 @@ INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_status`
+-- Table structure for table `oc_return_status`
 --
 
 CREATE TABLE `oc_return_status` (
@@ -5251,7 +5153,7 @@ CREATE TABLE `oc_return_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_status`
+-- Dumping data for table `oc_return_status`
 --
 
 INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUES
@@ -5265,7 +5167,7 @@ INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_review`
+-- Table structure for table `oc_review`
 --
 
 CREATE TABLE `oc_review` (
@@ -5283,7 +5185,7 @@ CREATE TABLE `oc_review` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_seo_url`
+-- Table structure for table `oc_seo_url`
 --
 
 CREATE TABLE `oc_seo_url` (
@@ -5295,7 +5197,7 @@ CREATE TABLE `oc_seo_url` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_seo_url`
+-- Dumping data for table `oc_seo_url`
 --
 
 INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `keyword`) VALUES
@@ -5304,16 +5206,13 @@ INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `key
 (834, 0, 1, 'category_id=26', 'pc'),
 (835, 0, 1, 'category_id=27', 'mac'),
 (730, 0, 1, 'manufacturer_id=8', 'apple'),
-(772, 0, 1, 'information_id=4', 'about_us'),
 (789, 0, 1, 'category_id=34', 'mp3-players'),
-(781, 0, 1, 'category_id=36', 'test2'),
 (774, 0, 1, 'category_id=18', 'laptop-notebook'),
 (775, 0, 1, 'category_id=46', 'macs'),
 (776, 0, 1, 'category_id=45', 'windows'),
 (777, 0, 1, 'category_id=25', 'component'),
 (778, 0, 1, 'category_id=29', 'mouse'),
 (779, 0, 1, 'category_id=28', 'monitor'),
-(780, 0, 1, 'category_id=35', 'test1'),
 (782, 0, 1, 'category_id=30', 'printer'),
 (783, 0, 1, 'category_id=31', 'scanner'),
 (784, 0, 1, 'category_id=32', 'web-camera'),
@@ -5321,18 +5220,6 @@ INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `key
 (786, 0, 1, 'category_id=17', 'software'),
 (787, 0, 1, 'category_id=24', 'smartphone'),
 (788, 0, 1, 'category_id=33', 'camera'),
-(790, 0, 1, 'category_id=43', 'test11'),
-(791, 0, 1, 'category_id=44', 'test12'),
-(792, 0, 1, 'category_id=47', 'test15'),
-(793, 0, 1, 'category_id=48', 'test16'),
-(794, 0, 1, 'category_id=49', 'test17'),
-(795, 0, 1, 'category_id=50', 'test18'),
-(796, 0, 1, 'category_id=51', 'test19'),
-(797, 0, 1, 'category_id=52', 'test20'),
-(798, 0, 1, 'category_id=58', 'test25'),
-(799, 0, 1, 'category_id=53', 'test21'),
-(800, 0, 1, 'category_id=54', 'test22'),
-(801, 0, 1, 'category_id=55', 'test23'),
 (802, 0, 1, 'category_id=56', 'test24'),
 (803, 0, 1, 'category_id=38', 'test4'),
 (804, 0, 1, 'category_id=37', 'test5'),
@@ -5360,15 +5247,12 @@ INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `key
 (829, 0, 1, 'manufacturer_id=5', 'htc'),
 (830, 0, 1, 'manufacturer_id=7', 'hewlett-packard'),
 (831, 0, 1, 'manufacturer_id=6', 'palm'),
-(832, 0, 1, 'manufacturer_id=10', 'sony'),
-(841, 0, 1, 'information_id=6', 'delivery'),
-(842, 0, 1, 'information_id=3', 'privacy'),
-(843, 0, 1, 'information_id=5', 'terms');
+(832, 0, 1, 'manufacturer_id=10', 'sony');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_session`
+-- Table structure for table `oc_session`
 --
 
 CREATE TABLE `oc_session` (
@@ -5378,17 +5262,18 @@ CREATE TABLE `oc_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_session`
+-- Dumping data for table `oc_session`
 --
 
 INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
+('06365e998b8495456b45327ea0', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"jJzQh6H9nw7xoyizWH7ZUyRi0U2ZPbqc\"}', '2023-01-03 12:06:04'),
 ('124bbaf4308340eae056d7c98d', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"hn8jEpIfYm7X1KQamSDceRsBNimFbZ4M\",\"order_id\":29,\"install\":\"7Q9EKCLvqx\"}', '2022-12-30 12:13:31'),
-('15c3041a22b5239254f1e4fb71', 'false', '2023-01-03 19:29:28'),
 ('385ecb06cdec9a1d2236ecdce7', '{\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2022-12-31 07:10:09'),
+('620e72d02a270143aaaefc697a', '{\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-03 06:24:31'),
 ('69943b7094cfa6d4f4ee35614c', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_token\":\"4pBR2ySOlkrpOjhoVdjkDp7zqBHRueHF\"}', '2017-11-11 13:05:28'),
-('6d3c2edeb8a118a573c78e92cc', '{\"user_id\":\"1\",\"user_token\":\"6S2kOv7lkaMB58iBTBFgN8ZOj1768IUD\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-02 22:14:03'),
+('6d3c2edeb8a118a573c78e92cc', '{\"user_id\":\"1\",\"user_token\":\"6S2kOv7lkaMB58iBTBFgN8ZOj1768IUD\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-02 21:43:18'),
 ('957809fc785582986f796c2a83', '{\"language\":\"en-gb\",\"currency\":\"RUB\"}', '2017-11-11 13:05:32'),
-('a1957d8182091811895c0c779e', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"Zc6ufX4E4phbFOfgzZ1nBovP8vzVEBgr\",\"order_id\":30,\"wishlist\":[\"42\"],\"d_blog_module_debug\":0}', '2023-01-04 22:25:58'),
+('aed62d1aab9dc9777c09501a90', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"RZpUmRLf41PBF9ZWH0hyh66KBlD65DGj\",\"d_blog_module_debug\":0,\"shipping_methods\":{\"flat\":{\"title\":\"\\u0424\\u0438\\u043a\\u0441\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u0430\\u044f \\u0441\\u0442\\u043e\\u0438\\u043c\\u043e\\u0441\\u0442\\u044c \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u0414\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430 \\u0441 \\u0444\\u0438\\u043a\\u0441\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u0441\\u0442\\u043e\\u0438\\u043c\\u043e\\u0441\\u0442\\u044c\\u044e \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"182.00\\u0440\\u0443\\u0431.\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437 \\u0438\\u0437 \\u043c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\\u0430\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0.00\\u0440\\u0443\\u0431.\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u041e\\u043f\\u043b\\u0430\\u0442\\u0430 \\u043f\\u0440\\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0435\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-05 14:54:31'),
 ('b4b660c755cbb2ba12d82d10cb', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"DyQSrax7NBtZ8clkMxnLGj8Jprb8DucW\",\"install\":\"ozo9DxDMRk\",\"d_blog_module_debug\":0}', '2022-12-28 22:38:34'),
 ('ee08efaca42eca15fca1967709', '{\"user_id\":\"1\",\"user_token\":\"IW21IJLOGVjI7pVmbmBNtAgiHmZxy6BL\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2022-12-19 21:31:25'),
 ('fb6c3ed0d9d63f6a2bb94038c3', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"b9PrSa64HNYo7yYq2zTheZ7O469xM1Jv\"}', '2017-11-11 12:59:21');
@@ -5396,7 +5281,7 @@ INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_setting`
+-- Table structure for table `oc_setting`
 --
 
 CREATE TABLE `oc_setting` (
@@ -5409,17 +5294,13 @@ CREATE TABLE `oc_setting` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_setting`
+-- Dumping data for table `oc_setting`
 --
 
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
 (4, 0, 'voucher', 'total_voucher_sort_order', '8', 0),
 (5, 0, 'voucher', 'total_voucher_status', '1', 0),
-(1714, 0, 'config', 'config_compression', '0', 0),
-(1715, 0, 'config', 'config_secure', '0', 0),
-(1716, 0, 'config', 'config_password', '1', 0),
-(1717, 0, 'config', 'config_shared', '0', 0),
-(1718, 0, 'config', 'config_encryption', 'hEiLgPirTWBJuHnkPL3oCVaJ8nfA5TwV8dL6c1smbJXQpFZbvyCRbgkskSe7S4Ks6Skwu8xYZMJHiGBcsihkm730JXHn8pfaqBOTHAqUrR65k1DqMxhIj4a51SA2KM3mVEuX74RbkSvYSA40HHeS42oO753iF4L3kf1BFif5IFU7jg1cmNOS37QCJSq7u0eByOpC3bwMGlQeq2ef8RLDcnlY1R2eHeOfutDDn7KdM1llwfMbckbg6vc8U33H6obiD7lgIjbMDqYD0iJOLzhqrQZqqQeRdaGbg7lAf3HJGSvNKduCNW5o3DXKDNfn9t87jEgmBkQTvyLxwbxcDPVo6bRJcyxIoBkzmPozKVR3ForzpwEmW0AjAYvw0vKb89hEkNQtBpObcqM4KaHRe2O9U0BAWXRxX9DgUpwUpjA2n3c0YnDy2fWyNo8ek49fgix5sza2bpQxbT6YazpJ3KuEytf2TOXn37vBRUWesKGrV71oW2nfeHZSjwwxuDW77IuaV2c2ivkqFFRchx5xyGFJOePDMlDUEo1hWxx6vjojhMoPWaYMU4Knd1LB1y5f96vt4WbWsIfO04J2BZeG2AYqmd5czHyp2VLyIsWXe17ohwamkTGG8L03Tabg9YFZr40X56uw4oJDw5lJ0HErznoyctps5jxREjPbV9fG52BLcPdp7yljByp3wzHoy8hPq0EXpN8ckBP6ncuJP9dXAViEfCJjjPjnfffIdQfKgyMJTSFGz9DBSTqRTlmhYw07p3LZ8iHhIjdqHtGCMu9PeqgpjjageuM5h4jHOdV5i8gKvrEfRO1r87JRK7Y8mNYmRrpAHhfgF525D5MafWZ0gDjHMNQBlrvCDGOSaN4qnlQBxq1uDwOEWzDRexVVnWVklRpxeDhP6Qq8zhTVsNYdD8Dw3snql1tntJ6WcmxkJivpHHP8HJGtqHSvIlSC0hWd2zymV7aAUlT0vMYoCek2rIeRU2TOq4i9zgjrhfwE58C7Ds8EgOcVpBm2hzsBjN8td4sQ', 0),
+(1807, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
 (1638, 0, 'shipping_pickup', 'shipping_pickup_sort_order', '2', 0),
 (1637, 0, 'shipping_pickup', 'shipping_pickup_status', '1', 0),
 (1636, 0, 'shipping_pickup', 'shipping_pickup_geo_zone_id', '0', 0),
@@ -5519,99 +5400,103 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (197, 0, 'report_marketing', 'report_marketing_status', '1', 0),
 (198, 0, 'report_marketing', 'report_marketing_sort_order', '12', 0),
 (383, 0, 'developer', 'developer_theme', '0', 0),
-(1700, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(1701, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(1702, 0, 'config', 'config_mail_engine', 'mail', 0),
-(1703, 0, 'config', 'config_mail_parameter', '', 0),
-(1704, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(1705, 0, 'config', 'config_mail_smtp_username', '', 0),
-(1706, 0, 'config', 'config_mail_smtp_password', '', 0),
-(1707, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(1708, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(1709, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
-(1710, 0, 'config', 'config_mail_alert_email', '', 0),
-(1711, 0, 'config', 'config_maintenance', '0', 0),
-(1712, 0, 'config', 'config_seo_url', '0', 0),
-(1713, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(1699, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
-(1698, 0, 'config', 'config_captcha', '', 0),
-(1697, 0, 'config', 'config_return_status_id', '2', 0),
-(1696, 0, 'config', 'config_return_id', '0', 0),
-(1695, 0, 'config', 'config_affiliate_id', '4', 0),
-(1694, 0, 'config', 'config_affiliate_commission', '5', 0),
-(1693, 0, 'config', 'config_affiliate_auto', '0', 0),
-(1692, 0, 'config', 'config_affiliate_approval', '0', 0),
-(1691, 0, 'config', 'config_affiliate_group_id', '1', 0),
-(1690, 0, 'config', 'config_stock_checkout', '0', 0),
-(1689, 0, 'config', 'config_stock_warning', '0', 0),
-(1688, 0, 'config', 'config_stock_display', '0', 0),
-(1687, 0, 'config', 'config_api_id', '2', 0),
-(1686, 0, 'config', 'config_fraud_status_id', '7', 0),
-(1685, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
-(1684, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
-(1683, 0, 'config', 'config_order_status_id', '1', 0),
-(1682, 0, 'config', 'config_checkout_id', '5', 0),
-(1681, 0, 'config', 'config_checkout_guest', '1', 0),
-(1680, 0, 'config', 'config_cart_weight', '0', 0),
-(1679, 0, 'config', 'config_invoice_prefix', 'INV-2022-00', 0),
-(1678, 0, 'config', 'config_account_id', '3', 0),
-(1677, 0, 'config', 'config_login_attempts', '5', 0),
-(1676, 0, 'config', 'config_customer_price', '0', 0),
-(1675, 0, 'config', 'config_customer_group_display', '[\"1\",\"2\"]', 1),
-(1674, 0, 'config', 'config_customer_group_id', '1', 0),
+(1800, 0, 'config', 'config_compression', '0', 0),
+(1801, 0, 'config', 'config_secure', '0', 0),
+(1802, 0, 'config', 'config_password', '1', 0),
+(1803, 0, 'config', 'config_shared', '0', 0),
+(1804, 0, 'config', 'config_encryption', 'hEiLgPirTWBJuHnkPL3oCVaJ8nfA5TwV8dL6c1smbJXQpFZbvyCRbgkskSe7S4Ks6Skwu8xYZMJHiGBcsihkm730JXHn8pfaqBOTHAqUrR65k1DqMxhIj4a51SA2KM3mVEuX74RbkSvYSA40HHeS42oO753iF4L3kf1BFif5IFU7jg1cmNOS37QCJSq7u0eByOpC3bwMGlQeq2ef8RLDcnlY1R2eHeOfutDDn7KdM1llwfMbckbg6vc8U33H6obiD7lgIjbMDqYD0iJOLzhqrQZqqQeRdaGbg7lAf3HJGSvNKduCNW5o3DXKDNfn9t87jEgmBkQTvyLxwbxcDPVo6bRJcyxIoBkzmPozKVR3ForzpwEmW0AjAYvw0vKb89hEkNQtBpObcqM4KaHRe2O9U0BAWXRxX9DgUpwUpjA2n3c0YnDy2fWyNo8ek49fgix5sza2bpQxbT6YazpJ3KuEytf2TOXn37vBRUWesKGrV71oW2nfeHZSjwwxuDW77IuaV2c2ivkqFFRchx5xyGFJOePDMlDUEo1hWxx6vjojhMoPWaYMU4Knd1LB1y5f96vt4WbWsIfO04J2BZeG2AYqmd5czHyp2VLyIsWXe17ohwamkTGG8L03Tabg9YFZr40X56uw4oJDw5lJ0HErznoyctps5jxREjPbV9fG52BLcPdp7yljByp3wzHoy8hPq0EXpN8ckBP6ncuJP9dXAViEfCJjjPjnfffIdQfKgyMJTSFGz9DBSTqRTlmhYw07p3LZ8iHhIjdqHtGCMu9PeqgpjjageuM5h4jHOdV5i8gKvrEfRO1r87JRK7Y8mNYmRrpAHhfgF525D5MafWZ0gDjHMNQBlrvCDGOSaN4qnlQBxq1uDwOEWzDRexVVnWVklRpxeDhP6Qq8zhTVsNYdD8Dw3snql1tntJ6WcmxkJivpHHP8HJGtqHSvIlSC0hWd2zymV7aAUlT0vMYoCek2rIeRU2TOq4i9zgjrhfwE58C7Ds8EgOcVpBm2hzsBjN8td4sQ', 0),
+(1799, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(1798, 0, 'config', 'config_seo_url', '0', 0),
+(1797, 0, 'config', 'config_maintenance', '0', 0),
+(1796, 0, 'config', 'config_mail_alert_email', '', 0),
+(1795, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
+(1794, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(1793, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(1792, 0, 'config', 'config_mail_smtp_password', '', 0),
+(1791, 0, 'config', 'config_mail_smtp_username', '', 0),
+(1790, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(1789, 0, 'config', 'config_mail_parameter', '', 0),
+(1788, 0, 'config', 'config_mail_engine', 'mail', 0),
+(1787, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(1786, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(1785, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
+(1783, 0, 'config', 'config_return_status_id', '2', 0),
+(1784, 0, 'config', 'config_captcha', '', 0),
+(1782, 0, 'config', 'config_return_id', '0', 0),
+(1781, 0, 'config', 'config_affiliate_id', '4', 0),
+(1780, 0, 'config', 'config_affiliate_commission', '5', 0),
+(1779, 0, 'config', 'config_affiliate_auto', '0', 0),
+(1778, 0, 'config', 'config_affiliate_approval', '0', 0),
+(1776, 0, 'config', 'config_stock_checkout', '0', 0),
+(1777, 0, 'config', 'config_affiliate_group_id', '1', 0),
 (384, 0, 'developer', 'developer_sass', '1', 0),
-(1673, 0, 'config', 'config_customer_search', '0', 0),
-(1672, 0, 'config', 'config_customer_activity', '0', 0),
-(1671, 0, 'config', 'config_customer_online', '0', 0),
-(1670, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(1669, 0, 'config', 'config_tax_default', 'shipping', 0),
-(1668, 0, 'config', 'config_tax', '0', 0),
-(1667, 0, 'config', 'config_voucher_max', '1000', 0),
-(1666, 0, 'config', 'config_voucher_min', '1', 0),
-(1665, 0, 'config', 'config_review_guest', '0', 0),
-(1664, 0, 'config', 'config_review_status', '0', 0),
-(1663, 0, 'config', 'config_limit_admin', '20', 0),
-(1662, 0, 'config', 'config_product_count', '1', 0),
-(1661, 0, 'config', 'config_weight_class_id', '1', 0),
-(1660, 0, 'config', 'config_length_class_id', '1', 0),
-(1659, 0, 'config', 'config_currency_auto', '1', 0),
-(677, 0, 'module_d_blog_module', 'module_d_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"1\",\"sub_category_col\":\"6\",\"sub_category_image\":\"1\",\"sub_category_post_count\":\"1\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"1\",\"main_post_display\":\"1\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y   \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y     \"},\"rating_display\":\"0\",\"description_display\":\"0\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"0\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
-(1658, 0, 'config', 'config_currency', 'RUB', 0),
-(676, 0, 'module_d_blog_module', 'module_d_blog_module_status', '1', 0),
-(679, 0, 'd_blog_module', 'd_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"1\",\"sub_category_col\":\"6\",\"sub_category_image\":\"1\",\"sub_category_post_count\":\"1\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"1\",\"main_post_display\":\"1\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y   \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y     \"},\"rating_display\":\"0\",\"description_display\":\"0\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"0\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
-(678, 0, 'd_blog_module', 'd_blog_module_status', '1', 0),
-(1657, 0, 'config', 'config_admin_language', 'ru-ru', 0),
-(1656, 0, 'config', 'config_language', 'ru-ru', 0),
-(1655, 0, 'config', 'config_zone_id', '3563', 0),
-(1654, 0, 'config', 'config_country_id', '222', 0),
-(1653, 0, 'config', 'config_comment', '', 0),
-(1651, 0, 'config', 'config_image', 'catalog/logo.png', 0),
-(1652, 0, 'config', 'config_open', 'пн-пт с 8.30 до 17.00', 0),
-(1641, 0, 'config', 'config_meta_keyword', '', 0),
-(1642, 0, 'config', 'config_theme', 'default', 0),
-(1643, 0, 'config', 'config_layout_id', '4', 0),
-(1644, 0, 'config', 'config_name', 'Your Store', 0),
-(1645, 0, 'config', 'config_owner', 'Your Name', 0),
-(1646, 0, 'config', 'config_address', ' г. Витебск, ул. Титова, д. 13', 0),
-(1647, 0, 'config', 'config_geocode', '', 0),
-(1648, 0, 'config', 'config_email', 'admin@shop.local', 0),
-(1649, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
-(1650, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
-(1640, 0, 'config', 'config_meta_description', 'My Store', 0),
-(1639, 0, 'config', 'config_meta_title', 'Your Store', 0),
+(1775, 0, 'config', 'config_stock_warning', '0', 0),
+(1773, 0, 'config', 'config_api_id', '2', 0),
+(1774, 0, 'config', 'config_stock_display', '0', 0),
+(1772, 0, 'config', 'config_fraud_status_id', '7', 0),
+(1771, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
+(1770, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
+(1769, 0, 'config', 'config_order_status_id', '1', 0),
+(1768, 0, 'config', 'config_checkout_id', '5', 0),
+(1767, 0, 'config', 'config_checkout_guest', '1', 0),
+(1766, 0, 'config', 'config_cart_weight', '1', 0),
+(1765, 0, 'config', 'config_invoice_prefix', 'INV-2022-00', 0),
+(1764, 0, 'config', 'config_account_id', '3', 0),
+(1763, 0, 'config', 'config_login_attempts', '5', 0),
+(1762, 0, 'config', 'config_customer_price', '0', 0),
+(1761, 0, 'config', 'config_customer_group_display', '[\"1\",\"2\"]', 1),
+(1839, 0, 'module_d_blog_module', 'module_d_blog_module_status', '1', 0),
+(1840, 0, 'module_d_blog_module', 'module_d_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"1\"],\"post_page_limit\":\"7\",\"image_display\":\"0\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"0\",\"sub_category_col\":\"6\",\"sub_category_image\":\"0\",\"sub_category_post_count\":\"0\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"0\",\"main_post_display\":\"0\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y         \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y           \"},\"rating_display\":\"0\",\"description_display\":\"1\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"1\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
+(1760, 0, 'config', 'config_customer_group_id', '1', 0),
+(1841, 0, 'd_blog_module', 'd_blog_module_status', '1', 0),
+(1842, 0, 'd_blog_module', 'd_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"1\"],\"post_page_limit\":\"7\",\"image_display\":\"0\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"0\",\"sub_category_col\":\"6\",\"sub_category_image\":\"0\",\"sub_category_post_count\":\"0\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"0\",\"main_post_display\":\"0\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y         \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y           \"},\"rating_display\":\"0\",\"description_display\":\"1\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"1\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
+(1759, 0, 'config', 'config_customer_search', '0', 0),
+(1758, 0, 'config', 'config_customer_activity', '0', 0),
+(1757, 0, 'config', 'config_customer_online', '0', 0),
+(1756, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(1742, 0, 'config', 'config_language', 'ru-ru', 0),
+(1743, 0, 'config', 'config_admin_language', 'ru-ru', 0),
+(1744, 0, 'config', 'config_currency', 'RUB', 0),
+(1745, 0, 'config', 'config_currency_auto', '1', 0),
+(1746, 0, 'config', 'config_length_class_id', '1', 0),
+(1747, 0, 'config', 'config_weight_class_id', '1', 0),
+(1748, 0, 'config', 'config_product_count', '0', 0),
+(1749, 0, 'config', 'config_limit_admin', '20', 0),
+(1750, 0, 'config', 'config_review_status', '1', 0),
+(1751, 0, 'config', 'config_review_guest', '1', 0),
+(1752, 0, 'config', 'config_voucher_min', '1', 0),
+(1753, 0, 'config', 'config_voucher_max', '1000', 0),
+(1754, 0, 'config', 'config_tax', '1', 0),
+(1755, 0, 'config', 'config_tax_default', 'shipping', 0),
+(1741, 0, 'config', 'config_zone_id', '3563', 0),
+(1740, 0, 'config', 'config_country_id', '222', 0),
 (1634, 0, 'payment_cod', 'payment_cod_status', '1', 0),
 (1635, 0, 'payment_cod', 'payment_cod_sort_order', '5', 0),
-(1719, 0, 'config', 'config_file_max_size', '300000', 0),
-(1720, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(1721, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(1722, 0, 'config', 'config_error_display', '1', 0),
-(1723, 0, 'config', 'config_error_log', '1', 0),
-(1724, 0, 'config', 'config_error_filename', 'error.log', 0);
+(1805, 0, 'config', 'config_file_max_size', '300000', 0),
+(1806, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(1739, 0, 'config', 'config_comment', '', 0),
+(1737, 0, 'config', 'config_image', 'catalog/logo.png', 0),
+(1738, 0, 'config', 'config_open', 'пн-пт с 8.30 до 17.00', 0),
+(1727, 0, 'config', 'config_meta_keyword', '', 0),
+(1728, 0, 'config', 'config_theme', 'default', 0),
+(1729, 0, 'config', 'config_layout_id', '4', 0),
+(1730, 0, 'config', 'config_name', 'Your Store', 0),
+(1731, 0, 'config', 'config_owner', 'Your Name', 0),
+(1732, 0, 'config', 'config_address', ' г. Витебск, ул. Титова, д. 13', 0),
+(1733, 0, 'config', 'config_geocode', '', 0),
+(1734, 0, 'config', 'config_email', 'admin@shop.local', 0),
+(1735, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
+(1736, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
+(1726, 0, 'config', 'config_meta_description', 'My Store', 0),
+(1725, 0, 'config', 'config_meta_title', 'Your Store', 0),
+(1808, 0, 'config', 'config_error_display', '1', 0),
+(1809, 0, 'config', 'config_error_log', '1', 0),
+(1810, 0, 'config', 'config_error_filename', 'error.log', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_shipping_courier`
+-- Table structure for table `oc_shipping_courier`
 --
 
 CREATE TABLE `oc_shipping_courier` (
@@ -5621,7 +5506,7 @@ CREATE TABLE `oc_shipping_courier` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_shipping_courier`
+-- Dumping data for table `oc_shipping_courier`
 --
 
 INSERT INTO `oc_shipping_courier` (`shipping_courier_id`, `shipping_courier_code`, `shipping_courier_name`) VALUES
@@ -5636,7 +5521,7 @@ INSERT INTO `oc_shipping_courier` (`shipping_courier_id`, `shipping_courier_code
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_statistics`
+-- Table structure for table `oc_statistics`
 --
 
 CREATE TABLE `oc_statistics` (
@@ -5646,7 +5531,7 @@ CREATE TABLE `oc_statistics` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_statistics`
+-- Dumping data for table `oc_statistics`
 --
 
 INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
@@ -5661,7 +5546,7 @@ INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_stock_status`
+-- Table structure for table `oc_stock_status`
 --
 
 CREATE TABLE `oc_stock_status` (
@@ -5671,7 +5556,7 @@ CREATE TABLE `oc_stock_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_stock_status`
+-- Dumping data for table `oc_stock_status`
 --
 
 INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
@@ -5687,7 +5572,7 @@ INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_store`
+-- Table structure for table `oc_store`
 --
 
 CREATE TABLE `oc_store` (
@@ -5700,7 +5585,7 @@ CREATE TABLE `oc_store` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_subscribe`
+-- Table structure for table `oc_subscribe`
 --
 
 CREATE TABLE `oc_subscribe` (
@@ -5710,7 +5595,7 @@ CREATE TABLE `oc_subscribe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `oc_subscribe`
+-- Dumping data for table `oc_subscribe`
 --
 
 INSERT INTO `oc_subscribe` (`subscribe_id`, `email`, `date_added`) VALUES
@@ -5720,7 +5605,7 @@ INSERT INTO `oc_subscribe` (`subscribe_id`, `email`, `date_added`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_class`
+-- Table structure for table `oc_tax_class`
 --
 
 CREATE TABLE `oc_tax_class` (
@@ -5732,7 +5617,7 @@ CREATE TABLE `oc_tax_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_class`
+-- Dumping data for table `oc_tax_class`
 --
 
 INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
@@ -5742,7 +5627,7 @@ INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rate`
+-- Table structure for table `oc_tax_rate`
 --
 
 CREATE TABLE `oc_tax_rate` (
@@ -5756,7 +5641,7 @@ CREATE TABLE `oc_tax_rate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rate`
+-- Dumping data for table `oc_tax_rate`
 --
 
 INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
@@ -5766,7 +5651,7 @@ INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rate_to_customer_group`
+-- Table structure for table `oc_tax_rate_to_customer_group`
 --
 
 CREATE TABLE `oc_tax_rate_to_customer_group` (
@@ -5775,7 +5660,7 @@ CREATE TABLE `oc_tax_rate_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rate_to_customer_group`
+-- Dumping data for table `oc_tax_rate_to_customer_group`
 --
 
 INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
@@ -5785,7 +5670,7 @@ INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`)
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rule`
+-- Table structure for table `oc_tax_rule`
 --
 
 CREATE TABLE `oc_tax_rule` (
@@ -5797,7 +5682,7 @@ CREATE TABLE `oc_tax_rule` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rule`
+-- Dumping data for table `oc_tax_rule`
 --
 
 INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
@@ -5809,7 +5694,7 @@ INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_theme`
+-- Table structure for table `oc_theme`
 --
 
 CREATE TABLE `oc_theme` (
@@ -5824,7 +5709,7 @@ CREATE TABLE `oc_theme` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_translation`
+-- Table structure for table `oc_translation`
 --
 
 CREATE TABLE `oc_translation` (
@@ -5840,7 +5725,7 @@ CREATE TABLE `oc_translation` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_upload`
+-- Table structure for table `oc_upload`
 --
 
 CREATE TABLE `oc_upload` (
@@ -5854,7 +5739,7 @@ CREATE TABLE `oc_upload` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_user`
+-- Table structure for table `oc_user`
 --
 
 CREATE TABLE `oc_user` (
@@ -5874,7 +5759,7 @@ CREATE TABLE `oc_user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_user`
+-- Dumping data for table `oc_user`
 --
 
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
@@ -5883,7 +5768,7 @@ INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_user_group`
+-- Table structure for table `oc_user_group`
 --
 
 CREATE TABLE `oc_user_group` (
@@ -5893,17 +5778,17 @@ CREATE TABLE `oc_user_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_user_group`
+-- Dumping data for table `oc_user_group`
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\"]}'),
+(1, 'Administrator', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\"]}'),
 (10, 'Demonstration', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"]}');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher`
+-- Table structure for table `oc_voucher`
 --
 
 CREATE TABLE `oc_voucher` (
@@ -5924,7 +5809,7 @@ CREATE TABLE `oc_voucher` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_history`
+-- Table structure for table `oc_voucher_history`
 --
 
 CREATE TABLE `oc_voucher_history` (
@@ -5938,7 +5823,7 @@ CREATE TABLE `oc_voucher_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_theme`
+-- Table structure for table `oc_voucher_theme`
 --
 
 CREATE TABLE `oc_voucher_theme` (
@@ -5947,7 +5832,7 @@ CREATE TABLE `oc_voucher_theme` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_voucher_theme`
+-- Dumping data for table `oc_voucher_theme`
 --
 
 INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
@@ -5958,7 +5843,7 @@ INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_theme_description`
+-- Table structure for table `oc_voucher_theme_description`
 --
 
 CREATE TABLE `oc_voucher_theme_description` (
@@ -5968,7 +5853,7 @@ CREATE TABLE `oc_voucher_theme_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_voucher_theme_description`
+-- Dumping data for table `oc_voucher_theme_description`
 --
 
 INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
@@ -5982,7 +5867,7 @@ INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_weight_class`
+-- Table structure for table `oc_weight_class`
 --
 
 CREATE TABLE `oc_weight_class` (
@@ -5991,7 +5876,7 @@ CREATE TABLE `oc_weight_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_weight_class`
+-- Dumping data for table `oc_weight_class`
 --
 
 INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
@@ -6003,7 +5888,7 @@ INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_weight_class_description`
+-- Table structure for table `oc_weight_class_description`
 --
 
 CREATE TABLE `oc_weight_class_description` (
@@ -6014,7 +5899,7 @@ CREATE TABLE `oc_weight_class_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_weight_class_description`
+-- Dumping data for table `oc_weight_class_description`
 --
 
 INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -6030,7 +5915,7 @@ INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_zone`
+-- Table structure for table `oc_zone`
 --
 
 CREATE TABLE `oc_zone` (
@@ -6042,7 +5927,7 @@ CREATE TABLE `oc_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_zone`
+-- Dumping data for table `oc_zone`
 --
 
 INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
@@ -10160,7 +10045,7 @@ INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_zone_to_geo_zone`
+-- Table structure for table `oc_zone_to_geo_zone`
 --
 
 CREATE TABLE `oc_zone_to_geo_zone` (
@@ -10173,7 +10058,7 @@ CREATE TABLE `oc_zone_to_geo_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_zone_to_geo_zone`
+-- Dumping data for table `oc_zone_to_geo_zone`
 --
 
 INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
@@ -10288,292 +10173,292 @@ INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id
 (109, 222, 3972, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `oc_address`
+-- Indexes for table `oc_address`
 --
 ALTER TABLE `oc_address`
   ADD PRIMARY KEY (`address_id`),
   ADD KEY `customer_id` (`customer_id`);
 
 --
--- Индексы таблицы `oc_api`
+-- Indexes for table `oc_api`
 --
 ALTER TABLE `oc_api`
   ADD PRIMARY KEY (`api_id`);
 
 --
--- Индексы таблицы `oc_api_ip`
+-- Indexes for table `oc_api_ip`
 --
 ALTER TABLE `oc_api_ip`
   ADD PRIMARY KEY (`api_ip_id`);
 
 --
--- Индексы таблицы `oc_api_session`
+-- Indexes for table `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
   ADD PRIMARY KEY (`api_session_id`);
 
 --
--- Индексы таблицы `oc_attribute`
+-- Indexes for table `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
   ADD PRIMARY KEY (`attribute_id`);
 
 --
--- Индексы таблицы `oc_attribute_description`
+-- Indexes for table `oc_attribute_description`
 --
 ALTER TABLE `oc_attribute_description`
   ADD PRIMARY KEY (`attribute_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_attribute_group`
+-- Indexes for table `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
   ADD PRIMARY KEY (`attribute_group_id`);
 
 --
--- Индексы таблицы `oc_attribute_group_description`
+-- Indexes for table `oc_attribute_group_description`
 --
 ALTER TABLE `oc_attribute_group_description`
   ADD PRIMARY KEY (`attribute_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_banner`
+-- Indexes for table `oc_banner`
 --
 ALTER TABLE `oc_banner`
   ADD PRIMARY KEY (`banner_id`);
 
 --
--- Индексы таблицы `oc_banner_image`
+-- Indexes for table `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
   ADD PRIMARY KEY (`banner_image_id`);
 
 --
--- Индексы таблицы `oc_bm_author`
+-- Indexes for table `oc_bm_author`
 --
 ALTER TABLE `oc_bm_author`
   ADD PRIMARY KEY (`author_id`);
 
 --
--- Индексы таблицы `oc_bm_author_description`
+-- Indexes for table `oc_bm_author_description`
 --
 ALTER TABLE `oc_bm_author_description`
   ADD PRIMARY KEY (`author_description_id`);
 
 --
--- Индексы таблицы `oc_bm_author_group`
+-- Indexes for table `oc_bm_author_group`
 --
 ALTER TABLE `oc_bm_author_group`
   ADD PRIMARY KEY (`author_group_id`);
 
 --
--- Индексы таблицы `oc_bm_category`
+-- Indexes for table `oc_bm_category`
 --
 ALTER TABLE `oc_bm_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Индексы таблицы `oc_bm_category_description`
+-- Indexes for table `oc_bm_category_description`
 --
 ALTER TABLE `oc_bm_category_description`
   ADD PRIMARY KEY (`category_description_id`);
 
 --
--- Индексы таблицы `oc_bm_category_path`
+-- Indexes for table `oc_bm_category_path`
 --
 ALTER TABLE `oc_bm_category_path`
   ADD PRIMARY KEY (`category_id`,`path_id`);
 
 --
--- Индексы таблицы `oc_bm_category_to_store`
+-- Indexes for table `oc_bm_category_to_store`
 --
 ALTER TABLE `oc_bm_category_to_store`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_bm_post`
+-- Indexes for table `oc_bm_post`
 --
 ALTER TABLE `oc_bm_post`
   ADD PRIMARY KEY (`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_description`
+-- Indexes for table `oc_bm_post_description`
 --
 ALTER TABLE `oc_bm_post_description`
   ADD PRIMARY KEY (`post_description_id`);
 
 --
--- Индексы таблицы `oc_bm_post_related`
+-- Indexes for table `oc_bm_post_related`
 --
 ALTER TABLE `oc_bm_post_related`
   ADD PRIMARY KEY (`post_id`,`post_related_id`);
 
 --
--- Индексы таблицы `oc_bm_post_to_category`
+-- Indexes for table `oc_bm_post_to_category`
 --
 ALTER TABLE `oc_bm_post_to_category`
   ADD PRIMARY KEY (`category_id`,`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_to_product`
+-- Indexes for table `oc_bm_post_to_product`
 --
 ALTER TABLE `oc_bm_post_to_product`
   ADD PRIMARY KEY (`product_id`,`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_video`
+-- Indexes for table `oc_bm_post_video`
 --
 ALTER TABLE `oc_bm_post_video`
   ADD PRIMARY KEY (`post_id`,`video`);
 
 --
--- Индексы таблицы `oc_bm_review`
+-- Indexes for table `oc_bm_review`
 --
 ALTER TABLE `oc_bm_review`
   ADD PRIMARY KEY (`review_id`);
 
 --
--- Индексы таблицы `oc_bm_review_to_image`
+-- Indexes for table `oc_bm_review_to_image`
 --
 ALTER TABLE `oc_bm_review_to_image`
   ADD PRIMARY KEY (`review_id`,`image`);
 
 --
--- Индексы таблицы `oc_cart`
+-- Indexes for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
   ADD PRIMARY KEY (`cart_id`),
   ADD KEY `cart_id` (`api_id`,`customer_id`,`session_id`,`product_id`,`recurring_id`);
 
 --
--- Индексы таблицы `oc_category`
+-- Indexes for table `oc_category`
 --
 ALTER TABLE `oc_category`
   ADD PRIMARY KEY (`category_id`),
   ADD KEY `parent_id` (`parent_id`);
 
 --
--- Индексы таблицы `oc_category_description`
+-- Indexes for table `oc_category_description`
 --
 ALTER TABLE `oc_category_description`
   ADD PRIMARY KEY (`category_id`,`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_category_filter`
+-- Indexes for table `oc_category_filter`
 --
 ALTER TABLE `oc_category_filter`
   ADD PRIMARY KEY (`category_id`,`filter_id`);
 
 --
--- Индексы таблицы `oc_category_path`
+-- Indexes for table `oc_category_path`
 --
 ALTER TABLE `oc_category_path`
   ADD PRIMARY KEY (`category_id`,`path_id`);
 
 --
--- Индексы таблицы `oc_category_to_layout`
+-- Indexes for table `oc_category_to_layout`
 --
 ALTER TABLE `oc_category_to_layout`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_category_to_store`
+-- Indexes for table `oc_category_to_store`
 --
 ALTER TABLE `oc_category_to_store`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_country`
+-- Indexes for table `oc_country`
 --
 ALTER TABLE `oc_country`
   ADD PRIMARY KEY (`country_id`);
 
 --
--- Индексы таблицы `oc_coupon`
+-- Indexes for table `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
   ADD PRIMARY KEY (`coupon_id`);
 
 --
--- Индексы таблицы `oc_coupon_category`
+-- Indexes for table `oc_coupon_category`
 --
 ALTER TABLE `oc_coupon_category`
   ADD PRIMARY KEY (`coupon_id`,`category_id`);
 
 --
--- Индексы таблицы `oc_coupon_history`
+-- Indexes for table `oc_coupon_history`
 --
 ALTER TABLE `oc_coupon_history`
   ADD PRIMARY KEY (`coupon_history_id`);
 
 --
--- Индексы таблицы `oc_coupon_product`
+-- Indexes for table `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
   ADD PRIMARY KEY (`coupon_product_id`);
 
 --
--- Индексы таблицы `oc_currency`
+-- Indexes for table `oc_currency`
 --
 ALTER TABLE `oc_currency`
   ADD PRIMARY KEY (`currency_id`);
 
 --
--- Индексы таблицы `oc_customer`
+-- Indexes for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Индексы таблицы `oc_customer_activity`
+-- Indexes for table `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
   ADD PRIMARY KEY (`customer_activity_id`);
 
 --
--- Индексы таблицы `oc_customer_affiliate`
+-- Indexes for table `oc_customer_affiliate`
 --
 ALTER TABLE `oc_customer_affiliate`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Индексы таблицы `oc_customer_approval`
+-- Indexes for table `oc_customer_approval`
 --
 ALTER TABLE `oc_customer_approval`
   ADD PRIMARY KEY (`customer_approval_id`);
 
 --
--- Индексы таблицы `oc_customer_group`
+-- Indexes for table `oc_customer_group`
 --
 ALTER TABLE `oc_customer_group`
   ADD PRIMARY KEY (`customer_group_id`);
 
 --
--- Индексы таблицы `oc_customer_group_description`
+-- Indexes for table `oc_customer_group_description`
 --
 ALTER TABLE `oc_customer_group_description`
   ADD PRIMARY KEY (`customer_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_customer_history`
+-- Indexes for table `oc_customer_history`
 --
 ALTER TABLE `oc_customer_history`
   ADD PRIMARY KEY (`customer_history_id`);
 
 --
--- Индексы таблицы `oc_customer_ip`
+-- Indexes for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
   ADD PRIMARY KEY (`customer_ip_id`),
   ADD KEY `ip` (`ip`);
 
 --
--- Индексы таблицы `oc_customer_login`
+-- Indexes for table `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
   ADD PRIMARY KEY (`customer_login_id`),
@@ -10581,473 +10466,473 @@ ALTER TABLE `oc_customer_login`
   ADD KEY `ip` (`ip`);
 
 --
--- Индексы таблицы `oc_customer_online`
+-- Indexes for table `oc_customer_online`
 --
 ALTER TABLE `oc_customer_online`
   ADD PRIMARY KEY (`ip`);
 
 --
--- Индексы таблицы `oc_customer_reward`
+-- Indexes for table `oc_customer_reward`
 --
 ALTER TABLE `oc_customer_reward`
   ADD PRIMARY KEY (`customer_reward_id`);
 
 --
--- Индексы таблицы `oc_customer_search`
+-- Indexes for table `oc_customer_search`
 --
 ALTER TABLE `oc_customer_search`
   ADD PRIMARY KEY (`customer_search_id`);
 
 --
--- Индексы таблицы `oc_customer_transaction`
+-- Indexes for table `oc_customer_transaction`
 --
 ALTER TABLE `oc_customer_transaction`
   ADD PRIMARY KEY (`customer_transaction_id`);
 
 --
--- Индексы таблицы `oc_customer_wishlist`
+-- Indexes for table `oc_customer_wishlist`
 --
 ALTER TABLE `oc_customer_wishlist`
   ADD PRIMARY KEY (`customer_id`,`product_id`);
 
 --
--- Индексы таблицы `oc_custom_field`
+-- Indexes for table `oc_custom_field`
 --
 ALTER TABLE `oc_custom_field`
   ADD PRIMARY KEY (`custom_field_id`);
 
 --
--- Индексы таблицы `oc_custom_field_customer_group`
+-- Indexes for table `oc_custom_field_customer_group`
 --
 ALTER TABLE `oc_custom_field_customer_group`
   ADD PRIMARY KEY (`custom_field_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_custom_field_description`
+-- Indexes for table `oc_custom_field_description`
 --
 ALTER TABLE `oc_custom_field_description`
   ADD PRIMARY KEY (`custom_field_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_custom_field_value`
+-- Indexes for table `oc_custom_field_value`
 --
 ALTER TABLE `oc_custom_field_value`
   ADD PRIMARY KEY (`custom_field_value_id`);
 
 --
--- Индексы таблицы `oc_custom_field_value_description`
+-- Indexes for table `oc_custom_field_value_description`
 --
 ALTER TABLE `oc_custom_field_value_description`
   ADD PRIMARY KEY (`custom_field_value_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_download`
+-- Indexes for table `oc_download`
 --
 ALTER TABLE `oc_download`
   ADD PRIMARY KEY (`download_id`);
 
 --
--- Индексы таблицы `oc_download_description`
+-- Indexes for table `oc_download_description`
 --
 ALTER TABLE `oc_download_description`
   ADD PRIMARY KEY (`download_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_d_validator`
+-- Indexes for table `oc_d_validator`
 --
 ALTER TABLE `oc_d_validator`
   ADD PRIMARY KEY (`validator_id`);
 
 --
--- Индексы таблицы `oc_event`
+-- Indexes for table `oc_event`
 --
 ALTER TABLE `oc_event`
   ADD PRIMARY KEY (`event_id`);
 
 --
--- Индексы таблицы `oc_extension`
+-- Indexes for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
   ADD PRIMARY KEY (`extension_id`);
 
 --
--- Индексы таблицы `oc_extension_install`
+-- Indexes for table `oc_extension_install`
 --
 ALTER TABLE `oc_extension_install`
   ADD PRIMARY KEY (`extension_install_id`);
 
 --
--- Индексы таблицы `oc_extension_path`
+-- Indexes for table `oc_extension_path`
 --
 ALTER TABLE `oc_extension_path`
   ADD PRIMARY KEY (`extension_path_id`);
 
 --
--- Индексы таблицы `oc_filter`
+-- Indexes for table `oc_filter`
 --
 ALTER TABLE `oc_filter`
   ADD PRIMARY KEY (`filter_id`);
 
 --
--- Индексы таблицы `oc_filter_description`
+-- Indexes for table `oc_filter_description`
 --
 ALTER TABLE `oc_filter_description`
   ADD PRIMARY KEY (`filter_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_filter_group`
+-- Indexes for table `oc_filter_group`
 --
 ALTER TABLE `oc_filter_group`
   ADD PRIMARY KEY (`filter_group_id`);
 
 --
--- Индексы таблицы `oc_filter_group_description`
+-- Indexes for table `oc_filter_group_description`
 --
 ALTER TABLE `oc_filter_group_description`
   ADD PRIMARY KEY (`filter_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_geo_zone`
+-- Indexes for table `oc_geo_zone`
 --
 ALTER TABLE `oc_geo_zone`
   ADD PRIMARY KEY (`geo_zone_id`);
 
 --
--- Индексы таблицы `oc_information`
+-- Indexes for table `oc_information`
 --
 ALTER TABLE `oc_information`
   ADD PRIMARY KEY (`information_id`);
 
 --
--- Индексы таблицы `oc_information_description`
+-- Indexes for table `oc_information_description`
 --
 ALTER TABLE `oc_information_description`
   ADD PRIMARY KEY (`information_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_information_to_layout`
+-- Indexes for table `oc_information_to_layout`
 --
 ALTER TABLE `oc_information_to_layout`
   ADD PRIMARY KEY (`information_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_information_to_store`
+-- Indexes for table `oc_information_to_store`
 --
 ALTER TABLE `oc_information_to_store`
   ADD PRIMARY KEY (`information_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_language`
+-- Indexes for table `oc_language`
 --
 ALTER TABLE `oc_language`
   ADD PRIMARY KEY (`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_layout`
+-- Indexes for table `oc_layout`
 --
 ALTER TABLE `oc_layout`
   ADD PRIMARY KEY (`layout_id`);
 
 --
--- Индексы таблицы `oc_layout_module`
+-- Indexes for table `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
   ADD PRIMARY KEY (`layout_module_id`);
 
 --
--- Индексы таблицы `oc_layout_route`
+-- Indexes for table `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
   ADD PRIMARY KEY (`layout_route_id`);
 
 --
--- Индексы таблицы `oc_length_class`
+-- Indexes for table `oc_length_class`
 --
 ALTER TABLE `oc_length_class`
   ADD PRIMARY KEY (`length_class_id`);
 
 --
--- Индексы таблицы `oc_length_class_description`
+-- Indexes for table `oc_length_class_description`
 --
 ALTER TABLE `oc_length_class_description`
   ADD PRIMARY KEY (`length_class_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_location`
+-- Indexes for table `oc_location`
 --
 ALTER TABLE `oc_location`
   ADD PRIMARY KEY (`location_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_manufacturer`
+-- Indexes for table `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
   ADD PRIMARY KEY (`manufacturer_id`);
 
 --
--- Индексы таблицы `oc_manufacturer_to_store`
+-- Indexes for table `oc_manufacturer_to_store`
 --
 ALTER TABLE `oc_manufacturer_to_store`
   ADD PRIMARY KEY (`manufacturer_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_marketing`
+-- Indexes for table `oc_marketing`
 --
 ALTER TABLE `oc_marketing`
   ADD PRIMARY KEY (`marketing_id`);
 
 --
--- Индексы таблицы `oc_modification`
+-- Indexes for table `oc_modification`
 --
 ALTER TABLE `oc_modification`
   ADD PRIMARY KEY (`modification_id`);
 
 --
--- Индексы таблицы `oc_module`
+-- Indexes for table `oc_module`
 --
 ALTER TABLE `oc_module`
   ADD PRIMARY KEY (`module_id`);
 
 --
--- Индексы таблицы `oc_option`
+-- Indexes for table `oc_option`
 --
 ALTER TABLE `oc_option`
   ADD PRIMARY KEY (`option_id`);
 
 --
--- Индексы таблицы `oc_option_description`
+-- Indexes for table `oc_option_description`
 --
 ALTER TABLE `oc_option_description`
   ADD PRIMARY KEY (`option_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_option_value`
+-- Indexes for table `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
   ADD PRIMARY KEY (`option_value_id`);
 
 --
--- Индексы таблицы `oc_option_value_description`
+-- Indexes for table `oc_option_value_description`
 --
 ALTER TABLE `oc_option_value_description`
   ADD PRIMARY KEY (`option_value_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_order`
+-- Indexes for table `oc_order`
 --
 ALTER TABLE `oc_order`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Индексы таблицы `oc_order_history`
+-- Indexes for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
   ADD PRIMARY KEY (`order_history_id`);
 
 --
--- Индексы таблицы `oc_order_option`
+-- Indexes for table `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
   ADD PRIMARY KEY (`order_option_id`);
 
 --
--- Индексы таблицы `oc_order_product`
+-- Indexes for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
   ADD PRIMARY KEY (`order_product_id`),
   ADD KEY `order_id` (`order_id`);
 
 --
--- Индексы таблицы `oc_order_recurring`
+-- Indexes for table `oc_order_recurring`
 --
 ALTER TABLE `oc_order_recurring`
   ADD PRIMARY KEY (`order_recurring_id`);
 
 --
--- Индексы таблицы `oc_order_recurring_transaction`
+-- Indexes for table `oc_order_recurring_transaction`
 --
 ALTER TABLE `oc_order_recurring_transaction`
   ADD PRIMARY KEY (`order_recurring_transaction_id`);
 
 --
--- Индексы таблицы `oc_order_shipment`
+-- Indexes for table `oc_order_shipment`
 --
 ALTER TABLE `oc_order_shipment`
   ADD PRIMARY KEY (`order_shipment_id`);
 
 --
--- Индексы таблицы `oc_order_status`
+-- Indexes for table `oc_order_status`
 --
 ALTER TABLE `oc_order_status`
   ADD PRIMARY KEY (`order_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_order_total`
+-- Indexes for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
   ADD PRIMARY KEY (`order_total_id`),
   ADD KEY `order_id` (`order_id`);
 
 --
--- Индексы таблицы `oc_order_voucher`
+-- Indexes for table `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
   ADD PRIMARY KEY (`order_voucher_id`);
 
 --
--- Индексы таблицы `oc_product`
+-- Indexes for table `oc_product`
 --
 ALTER TABLE `oc_product`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Индексы таблицы `oc_product_attribute`
+-- Indexes for table `oc_product_attribute`
 --
 ALTER TABLE `oc_product_attribute`
   ADD PRIMARY KEY (`product_id`,`attribute_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_product_description`
+-- Indexes for table `oc_product_description`
 --
 ALTER TABLE `oc_product_description`
   ADD PRIMARY KEY (`product_id`,`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_product_discount`
+-- Indexes for table `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
   ADD PRIMARY KEY (`product_discount_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_filter`
+-- Indexes for table `oc_product_filter`
 --
 ALTER TABLE `oc_product_filter`
   ADD PRIMARY KEY (`product_id`,`filter_id`);
 
 --
--- Индексы таблицы `oc_product_image`
+-- Indexes for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
   ADD PRIMARY KEY (`product_image_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_option`
+-- Indexes for table `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
   ADD PRIMARY KEY (`product_option_id`);
 
 --
--- Индексы таблицы `oc_product_option_value`
+-- Indexes for table `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
   ADD PRIMARY KEY (`product_option_value_id`);
 
 --
--- Индексы таблицы `oc_product_recurring`
+-- Indexes for table `oc_product_recurring`
 --
 ALTER TABLE `oc_product_recurring`
   ADD PRIMARY KEY (`product_id`,`recurring_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_product_related`
+-- Indexes for table `oc_product_related`
 --
 ALTER TABLE `oc_product_related`
   ADD PRIMARY KEY (`product_id`,`related_id`);
 
 --
--- Индексы таблицы `oc_product_reward`
+-- Indexes for table `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
   ADD PRIMARY KEY (`product_reward_id`);
 
 --
--- Индексы таблицы `oc_product_special`
+-- Indexes for table `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
   ADD PRIMARY KEY (`product_special_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_to_category`
+-- Indexes for table `oc_product_to_category`
 --
 ALTER TABLE `oc_product_to_category`
   ADD PRIMARY KEY (`product_id`,`category_id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Индексы таблицы `oc_product_to_download`
+-- Indexes for table `oc_product_to_download`
 --
 ALTER TABLE `oc_product_to_download`
   ADD PRIMARY KEY (`product_id`,`download_id`);
 
 --
--- Индексы таблицы `oc_product_to_layout`
+-- Indexes for table `oc_product_to_layout`
 --
 ALTER TABLE `oc_product_to_layout`
   ADD PRIMARY KEY (`product_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_product_to_store`
+-- Indexes for table `oc_product_to_store`
 --
 ALTER TABLE `oc_product_to_store`
   ADD PRIMARY KEY (`product_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_recurring`
+-- Indexes for table `oc_recurring`
 --
 ALTER TABLE `oc_recurring`
   ADD PRIMARY KEY (`recurring_id`);
 
 --
--- Индексы таблицы `oc_recurring_description`
+-- Indexes for table `oc_recurring_description`
 --
 ALTER TABLE `oc_recurring_description`
   ADD PRIMARY KEY (`recurring_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return`
+-- Indexes for table `oc_return`
 --
 ALTER TABLE `oc_return`
   ADD PRIMARY KEY (`return_id`);
 
 --
--- Индексы таблицы `oc_return_action`
+-- Indexes for table `oc_return_action`
 --
 ALTER TABLE `oc_return_action`
   ADD PRIMARY KEY (`return_action_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return_history`
+-- Indexes for table `oc_return_history`
 --
 ALTER TABLE `oc_return_history`
   ADD PRIMARY KEY (`return_history_id`);
 
 --
--- Индексы таблицы `oc_return_reason`
+-- Indexes for table `oc_return_reason`
 --
 ALTER TABLE `oc_return_reason`
   ADD PRIMARY KEY (`return_reason_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return_status`
+-- Indexes for table `oc_return_status`
 --
 ALTER TABLE `oc_return_status`
   ADD PRIMARY KEY (`return_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_review`
+-- Indexes for table `oc_review`
 --
 ALTER TABLE `oc_review`
   ADD PRIMARY KEY (`review_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_seo_url`
+-- Indexes for table `oc_seo_url`
 --
 ALTER TABLE `oc_seo_url`
   ADD PRIMARY KEY (`seo_url_id`),
@@ -11055,755 +10940,755 @@ ALTER TABLE `oc_seo_url`
   ADD KEY `keyword` (`keyword`);
 
 --
--- Индексы таблицы `oc_session`
+-- Indexes for table `oc_session`
 --
 ALTER TABLE `oc_session`
   ADD PRIMARY KEY (`session_id`);
 
 --
--- Индексы таблицы `oc_setting`
+-- Indexes for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
   ADD PRIMARY KEY (`setting_id`);
 
 --
--- Индексы таблицы `oc_shipping_courier`
+-- Indexes for table `oc_shipping_courier`
 --
 ALTER TABLE `oc_shipping_courier`
   ADD PRIMARY KEY (`shipping_courier_id`);
 
 --
--- Индексы таблицы `oc_statistics`
+-- Indexes for table `oc_statistics`
 --
 ALTER TABLE `oc_statistics`
   ADD PRIMARY KEY (`statistics_id`);
 
 --
--- Индексы таблицы `oc_stock_status`
+-- Indexes for table `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
   ADD PRIMARY KEY (`stock_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_store`
+-- Indexes for table `oc_store`
 --
 ALTER TABLE `oc_store`
   ADD PRIMARY KEY (`store_id`);
 
 --
--- Индексы таблицы `oc_subscribe`
+-- Indexes for table `oc_subscribe`
 --
 ALTER TABLE `oc_subscribe`
   ADD PRIMARY KEY (`subscribe_id`);
 
 --
--- Индексы таблицы `oc_tax_class`
+-- Indexes for table `oc_tax_class`
 --
 ALTER TABLE `oc_tax_class`
   ADD PRIMARY KEY (`tax_class_id`);
 
 --
--- Индексы таблицы `oc_tax_rate`
+-- Indexes for table `oc_tax_rate`
 --
 ALTER TABLE `oc_tax_rate`
   ADD PRIMARY KEY (`tax_rate_id`);
 
 --
--- Индексы таблицы `oc_tax_rate_to_customer_group`
+-- Indexes for table `oc_tax_rate_to_customer_group`
 --
 ALTER TABLE `oc_tax_rate_to_customer_group`
   ADD PRIMARY KEY (`tax_rate_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_tax_rule`
+-- Indexes for table `oc_tax_rule`
 --
 ALTER TABLE `oc_tax_rule`
   ADD PRIMARY KEY (`tax_rule_id`);
 
 --
--- Индексы таблицы `oc_theme`
+-- Indexes for table `oc_theme`
 --
 ALTER TABLE `oc_theme`
   ADD PRIMARY KEY (`theme_id`);
 
 --
--- Индексы таблицы `oc_translation`
+-- Indexes for table `oc_translation`
 --
 ALTER TABLE `oc_translation`
   ADD PRIMARY KEY (`translation_id`);
 
 --
--- Индексы таблицы `oc_upload`
+-- Indexes for table `oc_upload`
 --
 ALTER TABLE `oc_upload`
   ADD PRIMARY KEY (`upload_id`);
 
 --
--- Индексы таблицы `oc_user`
+-- Indexes for table `oc_user`
 --
 ALTER TABLE `oc_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Индексы таблицы `oc_user_group`
+-- Indexes for table `oc_user_group`
 --
 ALTER TABLE `oc_user_group`
   ADD PRIMARY KEY (`user_group_id`);
 
 --
--- Индексы таблицы `oc_voucher`
+-- Indexes for table `oc_voucher`
 --
 ALTER TABLE `oc_voucher`
   ADD PRIMARY KEY (`voucher_id`);
 
 --
--- Индексы таблицы `oc_voucher_history`
+-- Indexes for table `oc_voucher_history`
 --
 ALTER TABLE `oc_voucher_history`
   ADD PRIMARY KEY (`voucher_history_id`);
 
 --
--- Индексы таблицы `oc_voucher_theme`
+-- Indexes for table `oc_voucher_theme`
 --
 ALTER TABLE `oc_voucher_theme`
   ADD PRIMARY KEY (`voucher_theme_id`);
 
 --
--- Индексы таблицы `oc_voucher_theme_description`
+-- Indexes for table `oc_voucher_theme_description`
 --
 ALTER TABLE `oc_voucher_theme_description`
   ADD PRIMARY KEY (`voucher_theme_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_weight_class`
+-- Indexes for table `oc_weight_class`
 --
 ALTER TABLE `oc_weight_class`
   ADD PRIMARY KEY (`weight_class_id`);
 
 --
--- Индексы таблицы `oc_weight_class_description`
+-- Indexes for table `oc_weight_class_description`
 --
 ALTER TABLE `oc_weight_class_description`
   ADD PRIMARY KEY (`weight_class_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_zone`
+-- Indexes for table `oc_zone`
 --
 ALTER TABLE `oc_zone`
   ADD PRIMARY KEY (`zone_id`);
 
 --
--- Индексы таблицы `oc_zone_to_geo_zone`
+-- Indexes for table `oc_zone_to_geo_zone`
 --
 ALTER TABLE `oc_zone_to_geo_zone`
   ADD PRIMARY KEY (`zone_to_geo_zone_id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `oc_address`
+-- AUTO_INCREMENT for table `oc_address`
 --
 ALTER TABLE `oc_address`
   MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api`
+-- AUTO_INCREMENT for table `oc_api`
 --
 ALTER TABLE `oc_api`
   MODIFY `api_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api_ip`
+-- AUTO_INCREMENT for table `oc_api_ip`
 --
 ALTER TABLE `oc_api_ip`
   MODIFY `api_ip_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api_session`
+-- AUTO_INCREMENT for table `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
   MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_attribute`
+-- AUTO_INCREMENT for table `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
   MODIFY `attribute_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `oc_attribute_group`
+-- AUTO_INCREMENT for table `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
   MODIFY `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_banner`
+-- AUTO_INCREMENT for table `oc_banner`
 --
 ALTER TABLE `oc_banner`
-  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_banner_image`
+-- AUTO_INCREMENT for table `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
-  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author`
+-- AUTO_INCREMENT for table `oc_bm_author`
 --
 ALTER TABLE `oc_bm_author`
   MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author_description`
+-- AUTO_INCREMENT for table `oc_bm_author_description`
 --
 ALTER TABLE `oc_bm_author_description`
   MODIFY `author_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author_group`
+-- AUTO_INCREMENT for table `oc_bm_author_group`
 --
 ALTER TABLE `oc_bm_author_group`
   MODIFY `author_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_category`
+-- AUTO_INCREMENT for table `oc_bm_category`
 --
 ALTER TABLE `oc_bm_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_category_description`
+-- AUTO_INCREMENT for table `oc_bm_category_description`
 --
 ALTER TABLE `oc_bm_category_description`
-  MODIFY `category_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `category_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_post`
+-- AUTO_INCREMENT for table `oc_bm_post`
 --
 ALTER TABLE `oc_bm_post`
   MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_post_description`
+-- AUTO_INCREMENT for table `oc_bm_post_description`
 --
 ALTER TABLE `oc_bm_post_description`
-  MODIFY `post_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
+  MODIFY `post_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_review`
+-- AUTO_INCREMENT for table `oc_bm_review`
 --
 ALTER TABLE `oc_bm_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_cart`
+-- AUTO_INCREMENT for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
-  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `oc_category`
+-- AUTO_INCREMENT for table `oc_category`
 --
 ALTER TABLE `oc_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT для таблицы `oc_country`
+-- AUTO_INCREMENT for table `oc_country`
 --
 ALTER TABLE `oc_country`
   MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon`
+-- AUTO_INCREMENT for table `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
   MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon_history`
+-- AUTO_INCREMENT for table `oc_coupon_history`
 --
 ALTER TABLE `oc_coupon_history`
   MODIFY `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon_product`
+-- AUTO_INCREMENT for table `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
   MODIFY `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_currency`
+-- AUTO_INCREMENT for table `oc_currency`
 --
 ALTER TABLE `oc_currency`
   MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer`
+-- AUTO_INCREMENT for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_activity`
+-- AUTO_INCREMENT for table `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
   MODIFY `customer_activity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_approval`
+-- AUTO_INCREMENT for table `oc_customer_approval`
 --
 ALTER TABLE `oc_customer_approval`
   MODIFY `customer_approval_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_group`
+-- AUTO_INCREMENT for table `oc_customer_group`
 --
 ALTER TABLE `oc_customer_group`
   MODIFY `customer_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_history`
+-- AUTO_INCREMENT for table `oc_customer_history`
 --
 ALTER TABLE `oc_customer_history`
   MODIFY `customer_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_ip`
+-- AUTO_INCREMENT for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
   MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_login`
+-- AUTO_INCREMENT for table `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
   MODIFY `customer_login_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_reward`
+-- AUTO_INCREMENT for table `oc_customer_reward`
 --
 ALTER TABLE `oc_customer_reward`
   MODIFY `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_search`
+-- AUTO_INCREMENT for table `oc_customer_search`
 --
 ALTER TABLE `oc_customer_search`
   MODIFY `customer_search_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_transaction`
+-- AUTO_INCREMENT for table `oc_customer_transaction`
 --
 ALTER TABLE `oc_customer_transaction`
   MODIFY `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_custom_field`
+-- AUTO_INCREMENT for table `oc_custom_field`
 --
 ALTER TABLE `oc_custom_field`
   MODIFY `custom_field_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_custom_field_value`
+-- AUTO_INCREMENT for table `oc_custom_field_value`
 --
 ALTER TABLE `oc_custom_field_value`
   MODIFY `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_download`
+-- AUTO_INCREMENT for table `oc_download`
 --
 ALTER TABLE `oc_download`
   MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_d_validator`
+-- AUTO_INCREMENT for table `oc_d_validator`
 --
 ALTER TABLE `oc_d_validator`
   MODIFY `validator_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_event`
+-- AUTO_INCREMENT for table `oc_event`
 --
 ALTER TABLE `oc_event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension`
+-- AUTO_INCREMENT for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
   MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension_install`
+-- AUTO_INCREMENT for table `oc_extension_install`
 --
 ALTER TABLE `oc_extension_install`
   MODIFY `extension_install_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension_path`
+-- AUTO_INCREMENT for table `oc_extension_path`
 --
 ALTER TABLE `oc_extension_path`
   MODIFY `extension_path_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1450;
 
 --
--- AUTO_INCREMENT для таблицы `oc_filter`
+-- AUTO_INCREMENT for table `oc_filter`
 --
 ALTER TABLE `oc_filter`
   MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_filter_group`
+-- AUTO_INCREMENT for table `oc_filter_group`
 --
 ALTER TABLE `oc_filter_group`
   MODIFY `filter_group_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_geo_zone`
+-- AUTO_INCREMENT for table `oc_geo_zone`
 --
 ALTER TABLE `oc_geo_zone`
   MODIFY `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_information`
+-- AUTO_INCREMENT for table `oc_information`
 --
 ALTER TABLE `oc_information`
-  MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `oc_language`
+-- AUTO_INCREMENT for table `oc_language`
 --
 ALTER TABLE `oc_language`
   MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout`
+-- AUTO_INCREMENT for table `oc_layout`
 --
 ALTER TABLE `oc_layout`
-  MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout_module`
+-- AUTO_INCREMENT for table `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
-  MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout_route`
+-- AUTO_INCREMENT for table `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
   MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
--- AUTO_INCREMENT для таблицы `oc_length_class`
+-- AUTO_INCREMENT for table `oc_length_class`
 --
 ALTER TABLE `oc_length_class`
   MODIFY `length_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_location`
+-- AUTO_INCREMENT for table `oc_location`
 --
 ALTER TABLE `oc_location`
   MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_manufacturer`
+-- AUTO_INCREMENT for table `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
   MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_marketing`
+-- AUTO_INCREMENT for table `oc_marketing`
 --
 ALTER TABLE `oc_marketing`
   MODIFY `marketing_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_modification`
+-- AUTO_INCREMENT for table `oc_modification`
 --
 ALTER TABLE `oc_modification`
   MODIFY `modification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_module`
+-- AUTO_INCREMENT for table `oc_module`
 --
 ALTER TABLE `oc_module`
-  MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT для таблицы `oc_option`
+-- AUTO_INCREMENT for table `oc_option`
 --
 ALTER TABLE `oc_option`
   MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT для таблицы `oc_option_value`
+-- AUTO_INCREMENT for table `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
   MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order`
+-- AUTO_INCREMENT for table `oc_order`
 --
 ALTER TABLE `oc_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_history`
+-- AUTO_INCREMENT for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
   MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_option`
+-- AUTO_INCREMENT for table `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
-  MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_product`
+-- AUTO_INCREMENT for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_recurring`
+-- AUTO_INCREMENT for table `oc_order_recurring`
 --
 ALTER TABLE `oc_order_recurring`
   MODIFY `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_recurring_transaction`
+-- AUTO_INCREMENT for table `oc_order_recurring_transaction`
 --
 ALTER TABLE `oc_order_recurring_transaction`
   MODIFY `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_shipment`
+-- AUTO_INCREMENT for table `oc_order_shipment`
 --
 ALTER TABLE `oc_order_shipment`
   MODIFY `order_shipment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_status`
+-- AUTO_INCREMENT for table `oc_order_status`
 --
 ALTER TABLE `oc_order_status`
   MODIFY `order_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_total`
+-- AUTO_INCREMENT for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
-  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_voucher`
+-- AUTO_INCREMENT for table `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
   MODIFY `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product`
+-- AUTO_INCREMENT for table `oc_product`
 --
 ALTER TABLE `oc_product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_discount`
+-- AUTO_INCREMENT for table `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
-  MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=480;
+  MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_image`
+-- AUTO_INCREMENT for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
-  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2421;
+  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2361;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_option`
+-- AUTO_INCREMENT for table `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
-  MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
+  MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_option_value`
+-- AUTO_INCREMENT for table `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
-  MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_reward`
+-- AUTO_INCREMENT for table `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
-  MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=560;
+  MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=548;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_special`
+-- AUTO_INCREMENT for table `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
-  MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=453;
+  MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
 
 --
--- AUTO_INCREMENT для таблицы `oc_recurring`
+-- AUTO_INCREMENT for table `oc_recurring`
 --
 ALTER TABLE `oc_recurring`
   MODIFY `recurring_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return`
+-- AUTO_INCREMENT for table `oc_return`
 --
 ALTER TABLE `oc_return`
   MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_action`
+-- AUTO_INCREMENT for table `oc_return_action`
 --
 ALTER TABLE `oc_return_action`
   MODIFY `return_action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_history`
+-- AUTO_INCREMENT for table `oc_return_history`
 --
 ALTER TABLE `oc_return_history`
   MODIFY `return_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_reason`
+-- AUTO_INCREMENT for table `oc_return_reason`
 --
 ALTER TABLE `oc_return_reason`
   MODIFY `return_reason_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_status`
+-- AUTO_INCREMENT for table `oc_return_status`
 --
 ALTER TABLE `oc_return_status`
   MODIFY `return_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_review`
+-- AUTO_INCREMENT for table `oc_review`
 --
 ALTER TABLE `oc_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_seo_url`
+-- AUTO_INCREMENT for table `oc_seo_url`
 --
 ALTER TABLE `oc_seo_url`
   MODIFY `seo_url_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=844;
 
 --
--- AUTO_INCREMENT для таблицы `oc_setting`
+-- AUTO_INCREMENT for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1725;
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1843;
 
 --
--- AUTO_INCREMENT для таблицы `oc_statistics`
+-- AUTO_INCREMENT for table `oc_statistics`
 --
 ALTER TABLE `oc_statistics`
   MODIFY `statistics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `oc_stock_status`
+-- AUTO_INCREMENT for table `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
   MODIFY `stock_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_store`
+-- AUTO_INCREMENT for table `oc_store`
 --
 ALTER TABLE `oc_store`
   MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_subscribe`
+-- AUTO_INCREMENT for table `oc_subscribe`
 --
 ALTER TABLE `oc_subscribe`
   MODIFY `subscribe_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_class`
+-- AUTO_INCREMENT for table `oc_tax_class`
 --
 ALTER TABLE `oc_tax_class`
   MODIFY `tax_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_rate`
+-- AUTO_INCREMENT for table `oc_tax_rate`
 --
 ALTER TABLE `oc_tax_rate`
   MODIFY `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_rule`
+-- AUTO_INCREMENT for table `oc_tax_rule`
 --
 ALTER TABLE `oc_tax_rule`
   MODIFY `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT для таблицы `oc_theme`
+-- AUTO_INCREMENT for table `oc_theme`
 --
 ALTER TABLE `oc_theme`
   MODIFY `theme_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_translation`
+-- AUTO_INCREMENT for table `oc_translation`
 --
 ALTER TABLE `oc_translation`
   MODIFY `translation_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_upload`
+-- AUTO_INCREMENT for table `oc_upload`
 --
 ALTER TABLE `oc_upload`
   MODIFY `upload_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_user`
+-- AUTO_INCREMENT for table `oc_user`
 --
 ALTER TABLE `oc_user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `oc_user_group`
+-- AUTO_INCREMENT for table `oc_user_group`
 --
 ALTER TABLE `oc_user_group`
   MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher`
+-- AUTO_INCREMENT for table `oc_voucher`
 --
 ALTER TABLE `oc_voucher`
   MODIFY `voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher_history`
+-- AUTO_INCREMENT for table `oc_voucher_history`
 --
 ALTER TABLE `oc_voucher_history`
   MODIFY `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher_theme`
+-- AUTO_INCREMENT for table `oc_voucher_theme`
 --
 ALTER TABLE `oc_voucher_theme`
   MODIFY `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_weight_class`
+-- AUTO_INCREMENT for table `oc_weight_class`
 --
 ALTER TABLE `oc_weight_class`
   MODIFY `weight_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_zone`
+-- AUTO_INCREMENT for table `oc_zone`
 --
 ALTER TABLE `oc_zone`
   MODIFY `zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4239;
 
 --
--- AUTO_INCREMENT для таблицы `oc_zone_to_geo_zone`
+-- AUTO_INCREMENT for table `oc_zone_to_geo_zone`
 --
 ALTER TABLE `oc_zone_to_geo_zone`
   MODIFY `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;

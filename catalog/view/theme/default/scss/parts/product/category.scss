@@ -38,3 +38,37 @@
     }
   }
 }
+.subcategory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+
+  & h2 {
+    font-size: 20px;
+    line-height: 27px;
+    color: $main;
+    text-transform: uppercase;
+  }
+
+  & a {
+    display: block;
+    border: 1px solid #00a8de;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 20px;
+    color: $main;
+    padding: 7px 33px;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+      background: $blue;
+      color: #fff;
+    }
+  }
+}
+.subcategory-products {
+  margin-bottom: 110px;
+}

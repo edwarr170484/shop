@@ -14,6 +14,34 @@ footer {
     text-transform: uppercase;
     color: #fff;
     margin-bottom: 36px;
+
+    @include respond-to(md) {
+      text-align: left !important;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 25px;
+    }
+  }
+
+  & .socials-list {
+    @include respond-to(md) {
+      flex-direction: row !important;
+      justify-content: space-between;
+
+      & .social-header {
+        margin-bottom: 0;
+      }
+    }
+
+    @include respond-to(sm) {
+      flex-direction: column !important;
+      justify-content: flex-start;
+      align-items: flex-start !important;
+
+      & .social-header {
+        margin-bottom: 25px;
+      }
+    }
   }
 }
 
@@ -38,6 +66,10 @@ footer {
       border: 1px solid #fff;
       background: none;
       color: #fff;
+    }
+
+    @include respond-to(md) {
+      height: 69px;
     }
   }
 
@@ -64,6 +96,20 @@ footer {
 .footer-socials-nav {
   gap: 36px;
   align-items: center !important;
+
+  @include respond-to(lg) {
+    & img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @include respond-to(md) {
+    gap: 30px;
+    & img {
+      height: 22px;
+    }
+  }
 }
 
 .footer-contacts {
@@ -79,10 +125,17 @@ footer {
   border-bottom: 1px solid $blue;
   padding-bottom: 15px;
   margin-bottom: 54px;
+
+  @include respond-to(md) {
+    margin-bottom: 22px;
+  }
 }
 
 .footer-info {
   color: $main;
+  @include respond-to(lg) {
+    margin-bottom: 49px;
+  }
 }
 
 .footer-phones {
@@ -109,8 +162,8 @@ footer {
   grid-template-rows: 1fr 1fr;
   gap: 35px;
 
-  @include respond-to(md) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1330px) {
+    gap: 15px;
   }
 }
 
@@ -123,4 +176,54 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include respond-to(lg) {
+    width: 79px;
+    height: 49px;
+
+    & img {
+      max-width: 70%;
+    }
+  }
+}
+.footer-info-payments {
+  @include respond-to(lg) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $blue;
+    padding-top: 15px;
+
+    & .footer-header {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @include respond-to(md) {
+    display: block;
+    border: none;
+
+    & .footer-header {
+      border-bottom: 1px solid $blue;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+  }
+
+  & .footer-payments {
+    @include respond-to(lg) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+
+    @include respond-to(sm) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+    }
+  }
 }

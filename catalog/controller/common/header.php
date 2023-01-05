@@ -95,7 +95,7 @@ class ControllerCommonHeader extends Controller {
 
 		array_push($data['menu'], [
 			'name'     => 'Блог',
-			'href'     => $this->url->link('extension/d_blog_module/category', 'category_id=1', 'SSL')
+			'href'     => $this->url->link('extension/d_blog_module/blog', '', 'SSL')
 		]);
 
 		$this->load->model('catalog/information');

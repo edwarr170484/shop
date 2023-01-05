@@ -1,55 +1,33 @@
-{{header}}
+{{ header }}
 <style>
 {{custom_style}}
 </style>
-{% include '/default/template/partial/d_breadcrumb.twig' %}
-    {% include '/default/template/partial/d_layout_open.twig' %}
-        <div class="bm">
-            <div class="bm-category-info clearfix">
-                {% if edit %}<div class="btn-group btn-group-xs pull-right" ><a class="btn btn-default " href="{{edit}}" target="_blank"><i class="fa fa-pencil"></i> {{text_edit}}</a></div>{% endif %}
-                <h1 class="h1 title">{{heading_title}}</h1>
-                {% if (thumb and setting.category.image_display) %}
-                <div class="image"><img src="{{thumb}}" alt="{{heading_title}}" title="{{heading_title}}" class="img-responsive" /></div>
+<div id="blog-category" class="container">
+    <div class="row">
+        <aside id="column-left" class="col-12 col-md-3 blog-navigation">
+            {{ menu }}
+        </aside>
+        <div id="content" class="col-12 col-md-9">
+            <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+            </ul>
+            <div class="bm">
+                {% if posts %}
+                    {% include '/default/template/' ~ layout_template ~ '.twig' with posts %}
                 {% endif %}
-                {% if description %}
-                <div class="description">{{description}}</div>
+
+                {% if not posts and post_display_on_main == false %}
+                    <p class="bm-empty">{{text_empty}}</p>
                 {% endif %}
-            </div>
-
-            {% if categories %}
-            <div class="bm-categories">
-                <div class="h3">{{text_categories}}</div>
-
-                <div class="row auto-clear">
-                    {% for category in categories %}
-                    <div class="col-sm-{{category.col}} col-xs-4">
-                        <a class="item-cateogry" href="{{category.href}}">
-                            {% if setting.category.sub_category_image %}
-                                <div class="image"><img src="{{category.thumb}}" alt="{{category.title}}" title="{{category.title}}" /></div>
-                            {% endif %}
-                            <div class="title">{{category.title}}</div>
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            {% endif %}
-            {% if posts %}
-                {% include '/default/template/' ~ layout_template ~ '.twig' with posts %}
-            {% endif %}
-
-            {% if not posts and post_display_on_main == false %}
-                <p class="bm-empty">{{text_empty}}</p>
-                <div class="buttons">
-                    <div class="pull-right">
-                            {% include '/default/template/partial/button' with {button:{
-                                link:continue, 
-                                style:'primary',
-                                text_button: button_continue
-                        }} %}
-                    </div>
-                </div>
-            {% endif %}
+            </div> 
+            <div class="row">
+                <div class="col-12">{{ pagination }}</div>
+            </div> 
         </div>
-    {% include '/default/template/partial/d_layout_close.twig' %}
-{{footer}}
+        {{ column_right }}
+    </div>
+    <div class="row">{{content_bottom}}</div>
+</div>
+{{ footer }} 

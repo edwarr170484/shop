@@ -9,7 +9,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
+  <div class="swiper-bg"></div>
 </div>
+
 <script type="text/javascript"><!--
 $('#carousel{{ module }}').swiper({
 	mode: 'horizontal',
@@ -19,6 +21,17 @@ $('#carousel{{ module }}').swiper({
 	nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
 	autoplay: 2500,
-	loop: true
+	loop: true,
+  breakpoints: {
+    480: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    992: {
+      slidesPerView: 4,
+    }
+  }
 });
 --></script>

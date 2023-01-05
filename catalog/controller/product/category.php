@@ -9,6 +9,8 @@ class ControllerProductCategory extends Controller {
 
 		$this->load->model('tool/image');
 
+		$catalog = [];
+
 		if (isset($this->request->get['filter'])) {
 			$filter = $this->request->get['filter'];
 		} else {
@@ -85,6 +87,12 @@ class ControllerProductCategory extends Controller {
 			}
 		} else {
 			$category_id = 0;
+			$categories = $this->model_catalog_category->getCategories(0);
+			
+
+			if(count($categories) > 0){
+				$this->response->redirect($this->url->link('product/category', 'path=' . $categories[0]['category_id'], 'SSL'));
+			}
 		}
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
@@ -138,12 +146,48 @@ class ControllerProductCategory extends Controller {
 			foreach ($results as $result) {
 				$filter_data = array(
 					'filter_category_id'  => $result['category_id'],
-					'filter_sub_category' => true
+					'filter_sub_category' => true,
+					'start'              => 0,
+					'limit'              => 4
 				);
+	
+				$catProducts = $this->model_catalog_product->getProducts($filter_data);
+
+				$products = [];
+
+				foreach ($catProducts as $catProduct) {
+					if ($catProduct['image']) {
+						$image = $this->model_tool_image->resize($catProduct['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+					} else {
+						$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+					}
+	
+					if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+						$price = $this->currency->format($this->tax->calculate($catProduct['price'], $catProduct['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					} else {
+						$price = false;
+					}
+	
+					if ((float)$catProduct['special']) {
+						$special = $this->currency->format($this->tax->calculate($catProduct['special'], $catProduct['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					} else {
+						$special = false;
+					}
+
+					array_push($products, [
+						'product_id'  => $catProduct['product_id'],
+						'thumb'       => $image,
+						'name'        => $catProduct['name'],
+						'price'       => $price,
+						'special'     => $special,
+						'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $catProduct['product_id'] . $url)
+					]);
+				}
 
 				$data['categories'][] = array(
 					'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url),
+					'products' => $products
 				);
 			}
 

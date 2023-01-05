@@ -5,17 +5,84 @@
     <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
     {% endfor %}
   </ul>
-  <div class="row">{{ column_left }}
+  <div class="row">
+    {{ column_left }}
     {% if column_left and column_right %}
-    {% set class = 'col-sm-6' %}
+      {% set class = 'col-sm-6' %}
     {% elseif column_left or column_right %}
-    {% set class = 'col-sm-9' %}
+      {% set class = 'col-sm-9' %}
     {% else %}
-    {% set class = 'col-sm-12' %}
+      {% set class = 'col-sm-12' %}
     {% endif %}
-    <div id="content" class="{{ class }}">{{ content_top }}
+    <div id="content" class="{{ class }}">
+      {{ content_top }}
       <h1>{{ heading_title }}</h1>
-      {{ description }}{{ content_bottom }}</div>
-    {{ column_right }}</div>
+      {{ description }}
+      <div class="about-gallery">
+        <div class="gallery-image image1 centred"><img src="/image/catalog/site/about/image.png" alt="" title="" class="img-fluid" /></div>
+        <div class="gallery-image image2"><img src="/image/catalog/site/about/image.png" alt="" title=""  /></div>
+        <div class="gallery-image image3 centred"><img src="/image/catalog/site/about/image.png" alt="" title="" class="img-fluid" /></div>
+        <div class="gallery-image image4 centred"><img src="/image/catalog/site/about/image.png" alt="" title="" class="img-fluid" /></div>
+        <div class="gallery-image image5 centred"><img src="/image/catalog/site/about/image.png" alt="" title="" class="img-fluid" /></div>
+      </div>
+      <h2>Почему нас выбирают</h2>
+      <div class="about-why">
+        <div class="row">
+          <div class="col-6 col-md-4 col-lg-3">
+              <div class="why-reson">
+                <div class="why-reason-icon">
+                  <div class="icon-ring">
+                    <div class="icon-info">10 лет</div>
+                  </div>
+                </div>
+                <div class="why-reason-text">
+                  Уже 10 лет мы с Вами! Спасибо Вам, что доверяете нашей компании!
+                </div>
+              </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+              <div class="why-reson">
+                <div class="why-reason-icon">
+                  <div class="icon-ring">
+                    <div class="icon-info">38</div>
+                  </div>
+                </div>
+                <div class="why-reason-text">
+                  Мы сотрудничаем с более 38 фирмами-поставщиками
+                </div>
+              </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+              <div class="why-reson">
+                <div class="why-reason-icon">
+                  <div class="icon-ring">
+                    <div class="icon-info">4500</div>
+                  </div>
+                </div>
+                <div class="why-reason-text">
+                  Более 4500 успешно заключенных контрактов с клиентами
+                </div>
+              </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+              <div class="why-reson">
+                <div class="why-reason-icon">
+                  <div class="icon-ring">
+                    <div class="icon-info"><span style="font-size:19px">более</span><br/>8000</div>
+                  </div>
+                </div>
+                <div class="why-reason-text">
+                  Всегда более 8000 товаров в наличии, и это не предел!
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <h2>Сертификаты и награды</h2>
+      
+      {{ content_bottom }}
+    </div>
+    {{ column_right }}
+  </div>
 </div>
 {{ footer }}

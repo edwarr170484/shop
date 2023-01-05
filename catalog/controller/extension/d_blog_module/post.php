@@ -370,6 +370,8 @@ class ControllerExtensionDBlogModulePost extends Controller
             $data['content_bottom'] = $this->load->controller('common/content_bottom');
             $data['footer'] = $this->load->controller('common/footer');
             $data['header'] = $this->load->controller('common/header');
+            $data['menu'] = $this->load->controller('extension/d_blog_module/aside');
+
             $this->response->setOutput($this->model_extension_d_opencart_patch_load->view('extension/d_blog_module/post', $data));
 
         } else {
@@ -398,6 +400,7 @@ class ControllerExtensionDBlogModulePost extends Controller
             $data['content_bottom'] = $this->load->controller('common/content_bottom');
             $data['footer'] = $this->load->controller('common/footer');
             $data['header'] = $this->load->controller('common/header');
+            $data['menu'] = $this->load->controller('extension/d_blog_module/aside');
 
             $this->response->setOutput($this->load->view('error/not_found', $data));
         }
@@ -429,6 +432,8 @@ class ControllerExtensionDBlogModulePost extends Controller
         $data['content_bottom'] = $this->load->controller('common/content_bottom');
         $data['footer'] = $this->load->controller('common/footer');
         $data['header'] = $this->load->controller('common/header');
+        $data['menu'] = $this->load->controller('extension/d_blog_module/aside');
+        
         $this->response->setOutput($this->load->view('error/not_found', $data));
     }
 

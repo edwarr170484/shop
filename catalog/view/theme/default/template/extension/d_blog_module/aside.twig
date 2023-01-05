@@ -1,0 +1,14 @@
+{% if categories %}
+    <ul class="nav blog-menu">
+        {% for category in categories %}
+            <li>
+                <a href="{{ category.href }}" {{ category.class }}>
+                    <span class="image">
+                        <img src="{{ category.image }}" alt="" title="{{ category.title }}" />
+                    </span>
+                    <span>{{ category.title }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    <ul>
+{% endif %}

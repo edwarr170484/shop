@@ -1,6 +1,6 @@
 <div class="media review review-{{review.review_id}}">
     {% if setting.review_thumb.rating_display %}
-    {% include template('partial/d_rating') with ({rating:review.rating,static_rating:true})%}
+    {% include '/default/template/partial/d_rating.twig' with {rating:review.rating,static_rating:true}%}
     {% endif %}
 
     {% if setting.review_thumb.image_display %}
@@ -57,7 +57,7 @@
         {% endif %}
         <div class="replies">
         {% for review in replies %}
-            {% include template('extension/d_blog_module/review_thumb') with review %}
+            {% include '/default/template/extension/d_blog_module/review_thumb.twig' with review %}
         {% endfor %}
         </div>
     </div>

@@ -20,14 +20,18 @@
 
 @import "./parts/homepage.scss";
 @import "./parts/information.scss";
+@import "./parts/blog.scss";
+@import "./parts/about.scss";
 
-body {
+body,
+html {
   font-family: "Gilroy", sans-serif;
   font-weight: 400;
   color: $main;
   font-size: 16px;
   line-height: 24px;
   width: 100%;
+  overflow-x: hidden;
 }
 
 h1,
@@ -100,7 +104,6 @@ span.hidden-lg {
 }
 
 @media (max-width: 1399.98px) {
-
   .container,
   .container-lg,
   .container-md,

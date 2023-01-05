@@ -2,20 +2,20 @@
 <style>
     {{custom_style}}
 </style>
-{% include template('partial/d_breadcrumb') %}
-    {% include template('partial/d_layout_open') %}
+{% include '/default/template/partial/d_breadcrumb.twig' %}
+    {% include '/default/template/partial/d_layout_open.twig' %}
         <div class="bm">
             <div class="bm-search-info clearfix">
                  <h1 class="h1 title">{{heading_title}}</h1>
             </div>
             {% if posts %}
-                {% include template('extension/d_blog_module/layout_grid') with posts %}
+                {% include '/default/template/extension/d_blog_module/layout_grid.twig' with posts %}
             {% endif %}
             {% if not posts %}
                 <p class="bm-empty">{{text_empty}}</p>
                 <div class="buttons">
                     <div class="pull-right">
-                            {% include template('partial/button') with {button:{
+                            {% include /default/template/'partial/button.twig' with {button:{
                                 link:continue, 
                                 style:'primary',
                                 text_button: button_continue
@@ -24,5 +24,5 @@
                 </div>
             {% endif %}
         </div>
-    {% include template('partial/d_layout_close') %}
+    {% include '/default/template/partial/d_layout_close.twig' %}
 {{footer}}

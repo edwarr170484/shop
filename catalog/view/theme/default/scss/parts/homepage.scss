@@ -1,27 +1,89 @@
 .homepage-why {
-    border: 1px solid #CBCBCB;
-    padding: 20px 35px;
-    max-width: 999px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 111px;
-    margin-bottom: 123px;
+  border: 1px solid #cbcbcb;
+  padding: 20px 35px;
+  max-width: 999px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 111px;
+  margin-bottom: 123px;
+
+  @include respond-to(lg) {
+    margin-bottom: 63px;
+  }
+
+  @include respond-to(md) {
+    flex-direction: column;
+    border: none;
+    align-items: flex-start !important;
+    margin-top: 38px;
+    margin-bottom: 38px;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  & .why-block:last-child {
+    @include respond-to(md) {
+      border-bottom: 1px solid #cbcbcb;
+    }
+  }
 }
 
 .why-block {
-    max-width: 207px;
-    flex-basis: 207px;
+  max-width: 207px;
+  flex-basis: 207px;
+
+  @include respond-to(md) {
+    flex-direction: row !important;
+    border-top: 1px solid #cbcbcb;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 4px;
+    max-width: 100%;
+    flex-basis: 100%;
+    width: 100%;
+  }
 }
 
 .why-icon {
-    margin-bottom: 29px;
+  margin-bottom: 29px;
+  @include respond-to(md) {
+    margin-bottom: 0;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
 .why-text {
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-    text-transform: uppercase;
-    color: $main;
-    text-align: center;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $main;
+  text-align: center;
+
+  @include respond-to(lg) {
+    font-size: 13px;
+  }
+  @include respond-to(md) {
+    text-align: left;
+  }
+}
+.swiper-bg {
+  display: none;
+}
+
+#common-home {
+  & .swiper-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300%;
+    height: 100%;
+    background: #f2fcff;
+    display: block;
+    margin-left: -100%;
+  }
 }

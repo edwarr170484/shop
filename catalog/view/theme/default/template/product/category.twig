@@ -4,7 +4,7 @@
     {% if column_left and column_right %}
     {% set class = 'col-sm-6' %}
     {% elseif column_left or column_right %}
-    {% set class = 'col-sm-9' %}
+    {% set class = 'col-12 col-md-9' %}
     {% else %}
     {% set class = 'col-sm-12' %}
     {% endif %}
@@ -16,59 +16,111 @@
       </ul>
       {{ content_top }}
       <h2 class="category-header">{{ heading_title }}</h2>
-      {% if products %}
-        <div class="row">
-          <div class="col-12">
-            <div class="category-sorts">
-              <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
-              <ul class="nav sort-links">
-                {% for sorts in sorts %}
-                  <li><a href="{{ sorts.href }}">{{ sorts.text }}</a><li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row"> 
-          <div class="col-12">
-            <div class="product-grid">
-              {% for product in products %}
-                <div class="product-layout">
-                  <div class="product-layout-inner">
-                    <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid" /></a></div>
-                    <div class="caption">
-                      <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
-                      {% if product.price %}
-                      <p class="price">
-                        {% if not product.special %}
-                          {{ product.price }}
-                        {% else %}
-                          {{ product.special }}
-                        {% endif %}
-                      </p>
-                      {% endif %}
+      {% if categories | length > 0 %}
+        {% for category in categories %}
+          {% if category.products | length > 0 %}
+            <div class="subcategory-products">
+              <div class="subcategory-header">
+                <h2>{{ category.name }}</h2>
+                <a href="{{ category.href }}">Все</a>
+              </div>
+              <div class="subcategory-products">
+                <div class="product-grid">
+                  {% for product in category['products'] %}
+                    <div class="product-layout">
+                      <div class="product-layout-inner">
+                        <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid" /></a></div>
+                        <div class="caption">
+                          <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                          {% if product.price %}
+                          <p class="price">
+                            {% if not product.special %}
+                              {{ product.price }}
+                            {% else %}
+                              {{ product.special }}
+                            {% endif %}
+                          </p>
+                          {% endif %}
+                        </div>
+                        <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
+                          <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.5694 0.761173C17.2331 -0.363749 13.6475 1.51355 12.5026 4.95769C11.3578 1.50993 7.77216 -0.363749 4.43588 0.761173C1.06096 1.90438 -0.779261 5.6809 0.316487 9.20544C1.37005 12.5656 11.1401 21.565 12.3902 21.565C13.6405 21.565 23.6283 12.5765 24.6818 9.20544C25.781 5.6736 23.9408 1.89707 20.5694 0.761173Z" fill="#FF7373"/>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
-                    <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
-                      <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.5694 0.761173C17.2331 -0.363749 13.6475 1.51355 12.5026 4.95769C11.3578 1.50993 7.77216 -0.363749 4.43588 0.761173C1.06096 1.90438 -0.779261 5.6809 0.316487 9.20544C1.37005 12.5656 11.1401 21.565 12.3902 21.565C13.6405 21.565 23.6283 12.5765 24.6818 9.20544C25.781 5.6736 23.9408 1.89707 20.5694 0.761173Z" fill="#FF7373"/>
-                      </svg>
-                    </button>
-                  </div>
+                  {% endfor %}
                 </div>
-              {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <div class="subcategory-products">
+              <div class="subcategory-header">
+                <h2>{{ category.name }}</h2>
+              </div>
+              <div class="subcategory-products">
+                <p>{{ text_empty }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% if products %}
+          <div class="row">
+            <div class="col-12">
+              <div class="category-sorts">
+                <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
+                <ul class="nav sort-links">
+                  {% for sorts in sorts %}
+                    <li><a href="{{ sorts.href }}">{{ sorts.text }}</a><li>
+                  {% endfor %}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12">{{ pagination }}</div>
-        </div>
+          <div class="row"> 
+            <div class="col-12">
+              <div class="product-grid">
+                {% for product in products %}
+                  <div class="product-layout">
+                    <div class="product-layout-inner">
+                      <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid" /></a></div>
+                      <div class="caption">
+                        <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                        {% if product.price %}
+                        <p class="price">
+                          {% if not product.special %}
+                            {{ product.price }}
+                          {% else %}
+                            {{ product.special }}
+                          {% endif %}
+                        </p>
+                        {% endif %}
+                      </div>
+                      <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
+                        <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20.5694 0.761173C17.2331 -0.363749 13.6475 1.51355 12.5026 4.95769C11.3578 1.50993 7.77216 -0.363749 4.43588 0.761173C1.06096 1.90438 -0.779261 5.6809 0.316487 9.20544C1.37005 12.5656 11.1401 21.565 12.3902 21.565C13.6405 21.565 23.6283 12.5765 24.6818 9.20544C25.781 5.6736 23.9408 1.89707 20.5694 0.761173Z" fill="#FF7373"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">{{ pagination }}</div>
+          </div>
+        {% endif %}
+        {% if not categories and not products %}
+          <p>{{ text_empty }}</p>
+          <div class="buttons d-flex justify-content-end">
+            <a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a>
+          </div>
+        {% endif %}
       {% endif %}
-      {% if not categories and not products %}
-        <p>{{ text_empty }}</p>
-        <div class="buttons">
-          <div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
-        </div>
-      {% endif %}
+
+      
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
