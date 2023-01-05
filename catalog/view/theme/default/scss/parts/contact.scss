@@ -1,0 +1,132 @@
+#information-contact {
+    padding-top: 57px;
+
+    & h1 {
+        text-align: center;
+        font-size: 30px;
+        line-height: 35px;
+        text-transform: uppercase;
+        color: $main;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 95px;
+
+        @include respond-to(md) {
+            margin-bottom: 58px;
+        }
+    }
+}
+
+.contacts {
+    max-width: 996px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 130px;
+
+    @include respond-to(md) {
+        margin-bottom: 105px;
+    }
+}
+
+.contact-panel {
+    border: 1px solid #d0d0d0;
+    padding: 52px 63px 0;
+    margin-bottom: 69px;
+
+    @include respond-to(md) {
+        padding: 0;
+        border: none;
+        margin-bottom: 0;
+    }
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.contact-block {
+    margin-bottom: 52px;
+
+    @include respond-to(md) {
+        margin-bottom: 46px;
+    }
+}
+
+.contact-header {
+    margin-bottom: 17px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.contact-info-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 168, 222, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+
+    @include respond-to(sm) {
+        margin-right: 23px;
+    }
+}
+
+.contact-info-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $main;
+
+    @include respond-to(lg) {
+        display: flex;
+        flex-direction: column;
+        line-height: 11px;
+    }
+}
+
+.employee-card {
+    font-weight: 500;
+    color: $main;
+    margin-bottom: 62px;
+}
+
+.employee-image {
+    margin-bottom: 48px;
+}
+
+.employee-position {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 8px;
+
+    @include respond-to(md) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.employee-name {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 9px;
+
+    @include respond-to(md) {
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+
+.employee-contact {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include respond-to(md) {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}

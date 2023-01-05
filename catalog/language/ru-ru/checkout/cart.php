@@ -27,12 +27,12 @@ $_['text_payment_description'] = 'Стоимость: %s; Периодичнос
 $_['text_payment_cancel']      = 'Стоимость: %s; Периодичность: %d %s; Кол-во платежей: до отмены';
 
 // Column
-$_['column_image']             = 'Изображение';
+$_['column_image']             = 'Наименование товара';
 $_['column_name']              = 'Название';
 $_['column_model']             = 'Модель';
 $_['column_quantity']          = 'Количество';
-$_['column_price']             = 'Цена за шт.';
-$_['column_total']             = 'Всего';
+$_['column_price']             = 'Цена';
+$_['column_total']             = 'Итоговая цена';
 
 // Error
 $_['error_stock']              = 'Товары отмеченные *** отсутствуют в нужном количестве или их нет на складе!';

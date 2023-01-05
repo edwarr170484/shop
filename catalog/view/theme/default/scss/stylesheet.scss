@@ -7,6 +7,7 @@
 @import "./parts/controls/list.scss";
 @import "./parts/controls/forms.scss";
 @import "./parts/product/product.scss";
+@import "./parts/product/cart.scss";
 @import "./parts/plugins/carousel.scss";
 @import "./parts/pagination.scss";
 @import "./parts/alert.scss";
@@ -22,6 +23,7 @@
 @import "./parts/information.scss";
 @import "./parts/blog.scss";
 @import "./parts/about.scss";
+@import "./parts/contact.scss";
 
 body,
 html {
@@ -104,6 +106,7 @@ span.hidden-lg {
 }
 
 @media (max-width: 1399.98px) {
+
   .container,
   .container-lg,
   .container-md,

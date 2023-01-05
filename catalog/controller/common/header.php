@@ -111,6 +111,11 @@ class ControllerCommonHeader extends Controller {
 			}
 		}
 
+		array_push($data['menu'], [
+			'name'     => 'Контакты',
+			'href'     => $this->url->link('information/contact', '' . $result['information_id'])
+		]);
+
 		return $this->load->view('common/header', $data);
 	}
 }
