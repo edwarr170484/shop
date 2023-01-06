@@ -1,5 +1,7 @@
+.form-group {
+  margin-bottom: 34px;
+}
 .form-control {
-
   &.success,
   &.success:focus {
     border-color: $success;
@@ -9,6 +11,14 @@
   &.error:focus {
     border-color: $error;
   }
+
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+  padding: 16px 30px 17px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: $main;
 }
 
 .radio-group {
@@ -53,7 +63,7 @@
     border-radius: 0;
     border-left: 0;
     border-right: 0;
-    border-color: #C9C9C9;
+    border-color: #c9c9c9;
 
     &:focus {
       outline: none;

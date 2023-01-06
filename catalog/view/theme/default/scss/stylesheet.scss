@@ -6,6 +6,7 @@
 @import "./parts/controls/input.scss";
 @import "./parts/controls/list.scss";
 @import "./parts/controls/forms.scss";
+@import "./parts/controls/labels.scss";
 @import "./parts/product/product.scss";
 @import "./parts/product/cart.scss";
 @import "./parts/plugins/carousel.scss";
@@ -24,6 +25,7 @@
 @import "./parts/blog.scss";
 @import "./parts/about.scss";
 @import "./parts/contact.scss";
+@import "./parts/checkout.scss";
 
 body,
 html {
@@ -97,7 +99,8 @@ span.hidden-lg {
   margin-bottom: 15px;
 }
 
-#common-home {
+#common-home,
+#error-not-found {
   padding-top: 55px;
 }
 
@@ -106,7 +109,6 @@ span.hidden-lg {
 }
 
 @media (max-width: 1399.98px) {
-
   .container,
   .container-lg,
   .container-md,

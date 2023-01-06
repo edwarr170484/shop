@@ -1,0 +1,23 @@
+.checkout-block-head {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 19px;
+
+  & .head-number {
+    box-shadow: 0px 1px 8px rgba(0, 168, 222, 0.2);
+    border: 5px solid #fff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-right: 28px;
+    background: $blue;
+    flex-shrink: 0;
+  }
+}

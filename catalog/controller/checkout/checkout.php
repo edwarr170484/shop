@@ -1,6 +1,20 @@
 <?php
 class ControllerCheckoutCheckout extends Controller {
 	public function index() {
+		$this->load->language('checkout/checkout');
+
+		$data['breadcrumbs'] = array();
+
+		$data['breadcrumbs'][] = array(
+			'href' => $this->url->link('common/home'),
+			'text' => $this->language->get('text_home')
+		);
+
+		$data['breadcrumbs'][] = array(
+			'href' => $this->url->link('checkout/checkout'),
+			'text' => $this->language->get('heading_title')
+		);
+
 		//left column shipping methods
 		$data['shipping_methods'] = $this->load->controller('checkout/shipping_method');
 
@@ -50,6 +64,7 @@ class ControllerCheckoutCheckout extends Controller {
 		}
 
 		$data['shipping_required'] = $this->cart->hasShipping();
+		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
