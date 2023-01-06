@@ -53,7 +53,7 @@
 .swiper-pagination-bullet {
 	width: 11px;
 	height: 11px;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 168, 222, 0.5);
 	border-radius: 20px;
 	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
 	margin: 0 5px;
@@ -61,11 +61,11 @@
 }
 
 .swiper-pagination-bullet:hover {
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 168, 222, 0.7);
 }
 
 .swiper-pagination-bullet-active {
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(0, 168, 222, 0.9);
 }
 
 .swiper-button-next.swiper-button-disabled,

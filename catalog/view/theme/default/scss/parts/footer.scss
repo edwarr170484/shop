@@ -106,6 +106,7 @@ footer {
 
   @include respond-to(md) {
     gap: 30px;
+
     & img {
       height: 22px;
     }
@@ -115,6 +116,10 @@ footer {
 .footer-contacts {
   padding-top: 60px;
   padding-bottom: 154px;
+
+  @include respond-to(md) {
+    padding-bottom: 10px;
+  }
 }
 
 .footer-header {
@@ -133,6 +138,7 @@ footer {
 
 .footer-info {
   color: $main;
+
   @include respond-to(lg) {
     margin-bottom: 49px;
   }
@@ -186,6 +192,7 @@ footer {
     }
   }
 }
+
 .footer-info-payments {
   @include respond-to(lg) {
     display: flex;

@@ -28,6 +28,7 @@ class ControllerCommonFooter extends Controller {
 		$data['order'] = $this->url->link('account/order', '', true);
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true);
+		
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 
@@ -62,6 +63,7 @@ class ControllerCommonFooter extends Controller {
 		$data['email'] = $this->config->get('config_email');
 		$data['open'] = $this->config->get('config_open');
 		$data['map'] = $this->config->get('config_geocode');
+		$data['config_comment'] = $this->config->get('config_comment');
 		
 		return $this->load->view('common/footer', $data);
 	}

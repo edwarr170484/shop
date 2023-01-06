@@ -27,4 +27,8 @@
   & .swiper-viewport {
     margin-top: 99px !important;
   }
+
+  @include respond-to(md) {
+    padding-bottom: 99px;
+  }
 }

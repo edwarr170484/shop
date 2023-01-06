@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 06, 2023 at 08:13 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Хост: 127.0.0.1
+-- Время создания: Янв 06 2023 г., 22:52
+-- Версия сервера: 10.4.24-MariaDB
+-- Версия PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shop`
+-- База данных: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_address`
+-- Структура таблицы `oc_address`
 --
 
 CREATE TABLE `oc_address` (
@@ -45,7 +45,7 @@ CREATE TABLE `oc_address` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_api`
+-- Структура таблицы `oc_api`
 --
 
 CREATE TABLE `oc_api` (
@@ -58,7 +58,7 @@ CREATE TABLE `oc_api` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_api`
+-- Дамп данных таблицы `oc_api`
 --
 
 INSERT INTO `oc_api` (`api_id`, `username`, `key`, `status`, `date_added`, `date_modified`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `oc_api` (`api_id`, `username`, `key`, `status`, `date_added`, `date
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_api_ip`
+-- Структура таблицы `oc_api_ip`
 --
 
 CREATE TABLE `oc_api_ip` (
@@ -78,7 +78,7 @@ CREATE TABLE `oc_api_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_api_ip`
+-- Дамп данных таблицы `oc_api_ip`
 --
 
 INSERT INTO `oc_api_ip` (`api_ip_id`, `api_id`, `ip`) VALUES
@@ -87,7 +87,7 @@ INSERT INTO `oc_api_ip` (`api_ip_id`, `api_id`, `ip`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_api_session`
+-- Структура таблицы `oc_api_session`
 --
 
 CREATE TABLE `oc_api_session` (
@@ -100,7 +100,7 @@ CREATE TABLE `oc_api_session` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_api_session`
+-- Дамп данных таблицы `oc_api_session`
 --
 
 INSERT INTO `oc_api_session` (`api_session_id`, `api_id`, `session_id`, `ip`, `date_added`, `date_modified`) VALUES
@@ -109,7 +109,7 @@ INSERT INTO `oc_api_session` (`api_session_id`, `api_id`, `session_id`, `ip`, `d
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_attribute`
+-- Структура таблицы `oc_attribute`
 --
 
 CREATE TABLE `oc_attribute` (
@@ -119,7 +119,7 @@ CREATE TABLE `oc_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_attribute`
+-- Дамп данных таблицы `oc_attribute`
 --
 
 INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
@@ -138,7 +138,7 @@ INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_attribute_description`
+-- Структура таблицы `oc_attribute_description`
 --
 
 CREATE TABLE `oc_attribute_description` (
@@ -148,7 +148,7 @@ CREATE TABLE `oc_attribute_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_attribute_description`
+-- Дамп данных таблицы `oc_attribute_description`
 --
 
 INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
@@ -178,7 +178,7 @@ INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_attribute_group`
+-- Структура таблицы `oc_attribute_group`
 --
 
 CREATE TABLE `oc_attribute_group` (
@@ -187,7 +187,7 @@ CREATE TABLE `oc_attribute_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_attribute_group`
+-- Дамп данных таблицы `oc_attribute_group`
 --
 
 INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
@@ -199,7 +199,7 @@ INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_attribute_group_description`
+-- Структура таблицы `oc_attribute_group_description`
 --
 
 CREATE TABLE `oc_attribute_group_description` (
@@ -209,7 +209,7 @@ CREATE TABLE `oc_attribute_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_attribute_group_description`
+-- Дамп данных таблицы `oc_attribute_group_description`
 --
 
 INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
@@ -225,7 +225,7 @@ INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_banner`
+-- Структура таблицы `oc_banner`
 --
 
 CREATE TABLE `oc_banner` (
@@ -235,7 +235,7 @@ CREATE TABLE `oc_banner` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_banner`
+-- Дамп данных таблицы `oc_banner`
 --
 
 INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
@@ -246,7 +246,7 @@ INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_banner_image`
+-- Структура таблицы `oc_banner_image`
 --
 
 CREATE TABLE `oc_banner_image` (
@@ -260,26 +260,29 @@ CREATE TABLE `oc_banner_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_banner_image`
+-- Дамп данных таблицы `oc_banner_image`
 --
 
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `title`, `link`, `image`, `sort_order`) VALUES
-(120, 9, 2, 'Клиент 6', '', 'catalog/partner.png', 6),
-(118, 9, 2, 'Клиент 4', '', 'catalog/partner.png', 4),
-(119, 9, 2, 'Клиент 5', '', 'catalog/partner.png', 5),
-(113, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '/', 'catalog/main-banner.png', 1),
-(115, 9, 2, 'Клиент 1', '', 'catalog/partner.png', 1),
-(116, 9, 2, 'Клиент 2', '', 'catalog/partner.png', 2),
-(117, 9, 2, 'Клиент 3', '', 'catalog/partner.png', 3),
+(127, 9, 2, 'Клиент 3', '', 'catalog/clients/8340ce4f2e8183bee98a60bd6a2d476f.png', 3),
+(132, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '/', 'catalog/main-banner.png', 1),
+(126, 9, 2, 'Клиент 2', '', 'catalog/clients/8marta.jpg', 2),
+(125, 9, 2, 'Клиент 1', '', 'catalog/clients/019.jpg', 1),
 (121, 10, 2, 'Сертфикат1', '', 'catalog/site/Rectangle 310.png', 1),
 (122, 10, 2, 'Сертфикат2', '', 'catalog/site/Rectangle 310.png', 2),
 (123, 10, 2, 'Сертфикат3', '', 'catalog/site/Rectangle 310.png', 3),
-(124, 10, 2, 'Сертфикат4', '', 'catalog/site/Rectangle 310.png', 4);
+(124, 10, 2, 'Сертфикат4', '', 'catalog/site/Rectangle 310.png', 4),
+(128, 9, 2, 'Клиент 4', '', 'catalog/clients/kupalinka.png', 4),
+(129, 9, 2, 'Клиент 5', '', 'catalog/clients/logo.png', 5),
+(130, 9, 2, 'Клиент 6', '', 'catalog/clients/mf.png', 6),
+(131, 9, 2, 'Клиент 7', '', 'catalog/clients/Без названия.png', 7),
+(133, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '', 'catalog/main-banner.png', 2),
+(134, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '', 'catalog/main-banner.png', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_author`
+-- Структура таблицы `oc_bm_author`
 --
 
 CREATE TABLE `oc_bm_author` (
@@ -291,7 +294,7 @@ CREATE TABLE `oc_bm_author` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_author`
+-- Дамп данных таблицы `oc_bm_author`
 --
 
 INSERT INTO `oc_bm_author` (`author_id`, `user_id`, `author_group_id`, `custom`, `setting`) VALUES
@@ -300,7 +303,7 @@ INSERT INTO `oc_bm_author` (`author_id`, `user_id`, `author_group_id`, `custom`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_author_description`
+-- Структура таблицы `oc_bm_author_description`
 --
 
 CREATE TABLE `oc_bm_author_description` (
@@ -316,7 +319,7 @@ CREATE TABLE `oc_bm_author_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_author_description`
+-- Дамп данных таблицы `oc_bm_author_description`
 --
 
 INSERT INTO `oc_bm_author_description` (`author_id`, `language_id`, `name`, `description`, `short_description`, `meta_title`, `meta_description`, `meta_keyword`, `author_description_id`) VALUES
@@ -325,7 +328,7 @@ INSERT INTO `oc_bm_author_description` (`author_id`, `language_id`, `name`, `des
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_author_group`
+-- Структура таблицы `oc_bm_author_group`
 --
 
 CREATE TABLE `oc_bm_author_group` (
@@ -335,7 +338,7 @@ CREATE TABLE `oc_bm_author_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_author_group`
+-- Дамп данных таблицы `oc_bm_author_group`
 --
 
 INSERT INTO `oc_bm_author_group` (`author_group_id`, `name`, `permission`) VALUES
@@ -347,7 +350,7 @@ INSERT INTO `oc_bm_author_group` (`author_group_id`, `name`, `permission`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_category`
+-- Структура таблицы `oc_bm_category`
 --
 
 CREATE TABLE `oc_bm_category` (
@@ -367,7 +370,7 @@ CREATE TABLE `oc_bm_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_category`
+-- Дамп данных таблицы `oc_bm_category`
 --
 
 INSERT INTO `oc_bm_category` (`category_id`, `parent_id`, `sort_order`, `image`, `status`, `limit_access_user`, `limit_users`, `limit_access_user_group`, `limit_user_groups`, `custom`, `setting`, `date_added`, `date_modified`) VALUES
@@ -380,7 +383,7 @@ INSERT INTO `oc_bm_category` (`category_id`, `parent_id`, `sort_order`, `image`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_category_description`
+-- Структура таблицы `oc_bm_category_description`
 --
 
 CREATE TABLE `oc_bm_category_description` (
@@ -396,7 +399,7 @@ CREATE TABLE `oc_bm_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_category_description`
+-- Дамп данных таблицы `oc_bm_category_description`
 --
 
 INSERT INTO `oc_bm_category_description` (`category_description_id`, `category_id`, `language_id`, `title`, `short_description`, `description`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
@@ -409,7 +412,7 @@ INSERT INTO `oc_bm_category_description` (`category_description_id`, `category_i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_category_path`
+-- Структура таблицы `oc_bm_category_path`
 --
 
 CREATE TABLE `oc_bm_category_path` (
@@ -419,7 +422,7 @@ CREATE TABLE `oc_bm_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_category_path`
+-- Дамп данных таблицы `oc_bm_category_path`
 --
 
 INSERT INTO `oc_bm_category_path` (`category_id`, `path_id`, `level`) VALUES
@@ -432,7 +435,7 @@ INSERT INTO `oc_bm_category_path` (`category_id`, `path_id`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_category_to_layout`
+-- Структура таблицы `oc_bm_category_to_layout`
 --
 
 CREATE TABLE `oc_bm_category_to_layout` (
@@ -442,7 +445,7 @@ CREATE TABLE `oc_bm_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_category_to_layout`
+-- Дамп данных таблицы `oc_bm_category_to_layout`
 --
 
 INSERT INTO `oc_bm_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
@@ -455,7 +458,7 @@ INSERT INTO `oc_bm_category_to_layout` (`category_id`, `store_id`, `layout_id`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_category_to_store`
+-- Структура таблицы `oc_bm_category_to_store`
 --
 
 CREATE TABLE `oc_bm_category_to_store` (
@@ -464,7 +467,7 @@ CREATE TABLE `oc_bm_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_category_to_store`
+-- Дамп данных таблицы `oc_bm_category_to_store`
 --
 
 INSERT INTO `oc_bm_category_to_store` (`category_id`, `store_id`) VALUES
@@ -477,7 +480,7 @@ INSERT INTO `oc_bm_category_to_store` (`category_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_post`
+-- Структура таблицы `oc_bm_post`
 --
 
 CREATE TABLE `oc_bm_post` (
@@ -502,7 +505,7 @@ CREATE TABLE `oc_bm_post` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_post`
+-- Дамп данных таблицы `oc_bm_post`
 --
 
 INSERT INTO `oc_bm_post` (`post_id`, `user_id`, `image`, `image_title`, `image_alt`, `review_display`, `images_review`, `viewed`, `status`, `limit_access_user`, `limit_users`, `limit_access_user_group`, `limit_user_groups`, `custom`, `setting`, `date_added`, `date_published`, `date_modified`) VALUES
@@ -520,7 +523,7 @@ INSERT INTO `oc_bm_post` (`post_id`, `user_id`, `image`, `image_title`, `image_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_post_description`
+-- Структура таблицы `oc_bm_post_description`
 --
 
 CREATE TABLE `oc_bm_post_description` (
@@ -537,7 +540,7 @@ CREATE TABLE `oc_bm_post_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_post_description`
+-- Дамп данных таблицы `oc_bm_post_description`
 --
 
 INSERT INTO `oc_bm_post_description` (`post_description_id`, `post_id`, `language_id`, `title`, `short_description`, `description`, `meta_title`, `meta_description`, `meta_keyword`, `tag`) VALUES
@@ -555,7 +558,7 @@ INSERT INTO `oc_bm_post_description` (`post_description_id`, `post_id`, `languag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_post_related`
+-- Структура таблицы `oc_bm_post_related`
 --
 
 CREATE TABLE `oc_bm_post_related` (
@@ -564,7 +567,7 @@ CREATE TABLE `oc_bm_post_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_post_related`
+-- Дамп данных таблицы `oc_bm_post_related`
 --
 
 INSERT INTO `oc_bm_post_related` (`post_id`, `post_related_id`) VALUES
@@ -594,7 +597,7 @@ INSERT INTO `oc_bm_post_related` (`post_id`, `post_related_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_post_to_category`
+-- Структура таблицы `oc_bm_post_to_category`
 --
 
 CREATE TABLE `oc_bm_post_to_category` (
@@ -603,7 +606,7 @@ CREATE TABLE `oc_bm_post_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_post_to_category`
+-- Дамп данных таблицы `oc_bm_post_to_category`
 --
 
 INSERT INTO `oc_bm_post_to_category` (`post_id`, `category_id`) VALUES
@@ -621,7 +624,7 @@ INSERT INTO `oc_bm_post_to_category` (`post_id`, `category_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_post_to_layout`
+-- Структура таблицы `oc_bm_post_to_layout`
 --
 
 CREATE TABLE `oc_bm_post_to_layout` (
@@ -631,7 +634,7 @@ CREATE TABLE `oc_bm_post_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_post_to_layout`
+-- Дамп данных таблицы `oc_bm_post_to_layout`
 --
 
 INSERT INTO `oc_bm_post_to_layout` (`post_id`, `store_id`, `layout_id`) VALUES
@@ -650,7 +653,7 @@ INSERT INTO `oc_bm_post_to_layout` (`post_id`, `store_id`, `layout_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_post_to_product`
+-- Структура таблицы `oc_bm_post_to_product`
 --
 
 CREATE TABLE `oc_bm_post_to_product` (
@@ -659,7 +662,7 @@ CREATE TABLE `oc_bm_post_to_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_post_to_product`
+-- Дамп данных таблицы `oc_bm_post_to_product`
 --
 
 INSERT INTO `oc_bm_post_to_product` (`post_id`, `product_id`) VALUES
@@ -687,7 +690,7 @@ INSERT INTO `oc_bm_post_to_product` (`post_id`, `product_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_post_to_store`
+-- Структура таблицы `oc_bm_post_to_store`
 --
 
 CREATE TABLE `oc_bm_post_to_store` (
@@ -696,7 +699,7 @@ CREATE TABLE `oc_bm_post_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_post_to_store`
+-- Дамп данных таблицы `oc_bm_post_to_store`
 --
 
 INSERT INTO `oc_bm_post_to_store` (`post_id`, `store_id`) VALUES
@@ -715,7 +718,7 @@ INSERT INTO `oc_bm_post_to_store` (`post_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_post_video`
+-- Структура таблицы `oc_bm_post_video`
 --
 
 CREATE TABLE `oc_bm_post_video` (
@@ -730,7 +733,7 @@ CREATE TABLE `oc_bm_post_video` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_review`
+-- Структура таблицы `oc_bm_review`
 --
 
 CREATE TABLE `oc_bm_review` (
@@ -750,7 +753,7 @@ CREATE TABLE `oc_bm_review` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_bm_review`
+-- Дамп данных таблицы `oc_bm_review`
 --
 
 INSERT INTO `oc_bm_review` (`review_id`, `post_id`, `reply_to_review_id`, `language_id`, `customer_id`, `guest_email`, `image`, `author`, `description`, `rating`, `status`, `date_added`, `date_modified`) VALUES
@@ -766,7 +769,7 @@ INSERT INTO `oc_bm_review` (`review_id`, `post_id`, `reply_to_review_id`, `langu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_bm_review_to_image`
+-- Структура таблицы `oc_bm_review_to_image`
 --
 
 CREATE TABLE `oc_bm_review_to_image` (
@@ -777,7 +780,7 @@ CREATE TABLE `oc_bm_review_to_image` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_cart`
+-- Структура таблицы `oc_cart`
 --
 
 CREATE TABLE `oc_cart` (
@@ -792,17 +795,10 @@ CREATE TABLE `oc_cart` (
   `date_added` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `oc_cart`
---
-
-INSERT INTO `oc_cart` (`cart_id`, `api_id`, `customer_id`, `session_id`, `product_id`, `recurring_id`, `option`, `quantity`, `date_added`) VALUES
-(17, 0, 0, 'aed62d1aab9dc9777c09501a90', 41, 0, '[]', 1, '2023-01-06 09:50:39');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_category`
+-- Структура таблицы `oc_category`
 --
 
 CREATE TABLE `oc_category` (
@@ -818,7 +814,7 @@ CREATE TABLE `oc_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_category`
+-- Дамп данных таблицы `oc_category`
 --
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
@@ -850,7 +846,7 @@ INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_category_description`
+-- Структура таблицы `oc_category_description`
 --
 
 CREATE TABLE `oc_category_description` (
@@ -864,7 +860,7 @@ CREATE TABLE `oc_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_category_description`
+-- Дамп данных таблицы `oc_category_description`
 --
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
@@ -920,7 +916,7 @@ INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `de
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_category_filter`
+-- Структура таблицы `oc_category_filter`
 --
 
 CREATE TABLE `oc_category_filter` (
@@ -931,7 +927,7 @@ CREATE TABLE `oc_category_filter` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_category_path`
+-- Структура таблицы `oc_category_path`
 --
 
 CREATE TABLE `oc_category_path` (
@@ -941,7 +937,7 @@ CREATE TABLE `oc_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_category_path`
+-- Дамп данных таблицы `oc_category_path`
 --
 
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
@@ -989,7 +985,7 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_category_to_layout`
+-- Структура таблицы `oc_category_to_layout`
 --
 
 CREATE TABLE `oc_category_to_layout` (
@@ -1001,7 +997,7 @@ CREATE TABLE `oc_category_to_layout` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_category_to_store`
+-- Структура таблицы `oc_category_to_store`
 --
 
 CREATE TABLE `oc_category_to_store` (
@@ -1010,7 +1006,7 @@ CREATE TABLE `oc_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_category_to_store`
+-- Дамп данных таблицы `oc_category_to_store`
 --
 
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
@@ -1042,7 +1038,7 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_country`
+-- Структура таблицы `oc_country`
 --
 
 CREATE TABLE `oc_country` (
@@ -1056,7 +1052,7 @@ CREATE TABLE `oc_country` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_country`
+-- Дамп данных таблицы `oc_country`
 --
 
 INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
@@ -1317,7 +1313,7 @@ INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_coupon`
+-- Структура таблицы `oc_coupon`
 --
 
 CREATE TABLE `oc_coupon` (
@@ -1338,7 +1334,7 @@ CREATE TABLE `oc_coupon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_coupon`
+-- Дамп данных таблицы `oc_coupon`
 --
 
 INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
@@ -1349,7 +1345,7 @@ INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logge
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_coupon_category`
+-- Структура таблицы `oc_coupon_category`
 --
 
 CREATE TABLE `oc_coupon_category` (
@@ -1360,7 +1356,7 @@ CREATE TABLE `oc_coupon_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_coupon_history`
+-- Структура таблицы `oc_coupon_history`
 --
 
 CREATE TABLE `oc_coupon_history` (
@@ -1375,7 +1371,7 @@ CREATE TABLE `oc_coupon_history` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_coupon_product`
+-- Структура таблицы `oc_coupon_product`
 --
 
 CREATE TABLE `oc_coupon_product` (
@@ -1387,7 +1383,7 @@ CREATE TABLE `oc_coupon_product` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_currency`
+-- Структура таблицы `oc_currency`
 --
 
 CREATE TABLE `oc_currency` (
@@ -1403,16 +1399,16 @@ CREATE TABLE `oc_currency` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_currency`
+-- Дамп данных таблицы `oc_currency`
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(4, 'Рубль', 'BYN', '', ' BYN', '0', 1.00000000, 1, '2023-01-06 07:11:16');
+(4, 'Рубль', 'BYN', '', ' BYN', '0', 1.00000000, 1, '2023-01-06 20:12:38');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer`
+-- Структура таблицы `oc_customer`
 --
 
 CREATE TABLE `oc_customer` (
@@ -1444,7 +1440,7 @@ CREATE TABLE `oc_customer` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_activity`
+-- Структура таблицы `oc_customer_activity`
 --
 
 CREATE TABLE `oc_customer_activity` (
@@ -1459,7 +1455,7 @@ CREATE TABLE `oc_customer_activity` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_affiliate`
+-- Структура таблицы `oc_customer_affiliate`
 --
 
 CREATE TABLE `oc_customer_affiliate` (
@@ -1485,7 +1481,7 @@ CREATE TABLE `oc_customer_affiliate` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_approval`
+-- Структура таблицы `oc_customer_approval`
 --
 
 CREATE TABLE `oc_customer_approval` (
@@ -1498,7 +1494,7 @@ CREATE TABLE `oc_customer_approval` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_group`
+-- Структура таблицы `oc_customer_group`
 --
 
 CREATE TABLE `oc_customer_group` (
@@ -1508,7 +1504,7 @@ CREATE TABLE `oc_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_customer_group`
+-- Дамп данных таблицы `oc_customer_group`
 --
 
 INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) VALUES
@@ -1518,7 +1514,7 @@ INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_group_description`
+-- Структура таблицы `oc_customer_group_description`
 --
 
 CREATE TABLE `oc_customer_group_description` (
@@ -1529,7 +1525,7 @@ CREATE TABLE `oc_customer_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_customer_group_description`
+-- Дамп данных таблицы `oc_customer_group_description`
 --
 
 INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
@@ -1539,7 +1535,7 @@ INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_history`
+-- Структура таблицы `oc_customer_history`
 --
 
 CREATE TABLE `oc_customer_history` (
@@ -1552,7 +1548,7 @@ CREATE TABLE `oc_customer_history` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_ip`
+-- Структура таблицы `oc_customer_ip`
 --
 
 CREATE TABLE `oc_customer_ip` (
@@ -1565,7 +1561,7 @@ CREATE TABLE `oc_customer_ip` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_login`
+-- Структура таблицы `oc_customer_login`
 --
 
 CREATE TABLE `oc_customer_login` (
@@ -1580,7 +1576,7 @@ CREATE TABLE `oc_customer_login` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_online`
+-- Структура таблицы `oc_customer_online`
 --
 
 CREATE TABLE `oc_customer_online` (
@@ -1594,7 +1590,7 @@ CREATE TABLE `oc_customer_online` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_reward`
+-- Структура таблицы `oc_customer_reward`
 --
 
 CREATE TABLE `oc_customer_reward` (
@@ -1609,7 +1605,7 @@ CREATE TABLE `oc_customer_reward` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_search`
+-- Структура таблицы `oc_customer_search`
 --
 
 CREATE TABLE `oc_customer_search` (
@@ -1629,7 +1625,7 @@ CREATE TABLE `oc_customer_search` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_transaction`
+-- Структура таблицы `oc_customer_transaction`
 --
 
 CREATE TABLE `oc_customer_transaction` (
@@ -1644,7 +1640,7 @@ CREATE TABLE `oc_customer_transaction` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_customer_wishlist`
+-- Структура таблицы `oc_customer_wishlist`
 --
 
 CREATE TABLE `oc_customer_wishlist` (
@@ -1656,7 +1652,7 @@ CREATE TABLE `oc_customer_wishlist` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_custom_field`
+-- Структура таблицы `oc_custom_field`
 --
 
 CREATE TABLE `oc_custom_field` (
@@ -1672,7 +1668,7 @@ CREATE TABLE `oc_custom_field` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_custom_field_customer_group`
+-- Структура таблицы `oc_custom_field_customer_group`
 --
 
 CREATE TABLE `oc_custom_field_customer_group` (
@@ -1684,7 +1680,7 @@ CREATE TABLE `oc_custom_field_customer_group` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_custom_field_description`
+-- Структура таблицы `oc_custom_field_description`
 --
 
 CREATE TABLE `oc_custom_field_description` (
@@ -1696,7 +1692,7 @@ CREATE TABLE `oc_custom_field_description` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_custom_field_value`
+-- Структура таблицы `oc_custom_field_value`
 --
 
 CREATE TABLE `oc_custom_field_value` (
@@ -1708,7 +1704,7 @@ CREATE TABLE `oc_custom_field_value` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_custom_field_value_description`
+-- Структура таблицы `oc_custom_field_value_description`
 --
 
 CREATE TABLE `oc_custom_field_value_description` (
@@ -1721,7 +1717,7 @@ CREATE TABLE `oc_custom_field_value_description` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_download`
+-- Структура таблицы `oc_download`
 --
 
 CREATE TABLE `oc_download` (
@@ -1734,7 +1730,7 @@ CREATE TABLE `oc_download` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_download_description`
+-- Структура таблицы `oc_download_description`
 --
 
 CREATE TABLE `oc_download_description` (
@@ -1746,7 +1742,7 @@ CREATE TABLE `oc_download_description` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_d_validator`
+-- Структура таблицы `oc_d_validator`
 --
 
 CREATE TABLE `oc_d_validator` (
@@ -1759,7 +1755,7 @@ CREATE TABLE `oc_d_validator` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_event`
+-- Структура таблицы `oc_event`
 --
 
 CREATE TABLE `oc_event` (
@@ -1772,7 +1768,7 @@ CREATE TABLE `oc_event` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_event`
+-- Дамп данных таблицы `oc_event`
 --
 
 INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
@@ -1856,7 +1852,7 @@ INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_extension`
+-- Структура таблицы `oc_extension`
 --
 
 CREATE TABLE `oc_extension` (
@@ -1866,7 +1862,7 @@ CREATE TABLE `oc_extension` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_extension`
+-- Дамп данных таблицы `oc_extension`
 --
 
 INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
@@ -1908,7 +1904,7 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_extension_install`
+-- Структура таблицы `oc_extension_install`
 --
 
 CREATE TABLE `oc_extension_install` (
@@ -1919,7 +1915,7 @@ CREATE TABLE `oc_extension_install` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_extension_install`
+-- Дамп данных таблицы `oc_extension_install`
 --
 
 INSERT INTO `oc_extension_install` (`extension_install_id`, `extension_download_id`, `filename`, `date_added`) VALUES
@@ -1930,7 +1926,7 @@ INSERT INTO `oc_extension_install` (`extension_install_id`, `extension_download_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_extension_path`
+-- Структура таблицы `oc_extension_path`
 --
 
 CREATE TABLE `oc_extension_path` (
@@ -1941,7 +1937,7 @@ CREATE TABLE `oc_extension_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_extension_path`
+-- Дамп данных таблицы `oc_extension_path`
 --
 
 INSERT INTO `oc_extension_path` (`extension_path_id`, `extension_install_id`, `path`, `date_added`) VALUES
@@ -3401,7 +3397,7 @@ INSERT INTO `oc_extension_path` (`extension_path_id`, `extension_install_id`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_filter`
+-- Структура таблицы `oc_filter`
 --
 
 CREATE TABLE `oc_filter` (
@@ -3413,7 +3409,7 @@ CREATE TABLE `oc_filter` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_filter_description`
+-- Структура таблицы `oc_filter_description`
 --
 
 CREATE TABLE `oc_filter_description` (
@@ -3426,7 +3422,7 @@ CREATE TABLE `oc_filter_description` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_filter_group`
+-- Структура таблицы `oc_filter_group`
 --
 
 CREATE TABLE `oc_filter_group` (
@@ -3437,7 +3433,7 @@ CREATE TABLE `oc_filter_group` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_filter_group_description`
+-- Структура таблицы `oc_filter_group_description`
 --
 
 CREATE TABLE `oc_filter_group_description` (
@@ -3449,7 +3445,7 @@ CREATE TABLE `oc_filter_group_description` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_geo_zone`
+-- Структура таблицы `oc_geo_zone`
 --
 
 CREATE TABLE `oc_geo_zone` (
@@ -3461,7 +3457,7 @@ CREATE TABLE `oc_geo_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_geo_zone`
+-- Дамп данных таблицы `oc_geo_zone`
 --
 
 INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, `date_modified`) VALUES
@@ -3471,7 +3467,7 @@ INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_information`
+-- Структура таблицы `oc_information`
 --
 
 CREATE TABLE `oc_information` (
@@ -3482,7 +3478,7 @@ CREATE TABLE `oc_information` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_information`
+-- Дамп данных таблицы `oc_information`
 --
 
 INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
@@ -3494,7 +3490,7 @@ INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_information_description`
+-- Структура таблицы `oc_information_description`
 --
 
 CREATE TABLE `oc_information_description` (
@@ -3508,12 +3504,12 @@ CREATE TABLE `oc_information_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_information_description`
+-- Дамп данных таблицы `oc_information_description`
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
 (5, 2, 'Условия пользовательского соглашения', '&lt;p&gt;\r\n	Условия пользовательского соглашения&lt;/p&gt;\r\n', 'Условия пользовательского соглашения', '', ''),
-(6, 2, 'Доставка и оплата', '&lt;p&gt;\r\n	Доставка и оплата&lt;/p&gt;\r\n', 'Доставка и оплата', '', ''),
+(6, 2, 'Доставка и оплата', '&lt;div class=&quot;delivery-info&quot;&gt;\r\n        &lt;div class=&quot;delivery-block&quot;&gt;\r\n          &lt;div class=&quot;delivery-header&quot;&gt;\r\n            &lt;h2&gt;Наши базовые условия&lt;/h2&gt;\r\n          &lt;/div&gt;\r\n          &lt;div class=&quot;delivery-inner&quot;&gt;\r\n            &lt;div class=&quot;delivery-image&quot;&gt;\r\n              &lt;div class=&quot;delivery-icon&quot;&gt;\r\n                &lt;img src=&quot;/image/catalog/delivery/delivery1.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;\r\n              &lt;/div&gt;\r\n            &lt;/div&gt;\r\n            &lt;div class=&quot;delivery-description&quot;&gt;\r\n              &lt;ul class=&quot;list-unstyled&quot;&gt;\r\n                &lt;li&gt;Минимальная сумма заказа – 50 бел. руб.&lt;/li&gt;\r\n                &lt;li&gt;При заказе от 300 бел. руб доставляем бесплатно по всей РБ на следующий рабочий день, если подтвердите до 12:00&lt;/li&gt;\r\n                &lt;li&gt;При заказе от 150 бел. руб. доставим бесплатно в Витебск по вторникам и четвергам.&lt;/li&gt;\r\n                &lt;li&gt;Утеплители и объемный товар бесплатно не доставляем.&lt;/li&gt;\r\n              &lt;/ul&gt;\r\n            &lt;/div&gt;\r\n          &lt;/div&gt;\r\n        &lt;/div&gt;\r\n        &lt;div class=&quot;delivery-block&quot;&gt;\r\n          &lt;div class=&quot;delivery-header&quot;&gt;\r\n            &lt;h2&gt;Уникальные условия для постоянных клиентов:&lt;/h2&gt;\r\n          &lt;/div&gt;\r\n          &lt;div class=&quot;delivery-inner&quot;&gt;\r\n            &lt;div class=&quot;delivery-image&quot;&gt;\r\n              &lt;div class=&quot;delivery-icon&quot;&gt;\r\n                &lt;img src=&quot;/image/catalog/delivery/delivery2.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;\r\n              &lt;/div&gt;\r\n            &lt;/div&gt;\r\n            &lt;div class=&quot;delivery-description&quot;&gt;\r\n              &lt;ul class=&quot;list-unstyled&quot;&gt;\r\n                &lt;li&gt;Рассрочка на швейное оборудование до 6 мес.&lt;/li&gt;\r\n                &lt;li&gt;Наши постоянные клиенты первыми узнают о скидках и акциях&lt;/li&gt;\r\n              &lt;/ul&gt;\r\n            &lt;/div&gt;\r\n          &lt;/div&gt;\r\n        &lt;/div&gt;\r\n        &lt;div class=&quot;delivery-block&quot;&gt;\r\n          &lt;div class=&quot;delivery-header&quot;&gt;\r\n            &lt;h2&gt;Пользуемся следующими средставами доставки:&lt;/h2&gt;\r\n          &lt;/div&gt;\r\n          &lt;div class=&quot;delivery-inner&quot;&gt;\r\n            &lt;div class=&quot;delivery-image&quot;&gt;\r\n              &lt;div class=&quot;delivery-icon&quot;&gt;\r\n                &lt;img src=&quot;/image/catalog/delivery/delivery3.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;\r\n              &lt;/div&gt;\r\n            &lt;/div&gt;\r\n            &lt;div class=&quot;delivery-description&quot;&gt;\r\n              &lt;ul class=&quot;list-unstyled&quot;&gt;\r\n                &lt;li&gt;Автолайтэкспресс – быстрая доставка в любой населенный пункт Республики Беларусь.&lt;/li&gt;\r\n                &lt;li&gt;DPD – транспортная компания.&lt;/li&gt;\r\n              &lt;/ul&gt;\r\n            &lt;/div&gt;\r\n          &lt;/div&gt;\r\n        &lt;/div&gt;\r\n        &lt;div class=&quot;delivery-block&quot;&gt;\r\n          &lt;div class=&quot;delivery-header&quot;&gt;\r\n            &lt;h2&gt;Способы оплаты:&lt;/h2&gt;\r\n          &lt;/div&gt;\r\n          &lt;div class=&quot;delivery-inner&quot;&gt;\r\n            &lt;div class=&quot;delivery-image&quot;&gt;\r\n              &lt;div class=&quot;delivery-icon&quot;&gt;\r\n                &lt;img src=&quot;/image/catalog/delivery/delivery4.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;\r\n              &lt;/div&gt;\r\n            &lt;/div&gt;\r\n            &lt;div class=&quot;delivery-description&quot;&gt;\r\n              &lt;ul class=&quot;list-unstyled&quot;&gt;\r\n                &lt;li&gt;Расчетный счет&lt;/li&gt;\r\n                &lt;li&gt;ЕРИП&lt;/li&gt;\r\n              &lt;/ul&gt;\r\n            &lt;/div&gt;\r\n          &lt;/div&gt;\r\n        &lt;/div&gt;\r\n        &lt;div class=&quot;delivery-button&quot;&gt;\r\n          &lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#delivery-data&quot;&gt;\r\n            &lt;svg width=&quot;35&quot; height=&quot;35&quot; viewBox=&quot;0 0 35 35&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;\r\n              &lt;path d=&quot;M27.8406 1.59093H27.0452C26.6053 1.59093 26.2497 1.94729 26.2497 2.38636C26.2497 2.82543 26.6053 3.18179 27.0452 3.18179H27.8406C28.2797 3.18179 28.636 3.53896 28.636 3.97722V26.25C28.636 26.6883 28.2797 27.0454 27.8406 27.0454H7.15875C6.71968 27.0454 6.36332 26.6883 6.36332 26.25V3.97729C6.36332 3.53896 6.71968 3.18186 7.15875 3.18186H10.3405V4.19843C9.86722 4.47446 9.54511 4.98196 9.54511 5.56821C9.54511 6.44561 10.2586 7.15914 11.136 7.15914C12.0134 7.15914 12.727 6.44561 12.727 5.56821C12.727 4.98196 12.4048 4.47446 11.9315 4.19843V0.795498C11.9315 0.356357 11.5759 0 11.136 0C10.6961 0 10.3406 0.356357 10.3406 0.79543V1.59086H7.15882C5.84311 1.59086 4.77246 2.66157 4.77246 3.97722V26.25V32.6136C4.77246 33.9294 5.84317 35 7.15882 35H27.8406C29.1563 35 30.227 33.9293 30.227 32.6136V26.25V3.97729C30.227 2.66157 29.1562 1.59093 27.8406 1.59093ZM28.636 32.6136C28.636 33.052 28.2797 33.4091 27.8406 33.4091H7.15875C6.71968 33.4091 6.36332 33.0519 6.36332 32.6136V31.6719C6.61311 31.7609 6.87875 31.8182 7.15875 31.8182H27.8405C28.1205 31.8182 28.3862 31.7609 28.636 31.6719V32.6136H28.636ZM28.636 29.4318C28.636 29.8701 28.2797 30.2272 27.8406 30.2272H7.15875C6.71968 30.2272 6.36332 29.87 6.36332 29.4318V28.49C6.61311 28.5791 6.87875 28.6364 7.15875 28.6364H27.8405C28.1205 28.6364 28.3862 28.5791 28.636 28.49V29.4318H28.636Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M24.6594 4.19843V0.795498C24.6594 0.356357 24.3038 0 23.8639 0C23.424 0 23.0685 0.356357 23.0685 0.79543V1.59086H20.6821C20.2423 1.59086 19.8867 1.94722 19.8867 2.38629C19.8867 2.82536 20.2423 3.18172 20.6821 3.18172H23.0685V4.19829C22.5952 4.47433 22.2731 4.98183 22.2731 5.56808C22.2731 6.44547 22.9866 7.159 23.864 7.159C24.7414 7.159 25.4549 6.44547 25.4549 5.56808C25.4549 4.98196 25.1327 4.47446 24.6594 4.19843Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M18.2951 4.19843V0.795498C18.2951 0.356357 17.9396 0 17.4997 0C17.0598 0 16.7042 0.356357 16.7042 0.79543V1.59086H14.3179C13.878 1.59086 13.5225 1.94722 13.5225 2.38629C13.5225 2.82536 13.878 3.18172 14.3179 3.18172H16.7042V4.19829C16.2309 4.47433 15.9088 4.98183 15.9088 5.56808C15.9088 6.44547 16.6224 7.159 17.4997 7.159C18.3771 7.159 19.0907 6.44547 19.0907 5.56808C19.0906 4.98196 18.7684 4.47446 18.2951 4.19843Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M17.5 11.1362H9.54543C9.10554 11.1362 8.75 11.4926 8.75 11.9317C8.75 12.3707 9.10554 12.7271 9.54543 12.7271H17.5C17.9399 12.7271 18.2954 12.3707 18.2954 11.9317C18.2954 11.4926 17.9399 11.1362 17.5 11.1362Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M23.0678 14.3184H15.9087C15.4688 14.3184 15.1133 14.6747 15.1133 15.1138C15.1133 15.5529 15.4688 15.9092 15.9087 15.9092H23.0678C23.5077 15.9092 23.8632 15.5529 23.8632 15.1138C23.8633 14.6747 23.5077 14.3184 23.0678 14.3184Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M20.6818 20.6816H9.54543C9.10554 20.6816 8.75 21.038 8.75 21.4771C8.75 21.9161 9.10554 22.2725 9.54543 22.2725H20.6818C21.1217 22.2725 21.4772 21.9161 21.4772 21.4771C21.4772 21.038 21.1217 20.6816 20.6818 20.6816Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M25.4549 11.1362H20.6821C20.2423 11.1362 19.8867 11.4926 19.8867 11.9317C19.8867 12.3707 20.2423 12.7271 20.6821 12.7271H25.4549C25.8948 12.7271 26.2503 12.3707 26.2503 11.9317C26.2503 11.4926 25.8948 11.1362 25.4549 11.1362Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M16.7046 17.5H9.54543C9.10554 17.5 8.75 17.8564 8.75 18.2954C8.75 18.7345 9.10554 19.0909 9.54543 19.0909H16.7045C17.1444 19.0909 17.4999 18.7345 17.4999 18.2954C17.4999 17.8564 17.1445 17.5 16.7046 17.5Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M12.7272 14.3184H9.54543C9.10554 14.3184 8.75 14.6747 8.75 15.1138C8.75 15.5529 9.10554 15.9092 9.54543 15.9092H12.7272C13.1671 15.9092 13.5226 15.5529 13.5226 15.1138C13.5226 14.6747 13.1671 14.3184 12.7272 14.3184Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n              &lt;path d=&quot;M25.4545 17.5H19.8862C19.4464 17.5 19.0908 17.8564 19.0908 18.2954C19.0908 18.7345 19.4464 19.0909 19.8862 19.0909H25.4545C25.8944 19.0909 26.2499 18.7345 26.2499 18.2954C26.2499 17.8564 25.8944 17.5 25.4545 17.5Z&quot; fill=&quot;white&quot;&gt;&lt;/path&gt;\r\n            &lt;/svg&gt;\r\n            Наши реквизиты\r\n          &lt;/button&gt;\r\n        &lt;/div&gt;\r\n      &lt;/div&gt;\r\n', 'Доставка и оплата', '', ''),
 (3, 2, 'Политика конфиденциальности', '&lt;p&gt;\r\n	Политика конфиденциальности&lt;/p&gt;\r\n', 'Политика конфиденциальности', '', '');
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
 (7, 2, 'О компании', '&lt;p&gt;ООО «Зиптрейд» - первый поставщик и импортер швейной фурнитуры на территории Республики Беларусь. На нашем официальном сайте представлен каталог со швейной фурнитурой, тканями и трикотажем.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;За 2020 год 310 клиентов обратились к нам повторно и стали постоянными клиентами.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;«Свитанак», «Купалинка», «Полесье», «Белль Бимбо», «Калинка», «Формэль», «Стецкевич-спецодежда», «8 марта», «Славянка» и другие предприятия покупают швейную фурнитуру оптом в нашей компании.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Мы начинали только с молний. 1 января 2021г. на складе было в наличии 3840 наименований товаров, а пока вы читали этот текст, товаров стало больше.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Наша компания заботится о репутации клиентов, поэтому продукция имеет сертификат качества, выдерживает срок эксплуатации изделия, не ломается и не «подводит» бренд.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Доставляем заказы по всей Беларуси: Брест, Витебск, Гомель, Гродно, Минск, Могилёв и другие.&lt;/p&gt;&lt;div&gt;&lt;span data-metadata=&quot;&lt;!--(figmeta)eyJmaWxlS2V5IjoiRkRUOXowQU9VS1RDVVM3dDFJbER0dCIsInBhc3RlSUQiOjk4NjU4NTUyMCwiZGF0YVR5cGUiOiJzY2VuZSJ9Cg==(/figmeta)--&gt;&quot;&gt;&lt;/span&gt;&lt;span data-buffer=&quot;&lt;!--(figma)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(/figma)--&gt;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span data-metadata=&quot;&lt;!--(figmeta)eyJmaWxlS2V5IjoiRkRUOXowQU9VS1RDVVM3dDFJbER0dCIsInBhc3RlSUQiOjk4NjU4NTUyMCwiZGF0YVR5cGUiOiJzY2VuZSJ9Cg==(/figmeta)--&gt;&quot;&gt;&lt;/span&gt;&lt;span data-buffer=&quot;&lt;!--(figma)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(/figma)--&gt;&quot;&gt;&lt;/span&gt;&lt;/div&gt;', 'О компании', '', '');
@@ -3521,7 +3517,7 @@ INSERT INTO `oc_information_description` (`information_id`, `language_id`, `titl
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_information_to_layout`
+-- Структура таблицы `oc_information_to_layout`
 --
 
 CREATE TABLE `oc_information_to_layout` (
@@ -3531,7 +3527,7 @@ CREATE TABLE `oc_information_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_information_to_layout`
+-- Дамп данных таблицы `oc_information_to_layout`
 --
 
 INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
@@ -3543,7 +3539,7 @@ INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_information_to_store`
+-- Структура таблицы `oc_information_to_store`
 --
 
 CREATE TABLE `oc_information_to_store` (
@@ -3552,7 +3548,7 @@ CREATE TABLE `oc_information_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_information_to_store`
+-- Дамп данных таблицы `oc_information_to_store`
 --
 
 INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
@@ -3564,7 +3560,7 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_language`
+-- Структура таблицы `oc_language`
 --
 
 CREATE TABLE `oc_language` (
@@ -3579,7 +3575,7 @@ CREATE TABLE `oc_language` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_language`
+-- Дамп данных таблицы `oc_language`
 --
 
 INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `sort_order`, `status`) VALUES
@@ -3588,7 +3584,7 @@ INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `di
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_layout`
+-- Структура таблицы `oc_layout`
 --
 
 CREATE TABLE `oc_layout` (
@@ -3597,7 +3593,7 @@ CREATE TABLE `oc_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_layout`
+-- Дамп данных таблицы `oc_layout`
 --
 
 INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
@@ -3624,7 +3620,7 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_layout_module`
+-- Структура таблицы `oc_layout_module`
 --
 
 CREATE TABLE `oc_layout_module` (
@@ -3636,7 +3632,7 @@ CREATE TABLE `oc_layout_module` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_layout_module`
+-- Дамп данных таблицы `oc_layout_module`
 --
 
 INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `position`, `sort_order`) VALUES
@@ -3659,12 +3655,13 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (123, 104, 'html.38', 'content_bottom', 2),
 (122, 104, 'html.36', 'content_bottom', 1),
 (121, 104, 'html.39', 'content_bottom', 0),
-(125, 104, 'carousel.34', 'content_bottom', 4);
+(125, 104, 'carousel.34', 'content_bottom', 4),
+(126, 13, 'category', 'column_left', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_layout_route`
+-- Структура таблицы `oc_layout_route`
 --
 
 CREATE TABLE `oc_layout_route` (
@@ -3675,7 +3672,7 @@ CREATE TABLE `oc_layout_route` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_layout_route`
+-- Дамп данных таблицы `oc_layout_route`
 --
 
 INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
@@ -3691,7 +3688,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (34, 4, 0, ''),
 (45, 5, 0, 'product/manufacturer'),
 (52, 12, 0, 'product/compare'),
-(53, 13, 0, 'product/search'),
+(71, 13, 0, 'product/search'),
 (62, 100, 0, 'extension/d_blog_module/post'),
 (58, 101, 0, 'extension/d_blog_module/category'),
 (59, 102, 0, 'extension/d_blog_module/search'),
@@ -3701,7 +3698,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_length_class`
+-- Структура таблицы `oc_length_class`
 --
 
 CREATE TABLE `oc_length_class` (
@@ -3710,7 +3707,7 @@ CREATE TABLE `oc_length_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_length_class`
+-- Дамп данных таблицы `oc_length_class`
 --
 
 INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
@@ -3721,7 +3718,7 @@ INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_length_class_description`
+-- Структура таблицы `oc_length_class_description`
 --
 
 CREATE TABLE `oc_length_class_description` (
@@ -3732,7 +3729,7 @@ CREATE TABLE `oc_length_class_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_length_class_description`
+-- Дамп данных таблицы `oc_length_class_description`
 --
 
 INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -3746,7 +3743,7 @@ INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_location`
+-- Структура таблицы `oc_location`
 --
 
 CREATE TABLE `oc_location` (
@@ -3764,7 +3761,7 @@ CREATE TABLE `oc_location` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_manufacturer`
+-- Структура таблицы `oc_manufacturer`
 --
 
 CREATE TABLE `oc_manufacturer` (
@@ -3775,7 +3772,7 @@ CREATE TABLE `oc_manufacturer` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_manufacturer`
+-- Дамп данных таблицы `oc_manufacturer`
 --
 
 INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
@@ -3789,7 +3786,7 @@ INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_manufacturer_to_store`
+-- Структура таблицы `oc_manufacturer_to_store`
 --
 
 CREATE TABLE `oc_manufacturer_to_store` (
@@ -3798,7 +3795,7 @@ CREATE TABLE `oc_manufacturer_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_manufacturer_to_store`
+-- Дамп данных таблицы `oc_manufacturer_to_store`
 --
 
 INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
@@ -3812,7 +3809,7 @@ INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_marketing`
+-- Структура таблицы `oc_marketing`
 --
 
 CREATE TABLE `oc_marketing` (
@@ -3827,7 +3824,7 @@ CREATE TABLE `oc_marketing` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_modification`
+-- Структура таблицы `oc_modification`
 --
 
 CREATE TABLE `oc_modification` (
@@ -3844,7 +3841,7 @@ CREATE TABLE `oc_modification` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_modification`
+-- Дамп данных таблицы `oc_modification`
 --
 
 INSERT INTO `oc_modification` (`modification_id`, `extension_install_id`, `name`, `code`, `author`, `version`, `link`, `xml`, `status`, `date_added`) VALUES
@@ -3855,7 +3852,7 @@ INSERT INTO `oc_modification` (`modification_id`, `extension_install_id`, `name`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_module`
+-- Структура таблицы `oc_module`
 --
 
 CREATE TABLE `oc_module` (
@@ -3866,7 +3863,7 @@ CREATE TABLE `oc_module` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_module`
+-- Дамп данных таблицы `oc_module`
 --
 
 INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
@@ -3887,7 +3884,7 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_option`
+-- Структура таблицы `oc_option`
 --
 
 CREATE TABLE `oc_option` (
@@ -3897,7 +3894,7 @@ CREATE TABLE `oc_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_option`
+-- Дамп данных таблицы `oc_option`
 --
 
 INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
@@ -3916,7 +3913,7 @@ INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_option_description`
+-- Структура таблицы `oc_option_description`
 --
 
 CREATE TABLE `oc_option_description` (
@@ -3926,7 +3923,7 @@ CREATE TABLE `oc_option_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_option_description`
+-- Дамп данных таблицы `oc_option_description`
 --
 
 INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
@@ -3956,7 +3953,7 @@ INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_option_value`
+-- Структура таблицы `oc_option_value`
 --
 
 CREATE TABLE `oc_option_value` (
@@ -3967,7 +3964,7 @@ CREATE TABLE `oc_option_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_option_value`
+-- Дамп данных таблицы `oc_option_value`
 --
 
 INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
@@ -3989,7 +3986,7 @@ INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_or
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_option_value_description`
+-- Структура таблицы `oc_option_value_description`
 --
 
 CREATE TABLE `oc_option_value_description` (
@@ -4000,7 +3997,7 @@ CREATE TABLE `oc_option_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_option_value_description`
+-- Дамп данных таблицы `oc_option_value_description`
 --
 
 INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
@@ -4036,7 +4033,7 @@ INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `op
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order`
+-- Структура таблицы `oc_order`
 --
 
 CREATE TABLE `oc_order` (
@@ -4104,7 +4101,7 @@ CREATE TABLE `oc_order` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_order`
+-- Дамп данных таблицы `oc_order`
 --
 
 INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
@@ -4157,7 +4154,7 @@ INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_history`
+-- Структура таблицы `oc_order_history`
 --
 
 CREATE TABLE `oc_order_history` (
@@ -4172,7 +4169,7 @@ CREATE TABLE `oc_order_history` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_option`
+-- Структура таблицы `oc_order_option`
 --
 
 CREATE TABLE `oc_order_option` (
@@ -4189,7 +4186,7 @@ CREATE TABLE `oc_order_option` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_product`
+-- Структура таблицы `oc_order_product`
 --
 
 CREATE TABLE `oc_order_product` (
@@ -4206,7 +4203,7 @@ CREATE TABLE `oc_order_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_order_product`
+-- Дамп данных таблицы `oc_order_product`
 --
 
 INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
@@ -4259,7 +4256,7 @@ INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `n
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_recurring`
+-- Структура таблицы `oc_order_recurring`
 --
 
 CREATE TABLE `oc_order_recurring` (
@@ -4288,7 +4285,7 @@ CREATE TABLE `oc_order_recurring` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_recurring_transaction`
+-- Структура таблицы `oc_order_recurring_transaction`
 --
 
 CREATE TABLE `oc_order_recurring_transaction` (
@@ -4303,7 +4300,7 @@ CREATE TABLE `oc_order_recurring_transaction` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_shipment`
+-- Структура таблицы `oc_order_shipment`
 --
 
 CREATE TABLE `oc_order_shipment` (
@@ -4317,7 +4314,7 @@ CREATE TABLE `oc_order_shipment` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_status`
+-- Структура таблицы `oc_order_status`
 --
 
 CREATE TABLE `oc_order_status` (
@@ -4327,7 +4324,7 @@ CREATE TABLE `oc_order_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_order_status`
+-- Дамп данных таблицы `oc_order_status`
 --
 
 INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
@@ -4363,7 +4360,7 @@ INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_total`
+-- Структура таблицы `oc_order_total`
 --
 
 CREATE TABLE `oc_order_total` (
@@ -4376,7 +4373,7 @@ CREATE TABLE `oc_order_total` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_order_total`
+-- Дамп данных таблицы `oc_order_total`
 --
 
 INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `value`, `sort_order`) VALUES
@@ -4516,7 +4513,7 @@ INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `va
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_order_voucher`
+-- Структура таблицы `oc_order_voucher`
 --
 
 CREATE TABLE `oc_order_voucher` (
@@ -4537,7 +4534,7 @@ CREATE TABLE `oc_order_voucher` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product`
+-- Структура таблицы `oc_product`
 --
 
 CREATE TABLE `oc_product` (
@@ -4575,7 +4572,7 @@ CREATE TABLE `oc_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product`
+-- Дамп данных таблицы `oc_product`
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
@@ -4602,7 +4599,7 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_attribute`
+-- Структура таблицы `oc_product_attribute`
 --
 
 CREATE TABLE `oc_product_attribute` (
@@ -4613,7 +4610,7 @@ CREATE TABLE `oc_product_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_attribute`
+-- Дамп данных таблицы `oc_product_attribute`
 --
 
 INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
@@ -4628,7 +4625,7 @@ INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_description`
+-- Структура таблицы `oc_product_description`
 --
 
 CREATE TABLE `oc_product_description` (
@@ -4643,7 +4640,7 @@ CREATE TABLE `oc_product_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_description`
+-- Дамп данных таблицы `oc_product_description`
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
@@ -4687,7 +4684,7 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_discount`
+-- Структура таблицы `oc_product_discount`
 --
 
 CREATE TABLE `oc_product_discount` (
@@ -4702,7 +4699,7 @@ CREATE TABLE `oc_product_discount` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_discount`
+-- Дамп данных таблицы `oc_product_discount`
 --
 
 INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
@@ -4713,7 +4710,7 @@ INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `custome
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_filter`
+-- Структура таблицы `oc_product_filter`
 --
 
 CREATE TABLE `oc_product_filter` (
@@ -4724,7 +4721,7 @@ CREATE TABLE `oc_product_filter` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_image`
+-- Структура таблицы `oc_product_image`
 --
 
 CREATE TABLE `oc_product_image` (
@@ -4735,7 +4732,7 @@ CREATE TABLE `oc_product_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_image`
+-- Дамп данных таблицы `oc_product_image`
 --
 
 INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
@@ -4804,7 +4801,7 @@ INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_option`
+-- Структура таблицы `oc_product_option`
 --
 
 CREATE TABLE `oc_product_option` (
@@ -4816,7 +4813,7 @@ CREATE TABLE `oc_product_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_option`
+-- Дамп данных таблицы `oc_product_option`
 --
 
 INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
@@ -4830,7 +4827,7 @@ INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_option_value`
+-- Структура таблицы `oc_product_option_value`
 --
 
 CREATE TABLE `oc_product_option_value` (
@@ -4850,7 +4847,7 @@ CREATE TABLE `oc_product_option_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_option_value`
+-- Дамп данных таблицы `oc_product_option_value`
 --
 
 INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
@@ -4874,7 +4871,7 @@ INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_optio
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_recurring`
+-- Структура таблицы `oc_product_recurring`
 --
 
 CREATE TABLE `oc_product_recurring` (
@@ -4886,7 +4883,7 @@ CREATE TABLE `oc_product_recurring` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_related`
+-- Структура таблицы `oc_product_related`
 --
 
 CREATE TABLE `oc_product_related` (
@@ -4895,7 +4892,7 @@ CREATE TABLE `oc_product_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_related`
+-- Дамп данных таблицы `oc_product_related`
 --
 
 INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
@@ -4907,7 +4904,7 @@ INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_reward`
+-- Структура таблицы `oc_product_reward`
 --
 
 CREATE TABLE `oc_product_reward` (
@@ -4918,7 +4915,7 @@ CREATE TABLE `oc_product_reward` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_reward`
+-- Дамп данных таблицы `oc_product_reward`
 --
 
 INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
@@ -4945,7 +4942,7 @@ INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_gr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_special`
+-- Структура таблицы `oc_product_special`
 --
 
 CREATE TABLE `oc_product_special` (
@@ -4959,7 +4956,7 @@ CREATE TABLE `oc_product_special` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_special`
+-- Дамп данных таблицы `oc_product_special`
 --
 
 INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
@@ -4970,7 +4967,7 @@ INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_to_category`
+-- Структура таблицы `oc_product_to_category`
 --
 
 CREATE TABLE `oc_product_to_category` (
@@ -4979,7 +4976,7 @@ CREATE TABLE `oc_product_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_to_category`
+-- Дамп данных таблицы `oc_product_to_category`
 --
 
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
@@ -5017,7 +5014,7 @@ INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_to_download`
+-- Структура таблицы `oc_product_to_download`
 --
 
 CREATE TABLE `oc_product_to_download` (
@@ -5028,7 +5025,7 @@ CREATE TABLE `oc_product_to_download` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_to_layout`
+-- Структура таблицы `oc_product_to_layout`
 --
 
 CREATE TABLE `oc_product_to_layout` (
@@ -5038,7 +5035,7 @@ CREATE TABLE `oc_product_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_to_layout`
+-- Дамп данных таблицы `oc_product_to_layout`
 --
 
 INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
@@ -5048,7 +5045,7 @@ INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_product_to_store`
+-- Структура таблицы `oc_product_to_store`
 --
 
 CREATE TABLE `oc_product_to_store` (
@@ -5057,7 +5054,7 @@ CREATE TABLE `oc_product_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_product_to_store`
+-- Дамп данных таблицы `oc_product_to_store`
 --
 
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
@@ -5084,7 +5081,7 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_recurring`
+-- Структура таблицы `oc_recurring`
 --
 
 CREATE TABLE `oc_recurring` (
@@ -5105,7 +5102,7 @@ CREATE TABLE `oc_recurring` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_recurring_description`
+-- Структура таблицы `oc_recurring_description`
 --
 
 CREATE TABLE `oc_recurring_description` (
@@ -5117,7 +5114,7 @@ CREATE TABLE `oc_recurring_description` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_return`
+-- Структура таблицы `oc_return`
 --
 
 CREATE TABLE `oc_return` (
@@ -5145,7 +5142,7 @@ CREATE TABLE `oc_return` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_return_action`
+-- Структура таблицы `oc_return_action`
 --
 
 CREATE TABLE `oc_return_action` (
@@ -5155,7 +5152,7 @@ CREATE TABLE `oc_return_action` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_return_action`
+-- Дамп данных таблицы `oc_return_action`
 --
 
 INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUES
@@ -5169,7 +5166,7 @@ INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_return_history`
+-- Структура таблицы `oc_return_history`
 --
 
 CREATE TABLE `oc_return_history` (
@@ -5184,7 +5181,7 @@ CREATE TABLE `oc_return_history` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_return_reason`
+-- Структура таблицы `oc_return_reason`
 --
 
 CREATE TABLE `oc_return_reason` (
@@ -5194,7 +5191,7 @@ CREATE TABLE `oc_return_reason` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_return_reason`
+-- Дамп данных таблицы `oc_return_reason`
 --
 
 INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
@@ -5212,7 +5209,7 @@ INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_return_status`
+-- Структура таблицы `oc_return_status`
 --
 
 CREATE TABLE `oc_return_status` (
@@ -5222,7 +5219,7 @@ CREATE TABLE `oc_return_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_return_status`
+-- Дамп данных таблицы `oc_return_status`
 --
 
 INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUES
@@ -5236,7 +5233,7 @@ INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_review`
+-- Структура таблицы `oc_review`
 --
 
 CREATE TABLE `oc_review` (
@@ -5254,7 +5251,7 @@ CREATE TABLE `oc_review` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_seo_url`
+-- Структура таблицы `oc_seo_url`
 --
 
 CREATE TABLE `oc_seo_url` (
@@ -5266,7 +5263,7 @@ CREATE TABLE `oc_seo_url` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_seo_url`
+-- Дамп данных таблицы `oc_seo_url`
 --
 
 INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `keyword`) VALUES
@@ -5321,7 +5318,7 @@ INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `key
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_session`
+-- Структура таблицы `oc_session`
 --
 
 CREATE TABLE `oc_session` (
@@ -5331,13 +5328,14 @@ CREATE TABLE `oc_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_session`
+-- Дамп данных таблицы `oc_session`
 --
 
 INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
 ('06365e998b8495456b45327ea0', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"jJzQh6H9nw7xoyizWH7ZUyRi0U2ZPbqc\"}', '2023-01-03 12:06:04'),
 ('124bbaf4308340eae056d7c98d', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"hn8jEpIfYm7X1KQamSDceRsBNimFbZ4M\",\"order_id\":29,\"install\":\"7Q9EKCLvqx\"}', '2022-12-30 12:13:31'),
 ('385ecb06cdec9a1d2236ecdce7', '{\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2022-12-31 07:10:09'),
+('41db407c7ec895bc7b1477e0c2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"Zosr8viwsWBJJhlPZY5WBaam2KFFzm4u\"}', '2023-01-06 22:14:16'),
 ('564a9c65ee6a3da9f28a6f41d0', '{\"api_id\":\"2\"}', '2023-01-05 21:40:02'),
 ('620e72d02a270143aaaefc697a', '{\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-03 06:24:31'),
 ('69943b7094cfa6d4f4ee35614c', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_token\":\"4pBR2ySOlkrpOjhoVdjkDp7zqBHRueHF\"}', '2017-11-11 13:05:28'),
@@ -5352,7 +5350,7 @@ INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_setting`
+-- Структура таблицы `oc_setting`
 --
 
 CREATE TABLE `oc_setting` (
@@ -5365,17 +5363,14 @@ CREATE TABLE `oc_setting` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_setting`
+-- Дамп данных таблицы `oc_setting`
 --
 
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
 (4, 0, 'voucher', 'total_voucher_sort_order', '8', 0),
 (5, 0, 'voucher', 'total_voucher_status', '1', 0),
-(2608, 0, 'config', 'config_compression', '0', 0),
-(2609, 0, 'config', 'config_secure', '0', 0),
-(2610, 0, 'config', 'config_password', '1', 0),
-(2611, 0, 'config', 'config_shared', '0', 0),
-(2612, 0, 'config', 'config_encryption', 'hEiLgPirTWBJuHnkPL3oCVaJ8nfA5TwV8dL6c1smbJXQpFZbvyCRbgkskSe7S4Ks6Skwu8xYZMJHiGBcsihkm730JXHn8pfaqBOTHAqUrR65k1DqMxhIj4a51SA2KM3mVEuX74RbkSvYSA40HHeS42oO753iF4L3kf1BFif5IFU7jg1cmNOS37QCJSq7u0eByOpC3bwMGlQeq2ef8RLDcnlY1R2eHeOfutDDn7KdM1llwfMbckbg6vc8U33H6obiD7lgIjbMDqYD0iJOLzhqrQZqqQeRdaGbg7lAf3HJGSvNKduCNW5o3DXKDNfn9t87jEgmBkQTvyLxwbxcDPVo6bRJcyxIoBkzmPozKVR3ForzpwEmW0AjAYvw0vKb89hEkNQtBpObcqM4KaHRe2O9U0BAWXRxX9DgUpwUpjA2n3c0YnDy2fWyNo8ek49fgix5sza2bpQxbT6YazpJ3KuEytf2TOXn37vBRUWesKGrV71oW2nfeHZSjwwxuDW77IuaV2c2ivkqFFRchx5xyGFJOePDMlDUEo1hWxx6vjojhMoPWaYMU4Knd1LB1y5f96vt4WbWsIfO04J2BZeG2AYqmd5czHyp2VLyIsWXe17ohwamkTGG8L03Tabg9YFZr40X56uw4oJDw5lJ0HErznoyctps5jxREjPbV9fG52BLcPdp7yljByp3wzHoy8hPq0EXpN8ckBP6ncuJP9dXAViEfCJjjPjnfffIdQfKgyMJTSFGz9DBSTqRTlmhYw07p3LZ8iHhIjdqHtGCMu9PeqgpjjageuM5h4jHOdV5i8gKvrEfRO1r87JRK7Y8mNYmRrpAHhfgF525D5MafWZ0gDjHMNQBlrvCDGOSaN4qnlQBxq1uDwOEWzDRexVVnWVklRpxeDhP6Qq8zhTVsNYdD8Dw3snql1tntJ6WcmxkJivpHHP8HJGtqHSvIlSC0hWd2zymV7aAUlT0vMYoCek2rIeRU2TOq4i9zgjrhfwE58C7Ds8EgOcVpBm2hzsBjN8td4sQ', 0),
+(2873, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(2876, 0, 'config', 'config_error_filename', 'error.log', 0),
 (1638, 0, 'shipping_pickup', 'shipping_pickup_sort_order', '2', 0),
 (1637, 0, 'shipping_pickup', 'shipping_pickup_status', '1', 0),
 (1636, 0, 'shipping_pickup', 'shipping_pickup_geo_zone_id', '0', 0),
@@ -5465,99 +5460,102 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (197, 0, 'report_marketing', 'report_marketing_status', '1', 0),
 (198, 0, 'report_marketing', 'report_marketing_sort_order', '12', 0),
 (383, 0, 'developer', 'developer_theme', '0', 0),
-(2615, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(2606, 0, 'config', 'config_seo_url', '0', 0),
-(2607, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(2613, 0, 'config', 'config_file_max_size', '300000', 0),
-(2614, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(2605, 0, 'config', 'config_maintenance', '0', 0),
-(2604, 0, 'config', 'config_mail_alert_email', '', 0),
-(2603, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
-(2602, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(2600, 0, 'config', 'config_mail_smtp_password', '', 0),
+(2866, 0, 'config', 'config_compression', '0', 0),
+(2867, 0, 'config', 'config_secure', '0', 0),
+(2868, 0, 'config', 'config_password', '1', 0),
+(2869, 0, 'config', 'config_shared', '0', 0),
+(2870, 0, 'config', 'config_encryption', 'hEiLgPirTWBJuHnkPL3oCVaJ8nfA5TwV8dL6c1smbJXQpFZbvyCRbgkskSe7S4Ks6Skwu8xYZMJHiGBcsihkm730JXHn8pfaqBOTHAqUrR65k1DqMxhIj4a51SA2KM3mVEuX74RbkSvYSA40HHeS42oO753iF4L3kf1BFif5IFU7jg1cmNOS37QCJSq7u0eByOpC3bwMGlQeq2ef8RLDcnlY1R2eHeOfutDDn7KdM1llwfMbckbg6vc8U33H6obiD7lgIjbMDqYD0iJOLzhqrQZqqQeRdaGbg7lAf3HJGSvNKduCNW5o3DXKDNfn9t87jEgmBkQTvyLxwbxcDPVo6bRJcyxIoBkzmPozKVR3ForzpwEmW0AjAYvw0vKb89hEkNQtBpObcqM4KaHRe2O9U0BAWXRxX9DgUpwUpjA2n3c0YnDy2fWyNo8ek49fgix5sza2bpQxbT6YazpJ3KuEytf2TOXn37vBRUWesKGrV71oW2nfeHZSjwwxuDW77IuaV2c2ivkqFFRchx5xyGFJOePDMlDUEo1hWxx6vjojhMoPWaYMU4Knd1LB1y5f96vt4WbWsIfO04J2BZeG2AYqmd5czHyp2VLyIsWXe17ohwamkTGG8L03Tabg9YFZr40X56uw4oJDw5lJ0HErznoyctps5jxREjPbV9fG52BLcPdp7yljByp3wzHoy8hPq0EXpN8ckBP6ncuJP9dXAViEfCJjjPjnfffIdQfKgyMJTSFGz9DBSTqRTlmhYw07p3LZ8iHhIjdqHtGCMu9PeqgpjjageuM5h4jHOdV5i8gKvrEfRO1r87JRK7Y8mNYmRrpAHhfgF525D5MafWZ0gDjHMNQBlrvCDGOSaN4qnlQBxq1uDwOEWzDRexVVnWVklRpxeDhP6Qq8zhTVsNYdD8Dw3snql1tntJ6WcmxkJivpHHP8HJGtqHSvIlSC0hWd2zymV7aAUlT0vMYoCek2rIeRU2TOq4i9zgjrhfwE58C7Ds8EgOcVpBm2hzsBjN8td4sQ', 0),
+(2875, 0, 'config', 'config_error_log', '1', 0),
+(2874, 0, 'config', 'config_error_display', '1', 0),
+(2871, 0, 'config', 'config_file_max_size', '300000', 0),
+(2872, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
 (384, 0, 'developer', 'developer_sass', '1', 0),
-(2596, 0, 'config', 'config_mail_engine', 'mail', 0),
-(2601, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(2599, 0, 'config', 'config_mail_smtp_username', '', 0),
-(2598, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(2597, 0, 'config', 'config_mail_parameter', '', 0),
-(2595, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(2594, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(2864, 0, 'config', 'config_seo_url', '0', 0),
+(2865, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
 (1839, 0, 'module_d_blog_module', 'module_d_blog_module_status', '1', 0),
 (1840, 0, 'module_d_blog_module', 'module_d_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"1\"],\"post_page_limit\":\"7\",\"image_display\":\"0\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"0\",\"sub_category_col\":\"6\",\"sub_category_image\":\"0\",\"sub_category_post_count\":\"0\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"0\",\"main_post_display\":\"0\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y         \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y           \"},\"rating_display\":\"0\",\"description_display\":\"1\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"1\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
 (1841, 0, 'd_blog_module', 'd_blog_module_status', '1', 0),
 (1842, 0, 'd_blog_module', 'd_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"1\"],\"post_page_limit\":\"7\",\"image_display\":\"0\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"0\",\"sub_category_col\":\"6\",\"sub_category_image\":\"0\",\"sub_category_post_count\":\"0\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"0\",\"main_post_display\":\"0\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y         \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y           \"},\"rating_display\":\"0\",\"description_display\":\"1\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"1\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
-(2592, 0, 'config', 'config_captcha', '', 0),
-(2593, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
-(2591, 0, 'config', 'config_return_status_id', '2', 0),
-(2590, 0, 'config', 'config_return_id', '0', 0),
-(2589, 0, 'config', 'config_affiliate_id', '5', 0),
-(2587, 0, 'config', 'config_affiliate_auto', '0', 0),
-(2588, 0, 'config', 'config_affiliate_commission', '0', 0),
-(2586, 0, 'config', 'config_affiliate_approval', '0', 0),
-(2585, 0, 'config', 'config_affiliate_group_id', '1', 0),
+(2863, 0, 'config', 'config_maintenance', '0', 0),
+(2861, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
+(2862, 0, 'config', 'config_mail_alert_email', '', 0),
+(2859, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(2860, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
 (1634, 0, 'payment_cod', 'payment_cod_status', '1', 0),
 (1635, 0, 'payment_cod', 'payment_cod_sort_order', '5', 0),
-(2582, 0, 'config', 'config_stock_display', '0', 0),
-(2583, 0, 'config', 'config_stock_warning', '0', 0),
-(2584, 0, 'config', 'config_stock_checkout', '0', 0),
-(2581, 0, 'config', 'config_api_id', '2', 0),
-(2580, 0, 'config', 'config_fraud_status_id', '7', 0),
-(2579, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
-(2577, 0, 'config', 'config_order_status_id', '1', 0),
-(2578, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
-(2575, 0, 'config', 'config_checkout_guest', '1', 0),
-(2576, 0, 'config', 'config_checkout_id', '5', 0),
-(2574, 0, 'config', 'config_cart_weight', '0', 0),
-(2573, 0, 'config', 'config_invoice_prefix', 'INV-2022-00', 0),
-(2572, 0, 'config', 'config_account_id', '3', 0),
-(2571, 0, 'config', 'config_login_attempts', '5', 0),
-(2570, 0, 'config', 'config_customer_price', '0', 0),
-(2569, 0, 'config', 'config_customer_group_display', '[\"1\",\"2\"]', 1),
-(2568, 0, 'config', 'config_customer_group_id', '1', 0),
-(2566, 0, 'config', 'config_customer_activity', '0', 0),
-(2567, 0, 'config', 'config_customer_search', '0', 0),
-(2565, 0, 'config', 'config_customer_online', '0', 0),
-(2564, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(2559, 0, 'config', 'config_review_guest', '1', 0),
-(2560, 0, 'config', 'config_voucher_min', '1', 0),
-(2561, 0, 'config', 'config_voucher_max', '1000', 0),
-(2562, 0, 'config', 'config_tax', '0', 0),
-(2563, 0, 'config', 'config_tax_default', 'shipping', 0),
-(2558, 0, 'config', 'config_review_status', '1', 0),
-(2557, 0, 'config', 'config_limit_admin', '20', 0),
-(2556, 0, 'config', 'config_product_count', '0', 0),
-(2555, 0, 'config', 'config_weight_class_id', '1', 0),
-(2554, 0, 'config', 'config_length_class_id', '1', 0),
-(2553, 0, 'config', 'config_currency_auto', '1', 0),
-(2552, 0, 'config', 'config_currency', 'BYN', 0),
-(2551, 0, 'config', 'config_admin_language', 'ru-ru', 0),
-(2550, 0, 'config', 'config_language', 'ru-ru', 0),
-(2549, 0, 'config', 'config_zone_id', '', 0),
-(2548, 0, 'config', 'config_country_id', '20', 0),
-(2547, 0, 'config', 'config_comment', '', 0),
-(2537, 0, 'config', 'config_layout_id', '4', 0),
-(2538, 0, 'config', 'config_name', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0),
-(2539, 0, 'config', 'config_owner', 'Зиптрейд', 0),
-(2546, 0, 'config', 'config_open', 'пн-пт с 8.30 до 17.00', 0),
-(2545, 0, 'config', 'config_image', 'catalog/logo.png', 0),
-(2543, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
-(2544, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
-(2542, 0, 'config', 'config_email', 'admin@shop.local', 0),
-(2541, 0, 'config', 'config_geocode', '', 0),
-(2540, 0, 'config', 'config_address', ' г. Витебск, ул. Титова, д. 13', 0),
-(2534, 0, 'config', 'config_meta_description', 'Продажа швейной фурнитуры от лучших производителей. Ткани, нити, молнии, ремни и многое другое. Для заказа звоните: +375 (29) 5-109-109', 0),
-(2536, 0, 'config', 'config_theme', 'default', 0),
-(2535, 0, 'config', 'config_meta_keyword', '', 0),
-(2533, 0, 'config', 'config_meta_title', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0),
-(2616, 0, 'config', 'config_error_display', '1', 0),
-(2617, 0, 'config', 'config_error_log', '1', 0),
-(2618, 0, 'config', 'config_error_filename', 'error.log', 0);
+(2858, 0, 'config', 'config_mail_smtp_password', '', 0),
+(2857, 0, 'config', 'config_mail_smtp_username', '', 0),
+(2855, 0, 'config', 'config_mail_parameter', '', 0),
+(2856, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(2854, 0, 'config', 'config_mail_engine', 'mail', 0),
+(2852, 0, 'config', 'config_logo', 'catalog/f_91757739ec412508.png', 0),
+(2853, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(2851, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
+(2849, 0, 'config', 'config_return_status_id', '2', 0),
+(2850, 0, 'config', 'config_captcha', '', 0),
+(2848, 0, 'config', 'config_return_id', '0', 0),
+(2847, 0, 'config', 'config_affiliate_id', '5', 0),
+(2845, 0, 'config', 'config_affiliate_auto', '0', 0),
+(2846, 0, 'config', 'config_affiliate_commission', '0', 0),
+(2842, 0, 'config', 'config_stock_checkout', '0', 0),
+(2843, 0, 'config', 'config_affiliate_group_id', '1', 0),
+(2844, 0, 'config', 'config_affiliate_approval', '0', 0),
+(2841, 0, 'config', 'config_stock_warning', '0', 0),
+(2840, 0, 'config', 'config_stock_display', '0', 0),
+(2838, 0, 'config', 'config_fraud_status_id', '7', 0),
+(2839, 0, 'config', 'config_api_id', '2', 0),
+(2837, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
+(2836, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
+(2834, 0, 'config', 'config_checkout_id', '5', 0),
+(2835, 0, 'config', 'config_order_status_id', '1', 0),
+(2833, 0, 'config', 'config_checkout_guest', '1', 0),
+(2832, 0, 'config', 'config_cart_weight', '0', 0),
+(2830, 0, 'config', 'config_account_id', '3', 0),
+(2831, 0, 'config', 'config_invoice_prefix', 'INV-2022-00', 0),
+(2829, 0, 'config', 'config_login_attempts', '5', 0),
+(2825, 0, 'config', 'config_customer_search', '0', 0),
+(2826, 0, 'config', 'config_customer_group_id', '1', 0),
+(2827, 0, 'config', 'config_customer_group_display', '[\"1\",\"2\"]', 1),
+(2828, 0, 'config', 'config_customer_price', '0', 0),
+(2824, 0, 'config', 'config_customer_activity', '0', 0),
+(2823, 0, 'config', 'config_customer_online', '0', 0),
+(2822, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(2821, 0, 'config', 'config_tax_default', 'shipping', 0),
+(2820, 0, 'config', 'config_tax', '0', 0),
+(2819, 0, 'config', 'config_voucher_max', '1000', 0),
+(2818, 0, 'config', 'config_voucher_min', '1', 0),
+(2806, 0, 'config', 'config_country_id', '20', 0),
+(2807, 0, 'config', 'config_zone_id', '', 0),
+(2808, 0, 'config', 'config_language', 'ru-ru', 0),
+(2809, 0, 'config', 'config_admin_language', 'ru-ru', 0),
+(2810, 0, 'config', 'config_currency', 'BYN', 0),
+(2811, 0, 'config', 'config_currency_auto', '1', 0),
+(2812, 0, 'config', 'config_length_class_id', '1', 0),
+(2813, 0, 'config', 'config_weight_class_id', '1', 0),
+(2814, 0, 'config', 'config_product_count', '0', 0),
+(2815, 0, 'config', 'config_limit_admin', '20', 0),
+(2816, 0, 'config', 'config_review_status', '1', 0),
+(2817, 0, 'config', 'config_review_guest', '1', 0),
+(2803, 0, 'config', 'config_image', 'catalog/logo.png', 0),
+(2804, 0, 'config', 'config_open', 'пн-пт с 8.30 до 17.00', 0),
+(2805, 0, 'config', 'config_comment', 'Наши реквизиты', 0),
+(2792, 0, 'config', 'config_meta_description', 'Продажа швейной фурнитуры от лучших производителей. Ткани, нити, молнии, ремни и многое другое. Для заказа звоните: +375 (29) 5-109-109', 0),
+(2793, 0, 'config', 'config_meta_keyword', '', 0),
+(2794, 0, 'config', 'config_theme', 'default', 0),
+(2795, 0, 'config', 'config_layout_id', '4', 0),
+(2796, 0, 'config', 'config_name', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0),
+(2797, 0, 'config', 'config_owner', 'Зиптрейд', 0),
+(2798, 0, 'config', 'config_address', ' г. Витебск,  ул. Титова, д. 138', 0),
+(2799, 0, 'config', 'config_geocode', '', 0),
+(2800, 0, 'config', 'config_email', 'info@ziptrade.by', 0),
+(2801, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
+(2802, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
+(2791, 0, 'config', 'config_meta_title', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_shipping_courier`
+-- Структура таблицы `oc_shipping_courier`
 --
 
 CREATE TABLE `oc_shipping_courier` (
@@ -5567,7 +5565,7 @@ CREATE TABLE `oc_shipping_courier` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_shipping_courier`
+-- Дамп данных таблицы `oc_shipping_courier`
 --
 
 INSERT INTO `oc_shipping_courier` (`shipping_courier_id`, `shipping_courier_code`, `shipping_courier_name`) VALUES
@@ -5582,7 +5580,7 @@ INSERT INTO `oc_shipping_courier` (`shipping_courier_id`, `shipping_courier_code
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_statistics`
+-- Структура таблицы `oc_statistics`
 --
 
 CREATE TABLE `oc_statistics` (
@@ -5592,7 +5590,7 @@ CREATE TABLE `oc_statistics` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_statistics`
+-- Дамп данных таблицы `oc_statistics`
 --
 
 INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
@@ -5607,7 +5605,7 @@ INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_stock_status`
+-- Структура таблицы `oc_stock_status`
 --
 
 CREATE TABLE `oc_stock_status` (
@@ -5617,7 +5615,7 @@ CREATE TABLE `oc_stock_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_stock_status`
+-- Дамп данных таблицы `oc_stock_status`
 --
 
 INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
@@ -5633,7 +5631,7 @@ INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_store`
+-- Структура таблицы `oc_store`
 --
 
 CREATE TABLE `oc_store` (
@@ -5646,7 +5644,7 @@ CREATE TABLE `oc_store` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_subscribe`
+-- Структура таблицы `oc_subscribe`
 --
 
 CREATE TABLE `oc_subscribe` (
@@ -5656,7 +5654,7 @@ CREATE TABLE `oc_subscribe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `oc_subscribe`
+-- Дамп данных таблицы `oc_subscribe`
 --
 
 INSERT INTO `oc_subscribe` (`subscribe_id`, `email`, `date_added`) VALUES
@@ -5666,7 +5664,7 @@ INSERT INTO `oc_subscribe` (`subscribe_id`, `email`, `date_added`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_tax_class`
+-- Структура таблицы `oc_tax_class`
 --
 
 CREATE TABLE `oc_tax_class` (
@@ -5678,7 +5676,7 @@ CREATE TABLE `oc_tax_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_tax_class`
+-- Дамп данных таблицы `oc_tax_class`
 --
 
 INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
@@ -5688,7 +5686,7 @@ INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_tax_rate`
+-- Структура таблицы `oc_tax_rate`
 --
 
 CREATE TABLE `oc_tax_rate` (
@@ -5702,7 +5700,7 @@ CREATE TABLE `oc_tax_rate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_tax_rate`
+-- Дамп данных таблицы `oc_tax_rate`
 --
 
 INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
@@ -5712,7 +5710,7 @@ INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_tax_rate_to_customer_group`
+-- Структура таблицы `oc_tax_rate_to_customer_group`
 --
 
 CREATE TABLE `oc_tax_rate_to_customer_group` (
@@ -5721,7 +5719,7 @@ CREATE TABLE `oc_tax_rate_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_tax_rate_to_customer_group`
+-- Дамп данных таблицы `oc_tax_rate_to_customer_group`
 --
 
 INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
@@ -5731,7 +5729,7 @@ INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_tax_rule`
+-- Структура таблицы `oc_tax_rule`
 --
 
 CREATE TABLE `oc_tax_rule` (
@@ -5743,7 +5741,7 @@ CREATE TABLE `oc_tax_rule` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_tax_rule`
+-- Дамп данных таблицы `oc_tax_rule`
 --
 
 INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
@@ -5755,7 +5753,7 @@ INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_theme`
+-- Структура таблицы `oc_theme`
 --
 
 CREATE TABLE `oc_theme` (
@@ -5770,7 +5768,7 @@ CREATE TABLE `oc_theme` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_translation`
+-- Структура таблицы `oc_translation`
 --
 
 CREATE TABLE `oc_translation` (
@@ -5786,7 +5784,7 @@ CREATE TABLE `oc_translation` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_upload`
+-- Структура таблицы `oc_upload`
 --
 
 CREATE TABLE `oc_upload` (
@@ -5800,7 +5798,7 @@ CREATE TABLE `oc_upload` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_user`
+-- Структура таблицы `oc_user`
 --
 
 CREATE TABLE `oc_user` (
@@ -5820,7 +5818,7 @@ CREATE TABLE `oc_user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_user`
+-- Дамп данных таблицы `oc_user`
 --
 
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
@@ -5829,7 +5827,7 @@ INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_user_group`
+-- Структура таблицы `oc_user_group`
 --
 
 CREATE TABLE `oc_user_group` (
@@ -5839,7 +5837,7 @@ CREATE TABLE `oc_user_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_user_group`
+-- Дамп данных таблицы `oc_user_group`
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
@@ -5849,7 +5847,7 @@ INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_voucher`
+-- Структура таблицы `oc_voucher`
 --
 
 CREATE TABLE `oc_voucher` (
@@ -5870,7 +5868,7 @@ CREATE TABLE `oc_voucher` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_voucher_history`
+-- Структура таблицы `oc_voucher_history`
 --
 
 CREATE TABLE `oc_voucher_history` (
@@ -5884,7 +5882,7 @@ CREATE TABLE `oc_voucher_history` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_voucher_theme`
+-- Структура таблицы `oc_voucher_theme`
 --
 
 CREATE TABLE `oc_voucher_theme` (
@@ -5893,7 +5891,7 @@ CREATE TABLE `oc_voucher_theme` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_voucher_theme`
+-- Дамп данных таблицы `oc_voucher_theme`
 --
 
 INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
@@ -5904,7 +5902,7 @@ INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_voucher_theme_description`
+-- Структура таблицы `oc_voucher_theme_description`
 --
 
 CREATE TABLE `oc_voucher_theme_description` (
@@ -5914,7 +5912,7 @@ CREATE TABLE `oc_voucher_theme_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_voucher_theme_description`
+-- Дамп данных таблицы `oc_voucher_theme_description`
 --
 
 INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
@@ -5928,7 +5926,7 @@ INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_weight_class`
+-- Структура таблицы `oc_weight_class`
 --
 
 CREATE TABLE `oc_weight_class` (
@@ -5937,7 +5935,7 @@ CREATE TABLE `oc_weight_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_weight_class`
+-- Дамп данных таблицы `oc_weight_class`
 --
 
 INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
@@ -5949,7 +5947,7 @@ INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_weight_class_description`
+-- Структура таблицы `oc_weight_class_description`
 --
 
 CREATE TABLE `oc_weight_class_description` (
@@ -5960,7 +5958,7 @@ CREATE TABLE `oc_weight_class_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_weight_class_description`
+-- Дамп данных таблицы `oc_weight_class_description`
 --
 
 INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -5976,7 +5974,7 @@ INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_zone`
+-- Структура таблицы `oc_zone`
 --
 
 CREATE TABLE `oc_zone` (
@@ -5988,7 +5986,7 @@ CREATE TABLE `oc_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_zone`
+-- Дамп данных таблицы `oc_zone`
 --
 
 INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
@@ -10106,7 +10104,7 @@ INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oc_zone_to_geo_zone`
+-- Структура таблицы `oc_zone_to_geo_zone`
 --
 
 CREATE TABLE `oc_zone_to_geo_zone` (
@@ -10119,7 +10117,7 @@ CREATE TABLE `oc_zone_to_geo_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `oc_zone_to_geo_zone`
+-- Дамп данных таблицы `oc_zone_to_geo_zone`
 --
 
 INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
@@ -10234,292 +10232,292 @@ INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id
 (109, 222, 3972, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `oc_address`
+-- Индексы таблицы `oc_address`
 --
 ALTER TABLE `oc_address`
   ADD PRIMARY KEY (`address_id`),
   ADD KEY `customer_id` (`customer_id`);
 
 --
--- Indexes for table `oc_api`
+-- Индексы таблицы `oc_api`
 --
 ALTER TABLE `oc_api`
   ADD PRIMARY KEY (`api_id`);
 
 --
--- Indexes for table `oc_api_ip`
+-- Индексы таблицы `oc_api_ip`
 --
 ALTER TABLE `oc_api_ip`
   ADD PRIMARY KEY (`api_ip_id`);
 
 --
--- Indexes for table `oc_api_session`
+-- Индексы таблицы `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
   ADD PRIMARY KEY (`api_session_id`);
 
 --
--- Indexes for table `oc_attribute`
+-- Индексы таблицы `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
   ADD PRIMARY KEY (`attribute_id`);
 
 --
--- Indexes for table `oc_attribute_description`
+-- Индексы таблицы `oc_attribute_description`
 --
 ALTER TABLE `oc_attribute_description`
   ADD PRIMARY KEY (`attribute_id`,`language_id`);
 
 --
--- Indexes for table `oc_attribute_group`
+-- Индексы таблицы `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
   ADD PRIMARY KEY (`attribute_group_id`);
 
 --
--- Indexes for table `oc_attribute_group_description`
+-- Индексы таблицы `oc_attribute_group_description`
 --
 ALTER TABLE `oc_attribute_group_description`
   ADD PRIMARY KEY (`attribute_group_id`,`language_id`);
 
 --
--- Indexes for table `oc_banner`
+-- Индексы таблицы `oc_banner`
 --
 ALTER TABLE `oc_banner`
   ADD PRIMARY KEY (`banner_id`);
 
 --
--- Indexes for table `oc_banner_image`
+-- Индексы таблицы `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
   ADD PRIMARY KEY (`banner_image_id`);
 
 --
--- Indexes for table `oc_bm_author`
+-- Индексы таблицы `oc_bm_author`
 --
 ALTER TABLE `oc_bm_author`
   ADD PRIMARY KEY (`author_id`);
 
 --
--- Indexes for table `oc_bm_author_description`
+-- Индексы таблицы `oc_bm_author_description`
 --
 ALTER TABLE `oc_bm_author_description`
   ADD PRIMARY KEY (`author_description_id`);
 
 --
--- Indexes for table `oc_bm_author_group`
+-- Индексы таблицы `oc_bm_author_group`
 --
 ALTER TABLE `oc_bm_author_group`
   ADD PRIMARY KEY (`author_group_id`);
 
 --
--- Indexes for table `oc_bm_category`
+-- Индексы таблицы `oc_bm_category`
 --
 ALTER TABLE `oc_bm_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `oc_bm_category_description`
+-- Индексы таблицы `oc_bm_category_description`
 --
 ALTER TABLE `oc_bm_category_description`
   ADD PRIMARY KEY (`category_description_id`);
 
 --
--- Indexes for table `oc_bm_category_path`
+-- Индексы таблицы `oc_bm_category_path`
 --
 ALTER TABLE `oc_bm_category_path`
   ADD PRIMARY KEY (`category_id`,`path_id`);
 
 --
--- Indexes for table `oc_bm_category_to_store`
+-- Индексы таблицы `oc_bm_category_to_store`
 --
 ALTER TABLE `oc_bm_category_to_store`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Indexes for table `oc_bm_post`
+-- Индексы таблицы `oc_bm_post`
 --
 ALTER TABLE `oc_bm_post`
   ADD PRIMARY KEY (`post_id`);
 
 --
--- Indexes for table `oc_bm_post_description`
+-- Индексы таблицы `oc_bm_post_description`
 --
 ALTER TABLE `oc_bm_post_description`
   ADD PRIMARY KEY (`post_description_id`);
 
 --
--- Indexes for table `oc_bm_post_related`
+-- Индексы таблицы `oc_bm_post_related`
 --
 ALTER TABLE `oc_bm_post_related`
   ADD PRIMARY KEY (`post_id`,`post_related_id`);
 
 --
--- Indexes for table `oc_bm_post_to_category`
+-- Индексы таблицы `oc_bm_post_to_category`
 --
 ALTER TABLE `oc_bm_post_to_category`
   ADD PRIMARY KEY (`category_id`,`post_id`);
 
 --
--- Indexes for table `oc_bm_post_to_product`
+-- Индексы таблицы `oc_bm_post_to_product`
 --
 ALTER TABLE `oc_bm_post_to_product`
   ADD PRIMARY KEY (`product_id`,`post_id`);
 
 --
--- Indexes for table `oc_bm_post_video`
+-- Индексы таблицы `oc_bm_post_video`
 --
 ALTER TABLE `oc_bm_post_video`
   ADD PRIMARY KEY (`post_id`,`video`);
 
 --
--- Indexes for table `oc_bm_review`
+-- Индексы таблицы `oc_bm_review`
 --
 ALTER TABLE `oc_bm_review`
   ADD PRIMARY KEY (`review_id`);
 
 --
--- Indexes for table `oc_bm_review_to_image`
+-- Индексы таблицы `oc_bm_review_to_image`
 --
 ALTER TABLE `oc_bm_review_to_image`
   ADD PRIMARY KEY (`review_id`,`image`);
 
 --
--- Indexes for table `oc_cart`
+-- Индексы таблицы `oc_cart`
 --
 ALTER TABLE `oc_cart`
   ADD PRIMARY KEY (`cart_id`),
   ADD KEY `cart_id` (`api_id`,`customer_id`,`session_id`,`product_id`,`recurring_id`);
 
 --
--- Indexes for table `oc_category`
+-- Индексы таблицы `oc_category`
 --
 ALTER TABLE `oc_category`
   ADD PRIMARY KEY (`category_id`),
   ADD KEY `parent_id` (`parent_id`);
 
 --
--- Indexes for table `oc_category_description`
+-- Индексы таблицы `oc_category_description`
 --
 ALTER TABLE `oc_category_description`
   ADD PRIMARY KEY (`category_id`,`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Indexes for table `oc_category_filter`
+-- Индексы таблицы `oc_category_filter`
 --
 ALTER TABLE `oc_category_filter`
   ADD PRIMARY KEY (`category_id`,`filter_id`);
 
 --
--- Indexes for table `oc_category_path`
+-- Индексы таблицы `oc_category_path`
 --
 ALTER TABLE `oc_category_path`
   ADD PRIMARY KEY (`category_id`,`path_id`);
 
 --
--- Indexes for table `oc_category_to_layout`
+-- Индексы таблицы `oc_category_to_layout`
 --
 ALTER TABLE `oc_category_to_layout`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Indexes for table `oc_category_to_store`
+-- Индексы таблицы `oc_category_to_store`
 --
 ALTER TABLE `oc_category_to_store`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Indexes for table `oc_country`
+-- Индексы таблицы `oc_country`
 --
 ALTER TABLE `oc_country`
   ADD PRIMARY KEY (`country_id`);
 
 --
--- Indexes for table `oc_coupon`
+-- Индексы таблицы `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
   ADD PRIMARY KEY (`coupon_id`);
 
 --
--- Indexes for table `oc_coupon_category`
+-- Индексы таблицы `oc_coupon_category`
 --
 ALTER TABLE `oc_coupon_category`
   ADD PRIMARY KEY (`coupon_id`,`category_id`);
 
 --
--- Indexes for table `oc_coupon_history`
+-- Индексы таблицы `oc_coupon_history`
 --
 ALTER TABLE `oc_coupon_history`
   ADD PRIMARY KEY (`coupon_history_id`);
 
 --
--- Indexes for table `oc_coupon_product`
+-- Индексы таблицы `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
   ADD PRIMARY KEY (`coupon_product_id`);
 
 --
--- Indexes for table `oc_currency`
+-- Индексы таблицы `oc_currency`
 --
 ALTER TABLE `oc_currency`
   ADD PRIMARY KEY (`currency_id`);
 
 --
--- Indexes for table `oc_customer`
+-- Индексы таблицы `oc_customer`
 --
 ALTER TABLE `oc_customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `oc_customer_activity`
+-- Индексы таблицы `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
   ADD PRIMARY KEY (`customer_activity_id`);
 
 --
--- Indexes for table `oc_customer_affiliate`
+-- Индексы таблицы `oc_customer_affiliate`
 --
 ALTER TABLE `oc_customer_affiliate`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `oc_customer_approval`
+-- Индексы таблицы `oc_customer_approval`
 --
 ALTER TABLE `oc_customer_approval`
   ADD PRIMARY KEY (`customer_approval_id`);
 
 --
--- Indexes for table `oc_customer_group`
+-- Индексы таблицы `oc_customer_group`
 --
 ALTER TABLE `oc_customer_group`
   ADD PRIMARY KEY (`customer_group_id`);
 
 --
--- Indexes for table `oc_customer_group_description`
+-- Индексы таблицы `oc_customer_group_description`
 --
 ALTER TABLE `oc_customer_group_description`
   ADD PRIMARY KEY (`customer_group_id`,`language_id`);
 
 --
--- Indexes for table `oc_customer_history`
+-- Индексы таблицы `oc_customer_history`
 --
 ALTER TABLE `oc_customer_history`
   ADD PRIMARY KEY (`customer_history_id`);
 
 --
--- Indexes for table `oc_customer_ip`
+-- Индексы таблицы `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
   ADD PRIMARY KEY (`customer_ip_id`),
   ADD KEY `ip` (`ip`);
 
 --
--- Indexes for table `oc_customer_login`
+-- Индексы таблицы `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
   ADD PRIMARY KEY (`customer_login_id`),
@@ -10527,473 +10525,473 @@ ALTER TABLE `oc_customer_login`
   ADD KEY `ip` (`ip`);
 
 --
--- Indexes for table `oc_customer_online`
+-- Индексы таблицы `oc_customer_online`
 --
 ALTER TABLE `oc_customer_online`
   ADD PRIMARY KEY (`ip`);
 
 --
--- Indexes for table `oc_customer_reward`
+-- Индексы таблицы `oc_customer_reward`
 --
 ALTER TABLE `oc_customer_reward`
   ADD PRIMARY KEY (`customer_reward_id`);
 
 --
--- Indexes for table `oc_customer_search`
+-- Индексы таблицы `oc_customer_search`
 --
 ALTER TABLE `oc_customer_search`
   ADD PRIMARY KEY (`customer_search_id`);
 
 --
--- Indexes for table `oc_customer_transaction`
+-- Индексы таблицы `oc_customer_transaction`
 --
 ALTER TABLE `oc_customer_transaction`
   ADD PRIMARY KEY (`customer_transaction_id`);
 
 --
--- Indexes for table `oc_customer_wishlist`
+-- Индексы таблицы `oc_customer_wishlist`
 --
 ALTER TABLE `oc_customer_wishlist`
   ADD PRIMARY KEY (`customer_id`,`product_id`);
 
 --
--- Indexes for table `oc_custom_field`
+-- Индексы таблицы `oc_custom_field`
 --
 ALTER TABLE `oc_custom_field`
   ADD PRIMARY KEY (`custom_field_id`);
 
 --
--- Indexes for table `oc_custom_field_customer_group`
+-- Индексы таблицы `oc_custom_field_customer_group`
 --
 ALTER TABLE `oc_custom_field_customer_group`
   ADD PRIMARY KEY (`custom_field_id`,`customer_group_id`);
 
 --
--- Indexes for table `oc_custom_field_description`
+-- Индексы таблицы `oc_custom_field_description`
 --
 ALTER TABLE `oc_custom_field_description`
   ADD PRIMARY KEY (`custom_field_id`,`language_id`);
 
 --
--- Indexes for table `oc_custom_field_value`
+-- Индексы таблицы `oc_custom_field_value`
 --
 ALTER TABLE `oc_custom_field_value`
   ADD PRIMARY KEY (`custom_field_value_id`);
 
 --
--- Indexes for table `oc_custom_field_value_description`
+-- Индексы таблицы `oc_custom_field_value_description`
 --
 ALTER TABLE `oc_custom_field_value_description`
   ADD PRIMARY KEY (`custom_field_value_id`,`language_id`);
 
 --
--- Indexes for table `oc_download`
+-- Индексы таблицы `oc_download`
 --
 ALTER TABLE `oc_download`
   ADD PRIMARY KEY (`download_id`);
 
 --
--- Indexes for table `oc_download_description`
+-- Индексы таблицы `oc_download_description`
 --
 ALTER TABLE `oc_download_description`
   ADD PRIMARY KEY (`download_id`,`language_id`);
 
 --
--- Indexes for table `oc_d_validator`
+-- Индексы таблицы `oc_d_validator`
 --
 ALTER TABLE `oc_d_validator`
   ADD PRIMARY KEY (`validator_id`);
 
 --
--- Indexes for table `oc_event`
+-- Индексы таблицы `oc_event`
 --
 ALTER TABLE `oc_event`
   ADD PRIMARY KEY (`event_id`);
 
 --
--- Indexes for table `oc_extension`
+-- Индексы таблицы `oc_extension`
 --
 ALTER TABLE `oc_extension`
   ADD PRIMARY KEY (`extension_id`);
 
 --
--- Indexes for table `oc_extension_install`
+-- Индексы таблицы `oc_extension_install`
 --
 ALTER TABLE `oc_extension_install`
   ADD PRIMARY KEY (`extension_install_id`);
 
 --
--- Indexes for table `oc_extension_path`
+-- Индексы таблицы `oc_extension_path`
 --
 ALTER TABLE `oc_extension_path`
   ADD PRIMARY KEY (`extension_path_id`);
 
 --
--- Indexes for table `oc_filter`
+-- Индексы таблицы `oc_filter`
 --
 ALTER TABLE `oc_filter`
   ADD PRIMARY KEY (`filter_id`);
 
 --
--- Indexes for table `oc_filter_description`
+-- Индексы таблицы `oc_filter_description`
 --
 ALTER TABLE `oc_filter_description`
   ADD PRIMARY KEY (`filter_id`,`language_id`);
 
 --
--- Indexes for table `oc_filter_group`
+-- Индексы таблицы `oc_filter_group`
 --
 ALTER TABLE `oc_filter_group`
   ADD PRIMARY KEY (`filter_group_id`);
 
 --
--- Indexes for table `oc_filter_group_description`
+-- Индексы таблицы `oc_filter_group_description`
 --
 ALTER TABLE `oc_filter_group_description`
   ADD PRIMARY KEY (`filter_group_id`,`language_id`);
 
 --
--- Indexes for table `oc_geo_zone`
+-- Индексы таблицы `oc_geo_zone`
 --
 ALTER TABLE `oc_geo_zone`
   ADD PRIMARY KEY (`geo_zone_id`);
 
 --
--- Indexes for table `oc_information`
+-- Индексы таблицы `oc_information`
 --
 ALTER TABLE `oc_information`
   ADD PRIMARY KEY (`information_id`);
 
 --
--- Indexes for table `oc_information_description`
+-- Индексы таблицы `oc_information_description`
 --
 ALTER TABLE `oc_information_description`
   ADD PRIMARY KEY (`information_id`,`language_id`);
 
 --
--- Indexes for table `oc_information_to_layout`
+-- Индексы таблицы `oc_information_to_layout`
 --
 ALTER TABLE `oc_information_to_layout`
   ADD PRIMARY KEY (`information_id`,`store_id`);
 
 --
--- Indexes for table `oc_information_to_store`
+-- Индексы таблицы `oc_information_to_store`
 --
 ALTER TABLE `oc_information_to_store`
   ADD PRIMARY KEY (`information_id`,`store_id`);
 
 --
--- Indexes for table `oc_language`
+-- Индексы таблицы `oc_language`
 --
 ALTER TABLE `oc_language`
   ADD PRIMARY KEY (`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Indexes for table `oc_layout`
+-- Индексы таблицы `oc_layout`
 --
 ALTER TABLE `oc_layout`
   ADD PRIMARY KEY (`layout_id`);
 
 --
--- Indexes for table `oc_layout_module`
+-- Индексы таблицы `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
   ADD PRIMARY KEY (`layout_module_id`);
 
 --
--- Indexes for table `oc_layout_route`
+-- Индексы таблицы `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
   ADD PRIMARY KEY (`layout_route_id`);
 
 --
--- Indexes for table `oc_length_class`
+-- Индексы таблицы `oc_length_class`
 --
 ALTER TABLE `oc_length_class`
   ADD PRIMARY KEY (`length_class_id`);
 
 --
--- Indexes for table `oc_length_class_description`
+-- Индексы таблицы `oc_length_class_description`
 --
 ALTER TABLE `oc_length_class_description`
   ADD PRIMARY KEY (`length_class_id`,`language_id`);
 
 --
--- Indexes for table `oc_location`
+-- Индексы таблицы `oc_location`
 --
 ALTER TABLE `oc_location`
   ADD PRIMARY KEY (`location_id`),
   ADD KEY `name` (`name`);
 
 --
--- Indexes for table `oc_manufacturer`
+-- Индексы таблицы `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
   ADD PRIMARY KEY (`manufacturer_id`);
 
 --
--- Indexes for table `oc_manufacturer_to_store`
+-- Индексы таблицы `oc_manufacturer_to_store`
 --
 ALTER TABLE `oc_manufacturer_to_store`
   ADD PRIMARY KEY (`manufacturer_id`,`store_id`);
 
 --
--- Indexes for table `oc_marketing`
+-- Индексы таблицы `oc_marketing`
 --
 ALTER TABLE `oc_marketing`
   ADD PRIMARY KEY (`marketing_id`);
 
 --
--- Indexes for table `oc_modification`
+-- Индексы таблицы `oc_modification`
 --
 ALTER TABLE `oc_modification`
   ADD PRIMARY KEY (`modification_id`);
 
 --
--- Indexes for table `oc_module`
+-- Индексы таблицы `oc_module`
 --
 ALTER TABLE `oc_module`
   ADD PRIMARY KEY (`module_id`);
 
 --
--- Indexes for table `oc_option`
+-- Индексы таблицы `oc_option`
 --
 ALTER TABLE `oc_option`
   ADD PRIMARY KEY (`option_id`);
 
 --
--- Indexes for table `oc_option_description`
+-- Индексы таблицы `oc_option_description`
 --
 ALTER TABLE `oc_option_description`
   ADD PRIMARY KEY (`option_id`,`language_id`);
 
 --
--- Indexes for table `oc_option_value`
+-- Индексы таблицы `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
   ADD PRIMARY KEY (`option_value_id`);
 
 --
--- Indexes for table `oc_option_value_description`
+-- Индексы таблицы `oc_option_value_description`
 --
 ALTER TABLE `oc_option_value_description`
   ADD PRIMARY KEY (`option_value_id`,`language_id`);
 
 --
--- Indexes for table `oc_order`
+-- Индексы таблицы `oc_order`
 --
 ALTER TABLE `oc_order`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `oc_order_history`
+-- Индексы таблицы `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
   ADD PRIMARY KEY (`order_history_id`);
 
 --
--- Indexes for table `oc_order_option`
+-- Индексы таблицы `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
   ADD PRIMARY KEY (`order_option_id`);
 
 --
--- Indexes for table `oc_order_product`
+-- Индексы таблицы `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
   ADD PRIMARY KEY (`order_product_id`),
   ADD KEY `order_id` (`order_id`);
 
 --
--- Indexes for table `oc_order_recurring`
+-- Индексы таблицы `oc_order_recurring`
 --
 ALTER TABLE `oc_order_recurring`
   ADD PRIMARY KEY (`order_recurring_id`);
 
 --
--- Indexes for table `oc_order_recurring_transaction`
+-- Индексы таблицы `oc_order_recurring_transaction`
 --
 ALTER TABLE `oc_order_recurring_transaction`
   ADD PRIMARY KEY (`order_recurring_transaction_id`);
 
 --
--- Indexes for table `oc_order_shipment`
+-- Индексы таблицы `oc_order_shipment`
 --
 ALTER TABLE `oc_order_shipment`
   ADD PRIMARY KEY (`order_shipment_id`);
 
 --
--- Indexes for table `oc_order_status`
+-- Индексы таблицы `oc_order_status`
 --
 ALTER TABLE `oc_order_status`
   ADD PRIMARY KEY (`order_status_id`,`language_id`);
 
 --
--- Indexes for table `oc_order_total`
+-- Индексы таблицы `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
   ADD PRIMARY KEY (`order_total_id`),
   ADD KEY `order_id` (`order_id`);
 
 --
--- Indexes for table `oc_order_voucher`
+-- Индексы таблицы `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
   ADD PRIMARY KEY (`order_voucher_id`);
 
 --
--- Indexes for table `oc_product`
+-- Индексы таблицы `oc_product`
 --
 ALTER TABLE `oc_product`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `oc_product_attribute`
+-- Индексы таблицы `oc_product_attribute`
 --
 ALTER TABLE `oc_product_attribute`
   ADD PRIMARY KEY (`product_id`,`attribute_id`,`language_id`);
 
 --
--- Indexes for table `oc_product_description`
+-- Индексы таблицы `oc_product_description`
 --
 ALTER TABLE `oc_product_description`
   ADD PRIMARY KEY (`product_id`,`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Indexes for table `oc_product_discount`
+-- Индексы таблицы `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
   ADD PRIMARY KEY (`product_discount_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `oc_product_filter`
+-- Индексы таблицы `oc_product_filter`
 --
 ALTER TABLE `oc_product_filter`
   ADD PRIMARY KEY (`product_id`,`filter_id`);
 
 --
--- Indexes for table `oc_product_image`
+-- Индексы таблицы `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
   ADD PRIMARY KEY (`product_image_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `oc_product_option`
+-- Индексы таблицы `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
   ADD PRIMARY KEY (`product_option_id`);
 
 --
--- Indexes for table `oc_product_option_value`
+-- Индексы таблицы `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
   ADD PRIMARY KEY (`product_option_value_id`);
 
 --
--- Indexes for table `oc_product_recurring`
+-- Индексы таблицы `oc_product_recurring`
 --
 ALTER TABLE `oc_product_recurring`
   ADD PRIMARY KEY (`product_id`,`recurring_id`,`customer_group_id`);
 
 --
--- Indexes for table `oc_product_related`
+-- Индексы таблицы `oc_product_related`
 --
 ALTER TABLE `oc_product_related`
   ADD PRIMARY KEY (`product_id`,`related_id`);
 
 --
--- Indexes for table `oc_product_reward`
+-- Индексы таблицы `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
   ADD PRIMARY KEY (`product_reward_id`);
 
 --
--- Indexes for table `oc_product_special`
+-- Индексы таблицы `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
   ADD PRIMARY KEY (`product_special_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `oc_product_to_category`
+-- Индексы таблицы `oc_product_to_category`
 --
 ALTER TABLE `oc_product_to_category`
   ADD PRIMARY KEY (`product_id`,`category_id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Indexes for table `oc_product_to_download`
+-- Индексы таблицы `oc_product_to_download`
 --
 ALTER TABLE `oc_product_to_download`
   ADD PRIMARY KEY (`product_id`,`download_id`);
 
 --
--- Indexes for table `oc_product_to_layout`
+-- Индексы таблицы `oc_product_to_layout`
 --
 ALTER TABLE `oc_product_to_layout`
   ADD PRIMARY KEY (`product_id`,`store_id`);
 
 --
--- Indexes for table `oc_product_to_store`
+-- Индексы таблицы `oc_product_to_store`
 --
 ALTER TABLE `oc_product_to_store`
   ADD PRIMARY KEY (`product_id`,`store_id`);
 
 --
--- Indexes for table `oc_recurring`
+-- Индексы таблицы `oc_recurring`
 --
 ALTER TABLE `oc_recurring`
   ADD PRIMARY KEY (`recurring_id`);
 
 --
--- Indexes for table `oc_recurring_description`
+-- Индексы таблицы `oc_recurring_description`
 --
 ALTER TABLE `oc_recurring_description`
   ADD PRIMARY KEY (`recurring_id`,`language_id`);
 
 --
--- Indexes for table `oc_return`
+-- Индексы таблицы `oc_return`
 --
 ALTER TABLE `oc_return`
   ADD PRIMARY KEY (`return_id`);
 
 --
--- Indexes for table `oc_return_action`
+-- Индексы таблицы `oc_return_action`
 --
 ALTER TABLE `oc_return_action`
   ADD PRIMARY KEY (`return_action_id`,`language_id`);
 
 --
--- Indexes for table `oc_return_history`
+-- Индексы таблицы `oc_return_history`
 --
 ALTER TABLE `oc_return_history`
   ADD PRIMARY KEY (`return_history_id`);
 
 --
--- Indexes for table `oc_return_reason`
+-- Индексы таблицы `oc_return_reason`
 --
 ALTER TABLE `oc_return_reason`
   ADD PRIMARY KEY (`return_reason_id`,`language_id`);
 
 --
--- Indexes for table `oc_return_status`
+-- Индексы таблицы `oc_return_status`
 --
 ALTER TABLE `oc_return_status`
   ADD PRIMARY KEY (`return_status_id`,`language_id`);
 
 --
--- Indexes for table `oc_review`
+-- Индексы таблицы `oc_review`
 --
 ALTER TABLE `oc_review`
   ADD PRIMARY KEY (`review_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `oc_seo_url`
+-- Индексы таблицы `oc_seo_url`
 --
 ALTER TABLE `oc_seo_url`
   ADD PRIMARY KEY (`seo_url_id`),
@@ -11001,755 +10999,755 @@ ALTER TABLE `oc_seo_url`
   ADD KEY `keyword` (`keyword`);
 
 --
--- Indexes for table `oc_session`
+-- Индексы таблицы `oc_session`
 --
 ALTER TABLE `oc_session`
   ADD PRIMARY KEY (`session_id`);
 
 --
--- Indexes for table `oc_setting`
+-- Индексы таблицы `oc_setting`
 --
 ALTER TABLE `oc_setting`
   ADD PRIMARY KEY (`setting_id`);
 
 --
--- Indexes for table `oc_shipping_courier`
+-- Индексы таблицы `oc_shipping_courier`
 --
 ALTER TABLE `oc_shipping_courier`
   ADD PRIMARY KEY (`shipping_courier_id`);
 
 --
--- Indexes for table `oc_statistics`
+-- Индексы таблицы `oc_statistics`
 --
 ALTER TABLE `oc_statistics`
   ADD PRIMARY KEY (`statistics_id`);
 
 --
--- Indexes for table `oc_stock_status`
+-- Индексы таблицы `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
   ADD PRIMARY KEY (`stock_status_id`,`language_id`);
 
 --
--- Indexes for table `oc_store`
+-- Индексы таблицы `oc_store`
 --
 ALTER TABLE `oc_store`
   ADD PRIMARY KEY (`store_id`);
 
 --
--- Indexes for table `oc_subscribe`
+-- Индексы таблицы `oc_subscribe`
 --
 ALTER TABLE `oc_subscribe`
   ADD PRIMARY KEY (`subscribe_id`);
 
 --
--- Indexes for table `oc_tax_class`
+-- Индексы таблицы `oc_tax_class`
 --
 ALTER TABLE `oc_tax_class`
   ADD PRIMARY KEY (`tax_class_id`);
 
 --
--- Indexes for table `oc_tax_rate`
+-- Индексы таблицы `oc_tax_rate`
 --
 ALTER TABLE `oc_tax_rate`
   ADD PRIMARY KEY (`tax_rate_id`);
 
 --
--- Indexes for table `oc_tax_rate_to_customer_group`
+-- Индексы таблицы `oc_tax_rate_to_customer_group`
 --
 ALTER TABLE `oc_tax_rate_to_customer_group`
   ADD PRIMARY KEY (`tax_rate_id`,`customer_group_id`);
 
 --
--- Indexes for table `oc_tax_rule`
+-- Индексы таблицы `oc_tax_rule`
 --
 ALTER TABLE `oc_tax_rule`
   ADD PRIMARY KEY (`tax_rule_id`);
 
 --
--- Indexes for table `oc_theme`
+-- Индексы таблицы `oc_theme`
 --
 ALTER TABLE `oc_theme`
   ADD PRIMARY KEY (`theme_id`);
 
 --
--- Indexes for table `oc_translation`
+-- Индексы таблицы `oc_translation`
 --
 ALTER TABLE `oc_translation`
   ADD PRIMARY KEY (`translation_id`);
 
 --
--- Indexes for table `oc_upload`
+-- Индексы таблицы `oc_upload`
 --
 ALTER TABLE `oc_upload`
   ADD PRIMARY KEY (`upload_id`);
 
 --
--- Indexes for table `oc_user`
+-- Индексы таблицы `oc_user`
 --
 ALTER TABLE `oc_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `oc_user_group`
+-- Индексы таблицы `oc_user_group`
 --
 ALTER TABLE `oc_user_group`
   ADD PRIMARY KEY (`user_group_id`);
 
 --
--- Indexes for table `oc_voucher`
+-- Индексы таблицы `oc_voucher`
 --
 ALTER TABLE `oc_voucher`
   ADD PRIMARY KEY (`voucher_id`);
 
 --
--- Indexes for table `oc_voucher_history`
+-- Индексы таблицы `oc_voucher_history`
 --
 ALTER TABLE `oc_voucher_history`
   ADD PRIMARY KEY (`voucher_history_id`);
 
 --
--- Indexes for table `oc_voucher_theme`
+-- Индексы таблицы `oc_voucher_theme`
 --
 ALTER TABLE `oc_voucher_theme`
   ADD PRIMARY KEY (`voucher_theme_id`);
 
 --
--- Indexes for table `oc_voucher_theme_description`
+-- Индексы таблицы `oc_voucher_theme_description`
 --
 ALTER TABLE `oc_voucher_theme_description`
   ADD PRIMARY KEY (`voucher_theme_id`,`language_id`);
 
 --
--- Indexes for table `oc_weight_class`
+-- Индексы таблицы `oc_weight_class`
 --
 ALTER TABLE `oc_weight_class`
   ADD PRIMARY KEY (`weight_class_id`);
 
 --
--- Indexes for table `oc_weight_class_description`
+-- Индексы таблицы `oc_weight_class_description`
 --
 ALTER TABLE `oc_weight_class_description`
   ADD PRIMARY KEY (`weight_class_id`,`language_id`);
 
 --
--- Indexes for table `oc_zone`
+-- Индексы таблицы `oc_zone`
 --
 ALTER TABLE `oc_zone`
   ADD PRIMARY KEY (`zone_id`);
 
 --
--- Indexes for table `oc_zone_to_geo_zone`
+-- Индексы таблицы `oc_zone_to_geo_zone`
 --
 ALTER TABLE `oc_zone_to_geo_zone`
   ADD PRIMARY KEY (`zone_to_geo_zone_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `oc_address`
+-- AUTO_INCREMENT для таблицы `oc_address`
 --
 ALTER TABLE `oc_address`
   MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_api`
+-- AUTO_INCREMENT для таблицы `oc_api`
 --
 ALTER TABLE `oc_api`
   MODIFY `api_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `oc_api_ip`
+-- AUTO_INCREMENT для таблицы `oc_api_ip`
 --
 ALTER TABLE `oc_api_ip`
   MODIFY `api_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `oc_api_session`
+-- AUTO_INCREMENT для таблицы `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
   MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `oc_attribute`
+-- AUTO_INCREMENT для таблицы `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
   MODIFY `attribute_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `oc_attribute_group`
+-- AUTO_INCREMENT для таблицы `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
   MODIFY `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `oc_banner`
+-- AUTO_INCREMENT для таблицы `oc_banner`
 --
 ALTER TABLE `oc_banner`
   MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `oc_banner_image`
+-- AUTO_INCREMENT для таблицы `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
-  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
--- AUTO_INCREMENT for table `oc_bm_author`
+-- AUTO_INCREMENT для таблицы `oc_bm_author`
 --
 ALTER TABLE `oc_bm_author`
   MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `oc_bm_author_description`
+-- AUTO_INCREMENT для таблицы `oc_bm_author_description`
 --
 ALTER TABLE `oc_bm_author_description`
   MODIFY `author_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `oc_bm_author_group`
+-- AUTO_INCREMENT для таблицы `oc_bm_author_group`
 --
 ALTER TABLE `oc_bm_author_group`
   MODIFY `author_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `oc_bm_category`
+-- AUTO_INCREMENT для таблицы `oc_bm_category`
 --
 ALTER TABLE `oc_bm_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `oc_bm_category_description`
+-- AUTO_INCREMENT для таблицы `oc_bm_category_description`
 --
 ALTER TABLE `oc_bm_category_description`
   MODIFY `category_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `oc_bm_post`
+-- AUTO_INCREMENT для таблицы `oc_bm_post`
 --
 ALTER TABLE `oc_bm_post`
   MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `oc_bm_post_description`
+-- AUTO_INCREMENT для таблицы `oc_bm_post_description`
 --
 ALTER TABLE `oc_bm_post_description`
   MODIFY `post_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
--- AUTO_INCREMENT for table `oc_bm_review`
+-- AUTO_INCREMENT для таблицы `oc_bm_review`
 --
 ALTER TABLE `oc_bm_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `oc_cart`
+-- AUTO_INCREMENT для таблицы `oc_cart`
 --
 ALTER TABLE `oc_cart`
   MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `oc_category`
+-- AUTO_INCREMENT для таблицы `oc_category`
 --
 ALTER TABLE `oc_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT for table `oc_country`
+-- AUTO_INCREMENT для таблицы `oc_country`
 --
 ALTER TABLE `oc_country`
   MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
 
 --
--- AUTO_INCREMENT for table `oc_coupon`
+-- AUTO_INCREMENT для таблицы `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
   MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `oc_coupon_history`
+-- AUTO_INCREMENT для таблицы `oc_coupon_history`
 --
 ALTER TABLE `oc_coupon_history`
   MODIFY `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_coupon_product`
+-- AUTO_INCREMENT для таблицы `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
   MODIFY `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_currency`
+-- AUTO_INCREMENT для таблицы `oc_currency`
 --
 ALTER TABLE `oc_currency`
   MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `oc_customer`
+-- AUTO_INCREMENT для таблицы `oc_customer`
 --
 ALTER TABLE `oc_customer`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_customer_activity`
+-- AUTO_INCREMENT для таблицы `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
   MODIFY `customer_activity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_customer_approval`
+-- AUTO_INCREMENT для таблицы `oc_customer_approval`
 --
 ALTER TABLE `oc_customer_approval`
   MODIFY `customer_approval_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_customer_group`
+-- AUTO_INCREMENT для таблицы `oc_customer_group`
 --
 ALTER TABLE `oc_customer_group`
   MODIFY `customer_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `oc_customer_history`
+-- AUTO_INCREMENT для таблицы `oc_customer_history`
 --
 ALTER TABLE `oc_customer_history`
   MODIFY `customer_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_customer_ip`
+-- AUTO_INCREMENT для таблицы `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
   MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_customer_login`
+-- AUTO_INCREMENT для таблицы `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
   MODIFY `customer_login_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_customer_reward`
+-- AUTO_INCREMENT для таблицы `oc_customer_reward`
 --
 ALTER TABLE `oc_customer_reward`
   MODIFY `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_customer_search`
+-- AUTO_INCREMENT для таблицы `oc_customer_search`
 --
 ALTER TABLE `oc_customer_search`
   MODIFY `customer_search_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_customer_transaction`
+-- AUTO_INCREMENT для таблицы `oc_customer_transaction`
 --
 ALTER TABLE `oc_customer_transaction`
   MODIFY `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_custom_field`
+-- AUTO_INCREMENT для таблицы `oc_custom_field`
 --
 ALTER TABLE `oc_custom_field`
   MODIFY `custom_field_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_custom_field_value`
+-- AUTO_INCREMENT для таблицы `oc_custom_field_value`
 --
 ALTER TABLE `oc_custom_field_value`
   MODIFY `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_download`
+-- AUTO_INCREMENT для таблицы `oc_download`
 --
 ALTER TABLE `oc_download`
   MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_d_validator`
+-- AUTO_INCREMENT для таблицы `oc_d_validator`
 --
 ALTER TABLE `oc_d_validator`
   MODIFY `validator_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_event`
+-- AUTO_INCREMENT для таблицы `oc_event`
 --
 ALTER TABLE `oc_event`
   MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 
 --
--- AUTO_INCREMENT for table `oc_extension`
+-- AUTO_INCREMENT для таблицы `oc_extension`
 --
 ALTER TABLE `oc_extension`
   MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT for table `oc_extension_install`
+-- AUTO_INCREMENT для таблицы `oc_extension_install`
 --
 ALTER TABLE `oc_extension_install`
   MODIFY `extension_install_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `oc_extension_path`
+-- AUTO_INCREMENT для таблицы `oc_extension_path`
 --
 ALTER TABLE `oc_extension_path`
   MODIFY `extension_path_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1450;
 
 --
--- AUTO_INCREMENT for table `oc_filter`
+-- AUTO_INCREMENT для таблицы `oc_filter`
 --
 ALTER TABLE `oc_filter`
   MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_filter_group`
+-- AUTO_INCREMENT для таблицы `oc_filter_group`
 --
 ALTER TABLE `oc_filter_group`
   MODIFY `filter_group_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_geo_zone`
+-- AUTO_INCREMENT для таблицы `oc_geo_zone`
 --
 ALTER TABLE `oc_geo_zone`
   MODIFY `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `oc_information`
+-- AUTO_INCREMENT для таблицы `oc_information`
 --
 ALTER TABLE `oc_information`
   MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `oc_language`
+-- AUTO_INCREMENT для таблицы `oc_language`
 --
 ALTER TABLE `oc_language`
   MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `oc_layout`
+-- AUTO_INCREMENT для таблицы `oc_layout`
 --
 ALTER TABLE `oc_layout`
   MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
--- AUTO_INCREMENT for table `oc_layout_module`
+-- AUTO_INCREMENT для таблицы `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
-  MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
--- AUTO_INCREMENT for table `oc_layout_route`
+-- AUTO_INCREMENT для таблицы `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
-  MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT for table `oc_length_class`
+-- AUTO_INCREMENT для таблицы `oc_length_class`
 --
 ALTER TABLE `oc_length_class`
   MODIFY `length_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `oc_location`
+-- AUTO_INCREMENT для таблицы `oc_location`
 --
 ALTER TABLE `oc_location`
   MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_manufacturer`
+-- AUTO_INCREMENT для таблицы `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
   MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `oc_marketing`
+-- AUTO_INCREMENT для таблицы `oc_marketing`
 --
 ALTER TABLE `oc_marketing`
   MODIFY `marketing_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_modification`
+-- AUTO_INCREMENT для таблицы `oc_modification`
 --
 ALTER TABLE `oc_modification`
   MODIFY `modification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `oc_module`
+-- AUTO_INCREMENT для таблицы `oc_module`
 --
 ALTER TABLE `oc_module`
   MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT for table `oc_option`
+-- AUTO_INCREMENT для таблицы `oc_option`
 --
 ALTER TABLE `oc_option`
   MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `oc_option_value`
+-- AUTO_INCREMENT для таблицы `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
   MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT for table `oc_order`
+-- AUTO_INCREMENT для таблицы `oc_order`
 --
 ALTER TABLE `oc_order`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `oc_order_history`
+-- AUTO_INCREMENT для таблицы `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
   MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_order_option`
+-- AUTO_INCREMENT для таблицы `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
   MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_order_product`
+-- AUTO_INCREMENT для таблицы `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
   MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `oc_order_recurring`
+-- AUTO_INCREMENT для таблицы `oc_order_recurring`
 --
 ALTER TABLE `oc_order_recurring`
   MODIFY `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_order_recurring_transaction`
+-- AUTO_INCREMENT для таблицы `oc_order_recurring_transaction`
 --
 ALTER TABLE `oc_order_recurring_transaction`
   MODIFY `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_order_shipment`
+-- AUTO_INCREMENT для таблицы `oc_order_shipment`
 --
 ALTER TABLE `oc_order_shipment`
   MODIFY `order_shipment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_order_status`
+-- AUTO_INCREMENT для таблицы `oc_order_status`
 --
 ALTER TABLE `oc_order_status`
   MODIFY `order_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `oc_order_total`
+-- AUTO_INCREMENT для таблицы `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
   MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
--- AUTO_INCREMENT for table `oc_order_voucher`
+-- AUTO_INCREMENT для таблицы `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
   MODIFY `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_product`
+-- AUTO_INCREMENT для таблицы `oc_product`
 --
 ALTER TABLE `oc_product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT for table `oc_product_discount`
+-- AUTO_INCREMENT для таблицы `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
   MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
 
 --
--- AUTO_INCREMENT for table `oc_product_image`
+-- AUTO_INCREMENT для таблицы `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
   MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2361;
 
 --
--- AUTO_INCREMENT for table `oc_product_option`
+-- AUTO_INCREMENT для таблицы `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
   MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
--- AUTO_INCREMENT for table `oc_product_option_value`
+-- AUTO_INCREMENT для таблицы `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
   MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `oc_product_reward`
+-- AUTO_INCREMENT для таблицы `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
   MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=548;
 
 --
--- AUTO_INCREMENT for table `oc_product_special`
+-- AUTO_INCREMENT для таблицы `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
   MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
 
 --
--- AUTO_INCREMENT for table `oc_recurring`
+-- AUTO_INCREMENT для таблицы `oc_recurring`
 --
 ALTER TABLE `oc_recurring`
   MODIFY `recurring_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_return`
+-- AUTO_INCREMENT для таблицы `oc_return`
 --
 ALTER TABLE `oc_return`
   MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_return_action`
+-- AUTO_INCREMENT для таблицы `oc_return_action`
 --
 ALTER TABLE `oc_return_action`
   MODIFY `return_action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `oc_return_history`
+-- AUTO_INCREMENT для таблицы `oc_return_history`
 --
 ALTER TABLE `oc_return_history`
   MODIFY `return_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_return_reason`
+-- AUTO_INCREMENT для таблицы `oc_return_reason`
 --
 ALTER TABLE `oc_return_reason`
   MODIFY `return_reason_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `oc_return_status`
+-- AUTO_INCREMENT для таблицы `oc_return_status`
 --
 ALTER TABLE `oc_return_status`
   MODIFY `return_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `oc_review`
+-- AUTO_INCREMENT для таблицы `oc_review`
 --
 ALTER TABLE `oc_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_seo_url`
+-- AUTO_INCREMENT для таблицы `oc_seo_url`
 --
 ALTER TABLE `oc_seo_url`
   MODIFY `seo_url_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=844;
 
 --
--- AUTO_INCREMENT for table `oc_setting`
+-- AUTO_INCREMENT для таблицы `oc_setting`
 --
 ALTER TABLE `oc_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2619;
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2877;
 
 --
--- AUTO_INCREMENT for table `oc_statistics`
+-- AUTO_INCREMENT для таблицы `oc_statistics`
 --
 ALTER TABLE `oc_statistics`
   MODIFY `statistics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `oc_stock_status`
+-- AUTO_INCREMENT для таблицы `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
   MODIFY `stock_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `oc_store`
+-- AUTO_INCREMENT для таблицы `oc_store`
 --
 ALTER TABLE `oc_store`
   MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_subscribe`
+-- AUTO_INCREMENT для таблицы `oc_subscribe`
 --
 ALTER TABLE `oc_subscribe`
   MODIFY `subscribe_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `oc_tax_class`
+-- AUTO_INCREMENT для таблицы `oc_tax_class`
 --
 ALTER TABLE `oc_tax_class`
   MODIFY `tax_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `oc_tax_rate`
+-- AUTO_INCREMENT для таблицы `oc_tax_rate`
 --
 ALTER TABLE `oc_tax_rate`
   MODIFY `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
--- AUTO_INCREMENT for table `oc_tax_rule`
+-- AUTO_INCREMENT для таблицы `oc_tax_rule`
 --
 ALTER TABLE `oc_tax_rule`
   MODIFY `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT for table `oc_theme`
+-- AUTO_INCREMENT для таблицы `oc_theme`
 --
 ALTER TABLE `oc_theme`
   MODIFY `theme_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_translation`
+-- AUTO_INCREMENT для таблицы `oc_translation`
 --
 ALTER TABLE `oc_translation`
   MODIFY `translation_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_upload`
+-- AUTO_INCREMENT для таблицы `oc_upload`
 --
 ALTER TABLE `oc_upload`
   MODIFY `upload_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_user`
+-- AUTO_INCREMENT для таблицы `oc_user`
 --
 ALTER TABLE `oc_user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `oc_user_group`
+-- AUTO_INCREMENT для таблицы `oc_user_group`
 --
 ALTER TABLE `oc_user_group`
   MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `oc_voucher`
+-- AUTO_INCREMENT для таблицы `oc_voucher`
 --
 ALTER TABLE `oc_voucher`
   MODIFY `voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_voucher_history`
+-- AUTO_INCREMENT для таблицы `oc_voucher_history`
 --
 ALTER TABLE `oc_voucher_history`
   MODIFY `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oc_voucher_theme`
+-- AUTO_INCREMENT для таблицы `oc_voucher_theme`
 --
 ALTER TABLE `oc_voucher_theme`
   MODIFY `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `oc_weight_class`
+-- AUTO_INCREMENT для таблицы `oc_weight_class`
 --
 ALTER TABLE `oc_weight_class`
   MODIFY `weight_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `oc_zone`
+-- AUTO_INCREMENT для таблицы `oc_zone`
 --
 ALTER TABLE `oc_zone`
   MODIFY `zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4239;
 
 --
--- AUTO_INCREMENT for table `oc_zone_to_geo_zone`
+-- AUTO_INCREMENT для таблицы `oc_zone_to_geo_zone`
 --
 ALTER TABLE `oc_zone_to_geo_zone`
   MODIFY `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;

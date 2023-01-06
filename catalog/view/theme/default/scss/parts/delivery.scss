@@ -1,0 +1,151 @@
+.delivery-info {
+    max-width: 996px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #d0d0d0;
+    padding: 52px 63px;
+
+    @include respond-to(lg) {
+        border: none;
+        padding: 20px;
+    }
+}
+
+.delivery-header {
+    & h2 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        text-transform: uppercase;
+        text-align: left !important;
+        margin-bottom: 64px;
+
+        @include respond-to(lg) {
+            margin-bottom: 0;
+            font-size: 20px !important;
+            line-height: 24px !important;
+        }
+    }
+
+    @include respond-to(lg) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-top: 32px;
+        margin-left: 129px;
+    }
+
+    @include respond-to(md) {
+        margin-left: 100px;
+        margin-top: 24px;
+    }
+
+    @include respond-to(sm) {
+        margin-left: 86px;
+        margin-top: 20px;
+    }
+}
+
+.delivery-block {
+    margin-bottom: 112px;
+    position: relative;
+
+    @include respond-to(lg) {
+        margin-bottom: 26px;
+    }
+}
+
+.delivery-inner {
+    display: flex;
+    align-items: flex-start;
+
+    @include respond-to(lg) {
+        flex-direction: column;
+    }
+}
+
+.delivery-image {
+    margin-right: 38px;
+    margin-bottom: 31px;
+
+    @include respond-to(md) {
+        margin-right: 21px;
+    }
+}
+
+.delivery-icon {
+    width: 96px;
+    height: 96px;
+    background: rgba(0, 168, 222, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    @include respond-to(md) {
+        width: 75px;
+        height: 75px;
+    }
+
+    @include respond-to(sm) {
+        width: 65px;
+        height: 65px;
+    }
+
+    & img {
+        @include respond-to(md) {
+            max-width: 45%;
+        }
+    }
+}
+
+.delivery-description {
+    & ul {
+        & li {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            color: $main;
+            margin-bottom: 46px;
+            position: relative;
+            padding-left: 35px;
+
+            @include respond-to(md) {
+                margin-bottom: 30px;
+            }
+
+            &:before {
+                content: " ";
+                display: block;
+                width: 19px;
+                height: 19px;
+                box-shadow: 0px 1px 8px rgba(0, 168, 222, 0.2);
+                border: 2px solid #fff;
+                background: $blue;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            &:after {
+                content: " ";
+                display: block;
+                width: 13px;
+                height: 13px;
+                border: 3px solid #fff;
+                background: #00a8de;
+                border-radius: 50%;
+                position: absolute;
+                left: 3px;
+                top: 3px;
+            }
+        }
+    }
+}
+
+.delivery-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

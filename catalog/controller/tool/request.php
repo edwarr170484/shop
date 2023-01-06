@@ -9,7 +9,7 @@ class ControllerToolRequest extends Controller {
             $message .= '    <title>Запрос КП</title>' . "\n";
             $message .= '    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">' . "\n";
             $message .= '  </head>' . "\n";
-            $message .= '  <body><b>Имя:</b> ' . $this->request->post['name'] . '<br/><b>Номер телефона:</b> ' . $this->request->post['phone'] . '<br/><b>Email:</b> ' . $this->request->post['email'] . '</body>' . "\n";
+            $message .= '  <body><b>Имя:</b> ' . $this->request->post['name'] . '<br/><b>Номер телефона:</b> ' . $this->request->post['phone'] . '<br/><b>Email:</b> ' . $this->request->post['email'] . '<br/><b>Сообщение:</b>' . $this->request->post['message'] . '</body>' . "\n";
             $message .= '</html>' . "\n";
 
             $mail = new Mail($this->config->get('config_mail_engine'));

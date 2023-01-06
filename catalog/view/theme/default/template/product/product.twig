@@ -217,12 +217,6 @@
             <div class="form-group product-buttons">
               <input type="hidden" name="product_id" value="{{ product_id }}" />
               <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>
-              <button type="button" data-toggle="tooltip" class="btn btn-default" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product_id }}');">
-                <svg width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M35.8811 1.83204L35.8814 1.83211C41.2652 3.65557 44.2704 9.76047 42.4849 15.5285C42.087 16.8077 40.7662 18.7827 38.819 21.1171C36.9062 23.4104 34.4934 25.9302 32.0595 28.2746C29.626 30.6185 27.1881 32.7712 25.2311 34.3319C24.2505 35.1138 23.4059 35.7349 22.7515 36.1554C22.423 36.3665 22.1609 36.515 21.9655 36.6071C21.8944 36.6407 21.8426 36.6616 21.8079 36.6745C21.7742 36.6618 21.7246 36.6413 21.6568 36.609C21.4651 36.5175 21.2078 36.3696 20.8849 36.1587C20.2416 35.7385 19.4123 35.1174 18.4498 34.335C16.529 32.7735 14.1389 30.6195 11.7531 28.2744C9.36704 25.929 7.00147 23.4085 5.1238 21.1159C3.21375 18.7837 1.91177 16.8085 1.51201 15.5282C-0.266666 9.77485 2.73643 3.66832 8.12896 1.83177C13.4393 0.0323406 19.2025 3.01475 21.0551 8.62322L22.0041 11.4962L22.954 8.62354C24.807 3.02027 30.5712 0.0322436 35.8811 1.83204Z" stroke="#507998" stroke-width="2"/>
-</svg>
-
-              </button>
             </div>
             {% if minimum > 1 %}
               <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_minimum }}</div>
