@@ -34,7 +34,7 @@
     <div id="content" class="{{ class }}">
       {{ content_top }}
       <form action="{{ action }}" method="post" enctype="multipart/form-data" id="cartForm" name="cartForm">
-        <div class="table-responsive">
+        <div class="table-responsive desktop-table">
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -53,7 +53,7 @@
                     <div class="cart-product-image">
                       {% if product.thumb %} 
                         <a href="{{ product.href }}">
-                          <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" />
+                          <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid" />
                         </a> 
                       {% endif %}
                     </div>
@@ -98,6 +98,59 @@
             </div>
           </div>
         </div>
+        <div class="mobile-table">
+          {% for product in products %}
+            <div class="cart-cell">
+              <div class="d-flex justify-content-end">
+                <button type="button" data-toggle="tooltip" title="{{ button_remove }}" onclick="cart.remove('{{ product.cart_id }}');" class="cart-remove">
+                  <img src="/catalog/view/theme/default/image/checkout/delete.svg" alt="" />
+                </button>
+              </div>
+              <div class="cart-product">
+                <div class="cart-product-image">
+                  {% if product.thumb %} 
+                    <a href="{{ product.href }}">
+                      <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid" />
+                    </a> 
+                  {% endif %}
+                </div>
+                <div class="cart-product-info">
+                  <div><a href="{{ product.href }}">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}</div>
+                  <div class="product-price">
+                    <span>{{ column_price }}</span>
+                    <span>{{ product.price }}</span>
+                  </div>
+                   <div class="input-group btn-block" style="max-width: 108px;">
+                    <div class="input-number w-100">
+                      <button type="button" class="input-down" onclick="inputDown($(this));document.cartForm.submit()">-</button>
+                      <input type="text" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" id="input-quantity" size="1" class="form-control" />
+                      <button type="button" class="input-up" onclick="inputUp($(this));document.cartForm.submit()">+</button>
+                    </div>
+                  </div>
+                  <span class="product-model">Артикул:&nbsp;{{ product.model }}</span>
+                </div>
+              </div>
+              <div class="product-total">
+                <span>{{ column_total }}</span>
+                <span>{{ product.total }}</span>
+              </div>
+            </div>
+          {% endfor %}
+
+          <div class="totals">
+            {% for total in totals %}
+              <div class="total">
+                <span>{{ total.title }}:</span>
+                <span class="total-price">{{ total.text }}</span>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="buttons">
+            <a href="{{ checkout }}" class="btn btn-primary">{{ button_checkout }}</a>
+            <a href="{{ continue }}" class="btn btn-default">{{ button_shopping }}</a>
+          </div>
+        </div>
+
       </form>
       {{ content_bottom }}</div>
     {{ column_right }}</div>
