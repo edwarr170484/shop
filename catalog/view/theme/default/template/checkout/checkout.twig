@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 offset-md-1">
+                <div class="col-12 col-md-7 col-lg-6 offset-lg-1">
                     <div class="checkout-cart">
                         <div class="checkout-cart-header">
                             Ваш заказ
@@ -96,26 +96,22 @@
                                 </div>
                             {% endif %}
                             <div class="checout-shopinfo">
-                                <a href="{{ home }}">{{ hostname }}</a>
+                                <a href="{{ home }}" class="hostname">{{ hostname }}</a>
                                 <a href="tel:{{telephone}}" class="phone">{{ telephone }}</a>
                             </div>
                         </div>
                         {{ checkout_products }}
-                        <div class="checkout-delivery">
-                            <div class="checkout-cart-header">Доставка:</div>
-                            <div class="checkout-cart-info">Расчет будет произведен после звонка менеджера</div>
-                        </div>
                     </div>
-                    <div class="checkout-policy">
-                        <div class="custom-checkbox required">
-                            <input type="checkbox" />
-                        </div>
-                        <div>
-                            Соглашаюсь с Политикой конфиденциальностии даю согласие на обработке своих персональных данных
-                        </div>
+                    <div class="custom-checkbox-group checkout-terms">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="gdpr" id="gdpr" value="1" required>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="gdpr">Соглашаюсь с Политикой конфиденциальностии даю согласие на обработку своих персональных данных</label>
                     </div>
                     <div class="checkout-buttons">
-                        <button class="" type="button" onclick="window.location.href='{{ home }}'">Вернутся в каталог</button>
+                        {{ payment }} 
+                        <button class="btn btn-default" type="button" onclick="window.location.href='{{ home }}'">Вернутся в каталог</button>
                     </div>
                 </div>
             </div>

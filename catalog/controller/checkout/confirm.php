@@ -265,6 +265,8 @@ class ControllerCheckoutConfirm extends Controller {
 
 			$this->load->model('checkout/order');
 
+			$this->load->model('tool/image');
+
 			$this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
 
 			$this->load->model('tool/upload');
@@ -315,9 +317,16 @@ class ControllerCheckoutConfirm extends Controller {
 					}
 				}
 
+				if ($product['image']) {
+					$image = $this->model_tool_image->resize($product['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_cart_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_cart_height'));
+				} else {
+					$image = '';
+				}
+
 				$data['products'][] = array(
 					'cart_id'    => $product['cart_id'],
 					'product_id' => $product['product_id'],
+					'thumb'     => $image,
 					'name'       => $product['name'],
 					'model'      => $product['model'],
 					'option'     => $option_data,

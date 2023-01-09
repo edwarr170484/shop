@@ -1,36 +1,41 @@
-<div class="table-responsive">
-  <table class="table table-bordered table-hover">
-    <tbody>
-      {% for product in products %}
-        <tr>
-          <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a> {% for option in product.option %} <br />
-            &nbsp;<small> - {{ option.name }}: {{ option.value }}</small> {% endfor %}
-            {% if product.recurring %} <br />
-            <span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}</td>
-          <td class="text-left">{{ product.model }}</td>
-          <td class="text-right">{{ product.quantity }}</td>
-          <td class="text-right">{{ product.price }}</td>
-          <td class="text-right">{{ product.total }}</td>
-        </tr>
-      {% endfor %}
-      {% for voucher in vouchers %}
-        <tr>
-          <td class="text-left">{{ voucher.description }}</td>
-          <td class="text-left"></td>
-          <td class="text-right">1</td>
-          <td class="text-right">{{ voucher.amount }}</td>
-          <td class="text-right">{{ voucher.amount }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-    <tfoot>
-      {% for total in totals %}
-        <tr>
-          <td colspan="4" class="text-right"><strong>{{ total.title }}:</strong></td>
-          <td class="text-right">{{ total.text }}</td>
-        </tr>
-      {% endfor %}
-    </tfoot>
-  </table>
+
+<div class="checkout-products">
+  {% for product in products %}
+    <div class="checkout-product">
+      <div class="checkout-image">
+        {% if product.thumb %} 
+          <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid" />
+        {% endif %}
+      </div>
+      <div class="checkout-info">
+        <div class="product-name"><a href="{{ product.href }}">{{ product.name }}</a></div>
+        <div class="product-price">
+          <div class="product-count">
+            <div class="product-count-value">
+              <span>Цена:</span>
+              <span>{{ product.price }}</span>
+            </div>
+            <div class="product-count-value">
+              <span>Цена:</span>
+              <span>{{ product.quantity }}</span>
+            </div>
+          </div>
+          <div class="product-total">
+            <span>Итого:&nbsp;</span>
+            <span>{{ product.total }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  {% for total in totals %}
+    <div class="total">
+      <span>{{ total.title }}:</span>
+      <span class="total-price">{{ total.text }}</span>
+    </div>
+  {% endfor %}
+  <div class="checkout-delivery">
+    <div class="checkout-delivery-header">Доставка:</div>
+    <div class="checkout-delivery-info">Расчет будет произведен после звонка менеджера</div>
+  </div>
 </div>
-{{ payment }} 

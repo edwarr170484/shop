@@ -65,6 +65,7 @@ class ControllerCheckoutCheckout extends Controller {
 
 		$data['shipping_required'] = $this->cart->hasShipping();
 		$data['heading_title'] = $this->language->get('heading_title');
+		$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
 
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
