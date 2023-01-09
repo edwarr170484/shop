@@ -20,6 +20,7 @@ class ControllerCheckoutShippingMethod extends Controller {
 					if ($quote) {
 						$method_data[$result['code']] = array(
 							'title'      => $quote['title'],
+							'description' => $quote['comment'],
 							'quote'      => $quote['quote'],
 							'sort_order' => $quote['sort_order'],
 							'error'      => $quote['error']

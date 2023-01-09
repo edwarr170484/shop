@@ -1,6 +1,6 @@
 <?php
 
-$_['heading_title'] = 'HutkiGrosh';
+$_['heading_title'] = 'Базналичный расчет';
 
 $_['text_hutkigrosh'] = '<img src="view/image/payment/hgrosh.png" alt="Расчёт (ЕРИП)" title="Расчёт (ЕРИП)" style="border: 1px solid #EEEEEE;" />';
 $_['text_success'] = 'Настройки модуля обновлены!';

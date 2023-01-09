@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Янв 06 2023 г., 22:52
--- Версия сервера: 10.4.24-MariaDB
--- Версия PHP: 7.4.28
+-- Host: 127.0.0.1
+-- Generation Time: Jan 09, 2023 at 10:54 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `shop`
+-- Database: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_address`
+-- Table structure for table `oc_address`
 --
 
 CREATE TABLE `oc_address` (
@@ -45,7 +45,7 @@ CREATE TABLE `oc_address` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api`
+-- Table structure for table `oc_api`
 --
 
 CREATE TABLE `oc_api` (
@@ -58,7 +58,7 @@ CREATE TABLE `oc_api` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_api`
+-- Dumping data for table `oc_api`
 --
 
 INSERT INTO `oc_api` (`api_id`, `username`, `key`, `status`, `date_added`, `date_modified`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `oc_api` (`api_id`, `username`, `key`, `status`, `date_added`, `date
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api_ip`
+-- Table structure for table `oc_api_ip`
 --
 
 CREATE TABLE `oc_api_ip` (
@@ -78,7 +78,7 @@ CREATE TABLE `oc_api_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_api_ip`
+-- Dumping data for table `oc_api_ip`
 --
 
 INSERT INTO `oc_api_ip` (`api_ip_id`, `api_id`, `ip`) VALUES
@@ -87,7 +87,7 @@ INSERT INTO `oc_api_ip` (`api_ip_id`, `api_id`, `ip`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api_session`
+-- Table structure for table `oc_api_session`
 --
 
 CREATE TABLE `oc_api_session` (
@@ -100,16 +100,17 @@ CREATE TABLE `oc_api_session` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_api_session`
+-- Dumping data for table `oc_api_session`
 --
 
 INSERT INTO `oc_api_session` (`api_session_id`, `api_id`, `session_id`, `ip`, `date_added`, `date_modified`) VALUES
-(1, 2, '564a9c65ee6a3da9f28a6f41d0', '127.0.0.1', '2023-01-06 00:16:01', '2023-01-06 00:16:01');
+(1, 2, '564a9c65ee6a3da9f28a6f41d0', '127.0.0.1', '2023-01-06 00:16:01', '2023-01-06 00:16:01'),
+(2, 2, '7998fcd17f0449d48c309fab96', '127.0.0.1', '2023-01-09 12:53:12', '2023-01-09 12:53:12');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute`
+-- Table structure for table `oc_attribute`
 --
 
 CREATE TABLE `oc_attribute` (
@@ -119,7 +120,7 @@ CREATE TABLE `oc_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute`
+-- Dumping data for table `oc_attribute`
 --
 
 INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
@@ -138,7 +139,7 @@ INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_description`
+-- Table structure for table `oc_attribute_description`
 --
 
 CREATE TABLE `oc_attribute_description` (
@@ -148,7 +149,7 @@ CREATE TABLE `oc_attribute_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_description`
+-- Dumping data for table `oc_attribute_description`
 --
 
 INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
@@ -178,7 +179,7 @@ INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) V
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_group`
+-- Table structure for table `oc_attribute_group`
 --
 
 CREATE TABLE `oc_attribute_group` (
@@ -187,7 +188,7 @@ CREATE TABLE `oc_attribute_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_group`
+-- Dumping data for table `oc_attribute_group`
 --
 
 INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
@@ -199,7 +200,7 @@ INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_group_description`
+-- Table structure for table `oc_attribute_group_description`
 --
 
 CREATE TABLE `oc_attribute_group_description` (
@@ -209,7 +210,7 @@ CREATE TABLE `oc_attribute_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_group_description`
+-- Dumping data for table `oc_attribute_group_description`
 --
 
 INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
@@ -225,7 +226,7 @@ INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_banner`
+-- Table structure for table `oc_banner`
 --
 
 CREATE TABLE `oc_banner` (
@@ -235,7 +236,7 @@ CREATE TABLE `oc_banner` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_banner`
+-- Dumping data for table `oc_banner`
 --
 
 INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
@@ -246,7 +247,7 @@ INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_banner_image`
+-- Table structure for table `oc_banner_image`
 --
 
 CREATE TABLE `oc_banner_image` (
@@ -260,7 +261,7 @@ CREATE TABLE `oc_banner_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_banner_image`
+-- Dumping data for table `oc_banner_image`
 --
 
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `title`, `link`, `image`, `sort_order`) VALUES
@@ -282,7 +283,7 @@ INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `t
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author`
+-- Table structure for table `oc_bm_author`
 --
 
 CREATE TABLE `oc_bm_author` (
@@ -294,7 +295,7 @@ CREATE TABLE `oc_bm_author` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author`
+-- Dumping data for table `oc_bm_author`
 --
 
 INSERT INTO `oc_bm_author` (`author_id`, `user_id`, `author_group_id`, `custom`, `setting`) VALUES
@@ -303,7 +304,7 @@ INSERT INTO `oc_bm_author` (`author_id`, `user_id`, `author_group_id`, `custom`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author_description`
+-- Table structure for table `oc_bm_author_description`
 --
 
 CREATE TABLE `oc_bm_author_description` (
@@ -319,7 +320,7 @@ CREATE TABLE `oc_bm_author_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author_description`
+-- Dumping data for table `oc_bm_author_description`
 --
 
 INSERT INTO `oc_bm_author_description` (`author_id`, `language_id`, `name`, `description`, `short_description`, `meta_title`, `meta_description`, `meta_keyword`, `author_description_id`) VALUES
@@ -328,7 +329,7 @@ INSERT INTO `oc_bm_author_description` (`author_id`, `language_id`, `name`, `des
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author_group`
+-- Table structure for table `oc_bm_author_group`
 --
 
 CREATE TABLE `oc_bm_author_group` (
@@ -338,7 +339,7 @@ CREATE TABLE `oc_bm_author_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author_group`
+-- Dumping data for table `oc_bm_author_group`
 --
 
 INSERT INTO `oc_bm_author_group` (`author_group_id`, `name`, `permission`) VALUES
@@ -350,7 +351,7 @@ INSERT INTO `oc_bm_author_group` (`author_group_id`, `name`, `permission`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category`
+-- Table structure for table `oc_bm_category`
 --
 
 CREATE TABLE `oc_bm_category` (
@@ -370,7 +371,7 @@ CREATE TABLE `oc_bm_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category`
+-- Dumping data for table `oc_bm_category`
 --
 
 INSERT INTO `oc_bm_category` (`category_id`, `parent_id`, `sort_order`, `image`, `status`, `limit_access_user`, `limit_users`, `limit_access_user_group`, `limit_user_groups`, `custom`, `setting`, `date_added`, `date_modified`) VALUES
@@ -383,7 +384,7 @@ INSERT INTO `oc_bm_category` (`category_id`, `parent_id`, `sort_order`, `image`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_description`
+-- Table structure for table `oc_bm_category_description`
 --
 
 CREATE TABLE `oc_bm_category_description` (
@@ -399,7 +400,7 @@ CREATE TABLE `oc_bm_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_description`
+-- Dumping data for table `oc_bm_category_description`
 --
 
 INSERT INTO `oc_bm_category_description` (`category_description_id`, `category_id`, `language_id`, `title`, `short_description`, `description`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
@@ -412,7 +413,7 @@ INSERT INTO `oc_bm_category_description` (`category_description_id`, `category_i
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_path`
+-- Table structure for table `oc_bm_category_path`
 --
 
 CREATE TABLE `oc_bm_category_path` (
@@ -422,7 +423,7 @@ CREATE TABLE `oc_bm_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_path`
+-- Dumping data for table `oc_bm_category_path`
 --
 
 INSERT INTO `oc_bm_category_path` (`category_id`, `path_id`, `level`) VALUES
@@ -435,7 +436,7 @@ INSERT INTO `oc_bm_category_path` (`category_id`, `path_id`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_to_layout`
+-- Table structure for table `oc_bm_category_to_layout`
 --
 
 CREATE TABLE `oc_bm_category_to_layout` (
@@ -445,7 +446,7 @@ CREATE TABLE `oc_bm_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_to_layout`
+-- Dumping data for table `oc_bm_category_to_layout`
 --
 
 INSERT INTO `oc_bm_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
@@ -458,7 +459,7 @@ INSERT INTO `oc_bm_category_to_layout` (`category_id`, `store_id`, `layout_id`) 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_to_store`
+-- Table structure for table `oc_bm_category_to_store`
 --
 
 CREATE TABLE `oc_bm_category_to_store` (
@@ -467,7 +468,7 @@ CREATE TABLE `oc_bm_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_to_store`
+-- Dumping data for table `oc_bm_category_to_store`
 --
 
 INSERT INTO `oc_bm_category_to_store` (`category_id`, `store_id`) VALUES
@@ -480,7 +481,7 @@ INSERT INTO `oc_bm_category_to_store` (`category_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post`
+-- Table structure for table `oc_bm_post`
 --
 
 CREATE TABLE `oc_bm_post` (
@@ -505,7 +506,7 @@ CREATE TABLE `oc_bm_post` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post`
+-- Dumping data for table `oc_bm_post`
 --
 
 INSERT INTO `oc_bm_post` (`post_id`, `user_id`, `image`, `image_title`, `image_alt`, `review_display`, `images_review`, `viewed`, `status`, `limit_access_user`, `limit_users`, `limit_access_user_group`, `limit_user_groups`, `custom`, `setting`, `date_added`, `date_published`, `date_modified`) VALUES
@@ -523,7 +524,7 @@ INSERT INTO `oc_bm_post` (`post_id`, `user_id`, `image`, `image_title`, `image_a
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_description`
+-- Table structure for table `oc_bm_post_description`
 --
 
 CREATE TABLE `oc_bm_post_description` (
@@ -540,7 +541,7 @@ CREATE TABLE `oc_bm_post_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_description`
+-- Dumping data for table `oc_bm_post_description`
 --
 
 INSERT INTO `oc_bm_post_description` (`post_description_id`, `post_id`, `language_id`, `title`, `short_description`, `description`, `meta_title`, `meta_description`, `meta_keyword`, `tag`) VALUES
@@ -558,7 +559,7 @@ INSERT INTO `oc_bm_post_description` (`post_description_id`, `post_id`, `languag
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_related`
+-- Table structure for table `oc_bm_post_related`
 --
 
 CREATE TABLE `oc_bm_post_related` (
@@ -567,7 +568,7 @@ CREATE TABLE `oc_bm_post_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_related`
+-- Dumping data for table `oc_bm_post_related`
 --
 
 INSERT INTO `oc_bm_post_related` (`post_id`, `post_related_id`) VALUES
@@ -597,7 +598,7 @@ INSERT INTO `oc_bm_post_related` (`post_id`, `post_related_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_category`
+-- Table structure for table `oc_bm_post_to_category`
 --
 
 CREATE TABLE `oc_bm_post_to_category` (
@@ -606,7 +607,7 @@ CREATE TABLE `oc_bm_post_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_category`
+-- Dumping data for table `oc_bm_post_to_category`
 --
 
 INSERT INTO `oc_bm_post_to_category` (`post_id`, `category_id`) VALUES
@@ -624,7 +625,7 @@ INSERT INTO `oc_bm_post_to_category` (`post_id`, `category_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_layout`
+-- Table structure for table `oc_bm_post_to_layout`
 --
 
 CREATE TABLE `oc_bm_post_to_layout` (
@@ -634,7 +635,7 @@ CREATE TABLE `oc_bm_post_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_layout`
+-- Dumping data for table `oc_bm_post_to_layout`
 --
 
 INSERT INTO `oc_bm_post_to_layout` (`post_id`, `store_id`, `layout_id`) VALUES
@@ -653,7 +654,7 @@ INSERT INTO `oc_bm_post_to_layout` (`post_id`, `store_id`, `layout_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_product`
+-- Table structure for table `oc_bm_post_to_product`
 --
 
 CREATE TABLE `oc_bm_post_to_product` (
@@ -662,7 +663,7 @@ CREATE TABLE `oc_bm_post_to_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_product`
+-- Dumping data for table `oc_bm_post_to_product`
 --
 
 INSERT INTO `oc_bm_post_to_product` (`post_id`, `product_id`) VALUES
@@ -690,7 +691,7 @@ INSERT INTO `oc_bm_post_to_product` (`post_id`, `product_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_store`
+-- Table structure for table `oc_bm_post_to_store`
 --
 
 CREATE TABLE `oc_bm_post_to_store` (
@@ -699,7 +700,7 @@ CREATE TABLE `oc_bm_post_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_store`
+-- Dumping data for table `oc_bm_post_to_store`
 --
 
 INSERT INTO `oc_bm_post_to_store` (`post_id`, `store_id`) VALUES
@@ -718,7 +719,7 @@ INSERT INTO `oc_bm_post_to_store` (`post_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_video`
+-- Table structure for table `oc_bm_post_video`
 --
 
 CREATE TABLE `oc_bm_post_video` (
@@ -733,7 +734,7 @@ CREATE TABLE `oc_bm_post_video` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_review`
+-- Table structure for table `oc_bm_review`
 --
 
 CREATE TABLE `oc_bm_review` (
@@ -753,7 +754,7 @@ CREATE TABLE `oc_bm_review` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_review`
+-- Dumping data for table `oc_bm_review`
 --
 
 INSERT INTO `oc_bm_review` (`review_id`, `post_id`, `reply_to_review_id`, `language_id`, `customer_id`, `guest_email`, `image`, `author`, `description`, `rating`, `status`, `date_added`, `date_modified`) VALUES
@@ -769,7 +770,7 @@ INSERT INTO `oc_bm_review` (`review_id`, `post_id`, `reply_to_review_id`, `langu
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_review_to_image`
+-- Table structure for table `oc_bm_review_to_image`
 --
 
 CREATE TABLE `oc_bm_review_to_image` (
@@ -780,7 +781,7 @@ CREATE TABLE `oc_bm_review_to_image` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_cart`
+-- Table structure for table `oc_cart`
 --
 
 CREATE TABLE `oc_cart` (
@@ -795,10 +796,17 @@ CREATE TABLE `oc_cart` (
   `date_added` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `oc_cart`
+--
+
+INSERT INTO `oc_cart` (`cart_id`, `api_id`, `customer_id`, `session_id`, `product_id`, `recurring_id`, `option`, `quantity`, `date_added`) VALUES
+(21, 0, 0, '385ecb06cdec9a1d2236ecdce7', 41, 0, '[]', 1, '2023-01-09 12:49:07');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category`
+-- Table structure for table `oc_category`
 --
 
 CREATE TABLE `oc_category` (
@@ -814,7 +822,7 @@ CREATE TABLE `oc_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category`
+-- Dumping data for table `oc_category`
 --
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
@@ -846,7 +854,7 @@ INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_description`
+-- Table structure for table `oc_category_description`
 --
 
 CREATE TABLE `oc_category_description` (
@@ -860,7 +868,7 @@ CREATE TABLE `oc_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_description`
+-- Dumping data for table `oc_category_description`
 --
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
@@ -916,7 +924,7 @@ INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `de
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_filter`
+-- Table structure for table `oc_category_filter`
 --
 
 CREATE TABLE `oc_category_filter` (
@@ -927,7 +935,7 @@ CREATE TABLE `oc_category_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_path`
+-- Table structure for table `oc_category_path`
 --
 
 CREATE TABLE `oc_category_path` (
@@ -937,7 +945,7 @@ CREATE TABLE `oc_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_path`
+-- Dumping data for table `oc_category_path`
 --
 
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
@@ -985,7 +993,7 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_to_layout`
+-- Table structure for table `oc_category_to_layout`
 --
 
 CREATE TABLE `oc_category_to_layout` (
@@ -997,7 +1005,7 @@ CREATE TABLE `oc_category_to_layout` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_to_store`
+-- Table structure for table `oc_category_to_store`
 --
 
 CREATE TABLE `oc_category_to_store` (
@@ -1006,7 +1014,7 @@ CREATE TABLE `oc_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_to_store`
+-- Dumping data for table `oc_category_to_store`
 --
 
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
@@ -1038,7 +1046,7 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_country`
+-- Table structure for table `oc_country`
 --
 
 CREATE TABLE `oc_country` (
@@ -1052,7 +1060,7 @@ CREATE TABLE `oc_country` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_country`
+-- Dumping data for table `oc_country`
 --
 
 INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
@@ -1313,7 +1321,7 @@ INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon`
+-- Table structure for table `oc_coupon`
 --
 
 CREATE TABLE `oc_coupon` (
@@ -1334,7 +1342,7 @@ CREATE TABLE `oc_coupon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_coupon`
+-- Dumping data for table `oc_coupon`
 --
 
 INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
@@ -1345,7 +1353,7 @@ INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logge
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_category`
+-- Table structure for table `oc_coupon_category`
 --
 
 CREATE TABLE `oc_coupon_category` (
@@ -1356,7 +1364,7 @@ CREATE TABLE `oc_coupon_category` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_history`
+-- Table structure for table `oc_coupon_history`
 --
 
 CREATE TABLE `oc_coupon_history` (
@@ -1371,7 +1379,7 @@ CREATE TABLE `oc_coupon_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_product`
+-- Table structure for table `oc_coupon_product`
 --
 
 CREATE TABLE `oc_coupon_product` (
@@ -1383,7 +1391,7 @@ CREATE TABLE `oc_coupon_product` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_currency`
+-- Table structure for table `oc_currency`
 --
 
 CREATE TABLE `oc_currency` (
@@ -1399,16 +1407,16 @@ CREATE TABLE `oc_currency` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_currency`
+-- Dumping data for table `oc_currency`
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(4, 'Рубль', 'BYN', '', ' BYN', '0', 1.00000000, 1, '2023-01-06 20:12:38');
+(4, 'Рубль', 'BYN', '', ' BYN', '0', 1.00000000, 1, '2023-01-09 08:16:33');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer`
+-- Table structure for table `oc_customer`
 --
 
 CREATE TABLE `oc_customer` (
@@ -1440,7 +1448,7 @@ CREATE TABLE `oc_customer` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_activity`
+-- Table structure for table `oc_customer_activity`
 --
 
 CREATE TABLE `oc_customer_activity` (
@@ -1455,7 +1463,7 @@ CREATE TABLE `oc_customer_activity` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_affiliate`
+-- Table structure for table `oc_customer_affiliate`
 --
 
 CREATE TABLE `oc_customer_affiliate` (
@@ -1481,7 +1489,7 @@ CREATE TABLE `oc_customer_affiliate` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_approval`
+-- Table structure for table `oc_customer_approval`
 --
 
 CREATE TABLE `oc_customer_approval` (
@@ -1494,7 +1502,7 @@ CREATE TABLE `oc_customer_approval` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_group`
+-- Table structure for table `oc_customer_group`
 --
 
 CREATE TABLE `oc_customer_group` (
@@ -1504,7 +1512,7 @@ CREATE TABLE `oc_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_customer_group`
+-- Dumping data for table `oc_customer_group`
 --
 
 INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) VALUES
@@ -1514,7 +1522,7 @@ INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_group_description`
+-- Table structure for table `oc_customer_group_description`
 --
 
 CREATE TABLE `oc_customer_group_description` (
@@ -1525,7 +1533,7 @@ CREATE TABLE `oc_customer_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_customer_group_description`
+-- Dumping data for table `oc_customer_group_description`
 --
 
 INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
@@ -1535,7 +1543,7 @@ INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_history`
+-- Table structure for table `oc_customer_history`
 --
 
 CREATE TABLE `oc_customer_history` (
@@ -1548,7 +1556,7 @@ CREATE TABLE `oc_customer_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_ip`
+-- Table structure for table `oc_customer_ip`
 --
 
 CREATE TABLE `oc_customer_ip` (
@@ -1561,7 +1569,7 @@ CREATE TABLE `oc_customer_ip` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_login`
+-- Table structure for table `oc_customer_login`
 --
 
 CREATE TABLE `oc_customer_login` (
@@ -1576,7 +1584,7 @@ CREATE TABLE `oc_customer_login` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_online`
+-- Table structure for table `oc_customer_online`
 --
 
 CREATE TABLE `oc_customer_online` (
@@ -1590,7 +1598,7 @@ CREATE TABLE `oc_customer_online` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_reward`
+-- Table structure for table `oc_customer_reward`
 --
 
 CREATE TABLE `oc_customer_reward` (
@@ -1605,7 +1613,7 @@ CREATE TABLE `oc_customer_reward` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_search`
+-- Table structure for table `oc_customer_search`
 --
 
 CREATE TABLE `oc_customer_search` (
@@ -1625,7 +1633,7 @@ CREATE TABLE `oc_customer_search` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_transaction`
+-- Table structure for table `oc_customer_transaction`
 --
 
 CREATE TABLE `oc_customer_transaction` (
@@ -1640,7 +1648,7 @@ CREATE TABLE `oc_customer_transaction` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_wishlist`
+-- Table structure for table `oc_customer_wishlist`
 --
 
 CREATE TABLE `oc_customer_wishlist` (
@@ -1652,7 +1660,7 @@ CREATE TABLE `oc_customer_wishlist` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field`
+-- Table structure for table `oc_custom_field`
 --
 
 CREATE TABLE `oc_custom_field` (
@@ -1668,7 +1676,7 @@ CREATE TABLE `oc_custom_field` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_customer_group`
+-- Table structure for table `oc_custom_field_customer_group`
 --
 
 CREATE TABLE `oc_custom_field_customer_group` (
@@ -1680,7 +1688,7 @@ CREATE TABLE `oc_custom_field_customer_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_description`
+-- Table structure for table `oc_custom_field_description`
 --
 
 CREATE TABLE `oc_custom_field_description` (
@@ -1692,7 +1700,7 @@ CREATE TABLE `oc_custom_field_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_value`
+-- Table structure for table `oc_custom_field_value`
 --
 
 CREATE TABLE `oc_custom_field_value` (
@@ -1704,7 +1712,7 @@ CREATE TABLE `oc_custom_field_value` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_value_description`
+-- Table structure for table `oc_custom_field_value_description`
 --
 
 CREATE TABLE `oc_custom_field_value_description` (
@@ -1717,7 +1725,7 @@ CREATE TABLE `oc_custom_field_value_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_download`
+-- Table structure for table `oc_download`
 --
 
 CREATE TABLE `oc_download` (
@@ -1730,7 +1738,7 @@ CREATE TABLE `oc_download` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_download_description`
+-- Table structure for table `oc_download_description`
 --
 
 CREATE TABLE `oc_download_description` (
@@ -1742,7 +1750,7 @@ CREATE TABLE `oc_download_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_d_validator`
+-- Table structure for table `oc_d_validator`
 --
 
 CREATE TABLE `oc_d_validator` (
@@ -1755,7 +1763,7 @@ CREATE TABLE `oc_d_validator` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_event`
+-- Table structure for table `oc_event`
 --
 
 CREATE TABLE `oc_event` (
@@ -1768,7 +1776,7 @@ CREATE TABLE `oc_event` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_event`
+-- Dumping data for table `oc_event`
 --
 
 INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
@@ -1852,7 +1860,7 @@ INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension`
+-- Table structure for table `oc_extension`
 --
 
 CREATE TABLE `oc_extension` (
@@ -1862,7 +1870,7 @@ CREATE TABLE `oc_extension` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension`
+-- Dumping data for table `oc_extension`
 --
 
 INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
@@ -1899,12 +1907,13 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 (41, 'report', 'customer_reward'),
 (42, 'module', 'd_blog_module'),
 (43, 'payment', 'hutkigrosh'),
-(44, 'module', 'html');
+(44, 'module', 'html'),
+(49, 'shipping', 'citylink');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension_install`
+-- Table structure for table `oc_extension_install`
 --
 
 CREATE TABLE `oc_extension_install` (
@@ -1915,7 +1924,7 @@ CREATE TABLE `oc_extension_install` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension_install`
+-- Dumping data for table `oc_extension_install`
 --
 
 INSERT INTO `oc_extension_install` (`extension_install_id`, `extension_download_id`, `filename`, `date_added`) VALUES
@@ -1926,7 +1935,7 @@ INSERT INTO `oc_extension_install` (`extension_install_id`, `extension_download_
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension_path`
+-- Table structure for table `oc_extension_path`
 --
 
 CREATE TABLE `oc_extension_path` (
@@ -1937,7 +1946,7 @@ CREATE TABLE `oc_extension_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension_path`
+-- Dumping data for table `oc_extension_path`
 --
 
 INSERT INTO `oc_extension_path` (`extension_path_id`, `extension_install_id`, `path`, `date_added`) VALUES
@@ -3397,7 +3406,7 @@ INSERT INTO `oc_extension_path` (`extension_path_id`, `extension_install_id`, `p
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter`
+-- Table structure for table `oc_filter`
 --
 
 CREATE TABLE `oc_filter` (
@@ -3409,7 +3418,7 @@ CREATE TABLE `oc_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_description`
+-- Table structure for table `oc_filter_description`
 --
 
 CREATE TABLE `oc_filter_description` (
@@ -3422,7 +3431,7 @@ CREATE TABLE `oc_filter_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_group`
+-- Table structure for table `oc_filter_group`
 --
 
 CREATE TABLE `oc_filter_group` (
@@ -3433,7 +3442,7 @@ CREATE TABLE `oc_filter_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_group_description`
+-- Table structure for table `oc_filter_group_description`
 --
 
 CREATE TABLE `oc_filter_group_description` (
@@ -3445,7 +3454,7 @@ CREATE TABLE `oc_filter_group_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_geo_zone`
+-- Table structure for table `oc_geo_zone`
 --
 
 CREATE TABLE `oc_geo_zone` (
@@ -3457,7 +3466,7 @@ CREATE TABLE `oc_geo_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_geo_zone`
+-- Dumping data for table `oc_geo_zone`
 --
 
 INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, `date_modified`) VALUES
@@ -3467,7 +3476,7 @@ INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information`
+-- Table structure for table `oc_information`
 --
 
 CREATE TABLE `oc_information` (
@@ -3478,7 +3487,7 @@ CREATE TABLE `oc_information` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information`
+-- Dumping data for table `oc_information`
 --
 
 INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
@@ -3490,7 +3499,7 @@ INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_description`
+-- Table structure for table `oc_information_description`
 --
 
 CREATE TABLE `oc_information_description` (
@@ -3504,7 +3513,7 @@ CREATE TABLE `oc_information_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information_description`
+-- Dumping data for table `oc_information_description`
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
@@ -3517,7 +3526,7 @@ INSERT INTO `oc_information_description` (`information_id`, `language_id`, `titl
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_to_layout`
+-- Table structure for table `oc_information_to_layout`
 --
 
 CREATE TABLE `oc_information_to_layout` (
@@ -3527,7 +3536,7 @@ CREATE TABLE `oc_information_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information_to_layout`
+-- Dumping data for table `oc_information_to_layout`
 --
 
 INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
@@ -3539,7 +3548,7 @@ INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_to_store`
+-- Table structure for table `oc_information_to_store`
 --
 
 CREATE TABLE `oc_information_to_store` (
@@ -3548,7 +3557,7 @@ CREATE TABLE `oc_information_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information_to_store`
+-- Dumping data for table `oc_information_to_store`
 --
 
 INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
@@ -3560,7 +3569,7 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_language`
+-- Table structure for table `oc_language`
 --
 
 CREATE TABLE `oc_language` (
@@ -3575,7 +3584,7 @@ CREATE TABLE `oc_language` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_language`
+-- Dumping data for table `oc_language`
 --
 
 INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `sort_order`, `status`) VALUES
@@ -3584,7 +3593,7 @@ INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `di
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout`
+-- Table structure for table `oc_layout`
 --
 
 CREATE TABLE `oc_layout` (
@@ -3593,7 +3602,7 @@ CREATE TABLE `oc_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout`
+-- Dumping data for table `oc_layout`
 --
 
 INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
@@ -3620,7 +3629,7 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout_module`
+-- Table structure for table `oc_layout_module`
 --
 
 CREATE TABLE `oc_layout_module` (
@@ -3632,7 +3641,7 @@ CREATE TABLE `oc_layout_module` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout_module`
+-- Dumping data for table `oc_layout_module`
 --
 
 INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `position`, `sort_order`) VALUES
@@ -3661,7 +3670,7 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout_route`
+-- Table structure for table `oc_layout_route`
 --
 
 CREATE TABLE `oc_layout_route` (
@@ -3672,7 +3681,7 @@ CREATE TABLE `oc_layout_route` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout_route`
+-- Dumping data for table `oc_layout_route`
 --
 
 INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
@@ -3698,7 +3707,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_length_class`
+-- Table structure for table `oc_length_class`
 --
 
 CREATE TABLE `oc_length_class` (
@@ -3707,7 +3716,7 @@ CREATE TABLE `oc_length_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_length_class`
+-- Dumping data for table `oc_length_class`
 --
 
 INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
@@ -3718,7 +3727,7 @@ INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_length_class_description`
+-- Table structure for table `oc_length_class_description`
 --
 
 CREATE TABLE `oc_length_class_description` (
@@ -3729,7 +3738,7 @@ CREATE TABLE `oc_length_class_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_length_class_description`
+-- Dumping data for table `oc_length_class_description`
 --
 
 INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -3743,7 +3752,7 @@ INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_location`
+-- Table structure for table `oc_location`
 --
 
 CREATE TABLE `oc_location` (
@@ -3761,7 +3770,7 @@ CREATE TABLE `oc_location` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_manufacturer`
+-- Table structure for table `oc_manufacturer`
 --
 
 CREATE TABLE `oc_manufacturer` (
@@ -3772,7 +3781,7 @@ CREATE TABLE `oc_manufacturer` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_manufacturer`
+-- Dumping data for table `oc_manufacturer`
 --
 
 INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
@@ -3786,7 +3795,7 @@ INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`)
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_manufacturer_to_store`
+-- Table structure for table `oc_manufacturer_to_store`
 --
 
 CREATE TABLE `oc_manufacturer_to_store` (
@@ -3795,7 +3804,7 @@ CREATE TABLE `oc_manufacturer_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_manufacturer_to_store`
+-- Dumping data for table `oc_manufacturer_to_store`
 --
 
 INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
@@ -3809,7 +3818,7 @@ INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_marketing`
+-- Table structure for table `oc_marketing`
 --
 
 CREATE TABLE `oc_marketing` (
@@ -3824,7 +3833,7 @@ CREATE TABLE `oc_marketing` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_modification`
+-- Table structure for table `oc_modification`
 --
 
 CREATE TABLE `oc_modification` (
@@ -3841,7 +3850,7 @@ CREATE TABLE `oc_modification` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_modification`
+-- Dumping data for table `oc_modification`
 --
 
 INSERT INTO `oc_modification` (`modification_id`, `extension_install_id`, `name`, `code`, `author`, `version`, `link`, `xml`, `status`, `date_added`) VALUES
@@ -3852,7 +3861,7 @@ INSERT INTO `oc_modification` (`modification_id`, `extension_install_id`, `name`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_module`
+-- Table structure for table `oc_module`
 --
 
 CREATE TABLE `oc_module` (
@@ -3863,7 +3872,7 @@ CREATE TABLE `oc_module` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_module`
+-- Dumping data for table `oc_module`
 --
 
 INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
@@ -3884,7 +3893,7 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option`
+-- Table structure for table `oc_option`
 --
 
 CREATE TABLE `oc_option` (
@@ -3894,7 +3903,7 @@ CREATE TABLE `oc_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option`
+-- Dumping data for table `oc_option`
 --
 
 INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
@@ -3913,7 +3922,7 @@ INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_description`
+-- Table structure for table `oc_option_description`
 --
 
 CREATE TABLE `oc_option_description` (
@@ -3923,7 +3932,7 @@ CREATE TABLE `oc_option_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_description`
+-- Dumping data for table `oc_option_description`
 --
 
 INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
@@ -3953,7 +3962,7 @@ INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_value`
+-- Table structure for table `oc_option_value`
 --
 
 CREATE TABLE `oc_option_value` (
@@ -3964,7 +3973,7 @@ CREATE TABLE `oc_option_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_value`
+-- Dumping data for table `oc_option_value`
 --
 
 INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
@@ -3986,7 +3995,7 @@ INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_or
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_value_description`
+-- Table structure for table `oc_option_value_description`
 --
 
 CREATE TABLE `oc_option_value_description` (
@@ -3997,7 +4006,7 @@ CREATE TABLE `oc_option_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_value_description`
+-- Dumping data for table `oc_option_value_description`
 --
 
 INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
@@ -4033,7 +4042,7 @@ INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `op
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order`
+-- Table structure for table `oc_order`
 --
 
 CREATE TABLE `oc_order` (
@@ -4101,7 +4110,7 @@ CREATE TABLE `oc_order` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order`
+-- Dumping data for table `oc_order`
 --
 
 INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
@@ -4149,12 +4158,99 @@ INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, 
 (42, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-06 10:00:56', '2023-01-06 10:00:56'),
 (43, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-06 10:03:54', '2023-01-06 10:03:54'),
 (44, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-06 10:07:39', '2023-01-06 10:07:39'),
-(45, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-06 10:08:03', '2023-01-06 10:08:03');
+(45, 0, 'INV-2022-00', 0, 'Your Store', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-06 10:08:03', '2023-01-06 10:08:03'),
+(46, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:02:29', '2023-01-09 09:02:29'),
+(47, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:03:48', '2023-01-09 09:03:48'),
+(48, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:22:44', '2023-01-09 09:22:44'),
+(49, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:24:28', '2023-01-09 09:24:28'),
+(50, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:25:36', '2023-01-09 09:25:36'),
+(51, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:26:02', '2023-01-09 09:26:02'),
+(52, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:26:30', '2023-01-09 09:26:30'),
+(53, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:26:51', '2023-01-09 09:26:51'),
+(54, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:29:01', '2023-01-09 09:29:01'),
+(55, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:29:32', '2023-01-09 09:29:32'),
+(56, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:29:35', '2023-01-09 09:29:35'),
+(57, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:33:41', '2023-01-09 09:33:41'),
+(58, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:54:08', '2023-01-09 09:54:08'),
+(59, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 09:57:08', '2023-01-09 09:57:08'),
+(60, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:05:04', '2023-01-09 10:05:04'),
+(61, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:11:24', '2023-01-09 10:11:24'),
+(62, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:12:30', '2023-01-09 10:12:30'),
+(63, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:14:26', '2023-01-09 10:14:26'),
+(64, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:14:50', '2023-01-09 10:14:50'),
+(65, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:15:28', '2023-01-09 10:15:28'),
+(66, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:16:19', '2023-01-09 10:16:19'),
+(67, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:17:15', '2023-01-09 10:17:15'),
+(68, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:18:30', '2023-01-09 10:18:30'),
+(69, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:19:24', '2023-01-09 10:19:24'),
+(70, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:22:06', '2023-01-09 10:22:06'),
+(71, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:23:28', '2023-01-09 10:23:28'),
+(72, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:23:34', '2023-01-09 10:23:34'),
+(73, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:23:55', '2023-01-09 10:23:55'),
+(74, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:25:01', '2023-01-09 10:25:01'),
+(75, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:25:55', '2023-01-09 10:25:55'),
+(76, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:27:41', '2023-01-09 10:27:41'),
+(77, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:28:59', '2023-01-09 10:28:59'),
+(78, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:29:43', '2023-01-09 10:29:43'),
+(79, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:30:52', '2023-01-09 10:30:52'),
+(80, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:33:37', '2023-01-09 10:33:37'),
+(81, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:34:47', '2023-01-09 10:34:47'),
+(82, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:36:06', '2023-01-09 10:36:06'),
+(83, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:37:20', '2023-01-09 10:37:20'),
+(84, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:37:44', '2023-01-09 10:37:44'),
+(85, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:38:04', '2023-01-09 10:38:04'),
+(86, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:38:45', '2023-01-09 10:38:45'),
+(87, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:39:16', '2023-01-09 10:39:16'),
+(88, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:39:52', '2023-01-09 10:39:52'),
+(89, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:41:43', '2023-01-09 10:41:43'),
+(90, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:42:28', '2023-01-09 10:42:28');
+INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
+(91, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:43:07', '2023-01-09 10:43:07'),
+(92, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:43:21', '2023-01-09 10:43:21'),
+(93, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:43:32', '2023-01-09 10:43:32'),
+(94, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:46:33', '2023-01-09 10:46:33'),
+(95, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:47:31', '2023-01-09 10:47:31'),
+(96, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:47:53', '2023-01-09 10:47:53'),
+(97, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:49:04', '2023-01-09 10:49:04'),
+(98, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:49:26', '2023-01-09 10:49:26'),
+(99, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:49:59', '2023-01-09 10:49:59'),
+(100, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:51:09', '2023-01-09 10:51:09'),
+(101, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:51:27', '2023-01-09 10:51:27'),
+(102, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:52:44', '2023-01-09 10:52:44'),
+(103, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:53:47', '2023-01-09 10:53:47'),
+(104, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:56:29', '2023-01-09 10:56:29'),
+(105, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:57:45', '2023-01-09 10:57:45'),
+(106, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:58:23', '2023-01-09 10:58:23'),
+(107, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 10:59:00', '2023-01-09 10:59:00'),
+(108, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:00:22', '2023-01-09 11:00:22'),
+(109, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:18:03', '2023-01-09 11:18:03'),
+(110, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:38:08', '2023-01-09 11:38:08'),
+(111, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:39:24', '2023-01-09 11:39:24'),
+(112, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:40:09', '2023-01-09 11:40:09'),
+(113, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:41:06', '2023-01-09 11:41:06'),
+(114, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:41:16', '2023-01-09 11:41:16'),
+(115, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:43:15', '2023-01-09 11:43:15'),
+(116, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:43:46', '2023-01-09 11:43:46'),
+(117, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:45:08', '2023-01-09 11:45:08'),
+(118, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:45:19', '2023-01-09 11:45:19'),
+(119, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:45:43', '2023-01-09 11:45:43'),
+(120, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:47:19', '2023-01-09 11:47:19'),
+(121, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:49:34', '2023-01-09 11:49:34'),
+(122, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:51:04', '2023-01-09 11:51:04'),
+(123, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:51:36', '2023-01-09 11:51:36'),
+(124, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:51:58', '2023-01-09 11:51:58'),
+(125, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:52:28', '2023-01-09 11:52:28'),
+(126, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:53:54', '2023-01-09 11:53:54'),
+(127, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 11:55:49', '2023-01-09 11:55:49'),
+(128, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 12:04:48', '2023-01-09 12:04:48'),
+(129, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 12:07:02', '2023-01-09 12:07:02'),
+(130, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 12:07:55', '2023-01-09 12:07:55'),
+(131, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-09 12:49:10', '2023-01-09 12:49:10');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_history`
+-- Table structure for table `oc_order_history`
 --
 
 CREATE TABLE `oc_order_history` (
@@ -4169,7 +4265,7 @@ CREATE TABLE `oc_order_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_option`
+-- Table structure for table `oc_order_option`
 --
 
 CREATE TABLE `oc_order_option` (
@@ -4186,7 +4282,7 @@ CREATE TABLE `oc_order_option` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_product`
+-- Table structure for table `oc_order_product`
 --
 
 CREATE TABLE `oc_order_product` (
@@ -4203,7 +4299,7 @@ CREATE TABLE `oc_order_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_product`
+-- Dumping data for table `oc_order_product`
 --
 
 INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
@@ -4251,12 +4347,98 @@ INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `n
 (42, 42, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
 (43, 43, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
 (44, 44, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
-(45, 45, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0);
+(45, 45, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(46, 46, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(47, 47, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(48, 48, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(49, 49, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(50, 50, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(51, 51, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(52, 52, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(53, 53, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(54, 54, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(55, 55, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(56, 56, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(57, 57, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(58, 58, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(59, 59, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(60, 60, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(61, 61, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(62, 62, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(63, 63, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(64, 64, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(65, 65, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(66, 66, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(67, 67, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(68, 68, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(69, 69, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(70, 70, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(71, 71, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(72, 72, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(73, 73, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(74, 74, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(75, 75, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(76, 76, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(77, 77, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(78, 78, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(79, 79, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(80, 80, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(81, 81, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(82, 82, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(83, 83, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(84, 84, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(85, 85, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(86, 86, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(87, 87, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(88, 88, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(89, 89, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(90, 90, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(91, 91, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(92, 92, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(93, 93, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(94, 94, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(95, 95, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(96, 96, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(97, 97, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(98, 98, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(99, 99, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(100, 100, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(101, 101, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(102, 102, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(103, 103, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(104, 104, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(105, 105, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(106, 106, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(107, 107, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(108, 108, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(109, 109, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(110, 110, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(111, 111, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(112, 112, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(113, 113, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(114, 114, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(115, 115, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(116, 116, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(117, 117, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(118, 118, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(119, 119, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(120, 120, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(121, 121, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(122, 122, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(123, 123, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(124, 124, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(125, 125, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(126, 126, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(127, 127, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(128, 128, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(129, 129, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(130, 130, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(131, 131, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_recurring`
+-- Table structure for table `oc_order_recurring`
 --
 
 CREATE TABLE `oc_order_recurring` (
@@ -4285,7 +4467,7 @@ CREATE TABLE `oc_order_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_recurring_transaction`
+-- Table structure for table `oc_order_recurring_transaction`
 --
 
 CREATE TABLE `oc_order_recurring_transaction` (
@@ -4300,7 +4482,7 @@ CREATE TABLE `oc_order_recurring_transaction` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_shipment`
+-- Table structure for table `oc_order_shipment`
 --
 
 CREATE TABLE `oc_order_shipment` (
@@ -4314,7 +4496,7 @@ CREATE TABLE `oc_order_shipment` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_status`
+-- Table structure for table `oc_order_status`
 --
 
 CREATE TABLE `oc_order_status` (
@@ -4324,7 +4506,7 @@ CREATE TABLE `oc_order_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_status`
+-- Dumping data for table `oc_order_status`
 --
 
 INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
@@ -4360,7 +4542,7 @@ INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_total`
+-- Table structure for table `oc_order_total`
 --
 
 CREATE TABLE `oc_order_total` (
@@ -4373,7 +4555,7 @@ CREATE TABLE `oc_order_total` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_total`
+-- Dumping data for table `oc_order_total`
 --
 
 INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `value`, `sort_order`) VALUES
@@ -4508,12 +4690,98 @@ INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `va
 (129, 42, 'sub_total', 'К оплате', '100.0000', 0),
 (130, 43, 'sub_total', 'К оплате', '100.0000', 0),
 (131, 44, 'sub_total', 'К оплате', '100.0000', 0),
-(132, 45, 'sub_total', 'К оплате', '100.0000', 0);
+(132, 45, 'sub_total', 'К оплате', '100.0000', 0),
+(133, 46, 'sub_total', 'К оплате', '100.0000', 0),
+(134, 47, 'sub_total', 'К оплате', '100.0000', 0),
+(135, 48, 'sub_total', 'К оплате', '100.0000', 0),
+(136, 49, 'sub_total', 'К оплате', '100.0000', 0),
+(137, 50, 'sub_total', 'К оплате', '100.0000', 0),
+(138, 51, 'sub_total', 'К оплате', '100.0000', 0),
+(139, 52, 'sub_total', 'К оплате', '100.0000', 0),
+(140, 53, 'sub_total', 'К оплате', '100.0000', 0),
+(141, 54, 'sub_total', 'К оплате', '100.0000', 0),
+(142, 55, 'sub_total', 'К оплате', '100.0000', 0),
+(143, 56, 'sub_total', 'К оплате', '100.0000', 0),
+(144, 57, 'sub_total', 'К оплате', '100.0000', 0),
+(145, 58, 'sub_total', 'К оплате', '100.0000', 0),
+(146, 59, 'sub_total', 'К оплате', '100.0000', 0),
+(147, 60, 'sub_total', 'К оплате', '100.0000', 0),
+(148, 61, 'sub_total', 'К оплате', '100.0000', 0),
+(149, 62, 'sub_total', 'К оплате', '100.0000', 0),
+(150, 63, 'sub_total', 'К оплате', '100.0000', 0),
+(151, 64, 'sub_total', 'К оплате', '100.0000', 0),
+(152, 65, 'sub_total', 'К оплате', '100.0000', 0),
+(153, 66, 'sub_total', 'К оплате', '100.0000', 0),
+(154, 67, 'sub_total', 'К оплате', '100.0000', 0),
+(155, 68, 'sub_total', 'К оплате', '100.0000', 0),
+(156, 69, 'sub_total', 'К оплате', '100.0000', 0),
+(157, 70, 'sub_total', 'К оплате', '100.0000', 0),
+(158, 71, 'sub_total', 'К оплате', '100.0000', 0),
+(159, 72, 'sub_total', 'К оплате', '100.0000', 0),
+(160, 73, 'sub_total', 'К оплате', '100.0000', 0),
+(161, 74, 'sub_total', 'К оплате', '100.0000', 0),
+(162, 75, 'sub_total', 'К оплате', '100.0000', 0),
+(163, 76, 'sub_total', 'К оплате', '100.0000', 0),
+(164, 77, 'sub_total', 'К оплате', '100.0000', 0),
+(165, 78, 'sub_total', 'К оплате', '100.0000', 0),
+(166, 79, 'sub_total', 'К оплате', '100.0000', 0),
+(167, 80, 'sub_total', 'К оплате', '100.0000', 0),
+(168, 81, 'sub_total', 'К оплате', '100.0000', 0),
+(169, 82, 'sub_total', 'К оплате', '100.0000', 0),
+(170, 83, 'sub_total', 'К оплате', '100.0000', 0),
+(171, 84, 'sub_total', 'К оплате', '100.0000', 0),
+(172, 85, 'sub_total', 'К оплате', '100.0000', 0),
+(173, 86, 'sub_total', 'К оплате', '100.0000', 0),
+(174, 87, 'sub_total', 'К оплате', '100.0000', 0),
+(175, 88, 'sub_total', 'К оплате', '100.0000', 0),
+(176, 89, 'sub_total', 'К оплате', '100.0000', 0),
+(177, 90, 'sub_total', 'К оплате', '100.0000', 0),
+(178, 91, 'sub_total', 'К оплате', '100.0000', 0),
+(179, 92, 'sub_total', 'К оплате', '100.0000', 0),
+(180, 93, 'sub_total', 'К оплате', '100.0000', 0),
+(181, 94, 'sub_total', 'К оплате', '100.0000', 0),
+(182, 95, 'sub_total', 'К оплате', '100.0000', 0),
+(183, 96, 'sub_total', 'К оплате', '100.0000', 0),
+(184, 97, 'sub_total', 'К оплате', '100.0000', 0),
+(185, 98, 'sub_total', 'К оплате', '100.0000', 0),
+(186, 99, 'sub_total', 'К оплате', '100.0000', 0),
+(187, 100, 'sub_total', 'К оплате', '100.0000', 0),
+(188, 101, 'sub_total', 'К оплате', '100.0000', 0),
+(189, 102, 'sub_total', 'К оплате', '100.0000', 0),
+(190, 103, 'sub_total', 'К оплате', '100.0000', 0),
+(191, 104, 'sub_total', 'К оплате', '100.0000', 0),
+(192, 105, 'sub_total', 'К оплате', '100.0000', 0),
+(193, 106, 'sub_total', 'К оплате', '100.0000', 0),
+(194, 107, 'sub_total', 'К оплате', '100.0000', 0),
+(195, 108, 'sub_total', 'К оплате', '100.0000', 0),
+(196, 109, 'sub_total', 'К оплате', '100.0000', 0),
+(197, 110, 'sub_total', 'К оплате', '100.0000', 0),
+(198, 111, 'sub_total', 'К оплате', '100.0000', 0),
+(199, 112, 'sub_total', 'К оплате', '100.0000', 0),
+(200, 113, 'sub_total', 'К оплате', '100.0000', 0),
+(201, 114, 'sub_total', 'К оплате', '100.0000', 0),
+(202, 115, 'sub_total', 'К оплате', '100.0000', 0),
+(203, 116, 'sub_total', 'К оплате', '100.0000', 0),
+(204, 117, 'sub_total', 'К оплате', '100.0000', 0),
+(205, 118, 'sub_total', 'К оплате', '100.0000', 0),
+(206, 119, 'sub_total', 'К оплате', '100.0000', 0),
+(207, 120, 'sub_total', 'К оплате', '100.0000', 0),
+(208, 121, 'sub_total', 'К оплате', '100.0000', 0),
+(209, 122, 'sub_total', 'К оплате', '100.0000', 0),
+(210, 123, 'sub_total', 'К оплате', '100.0000', 0),
+(211, 124, 'sub_total', 'К оплате', '100.0000', 0),
+(212, 125, 'sub_total', 'К оплате', '100.0000', 0),
+(213, 126, 'sub_total', 'К оплате', '100.0000', 0),
+(214, 127, 'sub_total', 'К оплате', '100.0000', 0),
+(215, 128, 'sub_total', 'К оплате', '100.0000', 0),
+(216, 129, 'sub_total', 'К оплате', '100.0000', 0),
+(217, 130, 'sub_total', 'К оплате', '100.0000', 0),
+(218, 131, 'sub_total', 'К оплате', '100.0000', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_voucher`
+-- Table structure for table `oc_order_voucher`
 --
 
 CREATE TABLE `oc_order_voucher` (
@@ -4534,7 +4802,7 @@ CREATE TABLE `oc_order_voucher` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product`
+-- Table structure for table `oc_product`
 --
 
 CREATE TABLE `oc_product` (
@@ -4572,7 +4840,7 @@ CREATE TABLE `oc_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product`
+-- Dumping data for table `oc_product`
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
@@ -4586,7 +4854,7 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2011-09-30 01:06:17'),
 (36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
 (40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 7, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
+(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 11, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
 (42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 17, '2009-02-03 21:07:37', '2023-01-04 14:37:39'),
 (43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 1, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 2, '2009-02-03 21:07:49', '2022-12-30 10:14:53'),
 (44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
@@ -4599,7 +4867,7 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_attribute`
+-- Table structure for table `oc_product_attribute`
 --
 
 CREATE TABLE `oc_product_attribute` (
@@ -4610,7 +4878,7 @@ CREATE TABLE `oc_product_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_attribute`
+-- Dumping data for table `oc_product_attribute`
 --
 
 INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
@@ -4625,7 +4893,7 @@ INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_description`
+-- Table structure for table `oc_product_description`
 --
 
 CREATE TABLE `oc_product_description` (
@@ -4640,7 +4908,7 @@ CREATE TABLE `oc_product_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_description`
+-- Dumping data for table `oc_product_description`
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
@@ -4684,7 +4952,7 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_discount`
+-- Table structure for table `oc_product_discount`
 --
 
 CREATE TABLE `oc_product_discount` (
@@ -4699,7 +4967,7 @@ CREATE TABLE `oc_product_discount` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_discount`
+-- Dumping data for table `oc_product_discount`
 --
 
 INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
@@ -4710,7 +4978,7 @@ INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `custome
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_filter`
+-- Table structure for table `oc_product_filter`
 --
 
 CREATE TABLE `oc_product_filter` (
@@ -4721,7 +4989,7 @@ CREATE TABLE `oc_product_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_image`
+-- Table structure for table `oc_product_image`
 --
 
 CREATE TABLE `oc_product_image` (
@@ -4732,7 +5000,7 @@ CREATE TABLE `oc_product_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_image`
+-- Dumping data for table `oc_product_image`
 --
 
 INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
@@ -4801,7 +5069,7 @@ INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_option`
+-- Table structure for table `oc_product_option`
 --
 
 CREATE TABLE `oc_product_option` (
@@ -4813,7 +5081,7 @@ CREATE TABLE `oc_product_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_option`
+-- Dumping data for table `oc_product_option`
 --
 
 INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
@@ -4827,7 +5095,7 @@ INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_option_value`
+-- Table structure for table `oc_product_option_value`
 --
 
 CREATE TABLE `oc_product_option_value` (
@@ -4847,7 +5115,7 @@ CREATE TABLE `oc_product_option_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_option_value`
+-- Dumping data for table `oc_product_option_value`
 --
 
 INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
@@ -4871,7 +5139,7 @@ INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_optio
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_recurring`
+-- Table structure for table `oc_product_recurring`
 --
 
 CREATE TABLE `oc_product_recurring` (
@@ -4883,7 +5151,7 @@ CREATE TABLE `oc_product_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_related`
+-- Table structure for table `oc_product_related`
 --
 
 CREATE TABLE `oc_product_related` (
@@ -4892,7 +5160,7 @@ CREATE TABLE `oc_product_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_related`
+-- Dumping data for table `oc_product_related`
 --
 
 INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
@@ -4904,7 +5172,7 @@ INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_reward`
+-- Table structure for table `oc_product_reward`
 --
 
 CREATE TABLE `oc_product_reward` (
@@ -4915,7 +5183,7 @@ CREATE TABLE `oc_product_reward` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_reward`
+-- Dumping data for table `oc_product_reward`
 --
 
 INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
@@ -4942,7 +5210,7 @@ INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_gr
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_special`
+-- Table structure for table `oc_product_special`
 --
 
 CREATE TABLE `oc_product_special` (
@@ -4956,7 +5224,7 @@ CREATE TABLE `oc_product_special` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_special`
+-- Dumping data for table `oc_product_special`
 --
 
 INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
@@ -4967,7 +5235,7 @@ INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_category`
+-- Table structure for table `oc_product_to_category`
 --
 
 CREATE TABLE `oc_product_to_category` (
@@ -4976,7 +5244,7 @@ CREATE TABLE `oc_product_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_to_category`
+-- Dumping data for table `oc_product_to_category`
 --
 
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
@@ -5014,7 +5282,7 @@ INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_download`
+-- Table structure for table `oc_product_to_download`
 --
 
 CREATE TABLE `oc_product_to_download` (
@@ -5025,7 +5293,7 @@ CREATE TABLE `oc_product_to_download` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_layout`
+-- Table structure for table `oc_product_to_layout`
 --
 
 CREATE TABLE `oc_product_to_layout` (
@@ -5035,7 +5303,7 @@ CREATE TABLE `oc_product_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_to_layout`
+-- Dumping data for table `oc_product_to_layout`
 --
 
 INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
@@ -5045,7 +5313,7 @@ INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_store`
+-- Table structure for table `oc_product_to_store`
 --
 
 CREATE TABLE `oc_product_to_store` (
@@ -5054,7 +5322,7 @@ CREATE TABLE `oc_product_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_to_store`
+-- Dumping data for table `oc_product_to_store`
 --
 
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
@@ -5081,7 +5349,7 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_recurring`
+-- Table structure for table `oc_recurring`
 --
 
 CREATE TABLE `oc_recurring` (
@@ -5102,7 +5370,7 @@ CREATE TABLE `oc_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_recurring_description`
+-- Table structure for table `oc_recurring_description`
 --
 
 CREATE TABLE `oc_recurring_description` (
@@ -5114,7 +5382,7 @@ CREATE TABLE `oc_recurring_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return`
+-- Table structure for table `oc_return`
 --
 
 CREATE TABLE `oc_return` (
@@ -5142,7 +5410,7 @@ CREATE TABLE `oc_return` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_action`
+-- Table structure for table `oc_return_action`
 --
 
 CREATE TABLE `oc_return_action` (
@@ -5152,7 +5420,7 @@ CREATE TABLE `oc_return_action` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_action`
+-- Dumping data for table `oc_return_action`
 --
 
 INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUES
@@ -5166,7 +5434,7 @@ INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_history`
+-- Table structure for table `oc_return_history`
 --
 
 CREATE TABLE `oc_return_history` (
@@ -5181,7 +5449,7 @@ CREATE TABLE `oc_return_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_reason`
+-- Table structure for table `oc_return_reason`
 --
 
 CREATE TABLE `oc_return_reason` (
@@ -5191,7 +5459,7 @@ CREATE TABLE `oc_return_reason` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_reason`
+-- Dumping data for table `oc_return_reason`
 --
 
 INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
@@ -5209,7 +5477,7 @@ INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_status`
+-- Table structure for table `oc_return_status`
 --
 
 CREATE TABLE `oc_return_status` (
@@ -5219,7 +5487,7 @@ CREATE TABLE `oc_return_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_status`
+-- Dumping data for table `oc_return_status`
 --
 
 INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUES
@@ -5233,7 +5501,7 @@ INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_review`
+-- Table structure for table `oc_review`
 --
 
 CREATE TABLE `oc_review` (
@@ -5251,7 +5519,7 @@ CREATE TABLE `oc_review` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_seo_url`
+-- Table structure for table `oc_seo_url`
 --
 
 CREATE TABLE `oc_seo_url` (
@@ -5263,7 +5531,7 @@ CREATE TABLE `oc_seo_url` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_seo_url`
+-- Dumping data for table `oc_seo_url`
 --
 
 INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `keyword`) VALUES
@@ -5318,7 +5586,7 @@ INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `key
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_session`
+-- Table structure for table `oc_session`
 --
 
 CREATE TABLE `oc_session` (
@@ -5328,18 +5596,19 @@ CREATE TABLE `oc_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_session`
+-- Dumping data for table `oc_session`
 --
 
 INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
 ('06365e998b8495456b45327ea0', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"jJzQh6H9nw7xoyizWH7ZUyRi0U2ZPbqc\"}', '2023-01-03 12:06:04'),
 ('124bbaf4308340eae056d7c98d', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"hn8jEpIfYm7X1KQamSDceRsBNimFbZ4M\",\"order_id\":29,\"install\":\"7Q9EKCLvqx\"}', '2022-12-30 12:13:31'),
-('385ecb06cdec9a1d2236ecdce7', '{\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2022-12-31 07:10:09'),
+('385ecb06cdec9a1d2236ecdce7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"order_id\":131,\"user_id\":\"1\",\"user_token\":\"bbpD7vwhA4LHVYoCfXp52j7FMJEE78Ip\",\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u041e\\u043f\\u043b\\u0430\\u0442\\u0430 \\u043f\\u0440\\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0435\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-09 10:17:12'),
 ('41db407c7ec895bc7b1477e0c2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"Zosr8viwsWBJJhlPZY5WBaam2KFFzm4u\"}', '2023-01-06 22:14:16'),
 ('564a9c65ee6a3da9f28a6f41d0', '{\"api_id\":\"2\"}', '2023-01-05 21:40:02'),
 ('620e72d02a270143aaaefc697a', '{\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-03 06:24:31'),
 ('69943b7094cfa6d4f4ee35614c', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_token\":\"4pBR2ySOlkrpOjhoVdjkDp7zqBHRueHF\"}', '2017-11-11 13:05:28'),
 ('6d3c2edeb8a118a573c78e92cc', '{\"user_id\":\"1\",\"user_token\":\"6S2kOv7lkaMB58iBTBFgN8ZOj1768IUD\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-02 21:43:18'),
+('7998fcd17f0449d48c309fab96', '{\"api_id\":\"2\"}', '2023-01-09 10:17:12'),
 ('957809fc785582986f796c2a83', '{\"language\":\"en-gb\",\"currency\":\"RUB\"}', '2017-11-11 13:05:32'),
 ('a1957d8182091811895c0c779e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0,\"user_id\":\"1\",\"user_token\":\"QfkUyoE9sClQ4sFE3ArFgwZOiuq1tUsx\",\"order_id\":30}', '2023-01-05 22:05:18'),
 ('aed62d1aab9dc9777c09501a90', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"RZpUmRLf41PBF9ZWH0hyh66KBlD65DGj\",\"d_blog_module_debug\":0,\"order_id\":45,\"shipping_methods\":{\"flat\":{\"title\":\"\\u0424\\u0438\\u043a\\u0441\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u0430\\u044f \\u0441\\u0442\\u043e\\u0438\\u043c\\u043e\\u0441\\u0442\\u044c \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u0414\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430 \\u0441 \\u0444\\u0438\\u043a\\u0441\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u0441\\u0442\\u043e\\u0438\\u043c\\u043e\\u0441\\u0442\\u044c\\u044e \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437 \\u0438\\u0437 \\u043c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\\u0430\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u041e\\u043f\\u043b\\u0430\\u0442\\u0430 \\u043f\\u0440\\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0435\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-06 07:36:19'),
@@ -5350,7 +5619,7 @@ INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_setting`
+-- Table structure for table `oc_setting`
 --
 
 CREATE TABLE `oc_setting` (
@@ -5363,7 +5632,7 @@ CREATE TABLE `oc_setting` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_setting`
+-- Dumping data for table `oc_setting`
 --
 
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
@@ -5371,17 +5640,13 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (5, 0, 'voucher', 'total_voucher_status', '1', 0),
 (2873, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
 (2876, 0, 'config', 'config_error_filename', 'error.log', 0),
-(1638, 0, 'shipping_pickup', 'shipping_pickup_sort_order', '2', 0),
-(1637, 0, 'shipping_pickup', 'shipping_pickup_status', '1', 0),
-(1636, 0, 'shipping_pickup', 'shipping_pickup_geo_zone_id', '0', 0),
-(1633, 0, 'payment_cod', 'payment_cod_geo_zone_id', '0', 0),
-(1632, 0, 'payment_cod', 'payment_cod_order_status_id', '1', 0),
-(1631, 0, 'payment_cod', 'payment_cod_total', '0', 0),
-(1544, 0, 'shipping_flat', 'shipping_flat_sort_order', '1', 0),
-(1543, 0, 'shipping_flat', 'shipping_flat_status', '1', 0),
-(1542, 0, 'shipping_flat', 'shipping_flat_geo_zone_id', '0', 0),
-(1541, 0, 'shipping_flat', 'shipping_flat_tax_class_id', '9', 0),
-(1540, 0, 'shipping_flat', 'shipping_flat_cost', '150', 0),
+(2909, 0, 'payment_cod', 'payment_cod_sort_order', '5', 0),
+(2908, 0, 'payment_cod', 'payment_cod_status', '1', 0),
+(2907, 0, 'payment_cod', 'payment_cod_geo_zone_id', '0', 0),
+(2887, 0, 'shipping_flat', 'shipping_flat_sort_order', '1', 0),
+(2886, 0, 'shipping_flat', 'shipping_flat_status', '1', 0),
+(2885, 0, 'shipping_flat', 'shipping_flat_geo_zone_id', '0', 0),
+(2884, 0, 'shipping_flat', 'shipping_flat_tax_class_id', '9', 0),
 (2188, 0, 'total_sub_total', 'total_sub_total_status', '1', 0),
 (643, 0, 'module_category', 'module_category_status', '1', 0),
 (124, 0, 'module_account', 'module_account_status', '1', 0),
@@ -5481,8 +5746,8 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (2862, 0, 'config', 'config_mail_alert_email', '', 0),
 (2859, 0, 'config', 'config_mail_smtp_port', '25', 0),
 (2860, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(1634, 0, 'payment_cod', 'payment_cod_status', '1', 0),
-(1635, 0, 'payment_cod', 'payment_cod_sort_order', '5', 0),
+(2906, 0, 'payment_cod', 'payment_cod_order_status_id', '1', 0),
+(2905, 0, 'payment_cod', 'payment_cod_total', '0.01', 0),
 (2858, 0, 'config', 'config_mail_smtp_password', '', 0),
 (2857, 0, 'config', 'config_mail_smtp_username', '', 0),
 (2855, 0, 'config', 'config_mail_parameter', '', 0),
@@ -5550,12 +5815,18 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (2800, 0, 'config', 'config_email', 'info@ziptrade.by', 0),
 (2801, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
 (2802, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
-(2791, 0, 'config', 'config_meta_title', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0);
+(2791, 0, 'config', 'config_meta_title', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0),
+(2883, 0, 'shipping_flat', 'shipping_flat_cost', '150', 0),
+(2888, 0, 'shipping_flat', 'shipping_flat_comment', 'Расчет срока и доставки будет произведен после звонка менеджера', 0),
+(2904, 0, 'shipping_pickup', 'shipping_pickup_comment', 'Вы можете самостоятельно забрать свой заказ по адресу: ул.Титова 138', 0),
+(2901, 0, 'shipping_pickup', 'shipping_pickup_geo_zone_id', '0', 0),
+(2903, 0, 'shipping_pickup', 'shipping_pickup_sort_order', '2', 0),
+(2902, 0, 'shipping_pickup', 'shipping_pickup_status', '1', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_shipping_courier`
+-- Table structure for table `oc_shipping_courier`
 --
 
 CREATE TABLE `oc_shipping_courier` (
@@ -5565,7 +5836,7 @@ CREATE TABLE `oc_shipping_courier` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_shipping_courier`
+-- Dumping data for table `oc_shipping_courier`
 --
 
 INSERT INTO `oc_shipping_courier` (`shipping_courier_id`, `shipping_courier_code`, `shipping_courier_name`) VALUES
@@ -5580,7 +5851,7 @@ INSERT INTO `oc_shipping_courier` (`shipping_courier_id`, `shipping_courier_code
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_statistics`
+-- Table structure for table `oc_statistics`
 --
 
 CREATE TABLE `oc_statistics` (
@@ -5590,7 +5861,7 @@ CREATE TABLE `oc_statistics` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_statistics`
+-- Dumping data for table `oc_statistics`
 --
 
 INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
@@ -5605,7 +5876,7 @@ INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_stock_status`
+-- Table structure for table `oc_stock_status`
 --
 
 CREATE TABLE `oc_stock_status` (
@@ -5615,7 +5886,7 @@ CREATE TABLE `oc_stock_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_stock_status`
+-- Dumping data for table `oc_stock_status`
 --
 
 INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
@@ -5631,7 +5902,7 @@ INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_store`
+-- Table structure for table `oc_store`
 --
 
 CREATE TABLE `oc_store` (
@@ -5644,7 +5915,7 @@ CREATE TABLE `oc_store` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_subscribe`
+-- Table structure for table `oc_subscribe`
 --
 
 CREATE TABLE `oc_subscribe` (
@@ -5654,7 +5925,7 @@ CREATE TABLE `oc_subscribe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `oc_subscribe`
+-- Dumping data for table `oc_subscribe`
 --
 
 INSERT INTO `oc_subscribe` (`subscribe_id`, `email`, `date_added`) VALUES
@@ -5664,7 +5935,7 @@ INSERT INTO `oc_subscribe` (`subscribe_id`, `email`, `date_added`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_class`
+-- Table structure for table `oc_tax_class`
 --
 
 CREATE TABLE `oc_tax_class` (
@@ -5676,7 +5947,7 @@ CREATE TABLE `oc_tax_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_class`
+-- Dumping data for table `oc_tax_class`
 --
 
 INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
@@ -5686,7 +5957,7 @@ INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rate`
+-- Table structure for table `oc_tax_rate`
 --
 
 CREATE TABLE `oc_tax_rate` (
@@ -5700,7 +5971,7 @@ CREATE TABLE `oc_tax_rate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rate`
+-- Dumping data for table `oc_tax_rate`
 --
 
 INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
@@ -5710,7 +5981,7 @@ INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rate_to_customer_group`
+-- Table structure for table `oc_tax_rate_to_customer_group`
 --
 
 CREATE TABLE `oc_tax_rate_to_customer_group` (
@@ -5719,7 +5990,7 @@ CREATE TABLE `oc_tax_rate_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rate_to_customer_group`
+-- Dumping data for table `oc_tax_rate_to_customer_group`
 --
 
 INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
@@ -5729,7 +6000,7 @@ INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`)
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rule`
+-- Table structure for table `oc_tax_rule`
 --
 
 CREATE TABLE `oc_tax_rule` (
@@ -5741,7 +6012,7 @@ CREATE TABLE `oc_tax_rule` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rule`
+-- Dumping data for table `oc_tax_rule`
 --
 
 INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
@@ -5753,7 +6024,7 @@ INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_theme`
+-- Table structure for table `oc_theme`
 --
 
 CREATE TABLE `oc_theme` (
@@ -5768,7 +6039,7 @@ CREATE TABLE `oc_theme` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_translation`
+-- Table structure for table `oc_translation`
 --
 
 CREATE TABLE `oc_translation` (
@@ -5784,7 +6055,7 @@ CREATE TABLE `oc_translation` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_upload`
+-- Table structure for table `oc_upload`
 --
 
 CREATE TABLE `oc_upload` (
@@ -5798,7 +6069,7 @@ CREATE TABLE `oc_upload` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_user`
+-- Table structure for table `oc_user`
 --
 
 CREATE TABLE `oc_user` (
@@ -5818,7 +6089,7 @@ CREATE TABLE `oc_user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_user`
+-- Dumping data for table `oc_user`
 --
 
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
@@ -5827,7 +6098,7 @@ INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_user_group`
+-- Table structure for table `oc_user_group`
 --
 
 CREATE TABLE `oc_user_group` (
@@ -5837,17 +6108,17 @@ CREATE TABLE `oc_user_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_user_group`
+-- Dumping data for table `oc_user_group`
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/total\\/sub_total\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/total\\/sub_total\"]}'),
+(1, 'Administrator', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/total\\/sub_total\",\"extension\\/shipping\\/citylink\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/total\\/sub_total\",\"extension\\/shipping\\/citylink\"]}'),
 (10, 'Demonstration', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"]}');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher`
+-- Table structure for table `oc_voucher`
 --
 
 CREATE TABLE `oc_voucher` (
@@ -5868,7 +6139,7 @@ CREATE TABLE `oc_voucher` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_history`
+-- Table structure for table `oc_voucher_history`
 --
 
 CREATE TABLE `oc_voucher_history` (
@@ -5882,7 +6153,7 @@ CREATE TABLE `oc_voucher_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_theme`
+-- Table structure for table `oc_voucher_theme`
 --
 
 CREATE TABLE `oc_voucher_theme` (
@@ -5891,7 +6162,7 @@ CREATE TABLE `oc_voucher_theme` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_voucher_theme`
+-- Dumping data for table `oc_voucher_theme`
 --
 
 INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
@@ -5902,7 +6173,7 @@ INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_theme_description`
+-- Table structure for table `oc_voucher_theme_description`
 --
 
 CREATE TABLE `oc_voucher_theme_description` (
@@ -5912,7 +6183,7 @@ CREATE TABLE `oc_voucher_theme_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_voucher_theme_description`
+-- Dumping data for table `oc_voucher_theme_description`
 --
 
 INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
@@ -5926,7 +6197,7 @@ INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_weight_class`
+-- Table structure for table `oc_weight_class`
 --
 
 CREATE TABLE `oc_weight_class` (
@@ -5935,7 +6206,7 @@ CREATE TABLE `oc_weight_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_weight_class`
+-- Dumping data for table `oc_weight_class`
 --
 
 INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
@@ -5947,7 +6218,7 @@ INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_weight_class_description`
+-- Table structure for table `oc_weight_class_description`
 --
 
 CREATE TABLE `oc_weight_class_description` (
@@ -5958,7 +6229,7 @@ CREATE TABLE `oc_weight_class_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_weight_class_description`
+-- Dumping data for table `oc_weight_class_description`
 --
 
 INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -5974,7 +6245,7 @@ INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_zone`
+-- Table structure for table `oc_zone`
 --
 
 CREATE TABLE `oc_zone` (
@@ -5986,7 +6257,7 @@ CREATE TABLE `oc_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_zone`
+-- Dumping data for table `oc_zone`
 --
 
 INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
@@ -10104,7 +10375,7 @@ INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_zone_to_geo_zone`
+-- Table structure for table `oc_zone_to_geo_zone`
 --
 
 CREATE TABLE `oc_zone_to_geo_zone` (
@@ -10117,7 +10388,7 @@ CREATE TABLE `oc_zone_to_geo_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_zone_to_geo_zone`
+-- Dumping data for table `oc_zone_to_geo_zone`
 --
 
 INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
@@ -10232,292 +10503,292 @@ INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id
 (109, 222, 3972, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `oc_address`
+-- Indexes for table `oc_address`
 --
 ALTER TABLE `oc_address`
   ADD PRIMARY KEY (`address_id`),
   ADD KEY `customer_id` (`customer_id`);
 
 --
--- Индексы таблицы `oc_api`
+-- Indexes for table `oc_api`
 --
 ALTER TABLE `oc_api`
   ADD PRIMARY KEY (`api_id`);
 
 --
--- Индексы таблицы `oc_api_ip`
+-- Indexes for table `oc_api_ip`
 --
 ALTER TABLE `oc_api_ip`
   ADD PRIMARY KEY (`api_ip_id`);
 
 --
--- Индексы таблицы `oc_api_session`
+-- Indexes for table `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
   ADD PRIMARY KEY (`api_session_id`);
 
 --
--- Индексы таблицы `oc_attribute`
+-- Indexes for table `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
   ADD PRIMARY KEY (`attribute_id`);
 
 --
--- Индексы таблицы `oc_attribute_description`
+-- Indexes for table `oc_attribute_description`
 --
 ALTER TABLE `oc_attribute_description`
   ADD PRIMARY KEY (`attribute_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_attribute_group`
+-- Indexes for table `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
   ADD PRIMARY KEY (`attribute_group_id`);
 
 --
--- Индексы таблицы `oc_attribute_group_description`
+-- Indexes for table `oc_attribute_group_description`
 --
 ALTER TABLE `oc_attribute_group_description`
   ADD PRIMARY KEY (`attribute_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_banner`
+-- Indexes for table `oc_banner`
 --
 ALTER TABLE `oc_banner`
   ADD PRIMARY KEY (`banner_id`);
 
 --
--- Индексы таблицы `oc_banner_image`
+-- Indexes for table `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
   ADD PRIMARY KEY (`banner_image_id`);
 
 --
--- Индексы таблицы `oc_bm_author`
+-- Indexes for table `oc_bm_author`
 --
 ALTER TABLE `oc_bm_author`
   ADD PRIMARY KEY (`author_id`);
 
 --
--- Индексы таблицы `oc_bm_author_description`
+-- Indexes for table `oc_bm_author_description`
 --
 ALTER TABLE `oc_bm_author_description`
   ADD PRIMARY KEY (`author_description_id`);
 
 --
--- Индексы таблицы `oc_bm_author_group`
+-- Indexes for table `oc_bm_author_group`
 --
 ALTER TABLE `oc_bm_author_group`
   ADD PRIMARY KEY (`author_group_id`);
 
 --
--- Индексы таблицы `oc_bm_category`
+-- Indexes for table `oc_bm_category`
 --
 ALTER TABLE `oc_bm_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Индексы таблицы `oc_bm_category_description`
+-- Indexes for table `oc_bm_category_description`
 --
 ALTER TABLE `oc_bm_category_description`
   ADD PRIMARY KEY (`category_description_id`);
 
 --
--- Индексы таблицы `oc_bm_category_path`
+-- Indexes for table `oc_bm_category_path`
 --
 ALTER TABLE `oc_bm_category_path`
   ADD PRIMARY KEY (`category_id`,`path_id`);
 
 --
--- Индексы таблицы `oc_bm_category_to_store`
+-- Indexes for table `oc_bm_category_to_store`
 --
 ALTER TABLE `oc_bm_category_to_store`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_bm_post`
+-- Indexes for table `oc_bm_post`
 --
 ALTER TABLE `oc_bm_post`
   ADD PRIMARY KEY (`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_description`
+-- Indexes for table `oc_bm_post_description`
 --
 ALTER TABLE `oc_bm_post_description`
   ADD PRIMARY KEY (`post_description_id`);
 
 --
--- Индексы таблицы `oc_bm_post_related`
+-- Indexes for table `oc_bm_post_related`
 --
 ALTER TABLE `oc_bm_post_related`
   ADD PRIMARY KEY (`post_id`,`post_related_id`);
 
 --
--- Индексы таблицы `oc_bm_post_to_category`
+-- Indexes for table `oc_bm_post_to_category`
 --
 ALTER TABLE `oc_bm_post_to_category`
   ADD PRIMARY KEY (`category_id`,`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_to_product`
+-- Indexes for table `oc_bm_post_to_product`
 --
 ALTER TABLE `oc_bm_post_to_product`
   ADD PRIMARY KEY (`product_id`,`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_video`
+-- Indexes for table `oc_bm_post_video`
 --
 ALTER TABLE `oc_bm_post_video`
   ADD PRIMARY KEY (`post_id`,`video`);
 
 --
--- Индексы таблицы `oc_bm_review`
+-- Indexes for table `oc_bm_review`
 --
 ALTER TABLE `oc_bm_review`
   ADD PRIMARY KEY (`review_id`);
 
 --
--- Индексы таблицы `oc_bm_review_to_image`
+-- Indexes for table `oc_bm_review_to_image`
 --
 ALTER TABLE `oc_bm_review_to_image`
   ADD PRIMARY KEY (`review_id`,`image`);
 
 --
--- Индексы таблицы `oc_cart`
+-- Indexes for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
   ADD PRIMARY KEY (`cart_id`),
   ADD KEY `cart_id` (`api_id`,`customer_id`,`session_id`,`product_id`,`recurring_id`);
 
 --
--- Индексы таблицы `oc_category`
+-- Indexes for table `oc_category`
 --
 ALTER TABLE `oc_category`
   ADD PRIMARY KEY (`category_id`),
   ADD KEY `parent_id` (`parent_id`);
 
 --
--- Индексы таблицы `oc_category_description`
+-- Indexes for table `oc_category_description`
 --
 ALTER TABLE `oc_category_description`
   ADD PRIMARY KEY (`category_id`,`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_category_filter`
+-- Indexes for table `oc_category_filter`
 --
 ALTER TABLE `oc_category_filter`
   ADD PRIMARY KEY (`category_id`,`filter_id`);
 
 --
--- Индексы таблицы `oc_category_path`
+-- Indexes for table `oc_category_path`
 --
 ALTER TABLE `oc_category_path`
   ADD PRIMARY KEY (`category_id`,`path_id`);
 
 --
--- Индексы таблицы `oc_category_to_layout`
+-- Indexes for table `oc_category_to_layout`
 --
 ALTER TABLE `oc_category_to_layout`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_category_to_store`
+-- Indexes for table `oc_category_to_store`
 --
 ALTER TABLE `oc_category_to_store`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_country`
+-- Indexes for table `oc_country`
 --
 ALTER TABLE `oc_country`
   ADD PRIMARY KEY (`country_id`);
 
 --
--- Индексы таблицы `oc_coupon`
+-- Indexes for table `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
   ADD PRIMARY KEY (`coupon_id`);
 
 --
--- Индексы таблицы `oc_coupon_category`
+-- Indexes for table `oc_coupon_category`
 --
 ALTER TABLE `oc_coupon_category`
   ADD PRIMARY KEY (`coupon_id`,`category_id`);
 
 --
--- Индексы таблицы `oc_coupon_history`
+-- Indexes for table `oc_coupon_history`
 --
 ALTER TABLE `oc_coupon_history`
   ADD PRIMARY KEY (`coupon_history_id`);
 
 --
--- Индексы таблицы `oc_coupon_product`
+-- Indexes for table `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
   ADD PRIMARY KEY (`coupon_product_id`);
 
 --
--- Индексы таблицы `oc_currency`
+-- Indexes for table `oc_currency`
 --
 ALTER TABLE `oc_currency`
   ADD PRIMARY KEY (`currency_id`);
 
 --
--- Индексы таблицы `oc_customer`
+-- Indexes for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Индексы таблицы `oc_customer_activity`
+-- Indexes for table `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
   ADD PRIMARY KEY (`customer_activity_id`);
 
 --
--- Индексы таблицы `oc_customer_affiliate`
+-- Indexes for table `oc_customer_affiliate`
 --
 ALTER TABLE `oc_customer_affiliate`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Индексы таблицы `oc_customer_approval`
+-- Indexes for table `oc_customer_approval`
 --
 ALTER TABLE `oc_customer_approval`
   ADD PRIMARY KEY (`customer_approval_id`);
 
 --
--- Индексы таблицы `oc_customer_group`
+-- Indexes for table `oc_customer_group`
 --
 ALTER TABLE `oc_customer_group`
   ADD PRIMARY KEY (`customer_group_id`);
 
 --
--- Индексы таблицы `oc_customer_group_description`
+-- Indexes for table `oc_customer_group_description`
 --
 ALTER TABLE `oc_customer_group_description`
   ADD PRIMARY KEY (`customer_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_customer_history`
+-- Indexes for table `oc_customer_history`
 --
 ALTER TABLE `oc_customer_history`
   ADD PRIMARY KEY (`customer_history_id`);
 
 --
--- Индексы таблицы `oc_customer_ip`
+-- Indexes for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
   ADD PRIMARY KEY (`customer_ip_id`),
   ADD KEY `ip` (`ip`);
 
 --
--- Индексы таблицы `oc_customer_login`
+-- Indexes for table `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
   ADD PRIMARY KEY (`customer_login_id`),
@@ -10525,473 +10796,473 @@ ALTER TABLE `oc_customer_login`
   ADD KEY `ip` (`ip`);
 
 --
--- Индексы таблицы `oc_customer_online`
+-- Indexes for table `oc_customer_online`
 --
 ALTER TABLE `oc_customer_online`
   ADD PRIMARY KEY (`ip`);
 
 --
--- Индексы таблицы `oc_customer_reward`
+-- Indexes for table `oc_customer_reward`
 --
 ALTER TABLE `oc_customer_reward`
   ADD PRIMARY KEY (`customer_reward_id`);
 
 --
--- Индексы таблицы `oc_customer_search`
+-- Indexes for table `oc_customer_search`
 --
 ALTER TABLE `oc_customer_search`
   ADD PRIMARY KEY (`customer_search_id`);
 
 --
--- Индексы таблицы `oc_customer_transaction`
+-- Indexes for table `oc_customer_transaction`
 --
 ALTER TABLE `oc_customer_transaction`
   ADD PRIMARY KEY (`customer_transaction_id`);
 
 --
--- Индексы таблицы `oc_customer_wishlist`
+-- Indexes for table `oc_customer_wishlist`
 --
 ALTER TABLE `oc_customer_wishlist`
   ADD PRIMARY KEY (`customer_id`,`product_id`);
 
 --
--- Индексы таблицы `oc_custom_field`
+-- Indexes for table `oc_custom_field`
 --
 ALTER TABLE `oc_custom_field`
   ADD PRIMARY KEY (`custom_field_id`);
 
 --
--- Индексы таблицы `oc_custom_field_customer_group`
+-- Indexes for table `oc_custom_field_customer_group`
 --
 ALTER TABLE `oc_custom_field_customer_group`
   ADD PRIMARY KEY (`custom_field_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_custom_field_description`
+-- Indexes for table `oc_custom_field_description`
 --
 ALTER TABLE `oc_custom_field_description`
   ADD PRIMARY KEY (`custom_field_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_custom_field_value`
+-- Indexes for table `oc_custom_field_value`
 --
 ALTER TABLE `oc_custom_field_value`
   ADD PRIMARY KEY (`custom_field_value_id`);
 
 --
--- Индексы таблицы `oc_custom_field_value_description`
+-- Indexes for table `oc_custom_field_value_description`
 --
 ALTER TABLE `oc_custom_field_value_description`
   ADD PRIMARY KEY (`custom_field_value_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_download`
+-- Indexes for table `oc_download`
 --
 ALTER TABLE `oc_download`
   ADD PRIMARY KEY (`download_id`);
 
 --
--- Индексы таблицы `oc_download_description`
+-- Indexes for table `oc_download_description`
 --
 ALTER TABLE `oc_download_description`
   ADD PRIMARY KEY (`download_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_d_validator`
+-- Indexes for table `oc_d_validator`
 --
 ALTER TABLE `oc_d_validator`
   ADD PRIMARY KEY (`validator_id`);
 
 --
--- Индексы таблицы `oc_event`
+-- Indexes for table `oc_event`
 --
 ALTER TABLE `oc_event`
   ADD PRIMARY KEY (`event_id`);
 
 --
--- Индексы таблицы `oc_extension`
+-- Indexes for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
   ADD PRIMARY KEY (`extension_id`);
 
 --
--- Индексы таблицы `oc_extension_install`
+-- Indexes for table `oc_extension_install`
 --
 ALTER TABLE `oc_extension_install`
   ADD PRIMARY KEY (`extension_install_id`);
 
 --
--- Индексы таблицы `oc_extension_path`
+-- Indexes for table `oc_extension_path`
 --
 ALTER TABLE `oc_extension_path`
   ADD PRIMARY KEY (`extension_path_id`);
 
 --
--- Индексы таблицы `oc_filter`
+-- Indexes for table `oc_filter`
 --
 ALTER TABLE `oc_filter`
   ADD PRIMARY KEY (`filter_id`);
 
 --
--- Индексы таблицы `oc_filter_description`
+-- Indexes for table `oc_filter_description`
 --
 ALTER TABLE `oc_filter_description`
   ADD PRIMARY KEY (`filter_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_filter_group`
+-- Indexes for table `oc_filter_group`
 --
 ALTER TABLE `oc_filter_group`
   ADD PRIMARY KEY (`filter_group_id`);
 
 --
--- Индексы таблицы `oc_filter_group_description`
+-- Indexes for table `oc_filter_group_description`
 --
 ALTER TABLE `oc_filter_group_description`
   ADD PRIMARY KEY (`filter_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_geo_zone`
+-- Indexes for table `oc_geo_zone`
 --
 ALTER TABLE `oc_geo_zone`
   ADD PRIMARY KEY (`geo_zone_id`);
 
 --
--- Индексы таблицы `oc_information`
+-- Indexes for table `oc_information`
 --
 ALTER TABLE `oc_information`
   ADD PRIMARY KEY (`information_id`);
 
 --
--- Индексы таблицы `oc_information_description`
+-- Indexes for table `oc_information_description`
 --
 ALTER TABLE `oc_information_description`
   ADD PRIMARY KEY (`information_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_information_to_layout`
+-- Indexes for table `oc_information_to_layout`
 --
 ALTER TABLE `oc_information_to_layout`
   ADD PRIMARY KEY (`information_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_information_to_store`
+-- Indexes for table `oc_information_to_store`
 --
 ALTER TABLE `oc_information_to_store`
   ADD PRIMARY KEY (`information_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_language`
+-- Indexes for table `oc_language`
 --
 ALTER TABLE `oc_language`
   ADD PRIMARY KEY (`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_layout`
+-- Indexes for table `oc_layout`
 --
 ALTER TABLE `oc_layout`
   ADD PRIMARY KEY (`layout_id`);
 
 --
--- Индексы таблицы `oc_layout_module`
+-- Indexes for table `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
   ADD PRIMARY KEY (`layout_module_id`);
 
 --
--- Индексы таблицы `oc_layout_route`
+-- Indexes for table `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
   ADD PRIMARY KEY (`layout_route_id`);
 
 --
--- Индексы таблицы `oc_length_class`
+-- Indexes for table `oc_length_class`
 --
 ALTER TABLE `oc_length_class`
   ADD PRIMARY KEY (`length_class_id`);
 
 --
--- Индексы таблицы `oc_length_class_description`
+-- Indexes for table `oc_length_class_description`
 --
 ALTER TABLE `oc_length_class_description`
   ADD PRIMARY KEY (`length_class_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_location`
+-- Indexes for table `oc_location`
 --
 ALTER TABLE `oc_location`
   ADD PRIMARY KEY (`location_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_manufacturer`
+-- Indexes for table `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
   ADD PRIMARY KEY (`manufacturer_id`);
 
 --
--- Индексы таблицы `oc_manufacturer_to_store`
+-- Indexes for table `oc_manufacturer_to_store`
 --
 ALTER TABLE `oc_manufacturer_to_store`
   ADD PRIMARY KEY (`manufacturer_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_marketing`
+-- Indexes for table `oc_marketing`
 --
 ALTER TABLE `oc_marketing`
   ADD PRIMARY KEY (`marketing_id`);
 
 --
--- Индексы таблицы `oc_modification`
+-- Indexes for table `oc_modification`
 --
 ALTER TABLE `oc_modification`
   ADD PRIMARY KEY (`modification_id`);
 
 --
--- Индексы таблицы `oc_module`
+-- Indexes for table `oc_module`
 --
 ALTER TABLE `oc_module`
   ADD PRIMARY KEY (`module_id`);
 
 --
--- Индексы таблицы `oc_option`
+-- Indexes for table `oc_option`
 --
 ALTER TABLE `oc_option`
   ADD PRIMARY KEY (`option_id`);
 
 --
--- Индексы таблицы `oc_option_description`
+-- Indexes for table `oc_option_description`
 --
 ALTER TABLE `oc_option_description`
   ADD PRIMARY KEY (`option_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_option_value`
+-- Indexes for table `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
   ADD PRIMARY KEY (`option_value_id`);
 
 --
--- Индексы таблицы `oc_option_value_description`
+-- Indexes for table `oc_option_value_description`
 --
 ALTER TABLE `oc_option_value_description`
   ADD PRIMARY KEY (`option_value_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_order`
+-- Indexes for table `oc_order`
 --
 ALTER TABLE `oc_order`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Индексы таблицы `oc_order_history`
+-- Indexes for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
   ADD PRIMARY KEY (`order_history_id`);
 
 --
--- Индексы таблицы `oc_order_option`
+-- Indexes for table `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
   ADD PRIMARY KEY (`order_option_id`);
 
 --
--- Индексы таблицы `oc_order_product`
+-- Indexes for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
   ADD PRIMARY KEY (`order_product_id`),
   ADD KEY `order_id` (`order_id`);
 
 --
--- Индексы таблицы `oc_order_recurring`
+-- Indexes for table `oc_order_recurring`
 --
 ALTER TABLE `oc_order_recurring`
   ADD PRIMARY KEY (`order_recurring_id`);
 
 --
--- Индексы таблицы `oc_order_recurring_transaction`
+-- Indexes for table `oc_order_recurring_transaction`
 --
 ALTER TABLE `oc_order_recurring_transaction`
   ADD PRIMARY KEY (`order_recurring_transaction_id`);
 
 --
--- Индексы таблицы `oc_order_shipment`
+-- Indexes for table `oc_order_shipment`
 --
 ALTER TABLE `oc_order_shipment`
   ADD PRIMARY KEY (`order_shipment_id`);
 
 --
--- Индексы таблицы `oc_order_status`
+-- Indexes for table `oc_order_status`
 --
 ALTER TABLE `oc_order_status`
   ADD PRIMARY KEY (`order_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_order_total`
+-- Indexes for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
   ADD PRIMARY KEY (`order_total_id`),
   ADD KEY `order_id` (`order_id`);
 
 --
--- Индексы таблицы `oc_order_voucher`
+-- Indexes for table `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
   ADD PRIMARY KEY (`order_voucher_id`);
 
 --
--- Индексы таблицы `oc_product`
+-- Indexes for table `oc_product`
 --
 ALTER TABLE `oc_product`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Индексы таблицы `oc_product_attribute`
+-- Indexes for table `oc_product_attribute`
 --
 ALTER TABLE `oc_product_attribute`
   ADD PRIMARY KEY (`product_id`,`attribute_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_product_description`
+-- Indexes for table `oc_product_description`
 --
 ALTER TABLE `oc_product_description`
   ADD PRIMARY KEY (`product_id`,`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_product_discount`
+-- Indexes for table `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
   ADD PRIMARY KEY (`product_discount_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_filter`
+-- Indexes for table `oc_product_filter`
 --
 ALTER TABLE `oc_product_filter`
   ADD PRIMARY KEY (`product_id`,`filter_id`);
 
 --
--- Индексы таблицы `oc_product_image`
+-- Indexes for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
   ADD PRIMARY KEY (`product_image_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_option`
+-- Indexes for table `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
   ADD PRIMARY KEY (`product_option_id`);
 
 --
--- Индексы таблицы `oc_product_option_value`
+-- Indexes for table `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
   ADD PRIMARY KEY (`product_option_value_id`);
 
 --
--- Индексы таблицы `oc_product_recurring`
+-- Indexes for table `oc_product_recurring`
 --
 ALTER TABLE `oc_product_recurring`
   ADD PRIMARY KEY (`product_id`,`recurring_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_product_related`
+-- Indexes for table `oc_product_related`
 --
 ALTER TABLE `oc_product_related`
   ADD PRIMARY KEY (`product_id`,`related_id`);
 
 --
--- Индексы таблицы `oc_product_reward`
+-- Indexes for table `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
   ADD PRIMARY KEY (`product_reward_id`);
 
 --
--- Индексы таблицы `oc_product_special`
+-- Indexes for table `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
   ADD PRIMARY KEY (`product_special_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_to_category`
+-- Indexes for table `oc_product_to_category`
 --
 ALTER TABLE `oc_product_to_category`
   ADD PRIMARY KEY (`product_id`,`category_id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Индексы таблицы `oc_product_to_download`
+-- Indexes for table `oc_product_to_download`
 --
 ALTER TABLE `oc_product_to_download`
   ADD PRIMARY KEY (`product_id`,`download_id`);
 
 --
--- Индексы таблицы `oc_product_to_layout`
+-- Indexes for table `oc_product_to_layout`
 --
 ALTER TABLE `oc_product_to_layout`
   ADD PRIMARY KEY (`product_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_product_to_store`
+-- Indexes for table `oc_product_to_store`
 --
 ALTER TABLE `oc_product_to_store`
   ADD PRIMARY KEY (`product_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_recurring`
+-- Indexes for table `oc_recurring`
 --
 ALTER TABLE `oc_recurring`
   ADD PRIMARY KEY (`recurring_id`);
 
 --
--- Индексы таблицы `oc_recurring_description`
+-- Indexes for table `oc_recurring_description`
 --
 ALTER TABLE `oc_recurring_description`
   ADD PRIMARY KEY (`recurring_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return`
+-- Indexes for table `oc_return`
 --
 ALTER TABLE `oc_return`
   ADD PRIMARY KEY (`return_id`);
 
 --
--- Индексы таблицы `oc_return_action`
+-- Indexes for table `oc_return_action`
 --
 ALTER TABLE `oc_return_action`
   ADD PRIMARY KEY (`return_action_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return_history`
+-- Indexes for table `oc_return_history`
 --
 ALTER TABLE `oc_return_history`
   ADD PRIMARY KEY (`return_history_id`);
 
 --
--- Индексы таблицы `oc_return_reason`
+-- Indexes for table `oc_return_reason`
 --
 ALTER TABLE `oc_return_reason`
   ADD PRIMARY KEY (`return_reason_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return_status`
+-- Indexes for table `oc_return_status`
 --
 ALTER TABLE `oc_return_status`
   ADD PRIMARY KEY (`return_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_review`
+-- Indexes for table `oc_review`
 --
 ALTER TABLE `oc_review`
   ADD PRIMARY KEY (`review_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_seo_url`
+-- Indexes for table `oc_seo_url`
 --
 ALTER TABLE `oc_seo_url`
   ADD PRIMARY KEY (`seo_url_id`),
@@ -10999,755 +11270,755 @@ ALTER TABLE `oc_seo_url`
   ADD KEY `keyword` (`keyword`);
 
 --
--- Индексы таблицы `oc_session`
+-- Indexes for table `oc_session`
 --
 ALTER TABLE `oc_session`
   ADD PRIMARY KEY (`session_id`);
 
 --
--- Индексы таблицы `oc_setting`
+-- Indexes for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
   ADD PRIMARY KEY (`setting_id`);
 
 --
--- Индексы таблицы `oc_shipping_courier`
+-- Indexes for table `oc_shipping_courier`
 --
 ALTER TABLE `oc_shipping_courier`
   ADD PRIMARY KEY (`shipping_courier_id`);
 
 --
--- Индексы таблицы `oc_statistics`
+-- Indexes for table `oc_statistics`
 --
 ALTER TABLE `oc_statistics`
   ADD PRIMARY KEY (`statistics_id`);
 
 --
--- Индексы таблицы `oc_stock_status`
+-- Indexes for table `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
   ADD PRIMARY KEY (`stock_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_store`
+-- Indexes for table `oc_store`
 --
 ALTER TABLE `oc_store`
   ADD PRIMARY KEY (`store_id`);
 
 --
--- Индексы таблицы `oc_subscribe`
+-- Indexes for table `oc_subscribe`
 --
 ALTER TABLE `oc_subscribe`
   ADD PRIMARY KEY (`subscribe_id`);
 
 --
--- Индексы таблицы `oc_tax_class`
+-- Indexes for table `oc_tax_class`
 --
 ALTER TABLE `oc_tax_class`
   ADD PRIMARY KEY (`tax_class_id`);
 
 --
--- Индексы таблицы `oc_tax_rate`
+-- Indexes for table `oc_tax_rate`
 --
 ALTER TABLE `oc_tax_rate`
   ADD PRIMARY KEY (`tax_rate_id`);
 
 --
--- Индексы таблицы `oc_tax_rate_to_customer_group`
+-- Indexes for table `oc_tax_rate_to_customer_group`
 --
 ALTER TABLE `oc_tax_rate_to_customer_group`
   ADD PRIMARY KEY (`tax_rate_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_tax_rule`
+-- Indexes for table `oc_tax_rule`
 --
 ALTER TABLE `oc_tax_rule`
   ADD PRIMARY KEY (`tax_rule_id`);
 
 --
--- Индексы таблицы `oc_theme`
+-- Indexes for table `oc_theme`
 --
 ALTER TABLE `oc_theme`
   ADD PRIMARY KEY (`theme_id`);
 
 --
--- Индексы таблицы `oc_translation`
+-- Indexes for table `oc_translation`
 --
 ALTER TABLE `oc_translation`
   ADD PRIMARY KEY (`translation_id`);
 
 --
--- Индексы таблицы `oc_upload`
+-- Indexes for table `oc_upload`
 --
 ALTER TABLE `oc_upload`
   ADD PRIMARY KEY (`upload_id`);
 
 --
--- Индексы таблицы `oc_user`
+-- Indexes for table `oc_user`
 --
 ALTER TABLE `oc_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Индексы таблицы `oc_user_group`
+-- Indexes for table `oc_user_group`
 --
 ALTER TABLE `oc_user_group`
   ADD PRIMARY KEY (`user_group_id`);
 
 --
--- Индексы таблицы `oc_voucher`
+-- Indexes for table `oc_voucher`
 --
 ALTER TABLE `oc_voucher`
   ADD PRIMARY KEY (`voucher_id`);
 
 --
--- Индексы таблицы `oc_voucher_history`
+-- Indexes for table `oc_voucher_history`
 --
 ALTER TABLE `oc_voucher_history`
   ADD PRIMARY KEY (`voucher_history_id`);
 
 --
--- Индексы таблицы `oc_voucher_theme`
+-- Indexes for table `oc_voucher_theme`
 --
 ALTER TABLE `oc_voucher_theme`
   ADD PRIMARY KEY (`voucher_theme_id`);
 
 --
--- Индексы таблицы `oc_voucher_theme_description`
+-- Indexes for table `oc_voucher_theme_description`
 --
 ALTER TABLE `oc_voucher_theme_description`
   ADD PRIMARY KEY (`voucher_theme_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_weight_class`
+-- Indexes for table `oc_weight_class`
 --
 ALTER TABLE `oc_weight_class`
   ADD PRIMARY KEY (`weight_class_id`);
 
 --
--- Индексы таблицы `oc_weight_class_description`
+-- Indexes for table `oc_weight_class_description`
 --
 ALTER TABLE `oc_weight_class_description`
   ADD PRIMARY KEY (`weight_class_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_zone`
+-- Indexes for table `oc_zone`
 --
 ALTER TABLE `oc_zone`
   ADD PRIMARY KEY (`zone_id`);
 
 --
--- Индексы таблицы `oc_zone_to_geo_zone`
+-- Indexes for table `oc_zone_to_geo_zone`
 --
 ALTER TABLE `oc_zone_to_geo_zone`
   ADD PRIMARY KEY (`zone_to_geo_zone_id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `oc_address`
+-- AUTO_INCREMENT for table `oc_address`
 --
 ALTER TABLE `oc_address`
   MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api`
+-- AUTO_INCREMENT for table `oc_api`
 --
 ALTER TABLE `oc_api`
   MODIFY `api_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api_ip`
+-- AUTO_INCREMENT for table `oc_api_ip`
 --
 ALTER TABLE `oc_api_ip`
   MODIFY `api_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api_session`
+-- AUTO_INCREMENT for table `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
-  MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_attribute`
+-- AUTO_INCREMENT for table `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
   MODIFY `attribute_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `oc_attribute_group`
+-- AUTO_INCREMENT for table `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
   MODIFY `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_banner`
+-- AUTO_INCREMENT for table `oc_banner`
 --
 ALTER TABLE `oc_banner`
   MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_banner_image`
+-- AUTO_INCREMENT for table `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
   MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author`
+-- AUTO_INCREMENT for table `oc_bm_author`
 --
 ALTER TABLE `oc_bm_author`
   MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author_description`
+-- AUTO_INCREMENT for table `oc_bm_author_description`
 --
 ALTER TABLE `oc_bm_author_description`
   MODIFY `author_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author_group`
+-- AUTO_INCREMENT for table `oc_bm_author_group`
 --
 ALTER TABLE `oc_bm_author_group`
   MODIFY `author_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_category`
+-- AUTO_INCREMENT for table `oc_bm_category`
 --
 ALTER TABLE `oc_bm_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_category_description`
+-- AUTO_INCREMENT for table `oc_bm_category_description`
 --
 ALTER TABLE `oc_bm_category_description`
   MODIFY `category_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_post`
+-- AUTO_INCREMENT for table `oc_bm_post`
 --
 ALTER TABLE `oc_bm_post`
   MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_post_description`
+-- AUTO_INCREMENT for table `oc_bm_post_description`
 --
 ALTER TABLE `oc_bm_post_description`
   MODIFY `post_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_review`
+-- AUTO_INCREMENT for table `oc_bm_review`
 --
 ALTER TABLE `oc_bm_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_cart`
+-- AUTO_INCREMENT for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
-  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT для таблицы `oc_category`
+-- AUTO_INCREMENT for table `oc_category`
 --
 ALTER TABLE `oc_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT для таблицы `oc_country`
+-- AUTO_INCREMENT for table `oc_country`
 --
 ALTER TABLE `oc_country`
   MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon`
+-- AUTO_INCREMENT for table `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
   MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon_history`
+-- AUTO_INCREMENT for table `oc_coupon_history`
 --
 ALTER TABLE `oc_coupon_history`
   MODIFY `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon_product`
+-- AUTO_INCREMENT for table `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
   MODIFY `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_currency`
+-- AUTO_INCREMENT for table `oc_currency`
 --
 ALTER TABLE `oc_currency`
   MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer`
+-- AUTO_INCREMENT for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_activity`
+-- AUTO_INCREMENT for table `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
   MODIFY `customer_activity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_approval`
+-- AUTO_INCREMENT for table `oc_customer_approval`
 --
 ALTER TABLE `oc_customer_approval`
   MODIFY `customer_approval_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_group`
+-- AUTO_INCREMENT for table `oc_customer_group`
 --
 ALTER TABLE `oc_customer_group`
   MODIFY `customer_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_history`
+-- AUTO_INCREMENT for table `oc_customer_history`
 --
 ALTER TABLE `oc_customer_history`
   MODIFY `customer_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_ip`
+-- AUTO_INCREMENT for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
   MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_login`
+-- AUTO_INCREMENT for table `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
   MODIFY `customer_login_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_reward`
+-- AUTO_INCREMENT for table `oc_customer_reward`
 --
 ALTER TABLE `oc_customer_reward`
   MODIFY `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_search`
+-- AUTO_INCREMENT for table `oc_customer_search`
 --
 ALTER TABLE `oc_customer_search`
   MODIFY `customer_search_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_transaction`
+-- AUTO_INCREMENT for table `oc_customer_transaction`
 --
 ALTER TABLE `oc_customer_transaction`
   MODIFY `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_custom_field`
+-- AUTO_INCREMENT for table `oc_custom_field`
 --
 ALTER TABLE `oc_custom_field`
   MODIFY `custom_field_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_custom_field_value`
+-- AUTO_INCREMENT for table `oc_custom_field_value`
 --
 ALTER TABLE `oc_custom_field_value`
   MODIFY `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_download`
+-- AUTO_INCREMENT for table `oc_download`
 --
 ALTER TABLE `oc_download`
   MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_d_validator`
+-- AUTO_INCREMENT for table `oc_d_validator`
 --
 ALTER TABLE `oc_d_validator`
   MODIFY `validator_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_event`
+-- AUTO_INCREMENT for table `oc_event`
 --
 ALTER TABLE `oc_event`
   MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension`
+-- AUTO_INCREMENT for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
-  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension_install`
+-- AUTO_INCREMENT for table `oc_extension_install`
 --
 ALTER TABLE `oc_extension_install`
   MODIFY `extension_install_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension_path`
+-- AUTO_INCREMENT for table `oc_extension_path`
 --
 ALTER TABLE `oc_extension_path`
   MODIFY `extension_path_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1450;
 
 --
--- AUTO_INCREMENT для таблицы `oc_filter`
+-- AUTO_INCREMENT for table `oc_filter`
 --
 ALTER TABLE `oc_filter`
   MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_filter_group`
+-- AUTO_INCREMENT for table `oc_filter_group`
 --
 ALTER TABLE `oc_filter_group`
   MODIFY `filter_group_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_geo_zone`
+-- AUTO_INCREMENT for table `oc_geo_zone`
 --
 ALTER TABLE `oc_geo_zone`
   MODIFY `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_information`
+-- AUTO_INCREMENT for table `oc_information`
 --
 ALTER TABLE `oc_information`
   MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `oc_language`
+-- AUTO_INCREMENT for table `oc_language`
 --
 ALTER TABLE `oc_language`
   MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout`
+-- AUTO_INCREMENT for table `oc_layout`
 --
 ALTER TABLE `oc_layout`
   MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout_module`
+-- AUTO_INCREMENT for table `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
   MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout_route`
+-- AUTO_INCREMENT for table `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
   MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT для таблицы `oc_length_class`
+-- AUTO_INCREMENT for table `oc_length_class`
 --
 ALTER TABLE `oc_length_class`
   MODIFY `length_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_location`
+-- AUTO_INCREMENT for table `oc_location`
 --
 ALTER TABLE `oc_location`
   MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_manufacturer`
+-- AUTO_INCREMENT for table `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
   MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_marketing`
+-- AUTO_INCREMENT for table `oc_marketing`
 --
 ALTER TABLE `oc_marketing`
   MODIFY `marketing_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_modification`
+-- AUTO_INCREMENT for table `oc_modification`
 --
 ALTER TABLE `oc_modification`
   MODIFY `modification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_module`
+-- AUTO_INCREMENT for table `oc_module`
 --
 ALTER TABLE `oc_module`
   MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT для таблицы `oc_option`
+-- AUTO_INCREMENT for table `oc_option`
 --
 ALTER TABLE `oc_option`
   MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT для таблицы `oc_option_value`
+-- AUTO_INCREMENT for table `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
   MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order`
+-- AUTO_INCREMENT for table `oc_order`
 --
 ALTER TABLE `oc_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_history`
+-- AUTO_INCREMENT for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
   MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_option`
+-- AUTO_INCREMENT for table `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
   MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_product`
+-- AUTO_INCREMENT for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_recurring`
+-- AUTO_INCREMENT for table `oc_order_recurring`
 --
 ALTER TABLE `oc_order_recurring`
   MODIFY `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_recurring_transaction`
+-- AUTO_INCREMENT for table `oc_order_recurring_transaction`
 --
 ALTER TABLE `oc_order_recurring_transaction`
   MODIFY `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_shipment`
+-- AUTO_INCREMENT for table `oc_order_shipment`
 --
 ALTER TABLE `oc_order_shipment`
   MODIFY `order_shipment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_status`
+-- AUTO_INCREMENT for table `oc_order_status`
 --
 ALTER TABLE `oc_order_status`
   MODIFY `order_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_total`
+-- AUTO_INCREMENT for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
-  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_voucher`
+-- AUTO_INCREMENT for table `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
   MODIFY `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product`
+-- AUTO_INCREMENT for table `oc_product`
 --
 ALTER TABLE `oc_product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_discount`
+-- AUTO_INCREMENT for table `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
   MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_image`
+-- AUTO_INCREMENT for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
   MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2361;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_option`
+-- AUTO_INCREMENT for table `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
   MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_option_value`
+-- AUTO_INCREMENT for table `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
   MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_reward`
+-- AUTO_INCREMENT for table `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
   MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=548;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_special`
+-- AUTO_INCREMENT for table `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
   MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
 
 --
--- AUTO_INCREMENT для таблицы `oc_recurring`
+-- AUTO_INCREMENT for table `oc_recurring`
 --
 ALTER TABLE `oc_recurring`
   MODIFY `recurring_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return`
+-- AUTO_INCREMENT for table `oc_return`
 --
 ALTER TABLE `oc_return`
   MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_action`
+-- AUTO_INCREMENT for table `oc_return_action`
 --
 ALTER TABLE `oc_return_action`
   MODIFY `return_action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_history`
+-- AUTO_INCREMENT for table `oc_return_history`
 --
 ALTER TABLE `oc_return_history`
   MODIFY `return_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_reason`
+-- AUTO_INCREMENT for table `oc_return_reason`
 --
 ALTER TABLE `oc_return_reason`
   MODIFY `return_reason_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_status`
+-- AUTO_INCREMENT for table `oc_return_status`
 --
 ALTER TABLE `oc_return_status`
   MODIFY `return_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_review`
+-- AUTO_INCREMENT for table `oc_review`
 --
 ALTER TABLE `oc_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_seo_url`
+-- AUTO_INCREMENT for table `oc_seo_url`
 --
 ALTER TABLE `oc_seo_url`
   MODIFY `seo_url_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=844;
 
 --
--- AUTO_INCREMENT для таблицы `oc_setting`
+-- AUTO_INCREMENT for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2877;
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2910;
 
 --
--- AUTO_INCREMENT для таблицы `oc_statistics`
+-- AUTO_INCREMENT for table `oc_statistics`
 --
 ALTER TABLE `oc_statistics`
   MODIFY `statistics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `oc_stock_status`
+-- AUTO_INCREMENT for table `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
   MODIFY `stock_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_store`
+-- AUTO_INCREMENT for table `oc_store`
 --
 ALTER TABLE `oc_store`
   MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_subscribe`
+-- AUTO_INCREMENT for table `oc_subscribe`
 --
 ALTER TABLE `oc_subscribe`
   MODIFY `subscribe_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_class`
+-- AUTO_INCREMENT for table `oc_tax_class`
 --
 ALTER TABLE `oc_tax_class`
   MODIFY `tax_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_rate`
+-- AUTO_INCREMENT for table `oc_tax_rate`
 --
 ALTER TABLE `oc_tax_rate`
   MODIFY `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_rule`
+-- AUTO_INCREMENT for table `oc_tax_rule`
 --
 ALTER TABLE `oc_tax_rule`
   MODIFY `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT для таблицы `oc_theme`
+-- AUTO_INCREMENT for table `oc_theme`
 --
 ALTER TABLE `oc_theme`
   MODIFY `theme_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_translation`
+-- AUTO_INCREMENT for table `oc_translation`
 --
 ALTER TABLE `oc_translation`
   MODIFY `translation_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_upload`
+-- AUTO_INCREMENT for table `oc_upload`
 --
 ALTER TABLE `oc_upload`
   MODIFY `upload_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_user`
+-- AUTO_INCREMENT for table `oc_user`
 --
 ALTER TABLE `oc_user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `oc_user_group`
+-- AUTO_INCREMENT for table `oc_user_group`
 --
 ALTER TABLE `oc_user_group`
   MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher`
+-- AUTO_INCREMENT for table `oc_voucher`
 --
 ALTER TABLE `oc_voucher`
   MODIFY `voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher_history`
+-- AUTO_INCREMENT for table `oc_voucher_history`
 --
 ALTER TABLE `oc_voucher_history`
   MODIFY `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher_theme`
+-- AUTO_INCREMENT for table `oc_voucher_theme`
 --
 ALTER TABLE `oc_voucher_theme`
   MODIFY `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_weight_class`
+-- AUTO_INCREMENT for table `oc_weight_class`
 --
 ALTER TABLE `oc_weight_class`
   MODIFY `weight_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_zone`
+-- AUTO_INCREMENT for table `oc_zone`
 --
 ALTER TABLE `oc_zone`
   MODIFY `zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4239;
 
 --
--- AUTO_INCREMENT для таблицы `oc_zone_to_geo_zone`
+-- AUTO_INCREMENT for table `oc_zone_to_geo_zone`
 --
 ALTER TABLE `oc_zone_to_geo_zone`
   MODIFY `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;

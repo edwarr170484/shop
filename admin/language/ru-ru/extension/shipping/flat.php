@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']    = 'Фиксированная стоимость доставки';
+$_['heading_title']    = 'Курьерская доставка';
 
 // Text
 $_['text_extension']   = 'Расширения';
@@ -13,6 +13,7 @@ $_['entry_tax_class']  = 'Класс налога';
 $_['entry_geo_zone']   = 'Географическая зона';
 $_['entry_status']     = 'Статус';
 $_['entry_sort_order'] = 'Порядок сортировки';
+$_['entry_comment'] = 'Комментарий';
 
 // Error
 $_['error_permission'] = 'У Вас нет прав для управления данным модулем!';

@@ -66,6 +66,12 @@ class ControllerExtensionShippingPickup extends Controller {
 			$data['shipping_pickup_sort_order'] = $this->config->get('shipping_pickup_sort_order');
 		}
 
+		if (isset($this->request->post['shipping_pickup_comment'])) {
+			$data['shipping_pickup_comment'] = $this->request->post['shipping_pickup_comment'];
+		} else {
+			$data['shipping_pickup_comment'] = $this->config->get('shipping_pickup_comment');
+		}
+
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');

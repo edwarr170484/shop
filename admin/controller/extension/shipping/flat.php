@@ -82,6 +82,12 @@ class ControllerExtensionShippingFlat extends Controller {
 			$data['shipping_flat_sort_order'] = $this->config->get('shipping_flat_sort_order');
 		}
 
+		if (isset($this->request->post['shipping_flat_comment'])) {
+			$data['shipping_flat_comment'] = $this->request->post['shipping_flat_comment'];
+		} else {
+			$data['shipping_flat_comment'] = $this->config->get('shipping_flat_comment');
+		}
+
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');

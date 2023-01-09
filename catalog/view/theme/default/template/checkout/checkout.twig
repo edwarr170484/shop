@@ -35,12 +35,19 @@
                             <div class="checkout-block-inner">
                                 {% if customer_groups %}
                                     <div class="form-group required">
-                                        <select name="customer_group_id" class="form-select form-control">
+                                        <select name="customer_group_id" class="form-select form-control" id="checkout-usertype">
                                             {% for group in customer_groups %}
                                                 <option value="{{ group.customer_group_id }}">{{ group.description }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
+                                    <script>
+                                        $("#checkout-usertype").change(function(){
+                                            let method = $(this).val();
+                                            $(".checkout-block-tab").removeClass("active");
+                                            $("#usertype-" + $(this).val()).addClass("active");
+                                        });
+                                    </script>
                                 {% endif %}
                                 <div class="form-group required">
                                     <input type="text" name="city" placeholder="Укажите город" id="input-shipping-city" class="form-control" />
@@ -60,7 +67,7 @@
                             <div class="head-text">Покупатель</div>
                         </div>
                         <div class="checkout-block-inner">
-                            <div class="checout-block-tab active" id="usertype-fiz">
+                            <div class="checkout-block-tab active" id="usertype-1">
                                 <div class="form-group required">
                                     <input type="text" name="firstname" placeholder="ФИО" class="form-control" />
                                 </div>
@@ -78,8 +85,29 @@
                                     <textarea name="comment" rows="8" class="form-control">{{ comment }}</textarea>
                                 </div>
                             </div>
-                            <div class="checout-block-tab" id="usertype-jur">
-
+                            <div class="checkout-block-tab" id="usertype-2">
+                                <div class="form-group required">
+                                    <input type="text" name="company" placeholder="Название компании" class="form-control" />
+                                </div>
+                                <div class="form-group required">
+                                    <input type="text" name="inn" placeholder="ИНН" class="form-control" />
+                                </div>
+                                <div class="form-group required">
+                                    <input type="text" name="firstname" placeholder="Контактное лицо" class="form-control" />
+                                </div>
+                                <div class="form-group required">
+                                    <input type="text" name="email" placeholder="Email" class="form-control" />
+                                </div>
+                                <div class="form-group required">
+                                    <input type="text" name="phone" placeholder="Телефон" class="form-control" />
+                                </div>
+                                <div class="form-group required">
+                                    <input type="text" name="address" placeholder="Адрес доставки" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Комментарий</label>
+                                    <textarea name="comment" rows="8" class="form-control">{{ comment }}</textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
