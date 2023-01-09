@@ -93,7 +93,12 @@ class ControllerCheckoutConfirm extends Controller {
 			$order_data['customer_id'] = 0;
 			$order_data['customer_group_id'] = isset($this->request->post['customer_group_id']) ? $this->request->post['customer_group_id'] : '';
 			$order_data['firstname'] = isset($this->request->post['firstname']) ? $this->request->post['firstname'] : '';
-			$order_data['lastname'] = '';
+			if(isset($this->request->post['company'])){
+				$order_data['lastname'] = ', Компания: ' . $this->request->post['company'] . ', ИНН: ' . $this->request->post['inn'];
+			}else{
+				$order_data['lastname'] = '';
+			}
+			
 			$order_data['email'] = isset($this->request->post['email']) ? $this->request->post['email'] : '';
 			$order_data['telephone'] = isset($this->request->post['phone']) ? $this->request->post['phone'] : '';
 			$order_data['custom_field'] = array();
@@ -115,8 +120,15 @@ class ControllerCheckoutConfirm extends Controller {
 			if (isset($this->session->data['payment_method']['title'])) {
 				$order_data['payment_method'] = $this->session->data['payment_method']['title'];
 			} else {
-				$order_data['payment_method'] = '';
+				if (isset($this->request->post['payment_method'])) {
+					$order_data['payment_method'] = $this->session->data['payment_methods'][$this->request->post['payment_method']]['title'];
+				}else{
+					$order_data['payment_method'] = '';
+				}	
+				
 			}
+
+			
 
 			if (isset($this->request->post['payment_method'])) {
 				$order_data['payment_code'] = $this->request->post['payment_method'];

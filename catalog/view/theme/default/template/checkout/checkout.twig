@@ -43,9 +43,10 @@
                                     </div>
                                     <script>
                                         $("#checkout-usertype").change(function(){
-                                            let method = $(this).val();
-                                            $(".checkout-block-tab").removeClass("active");
-                                            $("#usertype-" + $(this).val()).addClass("active");
+                                            let usertype = $(this).val();
+                                            let company = usertype == 2 ? '<div class="form-group required"><input type="text" name="company" placeholder="Название компании" class="form-control" /></div><div class="form-group required"><input type="text" name="inn" placeholder="ИНН" class="form-control" /></div>' : '';
+
+                                            $("#usertype").html(company);
                                         });
                                     </script>
                                 {% endif %}
@@ -68,6 +69,7 @@
                         </div>
                         <div class="checkout-block-inner">
                             <div class="checkout-block-tab active" id="usertype-1">
+                                <div id="usertype"></div>
                                 <div class="form-group required">
                                     <input type="text" name="firstname" placeholder="ФИО" class="form-control" />
                                 </div>
@@ -77,31 +79,7 @@
                                 <div class="form-group required">
                                     <input type="text" name="phone" placeholder="Телефон" class="form-control" />
                                 </div>
-                                <div class="form-group required">
-                                    <input type="text" name="address" placeholder="Адрес доставки" class="form-control" />
-                                </div>
                                 <div class="form-group">
-                                    <label>Комментарий</label>
-                                    <textarea name="comment" rows="8" class="form-control">{{ comment }}</textarea>
-                                </div>
-                            </div>
-                            <div class="checkout-block-tab" id="usertype-2">
-                                <div class="form-group required">
-                                    <input type="text" name="company" placeholder="Название компании" class="form-control" />
-                                </div>
-                                <div class="form-group required">
-                                    <input type="text" name="inn" placeholder="ИНН" class="form-control" />
-                                </div>
-                                <div class="form-group required">
-                                    <input type="text" name="firstname" placeholder="Контактное лицо" class="form-control" />
-                                </div>
-                                <div class="form-group required">
-                                    <input type="text" name="email" placeholder="Email" class="form-control" />
-                                </div>
-                                <div class="form-group required">
-                                    <input type="text" name="phone" placeholder="Телефон" class="form-control" />
-                                </div>
-                                <div class="form-group required">
                                     <input type="text" name="address" placeholder="Адрес доставки" class="form-control" />
                                 </div>
                                 <div class="form-group">
@@ -131,7 +109,7 @@
                         {{ checkout_products }}
                     </div>
                     <div class="custom-checkbox-group checkout-terms">
-                        <label class="custom-checkbox">
+                        <label class="custom-checkbox required">
                             <input type="checkbox" name="gdpr" id="gdpr" value="1" required>
                             <span class="checkmark"></span>
                         </label>
@@ -144,4 +122,5 @@
                 </div>
             </div>
         </div>
+    </div>
 {{ footer }}

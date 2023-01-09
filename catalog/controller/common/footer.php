@@ -4,6 +4,7 @@ class ControllerCommonFooter extends Controller {
 		$this->load->language('common/footer');
 
 		$this->load->model('catalog/information');
+		$this->load->model('account/download');
 
 		$data['informations'] = array();
 
@@ -56,6 +57,45 @@ class ControllerCommonFooter extends Controller {
 
 			$this->model_tool_online->addOnline($ip, $this->customer->getId(), $url, $referer);
 		}
+
+		$page = 1;
+		$data['downloads'] = array();
+
+		$download_total = $this->model_account_download->getTotalDownloads();
+
+		$results = $this->model_account_download->getDownloads(($page - 1) * $this->config->get('theme_' . $this->config->get('config_theme') . '_product_limit'), $this->config->get('theme_' . $this->config->get('config_theme') . '_product_limit'));
+
+		foreach ($results as $result) {
+			if (file_exists(DIR_DOWNLOAD . $result['filename'])) {
+				$size = filesize(DIR_DOWNLOAD . $result['filename']);
+
+				$i = 0;
+
+				$suffix = array(
+					'B',
+					'KB',
+					'MB',
+					'GB',
+					'TB',
+					'PB',
+					'EB',
+					'ZB',
+					'YB'
+				);
+
+				while (($size / 1024) > 1) {
+					$size = $size / 1024;
+					$i++;
+				}
+
+				$data['downloads'][] = array(
+					'name'       => $result['name'],
+					'size'       => round(substr($size, 0, strpos($size, '.') + 4), 2) . $suffix[$i],
+					'href'       => $this->url->link('account/download/download', 'download_id=' . $result['download_id'], true)
+				);
+			}
+		}
+
 
 		$data['scripts'] = $this->document->getScripts('footer');
 		$data['phone'] = $this->config->get('config_telephone');

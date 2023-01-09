@@ -16,19 +16,19 @@
           <h3 class="social-header text-center">Следите за нами</h3>
           <ul class="nav footer-socials-nav">
             <li class="nav-item">
-              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/telegram.svg" /></a>
+              <a href="https://t.me/ziptrade_by" target="_blank"><img src="catalog/view/theme/default/image/socials/telegram.svg" /></a>
             </li>
             <li class="nav-item">
-              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/fb.svg" /></a>
+              <a href="https://www.facebook.com/ziptrade/" target="_blank"><img src="catalog/view/theme/default/image/socials/fb.svg" /></a>
             </li>
             <li class="nav-item">
-              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/insta.svg" /></a>
+              <a href="https://www.instagram.com/ziptrade.by/" target="_blank"><img src="catalog/view/theme/default/image/socials/insta.svg" /></a>
             </li>
             <li class="nav-item">
-              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/youtube.svg" /></a>
+              <a href="https://invite.viber.com/?g2=AQBliy7gVU8NM1AXE87yaYvpz3MvAgbXkKQ5PsJFV8UCjnSZKdXBxVtAGaYORlQI" target="_blank"><img src="catalog/view/theme/default/image/socials/youtube.svg" /></a>
             </li>
             <li class="nav-item">
-              <a href="" target="_blank"><img src="catalog/view/theme/default/image/socials/vk.svg" /></a>
+              <a href="https://vk.com/ziptrade2010" target="_blank"><img src="catalog/view/theme/default/image/socials/vk.svg" /></a>
             </li>
           </ul>
         </div>
@@ -52,7 +52,7 @@
         <div class="col-12 col-md-7 col-lg-4 offset-lg-1">
           <h3 class="footer-header">Наш адрес</h3>
           <div class="footer-info">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2277.1145350332336!2d30.182657099999993!3d55.1987568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c573f2976c622f%3A0x3b077ad480b2662a!2z0YPQuy4g0KLQuNGC0L7QstCwIDEzLCDQktC40YLQtdCx0YHQug!5e0!3m2!1sru!2sby!4v1672175972681!5m2!1sru!2sby" width="100%" height="253" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2277.3147073867326!2d30.149700500000005!3d55.195256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c573980c4bd1b9%3A0x58292ae558237cd0!2z0YPQuy4g0KLQuNGC0L7QstCwIDEzOCwg0JLQuNGC0LXQsdGB0LogMjEwMDIx!5e0!3m2!1sru!2sby!4v1673292305057!5m2!1sru!2sby" width="100%" height="253" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         <!--<div class="col-12 col-md-12 col-lg-4 offset-xl-1">
@@ -80,6 +80,25 @@
             </div>
           </div>
         </div>-->
+        {% if downloads %}
+          <div class="col-12 col-md-12 col-lg-3 offset-lg-1">
+            <div class="">
+              <h3 class="footer-header">Договор</h3>
+              <div class="footer-info footer-downloads">
+                {% for download in downloads %}
+                  <div class="footer-download">
+                    <div class="footer-download-icon">
+                      <img src="/image/catalog/delivery/delivery1.png" alt="" title="">
+                    </div>
+                    <div class="download-link">
+                      <a href="{{ download.href }}" title="{{ button_download }}">{{ download.name }}</a>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>

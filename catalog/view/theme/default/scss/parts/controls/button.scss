@@ -38,6 +38,10 @@
 
 #button-cart {
   padding: 18px 106px 19px;
+
+  @include respond-to(sm) {
+    width: 100%;
+  }
 }
 
 .alert-dismissible .btn-close {

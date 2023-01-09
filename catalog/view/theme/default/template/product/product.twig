@@ -4,7 +4,7 @@
     {% if column_left and column_right %}
     {% set class = 'col-sm-6' %}
     {% elseif column_left or column_right %}
-    {% set class = 'col-sm-9' %}
+    {% set class = 'col-md-9' %}
     {% else %}
     {% set class = 'col-sm-12' %}
     {% endif %}
@@ -26,17 +26,20 @@
         {% endif %}
         <div class="{{ class }}"> 
           {% if thumb or images %}
-            <ul class="thumbnails">
+            <div class="product-images">
+              <ul class="thumbnails">
+                {% if images %}
+                  {% for image in images %}
+                    <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" class="img-fluid" /></a></li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
               {% if thumb %}
-                <li>
-                <a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+                <div class="product-thumb">
+                  <a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a>
+                </div>
               {% endif %}
-              {% if images %}
-                {% for image in images %}
-                  <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" class="img-fluid" /></a></li>
-                {% endfor %}
-              {% endif %}
-            </ul>
+            </div>
           {% endif %}
         </div>
         {% if column_left or column_right %}
@@ -458,7 +461,7 @@ $('#button-review').on('click', function() {
 });
 
 $(document).ready(function() {
-	$('.thumbnails').magnificPopup({
+	$('.product-images').magnificPopup({
 		type:'image',
 		delegate: 'a',
 		gallery: {

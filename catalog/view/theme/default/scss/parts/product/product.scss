@@ -6,11 +6,60 @@
 #product-product {
   padding-top: 55px;
   padding-bottom: 315px;
+
+  @include respond-to(md) {
+    padding-bottom: 100px;
+    padding-top: 0;
+
+    & .featured-module {
+      margin-top: 61px !important;
+    }
+  }
+
+
+}
+
+.product-images {
+  display: flex;
+
+  & .thumbnails {
+    display: flex;
+    flex-direction: column;
+    margin-right: 14px;
+    flex-shrink: 0;
+
+    @include respond-to(md) {
+      order: 2;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  & .product-thumb {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to(md) {
+      order: 1;
+    }
+  }
+
+  @include respond-to(md) {
+    flex-direction: column;
+  }
 }
 
 .product-options {
   color: $main;
-  padding-left: 46px;
+
+  & .form-group {
+    @include respond-to(md) {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 .product-title {
@@ -90,6 +139,26 @@
   justify-content: flex-start;
   gap: 27px;
   margin-bottom: 22px;
+
+  @include respond-to(md) {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    & .form-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 15px;
+
+      & label {
+        margin-bottom: 0;
+        margin-right: 25px;
+      }
+    }
+  }
 }
 
 .stock-available {

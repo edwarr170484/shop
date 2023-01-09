@@ -234,3 +234,27 @@ footer {
     }
   }
 }
+
+.footer-download {
+  display: flex;
+  align-items: center;
+
+  & a {
+    font-size: 16px;
+    line-height: 24px;
+    color: $blue;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  & .footer-download-icon {
+    & img {
+      max-width: 17px;
+      margin-right: 15px;
+    }
+  }
+}
