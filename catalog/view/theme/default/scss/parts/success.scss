@@ -1,0 +1,12 @@
+#common-success {
+    padding-top: 55px;
+    padding-bottom: 55px;
+
+    & h1{
+        font-size: 30px;
+        line-height: 35px;
+        text-transform: uppercase;
+        color: $main;
+        margin-bottom: 59px;
+    }
+}

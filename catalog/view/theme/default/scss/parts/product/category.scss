@@ -12,16 +12,34 @@
   color: $main;
   text-align: center;
   margin-bottom: 59px;
+
+  @include respond-to(md){
+    display: none;
+  }
 }
 .category-sorts {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   font-size: 16px;
   line-height: 19px;
   color: $main;
   margin-bottom: 48px;
+
+  & .category-name{
+    display: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color:$main;
+    text-transform: uppercase;
+
+    @include respond-to(md){
+      display: block;
+    }
+  }
 
   & .sort-links {
     & li {
@@ -34,6 +52,41 @@
         font-size: 16px;
         line-height: 19px;
         text-decoration: none;
+      }
+    }
+
+    @include respond-to(md){
+      flex-direction:column;
+      background: #fff;
+      padding:15px 15px 7px;
+      border:1px solid $gray;
+      align-items: flex-end;
+      position: absolute;
+      right:0;
+      top:100%;
+      display: none;
+      z-index:11;
+
+      & li{
+        margin-bottom: 7px;
+      }
+    }
+  }
+
+  & .input-group-addon{
+    @include respond-to(md){
+      display: none;
+    }
+  }
+
+  @include respond-to(md){
+    background: url('../image/icons/filter.png') 100% center no-repeat;
+    margin-bottom: 0;
+    height: 48px;
+
+    &:hover, &:focus{
+      & .sort-links{
+        display: flex;
       }
     }
   }

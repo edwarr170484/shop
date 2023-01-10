@@ -65,6 +65,7 @@
             <div class="col-12">
               <div class="category-sorts">
                 <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
+                <label class="category-name">{{ heading_title }}</label>
                 <ul class="nav sort-links">
                   {% for sorts in sorts %}
                     <li><a href="{{ sorts.href }}">{{ sorts.text }}</a><li>
@@ -92,11 +93,6 @@
                         </p>
                         {% endif %}
                       </div>
-                      <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
-                        <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M20.5694 0.761173C17.2331 -0.363749 13.6475 1.51355 12.5026 4.95769C11.3578 1.50993 7.77216 -0.363749 4.43588 0.761173C1.06096 1.90438 -0.779261 5.6809 0.316487 9.20544C1.37005 12.5656 11.1401 21.565 12.3902 21.565C13.6405 21.565 23.6283 12.5765 24.6818 9.20544C25.781 5.6736 23.9408 1.89707 20.5694 0.761173Z" fill="#FF7373"/>
-                        </svg>
-                      </button>
                     </div>
                   </div>
                 {% endfor %}

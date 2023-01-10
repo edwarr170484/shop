@@ -1,30 +1,22 @@
 /*
-Error: Undefined mixin 'respond-to'.
-        on line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss, in `respond-to'
-        from line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss
-        from line 1 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\product\product.scss
+Error: Undefined variable: "$main".
+        on line 9 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\success.scss
 
-4: @import "./images.scss";
-5: 
-6: #product-product {
-7:   padding-top: 55px;
-8:   padding-bottom: 315px;
-9: 
-10:   @include respond-to(md) {
-11:     padding-bottom: 100px;
-12:     padding-top: 0;
-13: 
-14:     & .featured-module {
+4: 
+5:     & h1{
+6:         font-size: 30px;
+7:         line-height: 35px;
+8:         text-transform: uppercase;
+9:         color: $main;
+10:         margin-bottom: 59px;
+11:     }
+12: }
 
 Backtrace:
-C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss:9:in `respond-to'
-C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss:9
-C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\product\product.scss:1
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `with_mixin'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
+C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\success.scss:9
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
@@ -42,13 +34,11 @@ C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `b
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:88:in `block in with_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:88:in `with_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
@@ -80,4 +70,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'respond-to'.\A         on line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss, in `respond-to'\A         from line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss\A         from line 1 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\product\product.scss\A \A 4: @import \"./images.scss\";\A 5: \A 6: #product-product {\A 7:   padding-top: 55px;\A 8:   padding-bottom: 315px;\A 9: \A 10:   @include respond-to(md) {\A 11:     padding-bottom: 100px;\A 12:     padding-top: 0;\A 13: \A 14:     & .featured-module {"; }
+  content: "Error: Undefined variable: \"$main\".\A         on line 9 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\success.scss\A \A 4: \A 5:     & h1{\A 6:         font-size: 30px;\A 7:         line-height: 35px;\A 8:         text-transform: uppercase;\A 9:         color: $main;\A 10:         margin-bottom: 59px;\A 11:     }\A 12: }"; }

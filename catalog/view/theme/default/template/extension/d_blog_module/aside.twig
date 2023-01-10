@@ -1,14 +1,27 @@
+{% if category %}
+    <button type="button" id="blog-toggler">
+        <span class="image">
+            <img src="{{ category.image }}" alt="" title="{{ category.title }}" />
+        </span>
+        <span>{{ category.title }}</span>
+    </button>
+    <script>
+        $("#blog-toggler").on('click', function(){
+            $(".blog-menu").toggleClass("show");
+        });
+    </script>
+{% endif %}
 {% if categories %}
-    <ul class="nav blog-menu">
+    <div class="nav blog-menu">
         {% for category in categories %}
-            <li>
+            <div class="li">
                 <a href="{{ category.href }}" {{ category.class }}>
                     <span class="image">
                         <img src="{{ category.image }}" alt="" title="{{ category.title }}" />
                     </span>
                     <span>{{ category.title }}</span>
                 </a>
-            </li>
+            </div>
         {% endfor %}
-    <ul>
+    <div>
 {% endif %}
