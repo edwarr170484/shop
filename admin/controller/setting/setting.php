@@ -509,6 +509,14 @@ class ControllerSettingSetting extends Controller {
 			$data['config_invoice_prefix'] = 'INV-' . date('Y') . '-00';
 		}
 
+		if (isset($this->request->post['config_order_min'])) {
+			$data['config_order_min'] = $this->request->post['config_order_min'];
+		} elseif ($this->config->has('config_order_min')) {
+			$data['config_order_min'] = $this->config->get('config_order_min');
+		} else {
+			$data['config_order_min'] = '';
+		}
+
 		if (isset($this->request->post['config_order_status_id'])) {
 			$data['config_order_status_id'] = $this->request->post['config_order_status_id'];
 		} else {

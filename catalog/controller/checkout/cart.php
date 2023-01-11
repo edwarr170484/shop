@@ -24,6 +24,10 @@ class ControllerCheckoutCart extends Controller {
 				$data['error_warning'] = $this->session->data['error'];
 
 				unset($this->session->data['error']);
+
+			} elseif ($this->cart->hasProducts() && ($this->cart->getTotal() < $this->config->get('config_order_min'))) {
+				$data['error_warning'] = sprintf($this->language->get('text_order_min'), $this->currency->format($this->config->get('config_order_min'), $this->session->data['currency']));
+				$data['error_order_min'] = true;
 			} else {
 				$data['error_warning'] = '';
 			}

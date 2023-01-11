@@ -1,76 +1,88 @@
 <?php
 class ControllerCheckoutCheckout extends Controller {
 	public function index() {
-		$this->load->language('checkout/checkout');
+		$redirect = '';
 
-		$data['breadcrumbs'] = array();
+		// Validate cart has products and has stock.
+		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout')) || (($this->cart->getTotal() < $this->config->get('config_order_min')) && $this->cart->hasProducts() )) {
+			$redirect = $this->url->link('checkout/cart');
+		}
 
-		$data['breadcrumbs'][] = array(
-			'href' => $this->url->link('common/home'),
-			'text' => $this->language->get('text_home')
-		);
+		if(!$redirect){
+			$this->load->language('checkout/checkout');
 
-		$data['breadcrumbs'][] = array(
-			'href' => $this->url->link('checkout/checkout'),
-			'text' => $this->language->get('heading_title')
-		);
+			$data['breadcrumbs'] = array();
 
-		//left column shipping methods
-		$data['shipping_methods'] = $this->load->controller('checkout/shipping_method');
+			$data['breadcrumbs'][] = array(
+				'href' => $this->url->link('common/home'),
+				'text' => $this->language->get('text_home')
+			);
 
-		// left column payment methods
-		$data['payment_methods'] = $this->load->controller('checkout/payment_method');
+			$data['breadcrumbs'][] = array(
+				'href' => $this->url->link('checkout/checkout'),
+				'text' => $this->language->get('heading_title')
+			);
 
-		// left column customer groups
-		if (is_array($this->config->get('config_customer_group_display'))) {
-			$this->load->model('account/customer_group');
+			//left column shipping methods
+			$data['shipping_methods'] = $this->load->controller('checkout/shipping_method');
 
-			$customer_groups = $this->model_account_customer_group->getCustomerGroups();
+			// left column payment methods
+			$data['payment_methods'] = $this->load->controller('checkout/payment_method');
 
-			foreach ($customer_groups as $customer_group) {
-				if (in_array($customer_group['customer_group_id'], $this->config->get('config_customer_group_display'))) {
-					$data['customer_groups'][] = $customer_group;
+			// left column customer groups
+			if (is_array($this->config->get('config_customer_group_display'))) {
+				$this->load->model('account/customer_group');
+
+				$customer_groups = $this->model_account_customer_group->getCustomerGroups();
+
+				foreach ($customer_groups as $customer_group) {
+					if (in_array($customer_group['customer_group_id'], $this->config->get('config_customer_group_display'))) {
+						$data['customer_groups'][] = $customer_group;
+					}
 				}
 			}
-		}
 
-		// get right column site config 
-		if ($this->request->server['HTTPS']) {
-			$server = $this->config->get('config_ssl');
-		} else {
-			$server = $this->config->get('config_url');
-		}
-		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
-			$data['logo'] = $server . 'image/' . $this->config->get('config_logo');
-		} else {
-			$data['logo'] = '';
-		}
-		$data['telephone'] = $this->config->get('config_telephone');
-		$data['hostname'] = $this->request->server['SERVER_NAME'];
-		$data['home'] = $this->url->link('common/home');
-		$data['name'] = $this->config->get('config_name');
+			// get right column site config 
+			if ($this->request->server['HTTPS']) {
+				$server = $this->config->get('config_ssl');
+			} else {
+				$server = $this->config->get('config_url');
+			}
+			if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
+				$data['logo'] = $server . 'image/' . $this->config->get('config_logo');
+			} else {
+				$data['logo'] = '';
+			}
+			$data['telephone'] = $this->config->get('config_telephone');
+			$data['hostname'] = $this->request->server['SERVER_NAME'];
+			$data['home'] = $this->url->link('common/home');
+			$data['name'] = $this->config->get('config_name');
 
 
-		// get right column cart data
-		$data['checkout_products'] = $this->load->controller('checkout/confirm');
+			// get right column cart data
+			$data['checkout_products'] = $this->load->controller('checkout/confirm');
+			
+			$this->load->language('checkout/checkout');
+
+			if (isset($this->session->data['error'])) {
+				$data['error_warning'] = $this->session->data['error'];
+				unset($this->session->data['error']);
+			} else {
+				$data['error_warning'] = '';
+			}
+
+			$data['shipping_required'] = $this->cart->hasShipping();
+			$data['heading_title'] = $this->language->get('heading_title');
+			$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
+
+			$data['footer'] = $this->load->controller('common/footer');
+			$data['header'] = $this->load->controller('common/header');
+
+			$this->response->setOutput($this->load->view('checkout/checkout', $data));
+		}else{
+			$this->response->redirect($redirect);
+		}
 		
-		$this->load->language('checkout/checkout');
-
-		if (isset($this->session->data['error'])) {
-			$data['error_warning'] = $this->session->data['error'];
-			unset($this->session->data['error']);
-		} else {
-			$data['error_warning'] = '';
-		}
-
-		$data['shipping_required'] = $this->cart->hasShipping();
-		$data['heading_title'] = $this->language->get('heading_title');
-		$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
-
-		$data['footer'] = $this->load->controller('common/footer');
-		$data['header'] = $this->load->controller('common/header');
-
-		$this->response->setOutput($this->load->view('checkout/checkout', $data));
 	}
 
 	public function country() {

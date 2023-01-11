@@ -33,7 +33,7 @@
     {% endif %}
     <div id="content" class="{{ class }}">
       {{ content_top }}
-      <form action="{{ action }}" method="post" enctype="multipart/form-data" id="cartForm" name="cartForm">
+      <form action="{{ action }}" method="post" enctype="multipart/form-data" id="cartFormDesktop" name="cartFormDesktop">
         <div class="table-responsive desktop-table">
           <table class="table table-bordered">
             <thead>
@@ -67,9 +67,9 @@
                 <td class="text-center">
                   <div class="input-group btn-block" style="max-width: 200px;">
                     <div class="input-number w-100">
-                          <button type="button" class="input-down" onclick="inputDown($(this));document.cartForm.submit()">-</button>
+                          <button type="button" class="input-down" onclick="inputDown($(this));document.cartFormDesktop.submit()">-</button>
                           <input type="text" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" id="input-quantity" size="1" class="form-control" />
-                          <button type="button" class="input-up" onclick="inputUp($(this));document.cartForm.submit()">+</button>
+                          <button type="button" class="input-up" onclick="inputUp($(this));document.cartFormDesktop.submit()">+</button>
                         </div>
                   </div>
                 </td>
@@ -98,6 +98,8 @@
             </div>
           </div>
         </div>
+      </form>
+      <form action="{{ action }}" method="post" enctype="multipart/form-data" id="cartFormMobile" name="cartFormMobile">
         <div class="mobile-table">
           {% for product in products %}
             <div class="cart-cell">
@@ -122,9 +124,9 @@
                   </div>
                    <div class="input-group btn-block" style="max-width: 108px;">
                     <div class="input-number w-100">
-                      <button type="button" class="input-down" onclick="inputDown($(this));document.cartForm.submit()">-</button>
+                      <button type="button" class="input-down" onclick="inputDown($(this));document.cartFormMobile.submit()">-</button>
                       <input type="text" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" id="input-quantity" size="1" class="form-control" />
-                      <button type="button" class="input-up" onclick="inputUp($(this));document.cartForm.submit()">+</button>
+                      <button type="button" class="input-up" onclick="inputUp($(this));document.cartFormMobile.submit()">+</button>
                     </div>
                   </div>
                   <span class="product-model">Артикул:&nbsp;{{ product.model }}</span>
@@ -150,8 +152,8 @@
             <a href="{{ continue }}" class="btn btn-default">{{ button_shopping }}</a>
           </div>
         </div>
-
       </form>
+
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
