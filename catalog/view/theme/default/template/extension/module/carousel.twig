@@ -1,7 +1,7 @@
 <div class="swiper-viewport">
   <div id="carousel{{ module }}" class="swiper-container">
     <div class="swiper-wrapper">{% for banner in banners %}
-      <div class="swiper-slide text-center">{% if banner.link %}<a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a>{% else %}<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />{% endif %}</div>
+      <div class="swiper-slide text-center">{% if banner.link %}<a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a>{% else %}<a href="{{ banner.popup }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a>{% endif %}</div>
       {% endfor %}</div>
   </div>
   <div class="swiper-pagination carousel{{ module }}"></div>
@@ -24,7 +24,6 @@ $('#carousel{{ module }}').swiper({
 	paginationClickable: true,
 	nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
-	autoplay: 2500,
 	loop: true,
   breakpoints: {
     480: {
@@ -37,5 +36,14 @@ $('#carousel{{ module }}').swiper({
       slidesPerView: 4,
     }
   }
+});
+$(document).ready(function() {
+$('#information-information .swiper-slide').magnificPopup({
+		type:'image',
+		delegate: 'a',
+		gallery: {
+			enabled: true
+		}
+	});
 });
 --></script>

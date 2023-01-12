@@ -105,7 +105,7 @@ class ControllerCommonFooter extends Controller {
 		$data['email'] = $this->config->get('config_email');
 		$data['open'] = $this->config->get('config_open');
 		$data['map'] = $this->config->get('config_geocode');
-		$data['config_comment'] = $this->config->get('config_comment');
+		$data['config_comment'] = htmlspecialchars_decode(nl2br($this->config->get('config_comment')));
 		
 		return $this->load->view('common/footer', $data);
 	}

@@ -3,7 +3,6 @@
 {% endif %}
 {% if shipping_methods %}
   <select name="shipping_method" class="form-select form-control" id="shipping_method">
-    <option value="0">Выберите способ доставки</option>
     {% for shipping_method in shipping_methods %}
       {% for quote in shipping_method.quote %}
         <option value="{{ quote.code }}">{{ quote.title }}</option>

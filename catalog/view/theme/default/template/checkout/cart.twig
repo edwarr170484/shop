@@ -1,10 +1,5 @@
 {{ header }}
 <div id="checkout-cart" class="container">
-  <ul class="breadcrumb">
-    {% for breadcrumb in breadcrumbs %}
-    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
-    {% endfor %}
-  </ul>
   {% if attention %}
   <div class="alert alert-info alert-dismissible fade show" role="alert">
     {{ attention }}
@@ -63,7 +58,16 @@
                     </div>
                   </div>
                 </td>
-                <td class="text-center">{{ product.price }}</td>
+                <td class="text-center ">
+                  {% if product.special %}
+                  <div class="cart-price">
+                    <span>{{ product.oldPrice }}</span>
+                    <span>{{ product.price }}</span>
+                  </div>
+                  {% else %}
+                    {{ product.price }}
+                  {% endif %}
+                </td>
                 <td class="text-center">
                   <div class="input-group btn-block" style="max-width: 200px;">
                     <div class="input-number w-100">
@@ -97,6 +101,11 @@
                 {% endfor %}
             </div>
           </div>
+          <div class="cart-min">
+            <div class="cart-min-pan">
+              <div class="cart-min-inner">Минимальная сумма заказа <span>{{ order_min }}</span></div>
+            </div>
+          </div>
         </div>
       </form>
       <form action="{{ action }}" method="post" enctype="multipart/form-data" id="cartFormMobile" name="cartFormMobile">
@@ -120,7 +129,14 @@
                   <div><a href="{{ product.href }}">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}</div>
                   <div class="product-price">
                     <span>{{ column_price }}</span>
-                    <span>{{ product.price }}</span>
+                    {% if product.special %}
+                    <div class="cart-price">
+                      <span>{{ product.oldPrice }}</span>
+                      <span>{{ product.price }}</span>
+                    </div>
+                    {% else %}
+                      {{ product.price }}
+                    {% endif %}
                   </div>
                    <div class="input-group btn-block" style="max-width: 108px;">
                     <div class="input-number w-100">
@@ -138,7 +154,6 @@
               </div>
             </div>
           {% endfor %}
-
           <div class="totals">
             {% for total in totals %}
               <div class="total">
@@ -146,6 +161,11 @@
                 <span class="total-price">{{ total.text }}</span>
               </div>
             {% endfor %}
+          </div>
+          <div class="cart-min">
+            <div class="cart-min-pan">
+              <div class="cart-min-inner">Минимальная сумма заказа <span>{{ order_min }}</span></div>
+            </div>
           </div>
           <div class="buttons">
             <a href="{{ checkout }}" class="btn btn-primary">{{ button_checkout }}</a>

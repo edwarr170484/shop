@@ -71,6 +71,10 @@ class ControllerCheckoutCheckout extends Controller {
 				$data['error_warning'] = '';
 			}
 
+			$this->load->model('localisation/zone');
+
+			$data['cities'] = $this->model_localisation_zone->getZonesByCountryId($this->config->get('config_country_id'));
+
 			$data['shipping_required'] = $this->cart->hasShipping();
 			$data['heading_title'] = $this->language->get('heading_title');
 			$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);

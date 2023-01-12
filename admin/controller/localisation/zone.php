@@ -324,6 +324,22 @@ class ControllerLocalisationZone extends Controller {
 			$data['code'] = '';
 		}
 
+		if (isset($this->request->post['min_order'])) {
+			$data['min_order'] = $this->request->post['min_order'];
+		} elseif (!empty($zone_info)) {
+			$data['min_order'] = $zone_info['min_order'];
+		} else {
+			$data['min_order'] = '';
+		}
+
+		if (isset($this->request->post['min_order_text'])) {
+			$data['min_order_text'] = $this->request->post['min_order_text'];
+		} elseif (!empty($zone_info)) {
+			$data['min_order_text'] = $zone_info['min_order_text'];
+		} else {
+			$data['min_order_text'] = '';
+		}
+
 		if (isset($this->request->post['country_id'])) {
 			$data['country_id'] = $this->request->post['country_id'];
 		} elseif (!empty($zone_info)) {

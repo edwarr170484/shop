@@ -17,6 +17,8 @@ class ControllerCheckoutCart extends Controller {
 			'text' => $this->language->get('heading_title')
 		);
 
+		$this->load->model('catalog/product');
+
 		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
 			if (!$this->cart->hasStock() && (!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning'))) {
 				$data['error_warning'] = $this->language->get('error_stock');
@@ -62,6 +64,8 @@ class ControllerCheckoutCart extends Controller {
 			$products = $this->cart->getProducts();
 
 			foreach ($products as $product) {
+				$product_info = $this->model_catalog_product->getProduct($product['product_id']);
+
 				$product_total = 0;
 
 				foreach ($products as $product_2) {
@@ -134,6 +138,12 @@ class ControllerCheckoutCart extends Controller {
 					}
 				}
 
+				if ((float)$product_info['special']) {
+					$special = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				} else {
+					$special = false;
+				}
+
 				$data['products'][] = array(
 					'cart_id'   => $product['cart_id'],
 					'thumb'     => $image,
@@ -145,6 +155,8 @@ class ControllerCheckoutCart extends Controller {
 					'stock'     => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
 					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
 					'price'     => $price,
+					'oldPrice'  => $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']),
+					'special'   => $special,
 					'total'     => $total,
 					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
 				);
@@ -210,7 +222,15 @@ class ControllerCheckoutCart extends Controller {
 
 			$data['totals'] = array();
 
+			$data['checkout'] = $this->url->link('checkout/checkout', '', true);
+
+			$data['order_min'] = $this->currency->format($this->config->get('config_order_min'), $this->session->data['currency']);
+
 			foreach ($totals as $total) {
+				if($total['value'] < $this->config->get('config_order_min')){
+					$data['checkout'] = 'javascript:void(0)';
+				}
+
 				$data['totals'][] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
@@ -218,8 +238,6 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			$data['continue'] = $this->url->link('common/home');
-
-			$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 
 			$this->load->model('setting/extension');
 

@@ -33,7 +33,7 @@
                                 <div class="head-text">Регион доставки</div>
                             </div>
                             <div class="checkout-block-inner">
-                                {% if customer_groups %}
+                                <!--{% if customer_groups %}
                                     <div class="form-group required">
                                         <select name="customer_group_id" class="form-select form-control" id="checkout-usertype">
                                             {% for group in customer_groups %}
@@ -49,10 +49,20 @@
                                             $("#usertype").html(company);
                                         });
                                     </script>
+                                {% endif %}-->
+                                <input name="customer_group_id" class="form-select form-control" id="checkout-usertype" value="1" type="hidden" />
+                                {% if cities %}
+                                    <div class="form-group required">
+                                        <select name="city" placeholder="Укажите город" id="input-shipping-city" class="form-control form-select">
+                                            {% for city in cities %}
+                                                <option value="{{ city.name }}">{{ city.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        {% for city in cities %}
+                                            <!--<div class="city-description" id="city-description">{{ city.min_order_text }}</div>-->
+                                        {% endfor %}
+                                    </div>
                                 {% endif %}
-                                <div class="form-group required">
-                                    <input type="text" name="city" placeholder="Укажите город" id="input-shipping-city" class="form-control" />
-                                </div>
                             </div>
                         </div>
                         <div class="checkout-block">
@@ -73,6 +83,12 @@
                                 <div class="form-group required">
                                     <input type="text" name="firstname" placeholder="ФИО" class="form-control" />
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" name="company" placeholder="Название компании" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" name="unp" placeholder="УНП" class="form-control" />
+                                </div>
                                 <div class="form-group required">
                                     <input type="text" name="email" placeholder="Email" class="form-control" />
                                 </div>
@@ -80,11 +96,7 @@
                                     <input type="text" name="phone" placeholder="Телефон" class="form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="address" placeholder="Адрес доставки" class="form-control" />
-                                </div>
-                                <div class="form-group">
-                                    <label>Комментарий</label>
-                                    <textarea name="comment" rows="8" class="form-control">{{ comment }}</textarea>
+                                    <input type="text" name="address" placeholder="Адрес доставки (если доставка курьером)" class="form-control" />
                                 </div>
                             </div>
                         </div>

@@ -283,6 +283,12 @@ class ControllerSettingSetting extends Controller {
 			$data['config_open'] = $this->config->get('config_open');
 		}
 
+		if (isset($this->request->post['config_lunch'])) {
+			$data['config_lunch'] = $this->request->post['config_lunch'];
+		} else {
+			$data['config_lunch'] = $this->config->get('config_lunch');
+		}
+
 		if (isset($this->request->post['config_comment'])) {
 			$data['config_comment'] = $this->request->post['config_comment'];
 		} else {

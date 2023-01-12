@@ -14,6 +14,7 @@ class ControllerExtensionDBlogModuleBlog extends Controller {
         $this->load->model('extension/module/d_blog_module');
         $this->load->model('extension/d_blog_module/category');
         $this->load->model('extension/d_blog_module/post');
+        $this->load->model('extension/d_opencart_patch/load');
         $this->load->model('tool/image');
 
         $styles = array(

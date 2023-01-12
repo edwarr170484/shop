@@ -168,6 +168,12 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-lunch"><span data-toggle="tooltip" data-container="#tab-general" title="Задает время обеда для магазина">Время обеда</span></label>
+                <div class="col-sm-10">
+                  <textarea name="config_lunch" rows="5" placeholder="Время обеда" id="input-lunch" class="form-control">{{ config_lunch }}</textarea>
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-comment"><span data-toggle="tooltip" data-container="#tab-general" title="{{ help_comment }}">{{ entry_comment }}</span></label>
                 <div class="col-sm-10">
                   <textarea name="config_comment" rows="5" placeholder="{{ entry_comment }}" id="input-comment" class="form-control">{{ config_comment }}</textarea>

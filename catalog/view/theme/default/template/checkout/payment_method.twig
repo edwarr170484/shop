@@ -3,7 +3,6 @@
 {% endif %}
 {% if payment_methods %}
   <select name="payment_method" class="form-select form-control" id="payment_method">
-    <option value="0">Выберите способ оплаты</option>
     {% for payment_method in payment_methods %}
       <option value="{{ payment_method.code }}">{{ payment_method.title }}</option>
     {% endfor %}

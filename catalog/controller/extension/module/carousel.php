@@ -19,7 +19,8 @@ class ControllerExtensionModuleCarousel extends Controller {
 				$data['banners'][] = array(
 					'title' => $result['title'],
 					'link'  => $result['link'],
-					'image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'])
+					'image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']),
+					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_popup_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_popup_height'))
 				);
 			}
 		}
