@@ -96,7 +96,7 @@ class ControllerCheckoutConfirm extends Controller {
 			$order_data['lastname'] = '';
 
 			if(isset($this->request->post['company'])){
-				$order_data['lastname'] .= ', Компания: ' . $this->request->post['company'] . ', ИНН: ' . $this->request->post['inn'];
+				$order_data['lastname'] .= ', Компания: ' . $this->request->post['company'];
 			}
 
 			if(isset($this->request->post['unp'])){
