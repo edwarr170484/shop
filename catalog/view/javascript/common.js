@@ -98,6 +98,8 @@ function inputUp(button) {
 }
 
 $(document).ready(function () {
+  $(".bck").backToTop();
+
   $(".read-more").on("click", function () {
     $(".more-description").slideToggle();
   });
@@ -356,11 +358,10 @@ var cart = {
           );
         }, 100);
 
-        if (
-          getURLVar("route") == "checkout/cart" ||
-          getURLVar("route") == "checkout/checkout"
-        ) {
+        if (getURLVar("route") == "checkout/cart"){
           location = "index.php?route=checkout/cart";
+        }else{
+          location = "index.php?route=checkout/checkout";
         }
       },
       error: function (xhr, ajaxOptions, thrownError) {

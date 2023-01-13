@@ -26,6 +26,9 @@
           </div>
         </div>
       </div>
+      <button type="button" data-toggle="tooltip" title="{{ button_remove }}" onclick="cart.remove('{{ product.cart_id }}');" class="cart-remove">
+        <img src="/catalog/view/theme/default/image/checkout/delete.svg" alt="" />
+      </button>
     </div>
   {% endfor %}
   {% for total in totals %}
