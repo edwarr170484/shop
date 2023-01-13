@@ -53,13 +53,15 @@
                                 <input name="customer_group_id" class="form-select form-control" id="checkout-usertype" value="1" type="hidden" />
                                 {% if cities %}
                                     <div class="form-group required">
-                                        <select name="city" placeholder="Укажите город" id="input-shipping-city" class="form-control form-select">
+                                        <select name="zone_id" placeholder="Укажите город" id="input-shipping-zone" class="form-control form-select">
                                             {% for city in cities %}
-                                                <option value="{{ city.name }}">{{ city.name }}</option>
+                                                <option value="{{ city.zone_id }}">{{ city.name }}</option>
                                             {% endfor %}
                                         </select>
+                                        <div class="city-delivery-text"></div>
                                         {% for city in cities %}
-                                            <!--<div class="city-description" id="city-description">{{ city.min_order_text }}</div>-->
+                                            <input name="city-delivery-text" id="city-delivery-text-{{ city.zone_id }}" value="{{ city.min_order_text }}" type="hidden" />
+                                            <input name="city-delivery-price" id="city-delivery-price-{{ city.zone_id }}" value="{{ city.min_order }}" type="hidden" />
                                         {% endfor %}
                                     </div>
                                 {% endif %}

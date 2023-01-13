@@ -115,7 +115,7 @@ class ControllerCheckoutConfirm extends Controller {
 			$order_data['payment_city'] = isset($this->request->post['city']) ? $this->request->post['city'] : '';
 			$order_data['payment_postcode'] = '';
 			$order_data['payment_zone'] = '';
-			$order_data['payment_zone_id'] = 0;
+			$order_data['payment_zone_id'] = isset($this->request->post['zone_id']) ? $this->request->post['zone_id'] : '';;
 			$order_data['payment_country'] = 'Республика Беларусь';
 			$order_data['payment_country_id'] = 20;
 			$order_data['payment_address_format'] = '';
@@ -148,7 +148,7 @@ class ControllerCheckoutConfirm extends Controller {
 			$order_data['shipping_city'] = isset($this->request->post['city']) ? $this->request->post['city'] : '';
 			$order_data['shipping_postcode'] = '';
 			$order_data['shipping_zone'] = '';
-			$order_data['shipping_zone_id'] = 0;
+			$order_data['shipping_zone_id'] = isset($this->request->post['zone_id']) ? $this->request->post['zone_id'] : '';
 			$order_data['shipping_country'] = 'Республика Беларусь';
 			$order_data['shipping_country_id'] = 20;
 			$order_data['shipping_address_format'] = '';
@@ -368,8 +368,11 @@ class ControllerCheckoutConfirm extends Controller {
 			}
 
 			$data['totals'] = array();
+			$data['totalAmount'] = 0;
 
 			foreach ($order_data['totals'] as $total) {
+				$data['totalAmount'] += $total['value'];
+
 				$data['totals'][] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
@@ -377,6 +380,7 @@ class ControllerCheckoutConfirm extends Controller {
 			}
 
 			$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
+			$data['currency'] = ' ' . $this->session->data['currency'];
 		} else {
 			$data['redirect'] = $redirect;
 		}

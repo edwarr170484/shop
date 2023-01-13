@@ -312,6 +312,21 @@
   }
 }
 
+.city-delivery-description {
+  background: #f6f6f6;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: $main;
+  padding: 20px 32px;
+  margin-top: 19px;
+
+  & span{
+    font-weight: 700;
+  }
+}
+
 .checkout-block-tab {
   display: none;
 

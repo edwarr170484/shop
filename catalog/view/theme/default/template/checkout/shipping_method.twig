@@ -15,12 +15,4 @@
         <div class="shipping-description" id="shipping-description-{{ parts[0] }}">{{ quote.comment | raw }}</div>
       {% endfor %}
 {% endfor %}
-<script>
-  $("#shipping_method").change(function(){
-    let method = $(this).val();
-    let parts = method.split('.');
-    $(".shipping-description").removeClass("active");
-    $("#shipping-description-" + parts[0]).addClass("active");
-  });
-</script>
 {% endif %}

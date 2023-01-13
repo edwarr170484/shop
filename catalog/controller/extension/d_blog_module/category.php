@@ -129,7 +129,7 @@ class ControllerExtensionDBlogModuleCategory extends Controller
         $data['breadcrumbs'] = array();
         $data['breadcrumbs'][] = array('text' => $this->language->get('text_home'), 'href' => $this->url->link('common/home'), '', 'SSL');
         if ($this->setting['category']['main_category_id'] == 0 && $this->setting['category']['main_category_id'] !== $category_id) {
-            $data['breadcrumbs'][] = array('text' => $this->language->get('heading_title'), 'href' => $this->url->link('extension/d_blog_module/category', 'category_id=' . $this->setting['category']['main_category_id'], 'SSL'));
+            $data['breadcrumbs'][] = array('text' => $this->language->get('heading_title'), 'href' => $this->url->link('extension/d_blog_module/blog', '', 'SSL'));
         }
         foreach ($parents as $parent) {
             $data['breadcrumbs'][] = array(

@@ -1,8 +1,8 @@
 <?php
 // Text
-$_['heading_title']     = 'Our Blog';
+$_['heading_title']     = 'Блог';
 $_['description']       = 'Description';
-$_['meta_title']        = 'Our Blog';
+$_['meta_title']        = 'Блог';
 $_['meta_description']  = 'meta_description';
 $_['meta_keyword']      = 'meta_keyword';
 

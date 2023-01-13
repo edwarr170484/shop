@@ -39,3 +39,45 @@
     <div class="checkout-delivery-info">Расчет будет произведен после звонка менеджера</div>
   </div>
 </div>
+<script>
+  $(document).ready(function(){
+    calculateShipping();
+    $("#input-shipping-zone").change(function(){
+      calculateShipping();
+    });
+    $("#shipping_method").change(function(){
+      calculateShipping();
+    });
+    $("#shipping_method").change(function(){
+      calculateShipping();
+    });
+  }); 
+
+  function calculateShipping(){
+    let shippingPrice = $(`#city-delivery-price-${$("#input-shipping-zone").val()}`).val();
+    let shippingText = '';
+
+    let diff = {{ totalAmount }} - shippingPrice;
+
+    let shippingMethod = $("#shipping_method").val();
+    let shippingInfo = '0 {{ currency }}';
+
+    let parts = shippingMethod.split('.');
+    $(".shipping-description").removeClass("active");
+    $("#shipping-description-" + parts[0]).addClass("active");
+
+    if(shippingMethod == "flat.flat"){
+      shippingText = $(`#city-delivery-text-${$("#input-shipping-zone").val()}`).val();
+      shippingText = `<div class="city-delivery-description">${shippingText} <span>${Math.abs(diff)} {{ currency }}</span></div>`;
+
+      if(diff >= 0){
+        shippingText = '';
+      }else{
+        shippingInfo = 'Расчет срока и доставки будет произведен после звонка менеджера';
+      }
+    }
+
+    $(".checkout-delivery-info").html(shippingInfo);
+    $(".city-delivery-text").html(shippingText);
+  }
+</script>
