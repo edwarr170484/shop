@@ -56,6 +56,7 @@ class ControllerCheckoutCheckout extends Controller {
 			$data['telephone'] = $this->config->get('config_telephone');
 			$data['hostname'] = $this->request->server['SERVER_NAME'];
 			$data['home'] = $this->url->link('common/home');
+			$data['cart'] = $this->url->link('checkout/cart');
 			$data['name'] = $this->config->get('config_name');
 
 
