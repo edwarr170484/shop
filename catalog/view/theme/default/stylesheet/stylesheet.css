@@ -3185,10 +3185,17 @@ h2.price {
 }
 .checkout-product .checkout-info .product-price .product-total {
   font-weight: 500;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 20px;
+  line-height: 24px;
   color: #507998;
   padding: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 .checkout-product .checkout-info .product-price .product-total span:last-child {
   font-weight: 700;
