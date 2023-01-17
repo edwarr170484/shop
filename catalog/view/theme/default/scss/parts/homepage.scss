@@ -86,4 +86,12 @@
     display: block;
     margin-left: -100%;
   }
+
+  & .swiper-viewport {
+    margin-top: 35px !important;
+    @include respond-to(sm){
+      margin-top: 15px;
+    }
+  }
+  
 }

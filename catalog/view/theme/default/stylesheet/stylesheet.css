@@ -2086,6 +2086,14 @@ h2.price {
   display: block;
   margin-left: -100%;
 }
+#common-home .swiper-viewport {
+  margin-top: 35px !important;
+}
+@media (max-width: 576px) {
+  #common-home .swiper-viewport {
+    margin-top: 15px;
+  }
+}
 
 #information-information {
   font-size: 18px;

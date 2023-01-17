@@ -26,6 +26,7 @@ class ControllerExtensionModuleCarousel extends Controller {
 		}
 
 		$data['module'] = $module++;
+		$data['heading_title'] = $setting['name'];
 
 		return $this->load->view('extension/module/carousel', $data);
 	}

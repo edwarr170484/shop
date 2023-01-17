@@ -1,3 +1,6 @@
+<div class="module-header text-center no-border p-0">
+  <h3>{{ heading_title }}</h3>
+</div>
 <div class="swiper-viewport">
   <div id="carousel{{ module }}" class="swiper-container">
     <div class="swiper-wrapper">{% for banner in banners %}
@@ -23,8 +26,9 @@ $('#carousel{{ module }}').swiper({
 	pagination: '.carousel{{ module }}',
 	paginationClickable: true,
 	nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
+  prevButton: '.swiper-button-prev',
 	loop: true,
+  autoplay: 2500,
   breakpoints: {
     480: {
       slidesPerView: 2,
@@ -38,7 +42,7 @@ $('#carousel{{ module }}').swiper({
   }
 });
 $(document).ready(function() {
-$('#information-information .swiper-slide').magnificPopup({
+  $('#information-information .swiper-slide').magnificPopup({
 		type:'image',
 		delegate: 'a',
 		gallery: {
