@@ -23,6 +23,19 @@ footer {
     }
   }
 
+  & .subscriber{
+    & .social-header{
+      margin-bottom: 15px;
+    }
+
+    & h5.social-header{
+      font-size: 16px;
+      line-height: 100%;
+      color: #fff;
+      text-transform:none;
+    }
+  }
+
   & .socials-list {
     @include respond-to(md) {
       flex-direction: row !important;

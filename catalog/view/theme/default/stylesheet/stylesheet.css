@@ -361,6 +361,15 @@ footer .social-header {
     margin-bottom: 25px;
   }
 }
+footer .subscriber .social-header {
+  margin-bottom: 15px;
+}
+footer .subscriber h5.social-header {
+  font-size: 16px;
+  line-height: 100%;
+  color: #fff;
+  text-transform: none;
+}
 @media (max-width: 768px) {
   footer .socials-list {
     -webkit-box-orient: horizontal !important;
