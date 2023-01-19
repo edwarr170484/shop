@@ -106,6 +106,10 @@ span.hidden-lg {
 #common-home,
 #error-not-found {
   padding-top: 55px;
+
+  @include respond-to(md){
+    padding-top: 0;
+  }
 }
 
 .no-border {

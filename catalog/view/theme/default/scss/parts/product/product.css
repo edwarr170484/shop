@@ -11,7 +11,7 @@ Error: Undefined mixin 'respond-to'.
 8:   padding-bottom: 315px;
 9: 
 10:   @include respond-to(md) {
-11:     padding-bottom: 100px;
+11:     padding-bottom: 25px;
 12:     padding-top: 0;
 13: 
 14:     & .featured-module {
@@ -80,4 +80,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'respond-to'.\A         on line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss, in `respond-to'\A         from line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss\A         from line 1 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\product\product.scss\A \A 4: @import \"./images.scss\";\A 5: \A 6: #product-product {\A 7:   padding-top: 55px;\A 8:   padding-bottom: 315px;\A 9: \A 10:   @include respond-to(md) {\A 11:     padding-bottom: 100px;\A 12:     padding-top: 0;\A 13: \A 14:     & .featured-module {"; }
+  content: "Error: Undefined mixin 'respond-to'.\A         on line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss, in `respond-to'\A         from line 9 of C:/xampp/htdocs/shop.local/catalog/view/theme/default/scss/parts/product/layout.scss\A         from line 1 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\product\product.scss\A \A 4: @import \"./images.scss\";\A 5: \A 6: #product-product {\A 7:   padding-top: 55px;\A 8:   padding-bottom: 315px;\A 9: \A 10:   @include respond-to(md) {\A 11:     padding-bottom: 25px;\A 12:     padding-top: 0;\A 13: \A 14:     & .featured-module {"; }

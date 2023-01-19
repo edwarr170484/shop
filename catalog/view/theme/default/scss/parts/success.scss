@@ -2,6 +2,10 @@
     padding-top: 55px;
     padding-bottom: 55px;
 
+    @include respond-to(md){
+        padding-top: 0;
+    }
+
     & h1{
         font-size: 30px;
         line-height: 35px;

@@ -12,7 +12,7 @@ Error: Undefined mixin 'respond-to'.
 7:     margin-bottom: 27px;
 8:   }
 9: 
-10:   & li {
+10:   @include respond-to(md){
 
 Backtrace:
 C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\breadscrumb.scss:5:in `respond-to'
@@ -64,4 +64,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'respond-to'.\A         on line 5 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\breadscrumb.scss, in `respond-to'\A         from line 5 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\breadscrumb.scss\A \A 1: /* breadcrumb */\A 2: .breadcrumb {\A 3:   margin-bottom: 65px;\A 4: \A 5:   @include respond-to(lg) {\A 6:     margin-top: 53px;\A 7:     margin-bottom: 27px;\A 8:   }\A 9: \A 10:   & li {"; }
+  content: "Error: Undefined mixin 'respond-to'.\A         on line 5 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\breadscrumb.scss, in `respond-to'\A         from line 5 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\breadscrumb.scss\A \A 1: /* breadcrumb */\A 2: .breadcrumb {\A 3:   margin-bottom: 65px;\A 4: \A 5:   @include respond-to(lg) {\A 6:     margin-top: 53px;\A 7:     margin-bottom: 27px;\A 8:   }\A 9: \A 10:   @include respond-to(md){"; }

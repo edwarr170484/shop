@@ -6,6 +6,10 @@
   margin-top: 52px;
   margin-bottom: 129px;
 
+  @include respond-to(md){
+    margin-bottom: 52px;
+  }
+
   & .gallery-image {
     & img {
       object-fit: cover;
@@ -80,6 +84,11 @@
 .about-why {
   padding-top: 93px;
   padding-bottom: 63px;
+
+  @include respond-to(md){
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
 }
 .why-reson {
   display: flex;
@@ -93,6 +102,11 @@
   line-height: 24px;
   text-align: center;
   color: $main;
+
+  @media(max-width: 420px){
+    font-size: 17px;
+    line-height: 22px;
+  }
 }
 
 .why-reason-icon {

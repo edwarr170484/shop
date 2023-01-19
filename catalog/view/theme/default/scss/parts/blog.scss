@@ -2,6 +2,10 @@
 #blog-post,
 #blog-blog {
   padding-top: 61px;
+
+  @include respond-to(md){
+    padding-top: 0;
+  }
 }
 .blog-menu {
   display: flex;
@@ -86,6 +90,11 @@
 
 .blog-post {
   padding-bottom: 272px;
+  
+  @include respond-to(md){
+    padding-top: 50px;
+  }
+
   & h1 {
     font-weight: 500;
     font-size: 30px;
@@ -131,6 +140,7 @@
     line-height: 24px;
     text-transform: uppercase;
     color: $main;
+    margin-bottom: 0;
   }
 
   & a {
@@ -152,6 +162,9 @@
 }
 .blog-category {
   margin-bottom: 64px;
+  @include respond-to(md){
+    margin-bottom: 20px;
+  }
 }
 .blog-category-posts {
   & .post-thumb {

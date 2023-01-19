@@ -4,6 +4,10 @@
   & .product-grid {
     margin-bottom: 140px;
   }
+
+  @include respond-to(md){
+    padding-top: 0;
+  }
 }
 .category-header {
   font-size: 30px;
@@ -121,7 +125,15 @@
       color: #fff;
     }
   }
+
+  @include respond-to(md){
+    margin-bottom: 10px;
+  }
 }
 .subcategory-products {
   margin-bottom: 110px;
+
+  @include respond-to(md){
+    margin-bottom: 50px;
+  }
 }

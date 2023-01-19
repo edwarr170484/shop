@@ -5,6 +5,10 @@
   padding-top: 61px;
   padding-bottom: 202px;
 
+  @include respond-to(md){
+    padding-top: 0px;
+  }
+
   & h1 {
     text-align: center;
     font-size: 30px;
@@ -14,6 +18,10 @@
     padding: 0;
     margin: 0;
     margin-bottom: 56px;
+
+    @include respond-to(md){
+      margin-bottom: 30px;
+    }
   }
 
   & h2 {
@@ -26,6 +34,10 @@
 
   & .swiper-viewport {
     margin-top: 99px !important;
+
+    @include respond-to(md){
+      margin-top: 50px !important;
+    }
   }
 
   @include respond-to(md) {

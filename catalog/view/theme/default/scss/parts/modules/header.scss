@@ -11,6 +11,11 @@
         text-transform: uppercase;
         color: $main;
         margin-bottom: 0;
+
+        @include respond-to(sm){
+            font-size: 25px;
+            line-height: 30px;
+        }
     }
 
     & h4 {
@@ -20,6 +25,11 @@
         line-height: 22px;
         text-transform: uppercase;
         color: $main;
+
+        @include respond-to(sm){
+            font-size: 14px;
+            line-height: 17px;
+        }
     }
 
     & img {

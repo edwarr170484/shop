@@ -46,15 +46,30 @@
                 padding: 5px 13px;
             }
 
+
+
             @media(max-width:480px) {
                 top: auto;
                 bottom: 0;
+            }
+
+            @media(max-width:420px) {
+                position: relative;
+                margin-bottom: 10px;
+                order:1;
             }
         }
 
         @include respond-to(md) {
             flex-grow: 1;
             position: relative;
+        }
+
+        & .input-group{
+            @media(max-width:420px){
+                order:2;
+                align-self: flex-end;
+            }
         }
     }
 

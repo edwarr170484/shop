@@ -1,6 +1,10 @@
 .featured-module {
   .module-header {
     margin-bottom: 59px;
+
+    @include respond-to(md){
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -8,5 +12,10 @@
   & .featured-module {
     margin-top: 86px;
     margin-bottom: 178px;
+
+    @include respond-to(md){
+      margin-top: 60px;
+      margin-bottom: 15px;
+    }
   }
 }

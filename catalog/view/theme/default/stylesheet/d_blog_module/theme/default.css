@@ -313,13 +313,28 @@
   color: #507998;
   padding-right: 124px;
 }
+@media(max-width: 575.98px){
+  .bm .post-thumb{
+    margin-bottom: 50px !important;
+  }
+  .bm .post-thumb .short-description{
+    text-align: center;
+    margin-bottom: 15px;
+    padding-right: 0;
+  }
+}
 .bm .post-thumb {
   margin-bottom: 89px;
 }
 .bm .post-thumb .post-thumb-footer {
   display: flex;
   align-items: center;
-  justify-self: space-between;
+}
+@media(max-width: 575.98px){
+  .bm .post-thumb .post-thumb-footer {
+    flex-direction:column;
+    align-items: center;
+  }
 }
 .bm .post-thumb .post-thumb-footer .read-more {
   border: none;

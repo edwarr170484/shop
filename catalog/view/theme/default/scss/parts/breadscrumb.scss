@@ -7,6 +7,10 @@
     margin-bottom: 27px;
   }
 
+  @include respond-to(md){
+    margin-top: 27px;
+  }
+
   & li {
     & a {
       font-size: 16px;

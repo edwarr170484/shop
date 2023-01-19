@@ -94,4 +94,7 @@
     }
   }
   
+  @include respond-to(md){
+    padding-top: 0 !important;
+  }
 }

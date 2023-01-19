@@ -45,12 +45,33 @@ header {
   border-bottom: 1px solid $gray;
 }
 
+.header-tools{
+  @include respond-to(md){
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
 .header-tool {
   margin-left: 26px;
   height: 100%;
   padding-top: 28px;
 
+  @include respond-to(md){
+    padding-top: 0;
+    margin-left: 0;
+  }
+
   &.header-cart {
     padding-top: 24px;
+
+    @include respond-to(md){
+      padding-top: 0;
+    }
   }
 }

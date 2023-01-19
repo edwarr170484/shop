@@ -1,28 +1,22 @@
 /*
-Error: Undefined mixin 'respond-to'.
-        on line 6 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\blog.scss, in `respond-to'
-        from line 6 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\blog.scss
+Error: Undefined variable: "$main".
+        on line 4 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\information.scss
 
-1: #blog-category,
-2: #blog-post,
-3: #blog-blog {
-4:   padding-top: 61px;
-5: 
-6:   @include respond-to(md){
-7:     padding-top: 0;
-8:   }
-9: }
-10: .blog-menu {
-11:   display: flex;
+1: #information-information {
+2:   font-size: 18px;
+3:   line-height: 21px;
+4:   color: $main;
+5:   padding-top: 61px;
+6:   padding-bottom: 202px;
+7: 
+8:   @include respond-to(md){
+9:     padding-top: 0px;
 
 Backtrace:
-C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\blog.scss:6:in `respond-to'
-C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\blog.scss:6
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `with_mixin'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
+C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\information.scss:4
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
@@ -65,4 +59,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'respond-to'.\A         on line 6 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\blog.scss, in `respond-to'\A         from line 6 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\blog.scss\A \A 1: #blog-category,\A 2: #blog-post,\A 3: #blog-blog {\A 4:   padding-top: 61px;\A 5: \A 6:   @include respond-to(md){\A 7:     padding-top: 0;\A 8:   }\A 9: }\A 10: .blog-menu {\A 11:   display: flex;"; }
+  content: "Error: Undefined variable: \"$main\".\A         on line 4 of C:\xampp\htdocs\shop.local\catalog\view\theme\default\scss\parts\information.scss\A \A 1: #information-information {\A 2:   font-size: 18px;\A 3:   line-height: 21px;\A 4:   color: $main;\A 5:   padding-top: 61px;\A 6:   padding-bottom: 202px;\A 7: \A 8:   @include respond-to(md){\A 9:     padding-top: 0px;"; }
