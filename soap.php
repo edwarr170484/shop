@@ -18,6 +18,17 @@ $client_params = [
  
 $client = new SoapClient($rp_soap_endpoint, $client_params);
 
-var_dump($client->__getFunctions());
-var_dump($client->__getTypes()); 
-var_dump($client->GetProduct([])); 
+$result = $client->GetProduct([]);
+
+$products = json_decode($result->return);
+
+if(count($products) > 0){
+        foreach($products as $product){
+                ?>
+                <b>Code: </b><?php echo $product->code;?><br/>
+                <b>Name: </b><?php echo $product->name;?><br/>
+                <b>FullName: </b><?php echo $product->fullName;?><br/>
+                <b></b>
+                <?php
+        }
+}
