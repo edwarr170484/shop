@@ -19,6 +19,7 @@ $_['text_dashboard']            = 'Панель состояния';
 $_['text_design']               = 'Дизайн';
 $_['text_download']             = 'Загрузки';
 $_['text_log']                  = 'Журнал ошибок';
+$_['text_import']               = 'Импорт из 1С';
 $_['text_event']                = 'События';
 $_['text_extension']            = 'Модули / Расширения';
 $_['text_filter']               = 'Фильтры';
