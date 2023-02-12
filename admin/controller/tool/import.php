@@ -57,7 +57,9 @@ class ControllerToolImport extends Controller {
         $products = json_decode($result->return);
 
         /*$this->load->model('catalog/product');
-        $this->model_catalog_product->addProduct($this->request->post);*/
+        $this->model_catalog_product->addProduct($this->request->post);
+        $this->model_catalog_product->editProduct($this->request->get['product_id'], $this->request->post);
+        */
 
         $result = '';
 
