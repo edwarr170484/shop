@@ -1981,6 +1981,13 @@ h2.price {
   color: #507998;
   background: url("../image/modules/chevron-right.png") 0 50% no-repeat;
   padding-left: 26px;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.categories-menu .list-group a:hover {
+  text-shadow: 0px 0px 5px rgba(0, 168, 222, 0.9);
+  color: #444444;
+  font-weight: bold;
 }
 .categories-menu .list-group .list-group {
   border-top: 1px solid #eaeaea;
@@ -1996,6 +2003,8 @@ h2.price {
   line-height: 27px;
   background: none;
   padding-left: 8px;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 .categories-menu .list-group .list-group a:before {
   content: "";
@@ -2009,6 +2018,11 @@ h2.price {
   top: 50%;
   left: 0;
   margin-top: -2px;
+}
+.categories-menu .list-group .list-group a:hover {
+  text-shadow: 0px 0px 5px rgba(0, 168, 222, 0.9);
+  color: #444444;
+  font-weight: bold;
 }
 
 .swiper-viewport {
