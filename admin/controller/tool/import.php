@@ -66,12 +66,12 @@ class ControllerToolImport extends Controller {
         if(count($products) > 0){
             foreach($products as $product){
                 $result .= '<b>Code: </b><?php echo $product->code;?><br/>
-                        <b>Name: </b><?php echo $product->name;?><br/>
-                        <b>FullName: </b><?php echo $product->fullName;?><br/>
+                        <b>Name: </b><br/>' . $product->name . 
+                        '<b>FullName: </b><?php echo $product->fullName;?><br/>
                         <b></b>';
             }
         }
 
-        $this->response->setOutput($result);
+        $this->response->setOutput(var_dump($products));
     }
 }
