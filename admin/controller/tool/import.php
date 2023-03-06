@@ -39,8 +39,8 @@ class ControllerToolImport extends Controller {
         $rp_soap_endpoint = $this->config->get('config_endpoint');
         
         $client_params = [
-                'login' => "Webconnect", 
-                'password' => "c0nnect",
+                'login' => $this->config->get('config_1clogin'), 
+                'password' => $this->config->get('config_1cpassword'),
                 'soap_version' => SOAP_1_2,
                 'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
                 'encoding' => 'UTF-8',
@@ -52,7 +52,7 @@ class ControllerToolImport extends Controller {
         
         $client = new SoapClient($rp_soap_endpoint, $client_params);
 
-        $result = $client->GetAmountProduct([]);
+        $result = $client->GetProduct([]);
 
         $products = json_decode($result->return);
 

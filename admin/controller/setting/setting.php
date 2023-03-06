@@ -878,6 +878,18 @@ class ControllerSettingSetting extends Controller {
 			$data['config_endpoint'] = $this->config->get('config_endpoint');
 		}
 
+		if (isset($this->request->post['config_1clogin'])) {
+			$data['config_1clogin'] = $this->request->post['config_1clogin'];
+		} else {
+			$data['config_1clogin'] = $this->config->get('config_1clogin');
+		}
+
+		if (isset($this->request->post['config_1cpassword'])) {
+			$data['config_1cpassword'] = $this->request->post['config_1cpassword'];
+		} else {
+			$data['config_1cpassword'] = $this->config->get('config_1cpassword');
+		}
+
 		if (isset($this->request->post['config_error_display'])) {
 			$data['config_error_display'] = $this->request->post['config_error_display'];
 		} else {
