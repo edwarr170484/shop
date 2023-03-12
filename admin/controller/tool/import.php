@@ -35,6 +35,10 @@ class ControllerToolImport extends Controller {
     public function import(){
         ini_set('soap.wsdl_cache_enabled', 0 );
         ini_set('soap.wsdl_cache_ttl', 0); 
+
+        $this->load->model('tool/import');
+
+        $defaultLanguage = $this->config->get('config_language');
         
         $rp_soap_endpoint = $this->config->get('config_endpoint');
         
@@ -51,15 +55,53 @@ class ControllerToolImport extends Controller {
         ];
         
         $client = new SoapClient($rp_soap_endpoint, $client_params);
+        $result = $client->GetProductGroup();
+        
+        $incomingCategories = json_decode($result->return, true);
 
-        $result = $client->GetProduct([]);
+        if(count($incomingCategories) > 0){
+            $categories = $this->model_tool_import->getCategories();
 
-        $products = json_decode($result->return);
+            foreach($incomingCategories as $category){
+                $parent = $this->model_tool_import->getCategoryByImportId($category['idParent']);
+                $data = [
+                    'category_description' => [
+                        $defaultLanguage => [
+                            'name' => $category['name'],
+                            'description' => $category['name'],
+                            'meta_title' => $category['name'],
+                            'meta_description' => $category['name'],
+                            'meta_keyword' => ''
+                        ]
+                    ],
+                    'path' => '',
+                    'parent_id' => $parent['category_id'],
+                    'filter' => '',
+                    'category_store' => [],
+                    'image' => '',
+                    'top' => 0,
+                    'column' => 1,
+                    'sort_order' => 1,
+                    'status' => 1,
+                    'import_id' => $category['id'],
+                    'category_seo_url' => [
+                        0 => [
+                            $defaultLanguage => ''
+                        ]
+                    ],
+                    'category_layout' => [
+                        0 => ''
+                    ]
+                ];
+            }
+        }
+
+        //$products = json_decode($result->return);
 
         /*$this->load->model('catalog/product');
         $this->model_catalog_product->addProduct($this->request->post);
         $this->model_catalog_product->editProduct($this->request->get['product_id'], $this->request->post);
-        */
+        
 
         $result = '';
 
@@ -70,8 +112,8 @@ class ControllerToolImport extends Controller {
                         '<b>FullName: </b><?php echo $product->fullName;?><br/>
                         <b></b>';
             }
-        }
+        }*/
 
-        $this->response->setOutput(var_dump($products));
+        
     }
 }
