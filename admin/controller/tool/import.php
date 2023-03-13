@@ -37,8 +37,6 @@ class ControllerToolImport extends Controller {
         ini_set('soap.wsdl_cache_ttl', 0); 
 
         $this->load->model('tool/import');
-
-        $defaultLanguage = $this->config->get('config_language');
         
         $rp_soap_endpoint = $this->config->get('config_endpoint');
         
@@ -55,65 +53,123 @@ class ControllerToolImport extends Controller {
         ];
         
         $client = new SoapClient($rp_soap_endpoint, $client_params);
-        $result = $client->GetProductGroup();
         
+        $this->load->model('localisation/language');
+		$data['language'] = $this->model_localisation_language->getLanguageByCode($this->config->get('config_language'));
+
+        $statistics = [
+            'newCategories' => 0,
+            'updatedCategories' => 0,
+            'defaultLanguage' => $data['language']
+        ];
+
+        /* Categories Import Start */
+        $result = $client->GetProductGroup();
         $incomingCategories = json_decode($result->return, true);
 
         if(count($incomingCategories) > 0){
-            $categories = $this->model_tool_import->getCategories();
+            $existingCategories = $this->model_tool_import->getCategories();
 
-            foreach($incomingCategories as $category){
-                $parent = $this->model_tool_import->getCategoryByImportId($category['idParent']);
-                $data = [
-                    'category_description' => [
-                        $defaultLanguage => [
-                            'name' => $category['name'],
-                            'description' => $category['name'],
-                            'meta_title' => $category['name'],
-                            'meta_description' => $category['name'],
-                            'meta_keyword' => ''
-                        ]
-                    ],
-                    'path' => '',
-                    'parent_id' => $parent['category_id'],
-                    'filter' => '',
-                    'category_store' => [],
-                    'image' => '',
-                    'top' => 0,
-                    'column' => 1,
-                    'sort_order' => 1,
-                    'status' => 1,
-                    'import_id' => $category['id'],
-                    'category_seo_url' => [
-                        0 => [
-                            $defaultLanguage => ''
-                        ]
-                    ],
-                    'category_layout' => [
-                        0 => ''
-                    ]
-                ];
+            $rootCategories = array_filter($incomingCategories, function($category){
+                return $category['idParent'] === '';
+            });
+
+            $childCategories = array_filter($incomingCategories, function($category){
+                return $category['idParent'] !== '';
+            });
+
+            if(count($rootCategories) > 0){
+                foreach($rootCategories as $category){
+                    $category['idParent'] = 0;
+                    $this->processCategory($existingCategories, $category, $statistics);
+                }
+            }
+
+            if(count($childCategories) > 0){
+                while(1){
+                    $delayCategories = [];
+
+                    foreach($childCategories as $category){
+                        $parentCategory = $this->model_tool_import->getCategoryByImportId($category['idParent']);
+                        if($parentCategory){
+                            $category['idParent'] = $parentCategory['category_id'];
+                            $this->processCategory($existingCategories, $category, $statistics);
+                        }else{
+                            array_push($delayCategories, $category);
+                        }
+                    }
+
+                    if(count($delayCategories) > 0){
+                        $childCategories = $delayCategories;
+                    }else{
+                        break;
+                    }
+                }
+                
             }
         }
 
-        //$products = json_decode($result->return);
+        /* Categories Import End */
 
-        /*$this->load->model('catalog/product');
-        $this->model_catalog_product->addProduct($this->request->post);
-        $this->model_catalog_product->editProduct($this->request->get['product_id'], $this->request->post);
-        
+        /* Products Import Start */
+        $result = $client->GetProduct();
+        $incomingProducts = json_decode($result->return, true);
 
-        $result = '';
+        if(count($incomingProducts) > 0){
+            
+        }
 
-        if(count($products) > 0){
-            foreach($products as $product){
-                $result .= '<b>Code: </b><?php echo $product->code;?><br/>
-                        <b>Name: </b><br/>' . $product->name . 
-                        '<b>FullName: </b><?php echo $product->fullName;?><br/>
-                        <b></b>';
+        /* Products Import End */
+
+        $this->response->setOutput("Добавлено категорий: {$statistics['newCategories']}.\r\nОбновлено категорий: {$statistics['updatedCategories']}.\r\n");
+    }
+
+    private function processCategory($categories, $category, &$statistics){
+        $data = [
+            'category_description' => [
+                $statistics['defaultLanguage']['language_id'] => [
+                    'name' => $category['name'],
+                    'description' => $category['name'],
+                    'meta_title' => $category['name'],
+                    'meta_description' => $category['name'],
+                    'meta_keyword' => ''
+                ]
+            ],
+            'path' => '',
+            'parent_id' => $category['idParent'],
+            'top' => 0,
+            'column' => 1,
+            'sort_order' => 1,
+            'status' => 1,
+            'import_id' => $category['id'],
+            'category_store' => [
+                0
+            ]
+        ];
+
+        $existingCategory = $this->inArray($categories, $category);
+
+        if($existingCategory)
+        {
+            $this->model_tool_import->editCategory($existingCategory['category_id'], $data);
+            $statistics['updatedCategories']++;
+        }
+        else
+        {   
+            $this->model_tool_import->addCategory($data);
+            $statistics['newCategories']++;
+        }
+    }
+
+    private function inArray($array, $item){
+        if(count($array) > 0){
+            foreach($array as $value){
+                if($value['import_id'] == $item['id']){
+                    return $value;
+                }
             }
-        }*/
+        }
 
-        
+        return null;
     }
 }
