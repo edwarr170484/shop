@@ -49,7 +49,15 @@ class ControllerToolImport extends Controller {
                 'trace' => 1,
                 'exceptions' => true,
                 'cache_wsdl' => WSDL_CACHE_NONE,
-                'features' => SOAP_SINGLE_ELEMENT_ARRAYS
+                'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
+                "stream_context"         => stream_context_create(
+                    [
+                        'ssl' => [
+                            'verify_peer'      => false,
+                            'verify_peer_name' => false,
+                        ]
+                    ]
+                )
         ];
         
         $client = new SoapClient($rp_soap_endpoint, $client_params);
@@ -116,7 +124,7 @@ class ControllerToolImport extends Controller {
         $incomingProducts = json_decode($result->return, true);
 
         if(count($incomingProducts) > 0){
-            
+
         }
 
         /* Products Import End */
