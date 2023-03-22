@@ -68,6 +68,10 @@ class ControllerToolImport extends Controller {
         $statistics = [
             'newCategories' => 0,
             'updatedCategories' => 0,
+            'newProducts' => 0,
+            'updatedProducts' => 0,
+            'newAttributes' => 0,
+            'updatedAttributes' => 0,
             'defaultLanguage' => $data['language']
         ];
 
@@ -119,17 +123,57 @@ class ControllerToolImport extends Controller {
 
         /* Categories Import End */
 
+        /* Attributes Import Start */
+        $result = $client->GetProperties();
+        $incomingAttributes = json_decode($result->return, true);
+
+        if(count($incomingAttributes) > 0)
+        {
+            $existingAttributes = $this->model_tool_import->getAttributes();
+
+            foreach($incomingAttributes as $attribute)
+            {
+                $this->processAttribute($existingAttributes, $attribute, $statistics);
+            }
+        }
+        /* Attributes Import End */
+
         /* Products Import Start */
         $result = $client->GetProduct();
         $incomingProducts = json_decode($result->return, true);
 
-        if(count($incomingProducts) > 0){
+        $result = $client->GetAmountProduct();
+        $incomingAmounts = json_decode($result->return, true);
 
+        if(count($incomingProducts) > 0)
+        {
+            $existingProducts = $this->model_tool_import->getProducts();
+            $existingCategories = $this->model_tool_import->getCategories();
+
+            foreach($incomingProducts as $product)
+            {
+                $product["id"] = $product["code"];
+
+                $amount = array_filter($incomingAmounts, function($amount) use ($product){
+                    return ($amount["code"] == $product["code"]) && ($amount["сharacteristics"] == $product["nameCharacteristic"]);
+                });
+
+                $product["quantity"] = array_reduce($amount, function($count, $item){return $count += $item["amount"];}, 0);
+
+                $existingCategory = $this->inArray($existingCategories, ["id" => $product["id_Parent"]]);
+                $product["id_Parent"] = $existingCategory ? $existingCategory["category_id"] : 0;
+
+                $this->processProduct($existingProducts, $product, $statistics);
+            }
         }
-
         /* Products Import End */
 
-        $this->response->setOutput("Добавлено категорий: {$statistics['newCategories']}.\r\nОбновлено категорий: {$statistics['updatedCategories']}.\r\n");
+        $this->response->setOutput("Добавлено категорий: {$statistics['newCategories']}.<br/>
+                                    Обновлено категорий: {$statistics['updatedCategories']}.<br/>
+                                    Добавлено товаров: {$statistics['newProducts']}.<br/>
+                                    Обновлено товаров: {$statistics['updatedProducts']}.<br/>
+                                    Добавлено характеристик: {$statistics['newAttributes']}<br/>
+                                    Обновлено характеристик: {$statistics['updatedAttributes']}");
     }
 
     private function processCategory($categories, $category, &$statistics){
@@ -169,10 +213,188 @@ class ControllerToolImport extends Controller {
         }
     }
 
-    private function inArray($array, $item){
-        if(count($array) > 0){
-            foreach($array as $value){
-                if($value['import_id'] == $item['id']){
+    private function processAttribute($attributes, $attribute, &$statistics)
+    {
+        $data = [
+            'attribute_description' => [
+                $statistics['defaultLanguage']['language_id'] => [
+                    'name' => $attribute['name']
+                ]
+            ],
+            'attribute_group_id' => '7',
+            'sort_order' => 1,
+            'import_id' => $attribute['id']
+        ];
+
+        $existingAttribute = $this->inArray($attributes, $attribute);
+
+        if($existingAttribute)
+        {
+            $this->model_tool_import->editAttribute($existingAttribute['attribute_id'], $data);
+            $statistics['updatedAttributes']++;
+        }
+        else
+        {   
+            $this->model_tool_import->addAttribute($data);
+            $statistics['newAttributes']++;
+        }
+    }
+
+    private function processProduct($products, $product, &$statistics)
+    {
+        $today = new \DateTime("now");
+        $images = [];
+
+        if($product['addressImages'])
+        {
+            $i = 1;
+            foreach($product['addressImages'] as $image){
+                $images[] = [
+                    'image' => $image,
+                    'sort_order' => $i
+                ];
+
+                $i++;
+            }
+        }
+
+        $attributes = $this->model_tool_import->getAttributes();
+        $productAttributes = [];
+        
+        if($product["properties"])
+        {
+            foreach($product["properties"] as $attribute)
+            {
+                $existingAttribute = $this->inArray($attributes, ["id" => $attribute["idProperties"]]);
+                
+                if($existingAttribute)
+                {
+                    $productAttributes[] = [
+                        'name' => $attribute["nameProperties"],
+                        'attribute_id' => $existingAttribute["attribute_id"],
+                        'product_attribute_description' => [
+                            $statistics['defaultLanguage']['language_id'] => [
+                                'text' => "{$attribute["value"]} {$attribute["measure"]}" 
+                            ]
+                        ]
+                    ];
+                }
+            }
+        }
+
+        $data = [
+            'product_description' => [
+                $statistics['defaultLanguage']['language_id'] => [
+                    'name' => $product['name'],
+                    'description' => $product['nameFull'],
+                    'meta_title' => $product['name'],
+                    'meta_description' => '',
+                    'meta_keyword' => '',
+                    'tag' => ''
+                ],
+            ],
+            'model' => $product["nameCharacteristic"],
+            'sku' => '',
+            'upc' => '',
+            'ean' => '',
+            'jan' => '',
+            'isbn' => '',
+            'mpn' => '',
+            'location' => '',
+            'price' => (float)preg_replace('/\,/', '.', $product['priceWithVAT']),
+            'tax_class_id' => 9,
+            'quantity' => $product["quantity"],
+            'minimum' => 1,
+            'subtract' => 1,
+            'stock_status_id' => 5,
+            'shipping' => 1,
+            'date_available' => $today->format("Y-m-d"),
+            'length' => 0,
+            'width' =>  0,
+            'height' => 0,
+            'length_class_id' => 1,
+            'weight' => 0,
+            'weight_class_id' => 1,
+            'status' => 1,
+            'sort_order' => 0,
+            'manufacturer' => '',
+            'manufacturer_id' => 0,
+            'category' => $product["name_Parent"], 
+            'product_category' => [
+                $product["id_Parent"]
+            ], 
+            'product_store' => [
+                0
+            ],
+            'product_attribute' => $productAttributes,
+            /*'option' => '',
+            'product_option' => [
+                0 => [
+                    'product_option_id' => 217,
+                    'name' => 'Select',
+                    'option_id' => 5,
+                    'type' => 'select',
+                    'required' => 1,
+                    'product_option_value' => [
+                        0 => [
+                            'option_value_id' => 39,
+                            'product_option_value_id' => 4,
+                            'quantity' => 90,
+                            'subtract' => 1,
+                            'price_prefix' => '',
+                            'price' => '',
+                            'points_prefix' => '',
+                            'points' => 0,
+                            'weight_prefix' => '',
+                            'weight' => 0
+                        ]
+                    ]
+                ]
+            ],*/
+            /*'image' => $product['addressImages'] ? $product['addressImages'][0] : '',
+            'product_image' => $images,*/
+            'points' => 0,
+            'import_id' => $product["code"] 
+        ];
+
+        $existingProduct = $this->inProductArray($products, $product);
+
+        if($existingProduct)
+        {
+            $this->model_tool_import->editProduct($existingProduct['product_id'], $data);
+            $statistics['updatedProducts']++;
+        }
+        else
+        {   
+            $this->model_tool_import->addProduct($data);
+            $statistics['newProducts']++;
+        }
+    }
+
+    private function inArray($array, $item)
+    {
+        if(count($array) > 0)
+        {
+            foreach($array as $value)
+            {
+                if($value['import_id'] == $item['id'])
+                {
+                    return $value;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private function inProductArray($array, $item)
+    {
+        if(count($array) > 0)
+        {
+            foreach($array as $value)
+            {
+                if($value['import_id'] == $item['id'] && $value['model'] == $item['nameCharacteristic'])
+                {
                     return $value;
                 }
             }

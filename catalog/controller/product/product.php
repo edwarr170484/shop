@@ -251,7 +251,7 @@ class ControllerProductProduct extends Controller {
 			
 
 			if ($product_info['quantity'] <= 0) {
-				$data['stock'] = '<div class="stock-nothing">' . $product_info['stock_status'] . '</div>';
+				$data['stock'] = '<div class="stock-nothing">' . $this->language->get('text_outstock') . '</div>';
 			} elseif ($this->config->get('config_stock_display')) {
 				$data['stock'] = $product_info['quantity'];
 			} else {
