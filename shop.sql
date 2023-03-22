@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Янв 12 2023 г., 22:27
--- Версия сервера: 10.4.24-MariaDB
--- Версия PHP: 7.4.28
+-- Host: 127.0.0.1
+-- Generation Time: Mar 22, 2023 at 02:03 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `shop`
+-- Database: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_address`
+-- Table structure for table `oc_address`
 --
 
 CREATE TABLE `oc_address` (
@@ -45,7 +45,7 @@ CREATE TABLE `oc_address` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api`
+-- Table structure for table `oc_api`
 --
 
 CREATE TABLE `oc_api` (
@@ -58,7 +58,7 @@ CREATE TABLE `oc_api` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_api`
+-- Dumping data for table `oc_api`
 --
 
 INSERT INTO `oc_api` (`api_id`, `username`, `key`, `status`, `date_added`, `date_modified`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `oc_api` (`api_id`, `username`, `key`, `status`, `date_added`, `date
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api_ip`
+-- Table structure for table `oc_api_ip`
 --
 
 CREATE TABLE `oc_api_ip` (
@@ -78,16 +78,17 @@ CREATE TABLE `oc_api_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_api_ip`
+-- Dumping data for table `oc_api_ip`
 --
 
 INSERT INTO `oc_api_ip` (`api_ip_id`, `api_id`, `ip`) VALUES
-(1, 2, '127.0.0.1');
+(1, 2, '127.0.0.1'),
+(2, 2, '93.84.109.76');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_api_session`
+-- Table structure for table `oc_api_session`
 --
 
 CREATE TABLE `oc_api_session` (
@@ -100,7 +101,7 @@ CREATE TABLE `oc_api_session` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_api_session`
+-- Dumping data for table `oc_api_session`
 --
 
 INSERT INTO `oc_api_session` (`api_session_id`, `api_id`, `session_id`, `ip`, `date_added`, `date_modified`) VALUES
@@ -128,41 +129,64 @@ INSERT INTO `oc_api_session` (`api_session_id`, `api_id`, `session_id`, `ip`, `d
 (24, 2, 'fe1fd2303150092b7380158ab1', '127.0.0.1', '2023-01-09 23:48:24', '2023-01-09 23:48:27'),
 (25, 2, 'f83eedbc0cf0b7d20769f2a33e', '127.0.0.1', '2023-01-09 23:48:27', '2023-01-09 23:48:30'),
 (26, 2, '040a8834c8a389c73027758383', '127.0.0.1', '2023-01-09 23:48:30', '2023-01-09 23:48:34'),
-(27, 2, '7514f4c5f49f5b1879969880da', '127.0.0.1', '2023-01-09 23:48:34', '2023-01-09 23:48:34');
+(27, 2, '7514f4c5f49f5b1879969880da', '127.0.0.1', '2023-01-09 23:48:34', '2023-01-09 23:48:34'),
+(28, 2, '15b06678ab6e1f50790ee3e238', '93.84.109.76', '2023-01-13 11:52:02', '2023-01-13 11:52:02'),
+(29, 2, '31dbdaf3c1732ccfeefabb1168', '93.84.109.76', '2023-01-13 11:52:12', '2023-01-13 11:52:12'),
+(30, 2, 'a69560efbb1c768deb8afee85e', '93.84.109.76', '2023-01-13 11:54:56', '2023-01-13 11:54:56'),
+(31, 2, 'b4e14191f41ec7ca80859b2122', '93.84.109.76', '2023-01-13 11:54:58', '2023-01-13 11:54:58'),
+(32, 2, '28cdee90c1ddc99fecb7dbcf87', '93.84.109.76', '2023-01-13 11:55:03', '2023-01-13 11:55:03'),
+(33, 2, '6af02d518662c3bb2eaa9e527f', '93.84.109.76', '2023-01-13 11:55:59', '2023-01-13 11:55:59'),
+(34, 2, '09fd609f10c5655b5b90075880', '93.84.109.76', '2023-01-13 11:56:03', '2023-01-13 11:56:03'),
+(35, 2, '55762306c32df51907691d0b55', '93.84.109.76', '2023-01-13 11:56:22', '2023-01-13 11:56:22'),
+(36, 2, 'e8661740c018ecaec84d3afa18', '93.84.109.76', '2023-01-13 11:56:55', '2023-01-13 11:56:55'),
+(37, 2, 'ce331d6ab722c92d6ef68cf634', '93.84.109.76', '2023-01-13 11:56:58', '2023-01-13 11:56:58'),
+(38, 2, '483402040a80b970eab3986f8b', '93.84.109.76', '2023-01-13 11:58:13', '2023-01-13 11:58:13'),
+(39, 2, 'fc5c105046165e7d12c0d220b2', '93.84.109.76', '2023-01-13 11:58:14', '2023-01-13 11:58:14'),
+(40, 2, '1dd7f3c0f3b3e8381b66cf2b58', '93.84.109.76', '2023-01-13 11:58:18', '2023-01-13 11:58:18'),
+(41, 2, '95b5632f844dc719352a0d8ca3', '93.84.109.76', '2023-01-13 12:01:46', '2023-01-13 12:01:46'),
+(42, 2, 'b5f21b17c3fcfb0e3291035cf0', '93.84.109.76', '2023-01-13 12:01:48', '2023-01-13 12:01:48');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute`
+-- Table structure for table `oc_attribute`
 --
 
 CREATE TABLE `oc_attribute` (
   `attribute_id` int(11) NOT NULL,
   `attribute_group_id` int(11) NOT NULL,
-  `sort_order` int(3) NOT NULL
+  `sort_order` int(3) NOT NULL,
+  `import_id` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute`
+-- Dumping data for table `oc_attribute`
 --
 
-INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
-(1, 6, 1),
-(2, 6, 5),
-(3, 6, 3),
-(4, 3, 1),
-(5, 3, 2),
-(6, 3, 3),
-(7, 3, 4),
-(8, 3, 5),
-(9, 3, 6),
-(10, 3, 7),
-(11, 3, 8);
+INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`, `import_id`) VALUES
+(12, 7, 1, '000000008'),
+(13, 7, 1, '000000015'),
+(14, 7, 1, '000000014'),
+(15, 7, 1, '000000004'),
+(16, 7, 1, '000000018'),
+(17, 7, 1, '000000001'),
+(18, 7, 1, '000000010'),
+(19, 7, 1, '000000009'),
+(20, 7, 1, '000000006'),
+(21, 7, 1, '000000011'),
+(22, 7, 1, '000000017'),
+(23, 7, 1, '000000013'),
+(24, 7, 1, '000000003'),
+(25, 7, 1, '000000007'),
+(26, 7, 1, '000000016'),
+(27, 7, 1, '000000012'),
+(28, 7, 1, '000000002'),
+(29, 7, 1, '000000005');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_description`
+-- Table structure for table `oc_attribute_description`
 --
 
 CREATE TABLE `oc_attribute_description` (
@@ -172,37 +196,33 @@ CREATE TABLE `oc_attribute_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_description`
+-- Dumping data for table `oc_attribute_description`
 --
 
 INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
-(1, 1, 'Description'),
-(2, 1, 'No. of Cores'),
-(4, 1, 'test 1'),
-(5, 1, 'test 2'),
-(6, 1, 'test 3'),
-(7, 1, 'test 4'),
-(8, 1, 'test 5'),
-(9, 1, 'test 6'),
-(10, 1, 'test 7'),
-(11, 1, 'test 8'),
-(3, 1, 'Clockspeed'),
-(1, 2, 'Description'),
-(2, 2, 'No. of Cores'),
-(4, 2, 'test 1'),
-(5, 2, 'test 2'),
-(6, 2, 'test 3'),
-(7, 2, 'test 4'),
-(8, 2, 'test 5'),
-(9, 2, 'test 6'),
-(10, 2, 'test 7'),
-(11, 2, 'test 8'),
-(3, 2, 'Clockspeed');
+(12, 2, 'Вес'),
+(13, 2, 'Внутренний диаметр'),
+(14, 2, 'Диаметр'),
+(15, 2, 'Длина'),
+(16, 2, 'Количество в рулоне'),
+(17, 2, 'Количество в упаковке'),
+(18, 2, 'Количество отверстий'),
+(19, 2, 'Количество проколов'),
+(20, 2, 'Материал'),
+(21, 2, 'Намотка'),
+(22, 2, 'Номер иглы'),
+(23, 2, 'Плотность'),
+(24, 2, 'Размер'),
+(25, 2, 'Состав'),
+(26, 2, 'Тип молний'),
+(27, 2, 'Толщина'),
+(28, 2, 'Цвет'),
+(29, 2, 'Ширина');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_group`
+-- Table structure for table `oc_attribute_group`
 --
 
 CREATE TABLE `oc_attribute_group` (
@@ -211,19 +231,16 @@ CREATE TABLE `oc_attribute_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_group`
+-- Dumping data for table `oc_attribute_group`
 --
 
 INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
-(3, 2),
-(4, 1),
-(5, 3),
-(6, 4);
+(7, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_attribute_group_description`
+-- Table structure for table `oc_attribute_group_description`
 --
 
 CREATE TABLE `oc_attribute_group_description` (
@@ -233,23 +250,16 @@ CREATE TABLE `oc_attribute_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_attribute_group_description`
+-- Dumping data for table `oc_attribute_group_description`
 --
 
 INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
-(3, 1, 'Memory'),
-(4, 1, 'Technical'),
-(5, 1, 'Motherboard'),
-(6, 1, 'Processor'),
-(3, 2, 'Memory'),
-(4, 2, 'Technical'),
-(5, 2, 'Motherboard'),
-(6, 2, 'Processor');
+(7, 2, 'Характеристики');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_banner`
+-- Table structure for table `oc_banner`
 --
 
 CREATE TABLE `oc_banner` (
@@ -259,18 +269,18 @@ CREATE TABLE `oc_banner` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_banner`
+-- Dumping data for table `oc_banner`
 --
 
 INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
-(6, 'Main page banner', 1),
+(6, 'Слайдер на главной', 1),
 (9, 'Clients', 1),
 (10, 'Сертификаты', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_banner_image`
+-- Table structure for table `oc_banner_image`
 --
 
 CREATE TABLE `oc_banner_image` (
@@ -284,12 +294,11 @@ CREATE TABLE `oc_banner_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_banner_image`
+-- Dumping data for table `oc_banner_image`
 --
 
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `title`, `link`, `image`, `sort_order`) VALUES
 (139, 9, 2, 'Клиент 5', '', 'catalog/clients/logo.png', 5),
-(132, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '/', 'catalog/main-banner.png', 1),
 (138, 9, 2, 'Клиент 4', '', 'catalog/clients/kupalinka.png', 4),
 (145, 10, 2, 'Сертфикат4', '', 'catalog/site/Rectangle 310.png', 4),
 (144, 10, 2, 'Сертфикат3', '', 'catalog/site/Rectangle 310.png', 3),
@@ -298,15 +307,16 @@ INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `t
 (137, 9, 2, 'Клиент 3', '', 'catalog/clients/8340ce4f2e8183bee98a60bd6a2d476f.png', 3),
 (136, 9, 2, 'Клиент 2', '', 'catalog/clients/8marta-removebg-preview.png', 2),
 (135, 9, 2, 'Клиент 1', '', 'catalog/clients/svitanak_logo_ru.png', 1),
-(133, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '', 'catalog/main-banner.png', 2),
-(134, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '', 'catalog/main-banner.png', 3),
+(147, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '/index.php?route=extension/d_blog_module/category&amp;category_id=9', 'catalog/main-banner.png', 2),
+(146, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '/index.php?route=extension/d_blog_module/post&amp;post_id=11', 'catalog/main-banner.png', 1),
 (140, 9, 2, 'Клиент 6', '', 'catalog/clients/mf.png', 6),
-(141, 9, 2, 'Клиент 7', '', 'catalog/clients/logo_8.png', 7);
+(141, 9, 2, 'Клиент 7', '', 'catalog/clients/logo_8.png', 7),
+(148, 6, 2, 'Качественная швейная фурнитура по доступным ценам', '/index.php?route=extension/d_blog_module/category&amp;category_id=10', 'catalog/main-banner.png', 3);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author`
+-- Table structure for table `oc_bm_author`
 --
 
 CREATE TABLE `oc_bm_author` (
@@ -318,7 +328,7 @@ CREATE TABLE `oc_bm_author` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author`
+-- Dumping data for table `oc_bm_author`
 --
 
 INSERT INTO `oc_bm_author` (`author_id`, `user_id`, `author_group_id`, `custom`, `setting`) VALUES
@@ -327,7 +337,7 @@ INSERT INTO `oc_bm_author` (`author_id`, `user_id`, `author_group_id`, `custom`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author_description`
+-- Table structure for table `oc_bm_author_description`
 --
 
 CREATE TABLE `oc_bm_author_description` (
@@ -343,7 +353,7 @@ CREATE TABLE `oc_bm_author_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author_description`
+-- Dumping data for table `oc_bm_author_description`
 --
 
 INSERT INTO `oc_bm_author_description` (`author_id`, `language_id`, `name`, `description`, `short_description`, `meta_title`, `meta_description`, `meta_keyword`, `author_description_id`) VALUES
@@ -352,7 +362,7 @@ INSERT INTO `oc_bm_author_description` (`author_id`, `language_id`, `name`, `des
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_author_group`
+-- Table structure for table `oc_bm_author_group`
 --
 
 CREATE TABLE `oc_bm_author_group` (
@@ -362,7 +372,7 @@ CREATE TABLE `oc_bm_author_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_author_group`
+-- Dumping data for table `oc_bm_author_group`
 --
 
 INSERT INTO `oc_bm_author_group` (`author_group_id`, `name`, `permission`) VALUES
@@ -374,7 +384,7 @@ INSERT INTO `oc_bm_author_group` (`author_group_id`, `name`, `permission`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category`
+-- Table structure for table `oc_bm_category`
 --
 
 CREATE TABLE `oc_bm_category` (
@@ -394,7 +404,7 @@ CREATE TABLE `oc_bm_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category`
+-- Dumping data for table `oc_bm_category`
 --
 
 INSERT INTO `oc_bm_category` (`category_id`, `parent_id`, `sort_order`, `image`, `status`, `limit_access_user`, `limit_users`, `limit_access_user_group`, `limit_user_groups`, `custom`, `setting`, `date_added`, `date_modified`) VALUES
@@ -407,7 +417,7 @@ INSERT INTO `oc_bm_category` (`category_id`, `parent_id`, `sort_order`, `image`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_description`
+-- Table structure for table `oc_bm_category_description`
 --
 
 CREATE TABLE `oc_bm_category_description` (
@@ -423,7 +433,7 @@ CREATE TABLE `oc_bm_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_description`
+-- Dumping data for table `oc_bm_category_description`
 --
 
 INSERT INTO `oc_bm_category_description` (`category_description_id`, `category_id`, `language_id`, `title`, `short_description`, `description`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
@@ -436,7 +446,7 @@ INSERT INTO `oc_bm_category_description` (`category_description_id`, `category_i
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_path`
+-- Table structure for table `oc_bm_category_path`
 --
 
 CREATE TABLE `oc_bm_category_path` (
@@ -446,7 +456,7 @@ CREATE TABLE `oc_bm_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_path`
+-- Dumping data for table `oc_bm_category_path`
 --
 
 INSERT INTO `oc_bm_category_path` (`category_id`, `path_id`, `level`) VALUES
@@ -459,7 +469,7 @@ INSERT INTO `oc_bm_category_path` (`category_id`, `path_id`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_to_layout`
+-- Table structure for table `oc_bm_category_to_layout`
 --
 
 CREATE TABLE `oc_bm_category_to_layout` (
@@ -469,7 +479,7 @@ CREATE TABLE `oc_bm_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_to_layout`
+-- Dumping data for table `oc_bm_category_to_layout`
 --
 
 INSERT INTO `oc_bm_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
@@ -482,7 +492,7 @@ INSERT INTO `oc_bm_category_to_layout` (`category_id`, `store_id`, `layout_id`) 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_category_to_store`
+-- Table structure for table `oc_bm_category_to_store`
 --
 
 CREATE TABLE `oc_bm_category_to_store` (
@@ -491,7 +501,7 @@ CREATE TABLE `oc_bm_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_category_to_store`
+-- Dumping data for table `oc_bm_category_to_store`
 --
 
 INSERT INTO `oc_bm_category_to_store` (`category_id`, `store_id`) VALUES
@@ -504,7 +514,7 @@ INSERT INTO `oc_bm_category_to_store` (`category_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post`
+-- Table structure for table `oc_bm_post`
 --
 
 CREATE TABLE `oc_bm_post` (
@@ -529,19 +539,19 @@ CREATE TABLE `oc_bm_post` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post`
+-- Dumping data for table `oc_bm_post`
 --
 
 INSERT INTO `oc_bm_post` (`post_id`, `user_id`, `image`, `image_title`, `image_alt`, `review_display`, `images_review`, `viewed`, `status`, `limit_access_user`, `limit_users`, `limit_access_user_group`, `limit_user_groups`, `custom`, `setting`, `date_added`, `date_published`, `date_modified`) VALUES
-(11, 1, 'catalog/blog/январь.png', NULL, NULL, 0, 0, 2, 1, 0, NULL, 0, NULL, 0, '', '2023-01-12 22:57:22', '2023-01-12 19:54:42', '2023-01-12 22:57:22'),
-(12, 1, 'catalog/blog/16.png', NULL, NULL, 0, 0, 3, 1, 0, '', 0, '', 0, '', '2023-01-12 22:58:53', '2023-01-12 19:58:02', '2023-01-12 22:59:44'),
-(13, 1, 'catalog/blog/ДЮСПА.png', NULL, NULL, 0, 0, 2, 1, 0, NULL, 0, NULL, 0, '', '2023-01-12 23:01:39', '2023-01-12 20:00:45', '2023-01-12 23:01:39'),
-(14, 1, 'catalog/blog/IMG_0873.jpeg', NULL, NULL, 0, 0, 2, 1, 0, NULL, 0, NULL, 0, '', '2023-01-12 23:03:28', '2023-01-12 20:02:31', '2023-01-12 23:03:28');
+(11, 1, 'catalog/blog/январь.png', NULL, NULL, 0, 0, 13, 1, 0, NULL, 0, NULL, 0, '', '2023-01-12 22:57:22', '2023-01-12 19:54:42', '2023-01-12 22:57:22'),
+(12, 1, 'catalog/blog/16.png', NULL, NULL, 0, 0, 6, 1, 0, '', 0, '', 0, '', '2023-01-12 22:58:53', '2023-01-12 19:58:02', '2023-01-12 22:59:44'),
+(13, 1, 'catalog/blog/ДЮСПА.png', NULL, NULL, 0, 0, 4, 1, 0, NULL, 0, NULL, 0, '', '2023-01-12 23:01:39', '2023-01-12 20:00:45', '2023-01-12 23:01:39'),
+(14, 1, 'catalog/blog/IMG_0873.jpeg', NULL, NULL, 0, 0, 4, 1, 0, NULL, 0, NULL, 0, '', '2023-01-12 23:03:28', '2023-01-12 20:02:31', '2023-01-12 23:03:28');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_description`
+-- Table structure for table `oc_bm_post_description`
 --
 
 CREATE TABLE `oc_bm_post_description` (
@@ -558,7 +568,7 @@ CREATE TABLE `oc_bm_post_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_description`
+-- Dumping data for table `oc_bm_post_description`
 --
 
 INSERT INTO `oc_bm_post_description` (`post_description_id`, `post_id`, `language_id`, `title`, `short_description`, `description`, `meta_title`, `meta_description`, `meta_keyword`, `tag`) VALUES
@@ -570,7 +580,7 @@ INSERT INTO `oc_bm_post_description` (`post_description_id`, `post_id`, `languag
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_related`
+-- Table structure for table `oc_bm_post_related`
 --
 
 CREATE TABLE `oc_bm_post_related` (
@@ -581,7 +591,7 @@ CREATE TABLE `oc_bm_post_related` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_category`
+-- Table structure for table `oc_bm_post_to_category`
 --
 
 CREATE TABLE `oc_bm_post_to_category` (
@@ -590,7 +600,7 @@ CREATE TABLE `oc_bm_post_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_category`
+-- Dumping data for table `oc_bm_post_to_category`
 --
 
 INSERT INTO `oc_bm_post_to_category` (`post_id`, `category_id`) VALUES
@@ -602,7 +612,7 @@ INSERT INTO `oc_bm_post_to_category` (`post_id`, `category_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_layout`
+-- Table structure for table `oc_bm_post_to_layout`
 --
 
 CREATE TABLE `oc_bm_post_to_layout` (
@@ -612,7 +622,7 @@ CREATE TABLE `oc_bm_post_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_layout`
+-- Dumping data for table `oc_bm_post_to_layout`
 --
 
 INSERT INTO `oc_bm_post_to_layout` (`post_id`, `store_id`, `layout_id`) VALUES
@@ -625,7 +635,7 @@ INSERT INTO `oc_bm_post_to_layout` (`post_id`, `store_id`, `layout_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_product`
+-- Table structure for table `oc_bm_post_to_product`
 --
 
 CREATE TABLE `oc_bm_post_to_product` (
@@ -636,7 +646,7 @@ CREATE TABLE `oc_bm_post_to_product` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_to_store`
+-- Table structure for table `oc_bm_post_to_store`
 --
 
 CREATE TABLE `oc_bm_post_to_store` (
@@ -645,7 +655,7 @@ CREATE TABLE `oc_bm_post_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_bm_post_to_store`
+-- Dumping data for table `oc_bm_post_to_store`
 --
 
 INSERT INTO `oc_bm_post_to_store` (`post_id`, `store_id`) VALUES
@@ -658,7 +668,7 @@ INSERT INTO `oc_bm_post_to_store` (`post_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_post_video`
+-- Table structure for table `oc_bm_post_video`
 --
 
 CREATE TABLE `oc_bm_post_video` (
@@ -673,7 +683,7 @@ CREATE TABLE `oc_bm_post_video` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_review`
+-- Table structure for table `oc_bm_review`
 --
 
 CREATE TABLE `oc_bm_review` (
@@ -695,7 +705,7 @@ CREATE TABLE `oc_bm_review` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_bm_review_to_image`
+-- Table structure for table `oc_bm_review_to_image`
 --
 
 CREATE TABLE `oc_bm_review_to_image` (
@@ -706,7 +716,7 @@ CREATE TABLE `oc_bm_review_to_image` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_cart`
+-- Table structure for table `oc_cart`
 --
 
 CREATE TABLE `oc_cart` (
@@ -724,7 +734,7 @@ CREATE TABLE `oc_cart` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category`
+-- Table structure for table `oc_category`
 --
 
 CREATE TABLE `oc_category` (
@@ -736,43 +746,161 @@ CREATE TABLE `oc_category` (
   `sort_order` int(3) NOT NULL DEFAULT 0,
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL
+  `date_modified` datetime NOT NULL,
+  `import_id` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category`
+-- Dumping data for table `oc_category`
 --
 
-INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2011-05-30 12:14:55'),
-(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2010-08-22 06:32:15'),
-(20, 'catalog/demo/compaq_presario.jpg', 0, 1, 1, 1, 1, '2009-01-05 21:49:43', '2011-07-16 02:14:42'),
-(24, '', 0, 1, 1, 5, 1, '2009-01-20 02:36:26', '2011-05-30 12:15:18'),
-(18, 'catalog/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2011-05-30 12:13:55'),
-(17, '', 0, 1, 1, 4, 1, '2009-01-03 21:08:57', '2011-05-30 12:15:11'),
-(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2010-08-22 06:32:46'),
-(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2010-08-22 06:31:45'),
-(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2010-08-22 06:32:39'),
-(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2010-08-22 06:33:00'),
-(31, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:24', '2010-08-22 06:33:06'),
-(32, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:34', '2010-08-22 06:33:12'),
-(33, '', 0, 1, 1, 6, 1, '2009-02-03 14:17:55', '2011-05-30 12:15:25'),
-(34, 'catalog/demo/ipod_touch_4.jpg', 0, 1, 4, 7, 1, '2009-02-03 14:18:11', '2011-05-30 12:15:31'),
-(37, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:39', '2011-04-22 01:55:08'),
-(38, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:51', '2010-09-18 14:03:51'),
-(39, '', 34, 0, 0, 0, 1, '2010-09-18 14:04:17', '2011-04-22 01:55:20'),
-(40, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:36', '2010-09-18 14:05:36'),
-(41, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:49', '2011-04-22 01:55:30'),
-(42, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:34', '2010-11-07 20:31:04'),
-(45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2011-04-26 08:52:11'),
-(46, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2011-04-26 08:52:23'),
-(56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2011-04-22 01:16:37'),
-(57, '', 0, 1, 1, 3, 1, '2011-04-26 08:53:16', '2011-05-30 12:15:05');
+INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`, `import_id`) VALUES
+(25, '', 0, 1, 1, 2, 1, '2009-01-31 01:04:25', '2023-02-13 12:03:05', NULL),
+(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2023-02-10 09:35:34', NULL),
+(20, '', 0, 1, 1, 3, 1, '2009-01-05 21:49:43', '2023-02-13 12:03:20', NULL),
+(24, '', 0, 1, 1, 5, 1, '2009-01-20 02:36:26', '2023-02-13 12:04:15', NULL),
+(18, '', 0, 1, 0, 4, 1, '2009-01-05 21:49:15', '2023-02-13 12:03:39', NULL),
+(17, '', 0, 1, 1, 6, 1, '2009-01-03 21:08:57', '2023-02-13 12:04:30', NULL),
+(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2023-02-10 09:33:18', NULL),
+(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2023-02-10 09:35:47', NULL),
+(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2023-02-10 09:33:01', NULL),
+(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2023-02-10 09:33:35', NULL),
+(76, '', 18, 0, 1, 0, 1, '2023-02-10 09:35:15', '2023-02-10 09:35:15', NULL),
+(75, '', 18, 0, 1, 0, 1, '2023-02-10 09:34:49', '2023-02-10 09:34:49', NULL),
+(33, '', 0, 1, 1, 1, 1, '2009-02-03 14:17:55', '2023-02-13 12:02:48', NULL),
+(34, '', 0, 1, 4, 4, 1, '2009-02-03 14:18:11', '2023-02-13 12:03:53', NULL),
+(37, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:39', '2023-02-10 09:38:50', NULL),
+(38, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:51', '2023-02-10 09:38:27', NULL),
+(39, '', 34, 0, 0, 0, 1, '2010-09-18 14:04:17', '2023-02-10 09:39:10', NULL),
+(40, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:36', '2023-02-10 09:39:26', NULL),
+(41, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:49', '2023-02-10 09:39:46', NULL),
+(82, '', 33, 0, 1, 0, 1, '2023-02-10 09:41:05', '2023-02-10 09:41:05', NULL),
+(45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2023-02-10 09:34:23', NULL),
+(46, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2023-02-10 09:34:07', NULL),
+(56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2023-02-10 09:38:07', NULL),
+(57, '', 0, 1, 1, 7, 1, '2011-04-26 08:53:16', '2023-02-14 09:51:28', NULL),
+(59, '', 0, 0, 1, 8, 1, '2023-02-10 09:07:44', '2023-02-14 09:51:57', NULL),
+(60, '', 0, 0, 1, 9, 1, '2023-02-10 09:07:54', '2023-02-13 12:05:46', NULL),
+(61, '', 0, 0, 1, 10, 1, '2023-02-10 09:08:07', '2023-02-13 12:05:59', NULL),
+(62, '', 0, 0, 1, 11, 1, '2023-02-10 09:08:22', '2023-02-13 12:06:15', NULL),
+(63, '', 0, 0, 1, 12, 1, '2023-02-10 09:08:37', '2023-02-13 12:06:29', NULL),
+(64, '', 0, 0, 1, 13, 1, '2023-02-10 09:08:51', '2023-02-13 12:06:47', NULL),
+(65, '', 0, 0, 1, 14, 1, '2023-02-10 09:09:08', '2023-02-13 12:07:05', NULL),
+(66, '', 0, 0, 1, 15, 1, '2023-02-10 09:09:26', '2023-02-13 12:07:26', NULL),
+(67, '', 0, 0, 1, 16, 1, '2023-02-10 09:09:53', '2023-02-13 12:07:41', NULL),
+(68, '', 0, 0, 1, 17, 1, '2023-02-10 09:10:10', '2023-02-13 12:08:05', NULL),
+(69, '', 0, 0, 1, 18, 1, '2023-02-10 09:10:20', '2023-02-13 12:08:29', NULL),
+(70, '', 0, 0, 1, 19, 1, '2023-02-10 09:10:37', '2023-02-13 12:08:44', NULL),
+(71, '', 0, 0, 1, 20, 1, '2023-02-10 09:10:59', '2023-02-13 12:09:05', NULL),
+(72, '', 0, 0, 1, 21, 1, '2023-02-10 09:11:10', '2023-02-13 12:09:15', NULL),
+(73, '', 0, 0, 1, 22, 1, '2023-02-10 09:11:26', '2023-02-13 12:09:30', NULL),
+(74, '', 0, 0, 1, 23, 1, '2023-02-10 09:11:37', '2023-02-13 12:09:42', NULL),
+(77, '', 20, 0, 1, 0, 1, '2023-02-10 09:36:14', '2023-02-10 09:36:14', NULL),
+(78, '', 20, 0, 1, 0, 1, '2023-02-10 09:36:33', '2023-02-10 09:36:33', NULL),
+(79, '', 20, 0, 1, 0, 1, '2023-02-10 09:36:52', '2023-02-10 09:36:52', NULL),
+(80, '', 20, 0, 1, 0, 1, '2023-02-10 09:37:19', '2023-02-10 09:37:19', NULL),
+(81, '', 20, 0, 1, 0, 1, '2023-02-10 09:37:41', '2023-02-10 09:37:41', NULL),
+(83, '', 33, 0, 1, 0, 1, '2023-02-10 09:41:25', '2023-02-10 09:41:25', NULL),
+(84, '', 24, 0, 1, 0, 1, '2023-02-10 09:42:12', '2023-02-10 09:42:12', NULL),
+(85, '', 24, 0, 1, 0, 1, '2023-02-10 09:42:31', '2023-02-10 09:42:31', NULL),
+(86, '', 24, 0, 1, 0, 1, '2023-02-10 09:42:52', '2023-02-10 09:42:52', NULL),
+(87, '', 24, 0, 1, 0, 1, '2023-02-10 09:43:09', '2023-02-10 09:43:09', NULL),
+(88, '', 24, 0, 1, 0, 1, '2023-02-10 09:43:32', '2023-02-10 09:43:32', NULL),
+(89, '', 24, 0, 1, 0, 1, '2023-02-10 09:43:46', '2023-02-10 09:43:46', NULL),
+(90, '', 24, 0, 1, 0, 1, '2023-02-10 09:44:14', '2023-02-10 09:44:14', NULL),
+(91, '', 24, 0, 1, 0, 1, '2023-02-10 09:44:31', '2023-02-10 09:44:31', NULL),
+(92, '', 24, 0, 1, 0, 1, '2023-02-10 09:44:52', '2023-02-10 09:44:52', NULL),
+(93, '', 17, 0, 1, 0, 1, '2023-02-10 09:45:33', '2023-02-10 09:45:33', NULL),
+(94, '', 17, 0, 1, 0, 1, '2023-02-10 09:45:52', '2023-02-10 09:45:52', NULL),
+(95, '', 17, 0, 1, 0, 1, '2023-02-10 09:46:09', '2023-02-10 09:46:09', NULL),
+(96, '', 17, 0, 1, 0, 1, '2023-02-10 09:46:31', '2023-02-10 09:46:31', NULL),
+(97, '', 17, 0, 1, 0, 1, '2023-02-10 09:46:55', '2023-02-10 09:46:55', NULL),
+(98, '', 17, 0, 1, 0, 1, '2023-02-10 09:47:21', '2023-02-10 09:47:21', NULL),
+(99, '', 17, 0, 1, 0, 1, '2023-02-10 09:47:40', '2023-02-10 09:47:40', NULL),
+(100, '', 57, 0, 1, 0, 1, '2023-02-10 09:49:52', '2023-02-10 09:49:52', NULL),
+(101, '', 57, 0, 1, 0, 1, '2023-02-10 09:50:11', '2023-02-10 09:50:11', NULL),
+(102, '', 57, 0, 1, 0, 1, '2023-02-10 09:50:29', '2023-02-10 09:50:29', NULL),
+(103, '', 57, 0, 1, 0, 1, '2023-02-10 09:50:47', '2023-02-10 09:50:47', NULL),
+(104, '', 57, 0, 1, 0, 1, '2023-02-10 09:51:07', '2023-02-10 09:51:07', NULL),
+(105, '', 57, 0, 1, 0, 1, '2023-02-10 09:51:25', '2023-02-10 09:51:25', NULL),
+(106, '', 57, 0, 1, 0, 1, '2023-02-10 09:51:46', '2023-02-10 09:51:46', NULL),
+(107, '', 57, 0, 1, 0, 1, '2023-02-10 09:52:08', '2023-02-10 09:52:08', NULL),
+(108, '', 57, 0, 1, 0, 1, '2023-02-10 09:52:31', '2023-02-10 09:52:31', NULL),
+(109, '', 57, 0, 1, 0, 1, '2023-02-10 09:52:48', '2023-02-10 09:52:48', NULL),
+(110, '', 57, 0, 1, 0, 1, '2023-02-10 09:53:07', '2023-02-10 09:53:07', NULL),
+(111, '', 57, 0, 1, 0, 1, '2023-02-10 09:53:21', '2023-02-10 09:53:21', NULL),
+(112, '', 57, 0, 1, 0, 1, '2023-02-10 09:53:41', '2023-02-14 09:50:26', NULL),
+(113, '', 57, 0, 1, 0, 1, '2023-02-10 09:54:08', '2023-02-10 09:54:08', NULL),
+(114, '', 57, 0, 1, 0, 1, '2023-02-10 09:54:26', '2023-02-10 09:54:26', NULL),
+(115, '', 59, 0, 1, 0, 1, '2023-02-10 09:56:22', '2023-02-10 09:56:22', NULL),
+(116, '', 59, 0, 1, 0, 1, '2023-02-10 09:56:39', '2023-02-10 09:56:39', NULL),
+(117, '', 59, 0, 1, 0, 1, '2023-02-10 09:56:58', '2023-02-10 09:56:58', NULL),
+(118, '', 59, 0, 1, 0, 1, '2023-02-10 09:57:11', '2023-02-10 09:57:11', NULL),
+(119, '', 60, 0, 1, 0, 1, '2023-02-10 10:38:03', '2023-02-10 10:38:03', NULL),
+(120, '', 60, 0, 1, 0, 1, '2023-02-10 10:38:20', '2023-02-10 10:38:20', NULL),
+(121, '', 60, 0, 1, 0, 1, '2023-02-10 10:38:34', '2023-02-10 10:38:34', NULL),
+(122, '', 60, 0, 1, 0, 1, '2023-02-10 10:38:47', '2023-02-10 10:38:47', NULL),
+(123, '', 60, 0, 1, 0, 1, '2023-02-10 10:39:01', '2023-02-10 10:39:01', NULL),
+(124, '', 60, 0, 1, 0, 1, '2023-02-10 10:39:14', '2023-02-10 10:39:14', NULL),
+(125, '', 60, 0, 1, 0, 1, '2023-02-10 10:39:27', '2023-02-10 10:39:27', NULL),
+(126, '', 61, 0, 1, 0, 1, '2023-02-10 10:39:49', '2023-02-10 10:39:49', NULL),
+(127, '', 61, 0, 1, 0, 1, '2023-02-10 10:40:06', '2023-02-10 10:40:06', NULL),
+(128, '', 61, 0, 1, 0, 1, '2023-02-10 10:40:20', '2023-02-10 10:40:20', NULL),
+(129, '', 61, 0, 1, 0, 1, '2023-02-10 10:40:36', '2023-02-10 10:40:36', NULL),
+(130, '', 62, 0, 1, 0, 1, '2023-02-10 10:40:57', '2023-02-10 10:40:57', NULL),
+(131, '', 62, 0, 1, 0, 1, '2023-02-10 10:41:14', '2023-02-10 10:41:14', NULL),
+(132, '', 62, 0, 1, 0, 1, '2023-02-10 10:41:28', '2023-02-10 10:41:28', NULL),
+(133, '', 62, 0, 1, 0, 1, '2023-02-10 10:41:46', '2023-02-10 10:41:46', NULL),
+(134, '', 63, 0, 1, 0, 1, '2023-02-10 10:42:08', '2023-02-10 10:42:08', NULL),
+(135, '', 63, 0, 1, 0, 1, '2023-02-10 10:42:21', '2023-02-10 10:42:21', NULL),
+(137, '', 64, 0, 1, 0, 1, '2023-02-10 10:43:13', '2023-02-10 10:43:13', NULL),
+(138, '', 64, 0, 1, 0, 1, '2023-02-10 10:43:28', '2023-02-10 10:43:28', NULL),
+(139, '', 65, 0, 1, 0, 1, '2023-02-10 10:43:48', '2023-02-10 10:43:48', NULL),
+(140, '', 65, 0, 1, 0, 1, '2023-02-10 10:44:08', '2023-02-10 10:44:08', NULL),
+(141, '', 66, 0, 1, 0, 1, '2023-02-10 10:44:33', '2023-02-10 10:44:33', NULL),
+(142, '', 66, 0, 1, 0, 1, '2023-02-10 10:44:46', '2023-02-10 10:44:46', NULL),
+(143, '', 67, 0, 1, 0, 1, '2023-02-10 10:45:01', '2023-02-10 10:45:01', NULL),
+(144, '', 67, 0, 1, 0, 1, '2023-02-10 10:45:14', '2023-02-10 10:45:14', NULL),
+(145, '', 67, 0, 1, 0, 1, '2023-02-10 10:45:31', '2023-02-10 10:45:31', NULL),
+(146, '', 70, 0, 1, 0, 1, '2023-02-10 10:45:55', '2023-02-10 10:45:55', NULL),
+(147, '', 70, 0, 1, 0, 1, '2023-02-10 10:46:10', '2023-02-10 10:46:10', NULL),
+(148, '', 70, 0, 1, 0, 1, '2023-02-10 10:46:26', '2023-02-10 10:46:26', NULL),
+(149, '', 71, 0, 1, 0, 1, '2023-02-10 10:46:46', '2023-02-10 10:46:46', NULL),
+(150, '', 71, 0, 1, 0, 1, '2023-02-10 10:47:02', '2023-02-10 10:47:02', NULL),
+(151, '', 71, 0, 1, 0, 1, '2023-02-10 10:47:18', '2023-02-10 10:47:18', NULL),
+(152, '', 72, 0, 1, 0, 1, '2023-02-10 10:47:31', '2023-02-10 10:47:31', NULL),
+(153, '', 72, 0, 1, 0, 1, '2023-02-10 10:47:45', '2023-02-10 10:47:45', NULL),
+(154, '', 72, 0, 1, 0, 1, '2023-02-10 10:48:01', '2023-02-10 10:48:01', NULL),
+(155, '', 72, 0, 1, 0, 1, '2023-02-10 10:48:16', '2023-02-10 10:48:16', NULL),
+(156, '', 72, 0, 1, 0, 1, '2023-02-10 10:48:38', '2023-02-10 10:48:38', NULL),
+(157, '', 72, 0, 1, 0, 1, '2023-02-10 10:48:51', '2023-02-10 10:48:51', NULL),
+(158, '', 72, 0, 1, 0, 1, '2023-02-10 10:49:06', '2023-02-10 10:49:06', NULL),
+(159, '', 72, 0, 1, 0, 1, '2023-02-10 10:49:25', '2023-02-10 10:49:25', NULL),
+(160, '', 72, 0, 1, 0, 1, '2023-02-10 10:49:40', '2023-02-10 10:49:40', NULL),
+(161, '', 72, 0, 1, 0, 1, '2023-02-10 10:50:24', '2023-02-10 10:50:24', NULL),
+(162, '', 72, 0, 1, 0, 1, '2023-02-10 10:50:38', '2023-02-10 10:50:38', NULL),
+(163, '', 72, 0, 1, 0, 1, '2023-02-10 10:50:55', '2023-02-10 10:50:55', NULL),
+(164, '', 72, 0, 1, 0, 1, '2023-02-10 10:51:11', '2023-02-10 10:51:11', NULL),
+(165, '', 72, 0, 1, 0, 1, '2023-02-10 10:51:29', '2023-02-10 10:51:29', NULL),
+(166, '', 74, 0, 1, 0, 1, '2023-02-10 10:51:49', '2023-02-10 10:51:49', NULL),
+(167, '', 74, 0, 1, 0, 1, '2023-02-10 10:52:08', '2023-02-10 10:52:08', NULL),
+(168, '', 74, 0, 1, 0, 1, '2023-02-10 10:52:24', '2023-02-10 10:52:24', NULL),
+(169, '', 0, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000001'),
+(170, '', 0, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000002'),
+(171, '', 0, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000003'),
+(172, '', 169, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000004'),
+(173, '', 169, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000005'),
+(174, '', 169, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000006'),
+(175, '', 170, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000007'),
+(176, '', 170, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000008'),
+(177, '', 172, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000009'),
+(178, '', 171, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000010'),
+(179, '', 175, 0, 1, 1, 1, '2023-03-17 11:07:29', '2023-03-22 15:57:50', '000000011');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_description`
+-- Table structure for table `oc_category_description`
 --
 
 CREATE TABLE `oc_category_description` (
@@ -786,63 +914,156 @@ CREATE TABLE `oc_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_description`
+-- Dumping data for table `oc_category_description`
 --
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(28, 1, 'Monitors', '', 'Monitors', '', ''),
-(33, 1, 'Cameras', '', 'Cameras', '', ''),
-(32, 1, 'Web Cameras', '', 'Web Cameras', '', ''),
-(31, 1, 'Scanners', '', 'Scanners', '', ''),
-(30, 1, 'Printers', '', 'Printers', '', ''),
-(29, 1, 'Mice and Trackballs', '', 'Mice and Trackballs', '', ''),
-(27, 1, 'Mac', '', 'Mac', '', ''),
-(26, 1, 'PC', '', 'PC', '', ''),
-(17, 1, 'Software', '', 'Software', '', ''),
-(25, 1, 'Components', '', 'Components', '', ''),
-(24, 1, 'Phones &amp; PDAs', '', 'Phones &amp; PDAs', '', ''),
-(20, 1, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Desktops', 'Example of category description', ''),
-(37, 1, 'test 5', '', 'test 5', '', ''),
-(38, 1, 'test 4', '', 'test 4', '', ''),
-(39, 1, 'test 6', '', 'test 6', '', ''),
-(40, 1, 'test 7', '', 'test 7', '', ''),
-(41, 1, 'test 8', '', 'test 8', '', ''),
-(42, 1, 'test 9', '', 'test 9', '', ''),
-(34, 1, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'MP3 Players', '', ''),
-(18, 1, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'Laptops &amp; Notebooks', '', ''),
-(45, 1, 'Windows', '', 'Windows', '', ''),
-(46, 1, 'Macs', '', 'Macs', '', ''),
-(56, 1, 'test 24', '', 'test 24', '', ''),
-(57, 1, 'Tablets', '', 'Tablets', '', ''),
-(28, 2, 'Monitors', '', 'Monitors', '', ''),
-(33, 2, 'Cameras', '', 'Cameras', '', ''),
-(32, 2, 'Web Cameras', '', 'Web Cameras', '', ''),
-(31, 2, 'Scanners', '', 'Scanners', '', ''),
-(30, 2, 'Printers', '', 'Printers', '', ''),
-(29, 2, 'Mice and Trackballs', '', 'Mice and Trackballs', '', ''),
-(27, 2, 'Mac', '', 'Mac', '', ''),
-(26, 2, 'PC', '', 'PC', '', ''),
-(17, 2, 'Software', '', 'Software', '', ''),
-(25, 2, 'Components', '', 'Components', '', ''),
-(24, 2, 'Phones &amp; PDAs', '', 'Phones &amp; PDAs', '', ''),
-(20, 2, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Desktops', 'Example of category description', ''),
-(37, 2, 'test 5', '', 'test 5', '', ''),
-(38, 2, 'test 4', '', 'test 4', '', ''),
-(39, 2, 'test 6', '', 'test 6', '', ''),
-(40, 2, 'test 7', '', 'test 7', '', ''),
-(41, 2, 'test 8', '', 'test 8', '', ''),
-(42, 2, 'test 9', '', 'test 9', '', ''),
-(34, 2, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'MP3 Players', '', ''),
-(18, 2, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'Laptops &amp; Notebooks', '', ''),
-(45, 2, 'Windows', '', 'Windows', '', ''),
-(46, 2, 'Macs', '', 'Macs', '', ''),
-(56, 2, 'test 24', '', 'test 24', '', ''),
-(57, 2, 'Tablets', '', 'Tablets', '', '');
+(75, 2, 'Кнопки пришивные', '', 'Кнопки пришивные', '', ''),
+(24, 2, 'Металлофурнитура', '', 'Металлофурнитура', '', ''),
+(17, 2, 'Пластиковая фурнитура', '', 'Пластиковая фурнитура', '', ''),
+(65, 2, 'Товары для вязания', '', 'Товары для вязания', '', ''),
+(66, 2, 'Синтепон и наполнитель', '', 'Синтепон и наполнитель', '', ''),
+(67, 2, 'Упаковочные материалы', '', 'Упаковочные материалы', '', ''),
+(68, 2, 'Украшения', '', 'Украшения', '', ''),
+(69, 2, 'Лейблы', '', 'Лейблы', '', ''),
+(70, 2, 'Швейное оборудование и инструменты', '', 'Швейное оборудование и инструменты', '', ''),
+(71, 2, 'Насадки, пуансоны, матрицы', '', 'Насадки, пуансоны, матрицы', '', ''),
+(72, 2, 'Аксессуары', '', 'Аксессуары', '', ''),
+(73, 2, 'Товары для уборки', '', 'Товары для уборки', '', ''),
+(74, 2, 'Разное', '', 'Разное', '', ''),
+(76, 2, 'Кнопки сорочечные (книппер)', '', 'Кнопки сорочечные (книппер)', '', ''),
+(28, 2, 'спираль', '', 'спираль', '', ''),
+(30, 2, 'трактор', '', 'трактор', '', ''),
+(29, 2, 'металл', '', 'металл', '', ''),
+(27, 2, 'Универсальные', '', 'Универсальные', '', ''),
+(26, 2, 'Армированные', '', 'Армированные', '', ''),
+(20, 2, 'Нитки', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Нитки', '', ''),
+(37, 2, 'Металлизированный пластик', '', 'Металлизированный пластик', '', ''),
+(38, 2, 'Из натуральных материалов', '', 'Из натуральных материалов', '', ''),
+(39, 2, 'Пластик на ножке', '', 'Пластик на ножке', '', ''),
+(40, 2, 'Пластик на прокол', '', 'Пластик на прокол', '', ''),
+(41, 2, 'Джинсовые', '', 'Джинсовые', '', ''),
+(82, 2, 'Молнии (Россия) TM \'ALI\' ', '', 'Молнии (Россия) TM \'ALI\' ', '', ''),
+(34, 2, 'Пуговицы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;\r\n', 'Пуговицы', '', ''),
+(59, 2, 'Шнур, резинка, канты', '', 'Шнур, резинка, канты', '', ''),
+(60, 2, 'Ткани', '', 'Ткани', '', ''),
+(61, 2, 'Трикотаж', '', 'Трикотаж', '', ''),
+(62, 2, 'Клеевые материалы', '', 'Клеевые материалы', '', ''),
+(63, 2, 'Бельевая фурнитура', '', 'Бельевая фурнитура', '', ''),
+(64, 2, 'Регилин', '', 'Регилин', '', ''),
+(18, 2, 'Кнопки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;\r\n', 'Кнопки', '', ''),
+(77, 2, 'Мононить', '', 'Мононить', '', ''),
+(78, 2, 'Джинсовые нитки', '', 'Джинсовые нитки', '', ''),
+(79, 2, 'Вышивальные', '', 'Вышивальные', '', ''),
+(80, 2, 'Люрекс', '', 'Люрекс', '', ''),
+(81, 2, 'Особо прочные', '', 'Особо прочные', '', ''),
+(45, 2, 'Кнопки пластиковые', '', 'Кнопки пластиковые', '', ''),
+(46, 2, 'Кнопки металлические', '', 'Кнопки металлические', '', ''),
+(56, 2, 'Для спецодежды', '', 'Для спецодежды', '', ''),
+(57, 2, 'Ленты и кружева', '', 'Ленты и кружева', '', ''),
+(33, 2, 'Застежки-молнии', '', 'Застежки-молнии', '', ''),
+(25, 2, 'Бегунки, пуллеры', '', 'Бегунки, пуллеры', '', ''),
+(83, 2, 'Молнии (Китай)', '', 'Молнии (Китай)', '', ''),
+(84, 2, 'Заготовки для обтяжки пуговиц', '', 'Заготовки для обтяжки пуговиц', '', ''),
+(85, 2, 'Крючки брючные', '', 'Крючки брючные', '', ''),
+(86, 2, 'Крючки декоративные', '', 'Крючки декоративные', '', ''),
+(87, 2, 'Люверсы', '', 'Люверсы', '', ''),
+(88, 2, 'Наконечники', '', 'Наконечники', '', ''),
+(89, 2, 'Пряжки', '', 'Пряжки', '', ''),
+(90, 2, 'Рамки, кольца, полукольца', '', 'Рамки, кольца, полукольца', '', ''),
+(91, 2, 'Фиксаторы', '', 'Фиксаторы', '', ''),
+(92, 2, 'Хольнитены', '', 'Хольнитены', '', ''),
+(93, 2, 'Козырьки', '', 'Козырьки', '', ''),
+(94, 2, 'Люверсы', '', 'Люверсы', '', ''),
+(95, 2, 'Наконечники', '', 'Наконечники', '', ''),
+(96, 2, 'Пряжки регулировочные', '', 'Пряжки регулировочные', '', ''),
+(97, 2, 'Рамки, кольца, полукольца', '', 'Рамки, кольца, полукольца', '', ''),
+(98, 2, 'Фистексы', '', 'Фистексы', '', ''),
+(99, 2, 'Фиксаторы', '', 'Фиксаторы', '', ''),
+(100, 2, 'Велькро', '', 'Велькро', '', ''),
+(101, 2, 'Косая бейка', '', 'Косая бейка', '', ''),
+(102, 2, 'Лента атласная', '', 'Лента атласная', '', ''),
+(103, 2, 'Лента киперная', '', 'Лента киперная', '', ''),
+(104, 2, 'Лента окантовочная', '', 'Лента окантовочная', '', ''),
+(105, 2, 'Лента ременная (стропа)', '', 'Лента ременная (стропа)', '', ''),
+(106, 2, 'Лента репсовая', '', 'Лента репсовая', '', ''),
+(107, 2, 'Лента светооражающая', '', 'Лента светооражающая', '', ''),
+(108, 2, 'Лента силиковая', '', 'Лента силиковая', '', ''),
+(109, 2, 'Лента со стразами', '', 'Лента со стразами', '', ''),
+(110, 2, 'Лента эластичная', '', 'Лента эластичная', '', ''),
+(111, 2, 'Кружева', '', 'Кружева', '', ''),
+(112, 2, 'Декоративные ленты', '', 'Декторативные ленты', '', ''),
+(113, 2, 'Размерные ленты', '', 'Размерные ленты', '', ''),
+(114, 2, 'Ленты брючные', '', 'Ленты брючные', '', ''),
+(115, 2, 'Поясная резинка', '', 'Поясная резинка', '', ''),
+(116, 2, 'Шляпная резинка', '', 'Шляпная резинка', '', ''),
+(117, 2, 'Шнур', '', 'Шнур', '', ''),
+(118, 2, 'Кант', '', 'Кант', '', ''),
+(119, 2, 'Подкладочная', '', 'Подкладочная', '', ''),
+(120, 2, 'Фильц', '', 'Фильц', '', ''),
+(121, 2, 'Оксфорд', '', 'Оксфорд', '', ''),
+(122, 2, 'Грета', '', 'Грета', '', ''),
+(123, 2, 'Габардин', '', 'Габардин', '', ''),
+(124, 2, 'Бязь', '', 'Бязь', '', ''),
+(125, 2, 'ТС', '', 'ТС', '', ''),
+(126, 2, 'Футер', '', 'Футер', '', ''),
+(127, 2, 'Кашкорсе', '', 'Кашкорсе', '', ''),
+(128, 2, 'Рибана', '', 'Рибана', '', ''),
+(129, 2, 'Кулирка', '', 'Кулирка', '', ''),
+(130, 2, 'Дублерин', '', 'Дублерин', '', ''),
+(131, 2, 'Паутинка', '', 'Паутинка', '', ''),
+(132, 2, 'Флизелин', '', 'Флизелин', '', ''),
+(133, 2, 'Полоска нитепрошивная', '', 'Полоска нитепрошивная', '', ''),
+(134, 2, 'Кольца', '', 'Кольца', '', ''),
+(135, 2, 'Пряжки', '', 'Кольца', '', ''),
+(137, 2, 'Регилин-сетка', '', 'Регилин-сетка', '', ''),
+(138, 2, 'Жесткий регилин', '', 'Жесткий регилин', '', ''),
+(139, 2, 'Пряжа', '', 'Пряжа', '', ''),
+(140, 2, 'Спицы', '', 'Спицы', '', ''),
+(141, 2, 'синтепон', '', 'синтепон', '', ''),
+(142, 2, 'наполнитель', '', 'наполнитель', '', ''),
+(143, 2, 'Пакеты', '', 'Пакеты', '', ''),
+(144, 2, 'Скотч', '', 'Скотч', '', ''),
+(145, 2, 'Стрейч-пленка', '', 'Стрейч-пленка', '', ''),
+(146, 2, 'Швейные машины', '', 'Швейные машины', '', ''),
+(147, 2, 'Пресс', '', 'Пресс', '', ''),
+(148, 2, 'Дырокол', '', 'Дырокол', '', ''),
+(149, 2, 'Насадки', '', 'Насадки', '', ''),
+(150, 2, 'Переходники', '', 'Переходники', '', ''),
+(151, 2, 'Пробойники', '', 'Пробойники', '', ''),
+(152, 2, 'Вешалки', '', 'Вешалки', '', ''),
+(153, 2, 'Иглы', '', 'Иглы', '', ''),
+(154, 2, 'Булавки и игольницы', '', 'Булавки и игольницы', '', ''),
+(155, 2, 'Мел и маркеры', '', 'Мел и маркеры', '', ''),
+(156, 2, 'Линейка, лекала, сантиметры', '', 'Линейка, лекала, сантиметры', '', ''),
+(157, 2, 'Пяльцы', '', 'Пяльцы', '', ''),
+(158, 2, 'Шпульки', '', 'Шпульки', '', ''),
+(159, 2, 'Нитевдеватели', '', 'Нитевдеватели', '', ''),
+(160, 2, 'Клеевой пистолет', '', 'Клеевой пистолет', '', ''),
+(161, 2, 'Клей', '', 'Клей', '', ''),
+(162, 2, 'Вспарыватель', '', 'Вспарыватель', '', ''),
+(163, 2, 'Наперстки', '', 'Наперстки', '', ''),
+(164, 2, 'Наборы для вышивания', '', 'Наборы для вышивания', '', ''),
+(165, 2, 'Биркодержатели, пломбы', '', 'Биркодержатели, пломбы', '', ''),
+(166, 2, 'Плечевые накладки', '', 'Плечевые накладки', '', ''),
+(167, 2, 'Подокатники', '', 'Подокатники', '', ''),
+(168, 2, 'Напульсники', '', 'Напульсники', '', ''),
+(169, 2, 'Группа 1', 'Группа 1', 'Группа 1', 'Группа 1', ''),
+(170, 2, 'Группа 2', 'Группа 2', 'Группа 2', 'Группа 2', ''),
+(171, 2, 'Группа 3', 'Группа 3', 'Группа 3', 'Группа 3', ''),
+(172, 2, 'Группа 1.1', 'Группа 1.1', 'Группа 1.1', 'Группа 1.1', ''),
+(173, 2, 'Группа 1.2', 'Группа 1.2', 'Группа 1.2', 'Группа 1.2', ''),
+(174, 2, 'Группа 1.3', 'Группа 1.3', 'Группа 1.3', 'Группа 1.3', ''),
+(175, 2, 'Группа 2.1', 'Группа 2.1', 'Группа 2.1', 'Группа 2.1', ''),
+(176, 2, 'Группа 2.2', 'Группа 2.2', 'Группа 2.2', 'Группа 2.2', ''),
+(177, 2, 'Номенклатурная группа 1', 'Номенклатурная группа 1', 'Номенклатурная группа 1', 'Номенклатурная группа 1', ''),
+(178, 2, 'Булавки', 'Булавки', 'Булавки', 'Булавки', ''),
+(179, 2, 'Группа номенклатуры с остатками', 'Группа номенклатуры с остатками', 'Группа номенклатуры с остатками', 'Группа номенклатуры с остатками', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_filter`
+-- Table structure for table `oc_category_filter`
 --
 
 CREATE TABLE `oc_category_filter` (
@@ -853,7 +1074,7 @@ CREATE TABLE `oc_category_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_path`
+-- Table structure for table `oc_category_path`
 --
 
 CREATE TABLE `oc_category_path` (
@@ -863,7 +1084,7 @@ CREATE TABLE `oc_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_path`
+-- Dumping data for table `oc_category_path`
 --
 
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
@@ -874,10 +1095,10 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (29, 29, 1),
 (30, 25, 0),
 (30, 30, 1),
-(31, 25, 0),
-(31, 31, 1),
-(32, 25, 0),
-(32, 32, 1),
+(76, 76, 1),
+(76, 18, 0),
+(75, 75, 1),
+(75, 18, 0),
 (20, 20, 0),
 (27, 20, 0),
 (27, 27, 1),
@@ -902,16 +1123,233 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (40, 40, 1),
 (41, 34, 0),
 (41, 41, 1),
-(42, 34, 0),
-(42, 42, 1),
+(82, 82, 1),
+(82, 33, 0),
 (56, 34, 0),
 (56, 56, 1),
-(57, 57, 0);
+(57, 57, 0),
+(59, 59, 0),
+(60, 60, 0),
+(61, 61, 0),
+(62, 62, 0),
+(63, 63, 0),
+(64, 64, 0),
+(65, 65, 0),
+(66, 66, 0),
+(67, 67, 0),
+(68, 68, 0),
+(69, 69, 0),
+(70, 70, 0),
+(71, 71, 0),
+(72, 72, 0),
+(73, 73, 0),
+(74, 74, 0),
+(77, 20, 0),
+(77, 77, 1),
+(78, 20, 0),
+(78, 78, 1),
+(79, 20, 0),
+(79, 79, 1),
+(80, 20, 0),
+(80, 80, 1),
+(81, 20, 0),
+(81, 81, 1),
+(83, 33, 0),
+(83, 83, 1),
+(84, 24, 0),
+(84, 84, 1),
+(85, 24, 0),
+(85, 85, 1),
+(86, 24, 0),
+(86, 86, 1),
+(87, 24, 0),
+(87, 87, 1),
+(88, 24, 0),
+(88, 88, 1),
+(89, 24, 0),
+(89, 89, 1),
+(90, 24, 0),
+(90, 90, 1),
+(91, 24, 0),
+(91, 91, 1),
+(92, 24, 0),
+(92, 92, 1),
+(93, 17, 0),
+(93, 93, 1),
+(94, 17, 0),
+(94, 94, 1),
+(95, 17, 0),
+(95, 95, 1),
+(96, 17, 0),
+(96, 96, 1),
+(97, 17, 0),
+(97, 97, 1),
+(98, 17, 0),
+(98, 98, 1),
+(99, 17, 0),
+(99, 99, 1),
+(100, 57, 0),
+(100, 100, 1),
+(101, 57, 0),
+(101, 101, 1),
+(102, 57, 0),
+(102, 102, 1),
+(103, 57, 0),
+(103, 103, 1),
+(104, 57, 0),
+(104, 104, 1),
+(105, 57, 0),
+(105, 105, 1),
+(106, 57, 0),
+(106, 106, 1),
+(107, 57, 0),
+(107, 107, 1),
+(108, 57, 0),
+(108, 108, 1),
+(109, 57, 0),
+(109, 109, 1),
+(110, 57, 0),
+(110, 110, 1),
+(111, 57, 0),
+(111, 111, 1),
+(112, 57, 0),
+(112, 112, 1),
+(113, 57, 0),
+(113, 113, 1),
+(114, 57, 0),
+(114, 114, 1),
+(115, 59, 0),
+(115, 115, 1),
+(116, 59, 0),
+(116, 116, 1),
+(117, 59, 0),
+(117, 117, 1),
+(118, 59, 0),
+(118, 118, 1),
+(119, 60, 0),
+(119, 119, 1),
+(120, 60, 0),
+(120, 120, 1),
+(121, 60, 0),
+(121, 121, 1),
+(122, 60, 0),
+(122, 122, 1),
+(123, 60, 0),
+(123, 123, 1),
+(124, 60, 0),
+(124, 124, 1),
+(125, 60, 0),
+(125, 125, 1),
+(126, 61, 0),
+(126, 126, 1),
+(127, 61, 0),
+(127, 127, 1),
+(128, 61, 0),
+(128, 128, 1),
+(129, 61, 0),
+(129, 129, 1),
+(130, 62, 0),
+(130, 130, 1),
+(131, 62, 0),
+(131, 131, 1),
+(132, 62, 0),
+(132, 132, 1),
+(133, 62, 0),
+(133, 133, 1),
+(134, 63, 0),
+(134, 134, 1),
+(135, 63, 0),
+(135, 135, 1),
+(170, 170, 0),
+(169, 169, 0),
+(137, 64, 0),
+(137, 137, 1),
+(138, 64, 0),
+(138, 138, 1),
+(139, 65, 0),
+(139, 139, 1),
+(140, 65, 0),
+(140, 140, 1),
+(141, 66, 0),
+(141, 141, 1),
+(142, 66, 0),
+(142, 142, 1),
+(143, 67, 0),
+(143, 143, 1),
+(144, 67, 0),
+(144, 144, 1),
+(145, 67, 0),
+(145, 145, 1),
+(146, 70, 0),
+(146, 146, 1),
+(147, 70, 0),
+(147, 147, 1),
+(148, 70, 0),
+(148, 148, 1),
+(149, 71, 0),
+(149, 149, 1),
+(150, 71, 0),
+(150, 150, 1),
+(151, 71, 0),
+(151, 151, 1),
+(152, 72, 0),
+(152, 152, 1),
+(153, 72, 0),
+(153, 153, 1),
+(154, 72, 0),
+(154, 154, 1),
+(155, 72, 0),
+(155, 155, 1),
+(156, 72, 0),
+(156, 156, 1),
+(157, 72, 0),
+(157, 157, 1),
+(158, 72, 0),
+(158, 158, 1),
+(159, 72, 0),
+(159, 159, 1),
+(160, 72, 0),
+(160, 160, 1),
+(161, 72, 0),
+(161, 161, 1),
+(162, 72, 0),
+(162, 162, 1),
+(163, 72, 0),
+(163, 163, 1),
+(164, 72, 0),
+(164, 164, 1),
+(165, 72, 0),
+(165, 165, 1),
+(166, 74, 0),
+(166, 166, 1),
+(167, 74, 0),
+(167, 167, 1),
+(168, 74, 0),
+(168, 168, 1),
+(171, 171, 0),
+(172, 169, 0),
+(172, 172, 1),
+(173, 169, 0),
+(173, 173, 1),
+(174, 169, 0),
+(174, 174, 1),
+(175, 170, 0),
+(175, 175, 1),
+(176, 170, 0),
+(176, 176, 1),
+(177, 172, 1),
+(177, 169, 0),
+(177, 177, 2),
+(178, 171, 0),
+(178, 178, 1),
+(179, 175, 1),
+(179, 170, 0),
+(179, 179, 2);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_to_layout`
+-- Table structure for table `oc_category_to_layout`
 --
 
 CREATE TABLE `oc_category_to_layout` (
@@ -920,10 +1358,146 @@ CREATE TABLE `oc_category_to_layout` (
   `layout_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `oc_category_to_layout`
+--
+
+INSERT INTO `oc_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
+(33, 0, 0),
+(25, 0, 0),
+(20, 0, 0),
+(18, 0, 0),
+(34, 0, 0),
+(24, 0, 0),
+(17, 0, 0),
+(57, 0, 0),
+(59, 0, 0),
+(60, 0, 0),
+(61, 0, 0),
+(62, 0, 0),
+(63, 0, 0),
+(64, 0, 0),
+(65, 0, 0),
+(66, 0, 0),
+(67, 0, 0),
+(68, 0, 0),
+(69, 0, 0),
+(70, 0, 0),
+(71, 0, 0),
+(72, 0, 0),
+(73, 0, 0),
+(74, 0, 0),
+(29, 0, 0),
+(28, 0, 0),
+(30, 0, 0),
+(46, 0, 0),
+(45, 0, 0),
+(75, 0, 0),
+(76, 0, 0),
+(27, 0, 0),
+(26, 0, 0),
+(77, 0, 0),
+(78, 0, 0),
+(79, 0, 0),
+(80, 0, 0),
+(81, 0, 0),
+(56, 0, 0),
+(38, 0, 0),
+(37, 0, 0),
+(39, 0, 0),
+(40, 0, 0),
+(41, 0, 0),
+(82, 0, 0),
+(83, 0, 0),
+(84, 0, 0),
+(85, 0, 0),
+(86, 0, 0),
+(87, 0, 0),
+(88, 0, 0),
+(89, 0, 0),
+(90, 0, 0),
+(91, 0, 0),
+(92, 0, 0),
+(93, 0, 0),
+(94, 0, 0),
+(95, 0, 0),
+(96, 0, 0),
+(97, 0, 0),
+(98, 0, 0),
+(99, 0, 0),
+(100, 0, 0),
+(101, 0, 0),
+(102, 0, 0),
+(103, 0, 0),
+(104, 0, 0),
+(105, 0, 0),
+(106, 0, 0),
+(107, 0, 0),
+(108, 0, 0),
+(109, 0, 0),
+(110, 0, 0),
+(111, 0, 0),
+(112, 0, 0),
+(113, 0, 0),
+(114, 0, 0),
+(115, 0, 0),
+(116, 0, 0),
+(117, 0, 0),
+(118, 0, 0),
+(119, 0, 0),
+(120, 0, 0),
+(121, 0, 0),
+(122, 0, 0),
+(123, 0, 0),
+(124, 0, 0),
+(125, 0, 0),
+(126, 0, 0),
+(127, 0, 0),
+(128, 0, 0),
+(129, 0, 0),
+(130, 0, 0),
+(131, 0, 0),
+(132, 0, 0),
+(133, 0, 0),
+(134, 0, 0),
+(135, 0, 0),
+(137, 0, 0),
+(138, 0, 0),
+(139, 0, 0),
+(140, 0, 0),
+(141, 0, 0),
+(142, 0, 0),
+(143, 0, 0),
+(144, 0, 0),
+(145, 0, 0),
+(146, 0, 0),
+(147, 0, 0),
+(148, 0, 0),
+(149, 0, 0),
+(150, 0, 0),
+(151, 0, 0),
+(152, 0, 0),
+(153, 0, 0),
+(154, 0, 0),
+(155, 0, 0),
+(156, 0, 0),
+(157, 0, 0),
+(158, 0, 0),
+(159, 0, 0),
+(160, 0, 0),
+(161, 0, 0),
+(162, 0, 0),
+(163, 0, 0),
+(164, 0, 0),
+(165, 0, 0),
+(166, 0, 0),
+(167, 0, 0),
+(168, 0, 0);
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_category_to_store`
+-- Table structure for table `oc_category_to_store`
 --
 
 CREATE TABLE `oc_category_to_store` (
@@ -932,7 +1506,7 @@ CREATE TABLE `oc_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_category_to_store`
+-- Dumping data for table `oc_category_to_store`
 --
 
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
@@ -946,8 +1520,6 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 (28, 0),
 (29, 0),
 (30, 0),
-(31, 0),
-(32, 0),
 (33, 0),
 (34, 0),
 (37, 0),
@@ -955,16 +1527,135 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 (39, 0),
 (40, 0),
 (41, 0),
-(42, 0),
 (45, 0),
 (46, 0),
 (56, 0),
-(57, 0);
+(57, 0),
+(59, 0),
+(60, 0),
+(61, 0),
+(62, 0),
+(63, 0),
+(64, 0),
+(65, 0),
+(66, 0),
+(67, 0),
+(68, 0),
+(69, 0),
+(70, 0),
+(71, 0),
+(72, 0),
+(73, 0),
+(74, 0),
+(75, 0),
+(76, 0),
+(77, 0),
+(78, 0),
+(79, 0),
+(80, 0),
+(81, 0),
+(82, 0),
+(83, 0),
+(84, 0),
+(85, 0),
+(86, 0),
+(87, 0),
+(88, 0),
+(89, 0),
+(90, 0),
+(91, 0),
+(92, 0),
+(93, 0),
+(94, 0),
+(95, 0),
+(96, 0),
+(97, 0),
+(98, 0),
+(99, 0),
+(100, 0),
+(101, 0),
+(102, 0),
+(103, 0),
+(104, 0),
+(105, 0),
+(106, 0),
+(107, 0),
+(108, 0),
+(109, 0),
+(110, 0),
+(111, 0),
+(112, 0),
+(113, 0),
+(114, 0),
+(115, 0),
+(116, 0),
+(117, 0),
+(118, 0),
+(119, 0),
+(120, 0),
+(121, 0),
+(122, 0),
+(123, 0),
+(124, 0),
+(125, 0),
+(126, 0),
+(127, 0),
+(128, 0),
+(129, 0),
+(130, 0),
+(131, 0),
+(132, 0),
+(133, 0),
+(134, 0),
+(135, 0),
+(137, 0),
+(138, 0),
+(139, 0),
+(140, 0),
+(141, 0),
+(142, 0),
+(143, 0),
+(144, 0),
+(145, 0),
+(146, 0),
+(147, 0),
+(148, 0),
+(149, 0),
+(150, 0),
+(151, 0),
+(152, 0),
+(153, 0),
+(154, 0),
+(155, 0),
+(156, 0),
+(157, 0),
+(158, 0),
+(159, 0),
+(160, 0),
+(161, 0),
+(162, 0),
+(163, 0),
+(164, 0),
+(165, 0),
+(166, 0),
+(167, 0),
+(168, 0),
+(169, 0),
+(170, 0),
+(171, 0),
+(172, 0),
+(173, 0),
+(174, 0),
+(175, 0),
+(176, 0),
+(177, 0),
+(178, 0),
+(179, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_country`
+-- Table structure for table `oc_country`
 --
 
 CREATE TABLE `oc_country` (
@@ -978,7 +1669,7 @@ CREATE TABLE `oc_country` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_country`
+-- Dumping data for table `oc_country`
 --
 
 INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
@@ -987,7 +1678,7 @@ INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon`
+-- Table structure for table `oc_coupon`
 --
 
 CREATE TABLE `oc_coupon` (
@@ -1008,7 +1699,7 @@ CREATE TABLE `oc_coupon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_coupon`
+-- Dumping data for table `oc_coupon`
 --
 
 INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
@@ -1019,7 +1710,7 @@ INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logge
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_category`
+-- Table structure for table `oc_coupon_category`
 --
 
 CREATE TABLE `oc_coupon_category` (
@@ -1030,7 +1721,7 @@ CREATE TABLE `oc_coupon_category` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_history`
+-- Table structure for table `oc_coupon_history`
 --
 
 CREATE TABLE `oc_coupon_history` (
@@ -1045,7 +1736,7 @@ CREATE TABLE `oc_coupon_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_coupon_product`
+-- Table structure for table `oc_coupon_product`
 --
 
 CREATE TABLE `oc_coupon_product` (
@@ -1057,7 +1748,7 @@ CREATE TABLE `oc_coupon_product` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_currency`
+-- Table structure for table `oc_currency`
 --
 
 CREATE TABLE `oc_currency` (
@@ -1073,16 +1764,16 @@ CREATE TABLE `oc_currency` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_currency`
+-- Dumping data for table `oc_currency`
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(4, 'Рубль', 'BYN', '', ' BYN', '0', 1.00000000, 1, '2023-01-12 20:37:07');
+(4, 'Рубль', 'BYN', '', ' BYN', '0', 1.00000000, 1, '2023-03-17 08:07:24');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer`
+-- Table structure for table `oc_customer`
 --
 
 CREATE TABLE `oc_customer` (
@@ -1114,7 +1805,7 @@ CREATE TABLE `oc_customer` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_activity`
+-- Table structure for table `oc_customer_activity`
 --
 
 CREATE TABLE `oc_customer_activity` (
@@ -1129,7 +1820,7 @@ CREATE TABLE `oc_customer_activity` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_affiliate`
+-- Table structure for table `oc_customer_affiliate`
 --
 
 CREATE TABLE `oc_customer_affiliate` (
@@ -1155,7 +1846,7 @@ CREATE TABLE `oc_customer_affiliate` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_approval`
+-- Table structure for table `oc_customer_approval`
 --
 
 CREATE TABLE `oc_customer_approval` (
@@ -1168,7 +1859,7 @@ CREATE TABLE `oc_customer_approval` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_group`
+-- Table structure for table `oc_customer_group`
 --
 
 CREATE TABLE `oc_customer_group` (
@@ -1178,7 +1869,7 @@ CREATE TABLE `oc_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_customer_group`
+-- Dumping data for table `oc_customer_group`
 --
 
 INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) VALUES
@@ -1188,7 +1879,7 @@ INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_group_description`
+-- Table structure for table `oc_customer_group_description`
 --
 
 CREATE TABLE `oc_customer_group_description` (
@@ -1199,7 +1890,7 @@ CREATE TABLE `oc_customer_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_customer_group_description`
+-- Dumping data for table `oc_customer_group_description`
 --
 
 INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
@@ -1209,7 +1900,7 @@ INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_history`
+-- Table structure for table `oc_customer_history`
 --
 
 CREATE TABLE `oc_customer_history` (
@@ -1222,7 +1913,7 @@ CREATE TABLE `oc_customer_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_ip`
+-- Table structure for table `oc_customer_ip`
 --
 
 CREATE TABLE `oc_customer_ip` (
@@ -1235,7 +1926,7 @@ CREATE TABLE `oc_customer_ip` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_login`
+-- Table structure for table `oc_customer_login`
 --
 
 CREATE TABLE `oc_customer_login` (
@@ -1250,7 +1941,7 @@ CREATE TABLE `oc_customer_login` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_online`
+-- Table structure for table `oc_customer_online`
 --
 
 CREATE TABLE `oc_customer_online` (
@@ -1264,7 +1955,7 @@ CREATE TABLE `oc_customer_online` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_reward`
+-- Table structure for table `oc_customer_reward`
 --
 
 CREATE TABLE `oc_customer_reward` (
@@ -1279,7 +1970,7 @@ CREATE TABLE `oc_customer_reward` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_search`
+-- Table structure for table `oc_customer_search`
 --
 
 CREATE TABLE `oc_customer_search` (
@@ -1299,7 +1990,7 @@ CREATE TABLE `oc_customer_search` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_transaction`
+-- Table structure for table `oc_customer_transaction`
 --
 
 CREATE TABLE `oc_customer_transaction` (
@@ -1314,7 +2005,7 @@ CREATE TABLE `oc_customer_transaction` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_customer_wishlist`
+-- Table structure for table `oc_customer_wishlist`
 --
 
 CREATE TABLE `oc_customer_wishlist` (
@@ -1326,7 +2017,7 @@ CREATE TABLE `oc_customer_wishlist` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field`
+-- Table structure for table `oc_custom_field`
 --
 
 CREATE TABLE `oc_custom_field` (
@@ -1342,7 +2033,7 @@ CREATE TABLE `oc_custom_field` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_customer_group`
+-- Table structure for table `oc_custom_field_customer_group`
 --
 
 CREATE TABLE `oc_custom_field_customer_group` (
@@ -1354,7 +2045,7 @@ CREATE TABLE `oc_custom_field_customer_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_description`
+-- Table structure for table `oc_custom_field_description`
 --
 
 CREATE TABLE `oc_custom_field_description` (
@@ -1366,7 +2057,7 @@ CREATE TABLE `oc_custom_field_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_value`
+-- Table structure for table `oc_custom_field_value`
 --
 
 CREATE TABLE `oc_custom_field_value` (
@@ -1378,7 +2069,7 @@ CREATE TABLE `oc_custom_field_value` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_custom_field_value_description`
+-- Table structure for table `oc_custom_field_value_description`
 --
 
 CREATE TABLE `oc_custom_field_value_description` (
@@ -1391,7 +2082,7 @@ CREATE TABLE `oc_custom_field_value_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_download`
+-- Table structure for table `oc_download`
 --
 
 CREATE TABLE `oc_download` (
@@ -1402,17 +2093,17 @@ CREATE TABLE `oc_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_download`
+-- Dumping data for table `oc_download`
 --
 
 INSERT INTO `oc_download` (`download_id`, `filename`, `mask`, `date_added`) VALUES
-(1, 'dog.pdf.IN7WrUQVCkNZjG8QcMxb7xk98nD16ltN', 'dog.pdf', '2023-01-09 22:04:00'),
-(2, 'dog.docx.YyjumVi38x4Tcv6Za7WV60AXiqVuw0ss', 'dog.docx', '2023-01-12 21:27:52');
+(5, 'dog.pdf.zL2R6DaqXQFlucW9d5L9xjeAjVNKXUdZ', 'dog.pdf', '2023-03-22 15:49:51'),
+(6, 'dog.docx.pC1hOgtWWeyqkFWhjS5FqrJ3CdZCEpPR', 'dog.docx', '2023-03-22 15:50:00');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_download_description`
+-- Table structure for table `oc_download_description`
 --
 
 CREATE TABLE `oc_download_description` (
@@ -1422,17 +2113,17 @@ CREATE TABLE `oc_download_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_download_description`
+-- Dumping data for table `oc_download_description`
 --
 
 INSERT INTO `oc_download_description` (`download_id`, `language_id`, `name`) VALUES
-(1, 2, 'Договор.pdf'),
-(2, 2, 'Договор.docx');
+(5, 2, 'Договор.pdf'),
+(6, 2, 'Договор.docx');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_d_validator`
+-- Table structure for table `oc_d_validator`
 --
 
 CREATE TABLE `oc_d_validator` (
@@ -1445,7 +2136,7 @@ CREATE TABLE `oc_d_validator` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_event`
+-- Table structure for table `oc_event`
 --
 
 CREATE TABLE `oc_event` (
@@ -1458,7 +2149,7 @@ CREATE TABLE `oc_event` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_event`
+-- Dumping data for table `oc_event`
 --
 
 INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
@@ -1530,19 +2221,19 @@ INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort
 (66, 'd_validator', 'admin/view/extension/shipping/d_free_shipping_advanced/after', 'extension/d_shopunity/d_validator/view', 1, 0),
 (67, 'd_validator', 'admin/view/extension/module/d_ajax_search/after', 'extension/d_shopunity/d_validator/view', 1, 0),
 (68, 'd_validator', 'admin/view/extension/module/d_spin_product/after', 'extension/d_shopunity/d_validator/view', 1, 0),
-(200, 'd_blog_module', 'catalog/view/common/menu/before', 'extension/event/d_blog_module/view_common_menu_before', 1, 0),
-(201, 'd_blog_module', 'catalog/model/extension/module/d_visual_designer/getOptions/after', 'extension/event/d_blog_module/controller_after_d_visual_designer_menu', 1, 0),
-(202, 'd_blog_module', 'admin/model/localisation/language/addLanguage/after', 'extension/event/d_blog_module/model_localisation_language_addLanguage_after', 1, 0),
-(203, 'd_blog_module', 'admin/model/localisation/language/deleteLanguage/after', 'extension/event/d_blog_module/model_localisation_language_deleteLanguage_after', 1, 0),
-(204, 'd_blog_module', 'catalog/model/design/layout/getLayout/after', 'extension/event/d_blog_module/model_design_layout_getLayout_after', 1, 0),
-(199, 'd_blog_module', 'catalog/view/common/header/before', 'extension/event/d_blog_module/view_common_header_before', 1, 0),
-(198, 'd_blog_module', 'admin/view/setting/setting/before', 'extension/event/d_blog_module/view_setting_setting_captcha_before', 1, 0),
-(197, 'd_blog_module', 'admin/view/common/column_left/before', 'extension/event/d_blog_module/view_common_column_left_before', 1, 0);
+(212, 'd_blog_module', 'catalog/model/design/layout/getLayout/after', 'extension/event/d_blog_module/model_design_layout_getLayout_after', 1, 0),
+(211, 'd_blog_module', 'admin/model/localisation/language/deleteLanguage/after', 'extension/event/d_blog_module/model_localisation_language_deleteLanguage_after', 1, 0),
+(210, 'd_blog_module', 'admin/model/localisation/language/addLanguage/after', 'extension/event/d_blog_module/model_localisation_language_addLanguage_after', 1, 0),
+(209, 'd_blog_module', 'catalog/model/extension/module/d_visual_designer/getOptions/after', 'extension/event/d_blog_module/controller_after_d_visual_designer_menu', 1, 0),
+(208, 'd_blog_module', 'catalog/view/common/menu/before', 'extension/event/d_blog_module/view_common_menu_before', 1, 0),
+(207, 'd_blog_module', 'catalog/view/common/header/before', 'extension/event/d_blog_module/view_common_header_before', 1, 0),
+(206, 'd_blog_module', 'admin/view/setting/setting/before', 'extension/event/d_blog_module/view_setting_setting_captcha_before', 1, 0),
+(205, 'd_blog_module', 'admin/view/common/column_left/before', 'extension/event/d_blog_module/view_common_column_left_before', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension`
+-- Table structure for table `oc_extension`
 --
 
 CREATE TABLE `oc_extension` (
@@ -1552,7 +2243,7 @@ CREATE TABLE `oc_extension` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension`
+-- Dumping data for table `oc_extension`
 --
 
 INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
@@ -1595,7 +2286,7 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension_install`
+-- Table structure for table `oc_extension_install`
 --
 
 CREATE TABLE `oc_extension_install` (
@@ -1606,7 +2297,7 @@ CREATE TABLE `oc_extension_install` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension_install`
+-- Dumping data for table `oc_extension_install`
 --
 
 INSERT INTO `oc_extension_install` (`extension_install_id`, `extension_download_id`, `filename`, `date_added`) VALUES
@@ -1617,7 +2308,7 @@ INSERT INTO `oc_extension_install` (`extension_install_id`, `extension_download_
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_extension_path`
+-- Table structure for table `oc_extension_path`
 --
 
 CREATE TABLE `oc_extension_path` (
@@ -1628,7 +2319,7 @@ CREATE TABLE `oc_extension_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_extension_path`
+-- Dumping data for table `oc_extension_path`
 --
 
 INSERT INTO `oc_extension_path` (`extension_path_id`, `extension_install_id`, `path`, `date_added`) VALUES
@@ -3088,7 +3779,7 @@ INSERT INTO `oc_extension_path` (`extension_path_id`, `extension_install_id`, `p
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter`
+-- Table structure for table `oc_filter`
 --
 
 CREATE TABLE `oc_filter` (
@@ -3100,7 +3791,7 @@ CREATE TABLE `oc_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_description`
+-- Table structure for table `oc_filter_description`
 --
 
 CREATE TABLE `oc_filter_description` (
@@ -3113,7 +3804,7 @@ CREATE TABLE `oc_filter_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_group`
+-- Table structure for table `oc_filter_group`
 --
 
 CREATE TABLE `oc_filter_group` (
@@ -3124,7 +3815,7 @@ CREATE TABLE `oc_filter_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_filter_group_description`
+-- Table structure for table `oc_filter_group_description`
 --
 
 CREATE TABLE `oc_filter_group_description` (
@@ -3136,7 +3827,7 @@ CREATE TABLE `oc_filter_group_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_geo_zone`
+-- Table structure for table `oc_geo_zone`
 --
 
 CREATE TABLE `oc_geo_zone` (
@@ -3148,7 +3839,7 @@ CREATE TABLE `oc_geo_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_geo_zone`
+-- Dumping data for table `oc_geo_zone`
 --
 
 INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, `date_modified`) VALUES
@@ -3158,7 +3849,7 @@ INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information`
+-- Table structure for table `oc_information`
 --
 
 CREATE TABLE `oc_information` (
@@ -3169,7 +3860,7 @@ CREATE TABLE `oc_information` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information`
+-- Dumping data for table `oc_information`
 --
 
 INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
@@ -3181,7 +3872,7 @@ INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_description`
+-- Table structure for table `oc_information_description`
 --
 
 CREATE TABLE `oc_information_description` (
@@ -3195,7 +3886,7 @@ CREATE TABLE `oc_information_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information_description`
+-- Dumping data for table `oc_information_description`
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
@@ -3208,7 +3899,7 @@ INSERT INTO `oc_information_description` (`information_id`, `language_id`, `titl
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_to_layout`
+-- Table structure for table `oc_information_to_layout`
 --
 
 CREATE TABLE `oc_information_to_layout` (
@@ -3218,7 +3909,7 @@ CREATE TABLE `oc_information_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information_to_layout`
+-- Dumping data for table `oc_information_to_layout`
 --
 
 INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
@@ -3230,7 +3921,7 @@ INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_information_to_store`
+-- Table structure for table `oc_information_to_store`
 --
 
 CREATE TABLE `oc_information_to_store` (
@@ -3239,7 +3930,7 @@ CREATE TABLE `oc_information_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_information_to_store`
+-- Dumping data for table `oc_information_to_store`
 --
 
 INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
@@ -3251,7 +3942,7 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_language`
+-- Table structure for table `oc_language`
 --
 
 CREATE TABLE `oc_language` (
@@ -3266,7 +3957,7 @@ CREATE TABLE `oc_language` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_language`
+-- Dumping data for table `oc_language`
 --
 
 INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `sort_order`, `status`) VALUES
@@ -3275,7 +3966,7 @@ INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `di
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout`
+-- Table structure for table `oc_layout`
 --
 
 CREATE TABLE `oc_layout` (
@@ -3284,7 +3975,7 @@ CREATE TABLE `oc_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout`
+-- Dumping data for table `oc_layout`
 --
 
 INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
@@ -3311,7 +4002,7 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout_module`
+-- Table structure for table `oc_layout_module`
 --
 
 CREATE TABLE `oc_layout_module` (
@@ -3323,7 +4014,7 @@ CREATE TABLE `oc_layout_module` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout_module`
+-- Dumping data for table `oc_layout_module`
 --
 
 INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `position`, `sort_order`) VALUES
@@ -3340,19 +4031,18 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (109, 1, 'html.32', 'content_bottom', 0),
 (108, 1, 'featured.28', 'content_top', 2),
 (106, 1, 'category', 'column_left', 0),
-(124, 104, 'html.37', 'content_bottom', 3),
+(130, 104, 'carousel.34', 'content_bottom', 4),
 (115, 8, 'html.35', 'content_bottom', 0),
 (116, 105, 'html.33', 'content_bottom', 0),
-(123, 104, 'html.38', 'content_bottom', 2),
-(122, 104, 'html.36', 'content_bottom', 1),
-(121, 104, 'html.39', 'content_bottom', 0),
-(125, 104, 'carousel.34', 'content_bottom', 4),
+(129, 104, 'html.38', 'content_bottom', 2),
+(128, 104, 'html.36', 'content_bottom', 1),
+(127, 104, 'html.39', 'content_bottom', 0),
 (126, 13, 'category', 'column_left', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_layout_route`
+-- Table structure for table `oc_layout_route`
 --
 
 CREATE TABLE `oc_layout_route` (
@@ -3363,7 +4053,7 @@ CREATE TABLE `oc_layout_route` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_layout_route`
+-- Dumping data for table `oc_layout_route`
 --
 
 INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
@@ -3389,7 +4079,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_length_class`
+-- Table structure for table `oc_length_class`
 --
 
 CREATE TABLE `oc_length_class` (
@@ -3398,7 +4088,7 @@ CREATE TABLE `oc_length_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_length_class`
+-- Dumping data for table `oc_length_class`
 --
 
 INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
@@ -3409,7 +4099,7 @@ INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_length_class_description`
+-- Table structure for table `oc_length_class_description`
 --
 
 CREATE TABLE `oc_length_class_description` (
@@ -3420,7 +4110,7 @@ CREATE TABLE `oc_length_class_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_length_class_description`
+-- Dumping data for table `oc_length_class_description`
 --
 
 INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -3434,7 +4124,7 @@ INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_location`
+-- Table structure for table `oc_location`
 --
 
 CREATE TABLE `oc_location` (
@@ -3452,7 +4142,7 @@ CREATE TABLE `oc_location` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_manufacturer`
+-- Table structure for table `oc_manufacturer`
 --
 
 CREATE TABLE `oc_manufacturer` (
@@ -3462,22 +4152,10 @@ CREATE TABLE `oc_manufacturer` (
   `sort_order` int(3) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_manufacturer`
---
-
-INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
-(5, 'HTC', 'catalog/demo/htc_logo.jpg', 0),
-(6, 'Palm', 'catalog/demo/palm_logo.jpg', 0),
-(7, 'Hewlett-Packard', 'catalog/demo/hp_logo.jpg', 0),
-(8, 'Apple', 'catalog/demo/apple_logo.jpg', 0),
-(9, 'Canon', 'catalog/demo/canon_logo.jpg', 0),
-(10, 'Sony', 'catalog/demo/sony_logo.jpg', 0);
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_manufacturer_to_store`
+-- Table structure for table `oc_manufacturer_to_store`
 --
 
 CREATE TABLE `oc_manufacturer_to_store` (
@@ -3485,22 +4163,10 @@ CREATE TABLE `oc_manufacturer_to_store` (
   `store_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_manufacturer_to_store`
---
-
-INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
-(5, 0),
-(6, 0),
-(7, 0),
-(8, 0),
-(9, 0),
-(10, 0);
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_marketing`
+-- Table structure for table `oc_marketing`
 --
 
 CREATE TABLE `oc_marketing` (
@@ -3515,7 +4181,7 @@ CREATE TABLE `oc_marketing` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_modification`
+-- Table structure for table `oc_modification`
 --
 
 CREATE TABLE `oc_modification` (
@@ -3532,7 +4198,7 @@ CREATE TABLE `oc_modification` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_modification`
+-- Dumping data for table `oc_modification`
 --
 
 INSERT INTO `oc_modification` (`modification_id`, `extension_install_id`, `name`, `code`, `author`, `version`, `link`, `xml`, `status`, `date_added`) VALUES
@@ -3543,7 +4209,7 @@ INSERT INTO `oc_modification` (`modification_id`, `extension_install_id`, `name`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_module`
+-- Table structure for table `oc_module`
 --
 
 CREATE TABLE `oc_module` (
@@ -3554,18 +4220,18 @@ CREATE TABLE `oc_module` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_module`
+-- Dumping data for table `oc_module`
 --
 
 INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (30, 'Category', 'banner', '{\"name\":\"Category\",\"banner_id\":\"6\",\"width\":\"182\",\"height\":\"182\",\"status\":\"1\"}'),
-(29, 'Clients', 'carousel', '{\"name\":\"Clients\",\"banner_id\":\"9\",\"width\":\"130\",\"height\":\"100\",\"status\":\"1\"}'),
+(29, 'Наши клиенты', 'carousel', '{\"name\":\"\\u041d\\u0430\\u0448\\u0438 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u044b\",\"banner_id\":\"9\",\"width\":\"130\",\"height\":\"100\",\"status\":\"1\"}'),
 (28, 'Home Page', 'featured', '{\"name\":\"Home Page\",\"product_name\":\"\",\"product\":[\"43\",\"40\",\"42\",\"30\",\"49\",\"29\",\"46\",\"44\"],\"limit\":\"8\",\"width\":\"177\",\"height\":\"189\",\"status\":\"1\"}'),
 (27, 'Home Page', 'slideshow', '{\"name\":\"Home Page\",\"banner_id\":\"7\",\"width\":\"1140\",\"height\":\"380\",\"status\":\"1\"}'),
 (31, 'Main page banner', 'banner', '{\"name\":\"Main page banner\",\"banner_id\":\"6\",\"width\":\"996\",\"height\":\"400\",\"status\":\"1\"}'),
 (32, 'Homepage text', 'html', '{\"name\":\"Homepage text\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;p&gt;\\u041e\\u041e\\u041e \\u00ab\\u0417\\u0438\\u043f\\u0442\\u0440\\u0435\\u0439\\u0434\\u00bb - \\u043f\\u0435\\u0440\\u0432\\u044b\\u0439 \\u043f\\u043e\\u0441\\u0442\\u0430\\u0432\\u0449\\u0438\\u043a \\u0438 \\u0438\\u043c\\u043f\\u043e\\u0440\\u0442\\u0435\\u0440 \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u044b \\u043d\\u0430 \\u0442\\u0435\\u0440\\u0440\\u0438\\u0442\\u043e\\u0440\\u0438\\u0438 \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438 \\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u044c. \\u041d\\u0430 \\u043d\\u0430\\u0448\\u0435\\u043c \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u043c \\u0441\\u0430\\u0439\\u0442\\u0435 \\u043f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d \\u043a\\u0430\\u0442\\u0430\\u043b\\u043e\\u0433 \\u0441\\u043e \\u0448\\u0432\\u0435\\u0439\\u043d\\u043e\\u0439 \\u0444\\u0443\\u0440\\u043d\\u0438\\u0442\\u0443\\u0440\\u043e\\u0439, \\u0442\\u043a\\u0430\\u043d\\u044f\\u043c\\u0438 \\u0438 \\u0442\\u0440\\u0438\\u043a\\u043e\\u0442\\u0430\\u0436\\u0435\\u043c. \\u041d\\u0430\\u0448\\u0430 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u044f \\u0437\\u0430\\u0431\\u043e\\u0442\\u0438\\u0442\\u0441\\u044f \\u043e \\u0440\\u0435\\u043f\\u0443\\u0442\\u0430\\u0446\\u0438\\u0438 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432, \\u043f\\u043e\\u044d\\u0442\\u043e\\u043c\\u0443 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044f \\u0438\\u043c\\u0435\\u0435\\u0442 \\u0441\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430, \\u0432\\u044b\\u0434\\u0435\\u0440\\u0436\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a \\u044d\\u043a\\u0441\\u043f\\u043b\\u0443\\u0430\\u0442\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0437\\u0434\\u0435\\u043b\\u0438\\u044f, \\u043d\\u0435 \\u043b\\u043e\\u043c\\u0430\\u0435\\u0442\\u0441\\u044f \\u0438 \\u043d\\u0435 \\u00ab\\u043f\\u043e\\u0434\\u0432\\u043e\\u0434\\u0438\\u0442\\u00bb \\u0431\\u0440\\u0435\\u043d\\u0434.&lt;\\/p&gt;\"}},\"status\":\"1\"}'),
 (33, 'Homepage why', 'html', '{\"name\":\"Homepage why\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;col-12&quot;&gt;\\r\\n        &lt;div class=&quot;homepage-why d-flex align-items-center justify-content-between&quot;&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/call.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u041f\\u0420\\u0418\\u0415\\u041c \\u0417\\u0412\\u041e\\u041d\\u041a\\u041e\\u0412&lt;br&gt;8.30 : 17.00&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/delivery.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0411\\u0415\\u0421\\u041f\\u041b\\u0410\\u0422\\u041d\\u0410\\u042f \\u0414\\u041e\\u0421\\u0422\\u0410\\u0412\\u041a\\u0410&lt;br&gt;\\u041f\\u041e \\u0420\\u0411 - \\u041e\\u0422 300 BYN,&lt;br&gt;\\u041f\\u041e \\u0412\\u0418\\u0422\\u0415\\u0411\\u0421\\u041a\\u0423 - \\u041e\\u0422 150 BYN&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/guarantee.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0413\\u0410\\u0420\\u0410\\u041d\\u0422\\u0418\\u042f \\u041a\\u0410\\u0427\\u0415\\u0421\\u0422\\u0412\\u0410&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n          &lt;div class=&quot;why-block d-flex flex-column align-items-center&quot;&gt;\\r\\n            &lt;div class=&quot;why-icon&quot;&gt;&lt;img src=&quot;catalog\\/view\\/theme\\/default\\/image\\/modules\\/return.svg&quot;&gt;&lt;\\/div&gt;\\r\\n            &lt;div class=&quot;why-text&quot;&gt;\\u0412\\u041e\\u0417\\u0412\\u0420\\u0410\\u0422 \\u041f\\u0420\\u0418&lt;br&gt;\\u041d\\u0415\\u0421\\u041e\\u041e\\u0422\\u0412\\u0415\\u0422\\u0421\\u0422\\u0412\\u0418\\u0418&lt;\\/div&gt;\\r\\n          &lt;\\/div&gt;\\r\\n        &lt;\\/div&gt;\\r\\n      &lt;\\/div&gt;\"}},\"status\":\"1\"}'),
-(34, 'Сертификаты', 'carousel', '{\"name\":\"\\u0421\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u044b\",\"banner_id\":\"10\",\"width\":\"180\",\"height\":\"234\",\"status\":\"1\"}'),
+(34, 'Сертификаты и награды', 'carousel', '{\"name\":\"\\u0421\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u044b \\u0438 \\u043d\\u0430\\u0433\\u0440\\u0430\\u0434\\u044b\",\"banner_id\":\"10\",\"width\":\"180\",\"height\":\"234\",\"status\":\"1\"}'),
 (35, 'Сотрудники', 'html', '{\"name\":\"\\u0421\\u043e\\u0442\\u0440\\u0443\\u0434\\u043d\\u0438\\u043a\\u0438\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;col-12&quot;&gt;\\r\\n              &lt;div class=&quot;row&quot;&gt;\\r\\n                &lt;div class=&quot;col-6 col-md-4&quot;&gt;\\r\\n                  &lt;div class=&quot;employee-card&quot;&gt;\\r\\n                    &lt;div class=&quot;employee-image&quot;&gt;\\r\\n                      &lt;img src=&quot;\\/image\\/catalog\\/employee\\/employee1.jpg&quot; alt=&quot;&quot; title=&quot;&quot; class=&quot;img-fluid&quot;&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                    &lt;div class=&quot;employee-info&quot;&gt;\\r\\n                      &lt;div class=&quot;employee-position&quot;&gt;\\u0414\\u0438\\u0440\\u0435\\u043a\\u0442\\u043e\\u0440&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-name&quot;&gt;\\u041a\\u043e\\u043d\\u0441\\u0442\\u0430\\u043d\\u0442\\u0438\\u043d \\u0413\\u043e\\u043b\\u0443\\u0431\\u0435\\u0432&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-contact&quot;&gt;golubev@ziptrade.by&lt;\\/div&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                  &lt;\\/div&gt;\\r\\n                &lt;\\/div&gt;\\r\\n                &lt;div class=&quot;col-6 col-md-4&quot;&gt;\\r\\n                  &lt;div class=&quot;employee-card&quot;&gt;\\r\\n                    &lt;div class=&quot;employee-image&quot;&gt;\\r\\n                      &lt;img src=&quot;\\/image\\/catalog\\/employee\\/employee2.jpg&quot; alt=&quot;&quot; title=&quot;&quot; class=&quot;img-fluid&quot;&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                    &lt;div class=&quot;employee-info&quot;&gt;\\r\\n                      &lt;div class=&quot;employee-position&quot;&gt;\\u0411\\u0443\\u0445\\u0433\\u0430\\u043b\\u0442\\u0435\\u0440&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-name&quot;&gt;\\u041a\\u043e\\u043d\\u0441\\u0442\\u0430\\u043d\\u0442\\u0438\\u043d \\u041b\\u0438\\u0442\\u0432\\u0438\\u043d\\u043e\\u0432&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-contact&quot;&gt;info@ziptrade.by&lt;\\/div&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                  &lt;\\/div&gt;\\r\\n                &lt;\\/div&gt;\\r\\n                &lt;div class=&quot;col-6 col-md-4&quot;&gt;\\r\\n                  &lt;div class=&quot;employee-card&quot;&gt;\\r\\n                    &lt;div class=&quot;employee-image&quot;&gt;\\r\\n                      &lt;img src=&quot;\\/image\\/catalog\\/employee\\/employee3.jpg&quot; alt=&quot;&quot; title=&quot;&quot; class=&quot;img-fluid&quot;&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                    &lt;div class=&quot;employee-info&quot;&gt;\\r\\n                      &lt;div class=&quot;employee-position&quot;&gt;\\u041d\\u0430\\u0447\\u0430\\u043b\\u044c\\u043d\\u0438\\u043a \\u043a\\u043e\\u043c\\u043c\\u0435\\u0440\\u0447\\u0435\\u0441\\u043a\\u043e\\u0433\\u043e \\u043e\\u0442\\u0434\\u0435\\u043b\\u0430&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-name&quot;&gt;\\u0415\\u043b\\u0435\\u043d\\u0430 \\u0427\\u0435\\u0440\\u043a\\u0430\\u0448\\u0438\\u043d\\u0430&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-contact&quot;&gt;snab@ziptrade.by&lt;\\/div&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                  &lt;\\/div&gt;\\r\\n                &lt;\\/div&gt;\\r\\n                &lt;div class=&quot;col-6 col-md-4&quot;&gt;\\r\\n                  &lt;div class=&quot;employee-card&quot;&gt;\\r\\n                    &lt;div class=&quot;employee-image&quot;&gt;\\r\\n                      &lt;img src=&quot;\\/image\\/catalog\\/employee\\/employee4.jpg&quot; alt=&quot;&quot; title=&quot;&quot; class=&quot;img-fluid&quot;&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                    &lt;div class=&quot;employee-info&quot;&gt;\\r\\n                      &lt;div class=&quot;employee-position&quot;&gt;\\u0421\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u0438\\u0441\\u0442 \\u043f\\u043e \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\\u043c&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-name&quot;&gt;\\u0421\\u0432\\u0435\\u0442\\u043b\\u0430\\u043d\\u0430 \\u041a\\u0430\\u0447\\u0430\\u043d&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-contact&quot;&gt;201@ziptrade.by&lt;\\/div&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                  &lt;\\/div&gt;\\r\\n                &lt;\\/div&gt;\\r\\n                &lt;div class=&quot;col-6 col-md-4&quot;&gt;\\r\\n                  &lt;div class=&quot;employee-card&quot;&gt;\\r\\n                    &lt;div class=&quot;employee-image&quot;&gt;\\r\\n                      &lt;img src=&quot;\\/image\\/catalog\\/employee\\/employee5.jpg&quot; alt=&quot;&quot; title=&quot;&quot; class=&quot;img-fluid&quot;&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                    &lt;div class=&quot;employee-info&quot;&gt;\\r\\n                      &lt;div class=&quot;employee-position&quot;&gt;\\u0421\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u0438\\u0441\\u0442 \\u043f\\u043e \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\\u043c&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-name&quot;&gt;\\u0412\\u0438\\u043a\\u0442\\u043e\\u0440\\u0438\\u044f \\u041a\\u0443\\u0434\\u0440\\u0430\\u0448\\u043e\\u0432\\u0430&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-contact&quot;&gt;212@ziptrade.by&lt;\\/div&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                  &lt;\\/div&gt;\\r\\n                &lt;\\/div&gt;\\r\\n                &lt;div class=&quot;col-6 col-md-4&quot;&gt;\\r\\n                  &lt;div class=&quot;employee-card&quot;&gt;\\r\\n                    &lt;div class=&quot;employee-image&quot;&gt;\\r\\n                      &lt;img src=&quot;\\/image\\/catalog\\/employee\\/employee6.jpg&quot; alt=&quot;&quot; title=&quot;&quot; class=&quot;img-fluid&quot;&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                    &lt;div class=&quot;employee-info&quot;&gt;\\r\\n                      &lt;div class=&quot;employee-position&quot;&gt;\\u0421\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u0438\\u0441\\u0442 \\u043f\\u043e \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\\u043c&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-name&quot;&gt;\\u041e\\u043b\\u044c\\u0433\\u0430 \\u041a\\u0440\\u0443\\u0447\\u0435\\u043d\\u044e\\u043a&lt;\\/div&gt;\\r\\n                      &lt;div class=&quot;employee-contact&quot;&gt;info@ziptrade.by&lt;\\/div&gt;\\r\\n                    &lt;\\/div&gt;\\r\\n                  &lt;\\/div&gt;\\r\\n                &lt;\\/div&gt;\\r\\n              &lt;\\/div&gt;\\r\\n            &lt;\\/div&gt;\"}},\"status\":\"1\"}'),
 (36, 'Заголовок почему выбируют нас', 'html', '{\"name\":\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a \\u043f\\u043e\\u0447\\u0435\\u043c\\u0443 \\u0432\\u044b\\u0431\\u0438\\u0440\\u0443\\u044e\\u0442 \\u043d\\u0430\\u0441\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;h2&gt;\\u041f\\u043e\\u0447\\u0435\\u043c\\u0443 \\u043d\\u0430\\u0441 \\u0432\\u044b\\u0431\\u0438\\u0440\\u0430\\u044e\\u0442&lt;\\/h2&gt;\"}},\"status\":\"1\"}'),
 (37, 'Заголовок сертификаты', 'html', '{\"name\":\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a \\u0441\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u044b\",\"module_description\":{\"2\":{\"title\":\"\",\"description\":\"&lt;h2&gt;\\u0421\\u0435\\u0440\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u044b \\u0438 \\u043d\\u0430\\u0433\\u0440\\u0430\\u0434\\u044b&lt;\\/h2&gt;\"}},\"status\":\"1\"}'),
@@ -3575,7 +4241,7 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option`
+-- Table structure for table `oc_option`
 --
 
 CREATE TABLE `oc_option` (
@@ -3585,26 +4251,17 @@ CREATE TABLE `oc_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option`
+-- Dumping data for table `oc_option`
 --
 
 INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
-(1, 'radio', 1),
-(2, 'checkbox', 2),
-(4, 'text', 3),
-(5, 'select', 4),
-(6, 'textarea', 5),
-(7, 'file', 6),
-(8, 'date', 7),
-(9, 'time', 8),
-(10, 'datetime', 9),
-(11, 'select', 10),
-(12, 'date', 11);
+(14, 'radio', 2),
+(13, 'select', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_description`
+-- Table structure for table `oc_option_description`
 --
 
 CREATE TABLE `oc_option_description` (
@@ -3614,37 +4271,17 @@ CREATE TABLE `oc_option_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_description`
+-- Dumping data for table `oc_option_description`
 --
 
 INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
-(1, 1, 'Radio'),
-(2, 1, 'Checkbox'),
-(4, 1, 'Text'),
-(6, 1, 'Textarea'),
-(8, 1, 'Date'),
-(7, 1, 'File'),
-(5, 1, 'Select'),
-(9, 1, 'Time'),
-(10, 1, 'Date &amp; Time'),
-(12, 1, 'Delivery Date'),
-(11, 1, 'Size'),
-(1, 2, 'Radio'),
-(2, 2, 'Checkbox'),
-(4, 2, 'Text'),
-(6, 2, 'Textarea'),
-(8, 2, 'Date'),
-(7, 2, 'File'),
-(5, 2, 'Select'),
-(9, 2, 'Time'),
-(10, 2, 'Date &amp; Time'),
-(12, 2, 'Delivery Date'),
-(11, 2, 'Size');
+(14, 2, 'Цвет'),
+(13, 2, 'Размер');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_value`
+-- Table structure for table `oc_option_value`
 --
 
 CREATE TABLE `oc_option_value` (
@@ -3655,29 +4292,22 @@ CREATE TABLE `oc_option_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_value`
+-- Dumping data for table `oc_option_value`
 --
 
 INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
-(43, 1, '', 3),
-(32, 1, '', 1),
-(45, 2, '', 4),
-(44, 2, '', 3),
-(42, 5, '', 4),
-(41, 5, '', 3),
-(39, 5, '', 1),
-(40, 5, '', 2),
-(31, 1, '', 2),
-(23, 2, '', 1),
-(24, 2, '', 2),
-(46, 11, '', 1),
-(47, 11, '', 2),
-(48, 11, '', 3);
+(55, 14, '', 0),
+(54, 14, '', 3),
+(53, 14, '', 2),
+(52, 14, '', 1),
+(51, 13, '', 0),
+(50, 13, '', 0),
+(49, 13, '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_option_value_description`
+-- Table structure for table `oc_option_value_description`
 --
 
 CREATE TABLE `oc_option_value_description` (
@@ -3688,43 +4318,22 @@ CREATE TABLE `oc_option_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_option_value_description`
+-- Dumping data for table `oc_option_value_description`
 --
 
 INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
-(43, 1, 1, 'Large'),
-(32, 1, 1, 'Small'),
-(45, 1, 2, 'Checkbox 4'),
-(44, 1, 2, 'Checkbox 3'),
-(31, 1, 1, 'Medium'),
-(42, 1, 5, 'Yellow'),
-(41, 1, 5, 'Green'),
-(39, 1, 5, 'Red'),
-(40, 1, 5, 'Blue'),
-(23, 1, 2, 'Checkbox 1'),
-(24, 1, 2, 'Checkbox 2'),
-(48, 1, 11, 'Large'),
-(47, 1, 11, 'Medium'),
-(46, 1, 11, 'Small'),
-(43, 2, 1, 'Large'),
-(32, 2, 1, 'Small'),
-(45, 2, 2, 'Checkbox 4'),
-(44, 2, 2, 'Checkbox 3'),
-(31, 2, 1, 'Medium'),
-(42, 2, 5, 'Yellow'),
-(41, 2, 5, 'Green'),
-(39, 2, 5, 'Red'),
-(40, 2, 5, 'Blue'),
-(23, 2, 2, 'Checkbox 1'),
-(24, 2, 2, 'Checkbox 2'),
-(48, 2, 11, 'Large'),
-(47, 2, 11, 'Medium'),
-(46, 2, 11, 'Small');
+(55, 2, 14, 'Зеленый:#00ff00'),
+(53, 2, 14, 'Красный:#ff0000'),
+(52, 2, 14, 'Черный:#000000'),
+(54, 2, 14, 'Синий:#0000ff'),
+(51, 2, 13, '30см'),
+(50, 2, 13, '20см'),
+(49, 2, 13, '10см');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order`
+-- Table structure for table `oc_order`
 --
 
 CREATE TABLE `oc_order` (
@@ -3737,7 +4346,7 @@ CREATE TABLE `oc_order` (
   `customer_id` int(11) NOT NULL DEFAULT 0,
   `customer_group_id` int(11) NOT NULL DEFAULT 0,
   `firstname` varchar(32) NOT NULL,
-  `lastname` varchar(32) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
   `email` varchar(96) NOT NULL,
   `telephone` varchar(32) NOT NULL,
   `fax` varchar(32) NOT NULL,
@@ -3792,7 +4401,7 @@ CREATE TABLE `oc_order` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order`
+-- Dumping data for table `oc_order`
 --
 
 INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
@@ -3964,12 +4573,70 @@ INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, 
 (172, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '180.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 00:05:52', '2023-01-13 00:05:52'),
 (173, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '80.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 00:20:40', '2023-01-13 00:20:40'),
 (174, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '80.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 00:22:33', '2023-01-13 00:22:33'),
-(175, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '80.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 00:25:13', '2023-01-13 00:25:13');
+(175, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://shop.local/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '80.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 00:25:13', '2023-01-13 00:25:13'),
+(176, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '80.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 11:32:09', '2023-01-13 11:32:09'),
+(177, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '80.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:50:35', '2023-01-13 11:50:35'),
+(178, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 1, 'Edgar Zhiznevski', ', Компания: Advansys, ИНН: , УНП', 'edgarz@advansys.com', '+375291236064', '', '[]', 'Edgar Zhiznevski', '', '', 'Минск, Независимости', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', 'Безналичный расчет', 'cod', 'Edgar Zhiznevski', '', '', 'Минск, Независимости', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', '', 'flat.flat', '', '80.0000', 1, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:51:56', '2023-01-13 11:51:56'),
+(179, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:54:24', '2023-01-13 11:54:24'),
+(180, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 1, 'Edgar', ', Компания: Advansys, ИНН: , УНП', 'edgarz@advansys.com', '+375291236064', '', '[]', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', 'Безналичный расчет', 'cod', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', '', 'flat.flat', '', '100.0000', 1, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:54:51', '2023-01-13 11:54:51'),
+(181, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:55:40', '2023-01-13 11:55:40');
+INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
+(182, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 1, 'Edgar', ', Компания: Advansys, УНП: 12312', 'edgarz@advansys.com', '123123', '', '[]', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', 'Безналичный расчет', 'cod', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', '', 'flat.flat', '', '100.0000', 1, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:55:56', '2023-01-13 11:55:56'),
+(183, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:56:34', '2023-01-13 11:56:34'),
+(184, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 1, 'Edgar', ', Компания: Advansys, УНП: 12312', 'edgarz@advansys.com', '123123', '', '[]', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', 'Безналичный расчет', 'cod', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', '', 'flat.flat', '', '100.0000', 1, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:56:49', '2023-01-13 11:56:50'),
+(185, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:57:56', '2023-01-13 11:57:56'),
+(186, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 1, 'Edgar', ', Компания: Advansys, УНП: 13123', 'edgarz@advansys.com', '123123', '', '[]', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', 'Безналичный расчет', 'cod', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', '', 'flat.flat', '', '100.0000', 1, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 11:58:09', '2023-01-13 11:58:10'),
+(187, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 12:01:27', '2023-01-13 12:01:27'),
+(188, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 1, 'Edgar', ', Компания: Advansys, УНП: 313123311233123', 'edgarz@advansys.com', '123123', '', '[]', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', 'Безналичный расчет', 'cod', 'Edgar', '', '', 'London, Baker street 229', '', '', '', 'Республика Беларусь', 20, '', 343, '', '[]', '', 'flat.flat', '', '100.0000', 1, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 12:01:41', '2023-01-13 12:01:42'),
+(189, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 13:36:23', '2023-01-13 13:36:23'),
+(190, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '301.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 13:39:53', '2023-01-13 13:39:53'),
+(191, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '101.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 13:51:18', '2023-01-13 13:51:18'),
+(192, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '101.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 14:02:02', '2023-01-13 14:02:02'),
+(193, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '180.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 15:54:25', '2023-01-13 15:54:25'),
+(194, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '180.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 15:54:44', '2023-01-13 15:54:44'),
+(195, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '80.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 15:54:54', '2023-01-13 15:54:54'),
+(196, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '80.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 15:55:35', '2023-01-13 15:55:35'),
+(197, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 16:18:22', '2023-01-13 16:18:22'),
+(198, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 16:20:09', '2023-01-13 16:20:09'),
+(199, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 16:21:00', '2023-01-13 16:21:00'),
+(200, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 16:21:56', '2023-01-13 16:21:56'),
+(201, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 16:28:11', '2023-01-13 16:28:11'),
+(202, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 16:33:40', '2023-01-13 16:33:40'),
+(203, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 16:43:58', '2023-01-13 16:43:58'),
+(204, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 17:06:06', '2023-01-13 17:06:06'),
+(205, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-13 17:06:11', '2023-01-13 17:06:11'),
+(206, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.125.107.6', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 17:08:12', '2023-01-13 17:08:12'),
+(207, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 17:08:45', '2023-01-13 17:08:45'),
+(208, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 17:09:00', '2023-01-13 17:09:00'),
+(209, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.125.107.6', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-13 17:09:07', '2023-01-13 17:09:07'),
+(210, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '200.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-16 11:37:35', '2023-01-16 11:37:35'),
+(211, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-16 11:40:13', '2023-01-16 11:40:13'),
+(212, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '300.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-16 11:40:55', '2023-01-16 11:40:55'),
+(213, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-16 12:06:38', '2023-01-16 12:06:38'),
+(214, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-16 15:36:43', '2023-01-16 15:36:43'),
+(215, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '101.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-17 08:25:49', '2023-01-17 08:25:49'),
+(216, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '101.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-17 08:29:07', '2023-01-17 08:29:07'),
+(217, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '500.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-17 08:39:28', '2023-01-17 08:39:28'),
+(218, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '500.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-17 08:39:32', '2023-01-17 08:39:32'),
+(219, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '500.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-17 08:39:49', '2023-01-17 08:39:49'),
+(220, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '500.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-17 08:40:21', '2023-01-17 08:40:21'),
+(221, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '101.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-17 08:54:01', '2023-01-17 08:54:01'),
+(222, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '101.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-17 08:57:16', '2023-01-17 08:57:16'),
+(223, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '101.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-17 08:57:19', '2023-01-17 08:57:19'),
+(224, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-17 11:03:40', '2023-01-17 11:03:40'),
+(225, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '500.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-17 11:13:22', '2023-01-17 11:13:22'),
+(226, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '500.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-17 11:14:22', '2023-01-17 11:14:22'),
+(227, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.109.76', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'en-US,en;q=0.9', '2023-01-17 12:07:24', '2023-01-17 12:07:24'),
+(228, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '100.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9', '2023-01-17 12:15:56', '2023-01-17 12:15:56'),
+(229, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '201.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9', '2023-01-17 12:16:32', '2023-01-17 12:16:32'),
+(230, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '200.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '93.84.103.182', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-18 13:45:00', '2023-01-18 13:45:00'),
+(231, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '1000.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '213.184.250.158', '', 'Mozilla/5.0 (Linux; Android 12; RMX3195) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', '2023-01-18 15:05:23', '2023-01-18 15:05:23'),
+(232, 0, 'INV-2022-00', 0, 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 'http://ziptrade.veon-tech.ru/', 0, 0, '', '', '', '', '', '[]', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '', '', '', '', '', '', 'Республика Беларусь', 20, '', 0, '', '[]', '', '', '', '200.0000', 0, 0, '0.0000', 0, '', 2, 4, 'BYN', '1.00000000', '46.53.180.61', '', 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/109.0.5414.83 Mobile/15E148 Safari/604.1', 'ru', '2023-01-23 09:33:44', '2023-01-23 09:33:44');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_history`
+-- Table structure for table `oc_order_history`
 --
 
 CREATE TABLE `oc_order_history` (
@@ -3981,10 +4648,22 @@ CREATE TABLE `oc_order_history` (
   `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `oc_order_history`
+--
+
+INSERT INTO `oc_order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
+(15, 178, 1, 0, '', '2023-01-13 11:51:56'),
+(16, 180, 1, 0, '', '2023-01-13 11:54:51'),
+(17, 182, 1, 0, '', '2023-01-13 11:55:56'),
+(18, 184, 1, 0, '', '2023-01-13 11:56:50'),
+(19, 186, 1, 0, '', '2023-01-13 11:58:10'),
+(20, 188, 1, 0, '', '2023-01-13 12:01:42');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_option`
+-- Table structure for table `oc_order_option`
 --
 
 CREATE TABLE `oc_order_option` (
@@ -3999,7 +4678,7 @@ CREATE TABLE `oc_order_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_option`
+-- Dumping data for table `oc_order_option`
 --
 
 INSERT INTO `oc_order_option` (`order_option_id`, `order_id`, `order_product_id`, `product_option_id`, `product_option_value_id`, `name`, `value`, `type`) VALUES
@@ -4014,12 +4693,19 @@ INSERT INTO `oc_order_option` (`order_option_id`, `order_id`, `order_product_id`
 (9, 172, 181, 226, 15, 'Select', 'Red', 'select'),
 (10, 173, 182, 226, 15, 'Select', 'Red', 'select'),
 (11, 174, 183, 226, 15, 'Select', 'Red', 'select'),
-(12, 175, 184, 226, 15, 'Select', 'Red', 'select');
+(12, 175, 184, 226, 15, 'Select', 'Red', 'select'),
+(13, 176, 185, 226, 15, 'Select', 'Red', 'select'),
+(14, 177, 186, 226, 15, 'Select', 'Red', 'select'),
+(15, 178, 187, 226, 15, 'Select', 'Red', 'select'),
+(16, 193, 203, 226, 15, 'Select', 'Red', 'select'),
+(17, 194, 205, 226, 15, 'Select', 'Red', 'select'),
+(18, 195, 207, 226, 15, 'Select', 'Red', 'select'),
+(19, 196, 208, 226, 15, 'Select', 'Red', 'select');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_product`
+-- Table structure for table `oc_order_product`
 --
 
 CREATE TABLE `oc_order_product` (
@@ -4036,7 +4722,7 @@ CREATE TABLE `oc_order_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_product`
+-- Dumping data for table `oc_order_product`
 --
 
 INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
@@ -4216,12 +4902,73 @@ INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `n
 (181, 172, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
 (182, 173, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
 (183, 174, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
-(184, 175, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200);
+(184, 175, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(185, 176, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(186, 177, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(187, 178, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(188, 179, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(189, 180, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(190, 181, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(191, 182, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(192, 183, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(193, 184, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(194, 185, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(195, 186, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(196, 187, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(197, 188, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(198, 189, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(199, 190, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(200, 190, 41, 'iMac', 'Product 14', 2, '100.0000', '200.0000', '0.0000', 0),
+(201, 191, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(202, 192, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(203, 193, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(204, 193, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(205, 194, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(206, 194, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(207, 195, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(208, 196, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(209, 197, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(210, 198, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(211, 199, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(212, 200, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(213, 201, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(214, 202, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(215, 203, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(216, 204, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(217, 205, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(218, 206, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(219, 207, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(220, 208, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(221, 209, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(222, 210, 41, 'iMac', 'Product 14', 2, '100.0000', '200.0000', '0.0000', 0),
+(223, 211, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(224, 212, 41, 'iMac', 'Product 14', 3, '100.0000', '300.0000', '0.0000', 0),
+(225, 213, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(226, 214, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(227, 215, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(228, 216, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(229, 217, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '0.0000', 600),
+(230, 218, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '0.0000', 600),
+(231, 219, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '0.0000', 600),
+(232, 220, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '0.0000', 600),
+(233, 221, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(234, 222, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(235, 223, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(236, 224, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(237, 225, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '0.0000', 600),
+(238, 226, 43, 'MacBook', 'Product 16', 1, '500.0000', '500.0000', '0.0000', 600),
+(239, 227, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(240, 228, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(241, 229, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(242, 229, 41, 'iMac', 'Product 14', 1, '100.0000', '100.0000', '0.0000', 0),
+(243, 230, 41, 'iMac', 'Product 14', 2, '100.0000', '200.0000', '0.0000', 0),
+(244, 231, 46, 'Sony VAIO', 'Product 19', 1, '1000.0000', '1000.0000', '0.0000', 0),
+(245, 232, 41, 'iMac', 'Product 14', 2, '100.0000', '200.0000', '0.0000', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_recurring`
+-- Table structure for table `oc_order_recurring`
 --
 
 CREATE TABLE `oc_order_recurring` (
@@ -4250,7 +4997,7 @@ CREATE TABLE `oc_order_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_recurring_transaction`
+-- Table structure for table `oc_order_recurring_transaction`
 --
 
 CREATE TABLE `oc_order_recurring_transaction` (
@@ -4265,7 +5012,7 @@ CREATE TABLE `oc_order_recurring_transaction` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_shipment`
+-- Table structure for table `oc_order_shipment`
 --
 
 CREATE TABLE `oc_order_shipment` (
@@ -4279,7 +5026,7 @@ CREATE TABLE `oc_order_shipment` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_status`
+-- Table structure for table `oc_order_status`
 --
 
 CREATE TABLE `oc_order_status` (
@@ -4289,7 +5036,7 @@ CREATE TABLE `oc_order_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_status`
+-- Dumping data for table `oc_order_status`
 --
 
 INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
@@ -4325,7 +5072,7 @@ INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_total`
+-- Table structure for table `oc_order_total`
 --
 
 CREATE TABLE `oc_order_total` (
@@ -4338,7 +5085,7 @@ CREATE TABLE `oc_order_total` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_order_total`
+-- Dumping data for table `oc_order_total`
 --
 
 INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `value`, `sort_order`) VALUES
@@ -4596,12 +5343,69 @@ INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `va
 (259, 172, 'sub_total', 'К оплате', '180.0000', 0),
 (260, 173, 'sub_total', 'К оплате', '80.0000', 0),
 (261, 174, 'sub_total', 'К оплате', '80.0000', 0),
-(262, 175, 'sub_total', 'К оплате', '80.0000', 0);
+(262, 175, 'sub_total', 'К оплате', '80.0000', 0),
+(263, 176, 'sub_total', 'К оплате', '80.0000', 0),
+(264, 177, 'sub_total', 'К оплате', '80.0000', 0),
+(265, 178, 'sub_total', 'К оплате', '80.0000', 0),
+(266, 179, 'sub_total', 'К оплате', '100.0000', 0),
+(267, 180, 'sub_total', 'К оплате', '100.0000', 0),
+(268, 181, 'sub_total', 'К оплате', '100.0000', 0),
+(269, 182, 'sub_total', 'К оплате', '100.0000', 0),
+(270, 183, 'sub_total', 'К оплате', '100.0000', 0),
+(271, 184, 'sub_total', 'К оплате', '100.0000', 0),
+(272, 185, 'sub_total', 'К оплате', '100.0000', 0),
+(273, 186, 'sub_total', 'К оплате', '100.0000', 0),
+(274, 187, 'sub_total', 'К оплате', '100.0000', 0),
+(275, 188, 'sub_total', 'К оплате', '100.0000', 0),
+(276, 189, 'sub_total', 'К оплате', '100.0000', 0),
+(277, 190, 'sub_total', 'К оплате', '301.0000', 0),
+(278, 191, 'sub_total', 'К оплате', '101.0000', 0),
+(279, 192, 'sub_total', 'К оплате', '101.0000', 0),
+(280, 193, 'sub_total', 'К оплате', '180.0000', 0),
+(281, 194, 'sub_total', 'К оплате', '180.0000', 0),
+(282, 195, 'sub_total', 'К оплате', '80.0000', 0),
+(283, 196, 'sub_total', 'К оплате', '80.0000', 0),
+(284, 197, 'sub_total', 'К оплате', '100.0000', 0),
+(285, 198, 'sub_total', 'К оплате', '100.0000', 0),
+(286, 199, 'sub_total', 'К оплате', '100.0000', 0),
+(287, 200, 'sub_total', 'К оплате', '100.0000', 0),
+(288, 201, 'sub_total', 'К оплате', '100.0000', 0),
+(289, 202, 'sub_total', 'К оплате', '100.0000', 0),
+(290, 203, 'sub_total', 'К оплате', '100.0000', 0),
+(291, 204, 'sub_total', 'К оплате', '100.0000', 0),
+(292, 205, 'sub_total', 'К оплате', '100.0000', 0),
+(293, 206, 'sub_total', 'К оплате', '100.0000', 0),
+(294, 207, 'sub_total', 'К оплате', '100.0000', 0),
+(295, 208, 'sub_total', 'К оплате', '100.0000', 0),
+(296, 209, 'sub_total', 'К оплате', '100.0000', 0),
+(297, 210, 'sub_total', 'К оплате', '200.0000', 0),
+(298, 211, 'sub_total', 'К оплате', '100.0000', 0),
+(299, 212, 'sub_total', 'К оплате', '300.0000', 0),
+(300, 213, 'sub_total', 'К оплате', '100.0000', 0),
+(301, 214, 'sub_total', 'К оплате', '100.0000', 0),
+(302, 215, 'sub_total', 'К оплате (с НДС)', '101.0000', 0),
+(303, 216, 'sub_total', 'К оплате (с НДС)', '101.0000', 0),
+(304, 217, 'sub_total', 'К оплате (с НДС)', '500.0000', 0),
+(305, 218, 'sub_total', 'К оплате (с НДС)', '500.0000', 0),
+(306, 219, 'sub_total', 'К оплате (с НДС)', '500.0000', 0),
+(307, 220, 'sub_total', 'К оплате (с НДС)', '500.0000', 0),
+(308, 221, 'sub_total', 'К оплате (с НДС)', '101.0000', 0),
+(309, 222, 'sub_total', 'К оплате (с НДС)', '101.0000', 0),
+(310, 223, 'sub_total', 'К оплате (с НДС)', '101.0000', 0),
+(311, 224, 'sub_total', 'К оплате (с НДС)', '100.0000', 0),
+(312, 225, 'sub_total', 'К оплате (с НДС)', '500.0000', 0),
+(313, 226, 'sub_total', 'К оплате (с НДС)', '500.0000', 0),
+(314, 227, 'sub_total', 'К оплате (с НДС)', '100.0000', 0),
+(315, 228, 'sub_total', 'К оплате (с НДС)', '100.0000', 0),
+(316, 229, 'sub_total', 'К оплате (с НДС)', '201.0000', 0),
+(317, 230, 'sub_total', 'К оплате (с НДС)', '200.0000', 0),
+(318, 231, 'sub_total', 'К оплате (с НДС)', '1000.0000', 0),
+(319, 232, 'sub_total', 'К оплате (с НДС)', '200.0000', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_order_voucher`
+-- Table structure for table `oc_order_voucher`
 --
 
 CREATE TABLE `oc_order_voucher` (
@@ -4622,7 +5426,7 @@ CREATE TABLE `oc_order_voucher` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product`
+-- Table structure for table `oc_product`
 --
 
 CREATE TABLE `oc_product` (
@@ -4643,7 +5447,7 @@ CREATE TABLE `oc_product` (
   `price` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `points` int(8) NOT NULL DEFAULT 0,
   `tax_class_id` int(11) NOT NULL,
-  `date_available` date NOT NULL DEFAULT '0000-00-00',
+  `date_available` date DEFAULT NULL,
   `weight` decimal(15,8) NOT NULL DEFAULT 0.00000000,
   `weight_class_id` int(11) NOT NULL DEFAULT 0,
   `length` decimal(15,8) NOT NULL DEFAULT 0.00000000,
@@ -4656,38 +5460,58 @@ CREATE TABLE `oc_product` (
   `status` tinyint(1) NOT NULL DEFAULT 0,
   `viewed` int(5) NOT NULL DEFAULT 0,
   `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL
+  `date_modified` datetime NOT NULL,
+  `import_id` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product`
+-- Dumping data for table `oc_product`
 --
 
-INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
-(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/palm_treo_pro_1.jpg', 6, 1, '279.9900', 0, 9, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2011-09-30 01:06:08'),
-(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 37, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
-(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2011-09-30 01:06:00'),
-(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2011-09-30 01:07:22'),
-(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2011-09-30 01:06:29'),
-(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/ipod_shuffle_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:07:54', '2011-09-30 01:07:17'),
-(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2011-09-30 01:06:17'),
-(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
-(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 23, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 22, '2009-02-03 21:07:37', '2023-01-04 14:37:39'),
-(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 1, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 4, '2009-02-03 21:07:49', '2022-12-30 10:14:53'),
-(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
-(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/macbook_pro_1.jpg', 8, 1, '2000.0000', 0, 100, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2011-09-15 22:22:01'),
-(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/sony_vaio_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:29', '2011-09-30 01:06:39'),
-(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/hp_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, 0, '2009-02-03 21:08:40', '2011-09-30 01:05:28'),
-(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/demo/ipod_classic_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-08 17:21:51', '2011-09-30 01:07:06'),
-(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'catalog/demo/samsung_tab_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 4, '2011-04-26 08:57:34', '2011-09-30 01:06:23');
+INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`, `import_id`) VALUES
+(116, '№ 277', '', '', '', '', '', '', '', 7, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(115, '№ 257', '', '', '', '', '', '', '', 5, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(113, '№ 231', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(114, '№ 243', '', '', '', '', '', '', '', 7, 5, NULL, 0, 1, '1.5105', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(89, '6816', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '16.2240', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000002272'),
+(90, '15 Зеленый', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '0.0000', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000006048'),
+(91, '20 Красный', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '0.0000', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000006048'),
+(92, '', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '0.0000', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000006049'),
+(93, 'Золото', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '18.1830', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000006044'),
+(94, 'Серебро', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '18.1830', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000006044'),
+(95, '', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '18.5687', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001667'),
+(96, '', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '44.3443', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001668'),
+(97, '', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '4.2360', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001673'),
+(98, '', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '0.0861', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000005461'),
+(99, '101 белый', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.5755', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(100, '110 желтый', '', '', '', '', '', '', '', 5, 5, NULL, 0, 1, '1.5105', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(101, '№ 134 (розовый)', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.5105', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(102, '148', '', '', '', '', '', '', '', 10, 5, NULL, 0, 1, '1.5617', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(103, '№ 157', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.7140', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(104, '№ 145 (малиновый)', '', '', '', '', '', '', '', 7, 5, NULL, 0, 1, '1.5105', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(105, '№ 166', '', '', '', '', '', '', '', 3, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(106, '№ 170', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(107, '№ 178', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.7140', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(108, '№ 179', '', '', '', '', '', '', '', 9, 5, NULL, 0, 1, '1.5105', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(109, '№ 184', '', '', '', '', '', '', '', 2, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(110, '№ 201', '', '', '', '', '', '', '', 6, 5, NULL, 0, 1, '1.4907', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(111, '№ 208', '', '', '', '', '', '', '', 2, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(112, '№ 213', '', '', '', '', '', '', '', 7, 5, NULL, 0, 1, '1.5105', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(122, '№ 338', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.4907', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:51', '2023-03-22 15:57:51', 'БП000001818'),
+(120, '№ 334', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:51', '2023-03-22 15:57:51', 'БП000001818'),
+(119, '№ 316', '', '', '', '', '', '', '', 6, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:51', '2023-03-22 15:57:51', 'БП000001818'),
+(118, '№ 312', '', '', '', '', '', '', '', 8, 5, NULL, 0, 1, '1.5105', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(117, '№ 310', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000001818'),
+(123, '322 чёрный', '', '', '', '', '', '', '', 8, 5, NULL, 0, 1, '1.3694', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:51', '2023-03-22 15:57:51', 'БП000001818'),
+(121, '№ 335', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.4907', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:51', '2023-03-22 15:57:51', 'БП000001818'),
+(88, '6816', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '3.7560', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:50', '2023-03-22 15:57:50', 'БП000002271'),
+(124, '№160 (025)', '', '', '', '', '', '', '', 0, 5, NULL, 0, 1, '1.5617', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:51', '2023-03-22 15:57:51', 'БП000001818'),
+(125, '№270', '', '', '', '', '', '', '', 8, 5, NULL, 0, 1, '1.5920', 0, 9, '2023-03-22', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2023-03-22 15:57:51', '2023-03-22 15:57:51', 'БП000001818');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_attribute`
+-- Table structure for table `oc_product_attribute`
 --
 
 CREATE TABLE `oc_product_attribute` (
@@ -4698,22 +5522,19 @@ CREATE TABLE `oc_product_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_attribute`
+-- Dumping data for table `oc_product_attribute`
 --
 
 INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
-(47, 4, 1, '16GB'),
-(43, 4, 2, '8gb'),
-(47, 2, 1, '4'),
-(47, 4, 2, '16GB'),
-(43, 2, 2, '1'),
-(42, 3, 2, '100mhz'),
-(47, 2, 2, '4');
+(92, 14, 2, '13 мм'),
+(91, 28, 2, '1234 (Красный) '),
+(90, 28, 2, '4321 (Зеленый) '),
+(92, 17, 2, '5 шт');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_description`
+-- Table structure for table `oc_product_description`
 --
 
 CREATE TABLE `oc_product_description` (
@@ -4728,51 +5549,53 @@ CREATE TABLE `oc_product_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_description`
+-- Dumping data for table `oc_product_description`
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(35, 1, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'Product 8', '', ''),
-(48, 1, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'iPod Classic', '', ''),
-(40, 1, 'iPhone', '&lt;p class=&quot;intro&quot;&gt;\r\n	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', 'iPhone', '', ''),
-(28, 1, 'HTC Touch HD', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '	 HTC Touch HD', '', ''),
-(44, 1, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', 'MacBook Air', '', ''),
-(45, 1, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'MacBook Pro', '', ''),
-(29, 1, 'Palm Treo Pro', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Palm Treo Pro', '', ''),
-(36, 1, 'iPod Nano', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Nano', '', ''),
-(46, 1, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', 'Sony VAIO', '', ''),
-(47, 1, 'HP LP3065', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', 'HP LP3065', '', ''),
-(32, 1, 'iPod Touch', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '	 iPod Touch', '', ''),
-(41, 1, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', 'iMac', '', ''),
-(33, 1, 'Samsung SyncMaster 941BW', '&lt;div&gt;\r\n	Imagine the advantages of going big without slowing down. The big 19&amp;quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&amp;#39;s not hard to imagine.&lt;/div&gt;\r\n', '', 'Samsung SyncMaster 941BW', '', ''),
-(34, 1, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Shuffle', '', ''),
-(31, 1, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
-(49, 1, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
-(30, 1, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', ''),
-(35, 2, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'Product 8', '', ''),
-(48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'iPod Classic', '', ''),
-(40, 2, 'iPhone', '&lt;p class=&quot;intro&quot;&gt;\r\n	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', 'iPhone', '', ''),
-(28, 2, 'HTC Touch HD', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '	 HTC Touch HD', '', ''),
-(44, 2, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', 'MacBook Air', '', ''),
-(45, 2, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'MacBook Pro', '', ''),
-(29, 2, 'Palm Treo Pro', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Palm Treo Pro', '', ''),
-(36, 2, 'iPod Nano', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Nano', '', ''),
-(46, 2, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', 'Sony VAIO', '', ''),
-(47, 2, 'HP LP3065', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', 'HP LP3065', '', ''),
-(32, 2, 'iPod Touch', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '	 iPod Touch', '', ''),
-(41, 2, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', 'iMac', '', ''),
-(33, 2, 'Samsung SyncMaster 941BW', '&lt;div&gt;\r\n	Imagine the advantages of going big without slowing down. The big 19&amp;quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&amp;#39;s not hard to imagine.&lt;/div&gt;\r\n', '', 'Samsung SyncMaster 941BW', '', ''),
-(34, 2, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Shuffle', '', ''),
-(43, 2, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'MacBook', '', ''),
-(31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
-(49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
-(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br&gt;\r\n	&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n&lt;h3&gt;\r\n	Features:&lt;/h3&gt;\r\n&lt;p&gt;\r\n	Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;\r\n	Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Display Power,&lt;/li&gt;\r\n	&lt;li&gt;\r\n		System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Brightness&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br&gt;\r\n	Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;\r\n		USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;\r\n		DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br&gt;\r\n	Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55024&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MPR II&lt;/li&gt;\r\n	&lt;li&gt;\r\n		IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		UL 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;\r\n		TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Size and weight&lt;/b&gt;&lt;br&gt;\r\n	30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Apple Cinema 30', '', ''),
-(30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', '');
+(88, 2, 'Нитки 100ЛЛ  1000м', 'Нитки 100ЛЛ  1000м', '', 'Нитки 100ЛЛ  1000м', '', ''),
+(89, 2, 'Нитки 100ЛЛ  5000м', 'Нитки 100ЛЛ  5000м', '', 'Нитки 100ЛЛ  5000м', '', ''),
+(90, 2, 'Тест', 'Тест', '', 'Тест', '', ''),
+(91, 2, 'Тест', 'Тест', '', 'Тест', '', ''),
+(92, 2, 'Тест2', 'Тест2', '', 'Тест2', '', ''),
+(93, 2, 'Булавка безопасная  уп.1000 шт.', 'Булавка безопасная  уп.1000 шт.', '', 'Булавка безопасная  уп.1000 шт.', '', ''),
+(94, 2, 'Булавка безопасная  уп.1000 шт.', 'Булавка безопасная  уп.1000 шт.', '', 'Булавка безопасная  уп.1000 шт.', '', ''),
+(95, 2, 'Булавки пластик. 37 мм (упак. 100шт.), ассорти', 'Булавки пластик. 37 мм (упак. 100шт.), ассорти', '', 'Булавки пластик. 37 мм (упак. 100шт.), ассорти', '', ''),
+(96, 2, 'Булавка английская (сталь) никель/2000 шт.', 'Булавка английская (сталь) никель/2000 шт.', '', 'Булавка английская (сталь) никель/2000 шт.', '', ''),
+(97, 2, 'Булавки декор \"Ромашка\" 40 шт комплект 36 пластин (кор.40 комплектов)', 'Булавки декор \"Ромашка\" 40 шт комплект 36 пластин (кор.40 комплектов)', '', 'Булавки декор \"Ромашка\" 40 шт комплект 36 пластин (кор.40 комплектов)', '', ''),
+(98, 2, 'F18 / МВ73111 18мм  Прозрачная 2 пркл. (пуговицы)', 'F18 / МВ73111 18мм  Прозрачная 2 пркл. (пуговицы)', '', 'F18 / МВ73111 18мм  Прозрачная 2 пркл. (пуговицы)', '', ''),
+(99, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(100, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(101, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(102, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(103, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(104, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(105, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(106, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(107, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(108, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(109, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(110, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(111, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(112, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(113, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(114, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(115, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(116, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(117, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(118, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(119, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(120, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(121, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(122, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(123, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(124, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', ''),
+(125, 2, 'Лента атласная 12мм ', 'Лента атласная 12мм ', '', 'Лента атласная 12мм ', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_discount`
+-- Table structure for table `oc_product_discount`
 --
 
 CREATE TABLE `oc_product_discount` (
@@ -4786,19 +5609,10 @@ CREATE TABLE `oc_product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_product_discount`
---
-
-INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(443, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
-(442, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
-(441, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_filter`
+-- Table structure for table `oc_product_filter`
 --
 
 CREATE TABLE `oc_product_filter` (
@@ -4809,7 +5623,7 @@ CREATE TABLE `oc_product_filter` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_image`
+-- Table structure for table `oc_product_image`
 --
 
 CREATE TABLE `oc_product_image` (
@@ -4819,77 +5633,10 @@ CREATE TABLE `oc_product_image` (
   `sort_order` int(3) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_product_image`
---
-
-INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(2345, 30, 'catalog/demo/canon_eos_5d_2.jpg', 0),
-(2321, 47, 'catalog/demo/hp_3.jpg', 0),
-(2035, 28, 'catalog/demo/htc_touch_hd_2.jpg', 0),
-(2351, 41, 'catalog/demo/imac_3.jpg', 0),
-(1982, 40, 'catalog/demo/iphone_6.jpg', 0),
-(2001, 36, 'catalog/demo/ipod_nano_5.jpg', 0),
-(2000, 36, 'catalog/demo/ipod_nano_4.jpg', 0),
-(2005, 34, 'catalog/demo/ipod_shuffle_5.jpg', 0),
-(2004, 34, 'catalog/demo/ipod_shuffle_4.jpg', 0),
-(2011, 32, 'catalog/demo/ipod_touch_7.jpg', 0),
-(2010, 32, 'catalog/demo/ipod_touch_6.jpg', 0),
-(2009, 32, 'catalog/demo/ipod_touch_5.jpg', 0),
-(2355, 43, 'catalog/demo/macbook_3.jpg', 0),
-(2354, 43, 'catalog/demo/macbook_2.jpg', 0),
-(1974, 44, 'catalog/demo/macbook_air_4.jpg', 0),
-(1973, 44, 'catalog/demo/macbook_air_2.jpg', 0),
-(1977, 45, 'catalog/demo/macbook_pro_2.jpg', 0),
-(1976, 45, 'catalog/demo/macbook_pro_3.jpg', 0),
-(1986, 31, 'catalog/demo/nikon_d300_3.jpg', 0),
-(1985, 31, 'catalog/demo/nikon_d300_2.jpg', 0),
-(1988, 29, 'catalog/demo/palm_treo_pro_3.jpg', 0),
-(1995, 46, 'catalog/demo/sony_vaio_5.jpg', 0),
-(1994, 46, 'catalog/demo/sony_vaio_4.jpg', 0),
-(1991, 48, 'catalog/demo/ipod_classic_4.jpg', 0),
-(1990, 48, 'catalog/demo/ipod_classic_3.jpg', 0),
-(1981, 40, 'catalog/demo/iphone_2.jpg', 0),
-(1980, 40, 'catalog/demo/iphone_5.jpg', 0),
-(2344, 30, 'catalog/demo/canon_eos_5d_3.jpg', 0),
-(2320, 47, 'catalog/demo/hp_2.jpg', 0),
-(2034, 28, 'catalog/demo/htc_touch_hd_3.jpg', 0),
-(2350, 41, 'catalog/demo/imac_2.jpg', 0),
-(1979, 40, 'catalog/demo/iphone_3.jpg', 0),
-(1978, 40, 'catalog/demo/iphone_4.jpg', 0),
-(1989, 48, 'catalog/demo/ipod_classic_2.jpg', 0),
-(1999, 36, 'catalog/demo/ipod_nano_2.jpg', 0),
-(1998, 36, 'catalog/demo/ipod_nano_3.jpg', 0),
-(2003, 34, 'catalog/demo/ipod_shuffle_2.jpg', 0),
-(2002, 34, 'catalog/demo/ipod_shuffle_3.jpg', 0),
-(2008, 32, 'catalog/demo/ipod_touch_2.jpg', 0),
-(2007, 32, 'catalog/demo/ipod_touch_3.jpg', 0),
-(2006, 32, 'catalog/demo/ipod_touch_4.jpg', 0),
-(2353, 43, 'catalog/demo/macbook_4.jpg', 0),
-(2352, 43, 'catalog/demo/macbook_5.jpg', 0),
-(1972, 44, 'catalog/demo/macbook_air_3.jpg', 0),
-(1975, 45, 'catalog/demo/macbook_pro_4.jpg', 0),
-(1984, 31, 'catalog/demo/nikon_d300_4.jpg', 0),
-(1983, 31, 'catalog/demo/nikon_d300_5.jpg', 0),
-(1987, 29, 'catalog/demo/palm_treo_pro_2.jpg', 0),
-(1993, 46, 'catalog/demo/sony_vaio_2.jpg', 0),
-(1992, 46, 'catalog/demo/sony_vaio_3.jpg', 0),
-(2327, 49, 'catalog/demo/samsung_tab_7.jpg', 0),
-(2326, 49, 'catalog/demo/samsung_tab_6.jpg', 0),
-(2325, 49, 'catalog/demo/samsung_tab_5.jpg', 0),
-(2324, 49, 'catalog/demo/samsung_tab_4.jpg', 0),
-(2323, 49, 'catalog/demo/samsung_tab_3.jpg', 0),
-(2322, 49, 'catalog/demo/samsung_tab_2.jpg', 0),
-(2359, 42, 'catalog/demo/canon_eos_5d_1.jpg', 0),
-(2358, 42, 'catalog/demo/compaq_presario.jpg', 0),
-(2357, 42, 'catalog/demo/hp_1.jpg', 0),
-(2356, 42, 'catalog/demo/canon_logo.jpg', 0),
-(2360, 42, 'catalog/demo/canon_eos_5d_2.jpg', 0);
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_option`
+-- Table structure for table `oc_product_option`
 --
 
 CREATE TABLE `oc_product_option` (
@@ -4897,25 +5644,14 @@ CREATE TABLE `oc_product_option` (
   `product_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
   `value` text NOT NULL,
-  `required` tinyint(1) NOT NULL
+  `required` tinyint(1) NOT NULL,
+  `import_id` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `oc_product_option`
---
-
-INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
-(224, 35, 11, '', 1),
-(225, 47, 12, '2011-04-22', 1),
-(218, 42, 1, '', 1),
-(217, 42, 5, '', 1),
-(223, 42, 2, '', 1),
-(226, 30, 5, '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_option_value`
+-- Table structure for table `oc_product_option_value`
 --
 
 CREATE TABLE `oc_product_option_value` (
@@ -4934,32 +5670,10 @@ CREATE TABLE `oc_product_option_value` (
   `weight_prefix` varchar(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_product_option_value`
---
-
-INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(7, 218, 42, 1, 43, 300, 1, '30.0000', '+', 3, '+', '30.00000000', '+'),
-(6, 218, 42, 1, 31, 146, 1, '20.0000', '+', 2, '-', '20.00000000', '+'),
-(5, 218, 42, 1, 32, 96, 1, '10.0000', '+', 1, '+', '10.00000000', '+'),
-(2, 217, 42, 5, 42, 200, 1, '2.0000', '+', 0, '+', '2.00000000', '+'),
-(1, 217, 42, 5, 41, 100, 0, '1.0000', '+', 0, '+', '1.00000000', '+'),
-(3, 217, 42, 5, 40, 300, 0, '3.0000', '+', 0, '+', '3.00000000', '+'),
-(4, 217, 42, 5, 39, 92, 1, '4.0000', '+', 0, '+', '4.00000000', '+'),
-(11, 223, 42, 2, 45, 3998, 1, '40.0000', '+', 0, '+', '40.00000000', '+'),
-(10, 223, 42, 2, 44, 2696, 1, '30.0000', '+', 0, '+', '30.00000000', '+'),
-(9, 223, 42, 2, 24, 194, 1, '20.0000', '+', 0, '+', '20.00000000', '+'),
-(8, 223, 42, 2, 23, 48, 1, '10.0000', '+', 0, '+', '10.00000000', '+'),
-(12, 224, 35, 11, 46, 0, 1, '5.0000', '+', 0, '+', '0.00000000', '+'),
-(13, 224, 35, 11, 47, 10, 1, '10.0000', '+', 0, '+', '0.00000000', '+'),
-(14, 224, 35, 11, 48, 15, 1, '15.0000', '+', 0, '+', '0.00000000', '+'),
-(16, 226, 30, 5, 40, 5, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(15, 226, 30, 5, 39, 2, 1, '0.0000', '+', 0, '+', '0.00000000', '+');
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_recurring`
+-- Table structure for table `oc_product_recurring`
 --
 
 CREATE TABLE `oc_product_recurring` (
@@ -4971,7 +5685,7 @@ CREATE TABLE `oc_product_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_related`
+-- Table structure for table `oc_product_related`
 --
 
 CREATE TABLE `oc_product_related` (
@@ -4979,20 +5693,10 @@ CREATE TABLE `oc_product_related` (
   `related_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_product_related`
---
-
-INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
-(40, 42),
-(41, 42),
-(42, 40),
-(42, 41);
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_reward`
+-- Table structure for table `oc_product_reward`
 --
 
 CREATE TABLE `oc_product_reward` (
@@ -5002,35 +5706,10 @@ CREATE TABLE `oc_product_reward` (
   `points` int(8) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_product_reward`
---
-
-INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-(547, 42, 1, 100),
-(519, 47, 1, 300),
-(379, 28, 1, 400),
-(546, 43, 1, 600),
-(339, 29, 1, 0),
-(343, 48, 1, 0),
-(335, 40, 1, 0),
-(539, 30, 1, 200),
-(331, 44, 1, 700),
-(333, 45, 1, 800),
-(337, 31, 1, 0),
-(425, 35, 1, 0),
-(345, 33, 1, 0),
-(347, 46, 1, 0),
-(545, 41, 1, 0),
-(351, 36, 1, 0),
-(353, 34, 1, 0),
-(355, 32, 1, 0),
-(521, 49, 1, 1000);
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_special`
+-- Table structure for table `oc_product_special`
 --
 
 CREATE TABLE `oc_product_special` (
@@ -5043,19 +5722,10 @@ CREATE TABLE `oc_product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_product_special`
---
-
-INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(440, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
-(439, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00'),
-(438, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00');
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_category`
+-- Table structure for table `oc_product_to_category`
 --
 
 CREATE TABLE `oc_product_to_category` (
@@ -5064,45 +5734,53 @@ CREATE TABLE `oc_product_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_to_category`
+-- Dumping data for table `oc_product_to_category`
 --
 
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
-(28, 20),
-(28, 24),
-(29, 20),
-(29, 24),
-(30, 20),
-(30, 33),
-(31, 33),
-(32, 34),
-(33, 20),
-(33, 28),
-(34, 34),
-(35, 20),
-(36, 34),
-(40, 20),
-(40, 24),
-(41, 27),
-(42, 20),
-(42, 28),
-(43, 18),
-(43, 20),
-(44, 18),
-(44, 20),
-(45, 18),
-(46, 18),
-(46, 20),
-(47, 18),
-(47, 20),
-(48, 20),
-(48, 34),
-(49, 57);
+(88, 177),
+(89, 177),
+(90, 177),
+(91, 177),
+(92, 177),
+(93, 178),
+(94, 178),
+(95, 178),
+(96, 178),
+(97, 178),
+(98, 179),
+(99, 179),
+(100, 179),
+(101, 179),
+(102, 179),
+(103, 179),
+(104, 179),
+(105, 179),
+(106, 179),
+(107, 179),
+(108, 179),
+(109, 179),
+(110, 179),
+(111, 179),
+(112, 179),
+(113, 179),
+(114, 179),
+(115, 179),
+(116, 179),
+(117, 179),
+(118, 179),
+(119, 179),
+(120, 179),
+(121, 179),
+(122, 179),
+(123, 179),
+(124, 179),
+(125, 179);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_download`
+-- Table structure for table `oc_product_to_download`
 --
 
 CREATE TABLE `oc_product_to_download` (
@@ -5113,7 +5791,7 @@ CREATE TABLE `oc_product_to_download` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_layout`
+-- Table structure for table `oc_product_to_layout`
 --
 
 CREATE TABLE `oc_product_to_layout` (
@@ -5122,18 +5800,10 @@ CREATE TABLE `oc_product_to_layout` (
   `layout_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_product_to_layout`
---
-
-INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
-(43, 0, 0),
-(42, 0, 0);
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_product_to_store`
+-- Table structure for table `oc_product_to_store`
 --
 
 CREATE TABLE `oc_product_to_store` (
@@ -5142,34 +5812,53 @@ CREATE TABLE `oc_product_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_product_to_store`
+-- Dumping data for table `oc_product_to_store`
 --
 
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
-(28, 0),
-(29, 0),
-(30, 0),
-(31, 0),
-(32, 0),
-(33, 0),
-(34, 0),
-(35, 0),
-(36, 0),
-(40, 0),
-(41, 0),
-(42, 0),
-(43, 0),
-(44, 0),
-(45, 0),
-(46, 0),
-(47, 0),
-(48, 0),
-(49, 0);
+(88, 0),
+(89, 0),
+(90, 0),
+(91, 0),
+(92, 0),
+(93, 0),
+(94, 0),
+(95, 0),
+(96, 0),
+(97, 0),
+(98, 0),
+(99, 0),
+(100, 0),
+(101, 0),
+(102, 0),
+(103, 0),
+(104, 0),
+(105, 0),
+(106, 0),
+(107, 0),
+(108, 0),
+(109, 0),
+(110, 0),
+(111, 0),
+(112, 0),
+(113, 0),
+(114, 0),
+(115, 0),
+(116, 0),
+(117, 0),
+(118, 0),
+(119, 0),
+(120, 0),
+(121, 0),
+(122, 0),
+(123, 0),
+(124, 0),
+(125, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_recurring`
+-- Table structure for table `oc_recurring`
 --
 
 CREATE TABLE `oc_recurring` (
@@ -5190,7 +5879,7 @@ CREATE TABLE `oc_recurring` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_recurring_description`
+-- Table structure for table `oc_recurring_description`
 --
 
 CREATE TABLE `oc_recurring_description` (
@@ -5202,7 +5891,7 @@ CREATE TABLE `oc_recurring_description` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return`
+-- Table structure for table `oc_return`
 --
 
 CREATE TABLE `oc_return` (
@@ -5230,7 +5919,7 @@ CREATE TABLE `oc_return` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_action`
+-- Table structure for table `oc_return_action`
 --
 
 CREATE TABLE `oc_return_action` (
@@ -5240,7 +5929,7 @@ CREATE TABLE `oc_return_action` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_action`
+-- Dumping data for table `oc_return_action`
 --
 
 INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUES
@@ -5254,7 +5943,7 @@ INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_history`
+-- Table structure for table `oc_return_history`
 --
 
 CREATE TABLE `oc_return_history` (
@@ -5269,7 +5958,7 @@ CREATE TABLE `oc_return_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_reason`
+-- Table structure for table `oc_return_reason`
 --
 
 CREATE TABLE `oc_return_reason` (
@@ -5279,7 +5968,7 @@ CREATE TABLE `oc_return_reason` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_reason`
+-- Dumping data for table `oc_return_reason`
 --
 
 INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
@@ -5297,7 +5986,7 @@ INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_return_status`
+-- Table structure for table `oc_return_status`
 --
 
 CREATE TABLE `oc_return_status` (
@@ -5307,7 +5996,7 @@ CREATE TABLE `oc_return_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_return_status`
+-- Dumping data for table `oc_return_status`
 --
 
 INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUES
@@ -5321,7 +6010,7 @@ INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_review`
+-- Table structure for table `oc_review`
 --
 
 CREATE TABLE `oc_review` (
@@ -5339,7 +6028,7 @@ CREATE TABLE `oc_review` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_seo_url`
+-- Table structure for table `oc_seo_url`
 --
 
 CREATE TABLE `oc_seo_url` (
@@ -5350,63 +6039,10 @@ CREATE TABLE `oc_seo_url` (
   `keyword` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `oc_seo_url`
---
-
-INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `keyword`) VALUES
-(824, 0, 1, 'product_id=48', 'ipod-classic'),
-(836, 0, 1, 'category_id=20', 'desktops'),
-(834, 0, 1, 'category_id=26', 'pc'),
-(835, 0, 1, 'category_id=27', 'mac'),
-(730, 0, 1, 'manufacturer_id=8', 'apple'),
-(789, 0, 1, 'category_id=34', 'mp3-players'),
-(774, 0, 1, 'category_id=18', 'laptop-notebook'),
-(775, 0, 1, 'category_id=46', 'macs'),
-(776, 0, 1, 'category_id=45', 'windows'),
-(777, 0, 1, 'category_id=25', 'component'),
-(778, 0, 1, 'category_id=29', 'mouse'),
-(779, 0, 1, 'category_id=28', 'monitor'),
-(782, 0, 1, 'category_id=30', 'printer'),
-(783, 0, 1, 'category_id=31', 'scanner'),
-(784, 0, 1, 'category_id=32', 'web-camera'),
-(785, 0, 1, 'category_id=57', 'tablet'),
-(786, 0, 1, 'category_id=17', 'software'),
-(787, 0, 1, 'category_id=24', 'smartphone'),
-(788, 0, 1, 'category_id=33', 'camera'),
-(802, 0, 1, 'category_id=56', 'test24'),
-(803, 0, 1, 'category_id=38', 'test4'),
-(804, 0, 1, 'category_id=37', 'test5'),
-(805, 0, 1, 'category_id=39', 'test6'),
-(806, 0, 1, 'category_id=40', 'test7'),
-(807, 0, 1, 'category_id=41', 'test8'),
-(808, 0, 1, 'category_id=42', 'test9'),
-(809, 0, 1, 'product_id=30', 'canon-eos-5d'),
-(840, 0, 1, 'product_id=47', 'hp-lp3065'),
-(811, 0, 1, 'product_id=28', 'htc-touch-hd'),
-(813, 0, 1, 'product_id=44', 'macbook-air'),
-(814, 0, 1, 'product_id=45', 'macbook-pro'),
-(816, 0, 1, 'product_id=31', 'nikon-d300'),
-(817, 0, 1, 'product_id=29', 'palm-treo-pro'),
-(818, 0, 1, 'product_id=35', 'product-8'),
-(819, 0, 1, 'product_id=49', 'samsung-galaxy-tab-10-1'),
-(820, 0, 1, 'product_id=33', 'samsung-syncmaster-941bw'),
-(821, 0, 1, 'product_id=46', 'sony-vaio'),
-(837, 0, 1, 'product_id=41', 'imac'),
-(823, 0, 1, 'product_id=40', 'iphone'),
-(825, 0, 1, 'product_id=36', 'ipod-nano'),
-(826, 0, 1, 'product_id=34', 'ipod-shuffle'),
-(827, 0, 1, 'product_id=32', 'ipod-touch'),
-(828, 0, 1, 'manufacturer_id=9', 'canon'),
-(829, 0, 1, 'manufacturer_id=5', 'htc'),
-(830, 0, 1, 'manufacturer_id=7', 'hewlett-packard'),
-(831, 0, 1, 'manufacturer_id=6', 'palm'),
-(832, 0, 1, 'manufacturer_id=10', 'sony');
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_session`
+-- Table structure for table `oc_session`
 --
 
 CREATE TABLE `oc_session` (
@@ -5416,57 +6052,522 @@ CREATE TABLE `oc_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_session`
+-- Dumping data for table `oc_session`
 --
 
 INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
+('0093c6f8869aa894d704725d97', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:20'),
+('02734bb4021fc56a9bb6f8db24', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-18 14:12:15'),
 ('040a8834c8a389c73027758383', '{\"api_id\":\"2\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-09 21:12:34'),
+('0469fc72ec384bfcb3eaf67a6c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 02:03:05'),
+('04aadde9d094ce2c9b704d4e28', '{\"user_id\":\"1\",\"user_token\":\"Lkynassot8ryPD7zJ8if9Q9RPQZLEtdK\"}', '2023-02-15 13:28:49'),
+('053545a20004260f3ac4d70eba', '{\"user_id\":\"1\",\"user_token\":\"4E7WZ5Jbr5lxeHs9LzbIGppPIY6EvwwN\"}', '2023-01-16 11:11:38'),
+('05c7a752285d6a4dc3540c53a9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-01 16:49:06'),
 ('06365e998b8495456b45327ea0', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"jJzQh6H9nw7xoyizWH7ZUyRi0U2ZPbqc\"}', '2023-01-03 12:06:04'),
+('06877dd897cc68c0c610247103', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('069dbe4a23446baf4a2a38397c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:52:54'),
+('07864d53519559e32d126a54a6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
 ('08255fcbfa0d729648c3ba245d', '{\"api_id\":\"2\"}', '2023-01-09 20:43:17'),
+('0832e4e301e9bf4d13d070c909', 'false', '2023-02-20 06:49:31'),
+('0871c20103c4bf7159d2039bbf', 'false', '2023-01-18 12:07:50'),
+('0885fba3355155da71a0a9efd2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:52:53'),
+('094496b3f5b9365f56424ba533', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:20:31'),
+('09d4ebbab160560c825b2b93f5', 'false', '2023-02-16 08:51:45'),
+('09fd609f10c5655b5b90075880', '{\"api_id\":\"2\"}', '2023-01-13 09:20:03'),
+('0ab3a10644c8b901604f99cff8', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:49:48'),
+('0ab4f9eb47a8a8233efc5755f9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('0b39e228c03f2879cb2f426355', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 15:17:30'),
+('0b3a5546e3d2e56c3b93401fc3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('0b4877e358f48702c6c2a4f040', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-02 13:23:48'),
+('0c045932a92f0ecfebc51e781a', '{\"user_id\":\"1\",\"user_token\":\"V6cBH75AuAkx5JrmtFU0qoVIAOmiOVl1\"}', '2023-01-24 10:36:03'),
+('0cc7ae7badd899fa89dfcf7e7a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 12:06:15'),
+('0cf420a09600a65059066e8452', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('0d1ac424946d91578fbb791cf1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('0d642629fb1f469b88c10f5f03', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('0d9ac7ab9fa0e473b9542d9a0b', 'false', '2023-03-22 07:00:01'),
+('0eaa3d88ac212fae3ed1352e07', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('0f1a611c281bee8534fe2ff205', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:14:52'),
+('10883458d50f01456fa154192f', '{\"user_id\":\"1\",\"user_token\":\"mHgYpsgPWhiwvQ96GWZTpNV5hAKkVhAr\"}', '2023-02-15 13:29:28'),
+('112be1ec0daf5a5ea45af35c38', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-21 13:42:53'),
 ('124bbaf4308340eae056d7c98d', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"hn8jEpIfYm7X1KQamSDceRsBNimFbZ4M\",\"order_id\":29,\"install\":\"7Q9EKCLvqx\"}', '2022-12-30 12:13:31'),
+('12b963a6b862112726dd008c6a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 08:00:13'),
+('132863a02d9ee9dc512cb166c6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('1386658493f3cd91f60c8e90f8', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('1434e871cc6da79154efaf7f73', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:53:23'),
+('14484cb0b1a18808883eece78f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:56'),
+('1497a45029eb58b2d4043745fd', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('15407c85b43b830616b8fd75b0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 11:32:15'),
+('158375c82209cc9de28dd22e5b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-21 13:41:27'),
+('15b06678ab6e1f50790ee3e238', '{\"api_id\":\"2\"}', '2023-01-13 09:16:02'),
+('167a9064f6c46a5df654534b80', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('180af208ae6168881aad754325', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:54:00'),
+('18843244ee0a1d6f6ce3117db4', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:56:04'),
+('18bc54f5280532e25561e8fbce', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:10'),
+('1901219b3e9755fd954bed0ddc', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('19e00260dd9e3fe02782241439', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:54:17'),
 ('1b2b83e3c1cd5e1792ac0a28da', '{\"api_id\":\"2\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-09 21:12:21'),
+('1b477d950567ae6c3551afaba7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"order_id\":214,\"d_blog_module_debug\":0,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-16 13:00:43'),
+('1b4f42d6196322ad0f6818a3d6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('1bb36a99c8a58fefae821f8d46', '{\"user_id\":\"1\",\"user_token\":\"QxYYoqEgK0pg5oBAf4uMwDxs5vavOPn3\"}', '2023-02-22 07:31:48'),
+('1cdac2151c94ed204a76957b8f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('1dd2d1458b6b0c904495a4143c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:33:52'),
+('1dd7f3c0f3b3e8381b66cf2b58', '{\"api_id\":\"2\"}', '2023-01-13 09:22:18'),
+('1df7dcafecc13de409e4498c25', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-10 05:28:30'),
+('1df841f9d8f26ac46288e397eb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:53:37'),
+('1e06905d71e0578af790a7cf0a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 17:53:46'),
+('1e5557f5fbfd1b5dcbf3a5cb7f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('1e8db15c94f0351b5a0c3930a6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-21 05:10:43'),
+('1ee5f9d77c8ad6c1a52fb2d5a5', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-01-13 09:31:09'),
+('1f67e97a50c66f9fef18f8a449', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('1f8dc393084a2daabd9db79245', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('1f963ee19734a9c5fc0774d5c2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('2092b275449cd13d77d41fe6a7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 17:11:08'),
+('212fc3438f684e5ae6de25e4be', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:46'),
+('2158caaf52ca4590de6b3d2f49', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 16:52:02'),
+('215f1b0c580a5dc2c6bbd67ba7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('21c7728e5d31d23a88727cd968', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('220a2c51741ec2556a40e53b8e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 07:46:51'),
+('22396cb53abe31e571912afcf3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 10:49:20'),
 ('226dc5387dad8b0843c6747007', '{\"api_id\":\"2\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-09 21:12:16'),
+('2336ff1d4b822e2d51feaf8b16', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:02'),
+('23a8bb0876da7ffb8bf5bba370', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('256221c0baaf3a63ba0bf8cd9d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0,\"order_id\":224,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-18 12:49:11'),
+('25f23e6cb26c01800743f6baa0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:48:40'),
+('26cf7b38d8a43545575f2aa27e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:14:56'),
+('27fc3320cd9a3a150128065ba4', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('284d9c202fdf9f8d6de7291e5e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 10:54:07'),
+('286fa9bd7133106edd9f384766', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:46'),
+('28cdee90c1ddc99fecb7dbcf87', '{\"api_id\":\"2\"}', '2023-01-13 09:19:03'),
 ('291a6dcd6e8934ce9fd3ca089e', '{\"api_id\":\"2\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-09 21:12:11'),
+('2a34f3db4e3053518da559f808', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('2ad191405a87e1984f73e85cf0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('2b63d36c8be9a34a6f8da1afeb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('2c077f1ed3854f130e4b2b6b0f', 'false', '2023-02-20 06:49:26'),
 ('2cc91c6c5fbcf7f3ff190ac8d1', '{\"api_id\":\"2\"}', '2023-01-09 20:42:22'),
+('2cedf2677c01878b85e0164fdc', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:53:19'),
+('2d2667e2a204d148c157d9c7da', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:48:15'),
+('2d57cb26555d5026fb1ecbbe10', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-03 09:36:29'),
+('2ef1eda2529fb4c1cc4d5e9e3e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:53:23'),
+('2fb6fe60c8894d671420bf8501', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:53:51'),
+('300e5a9b6e31e58058fdf1e4cd', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('313e9375f70d8e2a2a2f7df411', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 14:29:45'),
+('314d6248a81d9844f0c7bc7568', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('3152b8f1b68140cacffc320a81', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('31bd84b353a2611982895511eb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"order_id\":223}', '2023-01-17 14:24:08'),
+('31dbdaf3c1732ccfeefabb1168', '{\"api_id\":\"2\"}', '2023-01-13 09:16:12'),
+('32edf681692bc46f47be689fb1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-08 13:09:08'),
+('336574b0a65ca97c4ba2f5d85a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-06 23:15:24'),
+('3371ef9c96da52a77277cbfd18', 'false', '2023-02-15 13:28:41'),
+('3418254d9a2904d492db6e07ba', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('3422bcf479ada2a754e2e6b69b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('3447ff8116c014d6df027edb65', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 14:29:41'),
+('345111a1443bcbb46e5b0dd6a0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('3546f78cb9d3ed9101fdc1ec02', 'false', '2023-02-22 07:31:53'),
+('35573aeef355b1cd6f4f45dd0f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('35cf5da968f36f96ebd598727f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('361e300f71b20b439408ccfd5a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('36224b5c829993fcba17e99a13', 'false', '2023-02-15 13:27:02'),
+('36c4107b75ffb9066b8267a1fe', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 10:50:09'),
+('3706540ea51f1c03cf3c130f72', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:33'),
+('3761c87569f3310d4a3b7c01f6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-02-09 12:14:41'),
 ('382cdce20345f34556e2812a94', '{\"api_id\":\"2\"}', '2023-01-09 21:07:05'),
 ('385ecb06cdec9a1d2236ecdce7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"order_id\":131,\"user_id\":\"1\",\"user_token\":\"bbpD7vwhA4LHVYoCfXp52j7FMJEE78Ip\",\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u041e\\u043f\\u043b\\u0430\\u0442\\u0430 \\u043f\\u0440\\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0435\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-09 10:17:12'),
+('399a51b22762481d64146e5d77', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('39b522decc8235a63bd5cda0f7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"order_id\":229,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-17 12:41:09'),
+('3a039a36ee07718b352d591dc1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('3a8c9d7b3c1752cbeecae2d677', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
 ('3ab40108bd1d30a0f703ccb8e7', '{\"api_id\":\"2\"}', '2023-01-09 20:25:44'),
+('3abe574cc81c60694fc24de4c5', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-09 08:59:25'),
+('3ad273a29e4146ae1247af0d4a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('3b4fb8a17dbb985ba9831558cd', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
 ('3b5600bcf4322f2013be72b468', '{\"api_id\":\"2\"}', '2023-01-09 21:07:06'),
+('3b82a6e7054ed38241910a7c9d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('3c43c56b1bcfd5cf5522945177', '{\"user_id\":\"1\",\"user_token\":\"0KmFHV7JN5D5HsfjKiR18qRMfqD4ITix\",\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-01-24 11:44:41'),
+('3cf5a69025ff6f6d887ea7e2d5', '{\"user_id\":\"1\",\"user_token\":\"pqpaF4lYpVULgAL9dVjr7KtnPNEQrABy\"}', '2023-01-18 12:07:55'),
+('3d071ec60e8027c3de10af1da1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('3d0a0c46a09f3d64603a63de40', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('3e7d9475ba947425f88d43c447', 'false', '2023-02-15 13:28:29'),
+('3e9b096d38d1e2354ac5953977', 'false', '2023-01-16 14:36:14'),
 ('3eb0082911c6e1250fe9d06b25', '{\"api_id\":\"2\"}', '2023-01-09 20:26:22'),
+('3ed36ab8a1c9947fc7ae9b7683', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('3f57aad55032cda8097a0dc2fe', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('3fbb4fe8579df5f0ce3560c33e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-12 22:04:32'),
+('40a1647afc8e6303e652725dd5', '{\"user_id\":\"1\",\"user_token\":\"jRt2Jn3Zc2nS13m7NBGK2B5c63sbBXya\"}', '2023-03-14 19:59:54'),
+('40f2b4ece466250130357396f7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-10 05:28:56'),
+('41194798a648b91d4663ae6df1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 21:15:23'),
+('411edb22de490452a2f5da1f20', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('41ba8d38a12c332b3289525580', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 16:54:04'),
 ('41db407c7ec895bc7b1477e0c2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"Zosr8viwsWBJJhlPZY5WBaam2KFFzm4u\"}', '2023-01-06 22:14:16'),
+('42c095be21cbeadf258e901828', '{\"user_id\":\"1\",\"user_token\":\"L2WIMCSdobHuTDLIbcOh0RBy5OK3PUI9\",\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0,\"order_id\":196,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-13 13:19:35'),
+('42d0925820764bf5298d103a7a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"ychPWQbbmenkKh8w3Z99Kni0O2LdSa4E\",\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"},\"order_id\":227}', '2023-01-17 09:31:24'),
+('4325ed8fe63d0ca05c50fc0df7', 'false', '2023-01-13 09:03:21'),
+('433cfb690f937856e54429b884', 'false', '2023-02-15 13:28:49'),
+('43d729172525134c6aa3188552', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('440063460725293885c341bd13', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('45873007ef92a05f9ed2e3ed4a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:53:53'),
+('45ea08b3e2ada321535d7ee5c7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:46'),
+('46c715f033fc9542365265fb4e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:00'),
+('47135f590b824e306a20a7b4e2', '{\"user_id\":\"1\",\"user_token\":\"jcRhWjHntoYkyJSfFezUkEv5WNle7g7n\"}', '2023-03-17 08:30:53'),
+('47f85de4331f11af128668c897', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:31:32'),
+('483402040a80b970eab3986f8b', '{\"api_id\":\"2\"}', '2023-01-13 09:22:13'),
+('485af4c4452d2e5b3e0cfced4c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:53:23'),
+('485b47691e4b19f43509f44819', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 19:25:19'),
+('48f5e03c6e0e8d31ab4d2fa9c1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 19:01:09'),
+('4a3faa8ccd176ded0dc2c28538', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:53:44'),
+('4aeebadb2599576127b3ed51be', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:14:47'),
+('4bc66fc1234871c3d1481b28be', 'false', '2023-02-22 13:41:06'),
+('4bca40afb60251fd505eb028f3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('4bfc06de885582f5933374877c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:20:10'),
+('4c53df1848f80fc89f5668a7f1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-09 12:43:01'),
+('4cc698c9f13a72468ebc36ecae', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('4d601ebe6ef8fe57cdd507b1f4', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 19:25:18'),
+('4d708548cefae1a3e0a3266fec', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('4d9b3a28b7a41ba82c7c730aa9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:34:03'),
+('4dbcef254da78ef0c3d6f83177', 'false', '2023-01-17 08:46:46'),
+('4e4467cfd3ebc0e6b86443192a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:46'),
+('4e82fc43ac6042f60598a9f24f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('4e8607d8113ea7bbcf14f3a610', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:55:05'),
+('4ee07c23c74452545e9c739396', 'false', '2023-01-16 14:36:19'),
+('4f0b0b5f9345efa9044e70aa56', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 08:00:21'),
+('501ea121ab458f32420a08a3f9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 15:17:30'),
+('50c2306716065fdae05ddb450f', 'false', '2023-01-24 10:36:46'),
+('51c4f4948226ced08b94081bbf', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:14'),
+('521c20c8a9576be6dd98f81cf6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('52ca96521e19d60c3ddedf276f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('53655724cfe4fbbf3c28c1783e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('53d5221234d5ab9c5eb1088813', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-08 06:45:04'),
+('54afdbe240e5cb428106edf792', 'false', '2023-01-16 11:11:33'),
+('55762306c32df51907691d0b55', '{\"api_id\":\"2\"}', '2023-01-13 09:20:22'),
+('56291b151794d8a6deb18e7868', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:51'),
+('563749214aa4bbd19727b6c9cc', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 19:01:04'),
 ('564a9c65ee6a3da9f28a6f41d0', '{\"api_id\":\"2\"}', '2023-01-05 21:40:02'),
+('565dcd8325820e37f252376847', '{\"user_id\":\"1\",\"user_token\":\"PBbGLiKway5TZFlQzVCiuiHZYgHbjg9z\"}', '2023-02-20 06:59:25'),
+('56e21f84e393cd7383af0a5b43', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('572f36bddfdb70e666b6488f85', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('5842e73511b16c7eab438f0fc4', '{\"user_id\":\"1\",\"user_token\":\"dySnTiaN8sw5UM1qDTEqHD4zWbAQhWq3\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:19:47'),
+('5867a0de7efd8a043d08a9266f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('5873d18e2213661572234c95dc', 'false', '2023-03-22 06:59:51'),
+('594a2988ec4c95e0af292251b4', '{\"user_id\":\"1\",\"user_token\":\"F0FhTn39T1Mu97eFuL7bz5v4Emdbi0Hv\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-14 07:22:32'),
 ('5add1d31c508edb77992b73ee0', '{\"api_id\":\"2\"}', '2023-01-09 21:10:11'),
+('5cc003fc8c56ab7de4dcd5a97c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('5d0efa480813865bcff5cc99b9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:20:19'),
+('5d2239a57aefde79352af3d81c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:40'),
+('5fbc64407988b773be2e4e2e64', '{\"user_id\":\"1\",\"user_token\":\"7UElDBcnx9cPoBDSxS9kaTGG8DTfP3F9\"}', '2023-02-15 13:28:29'),
+('610da323e10f57aadfb988aff6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
 ('61d48411639e92336176d3d2bd', '{\"api_id\":\"2\"}', '2023-01-09 21:01:56'),
+('61f2e587fb147ef9ea3012d2ab', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('620dd73d6deeba20b41f845378', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-08 11:43:07'),
 ('620e72d02a270143aaaefc697a', '{\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-03 06:24:31'),
+('621f739401180313d5448272b0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:20:15'),
+('634ed326628f9cece3e4bcf858', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('642a72f1c471bd1baa4d73c1c6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 19:25:45'),
+('6491c49b3602cd4ef635d767bb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('64e9be5b13d2f54e93eecc3616', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 12:06:36'),
+('654ad9306a1fb646e333d27dc0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
 ('6574e6df4d409cb1c0a9804105', '{\"api_id\":\"2\"}', '2023-01-09 21:09:48'),
+('65dd65b2eeac530ed995168b12', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-25 11:12:17'),
+('664280940d48d61e2d177c664a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('66a8c8897cc686407497b2bb71', '{\"user_id\":\"1\",\"user_token\":\"VrpfCXiV0w3kbaZq5NUwVp8ImU5h1ZVO\"}', '2023-02-15 13:28:24'),
+('6834a180bd8d07addc38e5e6d7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:27'),
+('68ea42cc3ba30cf80ebb077ee7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('68fb63b5bdab7985d7ba8c19ee', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('690507b2cc2b0a5afad2548796', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"order_id\":231}', '2023-01-18 12:29:44'),
+('692904dc2ed9f421c5c4b11069', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('69593a3e0dc8a38ec86e3fd366', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-10 05:28:37'),
 ('69943b7094cfa6d4f4ee35614c', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_token\":\"4pBR2ySOlkrpOjhoVdjkDp7zqBHRueHF\"}', '2017-11-11 13:05:28'),
+('69b4d79f921a217d949949e313', 'false', '2023-03-22 07:00:06'),
+('6a74e48130e8b2cd1b9b2a85cb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-24 10:36:41'),
+('6ad0a3bb18335e7e94ca9ec253', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('6af02d518662c3bb2eaa9e527f', '{\"api_id\":\"2\"}', '2023-01-13 09:19:59'),
+('6b860c93a1e924873acef242af', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-20 00:09:45'),
+('6c51961353436d8f59406faaff', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"order_id\":226}', '2023-01-17 08:39:14'),
+('6c58f21ac4070a311840f77ec0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-14 19:59:43'),
+('6d1cfba1dd8ce5e313efc4d3c0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:54:10'),
 ('6d3c2edeb8a118a573c78e92cc', '{\"user_id\":\"1\",\"user_token\":\"6S2kOv7lkaMB58iBTBFgN8ZOj1768IUD\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2023-01-02 21:43:18'),
+('6dc22a044eff2acde5754700ff', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('6de073c0e28daa1b164445bb68', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('6f75b9c8cdcebb7bd24bb4f504', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('70362ed1f19fe3a58b6ac553de', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('705aa0850b502b6f2f45eb4818', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 10:54:07'),
+('7191ef8fd170769484045626f5', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:30'),
+('71f4fc135f88c84bc5b7f55a70', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:33:59'),
+('72ad448d8fd1cde242af3df607', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:20:08'),
+('72cd99bb8222f8c69a760ad89d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:54:12'),
+('72ec34304c5e591da4284305e2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('7340ef6e1e42e4c655735ea022', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 15:19:51'),
+('736fecfd94d8ecadf8b95f5096', 'false', '2023-03-22 07:00:15'),
 ('7514f4c5f49f5b1879969880da', '{\"api_id\":\"2\"}', '2023-01-09 21:12:34'),
+('7616631415484df78784821152', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('76286ad438f75351da7f81bba1', 'false', '2023-03-22 07:00:21'),
+('76fa4598a8fc688d54813d731b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('77ca6516c27c76c00e4b47f5f8', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:52:53'),
+('77f4d62a0014f5c0b138f71943', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 16:41:20'),
+('78df09dc55f683de824f04c7ec', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('792ea1c228cb49da772ea72745', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-10 05:28:30'),
 ('7998fcd17f0449d48c309fab96', '{\"api_id\":\"2\"}', '2023-01-09 10:17:12'),
+('79d8f0e22b35bdae6d45219ca2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:20:27'),
+('79f3f9bb92c0efba9e2530db1a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('7a448e139c6fce5c90761e92bd', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-12 22:03:52'),
+('7b34404c9c1ed9da5e66e6b4fa', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
 ('7b5b08a122df190def74a49ff6', '{\"api_id\":\"2\"}', '2023-01-09 20:41:30'),
+('7b8abe135a8fed3dfb904b9cf7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:46:38'),
+('7bcf384eb973a1a9806062dcd8', '{\"user_id\":\"1\",\"user_token\":\"zdK05M1AZSLSUDw6i2tmt2Kk3PnVV9H2\",\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-01-13 09:25:48'),
+('7c74f7d3a7a4871cda40316e21', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('7c9f30084030e880df312d0b72', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('7d36e017ca88c596aab8d9a98a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-21 13:54:10'),
+('7d49dbd45e94bf229130f835a1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('7d657cc98d9c23de0ef2866a00', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('7df7e646dfc07e652045d81671', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:20:23'),
+('7e1df8267f7bf390b8338fb052', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:49:18'),
+('7e67d72fa2b3285ab45382bde1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:48:19'),
+('7ea7e8bd4b1ea95f7676b8948d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:53:23'),
+('7ec43f1d446739f578e23d9173', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-25 11:12:17'),
+('8119540eef6b2a925df2cf7c9e', '{\"user_id\":\"1\",\"user_token\":\"GfrJ2KuWtoTozKJq9bTpINMgkuPYPugo\"}', '2023-02-22 07:32:14'),
+('81d5022cc2fad5292d0444c014', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('82ee33be4540742fb17a9aef1a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('83a2c50f2dab5f77403c82a54c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 12:20:26'),
+('84975dbfa6e9990f25d02fff38', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:38'),
+('8577a4116e2f58f64aa8dcdef8', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-01-12 22:08:03'),
+('85b14431dd3e00a46ff6b20751', 'false', '2023-03-22 06:59:57'),
+('85b7a61829044ffcc912de232e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-22 12:40:17'),
+('864fc1b6e1d6efb6ff2a48d519', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-01 16:49:06'),
+('8760afc6a1726d60553e2ebf17', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('879a48be8db9b0f51dfc75af38', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('886c063808d5635544bbcdf38f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:51'),
+('886ff6b0ef48daf2863ac4b9bf', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('8886e89724afb725187b0f9601', 'false', '2023-02-05 16:43:25'),
+('8a04f9a89710811054e4e4c82c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:44:30'),
+('8bae6802902c0984c09bec14f2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('8bf5332ffca7c832dd5c64c9a7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:30:29'),
+('8cc097872c7d123f406e597989', 'false', '2023-03-14 19:59:49'),
+('8e19ace5435c834292f02f1708', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-20 00:09:40'),
+('8e1be1dcd4df43eaadc415594c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:52:53'),
+('8e69bfb64906ac689e2cce6856', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('8e941eb10ac514e94c8523c06e', 'false', '2023-02-22 13:41:13'),
+('8ee3a96f43363161bf4b4d8740', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('8f60e3bd8c9231a04277600b3f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-21 05:10:42'),
 ('8fc7435ab13a428840b2711f88', '{\"api_id\":\"2\"}', '2023-01-09 21:09:44'),
+('9012760fe17d0fd29b693f4f02', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 15:19:45'),
+('9054f50c2ff6120fdd5e1427c4', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('90556cf4cbd50599e1318cb114', 'false', '2023-02-16 08:51:39'),
+('90cd9d3e28a49a5a2bec9151dd', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('9120630c8be63e389b46a39e4e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('91b2e6c2ec4bb57171f5da846a', 'false', '2023-03-17 08:30:53'),
 ('9231d8e543e43c2cddd807b9f6', '{\"api_id\":\"2\"}', '2023-01-09 21:01:54'),
+('92528aae744aabff1926bc802b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 10:54:04'),
+('92f6699736ea399b4c0aeaac2d', 'false', '2023-03-17 08:30:41'),
+('932655863456fbde7f2fab2c8d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 08:01:11'),
+('93eb4bed86a0b3956621df9fb3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:52'),
+('942e1fb9a152fc622697c5ccc1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('9569e7e60ea815000ae8aacafd', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 14:29:42'),
+('956d4ef7d0747f17cdd5c739b9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 11:32:13'),
+('956dc4154b4d93d0293721ce2b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
 ('957809fc785582986f796c2a83', '{\"language\":\"en-gb\",\"currency\":\"RUB\"}', '2017-11-11 13:05:32'),
+('95b5632f844dc719352a0d8ca3', '{\"api_id\":\"2\"}', '2023-01-13 09:25:46'),
+('971e1a5d44ed36a83f8c408360', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:48:17');
+INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
+('9799eb5daba497bac3955a45a6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"},\"order_id\":205}', '2023-01-13 14:30:11'),
+('98c782eb154c8535660674bd73', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('990e6a4c600c282ff0d2fdd798', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 19:25:46'),
+('9953547c7e15ed4f9ae6750d3b', 'false', '2023-02-22 07:31:48'),
+('99af2077efc023480b2080c84a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('9b585cff13b259d72746444bab', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-14 06:54:04'),
+('9cd14c2d996658f3ce40f811d7', 'false', '2023-01-16 11:11:38'),
+('9d483a086cd01aaded5154838d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-13 12:46:33'),
+('9e28d223e7386487cbcedef02c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('9f232856d365d18f40b3a880b7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('a066d76e6ca65a218195aa9448', '{\"user_id\":\"1\",\"user_token\":\"DP0GkTw1WJ18HYDmhGWQa3Jfb7BSYhph\"}', '2023-02-16 08:51:45'),
+('a0f692f9f863aa6be44294aabc', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('a120c8706fef51a793a56271d6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"},\"order_id\":209}', '2023-01-18 12:32:53'),
 ('a1957d8182091811895c0c779e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0,\"user_id\":\"1\",\"user_token\":\"QfkUyoE9sClQ4sFE3ArFgwZOiuq1tUsx\",\"order_id\":30}', '2023-01-05 22:05:18'),
+('a243835099e2f80e6cd506b59b', 'false', '2023-03-22 06:59:47'),
+('a2c348b4931d3d5b65a481c120', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:53:48'),
+('a32033785b55787e2193ad1016', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-10 06:34:32'),
+('a41275809aae8ee1f96a71c103', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-22 12:40:14'),
+('a4484f8c0365341835e097600a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"},\"order_id\":230}', '2023-01-18 12:52:55'),
+('a4ef85254dccc6513d0ce23ccb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 12:04:59'),
+('a5576c8aefbcaae8a50b17f1d8', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:51'),
+('a58546ad99bffbc2eaa27dc8aa', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('a6589afea5ef47b47575bd9c22', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('a69560efbb1c768deb8afee85e', '{\"api_id\":\"2\"}', '2023-01-13 09:18:56'),
+('a7aeab4bd9fbd9d13275bd00c1', '{\"user_id\":\"1\",\"user_token\":\"k0yMolbM1QMlKHrwTTr0j56BnbonbObr\",\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-22 13:24:14'),
+('a8769c963c785d1892797662b9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('a89ea5a7135f4d68c38430d252', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 11:20:13'),
+('a8ba139192c5d31a63234b1b4b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('ac5a33ed3340ad023d54b357aa', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('ad9967b54779bebaf661f9a4f5', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:45'),
+('add8039fc17b38b7f32792b95a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 16:26:21'),
+('ae4b788e505e0a9acf9159dcf3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('ae96f966c65ffcd9ceabec3529', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
 ('aed62d1aab9dc9777c09501a90', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"RZpUmRLf41PBF9ZWH0hyh66KBlD65DGj\",\"d_blog_module_debug\":0,\"order_id\":45,\"shipping_methods\":{\"flat\":{\"title\":\"\\u0424\\u0438\\u043a\\u0441\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u0430\\u044f \\u0441\\u0442\\u043e\\u0438\\u043c\\u043e\\u0441\\u0442\\u044c \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u0414\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430 \\u0441 \\u0444\\u0438\\u043a\\u0441\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u0441\\u0442\\u043e\\u0438\\u043c\\u043e\\u0441\\u0442\\u044c\\u044e \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437 \\u0438\\u0437 \\u043c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\\u0430\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u041e\\u043f\\u043b\\u0430\\u0442\\u0430 \\u043f\\u0440\\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0435\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-06 07:36:19'),
+('afa43bb960f22c6ba500ceeec2', '{\"user_id\":\"1\",\"user_token\":\"PNPYn5Rd29K0lSyWRPUWnCfrw0XBr0kG\"}', '2023-02-16 08:52:26'),
+('b1b450befa854c6afa62cca6b0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
 ('b2191bec57cfbee29ce1c0a03f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"drwPcc8U8lx2fZVmusTORhd1twB3l13j\",\"d_blog_module_debug\":0,\"order_id\":163,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u041e\\u043f\\u043b\\u0430\\u0442\\u0430 \\u043f\\u0440\\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0435\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-09 21:38:27'),
+('b2a95a12c7f85d07ec7acbf0fb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('b2f0b535ebef5515e85d314492', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-21 13:42:17'),
+('b34157664b9c5816f80c9ff024', 'false', '2023-03-14 19:59:54'),
+('b39523a6d9c57f7bcf2d61ad0d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('b3aed6ca4fe00d90aa4be742c7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('b46c012d1f36164e4b48d7f82f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 10:55:13'),
+('b4aaf422aea0b6fe6604647575', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
 ('b4b660c755cbb2ba12d82d10cb', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"DyQSrax7NBtZ8clkMxnLGj8Jprb8DucW\",\"install\":\"ozo9DxDMRk\",\"d_blog_module_debug\":0}', '2022-12-28 22:38:34'),
+('b4e14191f41ec7ca80859b2122', '{\"api_id\":\"2\"}', '2023-01-13 09:18:59'),
+('b5f21b17c3fcfb0e3291035cf0', '{\"api_id\":\"2\"}', '2023-01-13 09:25:48'),
+('b61f678eb9305c6e65735ca2d5', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 16:54:02'),
+('b63f375d9d244491e3a4527e46', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('b6f94c39e03fd9ce0c62219f64', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('b72a0dab7df7f3b18d92150e68', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:25'),
+('b7a0e00c8e70f37b61e6609d96', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-02-10 09:34:04'),
+('b933160116f76eda1aab529856', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:42'),
+('ba0dabcb835ef39b94d0fdb871', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 10:54:02'),
+('ba3443f6e4bf2b43cdf658c38a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('ba6f3e891f0fa69f168261a711', 'false', '2023-03-17 08:30:48'),
+('baa00e1ff10f2478c93d06d523', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('bb435bb21cf8d23e5ccce6bcc9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('bc46d40d9b3dbcd8eba91a488f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"qKpKFHmI8r07E7rg4VVANyecPh97VdUI\"}', '2023-01-17 13:57:47'),
+('bcb360188ec5e3b0bc18ee055c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('bcedb3abe34ae3d4f4d613ac0f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('bdbba8c006e070a9e0765039dd', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:53:29'),
+('bfd46a4179de3c514a961394a3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('c043f10de1485850f19a38aa05', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 13:57:52'),
+('c105c9e3db9c87843807e11960', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:44:25'),
+('c11f17bc08aa41e2a610271dd2', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('c14753d8cdaa06b89c03e760b8', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('c2a2f04dda3f2b0651db57c0a6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0,\"order_id\":208,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"}}', '2023-01-13 14:33:03'),
+('c319eab6d80b997697594a6d1d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('c34fdcce81ec8299967c45f0fe', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('c353fd3f4f164029978741ed31', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:16'),
+('c46766c23fbdd8fea3a49f28b0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('c46b52787b35a3aee919ce81c3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('c4767e9506e4f990974167c8ec', 'false', '2023-02-22 07:31:40'),
 ('c47b3075afd15d9e3a4e453ba1', '{\"api_id\":\"2\"}', '2023-01-09 20:43:09'),
+('c47fdd56f6eb86e86f07c42512', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 09:13:56'),
+('c54d7f7a54b64d6a07a292defe', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 12:20:30'),
+('c582058f325d1fb0b03a2f1d6d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('c715df3084fdf4e7b6ede5cb98', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:04'),
+('c71a7ff550a190e956bdc6eaff', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:55'),
+('c7579f1c9832b240a9ef506b0e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:33:57'),
+('c9e40b09ed093d9c443684393a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('ca29e62b7b79431afeb9aa9315', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-31 12:42:53'),
+('cb0e679c9bdba072d01439dd9b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('cb2575364498b25d01e55ac1b3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('cb58c6dc1ab546797336ac8ed5', '{\"user_id\":\"1\",\"user_token\":\"35UCsYpywNn6YyFJPifq7u0XX62faDso\"}', '2023-03-22 06:59:57'),
+('cbf8bcee3c6a9b16f9f1ce2f75', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:54:13'),
 ('ccca07aad2a6822229cb41222c', '{\"api_id\":\"2\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-09 21:12:24'),
+('cccdd1a27bad6daba812167d9b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('ccea31f598f02a9c3c34f48a08', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 09:30:01'),
+('ccebf33f4f2b3b5f06dbf03261', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
 ('cd880bd3acda01c5a47a5b62b2', '{\"api_id\":\"2\"}', '2023-01-09 21:10:30'),
+('ce293973e8c26516be128a95af', '{\"user_id\":\"1\",\"user_token\":\"e3cFmP1MeJqhZsUbF4gatjEK4vK5Igt1\"}', '2023-03-22 07:00:19'),
+('ce30701ebad9e2a18aa2f2f04b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-14 13:22:16'),
+('ce331d6ab722c92d6ef68cf634', '{\"api_id\":\"2\"}', '2023-01-13 09:20:58'),
+('cf0713e35b65643cc8e8726799', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-09 12:43:01'),
+('cf383b357ffa37379a5c88765f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-18 08:15:16'),
+('cf3e1698f01babf13fac259dff', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('cf9108c7ee116c730e5f84b9c9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:46:40'),
+('d05922d1ee2a51295acb849bcf', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('d153cb546f5eb466af778e2a76', '{\"user_id\":\"1\",\"user_token\":\"1Nj5w1LeP3a8DM4HLjitIVWmcbSVYm4g\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-17 08:33:02'),
+('d2cd6a714a6fca73a354a3a25b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:54'),
+('d404fe864accc071ab52dc31b0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:16'),
+('d40a440fa3ff133666ce0cc97d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"5ckrqROpyIkniRWiBLpVLQeXXjPLUfvJ\"}', '2023-01-17 09:33:23'),
+('d4557108eb8415b756734571cf', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:51'),
+('d4949f71ec23d3aaf96d06b4ab', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:54'),
+('d6017e6063068c76809aefb674', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('d646047fad315c63bc5d0171cc', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-04 20:18:30'),
+('d6bc48f88fa7514d045e0c528a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('d6ef0997f92aa52d2c9f56a15e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('d733458c7d8f6c2bf4e4994944', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-14 13:40:48'),
 ('d79dfe521987adeef91e85a0be', '{\"api_id\":\"2\"}', '2023-01-09 20:42:25'),
+('d8dc2815e8cf7ee93e962e2d2d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:53'),
+('d9182b8f143a212e2cbc536608', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('d999a963ab88f2b573cbfad88d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:15:58'),
+('d9c7f0784f75936bf5788c886f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-03-19 10:53:23'),
+('da6217e31e6e491a3fcfd91728', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:54:06'),
+('dab4676bdfb57f8b67c36baf27', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('dae8bffd2aff1edbf80b1f46ee', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 08:00:25'),
+('dc5e3f05a12ff02ab74afd2894', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('dcbc1a8492e2393990a25daa5f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-30 04:00:19'),
+('dcbcf967112b9e128eb9e98e57', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-21 03:14:05'),
+('dd714541b40609b3f378385592', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-21 03:14:05'),
+('de40b616ee468fc78f1a37d762', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:44:27'),
+('deb830362de2cefe8afe0d23e7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:49:38'),
+('df535d16d03f5e7a51cfa0514f', 'false', '2023-01-18 12:07:55'),
+('e040fd0cf1a2ee41b1250658fb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:48:14'),
 ('e07def6ef12bf815735b1c0c1a', '{\"api_id\":\"2\"}', '2023-01-09 21:10:06'),
+('e0ab794cb5873bc0662419405b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:46'),
+('e12e0114044da6addcc071935e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:51:26'),
+('e18ee7b53281fe7e86d65f833e', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 12:05:25'),
+('e1ba0bbac2be008e6d9f2357b8', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-25 22:11:36'),
+('e1c38cbf570390ccd786f7b627', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:46'),
+('e24e58a4666bb7123c15586b93', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-26 10:08:03'),
+('e2b0afbce10104ddb4cd3c8ea6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"},\"order_id\":232}', '2023-01-23 06:58:14'),
+('e2fa523667c526021bc9e96b13', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:51'),
+('e449d9d7704e4f88a616a67dd1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-18 11:11:45'),
+('e4ddf0d61f1cf9e5c2977dc4cc', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('e66a554fefc4f5dafb0ef7aed1', '{\"user_id\":\"1\",\"user_token\":\"pg7Hdou7tMOG246KIOvMlUyO72RANQIH\"}', '2023-03-22 07:00:06'),
+('e70400a5d5cd56f98bfa7af6df', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('e78e92c0eed2e7f2d9c1304f96', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('e80b8c28228b2b26048cab7b19', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:49:28'),
+('e82ad74bd91bebc171ff602fc6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:46:33'),
+('e82d1efad2789a1d77b7dd950a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 06:54:11'),
+('e8661740c018ecaec84d3afa18', '{\"api_id\":\"2\"}', '2023-01-13 09:20:55'),
+('e996acc473c0c5c8426195bcb1', 'false', '2023-02-15 13:28:24'),
+('ea2f18f9d68204183b4b0e10f6', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:52:54'),
+('eacc0c5de37bff858da2311d13', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 08:00:09'),
+('eae08d81c47174ce0fa0ddc36f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-10 07:23:02'),
+('ec6b43b18a612f8082b3c5ec0a', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-09 12:21:48'),
+('ecf1b7bc2b8a299286e39db9eb', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('ed15e2dc63d15af1df0efa718b', '{\"user_id\":\"1\",\"user_token\":\"YygtLbF9GvJcWxncx3xXowTKN6UjCeNB\"}', '2023-01-13 09:03:30'),
+('edfdb4a7549709f710e9d35da1', '{\"user_id\":\"1\",\"user_token\":\"KLentASuc6PLq2nmpL9huwpVotIAyJjC\"}', '2023-03-14 20:37:00'),
 ('ee08efaca42eca15fca1967709', '{\"user_id\":\"1\",\"user_token\":\"IW21IJLOGVjI7pVmbmBNtAgiHmZxy6BL\",\"language\":\"ru-ru\",\"currency\":\"RUB\"}', '2022-12-19 21:31:25'),
+('ee47a3b8ac0eeaa9a4033e6c48', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:42'),
+('ee8c64af62f57d5a5dfb96f13c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":0}', '2023-01-13 01:04:46'),
+('ee9f3d558d2439382ca9db15f5', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 09:28:57'),
+('ef67d6650e047b14fb6b3872b1', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"UO9g9BtVLYN6JOZIleKjsaUunDV6WZKj\"}', '2023-01-17 09:05:47'),
+('efc6613141c4879ee6711f7cf9', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"order_id\":220}', '2023-01-17 06:05:41'),
+('eff38b1e417b4e92627f272617', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 09:05:39'),
+('f025e1852c1356a879201ac237', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('f10c4a58354812a3affa975635', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-02-15 13:27:41'),
+('f1891e91aaf9717ba10e61c799', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('f22c67d04149ea4c4846433fe8', 'false', '2023-03-22 07:00:19'),
+('f23769f1b070b7ad59cc188382', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('f2e9e3679b4cdb89a5335cf662', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:34:01'),
+('f3206ba384265a08cb19405c37', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:04:46'),
+('f341077f5367f36ca568667d4b', 'false', '2023-01-13 09:03:30'),
+('f3bfec016dafa98516274865e7', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:33:47'),
+('f52e6a90680d23ce7cf4f2d340', '{\"user_id\":\"1\",\"user_token\":\"6stsXpgiEf5rCU5dPnwFvJSpRUdZRoFG\"}', '2023-02-22 07:31:53'),
+('f5c94d43faf68c9db3cb7a345b', '{\"user_id\":\"1\",\"user_token\":\"FeYajGQbg2iessL9vflBH44pTfqVlcvD\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 08:41:09'),
 ('f6083b4a704c443f5d46095ea3', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"user_id\":\"1\",\"user_token\":\"yV1YVZTBckobFrJCvGHMiAyrChRMA2UR\",\"d_blog_module_debug\":0,\"shipping_methods\":{\"flat\":{\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"description\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430\",\"comment\":\"\\u0420\\u0430\\u0441\\u0447\\u0435\\u0442 \\u0441\\u0440\\u043e\\u043a\\u0430 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0438 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0437\\u0432\\u043e\\u043d\\u043a\\u0430 \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0430\",\"cost\":\"150\",\"tax_class_id\":\"9\",\"text\":\"150 BYN\"}},\"sort_order\":\"1\",\"error\":false},\"pickup\":{\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"description\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"quote\":{\"pickup\":{\"code\":\"pickup.pickup\",\"title\":\"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\"comment\":\"\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0441\\u0430\\u043c\\u043e\\u0441\\u0442\\u043e\\u044f\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u0437\\u0430\\u0431\\u0440\\u0430\\u0442\\u044c \\u0441\\u0432\\u043e\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443: \\u0443\\u043b.\\u0422\\u0438\\u0442\\u043e\\u0432\\u0430 138\",\"cost\":0,\"tax_class_id\":0,\"text\":\"0 BYN\"}},\"sort_order\":\"2\",\"error\":false}},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"\\u0411\\u0435\\u0437\\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\"},\"order_id\":175}', '2023-01-12 21:50:38'),
+('f6361827a3375c456fa925369f', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-10 05:28:56'),
+('f687229bb180e4fb6b26bf0fb0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-03 09:36:41'),
+('f70e294f5ea9b7f9c1ffd118db', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:20'),
+('f713effe7c20b17c18922c043d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\",\"d_blog_module_debug\":null}', '2023-03-19 10:53:23'),
+('f788345559860dfe8834d25a09', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 01:05:34'),
+('f7b860067f91313b54141d847d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('f7f9f887f216f869e0a3a63290', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
 ('f83eedbc0cf0b7d20769f2a33e', '{\"api_id\":\"2\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-09 21:12:30'),
+('f87f89ad6c103ee1a515977f9b', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:21'),
+('f880b4b4d578b4e9b46b2a6f1d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-14 19:59:37'),
+('f8d19ddbe305858e57b5622faa', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('f92dc557db71423baa1fe59aa5', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-16 14:35:43'),
+('f94c151fba7b7bb902ed69cfa7', '{\"user_id\":\"1\",\"user_token\":\"spS0GDXoHxmzzL2LuG2gXTiEg53VnXce\"}', '2023-01-16 14:36:18'),
+('f98db0fa0f6c172f6bbe47106d', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 14:29:39'),
+('fa244fb83873d3abe07772e7a0', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('fad85ed34a60b7b714df7f3751', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
 ('fb6c3ed0d9d63f6a2bb94038c3', '{\"language\":\"ru-ru\",\"currency\":\"RUB\",\"user_id\":\"1\",\"user_token\":\"b9PrSa64HNYo7yYq2zTheZ7O469xM1Jv\"}', '2017-11-11 12:59:21'),
 ('fbd9b7409fdda23fb3dcec7c0e', '{\"api_id\":\"2\"}', '2023-01-09 20:41:33'),
-('fe1fd2303150092b7380158ab1', '{\"api_id\":\"2\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-09 21:12:27');
+('fc5c105046165e7d12c0d220b2', '{\"api_id\":\"2\"}', '2023-01-13 09:22:14'),
+('fcb43b401006e983d41c4c32f8', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:22'),
+('fd26a09bbe0705e3297ed53122', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-17 13:58:01'),
+('fda32d9b0f0d0a0a6f6d643a27', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-03-19 10:53:23'),
+('fdc7b740640deb7840d63db5ed', 'false', '2023-02-22 07:31:44'),
+('fe1fd2303150092b7380158ab1', '{\"api_id\":\"2\",\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-09 21:12:27'),
+('fe97377944e295d6e1412ea06c', '{\"language\":\"ru-ru\",\"currency\":\"BYN\"}', '2023-01-13 14:29:37');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_setting`
+-- Table structure for table `oc_setting`
 --
 
 CREATE TABLE `oc_setting` (
@@ -5479,15 +6580,24 @@ CREATE TABLE `oc_setting` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_setting`
+-- Dumping data for table `oc_setting`
 --
 
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
 (4, 0, 'voucher', 'total_voucher_sort_order', '8', 0),
 (5, 0, 'voucher', 'total_voucher_status', '1', 0),
-(3694, 0, 'config', 'config_file_max_size', '300000', 0),
-(3695, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\ndocx', 0),
-(3696, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\napplication/vnd.openxmlformats-officedocument.wordprocessingml.document\r\n&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;', 0),
+(4770, 0, 'config', 'config_error_display', '1', 0),
+(4698, 0, 'config', 'config_country_id', '20', 0),
+(4699, 0, 'config', 'config_zone_id', '', 0),
+(4700, 0, 'config', 'config_language', 'ru-ru', 0),
+(4701, 0, 'config', 'config_admin_language', 'ru-ru', 0),
+(4702, 0, 'config', 'config_currency', 'BYN', 0),
+(4703, 0, 'config', 'config_currency_auto', '1', 0),
+(4704, 0, 'config', 'config_length_class_id', '1', 0),
+(4705, 0, 'config', 'config_weight_class_id', '1', 0),
+(4706, 0, 'config', 'config_product_count', '0', 0),
+(4707, 0, 'config', 'config_limit_admin', '20', 0),
+(4708, 0, 'config', 'config_review_status', '1', 0),
 (2909, 0, 'payment_cod', 'payment_cod_sort_order', '5', 0),
 (2908, 0, 'payment_cod', 'payment_cod_status', '1', 0),
 (2907, 0, 'payment_cod', 'payment_cod_geo_zone_id', '0', 0),
@@ -5573,74 +6683,52 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (197, 0, 'report_marketing', 'report_marketing_status', '1', 0),
 (198, 0, 'report_marketing', 'report_marketing_sort_order', '12', 0),
 (383, 0, 'developer', 'developer_theme', '0', 0),
-(3689, 0, 'config', 'config_compression', '0', 0),
-(3690, 0, 'config', 'config_secure', '0', 0),
-(3691, 0, 'config', 'config_password', '1', 0),
-(3692, 0, 'config', 'config_shared', '0', 0),
-(3693, 0, 'config', 'config_encryption', 'hEiLgPirTWBJuHnkPL3oCVaJ8nfA5TwV8dL6c1smbJXQpFZbvyCRbgkskSe7S4Ks6Skwu8xYZMJHiGBcsihkm730JXHn8pfaqBOTHAqUrR65k1DqMxhIj4a51SA2KM3mVEuX74RbkSvYSA40HHeS42oO753iF4L3kf1BFif5IFU7jg1cmNOS37QCJSq7u0eByOpC3bwMGlQeq2ef8RLDcnlY1R2eHeOfutDDn7KdM1llwfMbckbg6vc8U33H6obiD7lgIjbMDqYD0iJOLzhqrQZqqQeRdaGbg7lAf3HJGSvNKduCNW5o3DXKDNfn9t87jEgmBkQTvyLxwbxcDPVo6bRJcyxIoBkzmPozKVR3ForzpwEmW0AjAYvw0vKb89hEkNQtBpObcqM4KaHRe2O9U0BAWXRxX9DgUpwUpjA2n3c0YnDy2fWyNo8ek49fgix5sza2bpQxbT6YazpJ3KuEytf2TOXn37vBRUWesKGrV71oW2nfeHZSjwwxuDW77IuaV2c2ivkqFFRchx5xyGFJOePDMlDUEo1hWxx6vjojhMoPWaYMU4Knd1LB1y5f96vt4WbWsIfO04J2BZeG2AYqmd5czHyp2VLyIsWXe17ohwamkTGG8L03Tabg9YFZr40X56uw4oJDw5lJ0HErznoyctps5jxREjPbV9fG52BLcPdp7yljByp3wzHoy8hPq0EXpN8ckBP6ncuJP9dXAViEfCJjjPjnfffIdQfKgyMJTSFGz9DBSTqRTlmhYw07p3LZ8iHhIjdqHtGCMu9PeqgpjjageuM5h4jHOdV5i8gKvrEfRO1r87JRK7Y8mNYmRrpAHhfgF525D5MafWZ0gDjHMNQBlrvCDGOSaN4qnlQBxq1uDwOEWzDRexVVnWVklRpxeDhP6Qq8zhTVsNYdD8Dw3snql1tntJ6WcmxkJivpHHP8HJGtqHSvIlSC0hWd2zymV7aAUlT0vMYoCek2rIeRU2TOq4i9zgjrhfwE58C7Ds8EgOcVpBm2hzsBjN8td4sQ', 0),
+(4767, 0, 'config', 'config_file_max_size', '300000', 0),
+(4768, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\ndocx', 0),
+(4769, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\napplication/vnd.openxmlformats-officedocument.wordprocessingml.document\r\n&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;', 0),
 (384, 0, 'developer', 'developer_sass', '1', 0),
-(3631, 0, 'config', 'config_admin_language', 'ru-ru', 0),
-(3632, 0, 'config', 'config_currency', 'BYN', 0),
-(3633, 0, 'config', 'config_currency_auto', '1', 0),
-(3634, 0, 'config', 'config_length_class_id', '1', 0),
-(3635, 0, 'config', 'config_weight_class_id', '1', 0),
-(3636, 0, 'config', 'config_product_count', '0', 0),
-(3637, 0, 'config', 'config_limit_admin', '20', 0),
-(3638, 0, 'config', 'config_review_status', '1', 0),
-(3639, 0, 'config', 'config_review_guest', '1', 0),
-(3640, 0, 'config', 'config_voucher_min', '1', 0),
-(3641, 0, 'config', 'config_voucher_max', '1000', 0),
-(3642, 0, 'config', 'config_tax', '0', 0),
-(3643, 0, 'config', 'config_tax_default', 'shipping', 0),
-(3644, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(3645, 0, 'config', 'config_customer_online', '0', 0),
-(3646, 0, 'config', 'config_customer_activity', '0', 0),
-(3647, 0, 'config', 'config_customer_search', '0', 0),
-(3648, 0, 'config', 'config_customer_group_id', '1', 0),
-(3649, 0, 'config', 'config_customer_group_display', '[\"1\",\"2\"]', 1),
-(3650, 0, 'config', 'config_customer_price', '0', 0),
-(3651, 0, 'config', 'config_login_attempts', '5', 0),
-(3652, 0, 'config', 'config_account_id', '3', 0),
-(3653, 0, 'config', 'config_invoice_prefix', 'INV-2022-00', 0),
-(3654, 0, 'config', 'config_order_min', '50', 0),
-(3655, 0, 'config', 'config_cart_weight', '0', 0),
-(3656, 0, 'config', 'config_checkout_guest', '1', 0),
-(3657, 0, 'config', 'config_checkout_id', '5', 0),
-(3658, 0, 'config', 'config_order_status_id', '1', 0),
-(3659, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
-(3660, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
-(3661, 0, 'config', 'config_fraud_status_id', '7', 0),
-(3662, 0, 'config', 'config_api_id', '2', 0),
-(3663, 0, 'config', 'config_stock_display', '0', 0),
-(3664, 0, 'config', 'config_stock_warning', '0', 0),
-(3665, 0, 'config', 'config_stock_checkout', '0', 0),
-(3666, 0, 'config', 'config_affiliate_group_id', '1', 0),
-(3667, 0, 'config', 'config_affiliate_approval', '0', 0),
-(3668, 0, 'config', 'config_affiliate_auto', '0', 0),
-(3669, 0, 'config', 'config_affiliate_commission', '0', 0),
-(3670, 0, 'config', 'config_affiliate_id', '5', 0),
-(3671, 0, 'config', 'config_return_id', '0', 0),
-(3672, 0, 'config', 'config_return_status_id', '2', 0),
-(3673, 0, 'config', 'config_captcha', '', 0),
-(3674, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
-(3675, 0, 'config', 'config_logo', 'catalog/f_91757739ec412508.png', 0),
-(3676, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(3677, 0, 'config', 'config_mail_engine', 'mail', 0),
-(3678, 0, 'config', 'config_mail_parameter', '', 0),
-(3679, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(3680, 0, 'config', 'config_mail_smtp_username', '', 0),
-(3681, 0, 'config', 'config_mail_smtp_password', '', 0),
-(3682, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(3683, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(3684, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
-(3685, 0, 'config', 'config_mail_alert_email', '', 0),
-(3686, 0, 'config', 'config_maintenance', '0', 0),
-(3687, 0, 'config', 'config_seo_url', '0', 0),
-(3688, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(1839, 0, 'module_d_blog_module', 'module_d_blog_module_status', '1', 0),
-(1840, 0, 'module_d_blog_module', 'module_d_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"1\"],\"post_page_limit\":\"7\",\"image_display\":\"0\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"0\",\"sub_category_col\":\"6\",\"sub_category_image\":\"0\",\"sub_category_post_count\":\"0\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"0\",\"main_post_display\":\"0\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y         \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y           \"},\"rating_display\":\"0\",\"description_display\":\"1\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"1\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
-(1841, 0, 'd_blog_module', 'd_blog_module_status', '1', 0),
-(1842, 0, 'd_blog_module', 'd_blog_module_setting', '{\"category\":{\"main_category_id\":\"1\",\"layout_type\":\"grid\",\"layout\":[\"1\"],\"post_page_limit\":\"7\",\"image_display\":\"0\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"0\",\"sub_category_col\":\"6\",\"sub_category_image\":\"0\",\"sub_category_post_count\":\"0\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"0\",\"main_post_display\":\"0\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y         \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y           \"},\"rating_display\":\"0\",\"description_display\":\"1\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"1\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
+(4759, 0, 'config', 'config_compression', '0', 0),
+(4760, 0, 'config', 'config_endpoint', 'http://93.84.103.182/WebTest/ws/ExchangeWithSite?wsdl', 0),
+(4761, 0, 'config', 'config_1clogin', 'Webconnect', 0),
+(4762, 0, 'config', 'config_1cpassword', 'c0nnect', 0),
+(4763, 0, 'config', 'config_secure', '0', 0),
+(4764, 0, 'config', 'config_password', '1', 0),
+(4765, 0, 'config', 'config_shared', '0', 0),
+(4766, 0, 'config', 'config_encryption', 'hEiLgPirTWBJuHnkPL3oCVaJ8nfA5TwV8dL6c1smbJXQpFZbvyCRbgkskSe7S4Ks6Skwu8xYZMJHiGBcsihkm730JXHn8pfaqBOTHAqUrR65k1DqMxhIj4a51SA2KM3mVEuX74RbkSvYSA40HHeS42oO753iF4L3kf1BFif5IFU7jg1cmNOS37QCJSq7u0eByOpC3bwMGlQeq2ef8RLDcnlY1R2eHeOfutDDn7KdM1llwfMbckbg6vc8U33H6obiD7lgIjbMDqYD0iJOLzhqrQZqqQeRdaGbg7lAf3HJGSvNKduCNW5o3DXKDNfn9t87jEgmBkQTvyLxwbxcDPVo6bRJcyxIoBkzmPozKVR3ForzpwEmW0AjAYvw0vKb89hEkNQtBpObcqM4KaHRe2O9U0BAWXRxX9DgUpwUpjA2n3c0YnDy2fWyNo8ek49fgix5sza2bpQxbT6YazpJ3KuEytf2TOXn37vBRUWesKGrV71oW2nfeHZSjwwxuDW77IuaV2c2ivkqFFRchx5xyGFJOePDMlDUEo1hWxx6vjojhMoPWaYMU4Knd1LB1y5f96vt4WbWsIfO04J2BZeG2AYqmd5czHyp2VLyIsWXe17ohwamkTGG8L03Tabg9YFZr40X56uw4oJDw5lJ0HErznoyctps5jxREjPbV9fG52BLcPdp7yljByp3wzHoy8hPq0EXpN8ckBP6ncuJP9dXAViEfCJjjPjnfffIdQfKgyMJTSFGz9DBSTqRTlmhYw07p3LZ8iHhIjdqHtGCMu9PeqgpjjageuM5h4jHOdV5i8gKvrEfRO1r87JRK7Y8mNYmRrpAHhfgF525D5MafWZ0gDjHMNQBlrvCDGOSaN4qnlQBxq1uDwOEWzDRexVVnWVklRpxeDhP6Qq8zhTVsNYdD8Dw3snql1tntJ6WcmxkJivpHHP8HJGtqHSvIlSC0hWd2zymV7aAUlT0vMYoCek2rIeRU2TOq4i9zgjrhfwE58C7Ds8EgOcVpBm2hzsBjN8td4sQ', 0),
+(4758, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(4757, 0, 'config', 'config_seo_url', '0', 0),
+(4755, 0, 'config', 'config_mail_alert_email', '', 0),
+(4756, 0, 'config', 'config_maintenance', '0', 0),
+(4753, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(4754, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
+(4752, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(4751, 0, 'config', 'config_mail_smtp_password', '', 0),
+(4750, 0, 'config', 'config_mail_smtp_username', '', 0),
+(4749, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(4748, 0, 'config', 'config_mail_parameter', '', 0),
+(4747, 0, 'config', 'config_mail_engine', 'mail', 0),
+(4746, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(4745, 0, 'config', 'config_logo', 'catalog/f_91757739ec412508.png', 0),
+(4744, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
+(4743, 0, 'config', 'config_captcha', '', 0),
+(4742, 0, 'config', 'config_return_status_id', '2', 0),
+(4741, 0, 'config', 'config_return_id', '0', 0),
+(4740, 0, 'config', 'config_affiliate_id', '5', 0),
+(4739, 0, 'config', 'config_affiliate_commission', '0', 0),
+(4738, 0, 'config', 'config_affiliate_auto', '0', 0),
+(4737, 0, 'config', 'config_affiliate_approval', '0', 0),
+(4736, 0, 'config', 'config_affiliate_group_id', '1', 0),
+(4735, 0, 'config', 'config_stock_checkout', '0', 0),
+(4729, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
+(4730, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
+(4731, 0, 'config', 'config_fraud_status_id', '7', 0),
+(4732, 0, 'config', 'config_api_id', '2', 0),
+(4733, 0, 'config', 'config_stock_display', '0', 0),
+(4734, 0, 'config', 'config_stock_warning', '0', 0),
+(3700, 0, 'module_d_blog_module', 'module_d_blog_module_status', '1', 0),
+(3701, 0, 'module_d_blog_module', 'module_d_blog_module_setting', '{\"category\":{\"main_category_id\":\"0\",\"layout_type\":\"grid\",\"layout\":[\"1\"],\"post_page_limit\":\"7\",\"image_display\":\"0\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"0\",\"sub_category_col\":\"6\",\"sub_category_image\":\"0\",\"sub_category_post_count\":\"0\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"0\",\"main_post_display\":\"0\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y           \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y             \"},\"rating_display\":\"0\",\"description_display\":\"1\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"1\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
+(3702, 0, 'd_blog_module', 'd_blog_module_status', '1', 0),
+(3703, 0, 'd_blog_module', 'd_blog_module_setting', '{\"category\":{\"main_category_id\":\"0\",\"layout_type\":\"grid\",\"layout\":[\"1\"],\"post_page_limit\":\"7\",\"image_display\":\"0\",\"image_width\":\"1200\",\"image_height\":\"750\",\"sub_category_display\":\"0\",\"sub_category_col\":\"6\",\"sub_category_image\":\"0\",\"sub_category_post_count\":\"0\",\"sub_category_image_width\":\"120\",\"sub_category_image_height\":\"75\",\"limited_post_display\":\"0\",\"main_post_display\":\"0\"},\"post\":{\"image_display\":\"1\",\"image_width\":\"1200\",\"image_height\":\"750\",\"popup_display\":\"0\",\"popup_width\":\"1400\",\"popup_height\":\"875\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y           \"},\"review_display\":\"0\",\"rating_display\":\"0\",\"tag_display\":\"0\",\"category_label_display\":\"0\",\"short_description_length\":\"150\",\"style_short_description_display\":\"0\",\"nav_display\":\"0\",\"nav_same_category\":\"0\"},\"post_thumb\":{\"image_width\":\"1200\",\"image_height\":\"750\",\"title_length\":\"100\",\"short_description_length\":\"300\",\"description_length\":\"300\",\"category_label_display\":\"0\",\"author_display\":\"0\",\"date_display\":\"0\",\"date_format\":{\"2\":\"%A %d %B, %Y             \"},\"rating_display\":\"0\",\"description_display\":\"1\",\"tag_display\":\"0\",\"views_display\":\"0\",\"review_display\":\"0\",\"read_more_display\":\"1\",\"animate\":\"fadeIn\"},\"review\":{\"guest\":\"0\",\"social_login\":\"0\",\"page_limit\":\"5\",\"rating_display\":\"0\",\"customer_display\":\"0\",\"moderate\":\"0\",\"image_user_display\":\"0\",\"image_limit\":\"5\",\"image_upload_width\":\"500\",\"image_upload_height\":\"500\"},\"review_thumb\":{\"image_width\":\"70\",\"image_height\":\"70\",\"no_image\":\"catalog\\/d_blog_module\\/no_profile_image.png\",\"date_display\":\"0\",\"image_display\":\"0\",\"rating_display\":\"0\",\"image_user_display\":\"0\",\"image_user_width\":\"70\",\"image_user_height\":\"70\"},\"author\":{\"layout_type\":\"grid\",\"layout\":[\"2\"],\"post_page_limit\":\"7\",\"image_width\":\"400\",\"image_height\":\"400\",\"category_display\":\"1\",\"category_col\":\"6\",\"category_image\":\"1\",\"category_post_count\":\"1\",\"category_image_width\":\"120\",\"category_image_height\":\"75\"},\"theme\":\"default\",\"admin_style\":\"light\",\"design\":{\"custom_style\":\"\",\"ssl_url\":\"\"}}', 1),
 (2906, 0, 'payment_cod', 'payment_cod_order_status_id', '1', 0),
 (2905, 0, 'payment_cod', 'payment_cod_total', '0.01', 0),
 (2883, 0, 'shipping_flat', 'shipping_flat_cost', '150', 0),
@@ -5649,33 +6737,49 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (2901, 0, 'shipping_pickup', 'shipping_pickup_geo_zone_id', '0', 0),
 (2903, 0, 'shipping_pickup', 'shipping_pickup_sort_order', '2', 0),
 (2902, 0, 'shipping_pickup', 'shipping_pickup_status', '1', 0),
-(3630, 0, 'config', 'config_language', 'ru-ru', 0),
-(3628, 0, 'config', 'config_country_id', '20', 0),
-(3629, 0, 'config', 'config_zone_id', '', 0),
-(3624, 0, 'config', 'config_image', 'catalog/logo.png', 0),
-(3625, 0, 'config', 'config_open', 'пн-пт с 8.30 до 17.00', 0),
-(3626, 0, 'config', 'config_lunch', 'обед с 12.30 до 13.00', 0),
-(3627, 0, 'config', 'config_comment', '&lt;b&gt;Сокращенное наименование:&lt;/b&gt; ООО «Зиптрейд»\r\n&lt;b&gt;Юридический адрес:&lt;/b&gt; 210021, г. Витебск, ул. Титова, д. 138\r\n&lt;b&gt;УНП:&lt;/b&gt; 391269668\r\n&lt;b&gt;Расчетный счет:&lt;/b&gt; BY74BLBB30120391269668001001\r\n&lt;b&gt;Наименование банка:&lt;/b&gt; ОАО &quot;Белинвестбанк&quot;\r\n&lt;b&gt;Код банка:&lt;/b&gt; BLBBBY2X\r\n&lt;b&gt;E-mail:&lt;/b&gt; info@ziptrade.by\r\n&lt;b&gt;Телефоны:&lt;/b&gt;	+ 375 (29) 5 109 109, +375 (212) 53 85 08 (факс)\r\n&lt;b&gt;Интернет-сайт:&lt;/b&gt; ziptrade.by', 0),
-(3623, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
-(3620, 0, 'config', 'config_geocode', '', 0),
-(3621, 0, 'config', 'config_email', 'info@ziptrade.by', 0),
-(3622, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
-(3618, 0, 'config', 'config_owner', 'Зиптрейд', 0),
-(3619, 0, 'config', 'config_address', ' г. Витебск,  ул. Титова, д. 138', 0),
-(3617, 0, 'config', 'config_name', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0),
-(3616, 0, 'config', 'config_layout_id', '4', 0),
-(3613, 0, 'config', 'config_meta_description', 'Продажа швейной фурнитуры от лучших производителей. Ткани, нити, молнии, ремни и многое другое. Для заказа звоните: +375 (29) 5-109-109', 0),
-(3614, 0, 'config', 'config_meta_keyword', '', 0),
-(3615, 0, 'config', 'config_theme', 'default', 0),
-(3612, 0, 'config', 'config_meta_title', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0),
-(3697, 0, 'config', 'config_error_display', '1', 0),
-(3698, 0, 'config', 'config_error_log', '1', 0),
-(3699, 0, 'config', 'config_error_filename', 'error.log', 0);
+(4728, 0, 'config', 'config_order_status_id', '1', 0),
+(4726, 0, 'config', 'config_checkout_guest', '1', 0),
+(4727, 0, 'config', 'config_checkout_id', '5', 0),
+(4725, 0, 'config', 'config_cart_weight', '0', 0),
+(4724, 0, 'config', 'config_order_min', '50', 0),
+(4723, 0, 'config', 'config_invoice_prefix', 'INV-2022-00', 0),
+(4722, 0, 'config', 'config_account_id', '3', 0),
+(4709, 0, 'config', 'config_review_guest', '1', 0),
+(4710, 0, 'config', 'config_voucher_min', '1', 0),
+(4711, 0, 'config', 'config_voucher_max', '1000', 0),
+(4712, 0, 'config', 'config_tax', '0', 0),
+(4713, 0, 'config', 'config_tax_default', 'shipping', 0),
+(4714, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(4715, 0, 'config', 'config_customer_online', '0', 0),
+(4716, 0, 'config', 'config_customer_activity', '0', 0),
+(4717, 0, 'config', 'config_customer_search', '0', 0),
+(4718, 0, 'config', 'config_customer_group_id', '1', 0),
+(4719, 0, 'config', 'config_customer_group_display', '[\"1\",\"2\"]', 1),
+(4720, 0, 'config', 'config_customer_price', '0', 0),
+(4721, 0, 'config', 'config_login_attempts', '5', 0),
+(4697, 0, 'config', 'config_comment', '&lt;b&gt;Сокращенное наименование:&lt;/b&gt; ООО «Зиптрейд»\r\n&lt;b&gt;Юридический адрес:&lt;/b&gt; 210021, г. Витебск, ул. Титова, д. 138\r\n&lt;b&gt;УНП:&lt;/b&gt; 391269668\r\n&lt;b&gt;Расчетный счет:&lt;/b&gt; BY74BLBB30120391269668001001\r\n&lt;b&gt;Наименование банка:&lt;/b&gt; ОАО &quot;Белинвестбанк&quot;\r\n&lt;b&gt;Код банка:&lt;/b&gt; BLBBBY2X\r\n&lt;b&gt;E-mail:&lt;/b&gt; info@ziptrade.by\r\n&lt;b&gt;Телефоны:&lt;/b&gt;	+ 375 (29) 5-109-109, +375 (212) 53-85-08 (факс)', 0),
+(4696, 0, 'config', 'config_lunch', 'обед с 12.30 до 13.00', 0),
+(4695, 0, 'config', 'config_open', 'пн-пт с 8.30 до 17.00', 0),
+(4694, 0, 'config', 'config_image', 'catalog/logo.png', 0),
+(4691, 0, 'config', 'config_email', 'info@ziptrade.by', 0),
+(4692, 0, 'config', 'config_telephone', '+375 (29) 5-109-109', 0),
+(4693, 0, 'config', 'config_fax', '+375 (212) 53-85-08 (факс)', 0),
+(4690, 0, 'config', 'config_geocode', '', 0),
+(4689, 0, 'config', 'config_address', ' г. Витебск,  ул. Титова, д. 138', 0),
+(4688, 0, 'config', 'config_owner', 'Зиптрейд', 0),
+(4686, 0, 'config', 'config_layout_id', '4', 0),
+(4687, 0, 'config', 'config_name', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0),
+(4685, 0, 'config', 'config_theme', 'default', 0),
+(4684, 0, 'config', 'config_meta_keyword', '', 0),
+(4682, 0, 'config', 'config_meta_title', 'Купить швейную фурнитуру оптом в Беларуси | Зиптрейд', 0),
+(4683, 0, 'config', 'config_meta_description', 'Продажа швейной фурнитуры от лучших производителей. Ткани, нити, молнии, ремни и многое другое. Для заказа звоните: +375 (29) 5-109-109', 0),
+(4771, 0, 'config', 'config_error_log', '1', 0),
+(4772, 0, 'config', 'config_error_filename', 'error.log', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_shipping_courier`
+-- Table structure for table `oc_shipping_courier`
 --
 
 CREATE TABLE `oc_shipping_courier` (
@@ -5685,7 +6789,7 @@ CREATE TABLE `oc_shipping_courier` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_shipping_courier`
+-- Dumping data for table `oc_shipping_courier`
 --
 
 INSERT INTO `oc_shipping_courier` (`shipping_courier_id`, `shipping_courier_code`, `shipping_courier_name`) VALUES
@@ -5700,7 +6804,7 @@ INSERT INTO `oc_shipping_courier` (`shipping_courier_id`, `shipping_courier_code
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_statistics`
+-- Table structure for table `oc_statistics`
 --
 
 CREATE TABLE `oc_statistics` (
@@ -5710,11 +6814,11 @@ CREATE TABLE `oc_statistics` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_statistics`
+-- Dumping data for table `oc_statistics`
 --
 
 INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
-(1, 'order_sale', '700.0000'),
+(1, 'order_sale', '1280.0000'),
 (2, 'order_processing', '0.0000'),
 (3, 'order_complete', '0.0000'),
 (4, 'order_other', '0.0000'),
@@ -5725,7 +6829,7 @@ INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_stock_status`
+-- Table structure for table `oc_stock_status`
 --
 
 CREATE TABLE `oc_stock_status` (
@@ -5735,7 +6839,7 @@ CREATE TABLE `oc_stock_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_stock_status`
+-- Dumping data for table `oc_stock_status`
 --
 
 INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
@@ -5751,7 +6855,7 @@ INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_store`
+-- Table structure for table `oc_store`
 --
 
 CREATE TABLE `oc_store` (
@@ -5764,7 +6868,7 @@ CREATE TABLE `oc_store` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_subscribe`
+-- Table structure for table `oc_subscribe`
 --
 
 CREATE TABLE `oc_subscribe` (
@@ -5774,18 +6878,26 @@ CREATE TABLE `oc_subscribe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `oc_subscribe`
+-- Dumping data for table `oc_subscribe`
 --
 
 INSERT INTO `oc_subscribe` (`subscribe_id`, `email`, `date_added`) VALUES
 (1, 'edgarz@advansys.com', '2022-12-30 13:45:34'),
 (2, '21', '2023-01-03 00:16:54'),
-(3, 'hello@visorit.com', '2023-01-09 22:55:44');
+(3, 'hello@visorit.com', '2023-01-09 22:55:44'),
+(4, 'lenana0508@gmail.com', '2023-01-16 11:30:20'),
+(5, 'snab@ziptrade.by', '2023-01-16 11:30:39'),
+(6, 'krucola.zip@gmail.com', '2023-01-16 12:00:10'),
+(7, 'апаы', '2023-01-17 08:24:42'),
+(8, 'lenana05', '2023-01-17 08:50:37'),
+(9, 'прреп', '2023-01-17 10:59:17'),
+(10, 'пппппп', '2023-01-17 10:59:32'),
+(11, 'clients@veon-tech.ru', '2023-02-09 11:45:17');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_class`
+-- Table structure for table `oc_tax_class`
 --
 
 CREATE TABLE `oc_tax_class` (
@@ -5797,7 +6909,7 @@ CREATE TABLE `oc_tax_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_class`
+-- Dumping data for table `oc_tax_class`
 --
 
 INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
@@ -5807,7 +6919,7 @@ INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rate`
+-- Table structure for table `oc_tax_rate`
 --
 
 CREATE TABLE `oc_tax_rate` (
@@ -5821,7 +6933,7 @@ CREATE TABLE `oc_tax_rate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rate`
+-- Dumping data for table `oc_tax_rate`
 --
 
 INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
@@ -5831,7 +6943,7 @@ INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rate_to_customer_group`
+-- Table structure for table `oc_tax_rate_to_customer_group`
 --
 
 CREATE TABLE `oc_tax_rate_to_customer_group` (
@@ -5840,7 +6952,7 @@ CREATE TABLE `oc_tax_rate_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rate_to_customer_group`
+-- Dumping data for table `oc_tax_rate_to_customer_group`
 --
 
 INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
@@ -5850,7 +6962,7 @@ INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`)
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_tax_rule`
+-- Table structure for table `oc_tax_rule`
 --
 
 CREATE TABLE `oc_tax_rule` (
@@ -5862,7 +6974,7 @@ CREATE TABLE `oc_tax_rule` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_tax_rule`
+-- Dumping data for table `oc_tax_rule`
 --
 
 INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
@@ -5874,7 +6986,7 @@ INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_theme`
+-- Table structure for table `oc_theme`
 --
 
 CREATE TABLE `oc_theme` (
@@ -5889,7 +7001,7 @@ CREATE TABLE `oc_theme` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_translation`
+-- Table structure for table `oc_translation`
 --
 
 CREATE TABLE `oc_translation` (
@@ -5905,7 +7017,7 @@ CREATE TABLE `oc_translation` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_upload`
+-- Table structure for table `oc_upload`
 --
 
 CREATE TABLE `oc_upload` (
@@ -5919,7 +7031,7 @@ CREATE TABLE `oc_upload` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_user`
+-- Table structure for table `oc_user`
 --
 
 CREATE TABLE `oc_user` (
@@ -5939,7 +7051,7 @@ CREATE TABLE `oc_user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_user`
+-- Dumping data for table `oc_user`
 --
 
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
@@ -5948,7 +7060,7 @@ INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_user_group`
+-- Table structure for table `oc_user_group`
 --
 
 CREATE TABLE `oc_user_group` (
@@ -5958,17 +7070,17 @@ CREATE TABLE `oc_user_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_user_group`
+-- Dumping data for table `oc_user_group`
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/total\\/sub_total\",\"extension\\/shipping\\/citylink\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/module\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/module\\/html\",\"extension\\/shipping\\/citylink\",\"extension\\/payment\\/cheque\",\"extension\\/shipping\\/pickup\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/d_blog_module\",\"extension\\/total\\/sub_total\",\"extension\\/shipping\\/citylink\"]}'),
+(1, 'Administrator', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/d_blog_module\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/import\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/d_blog_module\\/author\",\"extension\\/d_blog_module\\/author_group\",\"extension\\/d_blog_module\\/category\",\"extension\\/d_blog_module\\/post\",\"extension\\/d_blog_module\\/review\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/d_blog_module\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/hutkigrosh\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/import\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"]}'),
 (10, 'Demonstration', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/seo_url\",\"design\\/theme\",\"design\\/translation\",\"event\\/language\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/alipay\",\"extension\\/payment\\/alipay_cross\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_braintree\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/squareup\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/wechat_pay\",\"extension\\/payment\\/worldpay\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"]}');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher`
+-- Table structure for table `oc_voucher`
 --
 
 CREATE TABLE `oc_voucher` (
@@ -5989,7 +7101,7 @@ CREATE TABLE `oc_voucher` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_history`
+-- Table structure for table `oc_voucher_history`
 --
 
 CREATE TABLE `oc_voucher_history` (
@@ -6003,7 +7115,7 @@ CREATE TABLE `oc_voucher_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_theme`
+-- Table structure for table `oc_voucher_theme`
 --
 
 CREATE TABLE `oc_voucher_theme` (
@@ -6012,7 +7124,7 @@ CREATE TABLE `oc_voucher_theme` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_voucher_theme`
+-- Dumping data for table `oc_voucher_theme`
 --
 
 INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
@@ -6023,7 +7135,7 @@ INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_voucher_theme_description`
+-- Table structure for table `oc_voucher_theme_description`
 --
 
 CREATE TABLE `oc_voucher_theme_description` (
@@ -6033,7 +7145,7 @@ CREATE TABLE `oc_voucher_theme_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_voucher_theme_description`
+-- Dumping data for table `oc_voucher_theme_description`
 --
 
 INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
@@ -6047,7 +7159,7 @@ INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_weight_class`
+-- Table structure for table `oc_weight_class`
 --
 
 CREATE TABLE `oc_weight_class` (
@@ -6056,7 +7168,7 @@ CREATE TABLE `oc_weight_class` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_weight_class`
+-- Dumping data for table `oc_weight_class`
 --
 
 INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
@@ -6068,7 +7180,7 @@ INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_weight_class_description`
+-- Table structure for table `oc_weight_class_description`
 --
 
 CREATE TABLE `oc_weight_class_description` (
@@ -6079,7 +7191,7 @@ CREATE TABLE `oc_weight_class_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_weight_class_description`
+-- Dumping data for table `oc_weight_class_description`
 --
 
 INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
@@ -6095,7 +7207,7 @@ INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_zone`
+-- Table structure for table `oc_zone`
 --
 
 CREATE TABLE `oc_zone` (
@@ -6109,17 +7221,17 @@ CREATE TABLE `oc_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `oc_zone`
+-- Dumping data for table `oc_zone`
 --
 
 INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`, `min_order`, `min_order_text`) VALUES
-(342, 20, 'Другой город по РБ', 'MI', 1, 300, 'До минимальной доставки'),
-(343, 20, 'Витебск', 'VI', 1, 150, 'До бесплатной доставки');
+(342, 20, 'Другой город по РБ', 'MI', 1, 300, 'До бесплатной доставки'),
+(343, 20, 'Витебск', 'VI', 1, 150, 'До бесплатной доставки ');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `oc_zone_to_geo_zone`
+-- Table structure for table `oc_zone_to_geo_zone`
 --
 
 CREATE TABLE `oc_zone_to_geo_zone` (
@@ -6132,292 +7244,292 @@ CREATE TABLE `oc_zone_to_geo_zone` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `oc_address`
+-- Indexes for table `oc_address`
 --
 ALTER TABLE `oc_address`
   ADD PRIMARY KEY (`address_id`),
   ADD KEY `customer_id` (`customer_id`);
 
 --
--- Индексы таблицы `oc_api`
+-- Indexes for table `oc_api`
 --
 ALTER TABLE `oc_api`
   ADD PRIMARY KEY (`api_id`);
 
 --
--- Индексы таблицы `oc_api_ip`
+-- Indexes for table `oc_api_ip`
 --
 ALTER TABLE `oc_api_ip`
   ADD PRIMARY KEY (`api_ip_id`);
 
 --
--- Индексы таблицы `oc_api_session`
+-- Indexes for table `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
   ADD PRIMARY KEY (`api_session_id`);
 
 --
--- Индексы таблицы `oc_attribute`
+-- Indexes for table `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
   ADD PRIMARY KEY (`attribute_id`);
 
 --
--- Индексы таблицы `oc_attribute_description`
+-- Indexes for table `oc_attribute_description`
 --
 ALTER TABLE `oc_attribute_description`
   ADD PRIMARY KEY (`attribute_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_attribute_group`
+-- Indexes for table `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
   ADD PRIMARY KEY (`attribute_group_id`);
 
 --
--- Индексы таблицы `oc_attribute_group_description`
+-- Indexes for table `oc_attribute_group_description`
 --
 ALTER TABLE `oc_attribute_group_description`
   ADD PRIMARY KEY (`attribute_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_banner`
+-- Indexes for table `oc_banner`
 --
 ALTER TABLE `oc_banner`
   ADD PRIMARY KEY (`banner_id`);
 
 --
--- Индексы таблицы `oc_banner_image`
+-- Indexes for table `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
   ADD PRIMARY KEY (`banner_image_id`);
 
 --
--- Индексы таблицы `oc_bm_author`
+-- Indexes for table `oc_bm_author`
 --
 ALTER TABLE `oc_bm_author`
   ADD PRIMARY KEY (`author_id`);
 
 --
--- Индексы таблицы `oc_bm_author_description`
+-- Indexes for table `oc_bm_author_description`
 --
 ALTER TABLE `oc_bm_author_description`
   ADD PRIMARY KEY (`author_description_id`);
 
 --
--- Индексы таблицы `oc_bm_author_group`
+-- Indexes for table `oc_bm_author_group`
 --
 ALTER TABLE `oc_bm_author_group`
   ADD PRIMARY KEY (`author_group_id`);
 
 --
--- Индексы таблицы `oc_bm_category`
+-- Indexes for table `oc_bm_category`
 --
 ALTER TABLE `oc_bm_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Индексы таблицы `oc_bm_category_description`
+-- Indexes for table `oc_bm_category_description`
 --
 ALTER TABLE `oc_bm_category_description`
   ADD PRIMARY KEY (`category_description_id`);
 
 --
--- Индексы таблицы `oc_bm_category_path`
+-- Indexes for table `oc_bm_category_path`
 --
 ALTER TABLE `oc_bm_category_path`
   ADD PRIMARY KEY (`category_id`,`path_id`);
 
 --
--- Индексы таблицы `oc_bm_category_to_store`
+-- Indexes for table `oc_bm_category_to_store`
 --
 ALTER TABLE `oc_bm_category_to_store`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_bm_post`
+-- Indexes for table `oc_bm_post`
 --
 ALTER TABLE `oc_bm_post`
   ADD PRIMARY KEY (`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_description`
+-- Indexes for table `oc_bm_post_description`
 --
 ALTER TABLE `oc_bm_post_description`
   ADD PRIMARY KEY (`post_description_id`);
 
 --
--- Индексы таблицы `oc_bm_post_related`
+-- Indexes for table `oc_bm_post_related`
 --
 ALTER TABLE `oc_bm_post_related`
   ADD PRIMARY KEY (`post_id`,`post_related_id`);
 
 --
--- Индексы таблицы `oc_bm_post_to_category`
+-- Indexes for table `oc_bm_post_to_category`
 --
 ALTER TABLE `oc_bm_post_to_category`
   ADD PRIMARY KEY (`category_id`,`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_to_product`
+-- Indexes for table `oc_bm_post_to_product`
 --
 ALTER TABLE `oc_bm_post_to_product`
   ADD PRIMARY KEY (`product_id`,`post_id`);
 
 --
--- Индексы таблицы `oc_bm_post_video`
+-- Indexes for table `oc_bm_post_video`
 --
 ALTER TABLE `oc_bm_post_video`
   ADD PRIMARY KEY (`post_id`,`video`);
 
 --
--- Индексы таблицы `oc_bm_review`
+-- Indexes for table `oc_bm_review`
 --
 ALTER TABLE `oc_bm_review`
   ADD PRIMARY KEY (`review_id`);
 
 --
--- Индексы таблицы `oc_bm_review_to_image`
+-- Indexes for table `oc_bm_review_to_image`
 --
 ALTER TABLE `oc_bm_review_to_image`
   ADD PRIMARY KEY (`review_id`,`image`);
 
 --
--- Индексы таблицы `oc_cart`
+-- Indexes for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
   ADD PRIMARY KEY (`cart_id`),
   ADD KEY `cart_id` (`api_id`,`customer_id`,`session_id`,`product_id`,`recurring_id`);
 
 --
--- Индексы таблицы `oc_category`
+-- Indexes for table `oc_category`
 --
 ALTER TABLE `oc_category`
   ADD PRIMARY KEY (`category_id`),
   ADD KEY `parent_id` (`parent_id`);
 
 --
--- Индексы таблицы `oc_category_description`
+-- Indexes for table `oc_category_description`
 --
 ALTER TABLE `oc_category_description`
   ADD PRIMARY KEY (`category_id`,`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_category_filter`
+-- Indexes for table `oc_category_filter`
 --
 ALTER TABLE `oc_category_filter`
   ADD PRIMARY KEY (`category_id`,`filter_id`);
 
 --
--- Индексы таблицы `oc_category_path`
+-- Indexes for table `oc_category_path`
 --
 ALTER TABLE `oc_category_path`
   ADD PRIMARY KEY (`category_id`,`path_id`);
 
 --
--- Индексы таблицы `oc_category_to_layout`
+-- Indexes for table `oc_category_to_layout`
 --
 ALTER TABLE `oc_category_to_layout`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_category_to_store`
+-- Indexes for table `oc_category_to_store`
 --
 ALTER TABLE `oc_category_to_store`
   ADD PRIMARY KEY (`category_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_country`
+-- Indexes for table `oc_country`
 --
 ALTER TABLE `oc_country`
   ADD PRIMARY KEY (`country_id`);
 
 --
--- Индексы таблицы `oc_coupon`
+-- Indexes for table `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
   ADD PRIMARY KEY (`coupon_id`);
 
 --
--- Индексы таблицы `oc_coupon_category`
+-- Indexes for table `oc_coupon_category`
 --
 ALTER TABLE `oc_coupon_category`
   ADD PRIMARY KEY (`coupon_id`,`category_id`);
 
 --
--- Индексы таблицы `oc_coupon_history`
+-- Indexes for table `oc_coupon_history`
 --
 ALTER TABLE `oc_coupon_history`
   ADD PRIMARY KEY (`coupon_history_id`);
 
 --
--- Индексы таблицы `oc_coupon_product`
+-- Indexes for table `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
   ADD PRIMARY KEY (`coupon_product_id`);
 
 --
--- Индексы таблицы `oc_currency`
+-- Indexes for table `oc_currency`
 --
 ALTER TABLE `oc_currency`
   ADD PRIMARY KEY (`currency_id`);
 
 --
--- Индексы таблицы `oc_customer`
+-- Indexes for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Индексы таблицы `oc_customer_activity`
+-- Indexes for table `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
   ADD PRIMARY KEY (`customer_activity_id`);
 
 --
--- Индексы таблицы `oc_customer_affiliate`
+-- Indexes for table `oc_customer_affiliate`
 --
 ALTER TABLE `oc_customer_affiliate`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Индексы таблицы `oc_customer_approval`
+-- Indexes for table `oc_customer_approval`
 --
 ALTER TABLE `oc_customer_approval`
   ADD PRIMARY KEY (`customer_approval_id`);
 
 --
--- Индексы таблицы `oc_customer_group`
+-- Indexes for table `oc_customer_group`
 --
 ALTER TABLE `oc_customer_group`
   ADD PRIMARY KEY (`customer_group_id`);
 
 --
--- Индексы таблицы `oc_customer_group_description`
+-- Indexes for table `oc_customer_group_description`
 --
 ALTER TABLE `oc_customer_group_description`
   ADD PRIMARY KEY (`customer_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_customer_history`
+-- Indexes for table `oc_customer_history`
 --
 ALTER TABLE `oc_customer_history`
   ADD PRIMARY KEY (`customer_history_id`);
 
 --
--- Индексы таблицы `oc_customer_ip`
+-- Indexes for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
   ADD PRIMARY KEY (`customer_ip_id`),
   ADD KEY `ip` (`ip`);
 
 --
--- Индексы таблицы `oc_customer_login`
+-- Indexes for table `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
   ADD PRIMARY KEY (`customer_login_id`),
@@ -6425,473 +7537,473 @@ ALTER TABLE `oc_customer_login`
   ADD KEY `ip` (`ip`);
 
 --
--- Индексы таблицы `oc_customer_online`
+-- Indexes for table `oc_customer_online`
 --
 ALTER TABLE `oc_customer_online`
   ADD PRIMARY KEY (`ip`);
 
 --
--- Индексы таблицы `oc_customer_reward`
+-- Indexes for table `oc_customer_reward`
 --
 ALTER TABLE `oc_customer_reward`
   ADD PRIMARY KEY (`customer_reward_id`);
 
 --
--- Индексы таблицы `oc_customer_search`
+-- Indexes for table `oc_customer_search`
 --
 ALTER TABLE `oc_customer_search`
   ADD PRIMARY KEY (`customer_search_id`);
 
 --
--- Индексы таблицы `oc_customer_transaction`
+-- Indexes for table `oc_customer_transaction`
 --
 ALTER TABLE `oc_customer_transaction`
   ADD PRIMARY KEY (`customer_transaction_id`);
 
 --
--- Индексы таблицы `oc_customer_wishlist`
+-- Indexes for table `oc_customer_wishlist`
 --
 ALTER TABLE `oc_customer_wishlist`
   ADD PRIMARY KEY (`customer_id`,`product_id`);
 
 --
--- Индексы таблицы `oc_custom_field`
+-- Indexes for table `oc_custom_field`
 --
 ALTER TABLE `oc_custom_field`
   ADD PRIMARY KEY (`custom_field_id`);
 
 --
--- Индексы таблицы `oc_custom_field_customer_group`
+-- Indexes for table `oc_custom_field_customer_group`
 --
 ALTER TABLE `oc_custom_field_customer_group`
   ADD PRIMARY KEY (`custom_field_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_custom_field_description`
+-- Indexes for table `oc_custom_field_description`
 --
 ALTER TABLE `oc_custom_field_description`
   ADD PRIMARY KEY (`custom_field_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_custom_field_value`
+-- Indexes for table `oc_custom_field_value`
 --
 ALTER TABLE `oc_custom_field_value`
   ADD PRIMARY KEY (`custom_field_value_id`);
 
 --
--- Индексы таблицы `oc_custom_field_value_description`
+-- Indexes for table `oc_custom_field_value_description`
 --
 ALTER TABLE `oc_custom_field_value_description`
   ADD PRIMARY KEY (`custom_field_value_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_download`
+-- Indexes for table `oc_download`
 --
 ALTER TABLE `oc_download`
   ADD PRIMARY KEY (`download_id`);
 
 --
--- Индексы таблицы `oc_download_description`
+-- Indexes for table `oc_download_description`
 --
 ALTER TABLE `oc_download_description`
   ADD PRIMARY KEY (`download_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_d_validator`
+-- Indexes for table `oc_d_validator`
 --
 ALTER TABLE `oc_d_validator`
   ADD PRIMARY KEY (`validator_id`);
 
 --
--- Индексы таблицы `oc_event`
+-- Indexes for table `oc_event`
 --
 ALTER TABLE `oc_event`
   ADD PRIMARY KEY (`event_id`);
 
 --
--- Индексы таблицы `oc_extension`
+-- Indexes for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
   ADD PRIMARY KEY (`extension_id`);
 
 --
--- Индексы таблицы `oc_extension_install`
+-- Indexes for table `oc_extension_install`
 --
 ALTER TABLE `oc_extension_install`
   ADD PRIMARY KEY (`extension_install_id`);
 
 --
--- Индексы таблицы `oc_extension_path`
+-- Indexes for table `oc_extension_path`
 --
 ALTER TABLE `oc_extension_path`
   ADD PRIMARY KEY (`extension_path_id`);
 
 --
--- Индексы таблицы `oc_filter`
+-- Indexes for table `oc_filter`
 --
 ALTER TABLE `oc_filter`
   ADD PRIMARY KEY (`filter_id`);
 
 --
--- Индексы таблицы `oc_filter_description`
+-- Indexes for table `oc_filter_description`
 --
 ALTER TABLE `oc_filter_description`
   ADD PRIMARY KEY (`filter_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_filter_group`
+-- Indexes for table `oc_filter_group`
 --
 ALTER TABLE `oc_filter_group`
   ADD PRIMARY KEY (`filter_group_id`);
 
 --
--- Индексы таблицы `oc_filter_group_description`
+-- Indexes for table `oc_filter_group_description`
 --
 ALTER TABLE `oc_filter_group_description`
   ADD PRIMARY KEY (`filter_group_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_geo_zone`
+-- Indexes for table `oc_geo_zone`
 --
 ALTER TABLE `oc_geo_zone`
   ADD PRIMARY KEY (`geo_zone_id`);
 
 --
--- Индексы таблицы `oc_information`
+-- Indexes for table `oc_information`
 --
 ALTER TABLE `oc_information`
   ADD PRIMARY KEY (`information_id`);
 
 --
--- Индексы таблицы `oc_information_description`
+-- Indexes for table `oc_information_description`
 --
 ALTER TABLE `oc_information_description`
   ADD PRIMARY KEY (`information_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_information_to_layout`
+-- Indexes for table `oc_information_to_layout`
 --
 ALTER TABLE `oc_information_to_layout`
   ADD PRIMARY KEY (`information_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_information_to_store`
+-- Indexes for table `oc_information_to_store`
 --
 ALTER TABLE `oc_information_to_store`
   ADD PRIMARY KEY (`information_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_language`
+-- Indexes for table `oc_language`
 --
 ALTER TABLE `oc_language`
   ADD PRIMARY KEY (`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_layout`
+-- Indexes for table `oc_layout`
 --
 ALTER TABLE `oc_layout`
   ADD PRIMARY KEY (`layout_id`);
 
 --
--- Индексы таблицы `oc_layout_module`
+-- Indexes for table `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
   ADD PRIMARY KEY (`layout_module_id`);
 
 --
--- Индексы таблицы `oc_layout_route`
+-- Indexes for table `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
   ADD PRIMARY KEY (`layout_route_id`);
 
 --
--- Индексы таблицы `oc_length_class`
+-- Indexes for table `oc_length_class`
 --
 ALTER TABLE `oc_length_class`
   ADD PRIMARY KEY (`length_class_id`);
 
 --
--- Индексы таблицы `oc_length_class_description`
+-- Indexes for table `oc_length_class_description`
 --
 ALTER TABLE `oc_length_class_description`
   ADD PRIMARY KEY (`length_class_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_location`
+-- Indexes for table `oc_location`
 --
 ALTER TABLE `oc_location`
   ADD PRIMARY KEY (`location_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_manufacturer`
+-- Indexes for table `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
   ADD PRIMARY KEY (`manufacturer_id`);
 
 --
--- Индексы таблицы `oc_manufacturer_to_store`
+-- Indexes for table `oc_manufacturer_to_store`
 --
 ALTER TABLE `oc_manufacturer_to_store`
   ADD PRIMARY KEY (`manufacturer_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_marketing`
+-- Indexes for table `oc_marketing`
 --
 ALTER TABLE `oc_marketing`
   ADD PRIMARY KEY (`marketing_id`);
 
 --
--- Индексы таблицы `oc_modification`
+-- Indexes for table `oc_modification`
 --
 ALTER TABLE `oc_modification`
   ADD PRIMARY KEY (`modification_id`);
 
 --
--- Индексы таблицы `oc_module`
+-- Indexes for table `oc_module`
 --
 ALTER TABLE `oc_module`
   ADD PRIMARY KEY (`module_id`);
 
 --
--- Индексы таблицы `oc_option`
+-- Indexes for table `oc_option`
 --
 ALTER TABLE `oc_option`
   ADD PRIMARY KEY (`option_id`);
 
 --
--- Индексы таблицы `oc_option_description`
+-- Indexes for table `oc_option_description`
 --
 ALTER TABLE `oc_option_description`
   ADD PRIMARY KEY (`option_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_option_value`
+-- Indexes for table `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
   ADD PRIMARY KEY (`option_value_id`);
 
 --
--- Индексы таблицы `oc_option_value_description`
+-- Indexes for table `oc_option_value_description`
 --
 ALTER TABLE `oc_option_value_description`
   ADD PRIMARY KEY (`option_value_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_order`
+-- Indexes for table `oc_order`
 --
 ALTER TABLE `oc_order`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Индексы таблицы `oc_order_history`
+-- Indexes for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
   ADD PRIMARY KEY (`order_history_id`);
 
 --
--- Индексы таблицы `oc_order_option`
+-- Indexes for table `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
   ADD PRIMARY KEY (`order_option_id`);
 
 --
--- Индексы таблицы `oc_order_product`
+-- Indexes for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
   ADD PRIMARY KEY (`order_product_id`),
   ADD KEY `order_id` (`order_id`);
 
 --
--- Индексы таблицы `oc_order_recurring`
+-- Indexes for table `oc_order_recurring`
 --
 ALTER TABLE `oc_order_recurring`
   ADD PRIMARY KEY (`order_recurring_id`);
 
 --
--- Индексы таблицы `oc_order_recurring_transaction`
+-- Indexes for table `oc_order_recurring_transaction`
 --
 ALTER TABLE `oc_order_recurring_transaction`
   ADD PRIMARY KEY (`order_recurring_transaction_id`);
 
 --
--- Индексы таблицы `oc_order_shipment`
+-- Indexes for table `oc_order_shipment`
 --
 ALTER TABLE `oc_order_shipment`
   ADD PRIMARY KEY (`order_shipment_id`);
 
 --
--- Индексы таблицы `oc_order_status`
+-- Indexes for table `oc_order_status`
 --
 ALTER TABLE `oc_order_status`
   ADD PRIMARY KEY (`order_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_order_total`
+-- Indexes for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
   ADD PRIMARY KEY (`order_total_id`),
   ADD KEY `order_id` (`order_id`);
 
 --
--- Индексы таблицы `oc_order_voucher`
+-- Indexes for table `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
   ADD PRIMARY KEY (`order_voucher_id`);
 
 --
--- Индексы таблицы `oc_product`
+-- Indexes for table `oc_product`
 --
 ALTER TABLE `oc_product`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Индексы таблицы `oc_product_attribute`
+-- Indexes for table `oc_product_attribute`
 --
 ALTER TABLE `oc_product_attribute`
   ADD PRIMARY KEY (`product_id`,`attribute_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_product_description`
+-- Indexes for table `oc_product_description`
 --
 ALTER TABLE `oc_product_description`
   ADD PRIMARY KEY (`product_id`,`language_id`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `oc_product_discount`
+-- Indexes for table `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
   ADD PRIMARY KEY (`product_discount_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_filter`
+-- Indexes for table `oc_product_filter`
 --
 ALTER TABLE `oc_product_filter`
   ADD PRIMARY KEY (`product_id`,`filter_id`);
 
 --
--- Индексы таблицы `oc_product_image`
+-- Indexes for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
   ADD PRIMARY KEY (`product_image_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_option`
+-- Indexes for table `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
   ADD PRIMARY KEY (`product_option_id`);
 
 --
--- Индексы таблицы `oc_product_option_value`
+-- Indexes for table `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
   ADD PRIMARY KEY (`product_option_value_id`);
 
 --
--- Индексы таблицы `oc_product_recurring`
+-- Indexes for table `oc_product_recurring`
 --
 ALTER TABLE `oc_product_recurring`
   ADD PRIMARY KEY (`product_id`,`recurring_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_product_related`
+-- Indexes for table `oc_product_related`
 --
 ALTER TABLE `oc_product_related`
   ADD PRIMARY KEY (`product_id`,`related_id`);
 
 --
--- Индексы таблицы `oc_product_reward`
+-- Indexes for table `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
   ADD PRIMARY KEY (`product_reward_id`);
 
 --
--- Индексы таблицы `oc_product_special`
+-- Indexes for table `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
   ADD PRIMARY KEY (`product_special_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_product_to_category`
+-- Indexes for table `oc_product_to_category`
 --
 ALTER TABLE `oc_product_to_category`
   ADD PRIMARY KEY (`product_id`,`category_id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Индексы таблицы `oc_product_to_download`
+-- Indexes for table `oc_product_to_download`
 --
 ALTER TABLE `oc_product_to_download`
   ADD PRIMARY KEY (`product_id`,`download_id`);
 
 --
--- Индексы таблицы `oc_product_to_layout`
+-- Indexes for table `oc_product_to_layout`
 --
 ALTER TABLE `oc_product_to_layout`
   ADD PRIMARY KEY (`product_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_product_to_store`
+-- Indexes for table `oc_product_to_store`
 --
 ALTER TABLE `oc_product_to_store`
   ADD PRIMARY KEY (`product_id`,`store_id`);
 
 --
--- Индексы таблицы `oc_recurring`
+-- Indexes for table `oc_recurring`
 --
 ALTER TABLE `oc_recurring`
   ADD PRIMARY KEY (`recurring_id`);
 
 --
--- Индексы таблицы `oc_recurring_description`
+-- Indexes for table `oc_recurring_description`
 --
 ALTER TABLE `oc_recurring_description`
   ADD PRIMARY KEY (`recurring_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return`
+-- Indexes for table `oc_return`
 --
 ALTER TABLE `oc_return`
   ADD PRIMARY KEY (`return_id`);
 
 --
--- Индексы таблицы `oc_return_action`
+-- Indexes for table `oc_return_action`
 --
 ALTER TABLE `oc_return_action`
   ADD PRIMARY KEY (`return_action_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return_history`
+-- Indexes for table `oc_return_history`
 --
 ALTER TABLE `oc_return_history`
   ADD PRIMARY KEY (`return_history_id`);
 
 --
--- Индексы таблицы `oc_return_reason`
+-- Indexes for table `oc_return_reason`
 --
 ALTER TABLE `oc_return_reason`
   ADD PRIMARY KEY (`return_reason_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_return_status`
+-- Indexes for table `oc_return_status`
 --
 ALTER TABLE `oc_return_status`
   ADD PRIMARY KEY (`return_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_review`
+-- Indexes for table `oc_review`
 --
 ALTER TABLE `oc_review`
   ADD PRIMARY KEY (`review_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `oc_seo_url`
+-- Indexes for table `oc_seo_url`
 --
 ALTER TABLE `oc_seo_url`
   ADD PRIMARY KEY (`seo_url_id`),
@@ -6899,755 +8011,755 @@ ALTER TABLE `oc_seo_url`
   ADD KEY `keyword` (`keyword`);
 
 --
--- Индексы таблицы `oc_session`
+-- Indexes for table `oc_session`
 --
 ALTER TABLE `oc_session`
   ADD PRIMARY KEY (`session_id`);
 
 --
--- Индексы таблицы `oc_setting`
+-- Indexes for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
   ADD PRIMARY KEY (`setting_id`);
 
 --
--- Индексы таблицы `oc_shipping_courier`
+-- Indexes for table `oc_shipping_courier`
 --
 ALTER TABLE `oc_shipping_courier`
   ADD PRIMARY KEY (`shipping_courier_id`);
 
 --
--- Индексы таблицы `oc_statistics`
+-- Indexes for table `oc_statistics`
 --
 ALTER TABLE `oc_statistics`
   ADD PRIMARY KEY (`statistics_id`);
 
 --
--- Индексы таблицы `oc_stock_status`
+-- Indexes for table `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
   ADD PRIMARY KEY (`stock_status_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_store`
+-- Indexes for table `oc_store`
 --
 ALTER TABLE `oc_store`
   ADD PRIMARY KEY (`store_id`);
 
 --
--- Индексы таблицы `oc_subscribe`
+-- Indexes for table `oc_subscribe`
 --
 ALTER TABLE `oc_subscribe`
   ADD PRIMARY KEY (`subscribe_id`);
 
 --
--- Индексы таблицы `oc_tax_class`
+-- Indexes for table `oc_tax_class`
 --
 ALTER TABLE `oc_tax_class`
   ADD PRIMARY KEY (`tax_class_id`);
 
 --
--- Индексы таблицы `oc_tax_rate`
+-- Indexes for table `oc_tax_rate`
 --
 ALTER TABLE `oc_tax_rate`
   ADD PRIMARY KEY (`tax_rate_id`);
 
 --
--- Индексы таблицы `oc_tax_rate_to_customer_group`
+-- Indexes for table `oc_tax_rate_to_customer_group`
 --
 ALTER TABLE `oc_tax_rate_to_customer_group`
   ADD PRIMARY KEY (`tax_rate_id`,`customer_group_id`);
 
 --
--- Индексы таблицы `oc_tax_rule`
+-- Indexes for table `oc_tax_rule`
 --
 ALTER TABLE `oc_tax_rule`
   ADD PRIMARY KEY (`tax_rule_id`);
 
 --
--- Индексы таблицы `oc_theme`
+-- Indexes for table `oc_theme`
 --
 ALTER TABLE `oc_theme`
   ADD PRIMARY KEY (`theme_id`);
 
 --
--- Индексы таблицы `oc_translation`
+-- Indexes for table `oc_translation`
 --
 ALTER TABLE `oc_translation`
   ADD PRIMARY KEY (`translation_id`);
 
 --
--- Индексы таблицы `oc_upload`
+-- Indexes for table `oc_upload`
 --
 ALTER TABLE `oc_upload`
   ADD PRIMARY KEY (`upload_id`);
 
 --
--- Индексы таблицы `oc_user`
+-- Indexes for table `oc_user`
 --
 ALTER TABLE `oc_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Индексы таблицы `oc_user_group`
+-- Indexes for table `oc_user_group`
 --
 ALTER TABLE `oc_user_group`
   ADD PRIMARY KEY (`user_group_id`);
 
 --
--- Индексы таблицы `oc_voucher`
+-- Indexes for table `oc_voucher`
 --
 ALTER TABLE `oc_voucher`
   ADD PRIMARY KEY (`voucher_id`);
 
 --
--- Индексы таблицы `oc_voucher_history`
+-- Indexes for table `oc_voucher_history`
 --
 ALTER TABLE `oc_voucher_history`
   ADD PRIMARY KEY (`voucher_history_id`);
 
 --
--- Индексы таблицы `oc_voucher_theme`
+-- Indexes for table `oc_voucher_theme`
 --
 ALTER TABLE `oc_voucher_theme`
   ADD PRIMARY KEY (`voucher_theme_id`);
 
 --
--- Индексы таблицы `oc_voucher_theme_description`
+-- Indexes for table `oc_voucher_theme_description`
 --
 ALTER TABLE `oc_voucher_theme_description`
   ADD PRIMARY KEY (`voucher_theme_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_weight_class`
+-- Indexes for table `oc_weight_class`
 --
 ALTER TABLE `oc_weight_class`
   ADD PRIMARY KEY (`weight_class_id`);
 
 --
--- Индексы таблицы `oc_weight_class_description`
+-- Indexes for table `oc_weight_class_description`
 --
 ALTER TABLE `oc_weight_class_description`
   ADD PRIMARY KEY (`weight_class_id`,`language_id`);
 
 --
--- Индексы таблицы `oc_zone`
+-- Indexes for table `oc_zone`
 --
 ALTER TABLE `oc_zone`
   ADD PRIMARY KEY (`zone_id`);
 
 --
--- Индексы таблицы `oc_zone_to_geo_zone`
+-- Indexes for table `oc_zone_to_geo_zone`
 --
 ALTER TABLE `oc_zone_to_geo_zone`
   ADD PRIMARY KEY (`zone_to_geo_zone_id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `oc_address`
+-- AUTO_INCREMENT for table `oc_address`
 --
 ALTER TABLE `oc_address`
   MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api`
+-- AUTO_INCREMENT for table `oc_api`
 --
 ALTER TABLE `oc_api`
   MODIFY `api_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api_ip`
+-- AUTO_INCREMENT for table `oc_api_ip`
 --
 ALTER TABLE `oc_api_ip`
-  MODIFY `api_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `api_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_api_session`
+-- AUTO_INCREMENT for table `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
-  MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT для таблицы `oc_attribute`
+-- AUTO_INCREMENT for table `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
-  MODIFY `attribute_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `attribute_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT для таблицы `oc_attribute_group`
+-- AUTO_INCREMENT for table `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
-  MODIFY `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `oc_banner`
+-- AUTO_INCREMENT for table `oc_banner`
 --
 ALTER TABLE `oc_banner`
   MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_banner_image`
+-- AUTO_INCREMENT for table `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
-  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author`
+-- AUTO_INCREMENT for table `oc_bm_author`
 --
 ALTER TABLE `oc_bm_author`
   MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author_description`
+-- AUTO_INCREMENT for table `oc_bm_author_description`
 --
 ALTER TABLE `oc_bm_author_description`
   MODIFY `author_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_author_group`
+-- AUTO_INCREMENT for table `oc_bm_author_group`
 --
 ALTER TABLE `oc_bm_author_group`
   MODIFY `author_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_category`
+-- AUTO_INCREMENT for table `oc_bm_category`
 --
 ALTER TABLE `oc_bm_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_category_description`
+-- AUTO_INCREMENT for table `oc_bm_category_description`
 --
 ALTER TABLE `oc_bm_category_description`
   MODIFY `category_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_post`
+-- AUTO_INCREMENT for table `oc_bm_post`
 --
 ALTER TABLE `oc_bm_post`
   MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_post_description`
+-- AUTO_INCREMENT for table `oc_bm_post_description`
 --
 ALTER TABLE `oc_bm_post_description`
   MODIFY `post_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
--- AUTO_INCREMENT для таблицы `oc_bm_review`
+-- AUTO_INCREMENT for table `oc_bm_review`
 --
 ALTER TABLE `oc_bm_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_cart`
+-- AUTO_INCREMENT for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
-  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
--- AUTO_INCREMENT для таблицы `oc_category`
+-- AUTO_INCREMENT for table `oc_category`
 --
 ALTER TABLE `oc_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
 
 --
--- AUTO_INCREMENT для таблицы `oc_country`
+-- AUTO_INCREMENT for table `oc_country`
 --
 ALTER TABLE `oc_country`
   MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon`
+-- AUTO_INCREMENT for table `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
   MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon_history`
+-- AUTO_INCREMENT for table `oc_coupon_history`
 --
 ALTER TABLE `oc_coupon_history`
   MODIFY `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_coupon_product`
+-- AUTO_INCREMENT for table `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
   MODIFY `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_currency`
+-- AUTO_INCREMENT for table `oc_currency`
 --
 ALTER TABLE `oc_currency`
   MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer`
+-- AUTO_INCREMENT for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_activity`
+-- AUTO_INCREMENT for table `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
   MODIFY `customer_activity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_approval`
+-- AUTO_INCREMENT for table `oc_customer_approval`
 --
 ALTER TABLE `oc_customer_approval`
   MODIFY `customer_approval_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_group`
+-- AUTO_INCREMENT for table `oc_customer_group`
 --
 ALTER TABLE `oc_customer_group`
   MODIFY `customer_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_history`
+-- AUTO_INCREMENT for table `oc_customer_history`
 --
 ALTER TABLE `oc_customer_history`
   MODIFY `customer_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_ip`
+-- AUTO_INCREMENT for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
   MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_login`
+-- AUTO_INCREMENT for table `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
   MODIFY `customer_login_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_reward`
+-- AUTO_INCREMENT for table `oc_customer_reward`
 --
 ALTER TABLE `oc_customer_reward`
   MODIFY `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_search`
+-- AUTO_INCREMENT for table `oc_customer_search`
 --
 ALTER TABLE `oc_customer_search`
   MODIFY `customer_search_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_customer_transaction`
+-- AUTO_INCREMENT for table `oc_customer_transaction`
 --
 ALTER TABLE `oc_customer_transaction`
   MODIFY `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_custom_field`
+-- AUTO_INCREMENT for table `oc_custom_field`
 --
 ALTER TABLE `oc_custom_field`
   MODIFY `custom_field_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_custom_field_value`
+-- AUTO_INCREMENT for table `oc_custom_field_value`
 --
 ALTER TABLE `oc_custom_field_value`
   MODIFY `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_download`
+-- AUTO_INCREMENT for table `oc_download`
 --
 ALTER TABLE `oc_download`
-  MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_d_validator`
+-- AUTO_INCREMENT for table `oc_d_validator`
 --
 ALTER TABLE `oc_d_validator`
   MODIFY `validator_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_event`
+-- AUTO_INCREMENT for table `oc_event`
 --
 ALTER TABLE `oc_event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension`
+-- AUTO_INCREMENT for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
   MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension_install`
+-- AUTO_INCREMENT for table `oc_extension_install`
 --
 ALTER TABLE `oc_extension_install`
   MODIFY `extension_install_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_extension_path`
+-- AUTO_INCREMENT for table `oc_extension_path`
 --
 ALTER TABLE `oc_extension_path`
   MODIFY `extension_path_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1450;
 
 --
--- AUTO_INCREMENT для таблицы `oc_filter`
+-- AUTO_INCREMENT for table `oc_filter`
 --
 ALTER TABLE `oc_filter`
   MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_filter_group`
+-- AUTO_INCREMENT for table `oc_filter_group`
 --
 ALTER TABLE `oc_filter_group`
   MODIFY `filter_group_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_geo_zone`
+-- AUTO_INCREMENT for table `oc_geo_zone`
 --
 ALTER TABLE `oc_geo_zone`
   MODIFY `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `oc_information`
+-- AUTO_INCREMENT for table `oc_information`
 --
 ALTER TABLE `oc_information`
   MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `oc_language`
+-- AUTO_INCREMENT for table `oc_language`
 --
 ALTER TABLE `oc_language`
   MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout`
+-- AUTO_INCREMENT for table `oc_layout`
 --
 ALTER TABLE `oc_layout`
   MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout_module`
+-- AUTO_INCREMENT for table `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
-  MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
--- AUTO_INCREMENT для таблицы `oc_layout_route`
+-- AUTO_INCREMENT for table `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
   MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT для таблицы `oc_length_class`
+-- AUTO_INCREMENT for table `oc_length_class`
 --
 ALTER TABLE `oc_length_class`
   MODIFY `length_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_location`
+-- AUTO_INCREMENT for table `oc_location`
 --
 ALTER TABLE `oc_location`
   MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_manufacturer`
+-- AUTO_INCREMENT for table `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
   MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_marketing`
+-- AUTO_INCREMENT for table `oc_marketing`
 --
 ALTER TABLE `oc_marketing`
   MODIFY `marketing_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_modification`
+-- AUTO_INCREMENT for table `oc_modification`
 --
 ALTER TABLE `oc_modification`
   MODIFY `modification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_module`
+-- AUTO_INCREMENT for table `oc_module`
 --
 ALTER TABLE `oc_module`
   MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT для таблицы `oc_option`
+-- AUTO_INCREMENT for table `oc_option`
 --
 ALTER TABLE `oc_option`
-  MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT для таблицы `oc_option_value`
+-- AUTO_INCREMENT for table `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
-  MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order`
+-- AUTO_INCREMENT for table `oc_order`
 --
 ALTER TABLE `oc_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_history`
+-- AUTO_INCREMENT for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
-  MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_option`
+-- AUTO_INCREMENT for table `oc_order_option`
 --
 ALTER TABLE `oc_order_option`
-  MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_product`
+-- AUTO_INCREMENT for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_recurring`
+-- AUTO_INCREMENT for table `oc_order_recurring`
 --
 ALTER TABLE `oc_order_recurring`
   MODIFY `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_recurring_transaction`
+-- AUTO_INCREMENT for table `oc_order_recurring_transaction`
 --
 ALTER TABLE `oc_order_recurring_transaction`
   MODIFY `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_shipment`
+-- AUTO_INCREMENT for table `oc_order_shipment`
 --
 ALTER TABLE `oc_order_shipment`
   MODIFY `order_shipment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_status`
+-- AUTO_INCREMENT for table `oc_order_status`
 --
 ALTER TABLE `oc_order_status`
   MODIFY `order_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_total`
+-- AUTO_INCREMENT for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
-  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
+  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=320;
 
 --
--- AUTO_INCREMENT для таблицы `oc_order_voucher`
+-- AUTO_INCREMENT for table `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
   MODIFY `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product`
+-- AUTO_INCREMENT for table `oc_product`
 --
 ALTER TABLE `oc_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_discount`
+-- AUTO_INCREMENT for table `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
-  MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
+  MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=453;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_image`
+-- AUTO_INCREMENT for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
-  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2361;
+  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2395;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_option`
+-- AUTO_INCREMENT for table `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
-  MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_option_value`
+-- AUTO_INCREMENT for table `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
-  MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_reward`
+-- AUTO_INCREMENT for table `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
-  MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=548;
+  MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=554;
 
 --
--- AUTO_INCREMENT для таблицы `oc_product_special`
+-- AUTO_INCREMENT for table `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
-  MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
+  MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=448;
 
 --
--- AUTO_INCREMENT для таблицы `oc_recurring`
+-- AUTO_INCREMENT for table `oc_recurring`
 --
 ALTER TABLE `oc_recurring`
   MODIFY `recurring_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return`
+-- AUTO_INCREMENT for table `oc_return`
 --
 ALTER TABLE `oc_return`
   MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_action`
+-- AUTO_INCREMENT for table `oc_return_action`
 --
 ALTER TABLE `oc_return_action`
   MODIFY `return_action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_history`
+-- AUTO_INCREMENT for table `oc_return_history`
 --
 ALTER TABLE `oc_return_history`
   MODIFY `return_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_reason`
+-- AUTO_INCREMENT for table `oc_return_reason`
 --
 ALTER TABLE `oc_return_reason`
   MODIFY `return_reason_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `oc_return_status`
+-- AUTO_INCREMENT for table `oc_return_status`
 --
 ALTER TABLE `oc_return_status`
   MODIFY `return_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `oc_review`
+-- AUTO_INCREMENT for table `oc_review`
 --
 ALTER TABLE `oc_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_seo_url`
+-- AUTO_INCREMENT for table `oc_seo_url`
 --
 ALTER TABLE `oc_seo_url`
   MODIFY `seo_url_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=844;
 
 --
--- AUTO_INCREMENT для таблицы `oc_setting`
+-- AUTO_INCREMENT for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3700;
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4773;
 
 --
--- AUTO_INCREMENT для таблицы `oc_statistics`
+-- AUTO_INCREMENT for table `oc_statistics`
 --
 ALTER TABLE `oc_statistics`
   MODIFY `statistics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `oc_stock_status`
+-- AUTO_INCREMENT for table `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
   MODIFY `stock_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_store`
+-- AUTO_INCREMENT for table `oc_store`
 --
 ALTER TABLE `oc_store`
   MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_subscribe`
+-- AUTO_INCREMENT for table `oc_subscribe`
 --
 ALTER TABLE `oc_subscribe`
-  MODIFY `subscribe_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `subscribe_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_class`
+-- AUTO_INCREMENT for table `oc_tax_class`
 --
 ALTER TABLE `oc_tax_class`
   MODIFY `tax_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_rate`
+-- AUTO_INCREMENT for table `oc_tax_rate`
 --
 ALTER TABLE `oc_tax_rate`
   MODIFY `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
--- AUTO_INCREMENT для таблицы `oc_tax_rule`
+-- AUTO_INCREMENT for table `oc_tax_rule`
 --
 ALTER TABLE `oc_tax_rule`
   MODIFY `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT для таблицы `oc_theme`
+-- AUTO_INCREMENT for table `oc_theme`
 --
 ALTER TABLE `oc_theme`
   MODIFY `theme_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_translation`
+-- AUTO_INCREMENT for table `oc_translation`
 --
 ALTER TABLE `oc_translation`
   MODIFY `translation_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_upload`
+-- AUTO_INCREMENT for table `oc_upload`
 --
 ALTER TABLE `oc_upload`
   MODIFY `upload_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_user`
+-- AUTO_INCREMENT for table `oc_user`
 --
 ALTER TABLE `oc_user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `oc_user_group`
+-- AUTO_INCREMENT for table `oc_user_group`
 --
 ALTER TABLE `oc_user_group`
   MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher`
+-- AUTO_INCREMENT for table `oc_voucher`
 --
 ALTER TABLE `oc_voucher`
   MODIFY `voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher_history`
+-- AUTO_INCREMENT for table `oc_voucher_history`
 --
 ALTER TABLE `oc_voucher_history`
   MODIFY `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `oc_voucher_theme`
+-- AUTO_INCREMENT for table `oc_voucher_theme`
 --
 ALTER TABLE `oc_voucher_theme`
   MODIFY `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `oc_weight_class`
+-- AUTO_INCREMENT for table `oc_weight_class`
 --
 ALTER TABLE `oc_weight_class`
   MODIFY `weight_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `oc_zone`
+-- AUTO_INCREMENT for table `oc_zone`
 --
 ALTER TABLE `oc_zone`
   MODIFY `zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4239;
 
 --
--- AUTO_INCREMENT для таблицы `oc_zone_to_geo_zone`
+-- AUTO_INCREMENT for table `oc_zone_to_geo_zone`
 --
 ALTER TABLE `oc_zone_to_geo_zone`
   MODIFY `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT;
