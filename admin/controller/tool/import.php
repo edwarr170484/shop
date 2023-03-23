@@ -293,7 +293,7 @@ class ControllerToolImport extends Controller {
                     'tag' => ''
                 ],
             ],
-            'model' => $product["nameCharacteristic"],
+            'model' => $product["vendorCode"],
             'sku' => '',
             'upc' => '',
             'ean' => '',
