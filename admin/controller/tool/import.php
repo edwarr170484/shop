@@ -70,6 +70,7 @@ class ControllerToolImport extends Controller {
             'updatedCategories' => 0,
             'newProducts' => 0,
             'updatedProducts' => 0,
+            'uploadedImages' => 0,
             'newAttributes' => 0,
             'updatedAttributes' => 0,
             'defaultLanguage' => $data['language']
@@ -172,6 +173,7 @@ class ControllerToolImport extends Controller {
                                     Обновлено категорий: {$statistics['updatedCategories']}.<br/>
                                     Добавлено товаров: {$statistics['newProducts']}.<br/>
                                     Обновлено товаров: {$statistics['updatedProducts']}.<br/>
+                                    Перемещено изображений: {$statistics['uploadedImages']}.<br/>
                                     Добавлено характеристик: {$statistics['newAttributes']}<br/>
                                     Обновлено характеристик: {$statistics['updatedAttributes']}");
     }
@@ -249,12 +251,29 @@ class ControllerToolImport extends Controller {
         {
             $i = 1;
             foreach($product['addressImages'] as $image){
-                $images[] = [
-                    'image' => $image,
-                    'sort_order' => $i
-                ];
 
-                $i++;
+                /* save image to catalog/products */
+                try
+                {
+                    $imageContent = file_get_contents("http://93.84.103.182/images/" . $image);
+
+                    if($imageContent !== false)
+                    {
+                        $images[] = [
+                            'image' => 'catalog/products/' . $image,
+                            'sort_order' => $i
+                        ];
+
+                        $i++;
+                        
+                        file_put_contents(DIR_IMAGE . 'catalog/products/' . $image, $imageContent);
+                        $statistics['uploadedImages']++;
+                    }
+                }
+                catch(\Throwable $e)
+                {
+                    continue;
+                }
             }
         }
 
@@ -351,8 +370,8 @@ class ControllerToolImport extends Controller {
                     ]
                 ]
             ],*/
-            /*'image' => $product['addressImages'] ? $product['addressImages'][0] : '',
-            'product_image' => $images,*/
+            'image' => $product['addressImages'] ? 'catalog/products/' . $product['addressImages'][0] : '',
+            'product_image' => $images,
             'points' => 0,
             'import_id' => $product["code"] 
         ];
@@ -393,7 +412,7 @@ class ControllerToolImport extends Controller {
         {
             foreach($array as $value)
             {
-                if($value['import_id'] == $item['id'] && $value['model'] == $item['nameCharacteristic'])
+                if($value['import_id'] == $item['id'] && $value['model'] == $item['vendorCode'])
                 {
                     return $value;
                 }
