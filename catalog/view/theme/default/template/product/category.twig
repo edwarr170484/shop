@@ -16,6 +16,9 @@
       </ul>
       {{ content_top }}
       <h2 class="category-header">{{ heading_title }}</h2>
+      {% if description %}
+        <div class="category-description">{{ description }}</div>
+      {% endif %} 
       {% if categories | length > 0 %}
         {% for category in categories %}
           {% if category.products | length > 0 %}

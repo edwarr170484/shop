@@ -5,10 +5,15 @@
     margin-bottom: 140px;
   }
 
-  @include respond-to(md){
+  @include respond-to(md) {
     padding-top: 0;
   }
 }
+
+.category-description {
+  margin-bottom: 25px;
+}
+
 .category-header {
   font-size: 30px;
   line-height: 35px;
@@ -17,10 +22,11 @@
   text-align: center;
   margin-bottom: 59px;
 
-  @include respond-to(md){
+  @include respond-to(md) {
     display: none;
   }
 }
+
 .category-sorts {
   display: flex;
   justify-content: space-between;
@@ -32,15 +38,15 @@
   color: $main;
   margin-bottom: 48px;
 
-  & .category-name{
+  & .category-name {
     display: none;
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    color:$main;
+    color: $main;
     text-transform: uppercase;
 
-    @include respond-to(md){
+    @include respond-to(md) {
       display: block;
     }
   }
@@ -59,42 +65,44 @@
       }
     }
 
-    @include respond-to(md){
-      flex-direction:column;
+    @include respond-to(md) {
+      flex-direction: column;
       background: #fff;
-      padding:15px 15px 7px;
-      border:1px solid $gray;
+      padding: 15px 15px 7px;
+      border: 1px solid $gray;
       align-items: flex-end;
       position: absolute;
-      right:0;
-      top:100%;
+      right: 0;
+      top: 100%;
       display: none;
-      z-index:11;
+      z-index: 11;
 
-      & li{
+      & li {
         margin-bottom: 7px;
       }
     }
   }
 
-  & .input-group-addon{
-    @include respond-to(md){
+  & .input-group-addon {
+    @include respond-to(md) {
       display: none;
     }
   }
 
-  @include respond-to(md){
+  @include respond-to(md) {
     background: url('../image/icons/filter.png') 100% center no-repeat;
     margin-bottom: 0;
     height: 48px;
 
-    &:hover, &:focus{
-      & .sort-links{
+    &:hover,
+    &:focus {
+      & .sort-links {
         display: flex;
       }
     }
   }
 }
+
 .subcategory-header {
   display: flex;
   justify-content: space-between;
@@ -126,14 +134,15 @@
     }
   }
 
-  @include respond-to(md){
+  @include respond-to(md) {
     margin-bottom: 10px;
   }
 }
+
 .subcategory-products {
   margin-bottom: 110px;
 
-  @include respond-to(md){
+  @include respond-to(md) {
     margin-bottom: 50px;
   }
 }
