@@ -56,10 +56,10 @@
             <div class="product-price">
               <div>Цена:</div>
               {% if not special %}
-                <div class="new-price">{{ price }}</div>
+                <div class="new-price">{{ price }} с НДС</div>
               {% else %}
                 <div class="old-price">{{ price }}</div>
-                <div class="new-price">{{ special }}</div>
+                <div class="new-price">{{ special }} с НДС</div>
               {% endif %}
             </div>
           {% endif %}
@@ -122,6 +122,9 @@
                     <div class="form-group">{{ stock }}</div>
                   {% endif %}
                 </div>
+                {% if minimum > 0 %}
+                  <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_minimum }}</div>
+                {% endif %}
               {% endif %}
               {% if option.type == 'radio' %}
                 <div class="product-option">
@@ -180,14 +183,15 @@
               </div>
               <div class="form-group">{{ stock }}</div>
             </div>
+            {% if minimum > 0 %}
+              <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_minimum }}</div>
+            {% endif %}
           {% endif %}
           <div class="form-group product-buttons">
             <input type="hidden" name="product_id" value="{{ product_id }}" />
             <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>
           </div>
-          {% if minimum > 1 %}
-            <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_minimum }}</div>
-          {% endif %}</div>
+          </div>
          </div>
       </div>
       {% if products %}

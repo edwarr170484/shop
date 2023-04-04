@@ -85,7 +85,7 @@ function getURLVar(key) {
 
 function inputDown(button) {
   let currentValue = parseInt(button.parent().find("input").val());
-  let newValue = currentValue - 1 >= 0 ? currentValue - 1 : 0;
+  let newValue = currentValue - 1 >= 1 ? currentValue - 1 : 1;
   button.parent().find("input").val(newValue);
 }
 
@@ -235,6 +235,14 @@ $(document).ready(function () {
       }
     }
   );
+
+  $("#input-quantity").change(function(){
+    if($(this).val() <= 0)
+    {
+      $(this).val(1);
+    }
+  });
+  
 });
 
 // Cart add remove functions
