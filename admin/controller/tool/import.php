@@ -159,7 +159,7 @@ class ControllerToolImport extends Controller {
                     return ($amount["code"] == $product["code"]) && ($amount["сharacteristics"] == $product["nameCharacteristic"]);
                 });
 
-                $product["quantity"] = array_reduce($amount, function($count, $item){return $count += $item["amount"];}, 0);
+                $product["quantity"] = array_reduce($amount, function($count, $item){return $count += (float)$item["amount"];}, 0);
 
                 $existingCategory = $this->inArray($existingCategories, ["id" => $product["id_Parent"]]);
                 $product["id_Parent"] = $existingCategory ? $existingCategory["category_id"] : 0;
@@ -183,7 +183,7 @@ class ControllerToolImport extends Controller {
             'category_description' => [
                 $statistics['defaultLanguage']['language_id'] => [
                     'name' => $category['name'],
-                    'description' => $category['name'],
+                    'description' => '',
                     'meta_title' => $category['name'],
                     'meta_description' => $category['name'],
                     'meta_keyword' => ''
