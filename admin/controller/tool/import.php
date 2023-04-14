@@ -143,8 +143,73 @@ class ControllerToolImport extends Controller {
         $result = $client->GetProduct();
         $incomingProducts = json_decode($result->return, true);
 
+        /* Options import start */
+        if(count($incomingProducts) > 0)
+        {
+            $existingOptions = $this->model_tool_import->getOptionValues(14);
+            $sortorder = count($existingOptions) + 1;
+
+            foreach($incomingProducts as $product)
+            {
+                $exists = false;
+
+                if($product["options"])
+                {
+                    foreach($product["options"] as $option)
+                    {
+                        $tmp = [
+                            "option_value_id" => "",
+                            "name" => trim($option["colorNameForSite"]),
+                            "image" => "",
+                            "sort_order" => $sortorder
+                        ];
+
+                        if($tmp["name"] && !$this->inOptionsArray($existingOptions, $tmp))
+                        {
+                            array_push($existingOptions, $tmp);
+                            $sortorder++;
+                        }
+                    }
+                }
+            }
+
+            $optionValues = [];
+
+            if($existingOptions)
+            {
+                foreach($existingOptions as $option)
+                {
+                    $optionValues[] = [
+                        "option_value_id" => $option["option_value_id"],
+                        "option_value_description" => [
+                            $statistics['defaultLanguage']['language_id'] => [
+                                "name" => $option["name"]
+                            ]
+                        ],
+                        "image" => $option["image"],
+                        "sort_order" => $option["sort_order"] 
+                    ];
+                }
+            }
+
+            $optionData = [
+                "option_description" => [
+                    $statistics['defaultLanguage']['language_id'] => [
+                        "name" => "Цвет"
+                    ]
+                ],
+                "type" => "radio",
+                "sort_order" => 2,
+                "option_value" => $optionValues
+            ];
+
+            $this->model_tool_import->editOption(14, $optionData);
+        }
+        /* Options import end */
+
         $result = $client->GetAmountProduct();
         $incomingAmounts = json_decode($result->return, true);
+        $options = $this->model_tool_import->getOptionValues(14);
 
         if(count($incomingProducts) > 0)
         {
@@ -156,10 +221,43 @@ class ControllerToolImport extends Controller {
                 $product["id"] = $product["code"];
 
                 $amount = array_filter($incomingAmounts, function($amount) use ($product){
-                    return ($amount["code"] == $product["code"]) && ($amount["сharacteristics"] == $product["nameCharacteristic"]);
+                    return ($amount["code"] == $product["code"]) && (trim($amount["сharacteristics"]) == trim($product["nameCharacteristic"]));
                 });
 
                 $product["quantity"] = array_reduce($amount, function($count, $item){return $count += (float)$item["amount"];}, 0);
+
+                $sameProducts = array_filter($incomingProducts, function($item) use ($product)
+                {
+                    return $item["code"] == $product["code"];
+                });
+
+                $props = [];
+                $opts = [];
+
+                if($sameProducts)
+                {
+                    foreach($sameProducts as $same)
+                    {
+                        if($same["properties"])
+                        {
+                            foreach($same["properties"] as $property)
+                            {
+                                array_push($props, $property);
+                            }
+                        }
+
+                        if($same["options"])
+                        {
+                            foreach($same["options"] as $option)
+                            {
+                                array_push($opts, $option);
+                            }
+                        }
+                    }
+                }
+
+                $product["properties"] = $props;
+                $product["options"] = $opts;
 
                 $existingCategory = $this->inArray($existingCategories, ["id" => $product["id_Parent"]]);
                 $product["id_Parent"] = $existingCategory ? $existingCategory["category_id"] : 0;
@@ -255,7 +353,7 @@ class ControllerToolImport extends Controller {
                 /* save image to catalog/products */
                 try
                 {
-                    $imageContent = file_get_contents("http://93.84.103.182/images/" . $image);
+                    $imageContent = file_get_contents($this->config->get('config_1cimages') . $image);
 
                     if($imageContent !== false)
                     {
@@ -278,7 +376,10 @@ class ControllerToolImport extends Controller {
         }
 
         $attributes = $this->model_tool_import->getAttributes();
+        $options = $this->model_tool_import->getOptionValues(14);
+
         $productAttributes = [];
+        $productOptions = [];
         
         if($product["properties"])
         {
@@ -317,10 +418,10 @@ class ControllerToolImport extends Controller {
             'upc' => '',
             'ean' => '',
             'jan' => '',
-            'isbn' => '',
-            'mpn' => '',
+            'isbn' => $product["measureUnitProduct"],
+            'mpn' => $product["forOrderOnly"],
             'location' => '',
-            'price' => (float)preg_replace('/\,/', '.', $product['priceWithVAT']),
+            'price' => (float)str_replace(',', '.', $product['priceWithVAT']),
             'tax_class_id' => 9,
             'quantity' => $product["quantity"],
             'minimum' => 1,
@@ -415,6 +516,23 @@ class ControllerToolImport extends Controller {
                 if($value['import_id'] == $item['id'] && $value['model'] == $item['vendorCode'])
                 {
                     return $value;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private function inOptionsArray($array, $item)
+    {
+        if(count($array) > 0)
+        {
+            foreach($array as $value)
+            {
+
+                if($item["name"] && stristr(strtolower($value["name"]), strtolower($item["name"])))
+                {
+                    return true;
                 }
             }
         }
