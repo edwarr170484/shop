@@ -90,6 +90,7 @@
               </table>
             </div>
           {% endif %}
+          {% if not mpn %}
           <div id="product" class="product-option-list"> 
           {% if options %}
             {% set i = 1%}
@@ -113,7 +114,8 @@
                       <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
                       <div class="input-number">
                         <button type="button" class="input-down" onclick="inputDown($(this))">-</button>
-                        <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control" />
+                        <input type="text" name="quantity" value="{{ minimum }}" size="3" id="input-quantity" class="form-control" />
+                        <span>{{ isbn }}</span>
                         <button type="button" class="input-up" onclick="inputUp($(this))">+</button>
                       </div>
                     </div>
@@ -177,7 +179,8 @@
                 <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
                 <div class="input-number">
                   <button type="button" class="input-down" onclick="inputDown($(this))">-</button>
-                  <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control" />
+                  <input type="text" name="quantity" value="{{ minimum }}" size="3" id="input-quantity" class="form-control" />
+                  <span>{{ isbn }}</span>
                   <button type="button" class="input-up" onclick="inputUp($(this))">+</button>
                 </div>
               </div>
@@ -191,6 +194,8 @@
             <input type="hidden" name="product_id" value="{{ product_id }}" />
             <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>
           </div>
+          {% endif %}
+
           </div>
          </div>
       </div>

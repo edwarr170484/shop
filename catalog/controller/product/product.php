@@ -238,15 +238,25 @@ class ControllerProductProduct extends Controller {
 			$data['manufacturer'] = $product_info['manufacturer'];
 			$data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
 			$data['model'] = $product_info['model'];
+			$data['isbn'] = $product_info['isbn'];
+			$data['mpn'] = $product_info['mpn'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
-			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 
-			$more = preg_match('/###more_start###(.*?)###more_end###/s', $data['description'], $match);
-			
-			if(isset($match[1])){
-				$data['description'] = preg_replace('/###more_start###.*?###more_end###/s', '', $data['description']);
-				$data['description'] .= '<div class="more-description">' . $match[1] . '</div>' . '<button type="button" class="read-more">Подробнее</button>';
+			$description = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
+
+			$tieserLength = 150;
+
+			$tieser = substr($description, 0, $tieserLength);
+			$details = substr($description, $tieserLength, strlen($description) - $tieserLength);
+
+			if(strlen($description) > $tieserLength)
+			{
+				$data['description'] = '<div class="product-information"><span>' . $tieser . '</span><div class="more-description">' . $details . '</div></div>' . '<button type="button" class="read-more">Подробнее</button>';
+			}
+			else
+			{
+				$data['description'] = $description;
 			}
 			
 

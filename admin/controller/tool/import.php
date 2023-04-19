@@ -213,18 +213,24 @@ class ControllerToolImport extends Controller {
 
         if(count($incomingProducts) > 0)
         {
-            $existingProducts = $this->model_tool_import->getProducts();
             $existingCategories = $this->model_tool_import->getCategories();
+            $existingProducts = $this->model_tool_import->getProducts();
+            $processedProducts = [];
 
             foreach($incomingProducts as $product)
             {
                 $product["id"] = $product["code"];
 
                 $amount = array_filter($incomingAmounts, function($amount) use ($product){
-                    return ($amount["code"] == $product["code"]) && (trim($amount["сharacteristics"]) == trim($product["nameCharacteristic"]));
+                    return ($amount["code"] == $product["code"]);
                 });
 
-                $product["quantity"] = array_reduce($amount, function($count, $item){return $count += (float)$item["amount"];}, 0);
+                $product["quantity"] = (float)array_reduce($amount, function($count, $item){
+                    $num = preg_replace('/[^0-9\,]/', '', $item["amount"]);
+                    $num = preg_replace('/,/', '.', $num);
+                    
+                    return $count += (float)$num;
+                }, 0);
 
                 $sameProducts = array_filter($incomingProducts, function($item) use ($product)
                 {
@@ -238,6 +244,7 @@ class ControllerToolImport extends Controller {
                 {
                     foreach($sameProducts as $same)
                     {
+                        
                         if($same["properties"])
                         {
                             foreach($same["properties"] as $property)
@@ -254,15 +261,54 @@ class ControllerToolImport extends Controller {
                             }
                         }
                     }
+
+                    $product["properties"] = $props;
+                    $product["options"] = $opts;
                 }
 
-                $product["properties"] = $props;
-                $product["options"] = $opts;
+                /*if(count($product["options"]) > 0)
+                {
+                    $i = 0;
+
+                    foreach($product["options"] as $productOption)
+                    {
+                        $amount = array_filter($incomingAmounts, function($amount) use ($productOption, $product){
+                            return ($amount["code"] == $product["code"]) && (trim(strtolower($amount["сharacteristics"])) == trim(strtolower($productOption["colorNameForSite"])));
+                        });
+
+                        $optionValue = array_filter($options, function($option) use ($productOption){
+                           return trim(strtolower($option["name"])) == trim(strtolower($productOption["colorNameForSite"]));
+                        });
+
+                        if($amount)
+                        {
+                            [$code, $name, $сharacteristics, $quantity] = $amount;
+
+                            $num = preg_replace('/\s/', '', $quantity);
+                            $num = preg_replace('/\,/', '.', $num);
+
+                            $product["options"][$i]["quantity"] = (float)$num;
+                        }
+
+                        if($optionValue)
+                        {
+                            [$id, $name, $image, $sort] = $optionValue;
+
+                            $product["options"][$i]["option_value_id"] = $id;
+                        }
+
+                        $i++;
+                    }
+                }*/
 
                 $existingCategory = $this->inArray($existingCategories, ["id" => $product["id_Parent"]]);
                 $product["id_Parent"] = $existingCategory ? $existingCategory["category_id"] : 0;
 
-                $this->processProduct($existingProducts, $product, $statistics);
+                if(!in_array($processedProducts, $product["code"]))
+                {
+                    $this->processProduct($existingProducts, $product, $statistics);
+                    array_push($processedProducts, $product["code"]);
+                }
             }
         }
         /* Products Import End */
@@ -402,6 +448,25 @@ class ControllerToolImport extends Controller {
             }
         }
 
+        /*if($product["options"])
+        {
+            foreach($product["options"] as $option)
+            {
+                $productOptions[] = [
+                        'option_value_id' => $option["option_value_id"],
+                        'product_option_value_id' => '',
+                        'quantity' => $option["quantity"],
+                        'subtract' => 1,
+                        'price_prefix' => '',
+                        'price' => '',
+                        'points_prefix' => '',
+                        'points' => 0,
+                        'weight_prefix' => '',
+                        'weight' => 0
+                    ];
+            }
+        }*/
+
         $data = [
             'product_description' => [
                 $statistics['defaultLanguage']['language_id'] => [
@@ -448,29 +513,15 @@ class ControllerToolImport extends Controller {
             ],
             'product_attribute' => $productAttributes,
             /*'option' => '',
-            'product_option' => [
+            'product_option' => $productOptions ? [
                 0 => [
-                    'product_option_id' => 217,
-                    'name' => 'Select',
-                    'option_id' => 5,
-                    'type' => 'select',
+                    'name' => 'Цвет',
+                    'option_id' => 14,
+                    'type' => 'radio',
                     'required' => 1,
-                    'product_option_value' => [
-                        0 => [
-                            'option_value_id' => 39,
-                            'product_option_value_id' => 4,
-                            'quantity' => 90,
-                            'subtract' => 1,
-                            'price_prefix' => '',
-                            'price' => '',
-                            'points_prefix' => '',
-                            'points' => 0,
-                            'weight_prefix' => '',
-                            'weight' => 0
-                        ]
-                    ]
+                    'product_option_value' => $productOptions
                 ]
-            ],*/
+            ] : 0,*/
             'image' => $product['addressImages'] ? 'catalog/products/' . $product['addressImages'][0] : '',
             'product_image' => $images,
             'points' => 0,

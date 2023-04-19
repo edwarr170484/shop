@@ -112,6 +112,18 @@
   margin-top: 31px;
 }
 
+.product-information {
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+
+  & span {
+    float: left;
+  }
+}
+
 .product-text {
   font-size: 16px;
   line-height: 19px;
