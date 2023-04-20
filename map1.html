@@ -1,0 +1,2645 @@
+<style>
+    .color-maps .color-map {
+        display: none;
+    }
+
+    .color-maps .color-map.active {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .color-maps .color-map .color {
+        width: 190px;
+        padding: 5px;
+        border-right: 1px solid lightgrey;
+        border-bottom: 1px solid lightgray;
+        position: relative;
+    }
+
+    .color-maps .color-map .color img {
+        width: 100%;
+        height: 100%;
+        max-width: 180px;
+        max-height: 70px;
+    }
+
+    .color-maps .color-map p {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-weight: bold;
+        background: #fff;
+        padding: 5px;
+        margin: 0;
+    }
+
+    .color-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .color-navigation ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .color-navigation ul button {
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dcdcdc;
+        color: #507998;
+        width: 32px;
+        height: 32px;
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.2s linear;
+    }
+
+    .color-navigation ul button.active {
+        color: #fff;
+        background: #00a8de;
+
+    }
+
+    .color-navigation ul button:hover,
+    .color-navigation ul button:focus {
+        color: #fff;
+        background: #00a8de;
+        outline: none;
+        box-shadow: none;
+    }
+</style>
+
+<div class="color-navigation">
+    <ul>
+        <li><button class="active" onclick="showColorMap(1, $(this))">1</button></li>
+        <li><button onclick="showColorMap(2, $(this))">2</button></li>
+        <li><button onclick="showColorMap(3, $(this))">3</button></li>
+        <li><button onclick="showColorMap(4, $(this))">4</button></li>
+        <li><button onclick="showColorMap(5, $(this))">5</button></li>
+    </ul>
+</div>
+
+<div class="color-maps">
+    <div class="color-map active" id="color-map-1">
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #efe9d4;">
+            <p>
+                S099</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #eeeeee;">
+            <p>
+                S501</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e8dfce;">
+            <p>
+                S121</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a5a379;">
+            <p>
+                S883</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b5bb9f;">
+            <p>
+                S881</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f3e4ae;">
+            <p>
+                S055</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f7f5d4;">
+            <p>
+                S502</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e3d5a7;">
+            <p>
+                S551</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #aca174;">
+            <p>
+                S882</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #caff77;">
+            <p>
+                S872</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f5e29f;">
+            <p>
+                S842</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f9ebc8;">
+            <p>
+                S801</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e6c291;">
+            <p>
+                S129</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ad9b71;">
+            <p>
+                S108</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e3ed55;">
+            <p>
+                S803</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f9da85;">
+            <p>
+                S279</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffe39d;">
+            <p>
+                S124</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bca261;">
+            <p>
+                S845</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #777052;">
+            <p>
+                S342</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #cce55c;">
+            <p>
+                S804</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #fbde7a;">
+            <p>
+                S505</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #feffa5;">
+            <p>
+                S345</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c49c58;">
+            <p>
+                S106</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #82856a;">
+            <p>
+                S109</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a9e04f;">
+            <p>
+                S535</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f6cf67;">
+            <p>
+                S130</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #feff8c;">
+            <p>
+                S054</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #cfa326;">
+            <p>
+                S828</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #808365;">
+            <p>
+                S170</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #afc964;">
+            <p>
+                S875</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f4c075;">
+            <p>
+                S843</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #fff38a;">
+            <p>
+                S802</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d1b22f;">
+            <p>
+                S509</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #687564;">
+            <p>
+                S562</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #acce75;">
+            <p>
+                S827</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f9c16e;">
+            <p>
+                S507</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffdd89;">
+            <p>
+                S178</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b99b38;">
+            <p>
+                S510</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #666b4a;">
+            <p>
+                S011</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #98b569;">
+            <p>
+                S537</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f0a83e;">
+            <p>
+                S056</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #fffd7f;">
+            <p>
+                S503</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a0893b;">
+            <p>
+                S898</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #73742f;">
+            <p>
+                S247</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6f8456;">
+            <p>
+                S064</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffc29e;">
+            <p>
+                S114</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #fff278;">
+            <p>
+                S089</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #907638;">
+            <p>
+                S899</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9b7c56;">
+            <p>
+                S367</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7b8a5e;">
+            <p>
+                S211</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e2a56f;">
+            <p>
+                S043</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffda76;">
+            <p>
+                S346</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ce973d;">
+            <p>
+                S087</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #877f4b;">
+            <p>
+                S888</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #657b42;">
+            <p>
+                S887</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f4a466;">
+            <p>
+                S234</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #fccf61;">
+            <p>
+                S116</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ae8c49;">
+            <p>
+                S897</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7c8053;">
+            <p>
+                S566</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #597b47;">
+            <p>
+                S528</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f79b58;">
+            <p>
+                S523</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffbf4c;">
+            <p>
+                S001</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9c763c;">
+            <p>
+                S216</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #626f57;">
+            <p>
+                S567</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #385f3b;">
+            <p>
+                S880</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #faa85b;">
+            <p>
+                S849</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #fcd663;">
+            <p>
+                S131</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b38237;">
+            <p>
+                S508</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #403e2c;">
+            <p>
+                S305</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #415e41;">
+            <p>
+                S879</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f7ac59;">
+            <p>
+                S006</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #fff463;">
+            <p>
+                S504</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #966d21;">
+            <p>
+                S241</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #46402d;">
+            <p>
+                S096</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #454f3e;">
+            <p>
+                S870</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #da5959;">
+            <p>
+                S200</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffd851;">
+            <p>
+                S506</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a57350;">
+            <p>
+                S086</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #423f20;">
+            <p>
+                S282</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4a4f40;">
+            <p>
+                S190</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #cd5751;">
+            <p>
+                S518</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ead56e;">
+            <p>
+                S844</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #855b45;">
+            <p>
+                S859</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3c3b2b;">
+            <p>
+                S080</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #212515;">
+            <p>
+                S077</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e25e47;">
+            <p>
+                S053</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e1b24a;">
+            <p>
+                S846</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #815e46;">
+            <p>
+                S022</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3b3724;">
+            <p>
+                S223</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #333631;">
+            <p>
+                S237</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #db523f;">
+            <p>
+                S819</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ecaf4e;">
+            <p>
+                S847</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #735747;">
+            <p>
+                S900</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #373528;">
+            <p>
+                S173</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3b3d36;">
+            <p>
+                S120</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d8644d;">
+            <p>
+                S024</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #dda23b;">
+            <p>
+                S848</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6c4f46;">
+            <p>
+                S568</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3b3829;">
+            <p>
+                S078</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #393e36;">
+            <p>
+                S175</p>
+        </div>
+    </div>
+    <div class="color-map" id="color-map-2">
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #94a781;">
+            <p>
+                S110</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f2f3ec;">
+            <p>
+                S841</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b9bbab;">
+            <p>
+                S202</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #cacac8;">
+            <p>
+                S112</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f5f4f2;">
+            <p>
+                S030</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #98b685;">
+            <p>
+                S063</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #eaf3dc;">
+            <p>
+                S184</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a9bab7;">
+            <p>
+                S821</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #badcdc;">
+            <p>
+                S543</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #eaf3f3;">
+            <p>
+                S356</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6f9766;">
+            <p>
+                S100</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a6e9af;">
+            <p>
+                S871</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #98d6be;">
+            <p>
+                S823</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #beedec;">
+            <p>
+                S142</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d3f1f1;">
+            <p>
+                S366</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bad970;">
+            <p>
+                S041</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c0e6b1;">
+            <p>
+                S531</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #92b5a3;">
+            <p>
+                S250</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #aadbd7;">
+            <p>
+                S035</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bbe5dd;">
+            <p>
+                S822</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c9dc55;">
+            <p>
+                S874</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #abe3a3;">
+            <p>
+                S532</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6f9887;">
+            <p>
+                S004</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #94bdc0;">
+            <p>
+                S357</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a0d8ce;">
+            <p>
+                S044</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6ebf6d;">
+            <p>
+                S536</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #72d270;">
+            <p>
+                S191</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #46ad8a;">
+            <p>
+                S824</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #74c4d7;">
+            <p>
+                S905</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #84e2d4;">
+            <p>
+                S533</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6c8c48;">
+            <p>
+                S081</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #65cb6a;">
+            <p>
+                S873</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3ea588;">
+            <p>
+                S105</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #56b8bc;">
+            <p>
+                S385</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7edfc1;">
+            <p>
+                S534</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #739c5f;">
+            <p>
+                S065</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #00c281;">
+            <p>
+                S148</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #009c82;">
+            <p>
+                S826</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #41a7aa;">
+            <p>
+                S548</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #81beb9;">
+            <p>
+                S904</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5aa044;">
+            <p>
+                S047</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #38cf54;">
+            <p>
+                S538</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2d9482;">
+            <p>
+                S393</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #179dab;">
+            <p>
+                S263</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #54c7b5;">
+            <p>
+                S049</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #54a35c;">
+            <p>
+                S150</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #00b057;">
+            <p>
+                S149</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #26816a;">
+            <p>
+                S036</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #318a97;">
+            <p>
+                S370</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4faca2;">
+            <p>
+                S825</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4b9b56;">
+            <p>
+                S052</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0f9846;">
+            <p>
+                S152</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #24847a;">
+            <p>
+                S332</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #208ea9;">
+            <p>
+                S046</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4cabab;">
+            <p>
+                S359</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3f8f48;">
+            <p>
+                S151</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #099c52;">
+            <p>
+                S540</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #328b85;">
+            <p>
+                S539</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #167eac;">
+            <p>
+                S028</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3ca6a3;">
+            <p>
+                S018</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #32754c;">
+            <p>
+                S876</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #058632;">
+            <p>
+                S084</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1d786c;">
+            <p>
+                S023</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0e74a6;">
+            <p>
+                S549</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5d878b;">
+            <p>
+                S111</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4d7263;">
+            <p>
+                S829</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1c7044;">
+            <p>
+                S878</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #248173;">
+            <p>
+                S286</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2378ab;">
+            <p>
+                S162</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3e7e85;">
+            <p>
+                S314</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #697c7d;">
+            <p>
+                S911</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #28673c;">
+            <p>
+                S197</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #126462;">
+            <p>
+                S877</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1b6ea3;">
+            <p>
+                S358</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #008b9e;">
+            <p>
+                S349</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #214449;">
+            <p>
+                S830</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #286232;">
+            <p>
+                S529</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #214a50;">
+            <p>
+                S287</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0765a3;">
+            <p>
+                S550</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #357385;">
+            <p>
+                S037</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #274137;">
+            <p>
+                S153</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #315847;">
+            <p>
+                S530</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #163d45;">
+            <p>
+                S390</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #13598c;">
+            <p>
+                S909</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #217d87;">
+            <p>
+                S906</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #243334;">
+            <p>
+                S017</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0e5e3d;">
+            <p>
+                S295</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #18424e;">
+            <p>
+                S908</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1a629c;">
+            <p>
+                S201</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2d7074;">
+            <p>
+                S020</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0f1119;">
+            <p>
+                S391</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #164d30;">
+            <p>
+                S869</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #11364b;">
+            <p>
+                S840</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1a5794;">
+            <p>
+                S836</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2b6d81;">
+            <p>
+                S907</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3c4f6f;">
+            <p>
+                S240</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #193823;">
+            <p>
+                S890</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0e2d42;">
+            <p>
+                S103</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5e60ba;">
+            <p>
+                S252</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #427287;">
+            <p>
+                S556</p>
+        </div>
+    </div>
+    <div class="color-map" id="color-map-3">
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bfe3ed;">
+            <p>
+                S901</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #81c0d2;">
+            <p>
+                S545</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c3d7d4;">
+            <p>
+                S541</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d3d0e2;">
+            <p>
+                S208</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e5dde9;">
+            <p>
+                S861</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b3d9e9;">
+            <p>
+                S026</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5a93a6;">
+            <p>
+                S903</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9ad0e0;">
+            <p>
+                S542</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c5c2d2;">
+            <p>
+                S347</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e8c0db;">
+            <p>
+                S552</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #adcfdc;">
+            <p>
+                S143</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #56aac7;">
+            <p>
+                S066</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8bbee7;">
+            <p>
+                S351</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #cdcadf;">
+            <p>
+                S259</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e3bed9;">
+            <p>
+                S068</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #abc1c9;">
+            <p>
+                S902</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #677f91;">
+            <p>
+                S339</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b3c4c7;">
+            <p>
+                S369</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #aca7ca;">
+            <p>
+                S268</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a894b7;">
+            <p>
+                S244</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a4d5df;">
+            <p>
+                S544</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6789a2;">
+            <p>
+                S231</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9fc0d4;">
+            <p>
+                S350</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8981b3;">
+            <p>
+                S554</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ce9cc3;">
+            <p>
+                S375</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #58cbed;">
+            <p>
+                S297</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5b7995;">
+            <p>
+                S280</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #84a3c4;">
+            <p>
+                S352</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6b61a0;">
+            <p>
+                S374</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a372b5;">
+            <p>
+                S113</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #16becf;">
+            <p>
+                S547</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4c6884;">
+            <p>
+                S363</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8bafca;">
+            <p>
+                S546</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #685e9c;">
+            <p>
+                S246</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b46799;">
+            <p>
+                S376</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2baad7;">
+            <p>
+                S833</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1f5a8b;">
+            <p>
+                S145</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6e99c4;">
+            <p>
+                S144</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7168a4;">
+            <p>
+                S281</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a68fc1;">
+            <p>
+                S553</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1c94c3;">
+            <p>
+                S333</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #004e85;">
+            <p>
+                S398</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #769ccb;">
+            <p>
+                S260</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4d5b86;">
+            <p>
+                S278</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8c84b1;">
+            <p>
+                S373</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #216a95;">
+            <p>
+                S163</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #05588a;">
+            <p>
+                S839</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #527cac;">
+            <p>
+                S294</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #505d88;">
+            <p>
+                S309</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a47ec6;">
+            <p>
+                S862</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4192c3;">
+            <p>
+                S298</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #005688;">
+            <p>
+                S198</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #658bb2;">
+            <p>
+                S837</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8095d5;">
+            <p>
+                S248</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #615184;">
+            <p>
+                S019</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3378a8;">
+            <p>
+                S310</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1a3d84;">
+            <p>
+                S321</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0083ca;">
+            <p>
+                S835</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6f8fd7;">
+            <p>
+                S360</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #68447f;">
+            <p>
+                S284</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #22609a;">
+            <p>
+                S918</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0a4097;">
+            <p>
+                S238</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #22679b;">
+            <p>
+                S557</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #678bd6;">
+            <p>
+                S264</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #653d72;">
+            <p>
+                S303</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1b5faa;">
+            <p>
+                S115</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0f4d8e;">
+            <p>
+                S381</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1b496c;">
+            <p>
+                S164</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #687ac2;">
+            <p>
+                S255</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7a4579;">
+            <p>
+                S526</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2a3c64;">
+            <p>
+                S919</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1c3a67;">
+            <p>
+                S388</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2a507f;">
+            <p>
+                S253</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5571bb;">
+            <p>
+                S302</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6b476c;">
+            <p>
+                S265</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2e324c;">
+            <p>
+                S058</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #103962;">
+            <p>
+                S040</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #264a76;">
+            <p>
+                S027</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4b66b2;">
+            <p>
+                S290</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7758b3;">
+            <p>
+                S218</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2d3350;">
+            <p>
+                S147</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #113556;">
+            <p>
+                S920</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1a3b5f;">
+            <p>
+                S558</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #234396;">
+            <p>
+                S266</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #614787;">
+            <p>
+                S559</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #23283b;">
+            <p>
+                S233</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #192f44;">
+            <p>
+                S560</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1f4262;">
+            <p>
+                S039</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #17276c;">
+            <p>
+                S228</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4e387c;">
+            <p>
+                S029</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #26304a;">
+            <p>
+                S196</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #1b273f;">
+            <p>
+                S083</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0e295e;">
+            <p>
+                S220</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #10205c;">
+            <p>
+                S067</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #543f6f;">
+            <p>
+                S866</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3b3e3b;">
+            <p>
+                S075</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #143655;">
+            <p>
+                S117</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #28628e;">
+            <p>
+                S038</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #0055a6;">
+            <p>
+                S146</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #41315d;">
+            <p>
+                S915</p>
+        </div>
+
+
+
+    </div>
+    <div class="color-map" id="color-map-4">
+
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a97576;">
+            <p>
+                S213</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a18f9c;">
+            <p>
+                S245</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f7f1f1;">
+            <p>
+                S355</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffe4d4;">
+            <p>
+                S293</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffdbd9;">
+            <p>
+                S364</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7f696f;">
+            <p>
+                S206</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a28295;">
+            <p>
+                S378</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f5e7eb;">
+            <p>
+                S511</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f7b4b6;">
+            <p>
+                S274</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #fac1c0;">
+            <p>
+                S811</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #845d65;">
+            <p>
+                S269</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #886476;">
+            <p>
+                S069</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffdde2;">
+            <p>
+                S512</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #efb3b3;">
+            <p>
+                S344</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #facbcb;">
+            <p>
+                S851</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #824d5c;">
+            <p>
+                S285</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #917488;">
+            <p>
+                S212</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffb8ca;">
+            <p>
+                S513</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f7aebb;">
+            <p>
+                S372</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffa9a8;">
+            <p>
+                S322</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #583e4c;">
+            <p>
+                S863</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #905d78;">
+            <p>
+                S276</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e0b0c8;">
+            <p>
+                S207</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #caa1a6;">
+            <p>
+                S377</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f3a293;">
+            <p>
+                S348</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #603e51;">
+            <p>
+                S174</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #936985;">
+            <p>
+                S292</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f6a2bb;">
+            <p>
+                S042</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bd9798;">
+            <p>
+                S221</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e79296;">
+            <p>
+                S338</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5f415b;">
+            <p>
+                S865</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c474ae;">
+            <p>
+                S051</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e68ba1;">
+            <p>
+                S852</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bc8693;">
+            <p>
+                S070</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f69ca4;">
+            <p>
+                S815</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3d3345;">
+            <p>
+                S867</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c95994;">
+            <p>
+                S289</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d37c86;">
+            <p>
+                S514</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d594a3;">
+            <p>
+                S214</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f38688;">
+            <p>
+                S517</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #706977;">
+            <p>
+                S217</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c44b88;">
+            <p>
+                S267</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ee819b;">
+            <p>
+                S515</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a5708d;">
+            <p>
+                S082</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e45c96;">
+            <p>
+                S397</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9c99a7;">
+            <p>
+                S368</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bd3b7e;">
+            <p>
+                S524</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f37e91;">
+            <p>
+                S335</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #97657f;">
+            <p>
+                S256</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e8496e;">
+            <p>
+                S341</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #838992;">
+            <p>
+                S272</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c15598;">
+            <p>
+                S304</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ec3e84;">
+            <p>
+                S516</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bb5b7e;">
+            <p>
+                S166</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e64168;">
+            <p>
+                S283</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #626b71;">
+            <p>
+                S195</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #915a7d;">
+            <p>
+                S291</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #dc4588;">
+            <p>
+                S312</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8b385f;">
+            <p>
+                S139</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #dc3860;">
+            <p>
+                S817</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #524e63;">
+            <p>
+                S380</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a85079;">
+            <p>
+                S271</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bd316e;">
+            <p>
+                S383</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #87425c;">
+            <p>
+                S193</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e63252;">
+            <p>
+                S003</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6d6b82;">
+            <p>
+                S379</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9d2c57;">
+            <p>
+                S016</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9f376d;">
+            <p>
+                S354</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8a3455;">
+            <p>
+                S251</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e72640;">
+            <p>
+                S818</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #363f4e;">
+            <p>
+                S224</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #762546;">
+            <p>
+                S288</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b13267;">
+            <p>
+                S261</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #89314e;">
+            <p>
+                S140</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d80b22;">
+            <p>
+                S820</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #374452;">
+            <p>
+                S308</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6e223f;">
+            <p>
+                S525</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a12660;">
+            <p>
+                S853</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #872e46;">
+            <p>
+                S045</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c00825;">
+            <p>
+                S519</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #394651;">
+            <p>
+                S326</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #581e31;">
+            <p>
+                S021</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a14f8c;">
+            <p>
+                S299</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #612336;">
+            <p>
+                S073</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9a0923;">
+            <p>
+                S059</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #334451;">
+            <p>
+                S319</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4e1b29;">
+            <p>
+                S048</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #854470;">
+            <p>
+                S258</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5b2b3a;">
+            <p>
+                S159</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #880922;">
+            <p>
+                S520</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #223540;">
+            <p>
+                S317</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #3d1620;">
+            <p>
+                S864</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #502742;">
+            <p>
+                S230</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #512331;">
+            <p>
+                S094</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6f0f28;">
+            <p>
+                S527</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #414a57;">
+            <p>
+                S270</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #822e53;">
+            <p>
+                S239</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #2f1e2c;">
+            <p>
+                S254</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #682744;">
+            <p>
+                S273</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c30420;">
+            <p>
+                S171</p>
+        </div>
+
+
+
+    </div>
+    <div class="color-map" id="color-map-5">
+
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffd3ad;">
+            <p>
+                S521</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d3cac5;">
+            <p>
+                S186</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f5ead4;">
+            <p>
+                S571</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e0ceaa;">
+            <p>
+                S891</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a8ada4;">
+            <p>
+                S032</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f3a391;">
+            <p>
+                S806</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #eadcbc;">
+            <p>
+                S123</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #eadcbc;">
+            <p>
+                S031</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e5cfab;">
+            <p>
+                S227</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7e7d7f;">
+            <p>
+                S134</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffbca7;">
+            <p>
+                S812</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ccb8a8;">
+            <p>
+                S185</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f9daad;">
+            <p>
+                S805</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e5d7a9;">
+            <p>
+                S180</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #726d69;">
+            <p>
+                S222</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffad77;">
+            <p>
+                S057</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d8bf9d;">
+            <p>
+                S005</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #beb09d;">
+            <p>
+                S572</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c5b594;">
+            <p>
+                S127</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #757068;">
+            <p>
+                S325</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffbb85;">
+            <p>
+                S522</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d2b490;">
+            <p>
+                S209</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ceba9c;">
+            <p>
+                S371</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b8ad90;">
+            <p>
+                S098</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #65614d;">
+            <p>
+                S034</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffa087;">
+            <p>
+                S090</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #be9866;">
+            <p>
+                S895</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e8c99b;">
+            <p>
+                S125</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d0b893;">
+            <p>
+                S101</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #7a6f47;">
+            <p>
+                S318</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #f68648;">
+            <p>
+                S813</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #94684f;">
+            <p>
+                S856</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d1b97d;">
+            <p>
+                S892</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #bc9b62;">
+            <p>
+                S128</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #927b44;">
+            <p>
+                S563</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ff9e6e;">
+            <p>
+                S814</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a56441;">
+            <p>
+                S808</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ffd27a;">
+            <p>
+                S167</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c2a979;">
+            <p>
+                S085</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #746844;">
+            <p>
+                S564</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ff795e;">
+            <p>
+                S136</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #c76c3d;">
+            <p>
+                S807</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d3b06a;">
+            <p>
+                S189</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b79c70;">
+            <p>
+                S573</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #79712e;">
+            <p>
+                S242</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #d36a69;">
+            <p>
+                S002</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a25531;">
+            <p>
+                S102</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b69e6d;">
+            <p>
+                S893</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b38d50;">
+            <p>
+                S203</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #747735;">
+            <p>
+                S565</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b95a58;">
+            <p>
+                S137</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8f5a38;">
+            <p>
+                S079</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #baa16e;">
+            <p>
+                S007</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #968356;">
+            <p>
+                S300</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #4b4c31;">
+            <p>
+                S194</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #e45d50;">
+            <p>
+                S816</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a47666;">
+            <p>
+                S809</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ae9467;">
+            <p>
+                S229</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #977d4c;">
+            <p>
+                S219</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #534641;">
+            <p>
+                S365</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #ce4d40;">
+            <p>
+                S138</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #926660;">
+            <p>
+                S855</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #b29263;">
+            <p>
+                S188</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #8b7f79;">
+            <p>
+                S810</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #6b5949;">
+            <p>
+                S009</p>
+        </div>
+
+
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #cb4d40;">
+            <p>
+                S060</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #87564f;">
+            <p>
+                S236</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #9a795e;">
+            <p>
+                S093</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #a98f71;">
+            <p>
+                S894</p>
+        </div>
+        <div class="color">
+            <img src="/image/color_texture.png" style="background-color: #5d4b3d;">
+            <p>
+                S569</p>
+        </div>
+    </div>
+</div>
