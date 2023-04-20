@@ -217,6 +217,15 @@ class ControllerToolImport extends Controller {
             $existingProducts = $this->model_tool_import->getProducts();
             $processedProducts = [];
 
+            if($existingProducts)
+            {
+                foreach ($existingProducts as $existingProduct) {
+                    $this->model_tool_import->deleteProduct($existingProduct["product_id"]);
+                }
+            }
+
+            $existingProducts = [];
+            
             foreach($incomingProducts as $product)
             {
                 $product["id"] = $product["code"];
@@ -234,7 +243,7 @@ class ControllerToolImport extends Controller {
 
                 $sameProducts = array_filter($incomingProducts, function($item) use ($product)
                 {
-                    return $item["code"] == $product["code"];
+                    return $item["vendorCode"] == $product["vendorCode"];
                 });
 
                 $props = [];
@@ -304,7 +313,7 @@ class ControllerToolImport extends Controller {
                 $existingCategory = $this->inArray($existingCategories, ["id" => $product["id_Parent"]]);
                 $product["id_Parent"] = $existingCategory ? $existingCategory["category_id"] : 0;
 
-                if(!in_array($processedProducts, $product["code"]))
+                if(!in_array($product["code"], $processedProducts))
                 {
                     $this->processProduct($existingProducts, $product, $statistics);
                     array_push($processedProducts, $product["code"]);
@@ -466,6 +475,9 @@ class ControllerToolImport extends Controller {
                     ];
             }
         }*/
+        
+        $price = preg_replace('/[^0-9\,]/', '', $product['priceWithVAT']);
+        $price = preg_replace('/,/', '.', $price);
 
         $data = [
             'product_description' => [
@@ -486,7 +498,7 @@ class ControllerToolImport extends Controller {
             'isbn' => $product["measureUnitProduct"],
             'mpn' => $product["forOrderOnly"],
             'location' => '',
-            'price' => (float)str_replace(',', '.', $product['priceWithVAT']),
+            'price' => (float)$price,
             'tax_class_id' => 9,
             'quantity' => $product["quantity"],
             'minimum' => 1,
