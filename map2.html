@@ -1,1401 +1,1433 @@
-<style>
-    .color-maps .color-map {
-        display: none;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .color-maps .color-map.active {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Карта цветов</title>
+    <style>
+        .color-maps .color-map {
+            display: none;
+        }
 
-    .color-maps .color-map .color {
-        width: 190px;
-        padding: 5px;
-        border-right: 1px solid lightgrey;
-        border-bottom: 1px solid lightgray;
-        position: relative;
-    }
+        .color-maps .color-map.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-    .color-maps .color-map .color img {
-        width: 100%;
-        height: 100%;
-        max-width: 180px;
-        max-height: 70px;
-    }
+        .color-maps .color-map .color {
+            width: 190px;
+            padding: 5px;
+            border: 1px solid lightgray;
+            position: relative;
+            margin-left: -1px;
+            margin-top: -1px;
+        }
 
-    .color-maps .color-map p {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        font-weight: bold;
-        background: #fff;
-        padding: 5px;
-        margin: 0;
-    }
+        .color-maps .color-map .color img {
+            width: 100%;
+            height: 100%;
+            max-width: 180px;
+            max-height: 70px;
+        }
 
-    .color-navigation {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 15px;
-    }
+        .color-maps .color-map p {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-weight: bold;
+            background: #fff;
+            padding: 5px;
+            margin: 0;
+        }
 
-    .color-navigation ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+        .color-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
 
-    .color-navigation ul button {
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #dcdcdc;
-        color: #507998;
-        width: 32px;
-        height: 32px;
-        margin-left: 3px;
-        margin-right: 3px;
-        padding: 0;
-        cursor: pointer;
-        transition: all 0.2s linear;
-    }
+        .color-navigation ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    .color-navigation ul button.active {
-        color: #fff;
-        background: #00a8de;
+        .color-navigation ul button {
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #dcdcdc;
+            color: #507998;
+            width: 32px;
+            height: 32px;
+            margin-left: 3px;
+            margin-right: 3px;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.2s linear;
+        }
 
-    }
+        .color-navigation ul button.active {
+            color: #fff;
+            background: #00a8de;
 
-    .color-navigation ul button:hover,
-    .color-navigation ul button:focus {
-        color: #fff;
-        background: #00a8de;
-        outline: none;
-        box-shadow: none;
-    }
-</style>
+        }
 
-<div class="color-navigation">
-    <ul>
-        <li><button class="active" onclick="showColorMap(1, $(this))">1</button></li>
-        <li><button onclick="showColorMap(2, $(this))">2</button></li>
-        <li><button onclick="showColorMap(3, $(this))">3</button></li>
-    </ul>
-</div>
+        .color-navigation ul button:hover,
+        .color-navigation ul button:focus {
+            color: #fff;
+            background: #00a8de;
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
 
-<div class="color-maps">
-    <div class="color-map active" id="color-map-1">
-        <div class="color">
-            <img img="" src="/image/colorsChina/1.jpg" style="background-color: #efe9d4;">
-            <p>
-                101 White</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/2.jpg" style="background-color: #e8dfce;">
-            <p>
-                102 Milk white</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/3.jpg" style="background-color: #b5bb9f;">
-            <p>
-                103 Snow white</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/4.jpg" style="background-color: #e8dfce;">
-            <p>
-                104 Off white</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/5.jpg" style="background-color: #e8dfce;">
-            <p>
-                105 Ivory</p>
-        </div>
-
-
-        <div class="color">
-            <img img="" src="/image/colorsChina/6.jpg" style="background-color: #f7f5d4;">
-            <p>
-                106 Cream</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/7.jpg" style="background-color: #aca174;">
-            <p>
-                107 Banana</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/8.jpg" style="background-color: #f5e29f;">
-            <p>
-                108 Primrose</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/9.png" style="background-color: #e6c291;">
-            <p>
-                109 Daisy</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/10.png" style="background-color: #e3ed55;">
-            <p>
-                110 Lemon yellow</p>
-        </div>
+<body>
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center pb-3">Карта цветов</h1>
+                <div class="color-navigation">
+                    <ul>
+                        <li><button class="active" onclick="showColorMap(1, $(this))">1</button></li>
+                        <li><button onclick="showColorMap(2, $(this))">2</button></li>
+                        <li><button onclick="showColorMap(3, $(this))">3</button></li>
+                    </ul>
+                </div>
+                <div class="color-maps">
+                    <div class="color-map active" id="color-map-1">
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/1.jpg" style="background-color: #efe9d4;">
+                            <p>
+                                101 White</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/2.jpg" style="background-color: #e8dfce;">
+                            <p>
+                                102 Milk white</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/3.jpg" style="background-color: #b5bb9f;">
+                            <p>
+                                103 Snow white</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/4.jpg" style="background-color: #e8dfce;">
+                            <p>
+                                104 Off white</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/5.jpg" style="background-color: #e8dfce;">
+                            <p>
+                                105 Ivory</p>
+                        </div>
 
 
-        <div class="color">
-            <img img="" src="/image/colorsChina/11.png" style="background-color: #ffe39d;">
-            <p>
-                111 Buttercup</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/12.png" style="background-color: #777052;">
-            <p>
-                112 Orange yellow</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/13.png" style="background-color: #fbde7a;">
-            <p>
-                113 Sun shine</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/14.png" style="background-color: #c49c58;">
-            <p>
-                114 Papaya</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/15.png" style="background-color: #a9e04f;">
-            <p>
-                115 Spanish gold</p>
-        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/6.jpg" style="background-color: #f7f5d4;">
+                            <p>
+                                106 Cream</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/7.jpg" style="background-color: #aca174;">
+                            <p>
+                                107 Banana</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/8.jpg" style="background-color: #f5e29f;">
+                            <p>
+                                108 Primrose</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/9.png" style="background-color: #e6c291;">
+                            <p>
+                                109 Daisy</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/10.png" style="background-color: #e3ed55;">
+                            <p>
+                                110 Lemon yellow</p>
+                        </div>
 
 
-        <div class="color">
-            <img img="" src="/image/colorsChina/16.png" style="background-color: #feff8c;">
-            <p>
-                116 Topaz</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/17.png" style="background-color: #808365;">
-            <p>
-                117 Chrome</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/18.png" style="background-color: #f4c075;">
-            <p>
-                118 Lemon</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/19.png" style="background-color: #d1b22f;">
-            <p>
-                119 Nugget</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/20.png" style="background-color: #acce75;">
-            <p>
-                120 Bisque</p>
-        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/11.png" style="background-color: #ffe39d;">
+                            <p>
+                                111 Buttercup</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/12.png" style="background-color: #777052;">
+                            <p>
+                                112 Orange yellow</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/13.png" style="background-color: #fbde7a;">
+                            <p>
+                                113 Sun shine</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/14.png" style="background-color: #c49c58;">
+                            <p>
+                                114 Papaya</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/15.png" style="background-color: #a9e04f;">
+                            <p>
+                                115 Spanish gold</p>
+                        </div>
 
 
-        <div class="color">
-            <img img="" src="/image/colorsChina/21.png" style="background-color: #ffdd89;">
-            <p>
-                121 Gold</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/22.png" style="background-color: #666b4a;">
-            <p>
-                122 Brittie gold</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/23.png" style="background-color: #f0a83e;">
-            <p>
-                123 Golden rod</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/24.png" style="background-color: #a0893b;">
-            <p>
-                124 Golden brown</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/25.png" style="background-color: #6f8456;">
-            <p>
-                125 Aztec</p>
-        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/16.png" style="background-color: #feff8c;">
+                            <p>
+                                116 Topaz</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/17.png" style="background-color: #808365;">
+                            <p>
+                                117 Chrome</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/18.png" style="background-color: #f4c075;">
+                            <p>
+                                118 Lemon</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/19.png" style="background-color: #d1b22f;">
+                            <p>
+                                119 Nugget</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/20.png" style="background-color: #acce75;">
+                            <p>
+                                120 Bisque</p>
+                        </div>
 
 
-        <div class="color">
-            <img img="" src="/image/colorsChina/26.png" style="background-color: #fff278;">
-            <p>
-                126 Bronze golw</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/27.png" style="background-color: #9b7c56;">
-            <p>
-                127 Wheat</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/28.png" style="background-color: #e2a56f;">
-            <p>
-                128 Warn grey</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/29.png" style="background-color: #ce973d;">
-            <p>
-                129 Moss tweed</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/30.png" style="background-color: #657b42;">
-            <p>
-                130 Nutshell</p>
-        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/21.png" style="background-color: #ffdd89;">
+                            <p>
+                                121 Gold</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/22.png" style="background-color: #666b4a;">
+                            <p>
+                                122 Brittie gold</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/23.png" style="background-color: #f0a83e;">
+                            <p>
+                                123 Golden rod</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/24.png" style="background-color: #a0893b;">
+                            <p>
+                                124 Golden brown</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/25.png" style="background-color: #6f8456;">
+                            <p>
+                                125 Aztec</p>
+                        </div>
 
 
-        <div class="color">
-            <img img="" src="/image/colorsChina/31.png" style="background-color: #fccf61;">
-            <p>
-                131 Muslered</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/32.png" style="background-color: #7c8053;">
-            <p>
-                132 Perl pink</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/33.png" style="background-color: #f79b58;">
-            <p>
-                133 Baby pink</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/34.png" style="background-color: #9c763c;">
-            <p>
-                134 Pink</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/35.png" style="background-color: #385f3b;">
-            <p>
-                135 Light pink</p>
-        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/26.png" style="background-color: #fff278;">
+                            <p>
+                                126 Bronze golw</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/27.png" style="background-color: #9b7c56;">
+                            <p>
+                                127 Wheat</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/28.png" style="background-color: #e2a56f;">
+                            <p>
+                                128 Warn grey</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/29.png" style="background-color: #ce973d;">
+                            <p>
+                                129 Moss tweed</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/30.png" style="background-color: #657b42;">
+                            <p>
+                                130 Nutshell</p>
+                        </div>
 
 
-        <div class="color">
-            <img img="" src="/image/colorsChina/36.png" style="background-color: #fcd663;">
-            <p>
-                136 Prestige</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/37.png" style="background-color: #403e2c;">
-            <p>
-                137 Holiday</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/38.png" style="background-color: #f7ac59;">
-            <p>
-                138 Grenadine</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/39.png" style="background-color: #966d21;">
-            <p>
-                139 Geranium</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/40.png" style="background-color: #454f3e;">
-            <p>
-                140 Clover</p>
-        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/31.png" style="background-color: #fccf61;">
+                            <p>
+                                131 Muslered</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/32.png" style="background-color: #7c8053;">
+                            <p>
+                                132 Perl pink</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/33.png" style="background-color: #f79b58;">
+                            <p>
+                                133 Baby pink</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/34.png" style="background-color: #9c763c;">
+                            <p>
+                                134 Pink</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/35.png" style="background-color: #385f3b;">
+                            <p>
+                                135 Light pink</p>
+                        </div>
 
 
-        <div class="color">
-            <img img="" src="/image/colorsChina/41.png" style="background-color: #ffd851;">
-            <p>
-                141 Holiday pink</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/42.png" style="background-color: #423f20;">
-            <p>
-                142 Bright rose</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/43.png" style="background-color: #cd5751;">
-            <p>
-                143 Peach</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/44.png" style="background-color: #855b45;">
-            <p>
-                144 Amer beauty</p>
-        </div>
-        <div class="color">
-            <img img="" src="/image/colorsChina/45.png" style="background-color: #212515;">
-            <p>
-                145 Cerise</p>
-        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/36.png" style="background-color: #fcd663;">
+                            <p>
+                                136 Prestige</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/37.png" style="background-color: #403e2c;">
+                            <p>
+                                137 Holiday</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/38.png" style="background-color: #f7ac59;">
+                            <p>
+                                138 Grenadine</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/39.png" style="background-color: #966d21;">
+                            <p>
+                                139 Geranium</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/40.png" style="background-color: #454f3e;">
+                            <p>
+                                140 Clover</p>
+                        </div>
 
 
-        <div class="color">
-            <img src="/image/colorsChina/46.png" style="background-color: #e25e47;">
-            <p>
-                146 Rose</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/47.png" style="background-color: #e1b24a;">
-            <p>
-                147 Shrimp</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/48.png" style="background-color: #815e46;">
-            <p>
-                148 Hot red</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/49.png" style="background-color: #3b3724;">
-            <p>
-                149 Pale orange</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/50.png" style="background-color: #333631;">
-            <p>
-                150 Peack</p>
-        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/41.png" style="background-color: #ffd851;">
+                            <p>
+                                141 Holiday pink</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/42.png" style="background-color: #423f20;">
+                            <p>
+                                142 Bright rose</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/43.png" style="background-color: #cd5751;">
+                            <p>
+                                143 Peach</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/44.png" style="background-color: #855b45;">
+                            <p>
+                                144 Amer beauty</p>
+                        </div>
+                        <div class="color">
+                            <img img="" src="/image/colorsChina/45.png" style="background-color: #212515;">
+                            <p>
+                                145 Cerise</p>
+                        </div>
 
 
-        <div class="color">
-            <img src="/image/colorsChina/51.png" style="background-color: #db523f;">
-            <p>
-                151 Coral pink</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/52.png" style="background-color: #ecaf4e;">
-            <p>
-                152 Saffrom pink</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/53.png" style="background-color: #735747;">
-            <p>
-                153 D.K. Peach</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/54.png" style="background-color: #373528;">
-            <p>
-                154 Lobster</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/55.png" style="background-color: #3b3d36;">
-            <p>
-                155 Golden lily</p>
-        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/46.png" style="background-color: #e25e47;">
+                            <p>
+                                146 Rose</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/47.png" style="background-color: #e1b24a;">
+                            <p>
+                                147 Shrimp</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/48.png" style="background-color: #815e46;">
+                            <p>
+                                148 Hot red</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/49.png" style="background-color: #3b3724;">
+                            <p>
+                                149 Pale orange</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/50.png" style="background-color: #333631;">
+                            <p>
+                                150 Peack</p>
+                        </div>
 
 
-        <div class="color">
-            <img src="/image/colorsChina/56.png" style="background-color: #d8644d;">
-            <p>
-                156 Hawaiian</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/57.png" style="background-color: #dda23b;">
-            <p>
-                157 Nectan</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/58.png" style="background-color: #6c4f46;">
-            <p>
-                158 Flame</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/59.png" style="background-color: #3b3829;">
-            <p>
-                159 Melon</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/60.png" style="background-color: #393e36;">
-            <p>
-                160 Senega</p>
-        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/51.png" style="background-color: #db523f;">
+                            <p>
+                                151 Coral pink</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/52.png" style="background-color: #ecaf4e;">
+                            <p>
+                                152 Saffrom pink</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/53.png" style="background-color: #735747;">
+                            <p>
+                                153 D.K. Peach</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/54.png" style="background-color: #373528;">
+                            <p>
+                                154 Lobster</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/55.png" style="background-color: #3b3d36;">
+                            <p>
+                                155 Golden lily</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/56.png" style="background-color: #d8644d;">
+                            <p>
+                                156 Hawaiian</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/57.png" style="background-color: #dda23b;">
+                            <p>
+                                157 Nectan</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/58.png" style="background-color: #6c4f46;">
+                            <p>
+                                158 Flame</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/59.png" style="background-color: #3b3829;">
+                            <p>
+                                159 Melon</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/60.png" style="background-color: #393e36;">
+                            <p>
+                                160 Senega</p>
+                        </div>
 
 
 
+                    </div>
+                    <div class="color-map" id="color-map-2">
+
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/61.png" style="background-color: #94a781;">
+                            <p>
+                                161 Bitter red</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/62.png" style="background-color: #f2f3ec;">
+                            <p>
+                                162 Atom red</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/63.png" style="background-color: #b9bbab;">
+                            <p>
+                                163 Cameo</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/64.png" style="background-color: #cacac8;">
+                            <p>
+                                164 Iris</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/65.png" style="background-color: #f5f4f2;">
+                            <p>
+                                165 Hydrangea</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/66.png" style="background-color: #98b685;">
+                            <p>
+                                166 Lavender</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/67.png" style="background-color: #eaf3dc;">
+                            <p>
+                                167 Amethyst</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/68.png" style="background-color: #a9bab7;">
+                            <p>
+                                168 Sky blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/69.png" style="background-color: #badcdc;">
+                            <p>
+                                169 Lilac</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/70.png" style="background-color: #eaf3f3;">
+                            <p>
+                                170 Purple</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/71.png" style="background-color: #6f9766;">
+                            <p>
+                                171 Deep purple</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/72.png" style="background-color: #a6e9af;">
+                            <p>
+                                172 Aster</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/73.png" style="background-color: #98d6be;">
+                            <p>
+                                173 Cognac</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/74.png" style="background-color: #beedec;">
+                            <p>
+                                174 Imperial</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/75.png" style="background-color: #d3f1f1;">
+                            <p>
+                                175 Tahiti</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/76.png" style="background-color: #bad970;">
+                            <p>
+                                176 Lilaci lavander</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/77.png" style="background-color: #c0e6b1;">
+                            <p>
+                                177 Wine</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/78.png" style="background-color: #92b5a3;">
+                            <p>
+                                178 Bordeauy</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/79.png" style="background-color: #aadbd7;">
+                            <p>
+                                179 Americ. beauty</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/80.png" style="background-color: #bbe5dd;">
+                            <p>
+                                180 Harvest wine</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/81.png" style="background-color: #c9dc55;">
+                            <p>
+                                181 Cranberry</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/82.png" style="background-color: #abe3a3;">
+                            <p>
+                                182 Delft blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/83.png" style="background-color: #6f9887;">
+                            <p>
+                                183 Candy blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/84.png" style="background-color: #94bdc0;">
+                            <p>
+                                184 Comet blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/85.png" style="background-color: #a0d8ce;">
+                            <p>
+                                185 Princess</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/86.png" style="background-color: #6ebf6d;">
+                            <p>
+                                186 Dusty blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/87.png" style="background-color: #72d270;">
+                            <p>
+                                187 Porcelain blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/88.png" style="background-color: #46ad8a;">
+                            <p>
+                                188 Heaven</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/89.png" style="background-color: #74c4d7;">
+                            <p>
+                                189 Lake blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/90.png" style="background-color: #84e2d4;">
+                            <p>
+                                190 Riven blue</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/91.png" style="background-color: #6c8c48;">
+                            <p>
+                                191 Astro blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/92.png" style="background-color: #65cb6a;">
+                            <p>
+                                192 Purple</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/93.png" style="background-color: #3ea588;">
+                            <p>
+                                193 Vatican</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/94.png" style="background-color: #56b8bc;">
+                            <p>
+                                194 Deep purple</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/95.png" style="background-color: #7edfc1;">
+                            <p>
+                                195 Concord</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/96.png" style="background-color: #739c5f;">
+                            <p>
+                                196 Eggplant&nbsp;</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/97.png" style="background-color: #00c281;">
+                            <p>
+                                197 Baby blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/98.png" style="background-color: #009c82;">
+                            <p>
+                                198 Paradise</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/99.png" style="background-color: #41a7aa;">
+                            <p>
+                                199 Luster</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/100.png" style="background-color: #81beb9;">
+                            <p>
+                                200 Stucco</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/101.png" style="background-color: #5aa044;">
+                            <p>
+                                201 turquoise</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/101.png" style="background-color: #38cf54;">
+                            <p>
+                                202 Louise</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/102.png" style="background-color: #2d9482;">
+                            <p>
+                                203 Aquamarine</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/103.png" style="background-color: #179dab;">
+                            <p>
+                                204 Surf</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/104.png" style="background-color: #54c7b5;">
+                            <p>
+                                205 Parrot blue</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/105.png" style="background-color: #54a35c;">
+                            <p>
+                                206 Opal blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/106.png" style="background-color: #00b057;">
+                            <p>
+                                207 Jay blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/107.png" style="background-color: #26816a;">
+                            <p>
+                                208 Grotto</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/108.png" style="background-color: #318a97;">
+                            <p>
+                                209 Channel blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/109.png" style="background-color: #4faca2;">
+                            <p>
+                                210 Peacock</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/110.png" style="background-color: #4b9b56;">
+                            <p>
+                                211 Tropic blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/111.png" style="background-color: #0f9846;">
+                            <p>
+                                212 Bristol</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/112.png" style="background-color: #24847a;">
+                            <p>
+                                213 Victoria blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/113.png" style="background-color: #208ea9;">
+                            <p>
+                                214 Blue bird</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/114.png" style="background-color: #4cabab;">
+                            <p>
+                                215 Treasure blue</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/115.png" style="background-color: #3f8f48;">
+                            <p>
+                                216 Rocket blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/116.png" style="background-color: #099c52;">
+                            <p>
+                                217 Ocean blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/117.png" style="background-color: #328b85;">
+                            <p>
+                                218 Crayon blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/118.png" style="background-color: #167eac;">
+                            <p>
+                                219 French blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/119.png" style="background-color: #3ca6a3;">
+                            <p>
+                                220 Royal blue</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/120.png" style="background-color: #32754c;">
+                            <p>
+                                221 Twilight</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/121.png" style="background-color: #058632;">
+                            <p>
+                                222 Melody</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/122.png" style="background-color: #1d786c;">
+                            <p>
+                                223 Peacock blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/123.png" style="background-color: #0e74a6;">
+                            <p>
+                                224 Teal blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/124.png" style="background-color: #5d878b;">
+                            <p>
+                                225 Crayon</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/125.png" style="background-color: #4d7263;">
+                            <p>
+                                226 Navy blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/126.png" style="background-color: #1c7044;">
+                            <p>
+                                227 Pennant</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/127.png" style="background-color: #248173;">
+                            <p>
+                                228 Chartreuse</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/128.png" style="background-color: #2378ab;">
+                            <p>
+                                229 Jave green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/129.png" style="background-color: #3e7e85;">
+                            <p>
+                                230 Goblet</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/130.png" style="background-color: #697c7d;">
+                            <p>
+                                231 Party green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/131.png" style="background-color: #28673c;">
+                            <p>
+                                232 Spearmint</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/132.png" style="background-color: #126462;">
+                            <p>
+                                233 Fresh green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/133.png" style="background-color: #1b6ea3;">
+                            <p>
+                                234 Peridot</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/135.png" style="background-color: #008b9e;">
+                            <p>
+                                235 Apple green</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/136.png" style="background-color: #214449;">
+                            <p>
+                                236 Aqua green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/137.png" style="background-color: #286232;">
+                            <p>
+                                237 Spring green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/138.png" style="background-color: #214a50;">
+                            <p>
+                                238 Gnartr. green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/139.png" style="background-color: #0765a3;">
+                            <p>
+                                239 Mayo</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/140.png" style="background-color: #357385;">
+                            <p>
+                                240 Mint green</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/141.png" style="background-color: #274137;">
+                            <p>
+                                241 Lime</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/142.png" style="background-color: #315847;">
+                            <p>
+                                242 Lake green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/143.png" style="background-color: #163d45;">
+                            <p>
+                                243 Jewel</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/144.png" style="background-color: #13598c;">
+                            <p>
+                                244 Ice green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/145.png" style="background-color: #217d87;">
+                            <p>
+                                245 Jade</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/146.png" style="background-color: #243334;">
+                            <p>
+                                246 Crystal</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/147.png" style="background-color: #0e5e3d;">
+                            <p>
+                                247 Nile green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/148.png" style="background-color: #18424e;">
+                            <p>
+                                248 Mini mint</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/149.png" style="background-color: #1a629c;">
+                            <p>
+                                249 Leaf green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/150.png" style="background-color: #2d7074;">
+                            <p>
+                                250 Lt. turauoise</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/151.png" style="background-color: #0f1119;">
+                            <p>
+                                251 Horisou blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/152.png" style="background-color: #164d30;">
+                            <p>
+                                252 Azura</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/153.png" style="background-color: #11364b;">
+                            <p>
+                                253 Fountain</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/154.png" style="background-color: #1a5794;">
+                            <p>
+                                254 Florida green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/155.png" style="background-color: #2b6d81;">
+                            <p>
+                                255 Green glass</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/156.png" style="background-color: #3c4f6f;">
+                            <p>
+                                256 Esmerald</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/157.png" style="background-color: #193823;">
+                            <p>
+                                257 Peacock green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/158.png" style="background-color: #0e2d42;">
+                            <p>
+                                258 Amazon</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/159.png" style="background-color: #5e60ba;">
+                            <p>
+                                259 Quaker</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/160.png" style="background-color: #427287;">
+                            <p>
+                                260 Blue spruce</p>
+                        </div>
+
+
+
+                    </div>
+                    <div class="color-map" id="color-map-3">
+
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/161.png" style="background-color: #bfe3ed;">
+                            <p>
+                                261 Almond</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/162.png" style="background-color: #81c0d2;">
+                            <p>
+                                262 Olive green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/163.png" style="background-color: #c3d7d4;">
+                            <p>
+                                263 Cedar green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/164.png" style="background-color: #d3d0e2;">
+                            <p>
+                                264&nbsp; Kentucky</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/165.png" style="background-color: #e5dde9;">
+                            <p>
+                                265 Artichoke</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/166.png" style="background-color: #b3d9e9;">
+                            <p>
+                                266 Holly green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/167.png" style="background-color: #5a93a6;">
+                            <p>
+                                267 Holy green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/168.png" style="background-color: #9ad0e0;">
+                            <p>
+                                268 Palmetto</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/169.png" style="background-color: #c5c2d2;">
+                            <p>
+                                269 Kelly green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/170.png" style="background-color: #e8c0db;">
+                            <p>
+                                270 Dark green</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/171.png" style="background-color: #adcfdc;">
+                            <p>
+                                271 Cypress</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/172.png" style="background-color: #56aac7;">
+                            <p>
+                                272 Pile tone</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/173.png" style="background-color: #8bbee7;">
+                            <p>
+                                273 Hemlock</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/174.png" style="background-color: #cdcadf;">
+                            <p>
+                                274 Acid blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/175.png" style="background-color: #e3bed9;">
+                            <p>
+                                275 Deep acid blue</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/176.png" style="background-color: #abc1c9;">
+                            <p>
+                                276 Light tan</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/177.png" style="background-color: #677f91;">
+                            <p>
+                                277 Pale brown</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/178.png" style="background-color: #b3c4c7;">
+                            <p>
+                                278 Cocoa</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/179.png" style="background-color: #aca7ca;">
+                            <p>
+                                279 Custa</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/180.png" style="background-color: #a894b7;">
+                            <p>
+                                280 Bister</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/181.png" style="background-color: #a4d5df;">
+                            <p>
+                                281 Apricot</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/182.png" style="background-color: #6789a2;">
+                            <p>
+                                282 Copper</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/183.png" style="background-color: #9fc0d4;">
+                            <p>
+                                283 Brickred</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/184.png" style="background-color: #8981b3;">
+                            <p>
+                                284 Brown gold</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/185.png" style="background-color: #ce9cc3;">
+                            <p>
+                                285 Curry</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/186.png" style="background-color: #58cbed;">
+                            <p>
+                                286 Paprika</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/187.png" style="background-color: #5b7995;">
+                            <p>
+                                287 Burnt orange</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/188.png" style="background-color: #84a3c4;">
+                            <p>
+                                288 Rust</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/189.png" style="background-color: #6b61a0;">
+                            <p>
+                                289 Cinnamon</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/190.png" style="background-color: #a372b5;">
+                            <p>
+                                290 Pumpernickel</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/191.png" style="background-color: #16becf;">
+                            <p>
+                                291 Spice</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/192.png" style="background-color: #4c6884;">
+                            <p>
+                                292 Elephant</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/193.png" style="background-color: #8bafca;">
+                            <p>
+                                293 Light brown</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/194.png" style="background-color: #685e9c;">
+                            <p>
+                                294 Cocoa beige</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/195.png" style="background-color: #b46799;">
+                            <p>
+                                295 Covert</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/196.png" style="background-color: #2baad7;">
+                            <p>
+                                296 Yellowish grey</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/197.png" style="background-color: #1f5a8b;">
+                            <p>
+                                297 Greyish olive</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/198.png" style="background-color: #6e99c4;">
+                            <p>
+                                298 Moss</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/199.png" style="background-color: #7168a4;">
+                            <p>
+                                299 Seal brown</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/200.png" style="background-color: #a68fc1;">
+                            <p>
+                                300 Chest Nut</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/201.png" style="background-color: #1c94c3;">
+                            <p>
+                                301 Mocca</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/202.png" style="background-color: #004e85;">
+                            <p>
+                                302 September&nbsp;</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/203.png" style="background-color: #769ccb;">
+                            <p>
+                                303 Sable</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/204.png" style="background-color: #4d5b86;">
+                            <p>
+                                304 Mustang</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/205.png" style="background-color: #8c84b1;">
+                            <p>
+                                305 Deep brown</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/206.png" style="background-color: #216a95;">
+                            <p>
+                                306 Silky white</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/207.png" style="background-color: #05588a;">
+                            <p>
+                                307 Natural</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/208.png" style="background-color: #527cac;">
+                            <p>
+                                308 Light beige</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/209.png" style="background-color: #505d88;">
+                            <p>
+                                309 Mauve</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/210.png" style="background-color: #a47ec6;">
+                            <p>
+                                310 Smoke grey</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/211.png" style="background-color: #4192c3;">
+                            <p>
+                                311 Grey</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/212.png" style="background-color: #005688;">
+                            <p>
+                                312 Dark grey</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/213.png" style="background-color: #658bb2;">
+                            <p>
+                                313 Fog</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/214.png" style="background-color: #8095d5;">
+                            <p>
+                                314 Pastel blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/215.png" style="background-color: #615184;">
+                            <p>
+                                315 Iceberg blue</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/216.png" style="background-color: #3378a8;">
+                            <p>
+                                316 Lead</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/217.png" style="background-color: #1a3d84;">
+                            <p>
+                                317 Pearl grey</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/218.png" style="background-color: #0083ca;">
+                            <p>
+                                318 Clay brown</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/219.png" style="background-color: #6f8fd7;">
+                            <p>
+                                319 Rail</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/220.png" style="background-color: #68447f;">
+                            <p>
+                                320 Galena</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/221.png" style="background-color: #22609a;">
+                            <p>
+                                321 Charcoal</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/222.png" style="background-color: #0a4097;">
+                            <p>
+                                322 Black</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/223.png" style="background-color: #22679b;">
+                            <p>
+                                323 Silver beige</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/224.png" style="background-color: #678bd6;">
+                            <p>
+                                324 Driftwood</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/225.png" style="background-color: #653d72;">
+                            <p>
+                                325 Mink</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/226.png" style="background-color: #1b5faa;">
+                            <p>
+                                326 Taupe</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/227.png" style="background-color: #0f4d8e;">
+                            <p>
+                                327 Black olive</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/228.png" style="background-color: #1b496c;">
+                            <p>
+                                328 Dark olive gree</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/229.png" style="background-color: #687ac2;">
+                            <p>
+                                329 Silver grey</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/230.png" style="background-color: #7a4579;">
+                            <p>
+                                330 Dark blue tint</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/231.png" style="background-color: #2a3c64;">
+                            <p>
+                                331 Water blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/232.png" style="background-color: #1c3a67;">
+                            <p>
+                                332 Dark blue</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/233.png" style="background-color: #2a507f;">
+                            <p>
+                                333 Olive green</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/234.png" style="background-color: #5571bb;">
+                            <p>
+                                334 Bronze apple</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/235.png" style="background-color: #6b476c;">
+                            <p>
+                                335 Bronze cherry</p>
+                        </div>
+
+
+                        <div class="color">
+                            <img src="/image/colorsChina/236.png" style="background-color: #2e324c;">
+                            <p>
+                                336 Bronze orange</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/237.png" style="background-color: #103962;">
+                            <p>
+                                337 Bronze peach</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/238.png" style="background-color: #264a76;">
+                            <p>
+                                338 Bronze cochin.</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/239.png" style="background-color: #4b66b2;">
+                            <p>
+                                339 Bronze purple</p>
+                        </div>
+                        <div class="color">
+                            <img src="/image/colorsChina/240.png" style="background-color: #7758b3;">
+                            <p>
+                                340 Bronze blue</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="color-map" id="color-map-2">
-
-
-
-        <div class="color">
-            <img src="/image/colorsChina/61.png" style="background-color: #94a781;">
-            <p>
-                161 Bitter red</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/62.png" style="background-color: #f2f3ec;">
-            <p>
-                162 Atom red</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/63.png" style="background-color: #b9bbab;">
-            <p>
-                163 Cameo</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/64.png" style="background-color: #cacac8;">
-            <p>
-                164 Iris</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/65.png" style="background-color: #f5f4f2;">
-            <p>
-                165 Hydrangea</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/66.png" style="background-color: #98b685;">
-            <p>
-                166 Lavender</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/67.png" style="background-color: #eaf3dc;">
-            <p>
-                167 Amethyst</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/68.png" style="background-color: #a9bab7;">
-            <p>
-                168 Sky blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/69.png" style="background-color: #badcdc;">
-            <p>
-                169 Lilac</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/70.png" style="background-color: #eaf3f3;">
-            <p>
-                170 Purple</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/71.png" style="background-color: #6f9766;">
-            <p>
-                171 Deep purple</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/72.png" style="background-color: #a6e9af;">
-            <p>
-                172 Aster</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/73.png" style="background-color: #98d6be;">
-            <p>
-                173 Cognac</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/74.png" style="background-color: #beedec;">
-            <p>
-                174 Imperial</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/75.png" style="background-color: #d3f1f1;">
-            <p>
-                175 Tahiti</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/76.png" style="background-color: #bad970;">
-            <p>
-                176 Lilaci lavander</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/77.png" style="background-color: #c0e6b1;">
-            <p>
-                177 Wine</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/78.png" style="background-color: #92b5a3;">
-            <p>
-                178 Bordeauy</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/79.png" style="background-color: #aadbd7;">
-            <p>
-                179 Americ. beauty</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/80.png" style="background-color: #bbe5dd;">
-            <p>
-                180 Harvest wine</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/81.png" style="background-color: #c9dc55;">
-            <p>
-                181 Cranberry</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/82.png" style="background-color: #abe3a3;">
-            <p>
-                182 Delft blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/83.png" style="background-color: #6f9887;">
-            <p>
-                183 Candy blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/84.png" style="background-color: #94bdc0;">
-            <p>
-                184 Comet blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/85.png" style="background-color: #a0d8ce;">
-            <p>
-                185 Princess</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/86.png" style="background-color: #6ebf6d;">
-            <p>
-                186 Dusty blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/87.png" style="background-color: #72d270;">
-            <p>
-                187 Porcelain blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/88.png" style="background-color: #46ad8a;">
-            <p>
-                188 Heaven</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/89.png" style="background-color: #74c4d7;">
-            <p>
-                189 Lake blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/90.png" style="background-color: #84e2d4;">
-            <p>
-                190 Riven blue</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/91.png" style="background-color: #6c8c48;">
-            <p>
-                191 Astro blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/92.png" style="background-color: #65cb6a;">
-            <p>
-                192 Purple</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/93.png" style="background-color: #3ea588;">
-            <p>
-                193 Vatican</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/94.png" style="background-color: #56b8bc;">
-            <p>
-                194 Deep purple</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/95.png" style="background-color: #7edfc1;">
-            <p>
-                195 Concord</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/96.png" style="background-color: #739c5f;">
-            <p>
-                196 Eggplant&nbsp;</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/97.png" style="background-color: #00c281;">
-            <p>
-                197 Baby blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/98.png" style="background-color: #009c82;">
-            <p>
-                198 Paradise</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/99.png" style="background-color: #41a7aa;">
-            <p>
-                199 Luster</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/100.png" style="background-color: #81beb9;">
-            <p>
-                200 Stucco</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/101.png" style="background-color: #5aa044;">
-            <p>
-                201 turquoise</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/101.png" style="background-color: #38cf54;">
-            <p>
-                202 Louise</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/102.png" style="background-color: #2d9482;">
-            <p>
-                203 Aquamarine</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/103.png" style="background-color: #179dab;">
-            <p>
-                204 Surf</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/104.png" style="background-color: #54c7b5;">
-            <p>
-                205 Parrot blue</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/105.png" style="background-color: #54a35c;">
-            <p>
-                206 Opal blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/106.png" style="background-color: #00b057;">
-            <p>
-                207 Jay blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/107.png" style="background-color: #26816a;">
-            <p>
-                208 Grotto</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/108.png" style="background-color: #318a97;">
-            <p>
-                209 Channel blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/109.png" style="background-color: #4faca2;">
-            <p>
-                210 Peacock</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/110.png" style="background-color: #4b9b56;">
-            <p>
-                211 Tropic blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/111.png" style="background-color: #0f9846;">
-            <p>
-                212 Bristol</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/112.png" style="background-color: #24847a;">
-            <p>
-                213 Victoria blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/113.png" style="background-color: #208ea9;">
-            <p>
-                214 Blue bird</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/114.png" style="background-color: #4cabab;">
-            <p>
-                215 Treasure blue</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/115.png" style="background-color: #3f8f48;">
-            <p>
-                216 Rocket blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/116.png" style="background-color: #099c52;">
-            <p>
-                217 Ocean blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/117.png" style="background-color: #328b85;">
-            <p>
-                218 Crayon blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/118.png" style="background-color: #167eac;">
-            <p>
-                219 French blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/119.png" style="background-color: #3ca6a3;">
-            <p>
-                220 Royal blue</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/120.png" style="background-color: #32754c;">
-            <p>
-                221 Twilight</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/121.png" style="background-color: #058632;">
-            <p>
-                222 Melody</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/122.png" style="background-color: #1d786c;">
-            <p>
-                223 Peacock blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/123.png" style="background-color: #0e74a6;">
-            <p>
-                224 Teal blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/124.png" style="background-color: #5d878b;">
-            <p>
-                225 Crayon</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/125.png" style="background-color: #4d7263;">
-            <p>
-                226 Navy blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/126.png" style="background-color: #1c7044;">
-            <p>
-                227 Pennant</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/127.png" style="background-color: #248173;">
-            <p>
-                228 Chartreuse</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/128.png" style="background-color: #2378ab;">
-            <p>
-                229 Jave green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/129.png" style="background-color: #3e7e85;">
-            <p>
-                230 Goblet</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/130.png" style="background-color: #697c7d;">
-            <p>
-                231 Party green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/131.png" style="background-color: #28673c;">
-            <p>
-                232 Spearmint</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/132.png" style="background-color: #126462;">
-            <p>
-                233 Fresh green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/133.png" style="background-color: #1b6ea3;">
-            <p>
-                234 Peridot</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/135.png" style="background-color: #008b9e;">
-            <p>
-                235 Apple green</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/136.png" style="background-color: #214449;">
-            <p>
-                236 Aqua green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/137.png" style="background-color: #286232;">
-            <p>
-                237 Spring green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/138.png" style="background-color: #214a50;">
-            <p>
-                238 Gnartr. green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/139.png" style="background-color: #0765a3;">
-            <p>
-                239 Mayo</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/140.png" style="background-color: #357385;">
-            <p>
-                240 Mint green</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/141.png" style="background-color: #274137;">
-            <p>
-                241 Lime</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/142.png" style="background-color: #315847;">
-            <p>
-                242 Lake green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/143.png" style="background-color: #163d45;">
-            <p>
-                243 Jewel</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/144.png" style="background-color: #13598c;">
-            <p>
-                244 Ice green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/145.png" style="background-color: #217d87;">
-            <p>
-                245 Jade</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/146.png" style="background-color: #243334;">
-            <p>
-                246 Crystal</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/147.png" style="background-color: #0e5e3d;">
-            <p>
-                247 Nile green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/148.png" style="background-color: #18424e;">
-            <p>
-                248 Mini mint</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/149.png" style="background-color: #1a629c;">
-            <p>
-                249 Leaf green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/150.png" style="background-color: #2d7074;">
-            <p>
-                250 Lt. turauoise</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/151.png" style="background-color: #0f1119;">
-            <p>
-                251 Horisou blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/152.png" style="background-color: #164d30;">
-            <p>
-                252 Azura</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/153.png" style="background-color: #11364b;">
-            <p>
-                253 Fountain</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/154.png" style="background-color: #1a5794;">
-            <p>
-                254 Florida green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/155.png" style="background-color: #2b6d81;">
-            <p>
-                255 Green glass</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/156.png" style="background-color: #3c4f6f;">
-            <p>
-                256 Esmerald</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/157.png" style="background-color: #193823;">
-            <p>
-                257 Peacock green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/158.png" style="background-color: #0e2d42;">
-            <p>
-                258 Amazon</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/159.png" style="background-color: #5e60ba;">
-            <p>
-                259 Quaker</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/160.png" style="background-color: #427287;">
-            <p>
-                260 Blue spruce</p>
-        </div>
-
-
-
-    </div>
-    <div class="color-map" id="color-map-3">
-
-
-
-        <div class="color">
-            <img src="/image/colorsChina/161.png" style="background-color: #bfe3ed;">
-            <p>
-                261 Almond</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/162.png" style="background-color: #81c0d2;">
-            <p>
-                262 Olive green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/163.png" style="background-color: #c3d7d4;">
-            <p>
-                263 Cedar green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/164.png" style="background-color: #d3d0e2;">
-            <p>
-                264&nbsp; Kentucky</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/165.png" style="background-color: #e5dde9;">
-            <p>
-                265 Artichoke</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/166.png" style="background-color: #b3d9e9;">
-            <p>
-                266 Holly green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/167.png" style="background-color: #5a93a6;">
-            <p>
-                267 Holy green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/168.png" style="background-color: #9ad0e0;">
-            <p>
-                268 Palmetto</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/169.png" style="background-color: #c5c2d2;">
-            <p>
-                269 Kelly green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/170.png" style="background-color: #e8c0db;">
-            <p>
-                270 Dark green</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/171.png" style="background-color: #adcfdc;">
-            <p>
-                271 Cypress</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/172.png" style="background-color: #56aac7;">
-            <p>
-                272 Pile tone</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/173.png" style="background-color: #8bbee7;">
-            <p>
-                273 Hemlock</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/174.png" style="background-color: #cdcadf;">
-            <p>
-                274 Acid blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/175.png" style="background-color: #e3bed9;">
-            <p>
-                275 Deep acid blue</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/176.png" style="background-color: #abc1c9;">
-            <p>
-                276 Light tan</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/177.png" style="background-color: #677f91;">
-            <p>
-                277 Pale brown</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/178.png" style="background-color: #b3c4c7;">
-            <p>
-                278 Cocoa</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/179.png" style="background-color: #aca7ca;">
-            <p>
-                279 Custa</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/180.png" style="background-color: #a894b7;">
-            <p>
-                280 Bister</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/181.png" style="background-color: #a4d5df;">
-            <p>
-                281 Apricot</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/182.png" style="background-color: #6789a2;">
-            <p>
-                282 Copper</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/183.png" style="background-color: #9fc0d4;">
-            <p>
-                283 Brickred</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/184.png" style="background-color: #8981b3;">
-            <p>
-                284 Brown gold</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/185.png" style="background-color: #ce9cc3;">
-            <p>
-                285 Curry</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/186.png" style="background-color: #58cbed;">
-            <p>
-                286 Paprika</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/187.png" style="background-color: #5b7995;">
-            <p>
-                287 Burnt orange</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/188.png" style="background-color: #84a3c4;">
-            <p>
-                288 Rust</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/189.png" style="background-color: #6b61a0;">
-            <p>
-                289 Cinnamon</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/190.png" style="background-color: #a372b5;">
-            <p>
-                290 Pumpernickel</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/191.png" style="background-color: #16becf;">
-            <p>
-                291 Spice</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/192.png" style="background-color: #4c6884;">
-            <p>
-                292 Elephant</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/193.png" style="background-color: #8bafca;">
-            <p>
-                293 Light brown</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/194.png" style="background-color: #685e9c;">
-            <p>
-                294 Cocoa beige</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/195.png" style="background-color: #b46799;">
-            <p>
-                295 Covert</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/196.png" style="background-color: #2baad7;">
-            <p>
-                296 Yellowish grey</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/197.png" style="background-color: #1f5a8b;">
-            <p>
-                297 Greyish olive</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/198.png" style="background-color: #6e99c4;">
-            <p>
-                298 Moss</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/199.png" style="background-color: #7168a4;">
-            <p>
-                299 Seal brown</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/200.png" style="background-color: #a68fc1;">
-            <p>
-                300 Chest Nut</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/201.png" style="background-color: #1c94c3;">
-            <p>
-                301 Mocca</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/202.png" style="background-color: #004e85;">
-            <p>
-                302 September&nbsp;</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/203.png" style="background-color: #769ccb;">
-            <p>
-                303 Sable</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/204.png" style="background-color: #4d5b86;">
-            <p>
-                304 Mustang</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/205.png" style="background-color: #8c84b1;">
-            <p>
-                305 Deep brown</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/206.png" style="background-color: #216a95;">
-            <p>
-                306 Silky white</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/207.png" style="background-color: #05588a;">
-            <p>
-                307 Natural</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/208.png" style="background-color: #527cac;">
-            <p>
-                308 Light beige</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/209.png" style="background-color: #505d88;">
-            <p>
-                309 Mauve</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/210.png" style="background-color: #a47ec6;">
-            <p>
-                310 Smoke grey</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/211.png" style="background-color: #4192c3;">
-            <p>
-                311 Grey</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/212.png" style="background-color: #005688;">
-            <p>
-                312 Dark grey</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/213.png" style="background-color: #658bb2;">
-            <p>
-                313 Fog</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/214.png" style="background-color: #8095d5;">
-            <p>
-                314 Pastel blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/215.png" style="background-color: #615184;">
-            <p>
-                315 Iceberg blue</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/216.png" style="background-color: #3378a8;">
-            <p>
-                316 Lead</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/217.png" style="background-color: #1a3d84;">
-            <p>
-                317 Pearl grey</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/218.png" style="background-color: #0083ca;">
-            <p>
-                318 Clay brown</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/219.png" style="background-color: #6f8fd7;">
-            <p>
-                319 Rail</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/220.png" style="background-color: #68447f;">
-            <p>
-                320 Galena</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/221.png" style="background-color: #22609a;">
-            <p>
-                321 Charcoal</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/222.png" style="background-color: #0a4097;">
-            <p>
-                322 Black</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/223.png" style="background-color: #22679b;">
-            <p>
-                323 Silver beige</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/224.png" style="background-color: #678bd6;">
-            <p>
-                324 Driftwood</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/225.png" style="background-color: #653d72;">
-            <p>
-                325 Mink</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/226.png" style="background-color: #1b5faa;">
-            <p>
-                326 Taupe</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/227.png" style="background-color: #0f4d8e;">
-            <p>
-                327 Black olive</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/228.png" style="background-color: #1b496c;">
-            <p>
-                328 Dark olive gree</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/229.png" style="background-color: #687ac2;">
-            <p>
-                329 Silver grey</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/230.png" style="background-color: #7a4579;">
-            <p>
-                330 Dark blue tint</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/231.png" style="background-color: #2a3c64;">
-            <p>
-                331 Water blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/232.png" style="background-color: #1c3a67;">
-            <p>
-                332 Dark blue</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/233.png" style="background-color: #2a507f;">
-            <p>
-                333 Olive green</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/234.png" style="background-color: #5571bb;">
-            <p>
-                334 Bronze apple</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/235.png" style="background-color: #6b476c;">
-            <p>
-                335 Bronze cherry</p>
-        </div>
-
-
-        <div class="color">
-            <img src="/image/colorsChina/236.png" style="background-color: #2e324c;">
-            <p>
-                336 Bronze orange</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/237.png" style="background-color: #103962;">
-            <p>
-                337 Bronze peach</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/238.png" style="background-color: #264a76;">
-            <p>
-                338 Bronze cochin.</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/239.png" style="background-color: #4b66b2;">
-            <p>
-                339 Bronze purple</p>
-        </div>
-        <div class="color">
-            <img src="/image/colorsChina/240.png" style="background-color: #7758b3;">
-            <p>
-                340 Bronze blue</p>
-        </div>
-    </div>
-</div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" type="text/javascript"></script>
+    <script>
+        function showColorMap(id, button) {
+            $(".color-map").removeClass("active");
+            $(`#color-map-${id}`).addClass("active");
+            $(".color-navigation button").removeClass("active");
+            button.addClass("active");
+        }
+    </script>
+</body>
+
+</html>

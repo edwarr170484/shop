@@ -41,6 +41,11 @@
               {% endif %}
             </div>
           {% endif %}
+          {% if jan and jan > 0 %}
+            <div class="d-flex justify-content-center align-items-center">
+              <a href="/map{{ jan }}.html" target="_blank">Карта цветов</a>
+            </div>
+          {% endif %}
         </div>
         {% if column_left or column_right %}
           {% set class = 'col-sm-6' %}

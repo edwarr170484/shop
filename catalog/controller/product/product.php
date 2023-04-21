@@ -240,6 +240,7 @@ class ControllerProductProduct extends Controller {
 			$data['model'] = $product_info['model'];
 			$data['isbn'] = $product_info['isbn'];
 			$data['mpn'] = $product_info['mpn'];
+			$data['jan'] = (int)$product_info['jan'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
 

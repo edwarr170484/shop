@@ -324,8 +324,7 @@ class ControllerToolImport extends Controller {
 
         $this->response->setOutput("Добавлено категорий: {$statistics['newCategories']}.<br/>
                                     Обновлено категорий: {$statistics['updatedCategories']}.<br/>
-                                    Добавлено товаров: {$statistics['newProducts']}.<br/>
-                                    Обновлено товаров: {$statistics['updatedProducts']}.<br/>
+                                    Обновлено товаров: {$statistics['newProducts']}.<br/>
                                     Перемещено изображений: {$statistics['uploadedImages']}.<br/>
                                     Добавлено характеристик: {$statistics['newAttributes']}<br/>
                                     Обновлено характеристик: {$statistics['updatedAttributes']}");
@@ -346,7 +345,7 @@ class ControllerToolImport extends Controller {
             'parent_id' => $category['idParent'],
             'top' => 0,
             'column' => 1,
-            'sort_order' => 1,
+            'sort_order' => $category["sorting"],
             'status' => 1,
             'import_id' => $category['id'],
             'category_store' => [
@@ -494,7 +493,7 @@ class ControllerToolImport extends Controller {
             'sku' => '',
             'upc' => '',
             'ean' => '',
-            'jan' => '',
+            'jan' => $product["ColorMap"],
             'isbn' => $product["measureUnitProduct"],
             'mpn' => $product["forOrderOnly"],
             'location' => '',
