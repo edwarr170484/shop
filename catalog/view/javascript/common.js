@@ -101,7 +101,7 @@ $(document).ready(function () {
   $(".bck").backToTop();
 
   $(".read-more").on("click", function () {
-    $(".more-description").slideToggle();
+    $(".more-description").toggleClass("opened");
   });
 
   $(".menu-toggler").on("click", function () {
@@ -236,13 +236,12 @@ $(document).ready(function () {
     }
   );
 
-  $("#input-quantity").change(function(){
-    if($(this).val() <= 0)
-    {
+  $("#input-quantity").change(function () {
+    if ($(this).val() <= 0) {
       $(this).val(1);
     }
   });
-  
+
 });
 
 // Cart add remove functions
@@ -366,9 +365,9 @@ var cart = {
           );
         }, 100);
 
-        if (getURLVar("route") == "checkout/cart"){
+        if (getURLVar("route") == "checkout/cart") {
           location = "index.php?route=checkout/cart";
-        }else{
+        } else {
           location = "index.php?route=checkout/checkout";
         }
       },

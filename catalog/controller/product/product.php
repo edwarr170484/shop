@@ -253,7 +253,7 @@ class ControllerProductProduct extends Controller {
 
 			if(strlen($description) > $tieserLength)
 			{
-				$data['description'] = '<div class="product-information"><span>' . $tieser . '</span><div class="more-description">' . $details . '</div></div>' . '<button type="button" class="read-more">Подробнее</button>';
+				$data['description'] = '<div class="product-information"><span>' . $tieser . '</span><span class="more-description">' . $details . '</span></div>' . '<button type="button" class="read-more">Подробнее</button>';
 			}
 			else
 			{

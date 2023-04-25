@@ -119,8 +119,11 @@
     display: table;
   }
 
-  & span {
-    float: left;
+  & span.more-description {
+
+    &.opened {
+      display: inline;
+    }
   }
 }
 

@@ -482,7 +482,7 @@ class ControllerToolImport extends Controller {
             'product_description' => [
                 $statistics['defaultLanguage']['language_id'] => [
                     'name' => $product['name'],
-                    'description' => $product['nameFull'],
+                    'description' => $product['description'],
                     'meta_title' => $product['name'],
                     'meta_description' => '',
                     'meta_keyword' => '',
