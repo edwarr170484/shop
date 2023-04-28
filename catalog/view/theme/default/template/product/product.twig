@@ -57,16 +57,18 @@
           <!--<ul class="list-unstyled product-info">
             <li>{{ text_model }}&nbsp;{{ model }}</li>
           </ul>-->
-          {% if price %}
-            <div class="product-price">
-              <div>Цена:</div>
-              {% if not special %}
-                <div class="new-price">{{ price }} с НДС</div>
-              {% else %}
-                <div class="old-price">{{ price }}</div>
-                <div class="new-price">{{ special }} с НДС</div>
-              {% endif %}
-            </div>
+          {% if not mpn %}
+            {% if price %}
+              <div class="product-price">
+                <div>Цена:</div>
+                {% if not special %}
+                  <div class="new-price">{{ price }} с НДС</div>
+                {% else %}
+                  <div class="old-price">{{ price }}</div>
+                  <div class="new-price">{{ special }} с НДС</div>
+                {% endif %}
+              </div>
+            {% endif %}
           {% endif %}
           {% if description %}
             <div class="product-description">
