@@ -211,6 +211,8 @@ class ControllerToolImport extends Controller {
         $incomingAmounts = json_decode($result->return, true);
         $options = $this->model_tool_import->getOptionValues(14);
 
+        //$this->response->setOutput(var_dump($incomingProducts));
+
         if(count($incomingProducts) > 0)
         {
             $existingCategories = $this->model_tool_import->getCategories();
