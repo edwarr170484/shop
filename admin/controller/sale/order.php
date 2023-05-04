@@ -1875,6 +1875,18 @@ class ControllerSaleOrder extends Controller {
 
 		$order_info = $this->model_sale_order->getOrder($orderId);
 		$orderProducts = $this->model_sale_order->getOrderProducts($orderId);
+
+		$lastname = explode(",", $order_info['lastname']);
+		$unpParts = explode(":", $lastname[count($lastname) - 1]);
+
+		if($unpParts[0] == "УНП")
+		{
+			$unp = $unpParts[1];
+		}
+		else
+		{
+			$unp = "";
+		}
         
 		$order = [
 			"order_info" => [
@@ -1947,7 +1959,8 @@ class ControllerSaleOrder extends Controller {
 				"user_agent" => $order_info['user_agent'],
 				"accept_language" => $order_info['accept_language'],
 				"date_added" => $order_info['date_added'],
-				"date_modified" => $order_info['date_modified']
+				"date_modified" => $order_info['date_modified'],
+				"unp_id" => $unp
 			],
 			"products" => []
 		];
@@ -1972,6 +1985,14 @@ class ControllerSaleOrder extends Controller {
 		}
 
         $client = new SoapClient($rp_soap_endpoint, $client_params);
-		$result = $client->GetProductGroup($order);
+
+		try{
+			$order["InputString"] = json_encode($order);
+			$result = $client->SetBuyerOrder($order);
+		}
+		catch(\Throwable $e)
+		{
+			var_dump($e);
+		}
 	}
 }
