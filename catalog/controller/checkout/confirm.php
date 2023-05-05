@@ -397,6 +397,7 @@ class ControllerCheckoutConfirm extends Controller {
         ini_set('soap.wsdl_cache_ttl', 0); 
 
 		$this->load->model('checkout/order');
+		$this->load->model('catalog/product');
 
 		$rp_soap_endpoint = $this->config->get('config_endpoint');
         
@@ -515,10 +516,12 @@ class ControllerCheckoutConfirm extends Controller {
 		$reward = 0;
 
 		foreach ($orderProducts as $product) {
+			$productInfo = $this->model_catalog_product->getProduct($product['product_id']);
+
 			$order['products'][] = [
 				"order_product_id" => $product['order_product_id'],
 				"order_id" => $product['order_id'],
-				"product_id" => $product['product_id'],
+				"product_id" => $productInfo['import_id'],
 				"name" => $product['name'],
 				"model" => $product['model'],
 				"quantity" => $product['quantity'],
