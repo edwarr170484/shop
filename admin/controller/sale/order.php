@@ -1990,7 +1990,7 @@ class ControllerSaleOrder extends Controller {
         $client = new SoapClient($rp_soap_endpoint, $client_params);
 
 		try{
-			$order["InputString"] = json_encode($order);
+			$order["InputString"] = json_encode($order, JSON_UNESCAPED_UNICODE);
 			$result = $client->SetBuyerOrder($order);
 		}
 		catch(\Throwable $e)
