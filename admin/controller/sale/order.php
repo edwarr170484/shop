@@ -1976,7 +1976,7 @@ class ControllerSaleOrder extends Controller {
 				"order_id" => $product['order_id'],
 				"product_id" => $productInfo['import_id'],
 				"name" => $product['name'],
-				"model" => $product['model'],
+				"model" => $productInfo['sku'],
 				"quantity" => $product['quantity'],
 				"price" => $product['price'],
 				"total" => $product['total'],

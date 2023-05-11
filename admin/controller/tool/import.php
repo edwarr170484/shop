@@ -219,14 +219,14 @@ class ControllerToolImport extends Controller {
             $existingProducts = $this->model_tool_import->getProducts();
             $processedProducts = [];
 
-            if($existingProducts)
+            /*if($existingProducts)
             {
                 foreach ($existingProducts as $existingProduct) {
                     $this->model_tool_import->deleteProduct($existingProduct["product_id"]);
                 }
-            }
+            }*/
 
-            $existingProducts = [];
+            /*$existingProducts = [];*/
             
             foreach($incomingProducts as $product)
             {
@@ -326,7 +326,8 @@ class ControllerToolImport extends Controller {
 
         $this->response->setOutput("Добавлено категорий: {$statistics['newCategories']}.<br/>
                                     Обновлено категорий: {$statistics['updatedCategories']}.<br/>
-                                    Обновлено товаров: {$statistics['newProducts']}.<br/>
+                                    Добавлено товаров: {$statistics['newProducts']}.<br/>
+                                    Обновлено товаров: {$statistics['updatedProducts']}.<br/>
                                     Перемещено изображений: {$statistics['uploadedImages']}.<br/>
                                     Добавлено характеристик: {$statistics['newAttributes']}<br/>
                                     Обновлено характеристик: {$statistics['updatedAttributes']}");
@@ -492,7 +493,7 @@ class ControllerToolImport extends Controller {
                 ],
             ],
             'model' => $product["vendorCode"],
-            'sku' => '',
+            'sku' => $product["nameCharacteristic"],
             'upc' => '',
             'ean' => '',
             'jan' => $product["ColorMap"],
