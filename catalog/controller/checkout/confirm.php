@@ -427,14 +427,7 @@ class ControllerCheckoutConfirm extends Controller {
 		$lastname = explode(",", $order_info['lastname']);
 		$unpParts = explode(":", $lastname[count($lastname) - 1]);
 
-		if($unpParts[0] == "УНП")
-		{
-			$unp = $unpParts[1];
-		}
-		else
-		{
-			$unp = "";
-		}
+		$unp = trim($unpParts[count($unpParts) - 1]);
         
 		$order = [
 			"order_info" => [
