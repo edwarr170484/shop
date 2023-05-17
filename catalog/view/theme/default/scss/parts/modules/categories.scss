@@ -17,16 +17,21 @@
             padding: 0;
             font-weight: 500;
             font-size: 15px;
-            line-height: 38px;
+            line-height: 28px;
             color: $main;
             background: url('../image/modules/chevron-right.png') 0 50% no-repeat;
             padding-left: 26px;
             transition: all 0.1s linear;
+            word-wrap: break-word;
 
             &:hover{
                 text-shadow: 0px 0px 5px rgba(0,168,222,0.9);
                 color: #444444;
                 font-weight: bold;
+            }
+
+            @include respond-to(lg){
+                padding-left: 15px;
             }
         }
 
@@ -43,8 +48,9 @@
                 font-size: 13px;
                 line-height: 27px;
                 background: none;
-                padding-left: 8px;
+                padding-left: 12px;
                 transition: all 0.1s linear;
+                word-wrap: break-word;
 
                 &:before {
                     content: "";
@@ -65,6 +71,15 @@
                     color: #444444;
                     font-weight: bold;
                 }
+
+                @include respond-to(lg){
+                    line-height: 21px;
+                }
+            }
+
+            @include respond-to(lg){
+                padding-left: 16px;
+
             }
         }
     }

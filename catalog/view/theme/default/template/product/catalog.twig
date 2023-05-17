@@ -1,0 +1,36 @@
+{{ header }}
+<div id="product-category" class="container">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-12 col-md-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+      {{ content_top }}
+      <h2 class="category-header">{{ heading_title }}</h2>
+      {% if categories | length > 0 %}
+        <div class="catalog">
+            {% for category in categories %}
+                <a href="{{ category.href }}" class="catalog-category">{{ category.name }}</a>
+            {% endfor %}
+        </div>
+      {% else %}
+        {% if not categories %}
+          <p>{{ text_empty }}</p>
+          <!--<div class="buttons d-flex justify-content-end">
+            <a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a>
+          </div>-->
+        {% endif %}
+      {% endif %}
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+{{ footer }} 

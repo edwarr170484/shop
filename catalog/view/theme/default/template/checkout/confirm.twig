@@ -71,7 +71,7 @@
 
     if(shippingMethod == "flat.flat"){
       shippingText = $(`#city-delivery-text-${$("#input-shipping-zone").val()}`).val();
-      shippingText = `<div class="city-delivery-description">${shippingText} <span>${Math.abs(diff)} {{ currency }}</span></div>`;
+      shippingText = `<div class="city-delivery-description">${shippingText} <span>${Math.abs(Math.ceil((diff)*100)/100).toFixed(2)} {{ currency }}</span></div>`;
 
       if(diff >= 0){
         shippingText = '';
@@ -83,4 +83,5 @@
     $(".checkout-delivery-info").html(shippingInfo);
     $(".city-delivery-text").html(shippingText);
   }
+  
 </script>
