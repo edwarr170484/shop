@@ -46,11 +46,12 @@
 
             & a {
                 font-size: 13px;
-                line-height: 27px;
+                line-height: 100%;
                 background: none;
                 padding-left: 12px;
                 transition: all 0.1s linear;
                 word-wrap: break-word;
+                margin-bottom: 11px;
 
                 &:before {
                     content: "";
@@ -60,9 +61,8 @@
                     background: $blue;
                     transform: rotate(45deg);
                     position: absolute;
-                    top: 50%;
+                    top: 4px;
                     left: 0;
-                    margin-top: -2px;
 
                 }
 
@@ -70,10 +70,6 @@
                     text-shadow: 0px 0px 5px rgba(0,168,222,0.9);
                     color: #444444;
                     font-weight: bold;
-                }
-
-                @include respond-to(lg){
-                    line-height: 21px;
                 }
             }
 
