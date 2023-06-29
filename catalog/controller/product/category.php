@@ -169,7 +169,7 @@ class ControllerProductCategory extends Controller {
 							'product_id'  => $catProduct['product_id'],
 							'thumb'       => $image,
 							'name'        => $catProduct['name'],
-							'price'       => $price,
+							'price'       => $catProduct['price'] != 0 ? $price : null,
 							'special'     => $special,
 							'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $catProduct['product_id'] . $url)
 						]);
@@ -233,7 +233,7 @@ class ControllerProductCategory extends Controller {
 						'thumb'       => $image,
 						'name'        => $result['name'],
 						'description' => utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
-						'price'       => $price,
+						'price'       => $result['price'] != 0 || (float)$result['special'] != 0 ? $price : null,
 						'special'     => $special,
 						'tax'         => $tax,
 						'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,

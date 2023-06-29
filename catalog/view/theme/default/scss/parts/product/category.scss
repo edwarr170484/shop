@@ -8,6 +8,18 @@
   @include respond-to(md) {
     padding-top: 0;
   }
+
+
+}
+
+.product-layout {
+  & .new-price {
+    color: #ff7373;
+  }
+
+  & .old-price {
+    text-decoration: line-through;
+  }
 }
 
 .category-description {

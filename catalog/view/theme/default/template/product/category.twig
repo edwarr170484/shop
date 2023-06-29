@@ -36,13 +36,12 @@
                         <div class="caption">
                           <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
                           {% if product.price %}
-                          <p class="price">
-                            {% if not product.special %}
-                              {{ product.price }}
+                            {% if product.special %}
+                              <div class="old-price">{{ product.price }}</div>
+                              <div class="new-price">{{ product.special }}</div>
                             {% else %}
-                              {{ product.special }}
+                              <p class="price">{{ product.price }}</p>
                             {% endif %}
-                          </p>
                           {% endif %}
                         </div>
                       </div>
